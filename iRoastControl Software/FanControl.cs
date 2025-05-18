@@ -11,7 +11,7 @@ namespace iRoastControl
         public static int CalculateFanSpeed(double currentTemperature, double initialSpeed)
         {
             // Target minimum speed: 80% of initial speed or 128, whichever is higher
-            double minSpeed = Math.Max(128, initialSpeed * 0.7);
+            double minSpeed = Math.Max(128, initialSpeed * 0.8);
 
             if (currentTemperature <= 100)
             {

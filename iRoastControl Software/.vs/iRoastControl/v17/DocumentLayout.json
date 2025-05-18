@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|b:\\google drive\\desktop\\roasting\\iroastcontrol software\\controlclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:controlclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|b:\\google drive\\desktop\\roasting\\iroastcontrol software\\fancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:fancontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|b:\\google drive\\desktop\\roasting\\iroastcontrol software\\serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SerialCommunication.cs",
+              "DocumentMoniker": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\SerialCommunication.cs",
+              "RelativeDocumentMoniker": "SerialCommunication.cs",
+              "ToolTip": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\SerialCommunication.cs",
+              "RelativeToolTip": "SerialCommunication.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAADgv3MAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T13:32:59.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ControlClass.cs",
+              "DocumentMoniker": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\ControlClass.cs",
+              "RelativeDocumentMoniker": "ControlClass.cs",
+              "ToolTip": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\ControlClass.cs",
+              "RelativeToolTip": "ControlClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T13:15:29.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FanControl.cs",
+              "DocumentMoniker": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\FanControl.cs",
+              "RelativeDocumentMoniker": "FanControl.cs",
+              "ToolTip": "B:\\Google Drive\\Desktop\\Roasting\\iRoastControl Software\\FanControl.cs",
+              "RelativeToolTip": "FanControl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T09:42:05.785Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

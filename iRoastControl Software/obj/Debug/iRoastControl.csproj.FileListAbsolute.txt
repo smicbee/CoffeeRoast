@@ -420,3 +420,36 @@ E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoast
 E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastCo.F89A96FB.Up2Date
 E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.exe
 E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.pdb
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Cupping v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\D-Roast.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Decaf v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Filter Origin.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Raost v5.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Robusta v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\Super dark v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\Recipes\WBRC competition.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\iRoastControl.exe.config
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\iRoastControl.exe
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\iRoastControl.pdb
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\System.Buffers.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\System.Memory.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\System.Numerics.Vectors.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\bin\Debug\System.ValueTuple.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\Artisan.CurveWindow.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.Properties.Resources.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.RoastLevelControl.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.SettingsWindow.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastCo.F89A96FB.Up2Date
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.exe
+B:\Google Drive\Desktop\Roasting\iRoastControl Software\obj\Debug\iRoastControl.pdb

@@ -129,22 +129,21 @@ void loop() {
 }  
 
 
-  //safety regulation
+  //Safety regulations section:
+
+  //Keep fan running until temperature is below 60°C
   if (temp > 60){
-    fanTargetValue = max(fanTargetValue, 50.0f); //if warmer than 80°C min fanspeed of 40% = 100
+    fanTargetValue = max(fanTargetValue, 50.0f); //if warmer than 80°C min fanspeed of 20% = 50
   }
 
+  //while heating minium fan speed is 50/255
   if (relayValue > 0) {
     fanTargetValue = max(fanTargetValue, 50.0f); //if relay is on fan atleast at 50
   } 
 
-  if (abortSignal == true){
-    relayValue = 0;
-    fanTargetValue = 128;
-  }
-
 
   //Limit Acceleration and Deceleration of Fan to prevent self-destruction
+  //Do not place any non-critical fan control code after this
   if (abs(fanValue - fanTargetValue) <= fanMaxAcceleration){
     fanValue = fanTargetValue;
   }
@@ -155,7 +154,11 @@ void loop() {
     fanValue = fanValue - fanMaxAcceleration;
   }
 
-
+  //This is the failsafe abort signal handling. Do not add fan code code after this
+  if (abortSignal == true){
+    relayValue = 0;
+    fanTargetValue = 128;
+  }
 
   analogWrite(relayPin, relayValue);
   analogWrite(fanPin, fanValue);

@@ -109,6 +109,12 @@ public static class SerialCommunication
         if (ACK) { 
         System.Threading.Thread.Sleep(20);
         response= serialPort.ReadLine();
+
+        if (response.ToLower().Contains("failsafe"))
+            {
+                            
+            }
+
         }
 
         if (ACK)
@@ -179,7 +185,7 @@ public static class SerialCommunication
 
         Double.TryParse(response, out double temperature);
 
-        return temperature*1.4;
+        return temperature * 1.25;
 
         }
         catch
