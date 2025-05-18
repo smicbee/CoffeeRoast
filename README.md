@@ -24,13 +24,13 @@ Instructions:
 
 
 First of all, take apart the popcorn maker. The popcorn maker basically consists of two elements: Heating coils and the fan for the air.
-The main power switch connects the 230V from the outlet directly to the heating coils. The fan is connected in series to the heating coil after going through a rectifier (4 diodes) and is received 18V DC.
+The main power switch connects the 230V from the outlet directly to the heating coils. The fan is connected in to the heating coil in a way that ~24V AC going through a rectifier (4 diodes) and is converted from AC to DC.
 
 In a first step we need to decouple the heating coils from the fan and make the heating coil controllable using our solid state relay. I disconnected the fan from the diodes so we can run it from a external power supply providing 18V later on.
 The heating coil was then soldered directly to the neutral conductor (blue wire). The red wire was cut and the solid state relay was built inbetween so we can control the power of the heating element using PWM later.
 (images will follow)
 
-A external power supply or lab power supply was used to provide 18V DC to the fan, so it runs permanently. The fan can take from 4V - 30V. You can adjust the voltage to control the speed.
+A external power supply or lab power supply was used to provide 24V DC to the fan, so it runs permanently. The fan can take from 4V - 30V. You can adjust the voltage to control the speed.
 
 I drilled a hole in the top metal container fitting the thermo couple inside the roasting chamber. The other 4 pins go into the ESP32. (VCC = 5V, GND = Ground, CLK = GPIO_13, CS = GPIO_12, DO = GPIO_11)
 Also the solid state relay will be connected to the ESP32. (In my case the voltage provided by the GPIO was enough to control the solid state relay, so i directly controlled it via the GPIO. In the case it does not work you need a separate transistor and supply 5V to the SSR).
