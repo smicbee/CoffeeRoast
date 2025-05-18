@@ -1,0 +1,422 @@
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\iRoastControl.exe.config
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\iRoastControl.exe
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\iRoastControl.pdb
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\MathNet.Numerics.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Data.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Generic.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.SinglePrecision.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Tensors.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Buffers.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Memory.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.ValueTuple.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\ZedGraph.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\MathNet.Numerics.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Data.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Generic.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.SinglePrecision.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\Numerics.NET.Tensors.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Buffers.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Memory.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\System.ValueTuple.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\ZedGraph.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\Artisan.CurveWindow.resources
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.Properties.Resources.resources
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastCo.F89A96FB.Up2Date
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.exe
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\Artisan\obj\Debug\iRoastControl.pdb
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe.config
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\iRoastControl.pdb
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Buffers.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Memory.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\ZedGraph.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Buffers.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Memory.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\ZedGraph.xml
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastCo.F89A96FB.Up2Date
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.exe
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.pdb
+C:\Users\micha\Documents\CoffeeRoast\iRoastControl\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe.config
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\iRoastControl.pdb
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Buffers.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Memory.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\ZedGraph.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Buffers.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Memory.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\ZedGraph.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.exe
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.pdb
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Cupping v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\D-Roast.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Decaf v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Filter Origin.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Raost v5.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Robusta v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\Super dark v1.0.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\Recipes\WBRC competition.kpro
+Z:\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe.config
+Z:\iRoastControl\iRoastControl\bin\Debug\iRoastControl.exe
+Z:\iRoastControl\iRoastControl\bin\Debug\iRoastControl.pdb
+Z:\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Buffers.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Memory.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\ZedGraph.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\MathNet.Numerics.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Buffers.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Memory.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Numerics.Vectors.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\System.ValueTuple.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\ZedGraph.xml
+Z:\iRoastControl\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+Z:\iRoastControl\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastCo.F89A96FB.Up2Date
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.exe
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.pdb
+Z:\iRoastControl\iRoastControl\obj\Debug\iRoastControl.RoastLevelControl.resources
+Z:\iRoastControl\iRoastControl\bin\Debug\Newtonsoft.Json.dll
+Z:\iRoastControl\iRoastControl\bin\Debug\Newtonsoft.Json.xml
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Cupping v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\D-Roast.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Decaf v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Filter Origin.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Raost v5.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Robusta v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\Super dark v1.0.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Recipes\WBRC competition.kpro
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Newtonsoft.Json.dll
+\\truenas\data\iRoastControl\iRoastControl\bin\Debug\Newtonsoft.Json.xml
+\\truenas\data\iRoastControl\iRoastControl\obj\Debug\iRoastControl.RoastLevelControl.resources
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Cupping v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\D-Roast.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Decaf v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Filter Origin.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Raost v5.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Robusta v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Super dark v1.0.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\WBRC competition.kpro
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.exe.config
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.exe
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.pdb
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\MathNet.Numerics.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Data.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Generic.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Tensors.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Buffers.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Memory.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.ValueTuple.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ZedGraph.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\MathNet.Numerics.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Buffers.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Memory.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.ValueTuple.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ZedGraph.xml
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.RoastLevelControl.resources
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.exe
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.pdb
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Cupping v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\D-Roast.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Decaf v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Filter Origin.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Raost v5.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Robusta v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\Super dark v1.0.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Recipes\WBRC competition.kpro
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.exe.config
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.exe
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\iRoastControl.pdb
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\MathNet.Numerics.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Newtonsoft.Json.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Data.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Generic.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Tensors.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Buffers.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Memory.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.ValueTuple.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ZedGraph.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\MathNet.Numerics.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Newtonsoft.Json.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Buffers.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Memory.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Numerics.Vectors.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\System.ValueTuple.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ZedGraph.xml
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.RoastLevelControl.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastCo.F89A96FB.Up2Date
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.exe
+B:\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.pdb
+C:\Users\Michael\Google Drive\Desktop\Roasting\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\0-1200m Rest v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\0-1200m RTD v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\1200-1500 m Rest v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\1200-1500m RTD v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\1500-2000m Rest v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\1500-2000m RTD v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\2000-2700m Rest v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\2000-2700m RTD v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Cupping v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\D-Roast.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Decaf v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Filter Origin.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Raost v5.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Robusta v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\Super dark v1.0.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Recipes\WBRC competition.kpro
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\iRoastControl.exe.config
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\iRoastControl.exe
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\iRoastControl.pdb
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\System.Buffers.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\System.Memory.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\System.Numerics.Vectors.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\System.ValueTuple.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\MathNet.Numerics.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Newtonsoft.Json.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Numerics.NET.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Numerics.NET.Data.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Numerics.NET.Generic.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Numerics.NET.SinglePrecision.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\Numerics.NET.Tensors.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\ZedGraph.xml
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\de\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\es\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\fr\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\hu\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\it\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\ja\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\pt\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\ru\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\sk\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\sv\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\tr\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\zh-cn\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\bin\Debug\zh-tw\ZedGraph.resources.dll
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\Artisan.CurveWindow.resources
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.Properties.Resources.resources
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.RoastLevelControl.resources
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.SettingsWindow.resources
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.csproj.GenerateResource.cache
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastCo.F89A96FB.Up2Date
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.exe
+E:\Downloads\iRoastControl-20250518T091809Z-1-001\iRoastControl\obj\Debug\iRoastControl.pdb

@@ -1,0 +1,54 @@
+profile_short_name:2000-2700m Rest
+profile_designer:Kaffelogic Ltd
+profile_description:\vThe “Rest” profiles have been developed for maximum flavour results in roasted coffee. They are perfect for those occasions where you are still working your way through a Kaffelogic roasted origin or blend and you know you will have no coffee after 3 to 5 days time.\v\vThese profiles have been designed for the coffee roasted on the Kaffelogic to be rested in airtight containers and allowed to de-gas over 3 to 5 days before the beans are ground, brewed and extracted.  \v\vDefault Roast for a medium roast   = 3.2 Recommended End (Bright Espresso , Full and Rich Aeropress and Plunger)\v\vMediumLight roast profile               = 2.0 Recommended End (Great for Pour Overs + Plungers and bright espresso) \v\vMedium/Dark roast profile              = 4.6 Recommended End (Great for Espresso with Rich intense deep notes)\v\v
+profile_schema_version:1.4
+emulation_mode:0.0
+recommended_level:2.0
+expect_fc:0.0
+expect_colrchange:0.0
+preheat_power:1050
+preheat_nominal_temperature:240.0
+preheat_min_power_offset:10
+preheat_min_time:20.0
+preheat_max_time:60.0
+preheat_check_gradient_time:30.0
+preheat_target_in_future:30.0
+preheat_mode:5
+preheat_end_detection_count:5
+preheat_temperature_proximity:8.5
+roast_required_power:1200
+roast_min_desired_rate_of_rise:2.6
+roast_target_in_future:25.0
+roast_use_prediction_method:1
+roast_target_timeshift:1.0
+roast_end_by_time_ratio:1
+roast_PID_Kp:0.7172
+roast_PID_Ki:0
+roast_PID_Kd:3.55
+roast_PID_min_i:0
+roast_PID_max_i:0
+roast_PID_iLimitApplyAtZero:1
+roast_PID_differentialOnError:1
+specific_heat_adj_upper_temperature_limit:180.0
+specific_heat_adj_lower_temperature_limit:80.0
+specific_heat_adj_multiplier_Kp:2.1
+specific_heat_adj_multiplier_Kd:4
+zone1_time_start:0.0
+zone1_time_end:0.0
+zone1_multiplier_Kp:1
+zone1_multiplier_Kd:1
+zone1_boost:0.0
+zone2_time_start:375.0
+zone2_time_end:390.0
+zone2_multiplier_Kp:1
+zone2_multiplier_Kd:1
+zone2_boost:3.0
+corner1_time_start:0.0
+corner1_time_end:0.0
+cooldown_hi_speed:17000
+cooldown_lo_speed:15000
+cooldown_lo_temperature:100.0
+roast_levels:205.0,216.1,217.1,219.9,221.0,225.0,241.0
+profile_modified:04/11/2022 11:00:12pm
+roast_profile:0.0,20.0,0,0.0,7.09482,48.8,75.3985333341,129.5,42.3601859281,117.7,109.096216016,141.5,317.627872498,195.8,270.500331124,184.5,366.698017779,207.5,437.312487364,214.3,399.964462377,211.4,495.498175969,218.8,558.075342004,222.5,515.403074481,219.9,0,0.0
+fan_profile:0.0,14700.0,0,0.0,18.0,14700.0,60.0,14700.0,42.0,14700.0,300.0,14700.0,539.57165276,13199.8464688,299.57165276,13199.8464688,557.57165276,13199.8464688,600.0,13200.0,582.003,13200.0,0,0.0
