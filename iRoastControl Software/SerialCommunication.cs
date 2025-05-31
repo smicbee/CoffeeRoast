@@ -185,7 +185,7 @@ public static class SerialCommunication
 
         Double.TryParse(response, out double temperature);
 
-        return temperature * 1.25;
+        return temperature * 1.1;
 
         }
         catch
