@@ -91,6 +91,11 @@ iRoastControl is the control software. It comes with pre definded roast curves y
 
 Each roasting curve as 3 phases. Pre-heating phase, running, cool-down. When you click "Run" the first time the application will pre-heat the popcorn machine until it reaches 180°. This is the moment you will charge your coffee beans. After that press "Run" again and the button will go yellow. This is where the roasting curve starts. You can follow your roasting temperaturs watching the red graph. Pressing the "Run" Button again will abort and go to the cool down phase where the heating element gets turned off and only the fan will blow. When your temperature is down to room-temperature you are done.
 
+## UI
+
+![alt text](docu/assets/img/rel/iroastcontrol_overview.png)
+
+
 At the moment the curves are defined by some points in the source code, which get interpolated using a CubicSpline function. You can find the keypoints in ControlClass.cs in the function generateDefaultCurve(). Each point describes the temperature depending on the time in seconds. e.g. targetPoints.Add(new PointF(660, 180)); at 660s of the roasting curve, we should reach 180°C.
 Adjust as you like.
 
