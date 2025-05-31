@@ -80,6 +80,8 @@ The C# Application can be found in the iRoastControl folder.
 Use not more than 100g of beans and roast in a well ventilated area. Prepare for flying coffee skins _everywhere_.
 You can stop the roast at any time by flipping the on-off switch, which effectivly disconnects the heater while keeps the cooling fan running
 
+[12s_roast.webm](https://github.com/user-attachments/assets/c60a7ab9-1068-4cd1-9d56-9880ee272cc1)
+
 [12s video of 12min roasting](docu/assets/img/rel/12s_roast.webm)
 
 iRoastControl
