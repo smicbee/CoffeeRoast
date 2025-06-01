@@ -32,7 +32,7 @@ To modify the roaster, we had to:
 First, we took apart the popcorn maker. It basically consists of two elements: heating coils and a fan for the air.  
 These popcorn makers are engineered to the limit, so please be gentle with them as they are made of a lot of plastic. We destroyed a couple until we got it right. Even then, the plastic melted on the third continuous roast.
 
-![Open popcorn maker case](docu/assets/img/rel/open_case.webp)
+![Open popcorn maker casing](docu/assets/img/rel/open_case.webp)
 
 The main power switch connects the 230V from the outlet directly to the heating coils. The fan is connected to the heating coil in a way that ~24V AC goes through a rectifier (4 diodes) and is converted from AC to DC.
 
