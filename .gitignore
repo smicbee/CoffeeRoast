@@ -1,0 +1,33 @@
+# Ignore build results of C#/.NET projects
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Ignore Rider IDE files
+.idea/
+
+# Ignore test results
+TestResults/
+*.TestResults/
+
+# Ignore publish output
+publish/
