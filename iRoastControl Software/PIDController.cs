@@ -20,7 +20,7 @@ public class PIDController
 
     private double updateInterval = 3;
 
-    public double[] pidvalues = new double[800];
+    public double[] pidvalues = new double[1200];
 
     public PIDController(double Kp = 3, double Ki = 0.02, double Kd = 0.2)
     {
@@ -51,7 +51,7 @@ public class PIDController
     }
     private void initTimeCurve()
     {
-        double[] timeSeries = new double[800];
+        double[] timeSeries = new double[1200];
         for (int i = 0; i < timeSeries.Length; i++)
         {
             timeSeries[i] = i;

@@ -114,8 +114,8 @@ namespace Artisan
                 _keyPoints = value;                
                 SplineInterpolator interpolator = new SplineInterpolator(_keyPoints);
 
-                double[] curve = new double[800];
-                double[] derivative = new double[800];
+                double[] curve = new double[1200];
+                double[] derivative = new double[1200];
 
                 for (int i = 0; i < curve.Count(); i++)
                 {
@@ -133,7 +133,7 @@ namespace Artisan
                 roastingProfile = curve;
                 derivativeCurve = derivative;
 
-                double[] timeSeries = new double[800];
+                double[] timeSeries = new double[1200];
                 for (int i = 0; i < timeSeries.Length; i++)
                 {
                     timeSeries[i] = i;
@@ -147,8 +147,8 @@ namespace Artisan
 
         static public double[] derivativeCurve;
         static public double[] roastingProfile;
-        static public double[] realCurve = new double[800];
-        static public double[] fanSpeedCurve = new double[800];
+        static public double[] realCurve = new double[1200];
+        static public double[] fanSpeedCurve = new double[1200];
         static public double timeOffset = 0;
         static public Stopwatch elappsedSeconds;
 
@@ -176,15 +176,15 @@ namespace Artisan
             }
 
             second = Math.Max(0, second);
-            second = Math.Min(800,second);
+            second = Math.Min(1200,second);
+
+            if (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt)) { second = roastingProfile.Count() - 1; abortRun(); }
 
 
             if (State == "running")
-            {
-                setPoint = roastingProfile[second];
+            {                       setPoint = roastingProfile[second];
 
-                if (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt)) { abortRun(); }
-                fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed/100*255);
+              fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed/100*255);
                 if (!simulation) { 
                 SerialCommunication.setFanSpeed(fanSpeed);
                 }

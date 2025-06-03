@@ -423,7 +423,7 @@ namespace Artisan
                 }
             ControlClass.keyPoints = roastProfile;
 
-            double[] timeSeries = new double[800];
+            double[] timeSeries = new double[1200];
             for (int i = 0; i < timeSeries.Length; i++) {
                 timeSeries[i] = i;
             }
@@ -607,7 +607,7 @@ namespace Artisan
             myPane.YAxis.Scale.Min = 0;
             myPane.YAxis.Scale.Max = 260;
             myPane.XAxis.Scale.Min = 0;
-            myPane.XAxis.Scale.Max = 800;
+            myPane.XAxis.Scale.Max = 1000;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
