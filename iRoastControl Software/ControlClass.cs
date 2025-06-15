@@ -182,9 +182,10 @@ namespace Artisan
 
 
             if (State == "running")
-            {                       setPoint = roastingProfile[second];
-
-              fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed/100*255);
+            {                       
+                setPoint = roastingProfile[second];
+                
+                fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed/100*255);
                 if (!simulation) { 
                 SerialCommunication.setFanSpeed(fanSpeed);
                 }
@@ -201,7 +202,7 @@ namespace Artisan
                 }
             }else if (State == "idle")
             {
-                if (measuredTemp < 80 )
+                if (measuredTemp < 60 )
                 {
                     SerialCommunication.setFanSpeed(0);
                 }

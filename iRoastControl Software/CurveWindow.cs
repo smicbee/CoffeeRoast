@@ -459,6 +459,7 @@ namespace Artisan
                 ControlClass.abortRun();
                 button1.BackColor = Color.Transparent;
             }
+            timer1_Tick(null, null);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -474,6 +475,21 @@ namespace Artisan
 
             if (ControlClass.elappsedSeconds == null) { label3.Text = ""; }
             else { label3.Text = "Elappsed Time: " + TimeSpan.FromSeconds(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000).ToString(@"mm\:ss"); }
+
+
+            switch (ControlClass.State) {
+                case "running":
+                    { button1.Text = "Running..."; break;}
+                case "idle":
+                    { button1.Text = "Run"; break;}
+                case "cooling":
+                    { button1.Text = "Cooling..."; break; }
+                case "pre-heating":
+                    { button1.Text = "Preparation..."; break; }
+                case "ready":
+                    { button1.Text = "Ready to start!"; break; }
+            }
+
 
             timer1.Start();
         }
