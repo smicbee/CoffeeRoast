@@ -22,8 +22,7 @@ namespace Artisan
 
         static private double simulatedTemp { get; set; } = 0;
         static public bool simulation { get; set; } = false;
-        static public bool running {  get; set; } = false;
-
+      
         static public double fanSpeed { get; set; } = 0.0;
         static public double initFanSpeed { get; set; } = 100.0;
         static public string State { get; set; } = "idle";
@@ -154,13 +153,7 @@ namespace Artisan
 
         public static void abortRun()
         {
-            running = false; setPoint = 0;
-            if (elappsedSeconds != null)
-            {
-                elappsedSeconds.Stop();
-                elappsedSeconds.Reset();
-            }
-
+            setPoint = 0;
             State = "cooling";
         }
 
@@ -183,8 +176,7 @@ namespace Artisan
 
             if (State == "running")
             {                       
-                setPoint = roastingProfile[second];
-                
+                setPoint = roastingProfile[second];            
                 fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed/100*255);
                 if (!simulation) { 
                 SerialCommunication.setFanSpeed(fanSpeed);
@@ -212,13 +204,39 @@ namespace Artisan
                     SerialCommunication.setFanSpeed(fanSpeed);
                 }
             }
+            else if (State == "failsafe"){
+                setPoint = 0;
+                fanSpeed = 200;
+
+                if (!simulation)
+                {
+                    SerialCommunication.setSetpoint(setPoint);
+                    SerialCommunication.setFanSpeed(fanSpeed);
+                }
+
+            }
             else if (State == "cooling")
             {
-                SerialCommunication.setSetpoint(0.0);
-                
+                setPoint = 0.0;
+                if (!simulation)
+                {
+                    SerialCommunication.setSetpoint(setPoint);
+                }
+
                 if (measuredTemp < 60)
                 {
-                    SerialCommunication.setFanSpeed(0);
+                    fanSpeed = 0;
+
+                    if (!simulation)
+                    {
+                        SerialCommunication.setFanSpeed(fanSpeed);
+                    }
+
+                    if (elappsedSeconds != null)
+                    {
+                        elappsedSeconds.Stop();
+                    }
+
                     State = "idle";
                 }
                 else
@@ -233,7 +251,8 @@ namespace Artisan
             double controlSignal;
             if (pid == null || State != "running")
             {
-                controlSignal= setPoint;
+                //controlSignal= setPoint;
+                controlSignal = pid.Set(second, setPoint);
             }
             else { 
                 controlSignal = pid.Update(second,measuredTemp);
@@ -268,7 +287,10 @@ namespace Artisan
                 fanSpeedCurve[second] = realFanSpeed;
             }
 
-            realCurve[second] = measuredTemp;
+            if (State != "idle")
+            {
+                realCurve[second] = measuredTemp;
+            }
             t.Start();
         }
 

@@ -60,7 +60,14 @@ public class PIDController
 
         this.timeCurve = timeSeries;
     }
+    public double Set(double currentTime, double currentSetpoint)
+    {
+        var output = Math.Max(0, Math.Min(255, currentSetpoint));
+        pidvalues[Convert.ToInt32(currentTime)] = output;
+        lastOutput = output;
+        return output;
 
+    }
     public double Update(double currentTime, double currentTemp)
     {
 

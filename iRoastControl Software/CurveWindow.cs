@@ -454,6 +454,20 @@ namespace Artisan
                 button1.BackColor = Color.Yellow;
                 button1.Text = "Run";
             }
+            else if (ControlClass.State == "cooling")
+            {
+                if (MessageBox.Show(this, "The machine is still cooling down. Starting a new recipe in this state might influence the result. Start anyways?", "Start anyways?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ControlClass.runCurve();
+                    button1.BackColor = Color.Yellow;
+                    button1.Text = "Run";
+                }
+            }
+            else if (ControlClass.State == "failsafe")
+            {
+                MessageBox.Show("The application will try to recover the failsafe and go back into idle state. If the button does not change the ESP is still in failsafe mode");
+                ControlClass.State = "cooling";
+            }
             else
             {
                 ControlClass.abortRun();
@@ -488,8 +502,11 @@ namespace Artisan
                     { button1.Text = "Preparation..."; break; }
                 case "ready":
                     { button1.Text = "Ready to start!"; break; }
+                case "failsafe":
+                    { button1.Text = "FAILSAFE!"; button1.BackColor = Color.OrangeRed; break; }
             }
 
+     
 
             timer1.Start();
         }
@@ -512,10 +529,15 @@ namespace Artisan
                 button1.BackColor = Color.LightGreen;
                 button1.Text = "Run";
             }
+            else if(ControlClass.State == "failsafe")
+            {
+    
+            }
             else
             {
                
             }
+            button1.Update();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

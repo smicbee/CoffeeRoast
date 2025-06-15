@@ -112,7 +112,7 @@ public static class SerialCommunication
 
         if (response.ToLower().Contains("failsafe"))
             {
-                            
+                ControlClass.State = "failsafe";
             }
 
         }
@@ -164,6 +164,31 @@ public static class SerialCommunication
         COMRequest("set fan " + setPoint.ToString(), false);
 
     }
+
+    private static int errorReadingCounter = 0;
+
+    private static void newReading(double temp)
+    {
+   
+        if (temp > -50 && temp < 450)
+        {
+            errorReadingCounter--;
+        }
+        else { errorReadingCounter = errorReadingCounter + 5; }
+
+
+        if (errorReadingCounter < 0)
+        {
+            errorReadingCounter = 0;
+        }
+
+        if (errorReadingCounter > 100)
+        {
+            ControlClass.State = "failsafe";
+        }
+
+    }
+
     public static double getTemperature()
     {
         if (serialPort != null && !serialPort.IsOpen)
@@ -183,8 +208,9 @@ public static class SerialCommunication
 
         string response = COMRequest("get temp");
 
-        Double.TryParse(response, out double temperature);
+        Double.TryParse(response, out double temperature);          
 
+        newReading(temperature);
         return temperature * 1.1;
 
         }
