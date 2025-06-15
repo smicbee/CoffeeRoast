@@ -49,6 +49,11 @@ namespace iRoastControl
     
         private void updateValues()
         {
+            if (comboBox1.DroppedDown == false)
+            {
+                comboBox1.Text = ControlClass.State;
+            }
+
             textBox1.Text = SerialCommunication.COMLog;
 
             tb_Kp.Text = ControlClass.pid.Kp.ToString();
@@ -117,6 +122,27 @@ namespace iRoastControl
         {
             ControlClass.timeOffset -= 1;
             updateValues();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ControlClass.State = comboBox1.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBox2.Text, out double value))
+            {
+                ControlClass.timeMultiplicator = value;
+                textBox2.BackColor = Color.White;
+            }
+            else
+            {
+                textBox2.BackColor = Color.Red;
+            }
+
+
+
         }
     }
 }

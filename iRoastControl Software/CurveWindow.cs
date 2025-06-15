@@ -524,6 +524,11 @@ namespace Artisan
                 button1.BackColor = Color.Red;
                 button1.Text = "Please wait...";
             }
+            else if (ControlClass.State == "running")
+            {
+                button1.BackColor = Color.Yellow;
+                button1.Text = "Running...";
+            }
             else if (ControlClass.State == "ready")
             {
                 button1.BackColor = Color.LightGreen;
@@ -531,11 +536,13 @@ namespace Artisan
             }
             else if(ControlClass.State == "failsafe")
             {
-    
+                button1.BackColor = Color.OrangeRed;
+                button1.Text = "FAILSAFE";
             }
             else
             {
-               
+                button1.BackColor = Color.White;
+                button1.Text = "Unknown State";
             }
             button1.Update();
         }

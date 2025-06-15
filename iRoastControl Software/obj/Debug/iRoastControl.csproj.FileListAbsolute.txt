@@ -486,3 +486,4 @@ B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastContr
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastCo.F89A96FB.Up2Date
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.exe
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.pdb
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.DebugWindow.resources

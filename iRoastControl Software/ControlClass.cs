@@ -150,6 +150,7 @@ namespace Artisan
         static public double[] fanSpeedCurve = new double[1200];
         static public double timeOffset = 0;
         static public Stopwatch elappsedSeconds;
+        static public double timeMultiplicator = 1;
 
         public static void abortRun()
         {
@@ -165,7 +166,7 @@ namespace Artisan
             int second = 0;
             if (elappsedSeconds != null)
             {
-             second =  Convert.ToInt32(elappsedSeconds.ElapsedMilliseconds / 1000 + timeOffset);
+             second =  Convert.ToInt32(elappsedSeconds.ElapsedMilliseconds * timeMultiplicator / 1000 + timeOffset );
             }
 
             second = Math.Max(0, second);
