@@ -83,6 +83,14 @@ public class PIDController
             return lastOutput;
         }
 
+        if (currentTemp > 450 || currentTemp < -50)
+        {
+            //invalid reading
+            pidvalues[Convert.ToInt32(currentTime)] = lastOutput;
+            return lastOutput;
+
+        }
+
         if (deltaTime > 0)
         {
             integral += error * deltaTime;
