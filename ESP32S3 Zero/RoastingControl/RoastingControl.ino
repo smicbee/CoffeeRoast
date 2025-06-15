@@ -41,8 +41,8 @@ void TemperatureTask(void *parameter) {
         
         tempTemp = readTemperature();
         
-        Serial.println(temp);
-        Serial.println(tempTemp);
+        //Serial.println(temp);
+        //Serial.println(tempTemp);
 
 
         if (temp == 1){
