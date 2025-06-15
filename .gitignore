@@ -31,3 +31,4 @@ TestResults/
 
 # Ignore publish output
 publish/
+*.vsidx
