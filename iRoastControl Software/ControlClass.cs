@@ -243,7 +243,11 @@ namespace Artisan
                 else
                 {
                     fanSpeed = FanControl.CalculateFanSpeed(measuredTemp, initFanSpeed / 100 * 255);
-                    SerialCommunication.setFanSpeed(fanSpeed);
+
+                    if (!simulation)
+                    {
+                        SerialCommunication.setFanSpeed(fanSpeed);
+                    }
                 }
 
             }

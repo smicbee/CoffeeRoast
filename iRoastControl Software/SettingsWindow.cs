@@ -114,13 +114,16 @@ namespace iRoastControl
 
         private void button10_Click(object sender, EventArgs e)
         {
-            ControlClass.timeOffset += 1;
+
+            ControlClass.timeOffset += 10;
             updateValues();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            ControlClass.timeOffset -= 1;
+            ControlClass.timeOffset -= 10;
+            if (ControlClass.timeOffset < 0) { ControlClass.timeOffset = 0; }
+
             updateValues();
         }
 

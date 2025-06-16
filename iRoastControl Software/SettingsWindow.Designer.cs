@@ -256,9 +256,9 @@
             this.button9.Location = new System.Drawing.Point(219, 155);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(32, 22);
+            this.button9.Size = new System.Drawing.Size(37, 22);
             this.button9.TabIndex = 20;
-            this.button9.Text = "-1";
+            this.button9.Text = "-10";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -267,9 +267,9 @@
             this.button10.Location = new System.Drawing.Point(260, 155);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(32, 22);
+            this.button10.Size = new System.Drawing.Size(34, 22);
             this.button10.TabIndex = 19;
-            this.button10.Text = "+1";
+            this.button10.Text = "+10";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 

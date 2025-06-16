@@ -30,6 +30,7 @@ public static class SerialCommunication
 
     public static SerialPort findPopCornRoasterCOM()
     {
+ 
         string[] ports = SerialPort.GetPortNames();
 
         foreach (string port in ports)
@@ -80,6 +81,8 @@ public static class SerialCommunication
 
     public static string COMRequest(string request, bool ACK = true)
     {
+        if (ControlClass.simulation) { return ""; }
+
         if (serialPort != null && !serialPort.IsOpen)
             try
             {
@@ -138,6 +141,8 @@ public static class SerialCommunication
 
     public static void setFanSpeed(double setPoint)
     {
+        if (ControlClass.simulation) { return; }
+
         if (serialPort == null)
         {
             AutoConnect();
@@ -191,6 +196,7 @@ public static class SerialCommunication
 
     public static double getTemperature()
     {
+
         if (serialPort != null && !serialPort.IsOpen)
             try { 
             serialPort.Open();
@@ -261,6 +267,8 @@ public static class SerialCommunication
     }
     public static void setSetpoint(double setpoint)
     {
+        if (ControlClass.simulation) { return; }
+
         if (serialPort == null)
         {
             AutoConnect();
