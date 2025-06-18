@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|b:\\google drive\\desktop\\coffeeroast\\iroastcontrol software\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:controlclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|b:\\google drive\\desktop\\coffeeroast\\iroastcontrol software\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\curvewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:curvewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|solutionrelative:settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46F8D78F-DFC0-41DE-AAC3-9106D5304B15}|iRoastControl.csproj|B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\curvewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SettingsWindow.cs [Entwurf]",
               "DocumentMoniker": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SettingsWindow.cs",
               "RelativeDocumentMoniker": "SettingsWindow.cs",
@@ -66,15 +66,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "SettingsWindow.cs",
               "DocumentMoniker": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SettingsWindow.cs",
               "RelativeDocumentMoniker": "SettingsWindow.cs",
               "ToolTip": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SettingsWindow.cs",
               "RelativeToolTip": "SettingsWindow.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAvwI0AAAAAAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAvwH0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T15:32:47.973Z"
+              "WhenOpened": "2025-06-15T15:32:47.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CurveWindow.cs [Entwurf]",
               "DocumentMoniker": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\CurveWindow.cs",
               "RelativeDocumentMoniker": "CurveWindow.cs",
@@ -125,20 +126,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SerialCommunication.cs",
               "DocumentMoniker": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SerialCommunication.cs",
               "RelativeDocumentMoniker": "SerialCommunication.cs",
-              "ToolTip": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SerialCommunication.cs \u2B24",
-              "RelativeToolTip": "SerialCommunication.cs \u2B24",
-              "ViewState": "AQIAADwAAAAAAAAAAAAuwGIAAAAjAAAA",
+              "ToolTip": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\SerialCommunication.cs",
+              "RelativeToolTip": "SerialCommunication.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAuwE0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T13:32:59.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T13:32:59.741Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ControlClass.cs",
               "DocumentMoniker": "B:\\Google Drive\\Desktop\\CoffeeRoast\\iRoastControl Software\\ControlClass.cs",
               "RelativeDocumentMoniker": "ControlClass.cs",
@@ -146,8 +146,7 @@
               "RelativeToolTip": "ControlClass.cs",
               "ViewState": "AQIAANIAAAAAAAAAAAAYwPgAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T13:15:29.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T13:15:29.543Z"
             },
             {
               "$type": "Document",

@@ -41,7 +41,7 @@ namespace Artisan
 
         public static void prepareRoast()
         {
-           
+            ControlClass.elappsedSeconds.Reset();
             State = "pre-heating";
             setPoint = 0;
         }
@@ -172,7 +172,7 @@ namespace Artisan
             second = Math.Max(0, second);
             second = Math.Min(1200,second);
 
-            if (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt)) { second = roastingProfile.Count() - 1; abortRun(); }
+            if (State != "idle" && (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt))) { second = roastingProfile.Count() - 1; abortRun(); }
 
 
             if (State == "running")
