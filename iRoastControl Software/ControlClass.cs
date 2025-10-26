@@ -33,14 +33,20 @@ namespace Artisan
         {
             t.Stop();
 
+            t.Elapsed -= timer1_Tick;
             t.Elapsed += timer1_Tick;
-            t.Interval = deltaTime/1000;
+            t.Interval = deltaTime * 1000;
             t.Start();
 
         }
 
         public static void prepareRoast()
         {
+            if (ControlClass.elappsedSeconds == null)
+            {
+                ControlClass.elappsedSeconds = new Stopwatch();
+            }
+
             ControlClass.elappsedSeconds.Reset();
             State = "pre-heating";
             setPoint = 0;
@@ -254,15 +260,17 @@ namespace Artisan
             else { }
 
             double controlSignal;
-            if (pid == null || State != "running")
+            if (pid == null)
             {
-                //controlSignal= setPoint;
-                controlSignal = pid.Set(second, setPoint);
+                controlSignal = Math.Max(0, Math.Min(255, setPoint));
             }
-            else { 
-                controlSignal = pid.Update(second,measuredTemp);
-               // Console.WriteLine(controlSignal.ToString());
-
+            else if (State == "running")
+            {
+                controlSignal = pid.Update(second, measuredTemp);
+            }
+            else
+            {
+                controlSignal = pid.Set(second, setPoint);
             }
 
 

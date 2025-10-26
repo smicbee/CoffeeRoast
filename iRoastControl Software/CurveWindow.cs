@@ -28,9 +28,20 @@ namespace Artisan
         void loadRecipes()
         {
             comboBox2.Items.Clear();
+            if (!Directory.Exists("./Recipes/"))
+            {
+                return;
+            }
+
             var kproFiles = Directory.GetFiles("./Recipes/", "*.kpro").Select(o => Path.GetFileNameWithoutExtension(o.ToString())).ToArray();
+
+            if (kproFiles.Length == 0)
+            {
+                return;
+            }
+
             comboBox2.Items.AddRange(kproFiles.ToArray());
-            comboBox2.Text = (comboBox2.Items[0].ToString());
+            comboBox2.Text = comboBox2.Items[0].ToString();
 
         }
 
