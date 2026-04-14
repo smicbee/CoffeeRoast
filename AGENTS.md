@@ -14,3 +14,11 @@ CoffeeRoast helps home roasters and hardware tinkerers turn an inexpensive popco
 - Run tests if a test suite exists before submitting
 - Keep changes focused on the assigned ticket
 
+## Existing Tickets (do not duplicate)
+- 🔍 [BUG/high] Fix control loop timer interval scaling (proposed)
+- 🔍 [BUG/high] Make firmware failsafe fan behavior match the documented safety behavior (proposed)
+- 🔍 [BUG/high] Add bounds checks before writing PID history arrays (proposed)
+- 🔍 [BUG/medium] Clamp fan speed command output to firmware PWM range (proposed)
+- 🔍 [IMPROVEMENT/medium] Document how to build and run the Windows control application (proposed)
+- 🔍 [TASK/medium] Add first-run serial calibration and safety checklist to setup docs (proposed)
+
