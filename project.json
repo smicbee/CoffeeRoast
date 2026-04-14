@@ -1,0 +1,21 @@
+{
+  "id": "7ae06174-2103-45f0-ba52-3b54a558e76c",
+  "name": "CoffeeRoast",
+  "description": "CoffeeRoast is a DIY coffee roaster project that converts a popcorn machine into a temperature-controlled roaster using an ESP32, thermocouple, solid-state relay, fan control, and a Windows iRoastControl application. It includes firmware, hardware documentation, KiCAD resources, and roast recipe/profile files for reproducible roasting curves.",
+  "status": "active",
+  "repo_path": "/home/smicbee/repos/orchestrator/data/repos/7ae06174-2103-45f0-ba52-3b54a558e76c",
+  "codex_model": "gpt-5.4",
+  "codex_reasoning_effort": "medium",
+  "codex_auto_assign": 1,
+  "codex_scan_enabled": 0,
+  "codex_scan_cron": "*/30 * * * *",
+  "codex_scan_prompt": null,
+  "created_at": "2026-04-14 04:40:33",
+  "updated_at": "2026-04-14 04:47:00",
+  "github_repo_url": "https://github.com/smicbee/CoffeeRoast",
+  "import_status": "completed",
+  "import_phase": "done",
+  "import_error": "",
+  "import_started_at": "2026-04-14 04:40:33",
+  "import_completed_at": "2026-04-14 04:41:13"
+}
