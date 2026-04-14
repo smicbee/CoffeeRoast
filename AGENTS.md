@@ -15,17 +15,16 @@ CoffeeRoast helps home roasters and hardware tinkerers turn an inexpensive popco
 - Keep changes focused on the assigned ticket
 
 ## Existing Tickets (do not duplicate)
-- 📋 [BUG/high] Fix control loop timer interval scaling (open)
+- 🔄 [BUG/high] Fix control loop timer interval scaling (in_progress)
 - 🔍 [BUG/high] Make firmware failsafe fan behavior match the documented safety behavior (proposed)
 - 🔍 [BUG/high] Add bounds checks before writing PID history arrays (proposed)
 - 🔍 [BUG/medium] Clamp fan speed command output to firmware PWM range (proposed)
-- 🔄 [IMPROVEMENT/medium] Document how to build and run the Windows control application (in_progress)
 - 🔍 [TASK/medium] Add first-run serial calibration and safety checklist to setup docs (proposed)
 - 🔍 [TASK/low] No actionable suggestion found (proposed)
 
 ## Active Task
-**Document how to build and run the Windows control application** [improvement/medium]
+**Fix control loop timer interval scaling** [bug/high]
 
-The repository includes `iRoastControl Software/iRoastControl.sln` and `iRoastControl Software/iRoastControl.csproj`, but the README excerpt focuses on hardware setup and does not show the Windows app build/run workflow. Add a concise setup section covering required Visual Studio/.NET Framework version, NuGet package restore, solution path, serial connection expectations, and where roast recipes are loaded from.
+`iRoastControl Software/ControlClass.cs` defines `deltaTime` as seconds (`0.5`) but `initialize()` assigns `t.Interval = deltaTime/1000`. `System.Timers.Timer.Interval` is milliseconds, so the loop is configured around `0.0005 ms` instead of the intended `500 ms`. Change the conversion to milliseconds, then verify the roast control loop updates at the intended cadence.
 
-When finished, write your summary to `tickets/371854d3-76b9-40a4-a5ea-a08362c73e47/result.md`
+When finished, write your summary to `tickets/0b21f860-7d57-475a-a2b9-e5dd7d25c521/result.md`
