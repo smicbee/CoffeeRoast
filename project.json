@@ -7,7 +7,7 @@
   "codex_model": "gpt-5.4",
   "codex_reasoning_effort": "medium",
   "codex_auto_assign": 1,
-  "codex_scan_enabled": 0,
+  "codex_scan_enabled": 1,
   "codex_scan_cron": "*/30 * * * *",
   "codex_scan_prompt": null,
   "created_at": "2026-04-14 04:40:33",
