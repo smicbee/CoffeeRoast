@@ -18,10 +18,10 @@ CoffeeRoast helps home roasters and hardware tinkerers turn an inexpensive popco
 - 🔄 [BUG/high] Fix control loop timer interval scaling (in_progress)
 - 🔍 [BUG/high] Make firmware failsafe fan behavior match the documented safety behavior (proposed)
 - 🔍 [BUG/high] Add bounds checks before writing PID history arrays (proposed)
-- 🔍 [TASK/medium] Generating suggestion... (proposed)
 - 🔍 [BUG/medium] Clamp fan speed command output to firmware PWM range (proposed)
 - 📋 [IMPROVEMENT/medium] Document how to build and run the Windows control application (open)
 - 🔍 [TASK/medium] Add first-run serial calibration and safety checklist to setup docs (proposed)
+- 🔍 [TASK/low] No actionable suggestion found (proposed)
 
 ## Active Task
 **Fix control loop timer interval scaling** [bug/high]
