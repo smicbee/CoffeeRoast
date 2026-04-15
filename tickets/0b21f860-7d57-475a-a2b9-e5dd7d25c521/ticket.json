@@ -5,12 +5,12 @@
   "description": "`iRoastControl Software/ControlClass.cs` defines `deltaTime` as seconds (`0.5`) but `initialize()` assigns `t.Interval = deltaTime/1000`. `System.Timers.Timer.Interval` is milliseconds, so the loop is configured around `0.0005 ms` instead of the intended `500 ms`. Change the conversion to milliseconds, then verify the roast control loop updates at the intended cadence.",
   "type": "bug",
   "priority": "high",
-  "status": "open",
-  "assigned_to": null,
-  "result_text": null,
+  "status": "done",
+  "assigned_to": "codex",
+  "result_text": "Implemented the timer scaling fix in [ControlClass.cs](/home/smicbee/repos/orchestrator/data/repos/7ae06174-2103-45f0-ba52-3b54a558e76c/iRoastControl%20Software/ControlClass.cs):37. `deltaTime` remains defined in seconds, and `initialize()` now converts it to milliseconds with `deltaTime * 1000`, so the default `0.5` second loop interval becomes `500` ms.\n\nI also created the ticket summary at [result.md](/home/smicbee/repos/orchestrator/data/repos/7ae06174-2103-45f0-ba52-3b54a558e76c/tickets/0b21f860-7d57-475a-a2b9-e5dd7d25c521/result.md):1.\n\nVerification performed:\n- Built `iRoastControl Software/iRoastControl.sln` with `xbuild /p:Configuration=Debug /p:Platform=\"Any CPU\"` successfully. The build produced warnings only, no errors.\n- Ran a reflection check against the compiled assembly with `deltaTime = 0.5`; `ControlClass.initialize()` configured the timer interval as `500`.\n\nI could not create the required commit because `.git` is read-only in this environment. `git add` failed with: `fatal: Unable to create .../.git/index.lock: Read-only file system`. The build also updated tracked Debug executable artifacts during verification; unrelated existing dirty files were left untouched.",
   "open_question_text": null,
   "open_question_answer": null,
   "proposed_by": "codex",
   "created_at": "2026-04-14 04:41:13",
-  "updated_at": "2026-04-15 04:34:21"
+  "updated_at": "2026-04-15 04:37:54"
 }
