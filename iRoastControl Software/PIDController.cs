@@ -22,6 +22,22 @@ public class PIDController
 
     public double[] pidvalues = new double[1200];
 
+    private int ClampHistoryIndex(double currentTime)
+    {
+        int index = Convert.ToInt32(currentTime);
+        if (index < 0)
+        {
+            return 0;
+        }
+
+        if (index >= pidvalues.Length)
+        {
+            return pidvalues.Length - 1;
+        }
+
+        return index;
+    }
+
     public PIDController(double Kp = 3, double Ki = 0.02, double Kd = 0.2)
     {
         this.Kp = Kp;         // z. B. 5.0
@@ -63,7 +79,7 @@ public class PIDController
     public double Set(double currentTime, double currentSetpoint)
     {
         var output = Math.Max(0, Math.Min(255, currentSetpoint));
-        pidvalues[Convert.ToInt32(currentTime)] = output;
+        pidvalues[ClampHistoryIndex(currentTime)] = output;
         lastOutput = output;
         return output;
 
@@ -79,14 +95,14 @@ public class PIDController
 
         if (deltaTime < updateInterval && previousTime >= 0 && deltaTime > 0)
         {
-            pidvalues[Convert.ToInt32(currentTime)] = lastOutput;
+            pidvalues[ClampHistoryIndex(currentTime)] = lastOutput;
             return lastOutput;
         }
 
         if (currentTemp > 450 || currentTemp < -50)
         {
             //invalid reading
-            pidvalues[Convert.ToInt32(currentTime)] = lastOutput;
+            pidvalues[ClampHistoryIndex(currentTime)] = lastOutput;
             return lastOutput;
 
         }
@@ -125,7 +141,7 @@ public class PIDController
         }
 
         output = Math.Max(0, Math.Min(255, output));
-        pidvalues[Convert.ToInt32(currentTime)] = output;
+        pidvalues[ClampHistoryIndex(currentTime)] = output;
         lastOutput = output;
 
         return output;

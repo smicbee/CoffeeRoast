@@ -19,6 +19,7 @@ namespace Artisan
         static public double deltaTime { get; set; } = 0.5; // Time step in seconds
         static public double setPoint { get; set; } = 0; // Desired temperature
         static public double measuredTemp { get; set; } = 0;
+        static public double preheatTargetTemp { get; set; } = 180;
 
         static private double simulatedTemp { get; set; } = 0;
         static public bool simulation { get; set; } = false;
@@ -33,15 +34,24 @@ namespace Artisan
         {
             t.Stop();
 
+            t.Elapsed -= timer1_Tick;
             t.Elapsed += timer1_Tick;
-            t.Interval = deltaTime/1000;
+            t.Interval = deltaTime * 1000;
             t.Start();
 
         }
 
         public static void prepareRoast()
         {
-            ControlClass.elappsedSeconds.Reset();
+            if (ControlClass.elappsedSeconds == null)
+            {
+                ControlClass.elappsedSeconds = new Stopwatch();
+            }
+            else
+            {
+                ControlClass.elappsedSeconds.Reset();
+            }
+
             State = "pre-heating";
             setPoint = 0;
         }
@@ -163,16 +173,26 @@ namespace Artisan
         static private void timer1_Tick(object sender, EventArgs e)
         {
             t.Stop();
-            int second = 0;
-            if (elappsedSeconds != null)
+            if (roastingProfile == null)
             {
-             second =  Convert.ToInt32(elappsedSeconds.ElapsedMilliseconds * timeMultiplicator / 1000 + timeOffset );
+                generateDefaultCurve();
             }
 
-            second = Math.Max(0, second);
-            second = Math.Min(1200,second);
+            if (pid == null)
+            {
+                pid = new PIDController();
+            }
 
-            if (State != "idle" && (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt))) { second = roastingProfile.Count() - 1; abortRun(); }
+            int requestedSecond = 0;
+            if (elappsedSeconds != null)
+            {
+             requestedSecond =  Convert.ToInt32(elappsedSeconds.ElapsedMilliseconds * timeMultiplicator / 1000 + timeOffset );
+            }
+
+            int second = Math.Max(0, requestedSecond);
+            second = Math.Min(roastingProfile.Length - 1,second);
+
+            if (State != "idle" && (requestedSecond >= roastingProfile.Count() || (stopAt > -1 && requestedSecond >= stopAt))) { second = roastingProfile.Count() - 1; abortRun(); }
 
 
             if (State == "running")
@@ -186,9 +206,9 @@ namespace Artisan
             else if (State == "pre-heating")
             {
                 SerialCommunication.setFanSpeed(initFanSpeed / 100.0 * 255.0);
-                setPoint = 0;
+                setPoint = preheatTargetTemp;
        
-                if (measuredTemp > 0 )
+                if (measuredTemp >= preheatTargetTemp )
                 {
                     State = "ready";
                   
@@ -207,7 +227,7 @@ namespace Artisan
             }
             else if (State == "failsafe"){
                 setPoint = 0;
-                fanSpeed = 200;
+                fanSpeed = 255;
 
                 if (!simulation)
                 {

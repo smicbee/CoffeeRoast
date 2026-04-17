@@ -28,10 +28,39 @@ namespace Artisan
         void loadRecipes()
         {
             comboBox2.Items.Clear();
-            var kproFiles = Directory.GetFiles("./Recipes/", "*.kpro").Select(o => Path.GetFileNameWithoutExtension(o.ToString())).ToArray();
+            string recipeFolder = GetRecipeFolder();
+            if (!Directory.Exists(recipeFolder))
+            {
+                textBox1.Text = "No Recipes folder was found next to the application. Copy .kpro files into " + recipeFolder + " or run from a Visual Studio build output.";
+                return;
+            }
+
+            var kproFiles = Directory.GetFiles(recipeFolder, "*.kpro").Select(o => Path.GetFileNameWithoutExtension(o.ToString())).ToArray();
+            if (kproFiles.Length == 0)
+            {
+                textBox1.Text = "No .kpro roast recipes were found in " + recipeFolder + ". The built-in default curve is still available.";
+                return;
+            }
+
             comboBox2.Items.AddRange(kproFiles.ToArray());
             comboBox2.Text = (comboBox2.Items[0].ToString());
 
+        }
+
+        private string GetRecipeFolder()
+        {
+            string outputRecipeFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Recipes");
+            if (Directory.Exists(outputRecipeFolder))
+            {
+                return outputRecipeFolder;
+            }
+
+            return Path.Combine(Directory.GetCurrentDirectory(), "Recipes");
+        }
+
+        private string GetRecipePath(string recipeFile)
+        {
+            return Path.Combine(GetRecipeFolder(), recipeFile);
         }
 
 
@@ -80,7 +109,7 @@ namespace Artisan
                 RoastLevelValues = s.RoastLevels;
                 textBox2.Text = (s.defaultFanSpeed.ToString());
                 comboBox2.Text = Path.GetFileNameWithoutExtension(s.Recipe);
-                readFile("./Recipes/" + (s.Recipe));
+                readFile(GetRecipePath(s.Recipe));
                 zedGraphControl1.Refresh();
                 }
             }
@@ -344,7 +373,7 @@ namespace Artisan
                         {
                         case DialogResult.Yes:
                             comboBox2.Text = s.Recipe;
-                            readFile("./Recipes/" + s.Recipe);
+                            readFile(GetRecipePath(s.Recipe));
                             break;
                         case DialogResult.No:
                             break;
@@ -363,14 +392,25 @@ namespace Artisan
 
         void readFile(string filename)
         {
+            if (!File.Exists(filename))
+            {
+                textBox1.Text = "Recipe file not found: " + filename;
+                return;
+            }
 
             string[] lines = File.ReadAllLines(filename);
 
             Dictionary<string, string> datadict = new Dictionary<string, string>();
             foreach (string line in lines)
             {
-                var key = line.Split(':')[0];
-                var value = line.Split(':')[1];
+                int separator = line.IndexOf(':');
+                if (separator < 0)
+                {
+                    continue;
+                }
+
+                var key = line.Substring(0, separator);
+                var value = line.Substring(separator + 1);
 
                 datadict.Add(key, value);
             }
@@ -439,11 +479,60 @@ namespace Artisan
         }
 
         Dictionary<RoastLevelControl.RoastLevel, int> RoastLevelValues = new Dictionary<RoastLevelControl.RoastLevel, int>();
+        private bool _preflightAccepted = false;
+
+        private bool ConfirmPreflight()
+        {
+            if (ControlClass.simulation || _preflightAccepted)
+            {
+                return true;
+            }
+
+            string controllerStatus = SerialCommunication.GetControllerStatus();
+            if (string.IsNullOrWhiteSpace(controllerStatus))
+            {
+                MessageBox.Show(this,
+                    "No ESP32 roaster controller was found. Connect the controller over USB, close any serial monitor that is using the COM port, then try again.",
+                    "Controller not connected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (controllerStatus.ToLowerInvariant().Contains("failsafe"))
+            {
+                ControlClass.State = "failsafe";
+                MessageBox.Show(this,
+                    "The controller reports failsafe. Check the thermocouple, fan, and heater wiring before starting a roast.\r\n\r\n" + controllerStatus,
+                    "Failsafe active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return false;
+            }
+
+            string message = "Controller status:\r\n" + controllerStatus + "\r\n\r\n" +
+                "Before heating, confirm:\r\n" +
+                "- Thermocouple is insulated from the metal chamber.\r\n" +
+                "- Fan moves air freely and the chaff path is clear.\r\n" +
+                "- Heater SSR is wired through the controller.\r\n" +
+                "- Roaster is empty for first calibration heat-up.\r\n" +
+                "- Ventilation is on and manual power cut-off is reachable.\r\n\r\n" +
+                "Start pre-heating?";
+
+            DialogResult result = MessageBox.Show(this, message, "Roast preflight", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            _preflightAccepted = result == DialogResult.Yes;
+            return _preflightAccepted;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (ControlClass.State == "idle")
             {
+                if (!ConfirmPreflight())
+                {
+                    return;
+                }
+
                 ControlClass.prepareRoast();
                 button1.BackColor = Color.Red;
                 button1.Text = "pre-heating";
@@ -564,7 +653,8 @@ namespace Artisan
         {
             if (comboBox2.Text.Length != 0)
             {
-                readFile("./Recipes/" + comboBox2.Text + ".kpro");
+                string recipeFile = comboBox2.Text.EndsWith(".kpro") ? comboBox2.Text : comboBox2.Text + ".kpro";
+                readFile(GetRecipePath(recipeFile));
             }
         }
 

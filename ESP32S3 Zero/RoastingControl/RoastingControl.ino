@@ -20,6 +20,11 @@ float fanValue = 0;
 
 double fanMaxAcceleration = 2.0; //max acceleration per cycle
 
+const float PWM_MIN = 0.0f;
+const float PWM_MAX = 255.0f;
+const float MIN_SAFE_FAN = 50.0f;
+const float FAILSAFE_FAN = PWM_MAX;
+
 int errorReadings = 0;
 int delayValue = 50;
 
@@ -33,6 +38,34 @@ bool disableFailsafe = false;
 uint16_t readTemperature() {
     return (uint16_t)thermocouple.readCelsius();
 }
+
+float clampPwm(float value) {
+  if (value < PWM_MIN) {
+    return PWM_MIN;
+  }
+
+  if (value > PWM_MAX) {
+    return PWM_MAX;
+  }
+
+  return value;
+}
+
+void printStatus() {
+  Serial.print("state=");
+  Serial.print(abortSignal ? "failsafe" : "ok");
+  Serial.print(",temp=");
+  Serial.print(temp);
+  Serial.print(",heater=");
+  Serial.print(relayValue);
+  Serial.print(",fan=");
+  Serial.print(fanValue);
+  Serial.print(",fanTarget=");
+  Serial.print(fanTargetValue);
+  Serial.print(",errors=");
+  Serial.println(errorReadings);
+}
+
 // FreeRTOS Task: Reads temperature every 500ms
 void TemperatureTask(void *parameter) { 
     uint16_t tempTemp = 1;
@@ -106,7 +139,7 @@ void loop() {
   } 
   else if (command.startsWith("set setpoint ")) {
     String valueStr = command.substring(12);  // Extract number
-    relayValue = valueStr.toFloat();  // Convert to float
+    relayValue = clampPwm(valueStr.toFloat());  // Convert to float
     
   }
   else if (command.startsWith("get setpoint")) {
@@ -114,7 +147,7 @@ void loop() {
   }
   else if (command.startsWith("set fan ")){
     String valueStr = command.substring(7);  // Extract number
-    fanTargetValue = valueStr.toFloat();  // Convert to float
+    fanTargetValue = clampPwm(valueStr.toFloat());  // Convert to float
 
   }else if (command == "get fan"){
     Serial.println(fanValue); // Send temp value back
@@ -122,6 +155,9 @@ void loop() {
   }
   else if (command == "hello"){
     Serial.println("popcorn roaster");
+  }
+  else if (command == "get status"){
+    printStatus();
   }
   else if (command == "disable failsafe"){
     disableFailsafe = true;
@@ -133,14 +169,23 @@ void loop() {
 
   //Keep fan running until temperature is below 60°C
   if (temp > 60){
-    fanTargetValue = max(fanTargetValue, 50.0f); //if warmer than 80°C min fanspeed of 20% = 50
+    fanTargetValue = max(fanTargetValue, MIN_SAFE_FAN); //if warmer than 60°C min fanspeed of about 20% = 50
   }
 
   //while heating minium fan speed is 50/255
   if (relayValue > 0) {
-    fanTargetValue = max(fanTargetValue, 50.0f); //if relay is on fan atleast at 50
+    fanTargetValue = max(fanTargetValue, MIN_SAFE_FAN); //if relay is on fan atleast at 50
   } 
 
+  relayValue = clampPwm(relayValue);
+  fanTargetValue = clampPwm(fanTargetValue);
+
+  //This is the failsafe abort signal handling. Do not add fan code code after this
+  if (abortSignal == true){
+    relayValue = PWM_MIN;
+    fanTargetValue = FAILSAFE_FAN;
+    fanValue = FAILSAFE_FAN;
+  }
 
   //Limit Acceleration and Deceleration of Fan to prevent self-destruction
   //Do not place any non-critical fan control code after this
@@ -152,12 +197,6 @@ void loop() {
     fanValue = fanValue + fanMaxAcceleration;
   }else if (fanValue > fanTargetValue){
     fanValue = fanValue - fanMaxAcceleration;
-  }
-
-  //This is the failsafe abort signal handling. Do not add fan code code after this
-  if (abortSignal == true){
-    relayValue = 0;
-    fanTargetValue = 128;
   }
 
   analogWrite(relayPin, relayValue);

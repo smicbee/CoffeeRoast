@@ -47,12 +47,12 @@ public static class SerialCommunication
                     break;
                 }
 
-                COMPort.Write("hello");
-                System.Threading.Thread.Sleep(20);
+                COMPort.WriteLine("hello");
+                System.Threading.Thread.Sleep(100);
                
                 string response = COMPort.ReadLine();
 
-                if (response == "popcorn roaster\r")
+                if (response.Trim() == "popcorn roaster")
                 {
                     Console.WriteLine("Found popcorn roaster on " + port);
                     return COMPort;
@@ -113,7 +113,7 @@ public static class SerialCommunication
         System.Threading.Thread.Sleep(20);
         response= serialPort.ReadLine();
 
-        if (response.ToLower().Contains("failsafe"))
+        if (response.ToLowerInvariant().Contains("failsafe"))
             {
                 ControlClass.State = "failsafe";
             }
@@ -131,7 +131,7 @@ public static class SerialCommunication
 
         if (COMLog.Length >= 1000)
         {
-            COMLog.Substring(0, 1000);
+            COMLog = COMLog.Substring(0, 1000);
         }
 
         return response;
@@ -166,8 +166,14 @@ public static class SerialCommunication
             setPoint = 0;
         }
 
-        COMRequest("set fan " + setPoint.ToString(), false);
+        COMRequest("set fan " + setPoint.ToString(CultureInfo.InvariantCulture), false);
 
+    }
+
+    public static string GetControllerStatus()
+    {
+        string response = COMRequest("get status");
+        return response == null ? "" : response.Trim();
     }
 
     private static int errorReadingCounter = 0;
@@ -214,7 +220,7 @@ public static class SerialCommunication
 
         string response = COMRequest("get temp");
 
-        Double.TryParse(response, out double temperature);          
+        Double.TryParse(response, NumberStyles.Float, CultureInfo.InvariantCulture, out double temperature);
 
         newReading(temperature);
         return temperature * 1.1;
@@ -250,7 +256,7 @@ public static class SerialCommunication
 
             string response = COMRequest("get fan");
 
-            var fanSpeed = Double.Parse(response,CultureInfo.InvariantCulture);
+            var fanSpeed = Double.Parse(response.Trim(),CultureInfo.InvariantCulture);
             ControlClass.fanSpeed = fanSpeed;
             return fanSpeed;
 
@@ -291,7 +297,7 @@ public static class SerialCommunication
         }
 
 
-        COMRequest("set setpoint " + setpoint.ToString(), false);
+        COMRequest("set setpoint " + setpoint.ToString(CultureInfo.InvariantCulture), false);
 
     }
 

@@ -70,6 +70,7 @@ And that's it!
 Initially, we wanted to use the ESP32 with Artisan (the software used for commercial products, e.g., Coffeelogic Nano), but we had no luck getting it to work with a PID. So, we decided to write our own software using C#. Communication is done via simple serial commands.  
 You can send "get temp" via serial to the ESP32, and it will respond with the current temperature from the thermocouple.  
 You can also send "set setpoint 255", which the ESP32 interprets to set the PWM duty cycle to 100% (255 = 100%, 128 = 50%, 0 = 0%).  
+The firmware clamps `set setpoint` and `set fan` commands to the 0-255 PWM range and supports `get status` for a compact controller health line with state, temperature, heater, fan, fan target, and thermocouple error count.
 The C# application can be found in the iRoastControl folder.
 
 # Example Usage
@@ -89,7 +90,26 @@ iRoastControl is the control software. It comes with predefined roast curves you
 
 ![iRoastControl software roasting curve view](docu/assets/img/rel/roasting.webp)
 
-Each roasting curve has three phases: pre-heating, running, and cool-down. When you click "Run" the first time, the application will pre-heat the popcorn machine until it reaches 180°C. This is when you add your coffee beans. After that, press "Run" again and the button will turn yellow. This is where the roasting curve starts. You can follow your roasting temperatures by watching the red graph. Pressing the "Run" button again will abort and start the cool-down phase, where the heating element turns off and only the fan runs. When the temperature drops to room temperature, you are done.
+## Build and Run on Windows
+
+iRoastControl is a Windows Forms application for .NET Framework 4.7.2. Build it with Visual Studio 2022 and the ".NET desktop development" workload installed, including the .NET Framework 4.7.2 targeting pack or developer pack.
+
+1. Connect the ESP32 roaster controller to the Windows PC over USB and confirm it appears as a COM port.
+2. Open `iRoastControl Software/iRoastControl.sln` in Visual Studio.
+3. Restore NuGet packages when Visual Studio prompts you, or use **Build > Restore NuGet Packages** before the first build. The project uses `packages.config`, so packages are restored into a repository-level `packages` folder.
+4. Build the `Debug|Any CPU` or `Release|Any CPU` configuration, then press **Start** in Visual Studio or run the generated `iRoastControl.exe` from `iRoastControl Software/bin/Debug/` or `iRoastControl Software/bin/Release/`.
+
+On startup the application scans available COM ports at `115200` baud, 8 data bits, no parity, one stop bit, and no handshake. It sends `hello` and expects the ESP32 firmware to answer `popcorn roaster`; after that it sends commands such as `get temp`, `set setpoint <0-255>`, and `set fan <0-255>`. If the app does not connect, check that the ESP32 firmware is running, no serial monitor has the port open, and the USB driver exposes the board as a COM port.
+
+Roast recipes are loaded from the `Recipes` folder next to the running application. The source recipes live in `iRoastControl Software/Recipes/*.kpro` and are copied to the build output during the Visual Studio build. Add custom `.kpro` files to that folder before building, or copy them into `bin/Debug/Recipes/` or `bin/Release/Recipes/` beside the executable.
+
+## First-Run Calibration and Safety Check
+
+Before the first heated run, flash the ESP32 firmware, start iRoastControl, and leave the chamber empty. When you press "Run" from idle, the application requests `get status` from the controller and shows a preflight checklist. Confirm only after the thermocouple is insulated from the metal chamber, the fan moves air freely, the SSR is wired through the controller, ventilation is running, and the manual power cut-off is reachable.
+
+Each roasting curve has three phases: pre-heating, running, and cool-down. When you click "Run" the first time, the application pre-heats the empty popcorn machine until the thermocouple reaches 180°C. This is when you add your coffee beans. After that, press "Run" again and the button will turn yellow. This is where the roasting curve starts. You can follow your roasting temperatures by watching the red graph. Pressing the "Run" button again will abort and start the cool-down phase, where the heating element turns off and only the fan runs. When the temperature drops below 60°C, the app returns to idle.
+
+If the thermocouple returns repeated impossible readings, the firmware enters failsafe, turns the heater off, and drives the fan to 255/255. The app also treats a controller status containing `failsafe` as a blocked start until the wiring or sensor issue is fixed.
 
 ## UI
 
