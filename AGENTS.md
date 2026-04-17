@@ -15,9 +15,13 @@ CoffeeRoast helps home roasters and hardware tinkerers turn an inexpensive popco
 - Keep changes focused on the assigned ticket
 
 ## Existing Tickets (do not duplicate)
-- 🔍 [BUG/high] Make firmware failsafe fan behavior match the documented safety behavior (proposed)
-- 🔍 [BUG/high] Add bounds checks before writing PID history arrays (proposed)
-- 🔍 [BUG/medium] Clamp fan speed command output to firmware PWM range (proposed)
-- 🔍 [TASK/medium] Add first-run serial calibration and safety checklist to setup docs (proposed)
-- 🔍 [TASK/low] No actionable suggestion found (proposed)
+- 📋 [IMPROVEMENT/high] Rework UI (open)
+- 🔄 [BUG/high] Add bounds checks before writing PID history arrays (in_progress)
+- 📋 [BUG/medium] Clamp fan speed command output to firmware PWM range (open)
 
+## Active Task
+**Add bounds checks before writing PID history arrays** [bug/high]
+
+`iRoastControl Software/PIDController.cs` writes `pidvalues[Convert.ToInt32(currentTime)]` in `Set()` and `Update()` without checking whether `currentTime` is within the 1200-sample array. Long roasts or unexpected timestamps can throw `IndexOutOfRangeException` and stop control updates mid-roast. Clamp or guard the index and define what should happen after the recorded profile length is exceeded.
+
+When finished, write your summary to `tickets/36701760-8fb3-49de-bbbe-963350389d5f/result.md`
