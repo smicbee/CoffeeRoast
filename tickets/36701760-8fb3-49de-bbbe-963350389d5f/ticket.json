@@ -1,0 +1,16 @@
+{
+  "id": "36701760-8fb3-49de-bbbe-963350389d5f",
+  "project_id": "7ae06174-2103-45f0-ba52-3b54a558e76c",
+  "title": "Add bounds checks before writing PID history arrays",
+  "description": "`iRoastControl Software/PIDController.cs` writes `pidvalues[Convert.ToInt32(currentTime)]` in `Set()` and `Update()` without checking whether `currentTime` is within the 1200-sample array. Long roasts or unexpected timestamps can throw `IndexOutOfRangeException` and stop control updates mid-roast. Clamp or guard the index and define what should happen after the recorded profile length is exceeded.",
+  "type": "bug",
+  "priority": "high",
+  "status": "done",
+  "assigned_to": "codex",
+  "result_text": "Implemented the PID history guard in [PIDController.cs](/home/smicbee/repos/orchestrator/data/repos/7ae06174-2103-45f0-ba52-3b54a558e76c/iRoastControl%20Software/PIDController.cs):25. `Set()` and `Update()` now write through `RecordPidValue()`, which rejects negative, NaN, infinite, and beyond-1200-sample timestamps before indexing `pidvalues`. After the recorded profile length is exceeded, PID output calculation continues and the history array is simply not updated.\n\nCreated the ticket summary at [result.md](/home/smicbee/repos/orchestrator/data/repos/7ae06174-2103-45f0-ba52-3b54a558e76c/tickets/36701760-8fb3-49de-bbbe-963350389d5f/result.md):1.\n\nVerification: `xbuild 'iRoastControl Software/iRoastControl.sln' /p:Configuration=Debug /p:Platform=\"Any CPU\"` succeeded. It produced existing project warnings only.\n\nI attempted to commit with `Guard PID history recording bounds`, but the sandbox blocked writing `.git/index.lock` with `Read-only file system`, so the changes are not committed. The build also updated the tracked Debug executables under `iRoastControl Software/bin/Debug/` and `iRoastControl Software/obj/Debug/`.",
+  "open_question_text": null,
+  "open_question_answer": null,
+  "proposed_by": "codex",
+  "created_at": "2026-04-14 04:41:13",
+  "updated_at": "2026-04-18 05:43:55"
+}
