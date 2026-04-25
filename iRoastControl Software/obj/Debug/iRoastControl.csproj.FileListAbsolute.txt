@@ -472,14 +472,9 @@ B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\Recipes\WBR
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\iRoastControl.exe.config
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\iRoastControl.exe
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\iRoastControl.pdb
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Buffers.dll
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Memory.dll
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Numerics.Vectors.dll
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.ValueTuple.dll
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.csproj.AssemblyReference.cache
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\Artisan.CurveWindow.resources
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.Properties.Resources.resources
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.RoastLevelControl.resources
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.SettingsWindow.resources
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.csproj.GenerateResource.cache
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.csproj.CoreCompileInputs.cache
@@ -487,3 +482,7 @@ B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastCo.F8
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.exe
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.pdb
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.DebugWindow.resources
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Buffers.xml
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Memory.xml
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Numerics.Vectors.xml
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.ValueTuple.xml

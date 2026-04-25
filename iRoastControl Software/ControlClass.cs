@@ -1,4 +1,4 @@
-﻿using iRoastControl;
+using iRoastControl;
 using MathNet.Numerics;
 using System;
 using System.Collections.Generic;
@@ -26,6 +26,8 @@ namespace Artisan
         static public double fanSpeed { get; set; } = 0.0;
         static public double initFanSpeed { get; set; } = 100.0;
         static public string State { get; set; } = "idle";
+        static public double expectedFirstCrack { get; set; } = 208.0;
+        static public int firstCrackSecond { get; set; } = -1;
 
         static Timer t = new Timer();
 
@@ -57,12 +59,20 @@ namespace Artisan
 
             SerialCommunication.setFanSpeed(initFanSpeed / 100.0 * 255.0);
             pid = new PIDController();
+            stopAt = -1;
+            firstCrackSecond = -1;
+
+            if (simulation)
+            {
+                Simulation.Reset();
+            }
 
             for (int i = 0; i < realCurve.Length; i++)
             {
                 realCurve[i] = double.NaN;
                 pid.pidvalues[i] = double.NaN;
                 fanSpeedCurve[i] = double.NaN;
+                rateOfRise[i] = double.NaN;
             }
 
             elappsedSeconds = new Stopwatch();
@@ -154,13 +164,17 @@ namespace Artisan
         static public double[] roastingProfile;
         static public double[] realCurve = new double[1200];
         static public double[] fanSpeedCurve = new double[1200];
+        static public double[] rateOfRise = new double[1200];
         static public double timeOffset = 0;
-        static public Stopwatch elappsedSeconds;
+        static public Stopwatch elappsedSeconds = new Stopwatch();
         static public double timeMultiplicator = 1;
 
         public static void abortRun()
         {
             setPoint = 0;
+            AlertSystem.PlayAlert(AlertSystem.AlertType.RoastLevelReached);
+            RoastLogger.SaveRoastLog(realCurve, roastingProfile, fanSpeedCurve, rateOfRise, pid != null ? pid.pidvalues : null, elappsedSeconds);
+            stopAt = -1;
             State = "cooling";
         }
 
@@ -176,7 +190,7 @@ namespace Artisan
             }
 
             second = Math.Max(0, second);
-            second = Math.Min(1200,second);
+            second = Math.Min(1199,second);
 
             if (State != "idle" && (second >= roastingProfile.Count() || (stopAt > -1 && second >= stopAt))) { second = roastingProfile.Count() - 1; abortRun(); }
 
@@ -245,6 +259,7 @@ namespace Artisan
                     }
 
                     State = "idle";
+                    AlertSystem.PlayAlert(AlertSystem.AlertType.CoolingComplete);
                 }
                 else
                 {
@@ -257,7 +272,25 @@ namespace Artisan
                 }
 
             }
-            else { }
+            else if (State == "calibration")
+            {
+                if (autoTuner != null)
+                {
+                    var tuneResult = autoTuner.Update(measuredTemp);
+                    setPoint = tuneResult.HeaterPWM;
+                    fanSpeed = tuneResult.FanPWM;
+                    
+                    if (!simulation)
+                    {
+                        SerialCommunication.setFanSpeed(fanSpeed);
+                    }
+
+                    if (autoTuner.State == PIDAutoTuner.TuningState.Finished || autoTuner.State == PIDAutoTuner.TuningState.Aborted)
+                    {
+                        State = "cooling";
+                    }
+                }
+            }
 
             double controlSignal;
             if (pid == null)
@@ -303,6 +336,20 @@ namespace Artisan
             if (State != "idle")
             {
                 realCurve[second] = measuredTemp;
+
+                // Rate of Rise berechnen (°C/min, 30s rolling window)
+                int rorWindow = 30;
+                if (second >= rorWindow && !double.IsNaN(realCurve[second]) && !double.IsNaN(realCurve[second - rorWindow]))
+                {
+                    rateOfRise[second] = (realCurve[second] - realCurve[second - rorWindow]) / (rorWindow / 60.0);
+                }
+
+                // First Crack Erkennung
+                if (firstCrackSecond == -1 && measuredTemp >= expectedFirstCrack && State == "running")
+                {
+                    firstCrackSecond = second;
+                    AlertSystem.PlayAlert(AlertSystem.AlertType.FirstCrackExpected);
+                }
             }
             t.Start();
         }
@@ -310,6 +357,7 @@ namespace Artisan
 
         static private double[] variables = new double[10];
         static public  PIDController pid;
+        static public PIDAutoTuner autoTuner;
 
     }
 

@@ -1,4 +1,4 @@
-﻿namespace Artisan
+namespace Artisan
 {
     partial class CurveWindow
     {
@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.btnBestPractices = new System.Windows.Forms.Button();
+            this.btnShowReport = new System.Windows.Forms.Button();
+            this.chkAutoDrop = new System.Windows.Forms.CheckBox();
+            this.cmbDropMode = new System.Windows.Forms.ComboBox();
+            this.txtDropTarget = new System.Windows.Forms.TextBox();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -41,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -50,7 +54,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.roastLevelControl1 = new iRoastControl.RoastLevelControl();
             this.SuspendLayout();
             // 
             // zedGraphControl1
@@ -154,6 +157,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnBestPractices
+            // 
+            this.btnBestPractices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBestPractices.Location = new System.Drawing.Point(549, 7);
+            this.btnBestPractices.Name = "btnBestPractices";
+            this.btnBestPractices.Size = new System.Drawing.Size(156, 30);
+            this.btnBestPractices.TabIndex = 26;
+            this.btnBestPractices.Text = "☕ Best Practices";
+            this.btnBestPractices.UseVisualStyleBackColor = true;
+            this.btnBestPractices.Click += new System.EventHandler(this.btnBestPractices_Click);
+            // 
+            // btnShowReport
+            // 
+            this.btnShowReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowReport.Location = new System.Drawing.Point(549, 43);
+            this.btnShowReport.Name = "btnShowReport";
+            this.btnShowReport.Size = new System.Drawing.Size(156, 30);
+            this.btnShowReport.TabIndex = 27;
+            this.btnShowReport.Text = "📋 Roast Report";
+            this.btnShowReport.UseVisualStyleBackColor = true;
+            this.btnShowReport.Click += new System.EventHandler(this.btnShowReport_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -200,16 +225,41 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Recipe:";
             // 
-            // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(223, 339);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 28);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Set Roast Level";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // chkAutoDrop
+            // 
+            this.chkAutoDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAutoDrop.AutoSize = true;
+            this.chkAutoDrop.Location = new System.Drawing.Point(10, 345);
+            this.chkAutoDrop.Name = "chkAutoDrop";
+            this.chkAutoDrop.Size = new System.Drawing.Size(74, 17);
+            this.chkAutoDrop.TabIndex = 28;
+            this.chkAutoDrop.Text = "Auto-Drop";
+            this.chkAutoDrop.UseVisualStyleBackColor = true;
+            this.chkAutoDrop.CheckedChanged += new System.EventHandler(this.chkAutoDrop_CheckedChanged);
+            // 
+            // cmbDropMode
+            // 
+            this.cmbDropMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbDropMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDropMode.FormattingEnabled = true;
+            this.cmbDropMode.Items.AddRange(new object[] {
+            "Time (s)",
+            "Temp (°C)"});
+            this.cmbDropMode.Location = new System.Drawing.Point(85, 343);
+            this.cmbDropMode.Name = "cmbDropMode";
+            this.cmbDropMode.Size = new System.Drawing.Size(65, 21);
+            this.cmbDropMode.TabIndex = 29;
+            this.cmbDropMode.SelectedIndexChanged += new System.EventHandler(this.cmbDropMode_SelectedIndexChanged);
+            // 
+            // txtDropTarget
+            // 
+            this.txtDropTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtDropTarget.Location = new System.Drawing.Point(155, 344);
+            this.txtDropTarget.Name = "txtDropTarget";
+            this.txtDropTarget.Size = new System.Drawing.Size(45, 20);
+            this.txtDropTarget.TabIndex = 30;
+            this.txtDropTarget.TextChanged += new System.EventHandler(this.txtDropTarget_TextChanged);
             // 
             // button4
             // 
@@ -301,18 +351,7 @@
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 24;
             this.label7.Text = "Fan: 70 %";
-            // 
-            // roastLevelControl1
-            // 
-            this.roastLevelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.roastLevelControl1.AutoSize = true;
-            this.roastLevelControl1.BackColor = System.Drawing.Color.White;
-            this.roastLevelControl1.Location = new System.Drawing.Point(4, 324);
-            this.roastLevelControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.roastLevelControl1.Name = "roastLevelControl1";
-            this.roastLevelControl1.RoastLevelIntensity = iRoastControl.RoastLevelControl.RoastLevel.None;
-            this.roastLevelControl1.Size = new System.Drawing.Size(210, 55);
-            this.roastLevelControl1.TabIndex = 25;
+
             // 
             // CurveWindow
             // 
@@ -320,7 +359,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(878, 381);
-            this.Controls.Add(this.roastLevelControl1);
+            this.Controls.Add(this.chkAutoDrop);
+            this.Controls.Add(this.cmbDropMode);
+            this.Controls.Add(this.txtDropTarget);
+            this.Controls.Add(this.btnBestPractices);
+            this.Controls.Add(this.btnShowReport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -329,7 +372,6 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label4);
@@ -373,6 +415,10 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label7;
-        private iRoastControl.RoastLevelControl roastLevelControl1;
+        private System.Windows.Forms.Button btnBestPractices;
+        private System.Windows.Forms.Button btnShowReport;
+        private System.Windows.Forms.CheckBox chkAutoDrop;
+        private System.Windows.Forms.ComboBox cmbDropMode;
+        private System.Windows.Forms.TextBox txtDropTarget;
     }
 }

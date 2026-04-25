@@ -1,4 +1,4 @@
-﻿using Artisan;
+using Artisan;
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
@@ -131,7 +131,7 @@ public static class SerialCommunication
 
         if (COMLog.Length >= 1000)
         {
-            COMLog.Substring(0, 1000);
+            COMLog = COMLog.Substring(0, 1000);
         }
 
         return response;

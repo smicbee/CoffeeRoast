@@ -1,4 +1,4 @@
-﻿using Artisan;
+using Artisan;
 using System;
 
 public class PIDController
@@ -113,7 +113,7 @@ public class PIDController
         }
 
 
-        double output = dynamicKp * error + Ki * integral + Kd * derivative;
+        double output = dynamicKp * error + dynamicKi * integral + dynamicKd * derivative;
 
         previousError = error;
         previousTime = currentTime;

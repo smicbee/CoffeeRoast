@@ -1,4 +1,4 @@
-﻿using Artisan;
+using Artisan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +20,22 @@ namespace iRoastControl
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
+            chkDarkMode.Checked = ThemeManager.IsDarkMode;
+            ThemeManager.ApplyTheme(this);
+            
             updateValues();
             timer1.Interval = 1000;
             timer1.Tick += TimerTick;
             timer1.Start();
+        }
+
+        private void chkDarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            ThemeManager.IsDarkMode = chkDarkMode.Checked;
+            foreach (Form frm in Application.OpenForms)
+            {
+                ThemeManager.ApplyTheme(frm);
+            }
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -42,6 +54,9 @@ namespace iRoastControl
             double d;
             double.TryParse((string)tb_Kd.Text, out d);
 
+            ControlClass.pid.Kp = p;
+            ControlClass.pid.Ki = i;
+            ControlClass.pid.Kd = d;
 
             Console.WriteLine("PID set to: " + p.ToString() + " " + i.ToString() + " " + d.ToString());   
         }
@@ -143,9 +158,20 @@ namespace iRoastControl
             {
                 textBox2.BackColor = Color.Red;
             }
+        }
 
-
-
+        private void btnAutoTune_Click(object sender, EventArgs e)
+        {
+            var calWindow = new CalibrationWindow();
+            calWindow.ShowDialog();
+            
+            // Update TextBoxes immediately after closing if applied
+            if (ControlClass.pid != null)
+            {
+                tb_Kp.Text = ControlClass.pid.Kp.ToString();
+                tb_Ki.Text = ControlClass.pid.Ki.ToString();
+                tb_Kd.Text = ControlClass.pid.Kd.ToString();
+            }
         }
     }
 }
