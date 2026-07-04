@@ -1,0 +1,17 @@
+(kicad_sch
+  (version 20231120)
+  (generator "hermes_pcb_generator")
+  (uuid "cb0b0373-b292-4a35-91dd-e9616d5295c8")
+  (paper "A4")
+  (title_block
+    (title "CoffeeRoast Control RevA")
+    (date "2026-07-04")
+    (rev "A-draft")
+    (company "CoffeeRoast")
+    (comment 1 "Low-voltage controller PCB: 24V/3A input, 5V buck, 3V3 ESP32-S3-WROOM-1, MAX6675, fan MOSFET, SSR driver")
+    (comment 2 "230V stays off this PCB: use certified internal 230VAC->24VDC PSU and external SSR module/heatsink")
+  )
+  (text "See docs/netlist.csv and CoffeeRoast-Control-RevA.kicad_pcb for the generated RevA placement/net draft." (at 20 30 0) (effects (font (size 2 2))))
+  (text "Critical nets: GPIO1=HEATER_PWM, GPIO2=FAN_PWM, GPIO11/12/13=MAX6675 DO/CS/SCK, 24V input fixed at 3A PSU." (at 20 45 0) (effects (font (size 1.5 1.5))))
+  (sheet_instances (path "/" (page "1")))
+)

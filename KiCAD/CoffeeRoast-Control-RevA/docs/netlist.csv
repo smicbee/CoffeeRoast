@@ -1,0 +1,14 @@
+Net,Purpose,Connected refs/pins
++24V_RAW,Input before fuse,J1.1 -> F1.1
++24V_FUSED,Fused 24V fan/buck rail,"F1.2, J2.1, U4.VIN+, D1.K"
+GND,Low-voltage return,"J1.2, U4 VIN-/VOUT-, U1 GND, Q1 source, Q2 source, USB GND"
+FAN_NEG,Switched fan negative,"J2.2, Q1 drain, D1 anode"
++5V,Buck output / SSR input rail,"U4.VOUT+, U3.VIN, J3.1"
++3V3,ESP/MAX rail,"U3.VOUT, U1.3V3, U2.VCC"
+FAN_PWM,Firmware GPIO2,U1 pin38 -> R1 -> Q1 gate
+HEATER_PWM,Firmware GPIO1,U1 pin39 -> R3 -> Q2 gate
+MAX_DO,Firmware GPIO11,U2 SO -> U1 pin19
+MAX_CS,Firmware GPIO12,U2 CS -> U1 pin20
+MAX_SCK,Firmware GPIO13,U2 SCK -> U1 pin21
+USB_DN/USB_DP,Native USB serial/flash,J5 through 27R to U1 pins 13/14
+EN/BOOT,Reset/flash control,Pullups + tactile switches

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "filename": "CoffeeRoast-Control-RevA.kicad_pro",
+    "version": 1
+  },
+  "board": {
+    "design_settings": {
+      "defaults": {
+        "track_width": 0.25
+      }
+    },
+    "layer_presets": [],
+    "viewports": []
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "track_width": 0.25,
+        "clearance": 0.2,
+        "via_diameter": 0.8,
+        "via_drill": 0.4
+      },
+      {
+        "name": "FAN_3A",
+        "track_width": 1.5,
+        "clearance": 0.4,
+        "via_diameter": 1.2,
+        "via_drill": 0.6
+      }
+    ],
+    "meta": {
+      "version": 3
+    }
+  },
+  "schematic": {
+    "meta": {
+      "version": 1
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  }
+}
