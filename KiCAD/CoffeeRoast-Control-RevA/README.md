@@ -12,7 +12,7 @@ This is the generated RevA hardware draft for moving the CoffeeRoast electronics
 
 ## Files
 
-- `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with on-board USB-C placeholder and autorouted tracks.
+- `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with real on-board USB-C footprint and autorouted/manual-cleanup tracks.
 - `CoffeeRoast-Control-RevA.kicad_sch` — notes-only schematic placeholder; detailed netlist is in `docs/netlist.csv`.
 - `docs/bom.csv` — draft bill of materials.
 - `docs/netlist.csv` — intended electrical connectivity.
@@ -51,14 +51,14 @@ This is the generated RevA hardware draft for moving the CoffeeRoast electronics
 
 ## Important limitations before fabrication
 
-This was generated in the Hermes environment where KiCad is **not installed**, so ERC/DRC and Gerber export could not be run here. Before ordering boards:
+This board now loads in KiCad 9 and has been routed/checked headlessly. KiCad error-level DRC is clean, but before ordering boards:
 
 1. Open the project in KiCad.
-2. Replace any placeholder footprints with your exact sourced parts.
-3. Run ERC/DRC.
+2. Replace remaining generic placeholders with exact sourced parts: terminal blocks, fuse holder, buck module, MOSFET/regulator variants.
+3. Re-run ERC/DRC after any mechanical/footprint changes.
 4. Confirm ESP32-S3-WROOM-1 antenna keepout has no copper and is at board edge.
 5. Confirm the fan path and screw terminals are rated for the real 24V/2.5A fan current.
-6. Replace the routed draft USB-C placeholder with the exact sourced USB-C connector footprint and enclosure cutout.
+6. Confirm J5 enclosure cutout/edge placement for the exact USB-C part.
 7. Review USB CC pulldowns: R10/R11 = 5.1k to GND, VBUS is sense-only.
 8. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
 

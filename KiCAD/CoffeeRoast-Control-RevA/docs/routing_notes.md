@@ -1,15 +1,21 @@
 # CoffeeRoast-Control RevA routing notes
 
-## Status after automated routing
+## Status after exact USB-C routing
 
-Routing was performed with KiCad 9 + Freerouting from a Specctra DSN export.
+Routing was performed with KiCad 9 + Freerouting from a Specctra DSN export, then the dense USB-C D+/D- fanout was manually cleaned with `pcbnew` tracks/vias.
+
+Selected J5 footprint:
+
+```text
+Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11
+```
 
 Generated artifacts:
 
-- `render/coffeeroast_reva2.dsn` — DSN exported from KiCad.
-- `render/coffeeroast_reva2.ses` — Freerouting session result.
+- `render/coffeeroast_exact_usb.dsn` — DSN exported from KiCad after placing the real USB-C footprint.
+- `render/coffeeroast_exact_usb.ses` — Freerouting session result.
 - `render/drc_report_errors_only.txt` — KiCad DRC, errors only.
-- `render/drc_report_autorouted4.txt` — full DRC including warnings.
+- `render/drc_report_full.txt` — full DRC including silkscreen warnings.
 - `render/kicad_top.png` / `render/kicad_bottom.png` — KiCad-rendered board views.
 
 DRC summary:
@@ -23,6 +29,7 @@ Full DRC still has silkscreen warnings only.
 
 ## Important caveats
 
-- The current USB-C footprint on the routed board is a **routable draft 6-pin USB-C placeholder** representing GND, VBUS, D-, D+, CC1, and CC2. Before ordering PCBs, replace it with the exact USB-C connector footprint you will buy and rerun routing/DRC.
-- Default low-voltage netclass clearance is set to 0.10 mm for this autorouted draft. This is acceptable for many PCB fabs but must be confirmed with the chosen manufacturer. The board intentionally has no 230VAC copper.
+- The USB-C placeholder has been replaced by a real KiCad library footprint for XKB U262-16XN-4BVC11. Still confirm the exact purchasable variant, connector height, mounting style, and enclosure cutout before fabrication.
+- USB-C is configured as data-only/device mode: D+/D- to ESP32-S3 native USB through 27R series resistors, CC1/CC2 via 5.1k Rd pulldowns, and VBUS as sense-only. The board is still powered from the internal 24V PSU, not USB.
+- Default low-voltage netclass clearance is set to 0.10 mm for the dense USB-C routing. Confirm this with the chosen PCB manufacturer. The board intentionally has no 230VAC copper.
 - Freerouting is useful for a first route, but the final board should still be manually reviewed in KiCad, especially USB D+/D-, fan current path, GND return, antenna keepout, and connector placement.
