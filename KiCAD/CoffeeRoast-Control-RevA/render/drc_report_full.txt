@@ -1,8 +1,12 @@
 ** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
-** Created on 2026-07-04T22:29:15+0200 **
+** Created on 2026-07-05T00:09:50+0200 **
 ** Report includes: Fehler, Warnungen **
 
-** Found 92 DRC violations **
+** Found 96 DRC violations **
+[silk_overlap]: Bestückungsdrucküberlappung
+    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
+    @(95,1000 mm, 52,3000 mm): Abschnitt von U2 auf F.Silkscreen
+    @(98,0000 mm, 52,0000 mm): Referenzfeld von U2
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(132,0000 mm, 36,0000 mm): Platinen-Text "USB-C native data; VBUS sense only" auf F.Silkscreen
@@ -37,20 +41,32 @@
     @(135,0000 mm, 66,5000 mm): Abschnitt von J3 auf F.Silkscreen
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
-    @(64,2500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
-    @(68,0000 mm, 75,0000 mm): Referenzfeld von U3
+    @(46,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+    @(52,0000 mm, 42,7000 mm): Platinen-Text "TPESP1-40 ESP32 debug pads (map in docs)" auf F.Silkscreen
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
-    @(45,0000 mm, 45,0000 mm): Referenzfeld von Q1
-    @(39,7500 mm, 45,5000 mm): Abschnitt von Q1 auf F.Silkscreen
+    @(40,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+    @(43,0000 mm, 39,0000 mm): Referenzfeld von SW2
+[silk_overlap]: Bestückungsdrucküberlappung
+    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
+    @(40,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+    @(52,0000 mm, 42,7000 mm): Platinen-Text "TPESP1-40 ESP32 debug pads (map in docs)" auf F.Silkscreen
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(46,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
     @(45,0000 mm, 45,0000 mm): Referenzfeld von Q1
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
-    @(40,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
-    @(43,0000 mm, 39,0000 mm): Referenzfeld von SW2
+    @(45,0000 mm, 45,0000 mm): Referenzfeld von Q1
+    @(39,7500 mm, 45,5000 mm): Abschnitt von Q1 auf F.Silkscreen
+[silk_overlap]: Bestückungsdrucküberlappung
+    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
+    @(65,0000 mm, 49,0000 mm): Referenzfeld von R2
+    @(66,1500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_overlap]: Bestückungsdrucküberlappung
+    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
+    @(64,2500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
+    @(68,0000 mm, 75,0000 mm): Referenzfeld von U3
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(43,0000 mm, 29,0000 mm): Referenzfeld von SW1
@@ -69,16 +85,8 @@
     @(5,0000 mm, 14,5000 mm): Abschnitt von J1 auf F.Silkscreen
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
-    @(65,0000 mm, 49,0000 mm): Referenzfeld von R2
-    @(66,1500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
-[silk_overlap]: Bestückungsdrucküberlappung
-    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(56,1500 mm, 32,6000 mm): Abschnitt von R5 auf F.Silkscreen
     @(55,0000 mm, 33,0000 mm): Referenzfeld von R6
-[silk_overlap]: Bestückungsdrucküberlappung
-    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
-    @(95,1000 mm, 52,3000 mm): Abschnitt von U2 auf F.Silkscreen
-    @(98,0000 mm, 52,0000 mm): Referenzfeld von U2
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(132,0000 mm, 36,0000 mm): Platinen-Text "USB-C native data; VBUS sense only" auf F.Silkscreen
@@ -133,6 +141,9 @@
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(46,0000 mm, 35,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(74,5000 mm, 36,4000 mm): Referenzfeld von U1
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(63,8500 mm, 47,4000 mm): Abschnitt von R1 auf F.Silkscreen
@@ -298,6 +309,9 @@
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(129,1500 mm, 27,6000 mm): Abschnitt von R7 auf F.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,7500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(52,0000 mm, 42,7000 mm): Platinen-Text "TPESP1-40 ESP32 debug pads (map in docs)" auf F.Silkscreen
 
 ** Found 0 unconnected pads **
 

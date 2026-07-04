@@ -14,3 +14,4 @@ USB_DN/USB_DP,Native USB serial/flash,J5 USB-C A/B D pins through R7/R8 to U1 pi
 USB_CC1/USB_CC2,USB-C device attach advertisement,J5 A5/B5 through R10/R11 5.1k pulldowns to GND
 USB_VBUS,USB-C VBUS sense only,J5 VBUS pins; not used as board supply in RevA
 EN/BOOT,Reset/flash control,Pullups + tactile switches
+ESP32_DEBUG_PADS,Debug access,"TPESP1-TPESP40 expose ESP32-S3-WROOM-1 side pins 1-40; see docs/esp32_debug_pads.csv"

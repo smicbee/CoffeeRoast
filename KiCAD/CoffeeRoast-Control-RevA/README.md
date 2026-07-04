@@ -16,6 +16,7 @@ This is the generated RevA hardware draft for moving the CoffeeRoast electronics
 - `CoffeeRoast-Control-RevA.kicad_sch` — notes-only schematic placeholder; detailed netlist is in `docs/netlist.csv`.
 - `docs/bom.csv` — draft bill of materials.
 - `docs/netlist.csv` — intended electrical connectivity.
+- `docs/esp32_debug_pads.csv` — ESP32-S3 TPESP1-40 debug/test pad mapping.
 - `docs/routing_notes.md` — routing/DRC status and fabrication caveats.
 - `symbols/` and `footprints.pretty/` — local ESP32-S3-WROOM-1 and USB-C library files copied from KiCad upstream.
 
@@ -32,6 +33,10 @@ This is the generated RevA hardware draft for moving the CoffeeRoast electronics
 | USB D+ | 14 | native USB D+ | serial/flash |
 | BOOT | 27 | GPIO0 | flash mode |
 | EN/RESET | 3 | EN | reset |
+
+## ESP32 debug pads
+
+All ESP32-S3-WROOM-1 side pins 1-40 are exposed as small probe/solder debug pads named `TPESP1` through `TPESP40` around U1. The mapping is in `docs/esp32_debug_pads.csv`. These include the spare GPIOs plus already-used signals such as USB D+/D-, MAX6675 SPI, BOOT/EN, fan PWM, heater/SSR PWM, 3V3, and GND.
 
 ## Power tree
 

@@ -33,3 +33,9 @@ Full DRC still has silkscreen warnings only.
 - USB-C is configured as data-only/device mode: D+/D- to ESP32-S3 native USB through 27R series resistors, CC1/CC2 via 5.1k Rd pulldowns, and VBUS as sense-only. The board is still powered from the internal 24V PSU, not USB.
 - Default low-voltage netclass clearance is set to 0.10 mm for the dense USB-C routing. Confirm this with the chosen PCB manufacturer. The board intentionally has no 230VAC copper.
 - Freerouting is useful for a first route, but the final board should still be manually reviewed in KiCad, especially USB D+/D-, fan current path, GND return, antenna keepout, and connector placement.
+
+## ESP32 debug/test pads
+
+Added `TPESP1` through `TPESP40` around U1. They are copper probe/solder pads connected to the ESP32-S3-WROOM-1 side pins. Most are tiny pad extensions immediately outside the castellated module pads to avoid disturbing the existing route; `TPESP30` is intentionally tucked onto the U1 pad because the USB D+ route/via runs close to that pin.
+
+Mapping is in `docs/esp32_debug_pads.csv`.
