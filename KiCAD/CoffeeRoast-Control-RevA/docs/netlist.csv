@@ -15,3 +15,4 @@ USB_CC1/USB_CC2,USB-C device attach advertisement,J5 A5/B5 through R10/R11 5.1k 
 USB_VBUS,USB-C VBUS sense only,J5 VBUS pins; not used as board supply in RevA
 EN/BOOT,Reset/flash control,Pullups + tactile switches
 ESP32_DEBUG_PADS,Debug access,"TPESP1-TPESP40 expose ESP32-S3-WROOM-1 side pins 1-40; see docs/esp32_debug_pads.csv"
+ESP32_SOLDER_PADS,Wire-attach debug access,"PADESP1-PADESP40 are larger bottom-side labeled pads connected to ESP32-S3 side pins 1-40; see docs/esp32_solder_pads.csv"

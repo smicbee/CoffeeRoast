@@ -21,3 +21,4 @@ J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,Connector_USB:USB_C_Receptacle_XKB_U2
 "C1,C2",2,10uF,0805,5V/3V3 bulk decoupling
 C3,1,100nF,0805,MAX6675 local decoupling
 TPESP1-TPESP40,40,ESP32-S3 debug/test pads,PCB copper pads only,"Do not populate; probe/solder-wire pads around U1, see docs/esp32_debug_pads.csv"
+PADESP1-PADESP40,40,ESP32-S3 larger bottom-side solder pads,PCB copper pads only,"Do not populate; labeled B.Cu/B.Silk wire-attach pads routed from ESP32 pins, see docs/esp32_solder_pads.csv"

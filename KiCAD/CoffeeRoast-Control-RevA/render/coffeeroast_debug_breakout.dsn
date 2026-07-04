@@ -1,4 +1,4 @@
-(pcb "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/render/coffeeroast_exact_usb.dsn"
+(pcb "KiCAD/CoffeeRoast-Control-RevA/render/coffeeroast_debug_breakout.dsn"
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
@@ -26,31 +26,76 @@
     (via "Via[0-1]_600:300_um")
     (rule
       (width 200)
-      (clearance 200)
-      (clearance 50 (type smd_smd))
+      (clearance 100)
+      (clearance 25 (type smd_smd))
     )
   )
   (placement
+    (component ""
+      (place TPESP15 78015.000000 -38280.000000 front 0.000000 (PN IO3))
+    )
+    (component ::1
+      (place TPESP25 90715.000000 -38450.000000 front 0.000000 (PN IO48))
+      (place TPESP16 79285.000000 -38450.000000 front 0.000000 (PN IO46))
+      (place TPESP20 84365.000000 -38450.000000 front 0.000000 (PN IO12/MAXCS))
+      (place TPESP22 86905.000000 -38450.000000 front 0.000000 (PN IO14))
+      (place TPESP17 80555.000000 -38450.000000 front 0.000000 (PN IO9))
+      (place TPESP26 91985.000000 -38450.000000 front 0.000000 (PN IO45))
+      (place TPESP21 85635.000000 -38450.000000 front 0.000000 (PN IO13/MAXCLK))
+      (place TPESP19 83095.000000 -38450.000000 front 0.000000 (PN IO11/MAXDO))
+      (place TPESP24 89445.000000 -38450.000000 front 0.000000 (PN IO47))
+      (place TPESP23 88175.000000 -38450.000000 front 0.000000 (PN IO21))
+      (place TPESP18 81825.000000 -38450.000000 front 0.000000 (PN IO10))
+    )
     (component "USB_C_Receptacle_XKB_U262-16XN-4BVC11"
       (place J5 145000.000000 -31000.000000 front 90.000000 (PN "USB_C_Receptacle_XKB_U262-16XN-4BVC11"))
     )
-    (component ""
+    (component ::2
       (place J4 140000.000000 -52000.000000 front 0.000000 (PN K_TYPE_THERMOCOUPLE))
       (place J2 10000.000000 -48000.000000 front 0.000000 (PN FAN_24V_PWM_3A))
       (place J1 10000.000000 -18000.000000 front 0.000000 (PN 24V_IN_FROM_230V_PSU_3A))
       (place J3 140000.000000 -70000.000000 front 0.000000 (PN SSR_INPUT_TO_EXTERNAL_SSR))
     )
-    (component ::1
+    (component ::3
+      (place TPESP27 94700.000000 -36250.000000 front 0.000000 (PN IO0/BOOT))
+      (place TPESP31 94700.000000 -31170.000000 front 0.000000 (PN IO38))
+      (place TPESP14 75300.000000 -36250.000000 front 0.000000 (PN USB_D+/IO20))
+      (place TPESP35 94700.000000 -26090.000000 front 0.000000 (PN IO42))
+      (place TPESP2 75300.000000 -21010.000000 front 0.000000 (PN 3V3))
+      (place TPESP33 94700.000000 -28630.000000 front 0.000000 (PN IO40))
+      (place TPESP12 75300.000000 -33710.000000 front 0.000000 (PN IO8))
+      (place TPESP36 94700.000000 -24820.000000 front 0.000000 (PN RXD0/IO44))
+      (place TPESP13 75300.000000 -34980.000000 front 0.000000 (PN "USB_D-/IO19"))
+      (place TPESP29 94700.000000 -33710.000000 front 0.000000 (PN IO36))
+      (place TPESP39 94700.000000 -21010.000000 front 0.000000 (PN IO1/SSR))
+      (place TPESP7 75300.000000 -27360.000000 front 0.000000 (PN IO7))
+      (place TPESP9 75300.000000 -29900.000000 front 0.000000 (PN IO16))
+      (place TPESP3 75300.000000 -22280.000000 front 0.000000 (PN EN))
+      (place TPESP11 75300.000000 -32439.999000 front 0.000000 (PN IO18))
+      (place TPESP32 94700.000000 -29900.000000 front 0.000000 (PN IO39))
+      (place TPESP28 94700.000000 -34980.000000 front 0.000000 (PN IO35))
+      (place TPESP8 75300.000000 -28630.000000 front 0.000000 (PN IO15))
+      (place TPESP38 94700.000000 -22280.000000 front 0.000000 (PN IO2/FAN))
+      (place TPESP34 94700.000000 -27360.000000 front 0.000000 (PN IO41))
+      (place TPESP40 94700.000000 -19740.000000 front 0.000000 (PN GND))
+      (place TPESP37 94700.000000 -23550.000000 front 0.000000 (PN TXD0/IO43))
+      (place TPESP10 75300.000000 -31170.000000 front 0.000000 (PN IO17))
+      (place TPESP6 75300.000000 -26090.000000 front 0.000000 (PN IO6))
+      (place TPESP4 75300.000000 -23550.000000 front 0.000000 (PN IO4))
+      (place TPESP1 75300.000000 -19740.000000 front 0.000000 (PN GND))
+      (place TPESP5 75300.000000 -24820.000000 front 0.000000 (PN IO5))
+    )
+    (component ::4
       (place R8 128000.000000 -31000.000000 front 0.000000 (PN 27R_USB_DP))
       (place R11 130000.000000 -40000.000000 front 0.000000 (PN 5k1_CC2_RD))
       (place R10 130000.000000 -36000.000000 front 0.000000 (PN 5k1_CC1_RD))
       (place R7 128000.000000 -27000.000000 front 0.000000 (PN 27R_USB_DN))
     )
-    (component ::2
+    (component ::5
       (place SW2 43000.000000 -42000.000000 front 0.000000 (PN BOOT))
       (place SW1 43000.000000 -32000.000000 front 0.000000 (PN RESET_EN))
     )
-    (component ::3
+    (component ::6
       (place C2 76000.000000 -86000.000000 front 0.000000 (PN 10uF_3V3))
       (place R1 65000.000000 -48000.000000 front 0.000000 (PN 100R))
       (place C3 91000.000000 -63000.000000 front 0.000000 (PN 100nF_MAX6675))
@@ -64,29 +109,80 @@
     (component "ESP32-S3-WROOM-1"
       (place U1 85000.000000 -25000.000000 front 0.000000 (PN "ESP32-S3-WROOM-1"))
     )
-    (component ::4
+    (component ::7
       (place F1 32000.000000 -18000.000000 front 0.000000 (PN T3.15A_24V_SIDE))
     )
-    (component ::5
+    (component ::8
       (place Q1 45000.000000 -48000.000000 front 0.000000 (PN IRLZ44N_OR_LOGIC_NMOS))
     )
-    (component ::6
+    (component ::9
       (place U2 98000.000000 -55000.000000 front 0.000000 (PN MAX6675_SOIC8_3V3))
     )
-    (component ::7
+    (component ::10
       (place U4 36000.000000 -78000.000000 front 0.000000 (PN 24V_TO_5V_BUCK_MODULE_>=1A))
     )
-    (component ::8
+    (component ::11
+      (place TPESP30 94200.000000 -32439.999000 front 0.000000 (PN IO37))
+    )
+    (component ::12
       (place U3 68000.000000 -78000.000000 front 0.000000 (PN "AMS1117-3.3"))
     )
-    (component ::9
+    (component ::13
       (place D1 28000.000000 -48000.000000 front 0.000000 (PN SB560_FLYBACK))
     )
-    (component ::10
+    (component ::14
       (place Q2 118000.000000 -70000.000000 front 0.000000 (PN 2N7002_SSR_DRIVER))
+    )
+    (component ::15
+      (place PADESP22 90780.000000 -58500.000000 back 180.000000 (PN IO14))
+      (place PADESP16 75540.000000 -58500.000000 back 180.000000 (PN IO46))
+      (place PADESP35 108000.000000 -34200.000000 back 180.000000 (PN IO42))
+      (place PADESP24 95860.000000 -58500.000000 back 180.000000 (PN IO47))
+      (place PADESP11 62500.000000 -46900.000000 back 180.000000 (PN IO18))
+      (place PADESP20 85700.000000 -58500.000000 back 180.000000 (PN IO12))
+      (place PADESP37 108000.000000 -29120.000000 back 180.000000 (PN TXD0))
+      (place PADESP6 62500.000000 -34200.000000 back 180.000000 (PN IO6))
+      (place PADESP9 62500.000000 -41820.000000 back 180.000000 (PN IO16))
+      (place PADESP21 88240.000000 -58500.000000 back 180.000000 (PN IO13))
+      (place PADESP3 62500.000000 -26580.000000 back 180.000000 (PN EN))
+      (place PADESP33 108000.000000 -39280.000000 back 180.000000 (PN IO40))
+      (place PADESP7 62500.000000 -36740.000000 back 180.000000 (PN IO7))
+      (place PADESP1 62500.000000 -21500.000000 back 180.000000 (PN GND))
+      (place PADESP31 108000.000000 -44360.000000 back 180.000000 (PN IO38))
+      (place PADESP29 108000.000000 -49440.000000 back 180.000000 (PN IO36))
+      (place PADESP27 108000.000000 -54520.000000 back 180.000000 (PN IO0))
+      (place PADESP10 62500.000000 -44360.000000 back 180.000000 (PN IO17))
+      (place PADESP40 108000.000000 -21500.000000 back 180.000000 (PN GND))
+      (place PADESP34 108000.000000 -36740.000000 back 180.000000 (PN IO41))
+      (place PADESP25 98400.000000 -58500.000000 back 180.000000 (PN IO48))
+      (place PADESP39 108000.000000 -24040.000000 back 180.000000 (PN IO1))
+      (place PADESP12 62500.000000 -49440.000000 back 180.000000 (PN IO8))
+      (place PADESP23 93320.000000 -58500.000000 back 180.000000 (PN IO21))
+      (place PADESP32 108000.000000 -41820.000000 back 180.000000 (PN IO39))
+      (place PADESP5 62500.000000 -31660.000000 back 180.000000 (PN IO5))
+      (place PADESP2 62500.000000 -24040.000000 back 180.000000 (PN 3V3))
+      (place PADESP4 62500.000000 -29120.000000 back 180.000000 (PN IO4))
+      (place PADESP26 100940.000000 -58500.000000 back 180.000000 (PN IO45))
+      (place PADESP18 80620.000000 -58500.000000 back 180.000000 (PN IO10))
+      (place PADESP38 108000.000000 -26580.000000 back 180.000000 (PN IO2))
+      (place PADESP8 62500.000000 -39280.000000 back 180.000000 (PN IO15))
+      (place PADESP14 62500.000000 -54520.000000 back 180.000000 (PN USB_D+))
+      (place PADESP36 108000.000000 -31660.000000 back 180.000000 (PN RXD0))
+      (place PADESP28 108000.000000 -51980.000000 back 180.000000 (PN IO35))
+      (place PADESP15 73000.000000 -58500.000000 back 180.000000 (PN IO3))
+      (place PADESP30 108000.000000 -46900.000000 back 180.000000 (PN IO37))
+      (place PADESP19 83160.000000 -58500.000000 back 180.000000 (PN IO11))
+      (place PADESP17 78080.000000 -58500.000000 back 180.000000 (PN IO9))
+      (place PADESP13 62500.000000 -51980.000000 back 180.000000 (PN "USB_D-"))
     )
   )
   (library
+    (image ""
+      (pin RoundRect[T]Pad_360.000000x340.000000_85.323000_um_0.000000_0 1 0 0)
+    )
+    (image ::1
+      (pin RoundRect[T]Pad_520.000000x550.000000_130.495000_um_0.000000_0 1 0 0)
+    )
     (image "USB_C_Receptacle_XKB_U262-16XN-4BVC11"
       (outline (path signal 120  -4580 1850  -4580 -70))
       (outline (path signal 120  4580 -70  4580 1850))
@@ -126,7 +222,7 @@
       (keepout "" (circle F.Cu 1150 2890 2605))
       (keepout "" (circle B.Cu 1150 2890 2605))
     )
-    (image ""
+    (image ::2
       (outline (path signal 120  -5000 3500  5000 3500))
       (outline (path signal 120  -5000 -3500  -5000 3500))
       (outline (path signal 120  5000 3500  5000 -3500))
@@ -134,7 +230,10 @@
       (pin Rect[A]Pad_2400.000000x2400.000000_um 1 -2540 0)
       (pin Rect[A]Pad_2400.000000x2400.000000_um 2 2540 0)
     )
-    (image ::1
+    (image ::3
+      (pin RoundRect[T]Pad_550.000000x520.000000_130.495000_um_0.000000_0 1 0 0)
+    )
+    (image ::4
       (outline (path signal 120  -1150 600  1150 600))
       (outline (path signal 120  -1150 -600  -1150 600))
       (outline (path signal 120  1150 600  1150 -600))
@@ -142,7 +241,7 @@
       (pin Rect[T]Pad_1000.000000x1200.000000_um 1 -950 0)
       (pin Rect[T]Pad_1000.000000x1200.000000_um 2 949.999 0)
     )
-    (image ::2
+    (image ::5
       (outline (path signal 120  -3000 3000  3000 3000))
       (outline (path signal 120  -3000 -3000  -3000 3000))
       (outline (path signal 120  3000 3000  3000 -3000))
@@ -152,7 +251,7 @@
       (pin Rect[A]Pad_1600.000000x1600.000000_um 3 -2250 -2250)
       (pin Rect[A]Pad_1600.000000x1600.000000_um 4 2250 -2250)
     )
-    (image ::3
+    (image ::6
       (outline (path signal 120  -1150 600  1150 600))
       (outline (path signal 120  -1150 -600  -1150 600))
       (outline (path signal 120  1150 600  1150 -600))
@@ -237,7 +336,7 @@
       (keepout "" (polygon F.Cu 0  -24000 6750  24000 6750  24000 27750  -24000 27750  -24000 6750))
       (keepout "" (polygon B.Cu 0  -24000 6750  24000 6750  24000 27750  -24000 27750  -24000 6750))
     )
-    (image ::4
+    (image ::7
       (outline (path signal 120  -13000 3000  13000 3000))
       (outline (path signal 120  -13000 -3000  -13000 3000))
       (outline (path signal 120  13000 3000  13000 -3000))
@@ -245,7 +344,7 @@
       (pin Rect[A]Pad_2400.000000x2400.000000_um 1 -11000 0)
       (pin Rect[A]Pad_2400.000000x2400.000000_um 2 11000 0)
     )
-    (image ::5
+    (image ::8
       (outline (path signal 120  -5250 2500  5250 2500))
       (outline (path signal 120  -5250 -2500  -5250 2500))
       (outline (path signal 120  5250 2500  5250 -2500))
@@ -254,7 +353,7 @@
       (pin Rect[A]Pad_2000.000000x2000.000000_um 2 0 0)
       (pin Rect[A]Pad_2000.000000x2000.000000_um 3 2540 0)
     )
-    (image ::6
+    (image ::9
       (outline (path signal 120  -2900 2700  2900 2700))
       (outline (path signal 120  -2900 -2700  -2900 2700))
       (outline (path signal 120  2900 2700  2900 -2700))
@@ -268,7 +367,7 @@
       (pin Rect[T]Pad_1450.000000x600.000000_um 7 2700 -635)
       (pin Rect[T]Pad_1450.000000x600.000000_um 8 2700 -1905)
     )
-    (image ::7
+    (image ::10
       (outline (path signal 120  -14000 9000  14000 9000))
       (outline (path signal 120  -14000 -9000  -14000 9000))
       (outline (path signal 120  14000 9000  14000 -9000))
@@ -278,7 +377,10 @@
       (pin Rect[A]Pad_2000.000000x2000.000000_um 3 11000 6000)
       (pin Rect[A]Pad_2000.000000x2000.000000_um 4 11000 -6000)
     )
-    (image ::8
+    (image ::11
+      (pin RoundRect[T]Pad_300.000000x380.000000_75.285000_um_0.000000_0 1 0 0)
+    )
+    (image ::12
       (outline (path signal 120  -3750 3500  3750 3500))
       (outline (path signal 120  -3750 -3500  -3750 3500))
       (outline (path signal 120  3750 3500  3750 -3500))
@@ -288,7 +390,7 @@
       (pin Rect[T]Pad_1200.000000x1800.000000_um 2@1 0 -2800)
       (pin Rect[T]Pad_1200.000000x1800.000000_um 3 2300 -2800)
     )
-    (image ::9
+    (image ::13
       (outline (path signal 120  -6500 2000  6500 2000))
       (outline (path signal 120  -6500 -2000  -6500 2000))
       (outline (path signal 120  6500 2000  6500 -2000))
@@ -296,7 +398,7 @@
       (pin Rect[A]Pad_1800.000000x1800.000000_um 1 -5080 0)
       (pin Rect[A]Pad_1800.000000x1800.000000_um 2 5080 0)
     )
-    (image ::10
+    (image ::14
       (outline (path signal 120  -1600 1400  1600 1400))
       (outline (path signal 120  -1600 -1400  -1600 1400))
       (outline (path signal 120  1600 1400  1600 -1400))
@@ -304,6 +406,9 @@
       (pin Rect[T]Pad_650.000000x1000.000000_um 1 -950 -950)
       (pin Rect[T]Pad_650.000000x1000.000000_um 2 950 -950)
       (pin Rect[T]Pad_650.000000x1000.000000_um 3 0 950)
+    )
+    (image ::15
+      (pin RoundRect[T]Pad_1350.000000x1150.000000_288.594000_um_0.000000_0 1 0 0)
     )
     (padstack Round[A]Pad_600.000000_um
       (shape (circle F.Cu 600))
@@ -318,6 +423,52 @@
     (padstack Oval[A]Pad_1000.000000x2100.000000_um
       (shape (path F.Cu 1000  0 -550  0 550))
       (shape (path B.Cu 1000  0 -550  0 550))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_300.000000x380.000000_75.285000_um_0.000000_0
+      (shape (polygon F.Cu 0  -150.285 115  -144.554 143.81  -128.235 168.235  -103.81 184.554
+            -74.999 190.284  75 190.285  103.81 184.554  128.235 168.235
+            144.554 143.81  150.284 114.999  150.285 -115  144.554 -143.81
+            128.235 -168.235  103.81 -184.554  74.999 -190.284  -75 -190.285
+            -103.81 -184.554  -128.235 -168.235  -144.554 -143.81  -150.284 -114.999
+            -150.285 115))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_360.000000x340.000000_85.323000_um_0.000000_0
+      (shape (polygon F.Cu 0  -180.323 85  -173.828 117.652  -155.332 145.332  -127.652 163.828
+            -94.999 170.322  95 170.323  127.652 163.828  155.332 145.332
+            173.828 117.652  180.322 84.999  180.323 -85  173.828 -117.652
+            155.332 -145.332  127.652 -163.828  94.999 -170.322  -95 -170.323
+            -127.652 -163.828  -155.332 -145.332  -173.828 -117.652  -180.322 -84.999
+            -180.323 85))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_520.000000x550.000000_130.495000_um_0.000000_0
+      (shape (polygon F.Cu 0  -260.495 145  -250.562 194.938  -222.274 237.274  -179.938 265.562
+            -129.999 275.494  130 275.495  179.938 265.562  222.274 237.274
+            250.562 194.938  260.494 144.999  260.495 -145  250.562 -194.938
+            222.274 -237.274  179.938 -265.562  129.999 -275.494  -130 -275.495
+            -179.938 -265.562  -222.274 -237.274  -250.562 -194.938  -260.494 -144.999
+            -260.495 145))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_550.000000x520.000000_130.495000_um_0.000000_0
+      (shape (polygon F.Cu 0  -275.495 130  -265.562 179.938  -237.274 222.274  -194.938 250.562
+            -144.999 260.494  145 260.495  194.938 250.562  237.274 222.274
+            265.562 179.938  275.494 129.999  275.495 -130  265.562 -179.938
+            237.274 -222.274  194.938 -250.562  144.999 -260.494  -145 -260.495
+            -194.938 -250.562  -237.274 -222.274  -265.562 -179.938  -275.494 -129.999
+            -275.495 130))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1350.000000x1150.000000_288.594000_um_0.000000_0
+      (shape (polygon F.Cu 0  -676.094 287.5  -668.428 353.574  -625.589 450.595  -550.595 525.589
+            -453.574 568.428  -387.5 576.094  387.5 576.094  453.574 568.428
+            550.595 525.589  625.589 450.595  668.428 353.574  676.094 287.5
+            676.094 -287.5  668.428 -353.574  625.589 -450.595  550.595 -525.589
+            453.574 -568.428  387.5 -576.094  -387.5 -576.094  -453.574 -568.428
+            -550.595 -525.589  -625.589 -450.595  -668.428 -353.574  -676.094 -287.5
+            -676.094 287.5))
       (attach off)
     )
     (padstack Rect[A]Pad_2000.000000x2000.000000_um
@@ -382,7 +533,7 @@
     (net GND
       (pins J5-A1 J5-A12 J5-B1 J5-B12 J5-S1 J5-S1@1 J5-S1@2 J5-S1@3 SW2-3 SW2-4 C2-2
         SW1-3 SW1-4 J1-2 U1-1 U1-40 C3-2 Q1-3 U2-1 U2-8 R11-2 U4-2 U4-4 R4-2 R2-2
-        U3-1 R10-2 C1-2 Q2-2)
+        U3-1 R10-2 C1-2 TPESP40-1 Q2-2 TPESP1-1 PADESP1-1 PADESP40-1)
     )
     (net +24V_RAW
       (pins J1-1 F1-1)
@@ -397,16 +548,16 @@
       (pins U4-3 U3-3 C1-1 J3-1)
     )
     (net +3V3
-      (pins C2-1 U1-2 C3-1 U2-4 U3-2 U3-2@1 R6-1 R5-1)
+      (pins C2-1 TPESP2-1 U1-2 C3-1 U2-4 U3-2 U3-2@1 R6-1 R5-1 PADESP2-1)
     )
     (net FAN_PWM
-      (pins U1-38 R1-1)
+      (pins U1-38 R1-1 TPESP38-1 PADESP38-1)
     )
     (net FAN_GATE
       (pins R1-2 Q1-1 R2-1)
     )
     (net HEATER_PWM
-      (pins U1-39 R3-1)
+      (pins U1-39 TPESP39-1 R3-1 PADESP39-1)
     )
     (net SSR_GATE
       (pins R4-1 R3-2 Q2-1)
@@ -415,13 +566,13 @@
       (pins Q2-3 J3-2)
     )
     (net MAX_DO
-      (pins U1-19 U2-7)
+      (pins U1-19 U2-7 TPESP19-1 PADESP19-1)
     )
     (net MAX_CS
-      (pins U1-20 U2-6)
+      (pins TPESP20-1 U1-20 U2-6 PADESP20-1)
     )
     (net MAX_SCK
-      (pins U1-21 U2-5)
+      (pins U1-21 TPESP21-1 U2-5 PADESP21-1)
     )
     (net THERMO_PLUS
       (pins J4-1 U2-3)
@@ -433,10 +584,10 @@
       (pins J5-A4 J5-A9 J5-B4 J5-B9)
     )
     (net USB_DN_MCU
-      (pins U1-13 R7-1)
+      (pins U1-13 TPESP13-1 R7-1 PADESP13-1)
     )
     (net USB_DP_MCU
-      (pins R8-1 U1-14)
+      (pins R8-1 TPESP14-1 U1-14 PADESP14-1)
     )
     (net USB_DN
       (pins J5-A7 J5-B7 R7-2)
@@ -445,10 +596,10 @@
       (pins J5-A6 J5-B6 R8-2)
     )
     (net EN
-      (pins SW1-1 SW1-2 U1-3 R5-2)
+      (pins SW1-1 SW1-2 U1-3 TPESP3-1 R5-2 PADESP3-1)
     )
     (net BOOT
-      (pins SW2-1 SW2-2 U1-27 R6-2)
+      (pins TPESP27-1 SW2-1 SW2-2 U1-27 R6-2 PADESP27-1)
     )
     (net USB_CC1
       (pins J5-A5 R10-1)
@@ -456,15 +607,102 @@
     (net USB_CC2
       (pins J5-B5 R11-1)
     )
+    (net GPIO4
+      (pins U1-4 TPESP4-1 PADESP4-1)
+    )
+    (net GPIO5
+      (pins U1-5 TPESP5-1 PADESP5-1)
+    )
+    (net GPIO6
+      (pins U1-6 TPESP6-1 PADESP6-1)
+    )
+    (net GPIO7
+      (pins U1-7 TPESP7-1 PADESP7-1)
+    )
+    (net GPIO15
+      (pins U1-8 TPESP8-1 PADESP8-1)
+    )
+    (net GPIO16
+      (pins U1-9 TPESP9-1 PADESP9-1)
+    )
+    (net GPIO17
+      (pins U1-10 TPESP10-1 PADESP10-1)
+    )
+    (net GPIO18
+      (pins U1-11 TPESP11-1 PADESP11-1)
+    )
+    (net GPIO8
+      (pins TPESP12-1 U1-12 PADESP12-1)
+    )
+    (net GPIO3
+      (pins TPESP15-1 U1-15 PADESP15-1)
+    )
+    (net GPIO46
+      (pins TPESP16-1 U1-16 PADESP16-1)
+    )
+    (net GPIO9
+      (pins U1-17 TPESP17-1 PADESP17-1)
+    )
+    (net GPIO10
+      (pins U1-18 TPESP18-1 PADESP18-1)
+    )
+    (net GPIO14
+      (pins U1-22 TPESP22-1 PADESP22-1)
+    )
+    (net GPIO21
+      (pins U1-23 TPESP23-1 PADESP23-1)
+    )
+    (net GPIO47
+      (pins U1-24 TPESP24-1 PADESP24-1)
+    )
+    (net GPIO48
+      (pins TPESP25-1 U1-25 PADESP25-1)
+    )
+    (net GPIO45
+      (pins U1-26 TPESP26-1 PADESP26-1)
+    )
+    (net GPIO35
+      (pins U1-28 TPESP28-1 PADESP28-1)
+    )
+    (net GPIO36
+      (pins U1-29 TPESP29-1 PADESP29-1)
+    )
+    (net GPIO37
+      (pins U1-30 TPESP30-1 PADESP30-1)
+    )
+    (net GPIO38
+      (pins TPESP31-1 U1-31 PADESP31-1)
+    )
+    (net GPIO39
+      (pins U1-32 TPESP32-1 PADESP32-1)
+    )
+    (net GPIO40
+      (pins TPESP33-1 U1-33 PADESP33-1)
+    )
+    (net GPIO41
+      (pins U1-34 TPESP34-1 PADESP34-1)
+    )
+    (net GPIO42
+      (pins TPESP35-1 U1-35 PADESP35-1)
+    )
+    (net RXD0_GPIO44
+      (pins U1-36 TPESP36-1 PADESP36-1)
+    )
+    (net TXD0_GPIO43
+      (pins U1-37 TPESP37-1 PADESP37-1)
+    )
     (class kicad_default +24V_FUSED +24V_RAW +3V3 +5V BOOT EN FAN_GATE FAN_NEG
-      FAN_PWM GND HEATER_PWM MAX_CS MAX_DO MAX_SCK SSR_GATE SSR_NEG THERMO_MINUS
-      THERMO_PLUS USB_CC1 USB_CC2 USB_DN USB_DN_MCU USB_DP USB_DP_MCU USB_VBUS
+      FAN_PWM GND GPIO10 GPIO14 GPIO15 GPIO16 GPIO17 GPIO18 GPIO21 GPIO3 GPIO35
+      GPIO36 GPIO37 GPIO38 GPIO39 GPIO4 GPIO40 GPIO41 GPIO42 GPIO45 GPIO46
+      GPIO47 GPIO48 GPIO5 GPIO6 GPIO7 GPIO8 GPIO9 HEATER_PWM MAX_CS MAX_DO
+      MAX_SCK RXD0_GPIO44 SSR_GATE SSR_NEG THERMO_MINUS THERMO_PLUS TXD0_GPIO43
+      USB_CC1 USB_CC2 USB_DN USB_DN_MCU USB_DP USB_DP_MCU USB_VBUS
       (circuit
         (use_via "Via[0-1]_600:300_um")
       )
       (rule
         (width 200)
-        (clearance 200)
+        (clearance 100)
       )
     )
   )

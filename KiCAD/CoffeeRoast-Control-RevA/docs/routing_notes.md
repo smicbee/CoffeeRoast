@@ -12,8 +12,8 @@ Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11
 
 Generated artifacts:
 
-- `render/coffeeroast_exact_usb.dsn` — DSN exported from KiCad after placing the real USB-C footprint.
-- `render/coffeeroast_exact_usb.ses` — Freerouting session result.
+- `render/coffeeroast_debug_breakout.dsn` — DSN exported from KiCad after adding the routed ESP32 solder-pad breakout.
+- `render/coffeeroast_debug_breakout.ses` — Freerouting session result for the current routed board.
 - `render/drc_report_errors_only.txt` — KiCad DRC, errors only.
 - `render/drc_report_full.txt` — full DRC including silkscreen warnings.
 - `render/kicad_top.png` / `render/kicad_bottom.png` — KiCad-rendered board views.
@@ -39,3 +39,12 @@ Full DRC still has silkscreen warnings only.
 Added `TPESP1` through `TPESP40` around U1. They are copper probe/solder pads connected to the ESP32-S3-WROOM-1 side pins. Most are tiny pad extensions immediately outside the castellated module pads to avoid disturbing the existing route; `TPESP30` is intentionally tucked onto the U1 pad because the USB D+ route/via runs close to that pin.
 
 Mapping is in `docs/esp32_debug_pads.csv`.
+
+## Larger wire-attach ESP32 solder pads
+
+Added `PADESP1` through `PADESP40` as larger bottom-side solder pads with B.Silk labels, routed outward from the ESP32-S3-WROOM-1 side pins for later wire attach/debugging. These are in addition to the tiny local `TPESP1` through `TPESP40` probe pads around U1.
+
+- Pads are on `B.Cu/B.Mask` with no paste and labels on `B.SilkS`.
+- Mapping is in `docs/esp32_solder_pads.csv`.
+- Routing was regenerated with KiCad DSN + Freerouting and via sizes normalized to 0.50/0.30 mm to maintain clearance.
+- Error-level DRC is clean after adding the pads. Full DRC still contains silkscreen warnings only.

@@ -1,8 +1,131 @@
 ** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
-** Created on 2026-07-05T00:09:50+0200 **
+** Created on 2026-07-05T00:27:09+0200 **
 ** Report includes: Fehler, Warnungen **
 
-** Found 96 DRC violations **
+** Found 191 DRC violations **
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 23,6900 mm): Platinen-Text "3V3" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 26,2300 mm): Platinen-Text "EN" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 28,7700 mm): Platinen-Text "IO4" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 31,3100 mm): Platinen-Text "IO5" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 33,8500 mm): Platinen-Text "IO6" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 36,3900 mm): Platinen-Text "IO7" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 38,9300 mm): Platinen-Text "IO15" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 41,4700 mm): Platinen-Text "IO16" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 44,0100 mm): Platinen-Text "IO17" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 46,5500 mm): Platinen-Text "IO18" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 49,0900 mm): Platinen-Text "IO8" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 51,6300 mm): Platinen-Text "USB_D-" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(56,7000 mm, 54,1700 mm): Platinen-Text "USB_D+" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(72,1000 mm, 59,6500 mm): Platinen-Text "IO3" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(74,6400 mm, 59,6500 mm): Platinen-Text "IO46" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(77,1800 mm, 59,6500 mm): Platinen-Text "IO9" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(79,7200 mm, 59,6500 mm): Platinen-Text "IO10" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(82,2600 mm, 59,6500 mm): Platinen-Text "IO11" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(84,8000 mm, 59,6500 mm): Platinen-Text "IO12" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(87,3400 mm, 59,6500 mm): Platinen-Text "IO13" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(89,8800 mm, 59,6500 mm): Platinen-Text "IO14" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(92,4200 mm, 59,6500 mm): Platinen-Text "IO21" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(94,9600 mm, 59,6500 mm): Platinen-Text "IO47" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(97,5000 mm, 59,6500 mm): Platinen-Text "IO48" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(100,0400 mm, 59,6500 mm): Platinen-Text "IO45" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 23,6900 mm): Platinen-Text "IO1" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 26,2300 mm): Platinen-Text "IO2" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 28,7700 mm): Platinen-Text "TXD0" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 31,3100 mm): Platinen-Text "RXD0" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 33,8500 mm): Platinen-Text "IO42" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 36,3900 mm): Platinen-Text "IO41" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 38,9300 mm): Platinen-Text "IO40" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 41,4700 mm): Platinen-Text "IO39" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 44,0100 mm): Platinen-Text "IO38" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 46,5500 mm): Platinen-Text "IO37" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 51,6300 mm): Platinen-Text "IO35" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 54,1700 mm): Platinen-Text "IO0" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(109,2500 mm, 49,0900 mm): Platinen-Text "IO36" auf B.Silkscreen
+[nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite
+    Lokale Überschreibung; warning
+    @(60,5000 mm, 65,0000 mm): Platinen-Text "ESP32 SOLDER PADS - BOTTOM" auf B.Silkscreen
 [silk_overlap]: Bestückungsdrucküberlappung
     Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(95,1000 mm, 52,3000 mm): Abschnitt von U2 auf F.Silkscreen
@@ -90,6 +213,48 @@
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(132,0000 mm, 36,0000 mm): Platinen-Text "USB-C native data; VBUS sense only" auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 23,6900 mm): Platinen-Text "IO1" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 26,2300 mm): Platinen-Text "IO2" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 28,7700 mm): Platinen-Text "TXD0" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 31,3100 mm): Platinen-Text "RXD0" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 33,8500 mm): Platinen-Text "IO42" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 36,3900 mm): Platinen-Text "IO41" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 38,9300 mm): Platinen-Text "IO40" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 41,4700 mm): Platinen-Text "IO39" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 44,0100 mm): Platinen-Text "IO38" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 46,5500 mm): Platinen-Text "IO37" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 51,6300 mm): Platinen-Text "IO35" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,0000 mm, 54,1700 mm): Platinen-Text "IO0" auf B.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(109,2500 mm, 49,0900 mm): Platinen-Text "IO36" auf B.Silkscreen
 [silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
     Lokale Überschreibung; warning
     @(128,0000 mm, 28,0000 mm): Referenzfeld von R8
@@ -312,6 +477,126 @@
 [text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,7500 mm)
     Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
     @(52,0000 mm, 42,7000 mm): Platinen-Text "TPESP1-40 ESP32 debug pads (map in docs)" auf F.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 23,6900 mm): Platinen-Text "3V3" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 26,2300 mm): Platinen-Text "EN" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 28,7700 mm): Platinen-Text "IO4" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 31,3100 mm): Platinen-Text "IO5" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 33,8500 mm): Platinen-Text "IO6" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 36,3900 mm): Platinen-Text "IO7" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 38,9300 mm): Platinen-Text "IO15" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 41,4700 mm): Platinen-Text "IO16" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 44,0100 mm): Platinen-Text "IO17" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 46,5500 mm): Platinen-Text "IO18" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 49,0900 mm): Platinen-Text "IO8" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 51,6300 mm): Platinen-Text "USB_D-" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 54,1700 mm): Platinen-Text "USB_D+" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(72,1000 mm, 59,6500 mm): Platinen-Text "IO3" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(74,6400 mm, 59,6500 mm): Platinen-Text "IO46" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(77,1800 mm, 59,6500 mm): Platinen-Text "IO9" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(79,7200 mm, 59,6500 mm): Platinen-Text "IO10" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(82,2600 mm, 59,6500 mm): Platinen-Text "IO11" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(84,8000 mm, 59,6500 mm): Platinen-Text "IO12" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(87,3400 mm, 59,6500 mm): Platinen-Text "IO13" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(89,8800 mm, 59,6500 mm): Platinen-Text "IO14" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(92,4200 mm, 59,6500 mm): Platinen-Text "IO21" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(94,9600 mm, 59,6500 mm): Platinen-Text "IO47" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(97,5000 mm, 59,6500 mm): Platinen-Text "IO48" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(100,0400 mm, 59,6500 mm): Platinen-Text "IO45" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 23,6900 mm): Platinen-Text "IO1" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 26,2300 mm): Platinen-Text "IO2" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 28,7700 mm): Platinen-Text "TXD0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 31,3100 mm): Platinen-Text "RXD0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 33,8500 mm): Platinen-Text "IO42" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 36,3900 mm): Platinen-Text "IO41" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 38,9300 mm): Platinen-Text "IO40" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 41,4700 mm): Platinen-Text "IO39" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 44,0100 mm): Platinen-Text "IO38" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 46,5500 mm): Platinen-Text "IO37" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 51,6300 mm): Platinen-Text "IO35" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,0000 mm, 54,1700 mm): Platinen-Text "IO0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(109,2500 mm, 49,0900 mm): Platinen-Text "IO36" auf B.Silkscreen
 
 ** Found 0 unconnected pads **
 
