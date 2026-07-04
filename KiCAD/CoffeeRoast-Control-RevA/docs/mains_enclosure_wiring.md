@@ -18,7 +18,7 @@ IEC C14 fused inlet / appliance cable
 CoffeeRoast-Control RevA J2 ──> 24V fan
 CoffeeRoast-Control RevA J3 ──> external SSR DC input
 CoffeeRoast-Control RevA J4 ──> K-type thermocouple
-CoffeeRoast-Control RevA J5 ──> USB data panel connector
+CoffeeRoast-Control RevA J5 ──> on-board USB-C connector at PCB edge
 ```
 
 ## Safety design notes

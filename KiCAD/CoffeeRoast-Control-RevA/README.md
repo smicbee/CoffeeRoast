@@ -12,11 +12,11 @@ This is the first generated hardware draft for moving the CoffeeRoast electronic
 
 ## Files
 
-- `CoffeeRoast-Control-RevA.kicad_pcb` — generated board placement/net draft.
+- `CoffeeRoast-Control-RevA.kicad_pcb` — generated board placement/net draft with on-board USB-C.
 - `CoffeeRoast-Control-RevA.kicad_sch` — notes-only schematic placeholder; detailed netlist is in `docs/netlist.csv`.
 - `docs/bom.csv` — draft bill of materials.
 - `docs/netlist.csv` — intended electrical connectivity.
-- `symbols/` and `footprints.pretty/` — local ESP32-S3-WROOM-1 library files copied from KiCad upstream.
+- `symbols/` and `footprints.pretty/` — local ESP32-S3-WROOM-1 and USB-C library files copied from KiCad upstream.
 
 ## Firmware pin mapping preserved
 
@@ -57,12 +57,13 @@ This was generated in the Hermes environment where KiCad is **not installed**, s
 3. Run ERC/DRC.
 4. Confirm ESP32-S3-WROOM-1 antenna keepout has no copper and is at board edge.
 5. Confirm the fan path and screw terminals are rated for the real 24V/2.5A fan current.
-6. Decide whether the USB panel header should remain a header or become an on-board USB-C connector.
-7. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
+6. Verify the on-board USB-C connector footprint matches the exact sourced part and enclosure cutout.
+7. Review USB CC pulldowns: R10/R11 = 5.1k to GND, VBUS is sense-only.
+8. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
 
 ## RevB candidates
 
 - Replace the generic buck module with an integrated switch-mode converter.
-- Add on-board USB-C receptacle instead of panel USB header.
-- Add TVS/ESD protection on 24V and USB.
+- Add ESD protection for USB D+/D- and optional VBUS TVS/polyfuse.
+- Add TVS/ESD protection on 24V fan input.
 - Add current/thermal sensing for fan/heater diagnostics.

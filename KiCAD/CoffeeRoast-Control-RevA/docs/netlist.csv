@@ -10,5 +10,7 @@ HEATER_PWM,Firmware GPIO1,U1 pin39 -> R3 -> Q2 gate
 MAX_DO,Firmware GPIO11,U2 SO -> U1 pin19
 MAX_CS,Firmware GPIO12,U2 CS -> U1 pin20
 MAX_SCK,Firmware GPIO13,U2 SCK -> U1 pin21
-USB_DN/USB_DP,Native USB serial/flash,J5 through 27R to U1 pins 13/14
+USB_DN/USB_DP,Native USB serial/flash,J5 USB-C A/B D pins through R7/R8 to U1 pins 13/14
+USB_CC1/USB_CC2,USB-C device attach advertisement,J5 A5/B5 through R10/R11 5.1k pulldowns to GND
+USB_VBUS,USB-C VBUS sense only,J5 VBUS pins; not used as board supply in RevA
 EN/BOOT,Reset/flash control,Pullups + tactile switches

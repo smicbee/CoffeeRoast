@@ -11,11 +11,12 @@ J1,1,24V input from certified internal PSU,2-pin 5.08mm,Use 230VAC->24VDC/3A cer
 J2,1,Fan output,2-pin 5.08mm,"24V fan PWM, 3A path"
 J3,1,External SSR input,2-pin 5.08mm,"SSR+ from +5V, SSR- low-side switched"
 J4,1,K-type thermocouple,2-pin 5.08mm,Use isolated thermocouple/mechanical strain relief
-J5,1,USB data panel header,1x4 2.54mm,VBUS/D-/D+/GND to panel USB-C; board powered by 24V
+J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11 or exact equivalent,Right-angle USB-C SMT/TH,On-board USB-C for native ESP32-S3 USB serial/flash; VBUS sense only
 "R1,R3",2,100R,0805,Gate/series resistors
 "R2,R4",2,100k,0805,Gate pulldowns
 "R5,R6",2,10k,0805,EN/BOOT pullups
 "R7,R8",2,27R,0805,USB series resistors
+"R10,R11",2,5.1k,0805,USB-C CC1/CC2 Rd pulldowns to advertise UFP/device
 "SW1,SW2",2,Tactile switch,6x6mm,Reset/Boot
 "C1,C2",2,10uF,0805,5V/3V3 bulk decoupling
 C3,1,100nF,0805,MAX6675 local decoupling
