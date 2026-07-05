@@ -113,8 +113,36 @@ def center_mm(fp: pcbnew.FOOTPRINT) -> tuple[float, float]:
     return sum(xs) / len(xs), sum(ys) / len(ys)
 
 
+def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
+    """Return exact Edge.Cuts extents as left, top, right, bottom in KiCad mm.
+
+    KiCad's board file coordinates increase Y downward. JLC's placement preview
+    for this Gerber upload interprets CPL coordinates from the bottom-left board
+    edge, so top-side CPL export must mirror Y using bottom - y.
+    """
+    xs: list[float] = []
+    ys: list[float] = []
+    for drawing in board.GetDrawings():
+        if drawing.GetLayer() != pcbnew.Edge_Cuts or not hasattr(drawing, "GetStart"):
+            continue
+        start = drawing.GetStart()
+        end = drawing.GetEnd()
+        xs.extend([start.x / 1e6, end.x / 1e6])
+        ys.extend([start.y / 1e6, end.y / 1e6])
+    if not xs or not ys:
+        bbox = board.GetBoardEdgesBoundingBox()
+        return bbox.GetLeft() / 1e6, bbox.GetTop() / 1e6, bbox.GetRight() / 1e6, bbox.GetBottom() / 1e6
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def to_jlc_top_xy(x: float, y: float, extents: tuple[float, float, float, float]) -> tuple[float, float]:
+    left, _top, _right, bottom = extents
+    return x - left, bottom - y
+
+
 def write_assembly_files() -> None:
     board = pcbnew.LoadBoard(str(BOARD))
+    extents = edge_extents_mm(board)
     fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
 
     bom_rows = []
@@ -129,7 +157,14 @@ def write_assembly_files() -> None:
             continue
         if ref in ASSEMBLE:
             x, y = center_mm(fp)
-            layer = "Top" if fp.GetLayer() == pcbnew.F_Cu else "Bottom"
+            if fp.GetLayer() == pcbnew.F_Cu:
+                x, y = to_jlc_top_xy(x, y, extents)
+                layer = "Top"
+            else:
+                # Bottom-side assembly is not used for RevA.1, but keep raw
+                # coordinates explicit rather than silently applying a top-side
+                # transform to a future bottom-side part.
+                layer = "Bottom"
             bom_rows.append([
                 ref,
                 "1",
