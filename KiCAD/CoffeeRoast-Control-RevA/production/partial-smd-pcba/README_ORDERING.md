@@ -8,6 +8,7 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 - `assembly/bom_smd_partial.csv` — SMD parts intended for assembly.
 - `assembly/cpl_smd_partial.csv` — centroid/place file for those SMD parts.
 - `assembly/dnp_hand_solder.csv` — parts intentionally not assembled by the PCB house.
+- `assembly/part_mapping_review.csv` — preferred MPN/spec checklist for the assembler UI.
 
 ## Important ordering notes
 

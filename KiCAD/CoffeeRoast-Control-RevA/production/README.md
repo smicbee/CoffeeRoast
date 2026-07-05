@@ -10,6 +10,7 @@ Generated first-order package for the chosen approach: PCB fabrication plus **to
 - `partial-smd-pcba/assembly/bom_smd_partial.csv` — SMD assembly BOM for the first prototype run.
 - `partial-smd-pcba/assembly/cpl_smd_partial.csv` — top-side centroid/place file for the SMD assembly BOM.
 - `partial-smd-pcba/assembly/dnp_hand_solder.csv` — debug pads, THT, power, and placeholder parts that should not be assembled by the PCB house.
+- `partial-smd-pcba/assembly/part_mapping_review.csv` — preferred exact MPN/spec checklist to use while mapping parts in the assembler UI.
 
 ## Current partial-assembly scope
 
