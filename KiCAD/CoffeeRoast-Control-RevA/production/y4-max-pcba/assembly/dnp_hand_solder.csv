@@ -1,0 +1,96 @@
+Designator,Value,Kind,Reason/Action
+C4,220uF_35V_INPUT_BULK,tht,"Selected candidate: Panasonic EEU-FR1V221 or Nichicon UPW1V221MPD, 220uF/35V radial electrolytic. Verify lead pitch against current pads before ordering."
+C5,1nF_C0G_THERMO_DIFF_FILTER_DNP_IF_NOISY,smd,"DNP for first PCBA: current RevA.1 footprint is a draft wide-pad filter, not an 0805 placement. Candidate if redesigned: C76625 / TDK C2012C0G1H102JT000N, 1nF C0G 0805."
+D1,SB560_FLYBACK,tht,"Selected candidate: SB560 DO-201AD Schottky, JLC C139684. Hand-solder after fan type is confirmed."
+D2,SMBJ33A_24V_INPUT_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
+D3,SMBJ33A_FAN_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
+F1,T3.15A_24V_SIDE,tht,Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.
+PADESP1,GND,smd,Test/debug pad; no assembly part.
+PADESP2,3V3,smd,Test/debug pad; no assembly part.
+PADESP3,EN,smd,Test/debug pad; no assembly part.
+PADESP4,IO4,smd,Test/debug pad; no assembly part.
+PADESP5,IO5,smd,Test/debug pad; no assembly part.
+PADESP6,IO6,smd,Test/debug pad; no assembly part.
+PADESP7,IO7,smd,Test/debug pad; no assembly part.
+PADESP8,IO15,smd,Test/debug pad; no assembly part.
+PADESP9,IO16,smd,Test/debug pad; no assembly part.
+PADESP10,IO17,smd,Test/debug pad; no assembly part.
+PADESP11,IO18,smd,Test/debug pad; no assembly part.
+PADESP12,IO8,smd,Test/debug pad; no assembly part.
+PADESP13,USB_D-,smd,Test/debug pad; no assembly part.
+PADESP14,USB_D+,smd,Test/debug pad; no assembly part.
+PADESP15,IO3,smd,Test/debug pad; no assembly part.
+PADESP16,IO46,smd,Test/debug pad; no assembly part.
+PADESP17,IO9,smd,Test/debug pad; no assembly part.
+PADESP18,IO10,smd,Test/debug pad; no assembly part.
+PADESP19,IO11,smd,Test/debug pad; no assembly part.
+PADESP20,IO12,smd,Test/debug pad; no assembly part.
+PADESP21,IO13,smd,Test/debug pad; no assembly part.
+PADESP22,IO14,smd,Test/debug pad; no assembly part.
+PADESP23,IO21,smd,Test/debug pad; no assembly part.
+PADESP24,IO47,smd,Test/debug pad; no assembly part.
+PADESP25,IO48,smd,Test/debug pad; no assembly part.
+PADESP26,IO45,smd,Test/debug pad; no assembly part.
+PADESP27,IO0,smd,Test/debug pad; no assembly part.
+PADESP28,IO35,smd,Test/debug pad; no assembly part.
+PADESP29,IO36,smd,Test/debug pad; no assembly part.
+PADESP30,IO37,smd,Test/debug pad; no assembly part.
+PADESP31,IO38,smd,Test/debug pad; no assembly part.
+PADESP32,IO39,smd,Test/debug pad; no assembly part.
+PADESP33,IO40,smd,Test/debug pad; no assembly part.
+PADESP34,IO41,smd,Test/debug pad; no assembly part.
+PADESP35,IO42,smd,Test/debug pad; no assembly part.
+PADESP36,RXD0,smd,Test/debug pad; no assembly part.
+PADESP37,TXD0,smd,Test/debug pad; no assembly part.
+PADESP38,IO2,smd,Test/debug pad; no assembly part.
+PADESP39,IO1,smd,Test/debug pad; no assembly part.
+PADESP40,GND,smd,Test/debug pad; no assembly part.
+SW1,RESET_EN,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if EN pad/debug access is enough."
+SW2,BOOT,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if BOOT pad/debug access is enough."
+TPESP1,GND,smd,Test/debug pad; no assembly part.
+TPESP2,3V3,smd,Test/debug pad; no assembly part.
+TPESP3,EN,smd,Test/debug pad; no assembly part.
+TPESP4,IO4,smd,Test/debug pad; no assembly part.
+TPESP5,IO5,smd,Test/debug pad; no assembly part.
+TPESP6,IO6,smd,Test/debug pad; no assembly part.
+TPESP7,IO7,smd,Test/debug pad; no assembly part.
+TPESP8,IO15,smd,Test/debug pad; no assembly part.
+TPESP9,IO16,smd,Test/debug pad; no assembly part.
+TPESP10,IO17,smd,Test/debug pad; no assembly part.
+TPESP11,IO18,smd,Test/debug pad; no assembly part.
+TPESP12,IO8,smd,Test/debug pad; no assembly part.
+TPESP13,USB_D-/IO19,smd,Test/debug pad; no assembly part.
+TPESP14,USB_D+/IO20,smd,Test/debug pad; no assembly part.
+TPESP15,IO3,smd,Test/debug pad; no assembly part.
+TPESP16,IO46,smd,Test/debug pad; no assembly part.
+TPESP17,IO9,smd,Test/debug pad; no assembly part.
+TPESP18,IO10,smd,Test/debug pad; no assembly part.
+TPESP19,IO11/MAXDO,smd,Test/debug pad; no assembly part.
+TPESP20,IO12/MAXCS,smd,Test/debug pad; no assembly part.
+TPESP21,IO13/MAXCLK,smd,Test/debug pad; no assembly part.
+TPESP22,IO14,smd,Test/debug pad; no assembly part.
+TPESP23,IO21,smd,Test/debug pad; no assembly part.
+TPESP24,IO47,smd,Test/debug pad; no assembly part.
+TPESP25,IO48,smd,Test/debug pad; no assembly part.
+TPESP26,IO45,smd,Test/debug pad; no assembly part.
+TPESP27,IO0/BOOT,smd,Test/debug pad; no assembly part.
+TPESP28,IO35,smd,Test/debug pad; no assembly part.
+TPESP29,IO36,smd,Test/debug pad; no assembly part.
+TPESP30,IO37,smd,Test/debug pad; no assembly part.
+TPESP31,IO38,smd,Test/debug pad; no assembly part.
+TPESP32,IO39,smd,Test/debug pad; no assembly part.
+TPESP33,IO40,smd,Test/debug pad; no assembly part.
+TPESP34,IO41,smd,Test/debug pad; no assembly part.
+TPESP35,IO42,smd,Test/debug pad; no assembly part.
+TPESP36,RXD0/IO44,smd,Test/debug pad; no assembly part.
+TPESP37,TXD0/IO43,smd,Test/debug pad; no assembly part.
+TPESP38,IO2/FAN,smd,Test/debug pad; no assembly part.
+TPESP39,IO1/SSR,smd,Test/debug pad; no assembly part.
+TPESP40,GND,smd,Test/debug pad; no assembly part.
+TPGND,GND_TEST,smd,Test/debug pad; no assembly part.
+TP5V,+5V_TEST,smd,Test/debug pad; no assembly part.
+TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
+TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.
+U3,3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117,smd,Selected candidate class: OKI-78SR-3.3/1.5-W36-C or R-78E3.3-0.5 switching regulator. Current RevA.1 footprint does not match; wire-in for prototype or update footprint in RevA.2.
+U4,24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE,tht,"Selected candidate class: 24V->5V buck module >=1A, e.g. Pololu D24V10F5/JLC C26689857 if footprint is adapted. Current module footprint must be verified before order."
+U5,USBLC6-2SC6_OR_USB2_ESD,smd,"DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519."
