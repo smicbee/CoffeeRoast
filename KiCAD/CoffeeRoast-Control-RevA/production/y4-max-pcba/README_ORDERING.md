@@ -28,6 +28,8 @@ This package is the Y4 conservative Max-PCBA quote attempt: PCB fabrication + to
 
 ## Recommended order flow
 
+CPL note: the JLC placement preview expects Y from the opposite board edge for this export. `assembly/cpl_smd_partial.csv` and `assembly/cpl_smd_partial_JLC_Y_corrected.csv` use corrected Y = 100.0 mm - KiCad Y so parts overlay the 160 x 100 mm Gerber correctly.
+
 Q1 / C2663 gate: treat this as a quote/preview experiment. Proceed only if JLC accepts TO-220/THT placement, the G-D-S orientation/body direction is visibly correct, and the surcharge/lead time is acceptable. Otherwise mark Q1 DNP and hand-solder it.
 
 
