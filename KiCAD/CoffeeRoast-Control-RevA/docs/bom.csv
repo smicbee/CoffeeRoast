@@ -1,17 +1,22 @@
 Ref,Qty,Value/Part,Package,Notes
 U1,1,ESP32-S3-WROOM-1-N8R8 or compatible,ESP32-S3-WROOM-1 module,Direct-on-PCB module; antenna at board edge/keepout
 U2,1,MAX6675,SOIC-8,Run at 3.3V to avoid 5V ESP32 GPIO exposure
-U3,1,AMS1117-3.3 or pin-compatible 3V3 regulator,SOT-223,3V3 for ESP32; check thermals/current in final review
-U4,1,24V->5V buck module >=1A,Generic 4-pin buck module,Input from 24V/3A PSU; output +5V
-Q1,1,IRLZ44N/IRLB8721 logic-level N-MOSFET,TO-220-3,"Fan low-side switch, design path for 3A"
+U3,1,3V3 switching regulator >=600mA 5V input,Exact footprint/part TBD,"RevA.1 replaces AMS1117 intent to reduce heat; choose exact AP63203/TPS62177/module-style part before fabrication"
+U4,1,24V->5V buck module >=1A low-noise,Generic 4-pin buck module,Input from 24V/3A PSU; output +5V
+Q1,1,IRLB8721 or 3.3V-logic N-MOSFET with low Rds_on,TO-220-3 or exact sourced footprint,"Fan low-side switch; require low Rds_on at Vgs=2.5/3.3V and margin for 3A fan path"
 Q2,1,2N7002,SOT-23,Low-side SSR input driver
 D1,1,SB560/MBR560 flyback diode,THT P10.16,"Across fan: cathode to +24V_FUSED, anode to FAN_NEG"
+D2,1,SMBJ33A or suitable 24V-input TVS,SMB/SMA footprint placeholder,RevA.1 surge clamp across +24V_RAW/GND near J1
+D3,1,SMBJ33A or suitable fan TVS,SMB/SMA footprint placeholder,RevA.1 fan clamp across +24V_FUSED/FAN_NEG near J2
 F1,1,T3.15A fuse on 24V side,5x20 placeholder,Optional/protects low-voltage branch
 J1,1,24V input from certified internal PSU,2-pin 5.08mm,Use 230VAC->24VDC/3A certified supply in enclosure
 J2,1,Fan output,2-pin 5.08mm,"24V fan PWM, 3A path"
 J3,1,External SSR input,2-pin 5.08mm,"SSR+ from +5V, SSR- low-side switched"
 J4,1,K-type thermocouple,2-pin 5.08mm,Use isolated thermocouple/mechanical strain relief
 J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11,"Real USB-C receptacle footprint; data-only USB2, VBUS sense only, CC1/CC2 Rd pulldowns"
+U5,1,USBLC6-2SC6 or equivalent USB2 ESD array,Draft pads on existing USB/GND tracks,RevA.1 USB D+/D- ESD footprint; replace with exact library footprint before fabrication
+C4,1,220uF 35V low-ESR electrolytic/polymer,Radial placeholder,RevA.1 input bulk capacitor across +24V_RAW/GND
+C5,1,1nF C0G/NP0 thermocouple differential filter,0603/0805 placeholder,DNP if thermocouple reading becomes biased/noisy; placed across THERMO_PLUS/THERMO_MINUS at J4 side
 "R1,R3",2,100R,0805,Gate/series resistors
 "R2,R4",2,100k,0805,Gate pulldowns
 "R5,R6",2,10k,0805,EN/BOOT pullups
@@ -20,5 +25,6 @@ J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,Connector_USB:USB_C_Receptacle_XKB_U2
 "SW1,SW2",2,Tactile switch,6x6mm,Reset/Boot
 "C1,C2",2,10uF,0805,5V/3V3 bulk decoupling
 C3,1,100nF,0805,MAX6675 local decoupling
+"TP24V,TP5V,TP3V3,TPGND",4,Bring-up voltage test pads,PCB copper pads only,RevA.1 test points for 24V fused/5V/3V3/GND rails
 TPESP1-TPESP40,40,ESP32-S3 debug/test pads,PCB copper pads only,"Do not populate; probe/solder-wire pads around U1, see docs/esp32_debug_pads.csv"
 PADESP1-PADESP40,40,ESP32-S3 larger bottom-side solder pads,PCB copper pads only,"Do not populate; labeled B.Cu/B.Silk wire-attach pads routed from ESP32 pins, see docs/esp32_solder_pads.csv"

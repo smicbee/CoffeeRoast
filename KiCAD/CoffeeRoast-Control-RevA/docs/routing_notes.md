@@ -1,8 +1,8 @@
-# CoffeeRoast-Control RevA routing notes
+# CoffeeRoast-Control RevA.1 routing notes
 
-## Status after exact USB-C routing
+## Status after RevA.1 robustness updates
 
-Routing was performed with KiCad 9 + Freerouting from a Specctra DSN export, then the dense USB-C D+/D- fanout was manually cleaned with `pcbnew` tracks/vias.
+Routing was originally performed with KiCad 9 + Freerouting from a Specctra DSN export, then the dense USB-C D+/D- fanout was manually cleaned with `pcbnew` tracks/vias. RevA.1 adds low-voltage robustness footprints/short routes for input protection, fan clamp, USB ESD, thermocouple filtering, and rail test points.
 
 Selected J5 footprint:
 
@@ -13,8 +13,8 @@ Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11
 Generated artifacts:
 
 - `render/coffeeroast_debug_breakout.dsn` — DSN exported from KiCad after adding the routed ESP32 solder-pad breakout.
-- `render/coffeeroast_debug_breakout.ses` — Freerouting session result for the current routed board.
-- `render/drc_report_errors_only.txt` — KiCad DRC, errors only.
+- `render/coffeeroast_debug_breakout.ses` — Freerouting session result for the pre-RevA.1 routed board; keep as route history, not current source of truth.
+- `render/drc_report_errors_only.txt` — current KiCad DRC, errors only.
 - `render/drc_report_full.txt` — full DRC including silkscreen warnings.
 - `render/kicad_top.png` / `render/kicad_bottom.png` — KiCad-rendered board views.
 
@@ -24,8 +24,19 @@ DRC summary:
 Error-level DRC: 0 violations
 Unconnected pads: 0
 Footprint errors: 0
-Full DRC still has silkscreen warnings only.
+Full DRC still has non-fabrication warnings only: silkscreen/text warnings from generated labels.
 ```
+
+## RevA.1 added robustness footprints
+
+- `C4` 220 µF / 35V input bulk capacitor across `+24V_RAW` and `GND` near J1.
+- `D2` TVS across `+24V_RAW` and `GND` for 24V input surge clamping.
+- `D3` TVS across `+24V_FUSED` and `FAN_NEG` for fan/motor transient clamping.
+- `U5` USB2 ESD footprint on the existing connector-side USB D+/D-/GND routing.
+- `C5` optional thermocouple differential filter across `THERMO_PLUS`/`THERMO_MINUS` at J4. Treat as DNP unless testing shows benefit.
+- `TP24V`, `TP5V`, `TP3V3`, and `TPGND` bring-up pads.
+- `U3` value/intent updated to a 3.3V switching regulator; exact footprint still needs final part selection.
+- `Q1` value/intent updated to an IRLB8721-class or equivalent low-Rds_on 3.3V-logic fan MOSFET.
 
 ## Important caveats
 

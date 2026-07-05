@@ -1,14 +1,15 @@
-# CoffeeRoast-Control RevA PCB Draft
+# CoffeeRoast-Control RevA.1 PCB Draft
 
-This is the generated RevA hardware draft for moving the CoffeeRoast electronics onto a PCB. The current board has been autorouted with KiCad/Freerouting and has zero KiCad error-level DRC violations, but it still needs manual engineering review before fabrication.
+This is the generated RevA.1 hardware draft for moving the CoffeeRoast electronics onto a PCB. The current board has been updated with the agreed robustness optimizations and has zero KiCad error-level DRC violations, but it still needs manual engineering review before fabrication.
 
 ## Design decision captured from chat
 
 - Use **one 230V appliance inlet for the whole roaster enclosure**.
 - Inside the enclosure use a **certified isolated 230VAC -> 24VDC / 3A PSU**.
 - The controller PCB itself is **low-voltage only** and accepts the PSU's 24VDC output.
-- The PCB generates 5V via a buck module and 3.3V for the ESP32-S3 module.
+- The PCB generates 5V via a buck module and 3.3V via a RevA.1 switching-regulator footprint/selection for the ESP32-S3 module.
 - The heater's 230V path is still switched by an **external SSR module with heatsink**; 230V is intentionally not routed on this PCB.
+- RevA.1 adds low-voltage robustness features: input bulk capacitor, 24V input TVS, fan TVS, USB ESD footprint, thermocouple filter footprint, and rail test pads.
 
 ## Files
 
@@ -19,6 +20,8 @@ This is the generated RevA hardware draft for moving the CoffeeRoast electronics
 - `docs/esp32_debug_pads.csv` — ESP32-S3 TPESP1-40 tiny probe pad mapping.
 - `docs/esp32_solder_pads.csv` — larger labeled bottom-side PADESP1-40 solder pad mapping for attaching wires later.
 - `docs/routing_notes.md` — routing/DRC status and fabrication caveats.
+- `docs/reva1_optimizations.md` — RevA.1 robustness changes and what was deliberately left for RevB.
+- `tools/apply_reva1_optimizations.py` — idempotent pcbnew script that applies the RevA.1 PCB additions.
 - `symbols/` and `footprints.pretty/` — local ESP32-S3-WROOM-1 and USB-C library files copied from KiCad upstream.
 
 ## Firmware pin mapping preserved
@@ -45,11 +48,12 @@ All ESP32-S3-WROOM-1 side pins 1-40 are exposed twice: tiny local probe pads nam
 230VAC inlet in enclosure
   +--> certified 230VAC -> 24VDC / 3A PSU
           +--> J1 on this PCB
+                +--> C4 input bulk + D2 24V TVS protection
                 +--> F1 24V-side fuse placeholder
-                +--> J2 24V fan via Q1 low-side MOSFET
+                +--> J2 24V fan via Q1 low-side MOSFET + D1/D3 fan clamp
                 +--> U4 24V -> 5V buck module
                         +--> SSR input driver supply
-                        +--> U3 3.3V regulator
+                        +--> U3 3.3V switching regulator selection
                                 +--> ESP32-S3-WROOM-1 + MAX6675
 
 230VAC heater line: external SSR module only, not on this PCB.
@@ -60,17 +64,17 @@ All ESP32-S3-WROOM-1 side pins 1-40 are exposed twice: tiny local probe pads nam
 This board now loads in KiCad 9 and has been routed/checked headlessly. KiCad error-level DRC is clean, but before ordering boards:
 
 1. Open the project in KiCad.
-2. Replace remaining generic placeholders with exact sourced parts: terminal blocks, fuse holder, buck module, MOSFET/regulator variants.
+2. Replace remaining generic placeholders with exact sourced parts: terminal blocks, fuse holder, U3 switching regulator footprint, U4 buck module, TVS packages, USB ESD package, MOSFET/regulator variants.
 3. Re-run ERC/DRC after any mechanical/footprint changes.
 4. Confirm ESP32-S3-WROOM-1 antenna keepout has no copper and is at board edge.
-5. Confirm the fan path and screw terminals are rated for the real 24V/2.5A fan current.
-6. Confirm J5 enclosure cutout/edge placement for the exact USB-C part.
+5. Confirm the fan path, D3 TVS choice, Q1 MOSFET, and screw terminals are rated for the real 24V/2.5A fan current.
+6. Confirm J5 enclosure cutout/edge placement for the exact USB-C part and replace U5 with an exact USB2 ESD footprint.
 7. Review USB CC pulldowns: R10/R11 = 5.1k to GND, VBUS is sense-only.
-8. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
+8. Decide whether C5 should be populated after thermocouple noise testing; leave DNP if it biases readings.
+9. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
 
 ## RevB candidates
 
-- Replace the generic buck module with an integrated switch-mode converter.
-- Add ESD protection for USB D+/D- and optional VBUS TVS/polyfuse.
-- Add TVS/ESD protection on 24V fan input.
+- Replace the generic U4 buck module with an integrated switch-mode converter.
+- Add reverse-polarity ideal-diode/P-MOSFET input protection if final wiring risk justifies the extra footprint/reroute.
 - Add current/thermal sensing for fan/heater diagnostics.
