@@ -1,0 +1,97 @@
+Designator,Value,Kind,Reason/Action
+C4,220uF_35V_INPUT_BULK,tht,"220uF/35V input bulk capacitor, THT/mechanical part, hand-solder."
+D1,SB560_FLYBACK,tht,"Fan flyback diode, THT/power part, hand-solder after fan type is confirmed."
+F1,T3.15A_24V_SIDE,tht,"24V-side fuse holder, choose exact holder/current rating before soldering."
+J1,24V_IN_FROM_230V_PSU_3A,tht,"24V input screw terminal / mechanical connector, hand-solder after enclosure choice."
+J2,FAN_24V_PWM_3A,tht,"24V fan screw terminal / mechanical connector, hand-solder after enclosure choice."
+J3,SSR_INPUT_TO_EXTERNAL_SSR,tht,"External SSR input screw terminal, hand-solder after SSR wiring choice."
+J4,K_TYPE_THERMOCOUPLE,tht,"K-type thermocouple connector, hand-solder after mechanical/strain relief choice."
+PADESP1,GND,smd,Test/debug pad; no assembly part.
+PADESP2,3V3,smd,Test/debug pad; no assembly part.
+PADESP3,EN,smd,Test/debug pad; no assembly part.
+PADESP4,IO4,smd,Test/debug pad; no assembly part.
+PADESP5,IO5,smd,Test/debug pad; no assembly part.
+PADESP6,IO6,smd,Test/debug pad; no assembly part.
+PADESP7,IO7,smd,Test/debug pad; no assembly part.
+PADESP8,IO15,smd,Test/debug pad; no assembly part.
+PADESP9,IO16,smd,Test/debug pad; no assembly part.
+PADESP10,IO17,smd,Test/debug pad; no assembly part.
+PADESP11,IO18,smd,Test/debug pad; no assembly part.
+PADESP12,IO8,smd,Test/debug pad; no assembly part.
+PADESP13,USB_D-,smd,Test/debug pad; no assembly part.
+PADESP14,USB_D+,smd,Test/debug pad; no assembly part.
+PADESP15,IO3,smd,Test/debug pad; no assembly part.
+PADESP16,IO46,smd,Test/debug pad; no assembly part.
+PADESP17,IO9,smd,Test/debug pad; no assembly part.
+PADESP18,IO10,smd,Test/debug pad; no assembly part.
+PADESP19,IO11,smd,Test/debug pad; no assembly part.
+PADESP20,IO12,smd,Test/debug pad; no assembly part.
+PADESP21,IO13,smd,Test/debug pad; no assembly part.
+PADESP22,IO14,smd,Test/debug pad; no assembly part.
+PADESP23,IO21,smd,Test/debug pad; no assembly part.
+PADESP24,IO47,smd,Test/debug pad; no assembly part.
+PADESP25,IO48,smd,Test/debug pad; no assembly part.
+PADESP26,IO45,smd,Test/debug pad; no assembly part.
+PADESP27,IO0,smd,Test/debug pad; no assembly part.
+PADESP28,IO35,smd,Test/debug pad; no assembly part.
+PADESP29,IO36,smd,Test/debug pad; no assembly part.
+PADESP30,IO37,smd,Test/debug pad; no assembly part.
+PADESP31,IO38,smd,Test/debug pad; no assembly part.
+PADESP32,IO39,smd,Test/debug pad; no assembly part.
+PADESP33,IO40,smd,Test/debug pad; no assembly part.
+PADESP34,IO41,smd,Test/debug pad; no assembly part.
+PADESP35,IO42,smd,Test/debug pad; no assembly part.
+PADESP36,RXD0,smd,Test/debug pad; no assembly part.
+PADESP37,TXD0,smd,Test/debug pad; no assembly part.
+PADESP38,IO2,smd,Test/debug pad; no assembly part.
+PADESP39,IO1,smd,Test/debug pad; no assembly part.
+PADESP40,GND,smd,Test/debug pad; no assembly part.
+Q1,IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW,tht,"Fan power MOSFET, choose final 3.3V-logic package/thermal style; hand-solder for RevA prototype."
+SW1,RESET_EN,tht,Reset tactile switch: optional hand-solder; can be omitted if EN pad/debug access is enough.
+SW2,BOOT,tht,Boot tactile switch: optional hand-solder; can be omitted if BOOT pad/debug access is enough.
+TPESP1,GND,smd,Test/debug pad; no assembly part.
+TPESP2,3V3,smd,Test/debug pad; no assembly part.
+TPESP3,EN,smd,Test/debug pad; no assembly part.
+TPESP4,IO4,smd,Test/debug pad; no assembly part.
+TPESP5,IO5,smd,Test/debug pad; no assembly part.
+TPESP6,IO6,smd,Test/debug pad; no assembly part.
+TPESP7,IO7,smd,Test/debug pad; no assembly part.
+TPESP8,IO15,smd,Test/debug pad; no assembly part.
+TPESP9,IO16,smd,Test/debug pad; no assembly part.
+TPESP10,IO17,smd,Test/debug pad; no assembly part.
+TPESP11,IO18,smd,Test/debug pad; no assembly part.
+TPESP12,IO8,smd,Test/debug pad; no assembly part.
+TPESP13,USB_D-/IO19,smd,Test/debug pad; no assembly part.
+TPESP14,USB_D+/IO20,smd,Test/debug pad; no assembly part.
+TPESP15,IO3,smd,Test/debug pad; no assembly part.
+TPESP16,IO46,smd,Test/debug pad; no assembly part.
+TPESP17,IO9,smd,Test/debug pad; no assembly part.
+TPESP18,IO10,smd,Test/debug pad; no assembly part.
+TPESP19,IO11/MAXDO,smd,Test/debug pad; no assembly part.
+TPESP20,IO12/MAXCS,smd,Test/debug pad; no assembly part.
+TPESP21,IO13/MAXCLK,smd,Test/debug pad; no assembly part.
+TPESP22,IO14,smd,Test/debug pad; no assembly part.
+TPESP23,IO21,smd,Test/debug pad; no assembly part.
+TPESP24,IO47,smd,Test/debug pad; no assembly part.
+TPESP25,IO48,smd,Test/debug pad; no assembly part.
+TPESP26,IO45,smd,Test/debug pad; no assembly part.
+TPESP27,IO0/BOOT,smd,Test/debug pad; no assembly part.
+TPESP28,IO35,smd,Test/debug pad; no assembly part.
+TPESP29,IO36,smd,Test/debug pad; no assembly part.
+TPESP30,IO37,smd,Test/debug pad; no assembly part.
+TPESP31,IO38,smd,Test/debug pad; no assembly part.
+TPESP32,IO39,smd,Test/debug pad; no assembly part.
+TPESP33,IO40,smd,Test/debug pad; no assembly part.
+TPESP34,IO41,smd,Test/debug pad; no assembly part.
+TPESP35,IO42,smd,Test/debug pad; no assembly part.
+TPESP36,RXD0/IO44,smd,Test/debug pad; no assembly part.
+TPESP37,TXD0/IO43,smd,Test/debug pad; no assembly part.
+TPESP38,IO2/FAN,smd,Test/debug pad; no assembly part.
+TPESP39,IO1/SSR,smd,Test/debug pad; no assembly part.
+TPESP40,GND,smd,Test/debug pad; no assembly part.
+TPGND,GND_TEST,smd,Test/debug pad; no assembly part.
+TP5V,+5V_TEST,smd,Test/debug pad; no assembly part.
+TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
+TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.
+U3,3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117,smd,3V3 regulator exact switching-regulator footprint still TBD; do not PCBA-place until RevA.2 regulator is finalized.
+U4,24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE,tht,24V->5V buck module exact module/footprint TBD; hand-solder for RevA prototype.

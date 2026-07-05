@@ -22,6 +22,8 @@ This is the generated RevA.1 hardware draft for moving the CoffeeRoast electroni
 - `docs/routing_notes.md` — routing/DRC status and fabrication caveats.
 - `docs/reva1_optimizations.md` — RevA.1 robustness changes and what was deliberately left for RevB.
 - `tools/apply_reva1_optimizations.py` — idempotent pcbnew script that applies the RevA.1 PCB additions.
+- `production/partial-smd-pcba/` — generated Gerber/drill + partial SMD assembly BOM/CPL package for first prototype ordering.
+- `tools/prepare_partial_pcba_package.py` — regenerates the partial-SMD PCBA handoff package.
 - `symbols/` and `footprints.pretty/` — local ESP32-S3-WROOM-1 and USB-C library files copied from KiCad upstream.
 
 ## Firmware pin mapping preserved
