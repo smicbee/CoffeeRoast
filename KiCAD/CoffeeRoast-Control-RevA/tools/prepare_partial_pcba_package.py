@@ -26,43 +26,43 @@ ZIP_PATH = OUT / "CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip"
 # Assemble by PCBA house in the first partial-SMD prototype run.
 # Supplier PNs are deliberately blank until final JLC/LCSC/PCBWay part mapping.
 ASSEMBLE = {
-    "U1": {"mpn": "ESP32-S3-WROOM-1-N8R8", "package": "ESP32-S3-WROOM-1 module", "notes": "Confirm module variant/flash/PSRAM and antenna keepout before order."},
-    "U2": {"mpn": "MAX6675ISA+T or compatible 3.3V SOIC-8 thermocouple converter", "package": "SOIC-8", "notes": "Confirm genuine/compatible part and 3.3V operation."},
-    "Q2": {"mpn": "2N7002,215 (Nexperia) or equivalent 2N7002", "package": "SOT-23", "notes": "SOT-23 SSR low-side driver."},
-    "J5": {"mpn": "XKB U262-16XN-4BVC11", "package": "USB-C receptacle XKB U262-16XN", "notes": "USB-C data connector; verify assembly catalog footprint/height."},
-    "U5": {"mpn": "USBLC6-2SC6 (STMicro) or equivalent USB2 ESD array", "package": "SOT-23-6 / USB2 ESD", "notes": "Replace draft/custom footprint with exact library footprint before production order."},
-    "R1": {"mpn": "Yageo RC0805FR-07100RL or equivalent 100R 0805 1%", "package": "0805", "notes": "Fan gate resistor."},
-    "R2": {"mpn": "Yageo RC0805FR-07100KL or equivalent 100k 0805 1%", "package": "0805", "notes": "Fan gate pulldown."},
-    "R3": {"mpn": "Yageo RC0805FR-07100RL or equivalent 100R 0805 1%", "package": "0805", "notes": "SSR gate resistor."},
-    "R4": {"mpn": "Yageo RC0805FR-07100KL or equivalent 100k 0805 1%", "package": "0805", "notes": "SSR gate pulldown."},
-    "R5": {"mpn": "Yageo RC0805FR-0710KL or equivalent 10k 0805 1%", "package": "0805", "notes": "EN pullup."},
-    "R6": {"mpn": "Yageo RC0805FR-0710KL or equivalent 10k 0805 1%", "package": "0805", "notes": "BOOT pullup."},
-    "R7": {"mpn": "Yageo RC0805FR-0727RL or equivalent 27R 0805 1%", "package": "0805", "notes": "USB D- series resistor."},
-    "R8": {"mpn": "Yageo RC0805FR-0727RL or equivalent 27R 0805 1%", "package": "0805", "notes": "USB D+ series resistor."},
-    "R10": {"mpn": "Yageo RC0805FR-075K1L or equivalent 5.1k 0805 1%", "package": "0805", "notes": "USB-C CC1 Rd."},
-    "R11": {"mpn": "Yageo RC0805FR-075K1L or equivalent 5.1k 0805 1%", "package": "0805", "notes": "USB-C CC2 Rd."},
-    "C1": {"mpn": "Murata GRM21BR61C106KE15L or equivalent 10uF 0805 X5R/X7R >=16V", "package": "0805", "notes": "5V bulk/decoupling."},
-    "C2": {"mpn": "Murata GRM21BR61C106KE15L or equivalent 10uF 0805 X5R/X7R >=16V", "package": "0805", "notes": "3V3 bulk/decoupling."},
-    "C3": {"mpn": "Murata GRM21BR71H104KA01L or equivalent 100nF 0805 X7R >=50V", "package": "0805", "notes": "MAX6675 decoupling."},
-    "C5": {"mpn": "Murata GRM2165C1H102JA01D or equivalent 1nF 0805 C0G/NP0", "package": "0805", "notes": "Optional thermocouple filter; mark DNP if concerned about measurement bias."},
-    "D2": {"mpn": "SMBJ33A-13-F / SMBJ33A or SMAJ33A-class 24V TVS", "package": "SMB/SMA TVS draft", "notes": "Input TVS; exact package must match footprint."},
-    "D3": {"mpn": "SMBJ33A-13-F / SMBJ33A or SMAJ33A-class 24V TVS", "package": "SMB/SMA TVS draft", "notes": "Fan clamp TVS; exact package must match footprint."},
+    "U1": {"mpn": "ESP32-S3-WROOM-1-N8R8", "supplier": "C2913201", "package": "ESP32-S3-WROOM-1 module", "notes": "Extended JLCPCB part; confirm module variant/flash/PSRAM and antenna keepout before order."},
+    "U2": {"mpn": "MAX6675ISA+T", "supplier": "C16030", "package": "SOIC-8", "notes": "Extended JLCPCB part; 3.3V thermocouple converter."},
+    "Q2": {"mpn": "2N7002", "supplier": "C8545", "package": "SOT-23", "notes": "Basic JLCPCB part; SSR low-side driver."},
+    "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C receptacle XKB U262-16XN", "notes": "Extended JLCPCB part; verify orientation in the PCBA preview."},
+    "R1": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "Basic JLCPCB 100R 0805 1%; fan gate resistor."},
+    "R2": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "Basic JLCPCB 100k 0805 1%; fan gate pulldown."},
+    "R3": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "Basic JLCPCB 100R 0805 1%; SSR gate resistor."},
+    "R4": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "Basic JLCPCB 100k 0805 1%; SSR gate pulldown."},
+    "R5": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "Basic JLCPCB 10k 0805 1%; EN pullup."},
+    "R6": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "Basic JLCPCB 10k 0805 1%; BOOT pullup."},
+    "R7": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "JLC promotional/basic-equivalent 27R 0805; USB D- series resistor."},
+    "R8": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "JLC promotional/basic-equivalent 27R 0805; USB D+ series resistor."},
+    "R10": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC1 Rd."},
+    "R11": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC2 Rd."},
+    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 5V bulk/decoupling."},
+    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling."},
+    "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "Basic JLCPCB 100nF 0805 X7R 50V; MAX6675 decoupling."},
 }
 
 # Do not ask the PCBA house to place these in the first partial assembly run.
 HAND_SOLDER = {
-    "J1": "24V input screw terminal / mechanical connector, hand-solder after enclosure choice.",
-    "J2": "24V fan screw terminal / mechanical connector, hand-solder after enclosure choice.",
-    "J3": "External SSR input screw terminal, hand-solder after SSR wiring choice.",
-    "J4": "K-type thermocouple connector, hand-solder after mechanical/strain relief choice.",
-    "F1": "24V-side fuse holder, choose exact holder/current rating before soldering.",
-    "D1": "Fan flyback diode, THT/power part, hand-solder after fan type is confirmed.",
-    "Q1": "Fan power MOSFET, choose final 3.3V-logic package/thermal style; hand-solder for RevA prototype.",
-    "U3": "3V3 regulator exact switching-regulator footprint still TBD; do not PCBA-place until RevA.2 regulator is finalized.",
-    "U4": "24V->5V buck module exact module/footprint TBD; hand-solder for RevA prototype.",
-    "C4": "220uF/35V input bulk capacitor, THT/mechanical part, hand-solder.",
-    "SW1": "Reset tactile switch: optional hand-solder; can be omitted if EN pad/debug access is enough.",
-    "SW2": "Boot tactile switch: optional hand-solder; can be omitted if BOOT pad/debug access is enough.",
+    "J1": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after enclosure choice.",
+    "J2": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after enclosure choice.",
+    "J3": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after SSR wiring choice.",
+    "J4": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. K-type thermocouple needs strain relief; true TC mini-jack is RevA.2 mechanical work.",
+    "F1": "Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.",
+    "D1": "Selected candidate: SB560 DO-201AD Schottky, JLC C139684. Hand-solder after fan type is confirmed.",
+    "D2": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
+    "D3": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
+    "Q1": "Selected candidate: IRLB8721PBF TO-220, JLC C153222; alternative FQP30N06L, JLC C243087. Hand-solder and thermally verify with real fan current.",
+    "U3": "Selected candidate class: OKI-78SR-3.3/1.5-W36-C or R-78E3.3-0.5 switching regulator. Current RevA.1 footprint does not match; wire-in for prototype or update footprint in RevA.2.",
+    "U4": "Selected candidate class: 24V->5V buck module >=1A, e.g. Pololu D24V10F5/JLC C26689857 if footprint is adapted. Current module footprint must be verified before order.",
+    "C4": "Selected candidate: Panasonic EEU-FR1V221 or Nichicon UPW1V221MPD, 220uF/35V radial electrolytic. Verify lead pitch against current pads before ordering.",
+    "C5": "DNP for first PCBA: current RevA.1 footprint is a draft wide-pad filter, not an 0805 placement. Candidate if redesigned: C76625 / TDK C2012C0G1H102JT000N, 1nF C0G 0805.",
+    "U5": "DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519.",
+    "SW1": "Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if EN pad/debug access is enough.",
+    "SW2": "Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if BOOT pad/debug access is enough.",
 }
 
 
@@ -136,7 +136,7 @@ def write_assembly_files() -> None:
                 fp.GetValue(),
                 ASSEMBLE[ref]["package"],
                 ASSEMBLE[ref]["mpn"],
-                "MAP_IN_ASSEMBLER_UI",
+                ASSEMBLE[ref]["supplier"],
                 "YES",
                 ASSEMBLE[ref]["notes"],
             ])
@@ -145,7 +145,7 @@ def write_assembly_files() -> None:
                 fp.GetValue(),
                 ASSEMBLE[ref]["package"],
                 ASSEMBLE[ref]["mpn"],
-                "Use this exact MPN/spec if the assembler catalog has it; otherwise pick same value/package/rating.",
+                f"Use supplier part {ASSEMBLE[ref]['supplier']} in JLCPCB if still available; otherwise same value/package/rating.",
                 ASSEMBLE[ref]["notes"],
             ])
             cpl_rows.append([ref, f"{x:.4f}", f"{y:.4f}", layer, f"{fp.GetOrientationDegrees():.2f}"])
@@ -189,11 +189,12 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 ## Important ordering notes
 
 - This is a **partial assembly handoff**, not a one-click final manufacturing release.
-- Supplier/LCSC/Mouser part numbers are still blank in the BOM. Map them in the assembler UI before ordering.
+- Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
 - Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
 - `U3` and `U4` are intentionally **not** in the first PCBA placement set because the exact switching-regulator/buck implementation is still the main RevA.2 decision.
+- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
-- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, U5 USB ESD, Q2, and TVS diodes.
+- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
 
 ## Verification run
 

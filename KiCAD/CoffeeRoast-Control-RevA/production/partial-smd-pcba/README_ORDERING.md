@@ -13,11 +13,12 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 ## Important ordering notes
 
 - This is a **partial assembly handoff**, not a one-click final manufacturing release.
-- Supplier/LCSC/Mouser part numbers are still blank in the BOM. Map them in the assembler UI before ordering.
+- Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
 - Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
 - `U3` and `U4` are intentionally **not** in the first PCBA placement set because the exact switching-regulator/buck implementation is still the main RevA.2 decision.
+- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
-- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, U5 USB ESD, Q2, and TVS diodes.
+- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
 
 ## Verification run
 
