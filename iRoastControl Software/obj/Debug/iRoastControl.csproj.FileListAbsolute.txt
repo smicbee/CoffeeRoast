@@ -485,4 +485,5 @@ B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastContr
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Buffers.xml
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Memory.xml
 B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.Numerics.Vectors.xml
-B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.ValueTuple.xml
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\bin\Debug\System.ValueTuple.dll
+B:\Google Drive\Desktop\CoffeeRoast\iRoastControl Software\obj\Debug\iRoastControl.exe.config
