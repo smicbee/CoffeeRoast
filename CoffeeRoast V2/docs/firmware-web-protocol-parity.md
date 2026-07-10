@@ -6,12 +6,23 @@ Desktop-Basis: `codex/fix-bugs-and-crashes` bei `2c96788`. Aktuelle integrierte 
 
 - 115200 Baud, 8N1, kein Flow Control, `\n` als Befehlsabschluss.
 - `hello` → `popcorn roaster`.
-- `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...,version=...`.
+- `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...,version=...,protocol=...,hardware=...`.
+- `get info` → `product=CoffeeRoast,firmware=1.2.0,protocol=2,hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`.
 - `get temp`, `get fan` und `get setpoint` liefern eine numerische Zeile.
 - `set fan N` und `set setpoint N` antworten nicht.
 - `Failsafe!` kann spontan zwischen Antworten eintreffen.
 
 Die Website serialisiert alle Operationen in einer FIFO-Warteschlange und akzeptiert je Request nur das erwartete Antwortformat. Spontane Failsafe-/Bootzeilen können damit nicht mehr als Temperatur oder Lüfterwert fehlinterpretiert werden. Der Regelzyklus verwendet den atomaren Status, sodass Temperatur und reale Ausgänge aus demselben Zeitpunkt stammen.
+
+## Versions- und Hardwarekompatibilität
+
+Die empfohlene Firmware meldet drei unabhängige Kennungen:
+
+- Firmware `1.2.0`;
+- Protokoll `2`;
+- Hardware `CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`.
+
+Nur Protokoll 2 mit der exakten Hardwarekennung gilt als voll kompatibel. Eine Firmware mit `get status`, aber ohne Versionsfelder wird als Legacy erkannt und bleibt zur bewussten Rückwärtskompatibilität steuerbar. Eine vorhandene, aber falsche Protokoll- oder Hardwarekennung blockiert den Heizstart. Der Web-Flasher stellt getrennte, jeweils für ESP32-S3 erkannte 8-MB-Images bereit: die empfohlene Firmware und den unveränderten Main-Stand `2a05fb0` vor unseren Firmwareänderungen.
 
 ## Sicherer Ablauf
 

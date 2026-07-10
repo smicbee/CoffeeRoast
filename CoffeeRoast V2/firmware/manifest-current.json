@@ -1,13 +1,13 @@
 {
-  "name": "CoffeeRoast Controller",
-  "version": "1.1.0",
+  "name": "CoffeeRoast Controller – empfohlen",
+  "version": "1.2.0",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "coffeeroast-esp32s3-v1.1.0.bin",
+          "path": "coffeeroast-n8r8-v1.2.0.bin",
           "offset": 0
         }
       ]

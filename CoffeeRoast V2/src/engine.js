@@ -4,7 +4,7 @@ export class RoastEngine extends EventTarget{
   constructor(){
     super();this.transport=null;this.recipe=null;this.state=RoastState.IDLE;this.connected=false;this.preheatTarget=180;this.initialFanPercent=100;
     this.autoDropEnabled=false;this.autoDropMode='time';this.autoDropTarget=600;this.expectedFirstCrack=208;this.firstCrackSecond=-1;this.phase='idle';this.preparationStartedAt=0;
-    this.elapsed=0;this.temperature=NaN;this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.status='';this.sensorErrors=0;this.samples=[];
+    this.elapsed=0;this.temperature=NaN;this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.status='';this.sensorErrors=0;this.samples=[];this.firmwareCompatibility={level:'unknown',label:'Unbekannt',compatible:false,reason:'Noch kein Firmwarestatus gelesen.'};this.firmwareVersion='';this.protocolVersion=0;this.hardwareId='';
     this.pid=new PidController();this.startedAt=0;this.timer=0;this.busy=false;
   }
   setTransport(transport){this.transport=transport}
@@ -24,6 +24,7 @@ export class RoastEngine extends EventTarget{
 
   async beginPreheat(){
     if(!this.connected||!this.recipe)throw new Error('Controller und Rezept werden benötigt.');
+    if(this.firmwareCompatibility.level!=='unknown'&&!this.firmwareCompatibility.compatible)throw new Error(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason}`);
     this.samples=[];this.elapsed=0;this.startedAt=0;this.pid.reset();this.firstCrackSecond=-1;this.phase='preparation';this.preparationStartedAt=performance.now();
     this.state=RoastState.PREHEATING;this.target=this.preheatTarget;this.fan=this.initialFanPercent/100*255;this.heater=0;
     await this.transport.setFan(this.fan);await this.transport.setHeater(0);this.emit();
@@ -60,7 +61,7 @@ export class RoastEngine extends EventTarget{
     else if(this.state===RoastState.FAILSAFE){this.target=0;this.heater=0;this.fan=255}
     else{this.target=0;this.heater=0;this.fan=Number.isFinite(this.temperature)&&this.temperature>=60?calculateFan(this.temperature,baseFan):0}
   }
-  applyControllerSnapshot(c){this.status=c.raw;this.temperature=c.temperature;this.actualHeater=c.heater;this.actualFan=c.fan;this.sensorErrors=Math.max(this.sensorErrors,c.errors||0)}
+  applyControllerSnapshot(c){this.status=c.raw;this.temperature=c.temperature;this.actualHeater=c.heater;this.actualFan=c.fan;this.sensorErrors=Math.max(this.sensorErrors,c.errors||0);this.firmwareCompatibility=c.compatibility||{level:'legacy',label:'Legacy-Firmware',compatible:true,reason:'Statusprotokoll ohne Versionsmetadaten.'};this.firmwareVersion=c.version||'';this.protocolVersion=c.protocol||0;this.hardwareId=c.hardware||''}
   validateTemperature(temp){if(!Number.isFinite(temp)||temp<-50||temp>450)this.sensorErrors+=5;else this.sensorErrors=Math.max(0,this.sensorErrors-1);if(this.sensorErrors>20)this.enterFailsafe('Unplausible Thermoelement-Messwerte')}
 
   async handleTransitions(){
@@ -80,7 +81,7 @@ export class RoastEngine extends EventTarget{
     const sample={time:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,ror,phase:this.phase,state:this.state,recordedAt:new Date().toISOString()};
     if(!previous||sample.time-previous.time>=.45||sample.state!==previous.state)this.samples.push(sample)
   }
-  snapshot(){return{state:this.state,connected:this.connected,elapsed:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,status:this.status,sensorErrors:this.sensorErrors,samples:this.samples,recipe:this.recipe,autoDropEnabled:this.autoDropEnabled,autoDropMode:this.autoDropMode,autoDropTarget:this.autoDropTarget,expectedFirstCrack:this.expectedFirstCrack,firstCrackSecond:this.firstCrackSecond,ror:this.currentRoR(),phase:this.phase,portName:this.transport?.portName||''}}
+  snapshot(){return{state:this.state,connected:this.connected,elapsed:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,status:this.status,sensorErrors:this.sensorErrors,samples:this.samples,recipe:this.recipe,autoDropEnabled:this.autoDropEnabled,autoDropMode:this.autoDropMode,autoDropTarget:this.autoDropTarget,expectedFirstCrack:this.expectedFirstCrack,firstCrackSecond:this.firstCrackSecond,ror:this.currentRoR(),phase:this.phase,portName:this.transport?.portName||'',firmwareCompatibility:this.firmwareCompatibility,firmwareVersion:this.firmwareVersion,protocolVersion:this.protocolVersion,hardwareId:this.hardwareId}}
   emit(){this.dispatchEvent(new CustomEvent('update',{detail:this.snapshot()}))}
 }
 

@@ -1,4 +1,10 @@
 const encoder = new TextEncoder();
+export const EXPECTED_FIRMWARE = Object.freeze({
+  product: 'CoffeeRoast',
+  protocol: 2,
+  hardware: 'CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8',
+  minimumVersion: '1.2.0'
+});
 
 export class WebSerialTransport {
   constructor(onLog = () => {}) {
@@ -249,7 +255,7 @@ export class SimulationTransport {
   async getStatus() {
     this.update();
     const state = this.abortSignal ? 'failsafe' : 'ok';
-    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},version=1.1.0`;
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},version=1.2.0,protocol=2,hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() { this.update(); return this.temp * 1.1; }
@@ -265,8 +271,18 @@ export function parseControllerStatus(line) {
   String(line).trim().split(',').forEach(part => { const i=part.indexOf('='); if(i>0) values[part.slice(0,i).trim()]=part.slice(i+1).trim(); });
   const rawTemperature=Number.parseFloat(values.temp);
   if(!values.state||!Number.isFinite(rawTemperature))throw new Error(`Ungültiger Controllerstatus: ${line}`);
-  return {raw:String(line).trim(),state:values.state,temperature:rawTemperature*1.1,rawTemperature,heater:clamp(Number.parseFloat(values.heater),0,255),fan:clamp(Number.parseFloat(values.fan),0,255),fanTarget:clamp(Number.parseFloat(values.fanTarget),0,255),errors:Math.max(0,Number.parseInt(values.errors,10)||0)};
+  const snapshot={raw:String(line).trim(),state:values.state,temperature:rawTemperature*1.1,rawTemperature,heater:clamp(Number.parseFloat(values.heater),0,255),fan:clamp(Number.parseFloat(values.fan),0,255),fanTarget:clamp(Number.parseFloat(values.fanTarget),0,255),errors:Math.max(0,Number.parseInt(values.errors,10)||0),version:values.version||'',protocol:Math.max(0,Number.parseInt(values.protocol,10)||0),hardware:values.hardware||''};
+  snapshot.compatibility=assessFirmwareCompatibility(snapshot);
+  return snapshot;
 }
+export function assessFirmwareCompatibility(snapshot){
+  if(!snapshot.version&&!snapshot.protocol&&!snapshot.hardware)return{level:'legacy',label:'Legacy-Firmware',compatible:true,reason:'Keine Versionsmetadaten; Basiskompatibilität über get status erkannt.'};
+  if(snapshot.protocol!==EXPECTED_FIRMWARE.protocol)return{level:'incompatible',label:'Nicht kompatibel',compatible:false,reason:`Protokoll ${snapshot.protocol||'unbekannt'}, benötigt ${EXPECTED_FIRMWARE.protocol}.`};
+  if(snapshot.hardware!==EXPECTED_FIRMWARE.hardware)return{level:'incompatible',label:'Falsche Hardware',compatible:false,reason:`Hardware ${snapshot.hardware||'unbekannt'}, erwartet ${EXPECTED_FIRMWARE.hardware}.`};
+  if(compareVersions(snapshot.version,EXPECTED_FIRMWARE.minimumVersion)<0)return{level:'outdated',label:'Update empfohlen',compatible:true,reason:`Firmware ${snapshot.version}, empfohlen ab ${EXPECTED_FIRMWARE.minimumVersion}.`};
+  return{level:'compatible',label:'Voll kompatibel',compatible:true,reason:`Firmware ${snapshot.version} · Protokoll ${snapshot.protocol} · ${snapshot.hardware}`};
+}
+function compareVersions(a,b){const pa=String(a).split('.').map(Number),pb=String(b).split('.').map(Number);for(let i=0;i<Math.max(pa.length,pb.length);i++){const d=(pa[i]||0)-(pb[i]||0);if(d)return d}return 0}
 function isNumericLine(line){return String(line).trim()!==''&&Number.isFinite(Number(String(line).trim()))}
 function clamp(value,min,max){return Math.max(min,Math.min(max,Number(value)||0))}
 function hex(value){return Number(value).toString(16).padStart(4,'0').toUpperCase()}

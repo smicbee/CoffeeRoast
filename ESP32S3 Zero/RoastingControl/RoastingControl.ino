@@ -25,7 +25,9 @@ const float PWM_MIN = 0.0f;
 const float PWM_MAX = 255.0f;
 const float MIN_SAFE_FAN = 50.0f;
 const float FAILSAFE_FAN = PWM_MAX;
-const char* FIRMWARE_VERSION = "1.1.0";
+const char* FIRMWARE_VERSION = "1.2.0";
+const uint8_t PROTOCOL_VERSION = 2;
+const char* HARDWARE_ID = "CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8";
 
 int errorReadings = 0;
 int delayValue = 50;
@@ -67,7 +69,20 @@ void printStatus() {
   Serial.print(",errors=");
   Serial.print(errorReadings);
   Serial.print(",version=");
-  Serial.println(FIRMWARE_VERSION);
+  Serial.print(FIRMWARE_VERSION);
+  Serial.print(",protocol=");
+  Serial.print(PROTOCOL_VERSION);
+  Serial.print(",hardware=");
+  Serial.println(HARDWARE_ID);
+}
+
+void printInfo() {
+  Serial.print("product=CoffeeRoast,firmware=");
+  Serial.print(FIRMWARE_VERSION);
+  Serial.print(",protocol=");
+  Serial.print(PROTOCOL_VERSION);
+  Serial.print(",hardware=");
+  Serial.println(HARDWARE_ID);
 }
 
 // FreeRTOS Task: Reads temperature every 500ms
@@ -174,6 +189,9 @@ void loop() {
   }
   else if (command == "get status"){
     printStatus();
+  }
+  else if (command == "get info"){
+    printInfo();
   }
   else if (command == "disable failsafe"){
     disableFailsafe = true;
