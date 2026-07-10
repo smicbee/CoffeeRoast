@@ -1,0 +1,54 @@
+profile_short_name:Super dark
+profile_designer:Kaffelogic Ltd 
+profile_description:This SUPER DARK profile is developed to give you the maximum intensity and smokey flavour from your green beans roasted on the Kaffelogic.\v\vThe profile development percentage of between 36% to 38% provides the maximum flavour result through brewing and extraction.\v\vDefault for a Dark roast profile = 5.6 Recommended End (Smokey, Dark, Full Roast flavours in Espresso) 
+profile_schema_version:1.4
+emulation_mode:0.0
+recommended_level:5.6
+expect_fc:0.0
+expect_colrchange:0.0
+preheat_power:1050
+preheat_nominal_temperature:240
+preheat_min_power_offset:10
+preheat_min_time:20.0
+preheat_max_time:60.0
+preheat_check_gradient_time:30.0
+preheat_target_in_future:30.0
+preheat_mode:5
+preheat_end_detection_count:5
+preheat_temperature_proximity:8.5
+roast_required_power:1200
+roast_min_desired_rate_of_rise:1.8
+roast_target_in_future:25.0
+roast_use_prediction_method:1
+roast_target_timeshift:1.0
+roast_end_by_time_ratio:1
+roast_PID_Kp:0.7172
+roast_PID_Ki:0
+roast_PID_Kd:3.55
+roast_PID_min_i:0
+roast_PID_max_i:0
+roast_PID_iLimitApplyAtZero:1
+roast_PID_differentialOnError:1
+specific_heat_adj_upper_temperature_limit:180
+specific_heat_adj_lower_temperature_limit:80
+specific_heat_adj_multiplier_Kp:2.1
+specific_heat_adj_multiplier_Kd:4
+zone1_time_start:81.0
+zone1_time_end:204.0
+zone1_multiplier_Kp:1
+zone1_multiplier_Kd:1
+zone1_boost:3
+zone2_time_start:0.0
+zone2_time_end:0.0
+zone2_multiplier_Kp:1
+zone2_multiplier_Kd:1
+zone2_boost:0
+corner1_time_start:0.0
+corner1_time_end:0.0
+cooldown_hi_speed:16000
+cooldown_lo_speed:15000
+cooldown_lo_temperature:100
+roast_levels:205,215,222,227,231,235,241
+profile_modified:26/07/2020 05:54:01PM
+roast_profile:0.0,20.0,0,0.0,17.2159,50.0498,60.0,110.0,38.3006,84.3821,80.5548,134.267,198.371068121,176.468179212,152.926899906,169.009024038,261.246208571,186.788434761,428.074914565,208.075640921,359.055329259,199.253849759,479.578638965,214.658628904,600.0,228.5,576.632,226.094,625.833533176,231.159854537,704.725532547,236.669669916,678.963803348,235.08644418,720.452417349,237.636189227,757.08829882,239.354504873,741.376105983,238.617563227,0,0.0
+fan_profile:0.0,14700.0,0,0.0,18.0,14700.0,60.0,14700.0,42.0,14700.0,300.0,14700.0,540.0,13200.0,300.0,13200.0,558.0,13200.0,600.0,13200.0,582.003,13200.0,0,0.0

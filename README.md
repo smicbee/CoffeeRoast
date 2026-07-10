@@ -84,7 +84,19 @@ You can stop the roast at any time by flipping the on-off switch, which effectiv
 
 [12s video of 12min roasting](docu/assets/img/rel/12s_roast.webm)
 
-# iRoastControl
+# CoffeeRoast V2 Web
+
+Die neue Steuerungsoberfläche liegt unter [`CoffeeRoast V2/`](CoffeeRoast%20V2/) und ist als moderne, responsive Webanwendung umgesetzt.
+
+- Live-Verbindung zum bestehenden ESP32 über die Web Serial API
+- vorhandenes serielles Protokoll und alle `.kpro`-Rezepte bleiben nutzbar
+- Safety-Preflight, Failsafe, Vorheizen, Rösten und Abkühlen
+- eingebauter Simulator, Canvas-Live-Plot und CSV-Export
+- öffentlich bereitgestellt unter **https://coffeeroast.michaelbeetz.de/**
+
+Für die USB-Verbindung wird Chrome oder Edge benötigt. Der Browser spricht direkt mit dem lokal ausgewählten USB-Gerät; der Webserver erhält keinen Zugriff auf den Controller.
+
+# iRoastControl (Legacy)
 
 iRoastControl is the control software. It comes with predefined roast curves you can use for your first roast.
 
