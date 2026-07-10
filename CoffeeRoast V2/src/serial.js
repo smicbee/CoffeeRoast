@@ -160,17 +160,104 @@ export class WebSerialTransport {
 }
 
 export class SimulationTransport {
-  constructor(onLog = () => {}) { this.onLog=onLog;this.connected=false;this.temp=25;this.heater=0;this.fan=0;this.last=performance.now();this.portName='Digitaler Röster'; }
-  async connect(){this.connected=true;this.last=performance.now();this.onLog('Simulation gestartet');return'popcorn roaster'}
-  async disconnect(){this.connected=false;this.heater=0;this.fan=0;this.onLog('Simulation beendet')}
-  update(){const now=performance.now(),dt=Math.min(2,(now-this.last)/1000);this.last=now;const ambient=25,heating=this.heater/255*10.5,cooling=(this.temp-ambient)*(.008+this.fan/255*.012);this.temp=clamp(this.temp+(heating-cooling)*dt,ambient,280)}
-  async getStatus(){this.update();return`state=simulation,temp=${this.temp.toFixed(1)},heater=${Math.round(this.heater)},fan=${Math.round(this.fan)},fanTarget=${Math.round(this.fan)},errors=0`}
-  async getSnapshot(){return parseControllerStatus(await this.getStatus())}
-  async getTemperature(){this.update();return this.temp}
-  async getFan(){return this.fan}
-  async setHeater(value){this.update();this.heater=clamp(value,0,255)}
-  async setFan(value){this.update();this.fan=clamp(value,0,255)}
-  async safeOutputs(){this.heater=0;this.fan=255}
+  constructor(onLog = () => {}, { speed = 6, now = () => performance.now() } = {}) {
+    this.onLog = onLog;
+    this.connected = false;
+    this.temp = 25;
+    this.relayTarget = 0;
+    this.appliedHeater = 0;
+    this.fanTarget = 0;
+    this.fan = 0;
+    this.errors = 0;
+    this.abortSignal = false;
+    this.disableFailsafe = false;
+    this.sensorFault = false;
+    this.speed = speed;
+    this.now = now;
+    this.last = this.now();
+    this.loopCarry = 0;
+    this.sensorCarry = 0;
+    this.portName = `ESP32-Röstersimulator (${speed}×)`;
+  }
+
+  async connect() {
+    this.connected = true;
+    this.last = this.now();
+    this.onLog('ESP32-Firmwaresimulation gestartet');
+    return 'popcorn roaster';
+  }
+
+  async disconnect() {
+    this.update();
+    this.connected = false;
+    this.relayTarget = 0;
+    this.appliedHeater = 0;
+    this.fanTarget = 0;
+    this.fan = 0;
+    this.onLog('ESP32-Firmwaresimulation beendet');
+  }
+
+  update() {
+    const current = this.now();
+    const seconds = Math.min(5, Math.max(0, (current - this.last) / 1000) * this.speed);
+    this.last = current;
+    this.advance(seconds);
+  }
+
+  advance(seconds) {
+    this.loopCarry += Math.max(0, seconds);
+    while (this.loopCarry >= 0.05) {
+      this.loopCarry -= 0.05;
+      this.firmwareLoop(0.05);
+    }
+  }
+
+  firmwareLoop(dt) {
+    const PWM_MIN = 0, PWM_MAX = 255, MIN_SAFE_FAN = 50;
+
+    this.sensorCarry += dt;
+    while (this.sensorCarry >= 0.5) {
+      this.sensorCarry -= 0.5;
+      if (this.sensorFault) this.errors += 1;
+      else this.errors = 0;
+      this.abortSignal = this.errors > 20 && !this.disableFailsafe;
+    }
+
+    if (this.temp > 60) this.fanTarget = Math.max(this.fanTarget, MIN_SAFE_FAN);
+    if (this.relayTarget > 0) this.fanTarget = Math.max(this.fanTarget, MIN_SAFE_FAN);
+    this.relayTarget = clamp(this.relayTarget, PWM_MIN, PWM_MAX);
+    this.fanTarget = clamp(this.fanTarget, PWM_MIN, PWM_MAX);
+
+    if (this.abortSignal) {
+      this.relayTarget = PWM_MIN;
+      this.fanTarget = PWM_MAX;
+    }
+
+    if (Math.abs(this.fan - this.fanTarget) <= 2) this.fan = this.fanTarget;
+    if (this.fan < this.fanTarget) this.fan += 2;
+    else if (this.fan > this.fanTarget) this.fan -= 2;
+    this.fan = clamp(this.fan, PWM_MIN, PWM_MAX);
+
+    // Exact firmware interlock; only the thermal response is a physical model.
+    this.appliedHeater = !this.abortSignal && this.fan >= MIN_SAFE_FAN ? this.relayTarget : PWM_MIN;
+    const ambient = 25;
+    const heating = this.appliedHeater / PWM_MAX * 8.2;
+    const cooling = (this.temp - ambient) * (0.006 + this.fan / PWM_MAX * 0.010);
+    this.temp = clamp(this.temp + (heating - cooling) * dt, ambient, 300);
+  }
+
+  async getStatus() {
+    this.update();
+    const state = this.abortSignal ? 'failsafe' : 'ok';
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},version=1.1.0`;
+  }
+  async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
+  async getTemperature() { this.update(); return this.temp * 1.1; }
+  async getFan() { this.update(); return this.fan; }
+  async setHeater(value) { this.update(); this.relayTarget = clamp(value, 0, 255); }
+  async setFan(value) { this.update(); this.fanTarget = clamp(value, 0, 255); }
+  async safeOutputs() { this.update(); this.relayTarget = 0; this.appliedHeater = 0; this.fanTarget = 255; }
+  injectSensorFault(active = true) { this.sensorFault = active; }
 }
 
 export function parseControllerStatus(line) {

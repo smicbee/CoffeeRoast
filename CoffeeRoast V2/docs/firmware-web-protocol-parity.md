@@ -6,7 +6,7 @@ Desktop-Basis: `codex/fix-bugs-and-crashes` bei `2c96788`. Aktuelle integrierte 
 
 - 115200 Baud, 8N1, kein Flow Control, `\n` als Befehlsabschluss.
 - `hello` → `popcorn roaster`.
-- `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...`.
+- `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...,version=...`.
 - `get temp`, `get fan` und `get setpoint` liefern eine numerische Zeile.
 - `set fan N` und `set setpoint N` antworten nicht.
 - `Failsafe!` kann spontan zwischen Antworten eintreffen.
@@ -39,7 +39,7 @@ Je Zyklus: Lüfterziel senden, realen Lüfter prüfen, erst danach Heizwert send
 
 ### Abkühlen/Failsafe
 
-Abkühlen sendet zuerst Heizung 0 und danach Lüfter 255. Anders als der fehlerhafte Desktop-Code bleibt die Kühlung bis unter 60 °C auf voller Leistung. Failsafe hält Heizung 0 und Lüfter 255.
+Abkühlen sendet zuerst Heizung 0 und danach das Lüfterziel 255. Anders als der fehlerhafte Desktop-Code bleibt die Kühlung bis unter 60 °C aktiv. Im Failsafe wird die Heizung sofort auf 0 gesetzt und ausschließlich das Lüfterziel auf 255 angehoben; der reale PWM-Ausgang läuft weiterhin über die Firmware-Rampe mit höchstens 2 PWM-Schritten je 50 ms und springt nicht auf volle Leistung.
 
 ## Firmware-Härtung
 

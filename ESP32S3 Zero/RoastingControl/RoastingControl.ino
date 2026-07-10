@@ -25,6 +25,7 @@ const float PWM_MIN = 0.0f;
 const float PWM_MAX = 255.0f;
 const float MIN_SAFE_FAN = 50.0f;
 const float FAILSAFE_FAN = PWM_MAX;
+const char* FIRMWARE_VERSION = "1.1.0";
 
 int errorReadings = 0;
 int delayValue = 50;
@@ -64,7 +65,9 @@ void printStatus() {
   Serial.print(",fanTarget=");
   Serial.print(fanTargetValue);
   Serial.print(",errors=");
-  Serial.println(errorReadings);
+  Serial.print(errorReadings);
+  Serial.print(",version=");
+  Serial.println(FIRMWARE_VERSION);
 }
 
 // FreeRTOS Task: Reads temperature every 500ms
@@ -197,7 +200,6 @@ void loop() {
   if (abortSignal == true){
     relayValue = PWM_MIN;
     fanTargetValue = FAILSAFE_FAN;
-    fanValue = FAILSAFE_FAN;
   }
 
   //Limit Acceleration and Deceleration of Fan to prevent self-destruction
