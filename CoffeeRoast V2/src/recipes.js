@@ -49,6 +49,9 @@ export function parseRecipe(text, fileName = 'Eigenes Rezept.kpro') {
       kd: numberOr(fields.roast_PID_Kd, 0.2),
       future: numberOr(fields.roast_target_in_future, 40)
     },
+    expectedFirstCrack: numberOr(fields.expect_fc, 208),
+    minDesiredRoR: numberOr(fields.roast_min_desired_rate_of_rise, 3),
+    timeShift: numberOr(fields.roast_target_timeshift, 0),
     roastLevels: levels,
     source: text
   };

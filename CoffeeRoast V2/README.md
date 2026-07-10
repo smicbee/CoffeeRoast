@@ -5,11 +5,15 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 ## Funktionen
 
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
+- Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
+- Vorbereitung mit gültiger Temperatur, bestätigtem Lüfterlauf und gesperrter Heizung
+- serialisierte Kommunikation mit atomarem `get status`-Polling
+- Auto-Drop nach Zeit/Temperatur, 30-Sekunden-RoR, First Crack, DTR und Live-Phasen
 - kompatibel mit dem bestehenden Textprotokoll (`hello`, `get temp`, `get status`, `get fan`, `set setpoint`, `set fan`)
-- Zustände: Leerlauf, Vorheizen, bereit, Rösten, Abkühlen und Failsafe
+- Zustände: Leerlauf, Vorbereitung, bereit, Rösten, Abkühlen und Failsafe
 - Safety-Preflight vor jedem realen Heizvorgang
 - Import und Auswahl der bestehenden `.kpro`-Rezepte
-- PID-Regelung, automatischer Röstgrad-Stopp, Lüfterkurve
+- PID-Regelung, Auto-Drop und temperaturabhängige Lüfterkurve
 - eingebaute Simulation ohne Hardware
 - responsiver Canvas-Live-Plot und CSV-Export
 - keine serverseitige Gerätefreigabe: der Browser spricht lokal mit dem vom Benutzer ausgewählten USB-Gerät
@@ -27,6 +31,15 @@ python3 -m http.server 4173 --directory "CoffeeRoast V2"
 ```
 
 Dann `http://localhost:4173/` in Chrome/Edge öffnen.
+
+## Protokoll- und Ablaufprüfung
+
+Details: [`docs/firmware-web-protocol-parity.md`](docs/firmware-web-protocol-parity.md)
+
+```bash
+node "CoffeeRoast V2/tests/protocol-parity.test.mjs"
+node "CoffeeRoast V2/tests/engine-flow.test.mjs"
+```
 
 ## Sicherheit
 

@@ -12,12 +12,15 @@ export class RoastChart {
     const x=v=>p.l+(v-this.view.minX)/(this.view.maxX-this.view.minX)*pw,y=v=>p.t+ph-(v-this.view.minY)/(this.view.maxY-this.view.minY)*ph;
     ctx.font='9px Space Mono,monospace';ctx.lineWidth=1;
     for(let temp=0;temp<=this.view.maxY;temp+=40){const yy=y(temp);ctx.strokeStyle='#282b31';ctx.beginPath();ctx.moveTo(p.l,yy);ctx.lineTo(w-p.r,yy);ctx.stroke();ctx.fillStyle='#6c7078';ctx.textAlign='right';ctx.fillText(`${temp}°`,p.l-8,yy+3)}
+    for(let ror=0;ror<=30;ror+=10){ctx.fillStyle='#b77938';ctx.textAlign='left';ctx.fillText(`${ror}`,w-p.r+7,y(ror/30*260)+3)}
     const step=this.view.maxX>1200?240:120;for(let sec=0;sec<=this.view.maxX;sec+=step){const xx=x(sec);ctx.strokeStyle='#202329';ctx.beginPath();ctx.moveTo(xx,p.t);ctx.lineTo(xx,p.t+ph);ctx.stroke();ctx.fillStyle='#6c7078';ctx.textAlign='center';ctx.fillText(formatTime(sec),xx,h-9)}
     if(!this.snapshot)return;const s=this.snapshot;
     if(s.recipe)drawSeries(ctx,s.recipe.profile.map((v,i)=>({time:i,value:v})),x,y,'#e8793e',2,0,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.temperature})),x,y,'#f6e6d6',2.5,0,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.heater/255*260})),x,y,'#ff635f',1.2,.72,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.fan/255*260})),x,y,'#73a8ff',1.2,.72,this.view);
+    drawSeries(ctx,s.samples.map(a=>({time:a.time,value:Number.isFinite(a.ror)?Math.max(0,Math.min(30,a.ror))/30*260:NaN})),x,y,'#d99645',1.7,.12,this.view);
+    if(s.expectedFirstCrack>0){const yy=y(s.expectedFirstCrack);ctx.strokeStyle='#dc65c7aa';ctx.setLineDash([7,5]);ctx.beginPath();ctx.moveTo(p.l,yy);ctx.lineTo(w-p.r,yy);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#dc65c7';ctx.textAlign='left';ctx.fillText(`FC ${Math.round(s.expectedFirstCrack)}°`,p.l+5,yy-5)}
     if(s.elapsed>0){const xx=x(s.elapsed);ctx.strokeStyle='#f5e2d088';ctx.setLineDash([4,5]);ctx.beginPath();ctx.moveTo(xx,p.t);ctx.lineTo(xx,p.t+ph);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#f5e2d0';ctx.beginPath();ctx.arc(xx,y(s.temperature),4,0,Math.PI*2);ctx.fill()}
   }
   pointer(e){if(!this.snapshot?.recipe)return;const r=this.canvas.getBoundingClientRect(),p={l:45,r:42,t:12,b:32},ratio=(e.clientX-r.left-p.l)/(r.width-p.l-p.r);if(ratio<0||ratio>1){this.tooltip.hidden=true;return}const time=this.view.minX+ratio*(this.view.maxX-this.view.minX),index=Math.round(time);const target=this.snapshot.recipe.profile[Math.min(index,this.snapshot.recipe.profile.length-1)];const sample=nearest(this.snapshot.samples,time);this.tooltip.innerHTML=`<b>${formatTime(time)}</b><br>Ziel ${formatNumber(target)} °C${sample?`<br>Ist ${formatNumber(sample.temperature)} °C<br>Heizung ${Math.round(sample.heater/2.55)} % · Lüfter ${Math.round(sample.fan/2.55)} %`:''}`;this.tooltip.hidden=false;this.tooltip.style.left=`${Math.min(r.width-175,Math.max(8,e.clientX-r.left+12))}px`;this.tooltip.style.top=`${Math.max(5,e.clientY-r.top-70)}px`}

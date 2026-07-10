@@ -1,136 +1,29 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0d10">
-  <meta name="description" content="CoffeeRoast V2 – sichere, moderne Steuerung für den DIY-Kaffeeröster">
-  <title>CoffeeRoast V2</title>
-  <link rel="icon" href="assets/bean.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0c0d10">
+  <meta name="description" content="CoffeeRoast V2 – sichere Websteuerung basierend auf codex/fix-bugs-and-crashes">
+  <title>CoffeeRoast V2</title><link rel="icon" href="assets/bean.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="assets/styles.css?v=2c96788-3">
 </head>
-<body>
-  <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="CoffeeRoast V2 Startseite">
-        <span class="brand-mark">☕</span>
-        <span><strong>CoffeeRoast</strong><small>CONTROL STUDIO · V2</small></span>
-      </a>
-      <div class="top-actions">
-        <span id="browserHint" class="compat-hint" hidden>Web Serial benötigt Chrome oder Edge</span>
-        <button id="simulationButton" class="ghost-button" type="button" aria-pressed="false">Simulation</button>
-        <button id="connectButton" class="connection-button" type="button">
-          <span id="connectionDot" class="status-dot"></span>
-          <span id="connectionText">Controller verbinden</span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero-strip" aria-labelledby="stateTitle">
-        <div>
-          <div class="eyebrow">AKTUELLER STATUS</div>
-          <div class="state-line"><span id="stateIcon" class="state-icon">●</span><h1 id="stateTitle">Bereit</h1></div>
-          <p id="stateSubtitle">Rezept wählen und Controller verbinden.</p>
-        </div>
-        <div class="metric-grid">
-          <article class="metric primary"><span>BOHNENTEMPERATUR</span><strong id="currentTemp">—</strong><em>°C</em><small id="tempTrend">Keine Messwerte</small></article>
-          <article class="metric"><span>ZIELTEMPERATUR</span><strong id="targetTemp">—</strong><em>°C</em><small id="targetDelta">Profil inaktiv</small></article>
-          <article class="metric"><span>RÖSTZEIT</span><strong id="elapsedTime">00:00</strong><small id="remainingTime">Noch nicht gestartet</small></article>
-          <article class="metric"><span>HEIZUNG / LÜFTER</span><strong><b id="heaterPercent">0</b><i>%</i> · <b id="fanPercent">0</b><i>%</i></strong><small id="outputHint">Ausgänge sicher</small></article>
-        </div>
-      </section>
-
-      <section class="workspace">
-        <div class="main-column">
-          <article class="panel chart-panel">
-            <div class="panel-header">
-              <div><div class="eyebrow">LIVE-ROAST</div><h2>Temperaturprofil</h2></div>
-              <div class="chart-actions">
-                <button id="resetZoomButton" class="icon-button" title="Ansicht zurücksetzen" type="button">⌖</button>
-                <button id="exportButton" class="icon-button" title="Röstung als CSV exportieren" type="button">⇩</button>
-              </div>
-            </div>
-            <div class="legend" aria-label="Diagrammlegende">
-              <span><i class="legend-line target"></i>Zielkurve</span>
-              <span><i class="legend-line actual"></i>Ist-Temperatur</span>
-              <span><i class="legend-line heater"></i>Heizung</span>
-              <span><i class="legend-line fan"></i>Lüfter</span>
-            </div>
-            <div class="chart-wrap"><canvas id="roastChart" tabindex="0" aria-label="Röstkurven-Diagramm"></canvas><div id="chartTooltip" class="chart-tooltip" hidden></div></div>
-            <div class="phase-track"><span id="phasePreheat">Vorheizen</span><span id="phaseRoast">Rösten</span><span id="phaseCool">Abkühlen</span></div>
-          </article>
-
-          <div class="lower-grid">
-            <article class="panel recipe-panel">
-              <div class="panel-header"><div><div class="eyebrow">RÖSTPLAN</div><h2>Rezept</h2></div><button id="loadRecipeButton" class="text-button" type="button">Datei öffnen</button></div>
-              <label class="field-label" for="recipeSelect">Aktives Profil</label>
-              <select id="recipeSelect" class="select"></select>
-              <p id="recipeDescription" class="recipe-description">Rezepte werden geladen …</p>
-              <div class="recipe-meta"><span><b id="recipeDuration">—</b> Dauer</span><span><b id="recipeEndTemp">—</b> Endtemperatur</span><span><b id="recipePointCount">—</b> Stützpunkte</span></div>
-              <input id="recipeFileInput" type="file" accept=".kpro,text/plain" hidden>
-            </article>
-
-            <article class="panel roast-level-panel">
-              <div class="panel-header"><div><div class="eyebrow">ZIELRÖSTUNG</div><h2>Röstgrad</h2></div><span id="roastStopTime" class="badge">kein Auto-Stopp</span></div>
-              <div id="roastLevelButtons" class="roast-levels" role="radiogroup" aria-label="Röstgrad">
-                <button data-level="0" class="bean-level selected" type="button"><span>○</span><small>Manuell</small></button>
-                <button data-level="1" class="bean-level" type="button"><span>●</span><small>Light</small></button>
-                <button data-level="2" class="bean-level" type="button"><span>●●</span><small>City</small></button>
-                <button data-level="3" class="bean-level" type="button"><span>●●●</span><small>Full City</small></button>
-                <button data-level="4" class="bean-level" type="button"><span>●●●●</span><small>French</small></button>
-                <button data-level="5" class="bean-level" type="button"><span>●●●●●</span><small>Italian</small></button>
-              </div>
-              <p class="muted">Der gewählte Röstgrad beendet die Heizphase automatisch am errechneten Profilpunkt. Abkühlen startet sofort.</p>
-            </article>
-          </div>
-        </div>
-
-        <aside class="side-column">
-          <article class="panel control-panel">
-            <div class="panel-header"><div><div class="eyebrow">ABLAUF</div><h2>Röststeuerung</h2></div><span id="safetyBadge" class="badge safe">Sicher</span></div>
-            <ol class="stepper">
-              <li id="stepConnect"><i>1</i><span><b>Verbinden</b><small>ESP32 oder Simulation</small></span></li>
-              <li id="stepPreheat"><i>2</i><span><b>Vorheizen</b><small>Leere Kammer auf 180 °C</small></span></li>
-              <li id="stepRoast"><i>3</i><span><b>Rösten</b><small>Profil automatisch folgen</small></span></li>
-              <li id="stepCool"><i>4</i><span><b>Abkühlen</b><small>Heizung aus, Lüfter aktiv</small></span></li>
-            </ol>
-            <button id="primaryActionButton" class="primary-action" type="button" disabled><span id="primaryActionIcon">▶</span><span><b id="primaryActionText">Controller verbinden</b><small id="primaryActionSubtext">Sicherheitscheck vor dem Start</small></span></button>
-            <button id="cooldownButton" class="danger-action" type="button" disabled>■ Heizung aus &amp; abkühlen</button>
-          </article>
-
-          <article class="panel output-panel">
-            <div class="panel-header"><div><div class="eyebrow">MANUELL</div><h2>Luftstrom</h2></div><strong id="fanSliderValue">100 %</strong></div>
-            <input id="fanSlider" class="range" type="range" min="0" max="100" value="100" step="5">
-            <div class="range-labels"><span>0 %</span><span>Schonend</span><span>100 %</span></div>
-            <label class="field-label" for="preheatInput">Vorheiztemperatur</label>
-            <div class="input-unit"><input id="preheatInput" type="number" min="80" max="230" value="180"><span>°C</span></div>
-          </article>
-
-          <article class="panel diagnostics-panel">
-            <div class="panel-header"><div><div class="eyebrow">DIAGNOSE</div><h2>Controller</h2></div><button id="refreshStatusButton" class="icon-button" title="Status neu laden" type="button">↻</button></div>
-            <dl class="status-list"><div><dt>Verbindung</dt><dd id="diagConnection">Getrennt</dd></div><div><dt>Firmwarestatus</dt><dd id="diagFirmware">—</dd></div><div><dt>Sensorfehler</dt><dd id="diagErrors">0</dd></div><div><dt>Letzte Antwort</dt><dd id="diagLastResponse">—</dd></div></dl>
-            <details><summary>PID &amp; Protokoll</summary><div class="pid-grid"><label>Kp<input id="kpInput" type="number" step="0.01" value="3"></label><label>Ki<input id="kiInput" type="number" step="0.001" value="0.02"></label><label>Kd<input id="kdInput" type="number" step="0.01" value="0.2"></label></div><pre id="serialLog" class="serial-log">Noch keine Kommunikation.</pre></details>
-          </article>
-        </aside>
-      </section>
-    </main>
-    <footer><span>CoffeeRoast V2 · Browserbasierte Steuerung</span><span>Heizung niemals unbeaufsichtigt betreiben.</span></footer>
-  </div>
-
-  <dialog id="preflightDialog" class="modal">
-    <form method="dialog">
-      <div class="modal-icon">✓</div><div class="eyebrow">SICHERHEITSCHECK</div><h2>Bereit zum Vorheizen?</h2>
-      <p id="preflightStatus" class="controller-status">Controllerstatus wird geprüft …</p>
-      <label><input type="checkbox" class="preflight-check"> Thermoelement ist vom Metall isoliert und liefert plausible Werte.</label>
-      <label><input type="checkbox" class="preflight-check"> Lüfter läuft frei; Luft- und Spreuweg sind nicht blockiert.</label>
-      <label><input type="checkbox" class="preflight-check"> SSR, Not-Aus und manuelle Netztrennung sind erreichbar.</label>
-      <label><input type="checkbox" class="preflight-check"> Kammer ist leer, Lüftung ist aktiv und der Röster wird beaufsichtigt.</label>
-      <div class="modal-actions"><button value="cancel" class="ghost-button">Abbrechen</button><button id="confirmPreflightButton" value="confirm" class="primary-action compact" disabled>Vorheizen starten</button></div>
-    </form>
-  </dialog>
-  <div id="toast" class="toast" hidden></div>
-  <script type="module" src="src/app.js?v=20260710-connection2"></script>
-</body>
-</html>
+<body><div class="app-shell">
+<header class="topbar"><a class="brand" href="#" aria-label="CoffeeRoast V2 Startseite"><span class="brand-mark">☕</span><span><strong>CoffeeRoast</strong><small>CONTROL STUDIO · V2</small></span></a><div class="top-actions"><span id="browserHint" class="compat-hint" hidden>Web Serial benötigt Chrome oder Edge</span><button id="simulationButton" class="ghost-button" type="button" aria-pressed="false">Simulation</button><button id="connectButton" class="connection-button" type="button"><span class="status-dot"></span><span id="connectionText">Controller verbinden</span></button></div></header>
+<main>
+<section class="hero-strip" aria-labelledby="stateTitle"><div><div class="eyebrow">AKTUELLER STATUS</div><div class="state-line"><span id="stateIcon" class="state-icon">●</span><h1 id="stateTitle">Bereit</h1></div><p id="stateSubtitle">Rezept wählen und Controller verbinden.</p></div><div class="metric-grid">
+<article class="metric primary"><span>BOHNENTEMPERATUR</span><strong id="currentTemp">—</strong><em>°C</em><small id="tempTrend">Keine Messwerte</small></article>
+<article class="metric"><span>ZIELTEMPERATUR</span><strong id="targetTemp">—</strong><em>°C</em><small id="targetDelta">Profil inaktiv</small></article>
+<article class="metric"><span>RÖSTZEIT</span><strong id="elapsedTime">00:00</strong><small id="remainingTime">Noch nicht gestartet</small></article>
+<article class="metric"><span>IST-HEIZUNG / IST-LÜFTER</span><strong><b id="heaterPercent">0</b><i>%</i> · <b id="fanPercent">0</b><i>%</i></strong><small id="outputHint">Ausgänge sicher</small></article>
+</div></section>
+<section class="workspace"><div class="main-column">
+<article class="panel chart-panel"><div class="panel-header"><div><div class="eyebrow">LIVE-ROAST</div><h2>Temperaturprofil</h2></div><div class="chart-actions"><button id="resetZoomButton" class="icon-button" title="Ansicht zurücksetzen">⌖</button><button id="exportButton" class="icon-button" title="Röstung als CSV exportieren">⇩</button></div></div><div class="legend"><span><i class="legend-line target"></i>Zielkurve</span><span><i class="legend-line actual"></i>Ist-Temperatur</span><span><i class="legend-line heater"></i>Heizung</span><span><i class="legend-line fan"></i>Lüfter</span><span><i class="legend-line ror"></i>RoR</span></div><div class="chart-wrap"><canvas id="roastChart" tabindex="0"></canvas><div id="chartTooltip" class="chart-tooltip" hidden></div></div><div class="phase-track"><span id="phasePreheat">Vorbereitung</span><span id="phaseRoast">Rösten</span><span id="phaseCool">Abkühlen</span></div></article>
+<div class="lower-grid">
+<article class="panel recipe-panel"><div class="panel-header"><div><div class="eyebrow">RÖSTPLAN</div><h2>Rezept</h2></div><button id="loadRecipeButton" class="text-button">Datei öffnen</button></div><label class="field-label" for="recipeSelect">Aktives Profil</label><select id="recipeSelect" class="select"></select><p id="recipeDescription" class="recipe-description">Rezepte werden geladen …</p><div class="recipe-meta"><span><b id="recipeDuration">—</b>Dauer</span><span><b id="recipeEndTemp">—</b>Endtemperatur</span><span><b id="recipePointCount">—</b>Stützpunkte</span></div><input id="recipeFileInput" type="file" accept=".kpro,text/plain" hidden></article>
+<article class="panel roast-level-panel"><div class="panel-header"><div><div class="eyebrow">AUTO-DROP</div><h2>Automatisch beenden</h2></div><span id="autoDropBadge" class="badge">deaktiviert</span></div><label class="toggle-row"><input id="autoDropEnabled" type="checkbox"><span>Auto-Drop aktivieren</span></label><div class="drop-controls"><label class="field-label" for="dropMode">Kriterium<select id="dropMode" class="select"><option value="time">Zeit</option><option value="temperature">Temperatur</option></select></label><label class="field-label" for="dropTarget">Ziel<div class="input-unit"><input id="dropTarget" type="number" min="1" max="1199" value="600"><span id="dropUnit">s</span></div></label></div><p class="muted">Wie im Branch <code>codex/fix-bugs-and-crashes</code>: Auto-Drop nach Zeit oder Temperatur. Profilende bleibt harter Stopp.</p></article>
+</div></div>
+<aside class="side-column">
+<article class="panel control-panel"><div class="panel-header"><div><div class="eyebrow">ABLAUF</div><h2>Röststeuerung</h2></div><span id="safetyBadge" class="badge safe">Sicher</span></div><ol class="stepper"><li id="stepConnect"><i>1</i><span><b>Verbinden</b><small>ESP32 oder Simulation</small></span></li><li id="stepPreheat"><i>2</i><span><b>Vorbereitung</b><small>Temperatur prüfen &amp; Lüfter anlaufen</small></span></li><li id="stepRoast"><i>3</i><span><b>Rösten</b><small>Profil automatisch folgen</small></span></li><li id="stepCool"><i>4</i><span><b>Abkühlen</b><small>Heizung aus, Lüfter aktiv</small></span></li></ol><button id="primaryActionButton" class="primary-action" disabled><span id="primaryActionIcon">▶</span><span><b id="primaryActionText">Controller verbinden</b><small id="primaryActionSubtext">Sicherheitscheck vor dem Start</small></span></button><button id="cooldownButton" class="danger-action" disabled>■ Heizung aus &amp; abkühlen</button></article>
+<article class="panel output-panel"><div class="panel-header"><div><div class="eyebrow">MANUELL</div><h2>Luftstrom</h2></div><strong id="fanSliderValue">100 %</strong></div><input id="fanSlider" class="range" type="range" min="0" max="100" value="100" step="5"><div class="range-labels"><span>0 %</span><span>Schonend</span><span>100 %</span></div><label class="field-label" for="firstCrackInput">Erwarteter First Crack</label><div class="input-unit"><input id="firstCrackInput" type="number" min="150" max="240" value="208"><span>°C</span></div></article>
+<article class="panel diagnostics-panel"><div class="panel-header"><div><div class="eyebrow">DIAGNOSE</div><h2>Controller</h2></div><button id="refreshStatusButton" class="icon-button" title="Status neu laden">↻</button></div><dl class="status-list"><div><dt>Verbindung</dt><dd id="diagConnection">Getrennt</dd></div><div><dt>Firmwarestatus</dt><dd id="diagFirmware">—</dd></div><div><dt>Sensorfehler</dt><dd id="diagErrors">0</dd></div><div><dt>Letzte Antwort</dt><dd id="diagLastResponse">—</dd></div></dl><details><summary>PID &amp; Protokoll</summary><div class="pid-grid"><label>Kp<input id="kpInput" type="number" step="0.01" value="3"></label><label>Ki<input id="kiInput" type="number" step="0.001" value="0.02"></label><label>Kd<input id="kdInput" type="number" step="0.01" value="0.2"></label></div><pre id="serialLog" class="serial-log">Noch keine Kommunikation.</pre></details></article>
+</aside></section></main><footer><span>CoffeeRoast V2 · Basis: codex/fix-bugs-and-crashes @ 2c96788</span><span>Heizung niemals unbeaufsichtigt betreiben.</span></footer></div>
+<dialog id="preflightDialog" class="modal"><form method="dialog"><div class="modal-icon">✓</div><div class="eyebrow">SICHERHEITSCHECK</div><h2>Bereit zur Vorbereitung?</h2><p id="preflightStatus" class="controller-status">Controllerstatus wird geprüft …</p><label><input type="checkbox" class="preflight-check"> Thermoelement ist isoliert und liefert plausible Werte.</label><label><input type="checkbox" class="preflight-check"> Lüfter läuft frei; Luft- und Spreuweg sind nicht blockiert.</label><label><input type="checkbox" class="preflight-check"> SSR, Not-Aus und manuelle Netztrennung sind erreichbar.</label><label><input type="checkbox" class="preflight-check"> Kammer ist leer, Lüftung aktiv und der Röster beaufsichtigt.</label><div class="modal-actions"><button value="cancel" class="ghost-button">Abbrechen</button><button id="confirmPreflightButton" value="confirm" class="primary-action compact" disabled>Vorbereitung starten</button></div></form></dialog>
+<div id="toast" class="toast" hidden></div><script type="module" src="src/app.js?v=2c96788-3"></script></body></html>
