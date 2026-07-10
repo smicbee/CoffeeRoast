@@ -10,11 +10,12 @@ int thermoCLK = 13;
 TaskHandle_t TempTaskHandle;
 MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
 
-int temp = 0;
+volatile float temp = NAN;
 
 int fanPin = 2;
 int relayPin = 1;
 float relayValue = 0;
+float appliedRelayValue = 0;
 float fanTargetValue = 0;
 float fanValue = 0;
 
@@ -35,8 +36,8 @@ unsigned long StartTime = millis();
 bool abortSignal = false;
 bool disableFailsafe = false;
 
-uint16_t readTemperature() {
-    return (uint16_t)thermocouple.readCelsius();
+float readTemperature() {
+    return thermocouple.readCelsius();
 }
 
 float clampPwm(float value) {
@@ -57,7 +58,7 @@ void printStatus() {
   Serial.print(",temp=");
   Serial.print(temp);
   Serial.print(",heater=");
-  Serial.print(relayValue);
+  Serial.print(appliedRelayValue);
   Serial.print(",fan=");
   Serial.print(fanValue);
   Serial.print(",fanTarget=");
@@ -67,42 +68,54 @@ void printStatus() {
 }
 
 // FreeRTOS Task: Reads temperature every 500ms
-void TemperatureTask(void *parameter) { 
-    uint16_t tempTemp = 1;
-    temp = tempTemp;
+void TemperatureTask(void *parameter) {
+    float candidateTemp = NAN;
+    uint8_t candidateReadings = 0;
+
     while (1) {
-        
-        tempTemp = readTemperature();
-        
-        //Serial.println(temp);
-        //Serial.println(tempTemp);
+        const float sample = readTemperature();
+        const bool plausible = isfinite(sample) && sample > 0.0f && sample < 450.0f;
 
+        if (plausible) {
+            if (!isfinite(temp) || fabsf(sample - temp) <= 20.0f) {
+                temp = sample;
+                candidateTemp = NAN;
+                candidateReadings = 0;
+                errorReadings = 0;
+            } else {
+                errorReadings++;
 
-        if (temp == 1){
-          temp = tempTemp;
+                // Do not remain stuck forever after a bad first value. Only
+                // resynchronise after three mutually consistent samples.
+                if (isfinite(candidateTemp) && fabsf(sample - candidateTemp) <= 5.0f) {
+                    candidateTemp = (candidateTemp * candidateReadings + sample) / (candidateReadings + 1);
+                    candidateReadings++;
+                } else {
+                    candidateTemp = sample;
+                    candidateReadings = 1;
+                }
+
+                if (candidateReadings >= 3) {
+                    temp = candidateTemp;
+                    candidateTemp = NAN;
+                    candidateReadings = 0;
+                    errorReadings = 0;
+                }
+            }
+        } else {
+            errorReadings++;
+            candidateTemp = NAN;
+            candidateReadings = 0;
         }
 
-        if (tempTemp > 0){
-          if (abs(tempTemp - temp) > 20){
-           errorReadings = errorReadings + 1;
-          }else{
-          temp = tempTemp;
-          errorReadings = 0;
-          abortSignal = false;
-          }
-
-        }else{
-          errorReadings = errorReadings + 1;
+        if (errorReadings > 20 && !disableFailsafe) {
+            abortSignal = true;
+            Serial.println("Failsafe!");
+        } else {
+            abortSignal = false;
         }
 
-        if (errorReadings > 20 && !disableFailsafe){
-          abortSignal = true;
-          Serial.println("Failsafe!");
-        }else{
-          abortSignal = false;
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(500)); // Wait for 500ms
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
 
@@ -199,7 +212,10 @@ void loop() {
     fanValue = fanValue - fanMaxAcceleration;
   }
 
-  analogWrite(relayPin, relayValue);
+  // Hardware-level airflow interlock: never energise the SSR until the
+  // measured/ramped fan output has reached the safe threshold.
+  appliedRelayValue = (!abortSignal && fanValue >= MIN_SAFE_FAN) ? relayValue : PWM_MIN;
+  analogWrite(relayPin, appliedRelayValue);
   analogWrite(fanPin, fanValue);
 
   delay(delayValue);  //allow the cpu to switch to other tasks

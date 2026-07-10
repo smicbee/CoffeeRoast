@@ -6,11 +6,12 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
-- Vorbereitung mit gültiger Temperatur, bestätigtem Lüfterlauf und gesperrter Heizung
+- sicherer Vorheizablauf mit bestätigtem Lüfterlauf, danach Aufheizen auf 180 °C Standardziel
+- integrierte Firmware mit robustem Temperatursensor-Resync und hardwareseitigem SSR-Lüfterinterlock
 - serialisierte Kommunikation mit atomarem `get status`-Polling
 - Auto-Drop nach Zeit/Temperatur, 30-Sekunden-RoR, First Crack, DTR und Live-Phasen
 - kompatibel mit dem bestehenden Textprotokoll (`hello`, `get temp`, `get status`, `get fan`, `set setpoint`, `set fan`)
-- Zustände: Leerlauf, Vorbereitung, bereit, Rösten, Abkühlen und Failsafe
+- Zustände: Leerlauf, Vorheizen, bereit, Rösten, Abkühlen und Failsafe
 - Safety-Preflight vor jedem realen Heizvorgang
 - Import und Auswahl der bestehenden `.kpro`-Rezepte
 - PID-Regelung, Auto-Drop und temperaturabhängige Lüfterkurve

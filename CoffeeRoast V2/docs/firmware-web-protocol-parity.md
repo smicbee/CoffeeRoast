@@ -1,51 +1,61 @@
-# Branch-, Firmware- und Web-Parität
+# Desktop-, Firmware- und Web-Parität
 
-Referenz: `origin/codex/fix-bugs-and-crashes` bei `2c96788`; Firmware: `ESP32S3 Zero/RoastingControl/RoastingControl.ino`.
+Desktop-Basis: `codex/fix-bugs-and-crashes` bei `2c96788`. Aktuelle integrierte Basis: `main` bei `2a05fb0`. Die beim Merge beibehaltene Main-Firmware enthält – anders als der isolierte Desktop-Branch – bereits `get status`.
 
-## Protokoll
+## Serielles Protokoll
 
 - 115200 Baud, 8N1, kein Flow Control, `\n` als Befehlsabschluss.
 - `hello` → `popcorn roaster`.
 - `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...`.
-- `get temp` und `get fan` liefern jeweils eine numerische Zeile.
+- `get temp`, `get fan` und `get setpoint` liefern eine numerische Zeile.
 - `set fan N` und `set setpoint N` antworten nicht.
 - `Failsafe!` kann spontan zwischen Antworten eintreffen.
 
-Die Website serialisiert deshalb alle Operationen in einer FIFO-Warteschlange und akzeptiert je Request nur das erwartete Antwortformat. Spontane `Failsafe!`-Zeilen können nicht mehr als Temperatur fehlinterpretiert werden. Der Regelzyklus nutzt den atomaren Firmwarestatus, sodass Temperatur und reale Ausgänge aus demselben Zeitpunkt stammen.
+Die Website serialisiert alle Operationen in einer FIFO-Warteschlange und akzeptiert je Request nur das erwartete Antwortformat. Spontane Failsafe-/Bootzeilen können damit nicht mehr als Temperatur oder Lüfterwert fehlinterpretiert werden. Der Regelzyklus verwendet den atomaren Status, sodass Temperatur und reale Ausgänge aus demselben Zeitpunkt stammen.
 
-## Ablauf aus dem Branch
+## Sicherer Ablauf
 
 ### Verbinden
 
 1. Port öffnen und DTR setzen.
 2. ESP32-Auto-Reset abwarten; `hello` bis 10 Sekunden wiederholen.
-3. `get status` vollständig parsen.
-4. Erst danach verbunden melden und Bohnen-/Isttemperatur anzeigen.
+3. Bootmeldungen ignorieren und `get status` vollständig parsen.
+4. Erst danach verbunden melden und die reale Temperatur anzeigen.
 
-### Vorbereitung (`pre-heating` im Desktop-Code)
+### Vorheizen
 
-`ControlClass.prepareRoast()` setzt im Branch `setPoint = 0`. Im Zustand `pre-heating` wird der Startlüfter gesetzt; erst eine gültige Temperatur führt zu `ready`.
-
-Die Website bildet das so ab und ergänzt den fehlenden Safety-Nachweis:
+Der Desktop-Branch hat hier einen kritischen Widerspruch: `prepareRoast()` setzt Heizung 0 und `pre-heating` wechselt bereits bei einer positiven Temperatur zu `ready`; real wird nicht vorgeheizt. Dieser Fehler wird bewusst nicht kopiert.
 
 1. frischen Status und Preflight prüfen;
 2. **zuerst** `set fan <Startwert>`;
-3. `set setpoint 0` – Heizung bleibt aus;
-4. auf Temperatur > 0 und realen Firmware-Lüfter-PWM ≥ 40 warten;
-5. erst dann `ready`;
-6. nach 10 Sekunden ohne Bestätigung Failsafe statt blind weiterzulaufen.
+3. `set setpoint 0`, bis der gerampte Ist-Lüfter mindestens PWM 40 erreicht;
+4. ohne Lüfterbestätigung nach 10 Sekunden Failsafe;
+5. erst danach Heizleistung freigeben und die leere Kammer auf das einstellbare Vorheizziel (Standard 180 °C) bringen;
+6. am Ziel sofort Heizung 0 und Zustand `ready`.
 
 ### Rösten
 
-Je Zyklus: Lüfterziel senden, realen Lüfter prüfen, erst danach Heizwert senden, dann `get status`. PID, Zukunftsziel 40 Sekunden, dynamisches Kp/Ki/Kd, frühes Heizlimit 170 und temperaturabhängige Lüfterkurve entsprechen dem Branch. Auto-Drop unterstützt Zeit und Temperatur. RoR wird wie im Branch über 30 Sekunden berechnet; First Crack, DTR und Live-Phase werden angezeigt.
+Je Zyklus: Lüfterziel senden, realen Lüfter prüfen, erst danach Heizwert senden, dann atomaren Status lesen. Rezept-Kp/Ki/Kd und Zukunftsziel werden tatsächlich verwendet. PID-Aktualisierung maximal alle drei Sekunden, dynamische Gains, frühes Heizlimit 170 und Lüfterkurve entsprechen dem Branch. Auto-Drop nach Zeit oder Temperatur bleibt beim Start erhalten. RoR nutzt 30 Sekunden inklusive negativer Werte; First Crack wird nur bei `expect_fc > 0` erkannt; DTR und Live-Phase werden angezeigt.
 
 ### Abkühlen/Failsafe
 
-Abkühlen sendet zuerst Heizung 0 und danach Lüfter 255. Im weiteren Verlauf folgt der Lüfter der Branch-Kurve und stoppt unter 60 °C. Failsafe hält Heizung 0 und Lüfter 255. Die Firmware erzwingt zusätzlich Mindestlüfter bei Hitze/Heizung.
+Abkühlen sendet zuerst Heizung 0 und danach Lüfter 255. Anders als der fehlerhafte Desktop-Code bleibt die Kühlung bis unter 60 °C auf voller Leistung. Failsafe hält Heizung 0 und Lüfter 255.
 
-## Erkannte Branch-Widersprüche, bewusst nicht übernommen
+## Firmware-Härtung
 
-- Desktop-Gerätesuche schreibt `hello` ohne Newline und schließt den gefundenen Port im `finally`; die Website verwendet den stabilen offenen Port und korrektes Zeilenende.
-- Desktop-Serialzugriffe sind nicht synchronisiert; die Website verhindert Antwortvertauschung.
-- `runCurve()` setzt `stopAt = -1` und kann damit den zuvor gewählten Zeit-Auto-Drop löschen; die Website behält den konfigurierten Auto-Drop.
-- `pre-heating` prüft im Desktop nur `measuredTemp > 0`; die Website verlangt zusätzlich realen Lüfterlauf.
+- Temperatur bleibt `float`; NaN und unplausible Werte werden vor Übernahme geprüft.
+- Nach einem schlechten ersten Wert kann der Sensor nach drei konsistenten plausiblen Messungen neu synchronisieren, statt dauerhaft bei 0 zu hängen.
+- `get status` meldet den tatsächlich am SSR angewendeten Heizwert.
+- Zusätzlich zur Web-Sperre verhindert ein Firmware-Interlock jeden SSR-Ausgang, solange der reale gerampte Lüfter PWM 50 nicht erreicht hat.
+
+## Bewusst korrigierte Desktop-Bugs
+
+- instabiler Handshake ohne Newline/Bootwartezeit;
+- unkoordinierte serielle Requests und blinde Antwortzuordnung;
+- defektes Vorheizen;
+- gelöschter Zeit-Auto-Drop in `runCurve()`;
+- Profilende durch Clamp unerreichbar;
+- Rezept-PID ignoriert;
+- First Crack bei `expect_fc = 0` sofort ausgelöst;
+- Kühlung nur mit Röstlüfterkurve statt Vollleistung;
+- Failsafe-Lüfter 200 statt 255.
