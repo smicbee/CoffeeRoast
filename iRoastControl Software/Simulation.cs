@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +19,13 @@ namespace iRoastControl
         private static double _heatLossFactor = 0.0001; // Cooling rate per tick
 
         private static DateTime _lastUpdateTime = DateTime.Now;
+
+        public static void Reset()
+        {
+            _thermalEnergy = 0.0;
+            _heatingPower = 0.0;
+            _lastUpdateTime = DateTime.Now;
+        }
 
         public static void SetHeatingPower(double power)
         {

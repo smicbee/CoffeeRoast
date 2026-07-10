@@ -1,4 +1,4 @@
-﻿using iRoastControl;
+using iRoastControl;
 using MathNet.Numerics;
 using Numerics.NET;
 using System;
@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 using ZedGraph;
 
 namespace Artisan
@@ -43,7 +44,7 @@ namespace Artisan
             }
 
             comboBox2.Items.AddRange(kproFiles.ToArray());
-            comboBox2.Text = (comboBox2.Items[0].ToString());
+            comboBox2.Text = comboBox2.Items[0].ToString();
 
         }
 
@@ -77,36 +78,55 @@ namespace Artisan
 
             timer1.Interval = 500;
             timer1.Enabled = true;
-            timer1.Tick += timer1_Tick;
             timer1.Start();
 
             ControlClass.initialize();
             loadRecipes();
-            roastLevelControl1.RoastLevelChanged = RoastLevelChanged;
+
+            cmbDropMode.SelectedIndex = 0; // default to Time
+            chkAutoDrop.Checked = false;
+            txtDropTarget.Text = "600"; // default 10 minutes
 
             loadSettings();
             resetView();
         }
 
+        private string GetSettingsFolder()
+        {
+            return Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "iRoastControl");
+        }
+
         public void loadSettings()
         {
-            var tempFolder = Path.GetTempPath() + "/iRoastControl";
+            var settingsFolder = GetSettingsFolder();
 
-            if (!Directory.Exists(tempFolder))
+            if (!Directory.Exists(settingsFolder))
             {
-                Directory.CreateDirectory(tempFolder);
+                Directory.CreateDirectory(settingsFolder);
             }
 
-            var settingsPath = tempFolder + "/default.roast";
+            var settingsPath = Path.Combine(settingsFolder, "default.roast");
+
+            // Migration: alte Settings aus %TEMP% übernehmen
+            if (!File.Exists(settingsPath))
+            {
+                var oldPath = Path.Combine(Path.GetTempPath(), "iRoastControl", "default.roast");
+                if (File.Exists(oldPath))
+                {
+                    try { File.Copy(oldPath, settingsPath); } catch { }
+                }
+            }
 
             if (File.Exists(settingsPath))
             {
 
                 SettingSaveFile s = Newtonsoft.Json.JsonConvert.DeserializeObject<SettingSaveFile>(File.ReadAllText(settingsPath));
-                
-                if (s.Recipe != ".kpro") { 
-                
-                RoastLevelValues = s.RoastLevels;
+                ThemeManager.IsDarkMode = s.isDarkMode;
+                ThemeManager.ApplyTheme(this);
+
+                if (s.Recipe != ".kpro") {
                 textBox2.Text = (s.defaultFanSpeed.ToString());
                 comboBox2.Text = Path.GetFileNameWithoutExtension(s.Recipe);
                 readFile(GetRecipePath(s.Recipe));
@@ -114,51 +134,44 @@ namespace Artisan
                 }
             }
         }
-        public void RoastLevelChanged()
+        private void chkAutoDrop_CheckedChanged(object sender, EventArgs e)
         {
-            if (roastLevelControl1.RoastLevelIntensity == RoastLevelControl.RoastLevel.None) { ControlClass.stopAt = -1; return; }
+            UpdateDropTarget();
+        }
 
+        private void cmbDropMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDropTarget();
+        }
 
-            if (!_SetRoastLevelMode) { 
-            
-                
-                if (RoastLevelValues.ContainsKey(roastLevelControl1.RoastLevelIntensity))
+        private void txtDropTarget_TextChanged(object sender, EventArgs e)
+        {
+            UpdateDropTarget();
+        }
+
+        private void UpdateDropTarget()
+        {
+            if (chkAutoDrop.Checked)
+            {
+                if (double.TryParse(txtDropTarget.Text, out double val))
                 {
-                    if (ControlClass.State == "running" && ControlClass.elappsedSeconds.ElapsedMilliseconds > RoastLevelValues[roastLevelControl1.RoastLevelIntensity] * 1000)
+                    if (cmbDropMode.SelectedItem.ToString().Contains("Time"))
                     {
-                        var result = MessageBox.Show("You try to set a roast level, which has already passed. This would instantly stop your roast. Do you want to continue?", "Continue?", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.No)
-                        {
-                            roastLevelControl1.RoastLevelIntensity = RoastLevelControl.RoastLevel.None;
-                            return; 
-                        }
-                    
+                        ControlClass.stopAt = (int)val;
                     }
-
-
-                        ControlClass.stopAt = RoastLevelValues[roastLevelControl1.RoastLevelIntensity];                                              
+                    else
+                    {
+                        ControlClass.stopAt = -1; // Temp based
+                    }
                 }
                 else
-            {
-                ControlClass.stopAt = -1;
-                MessageBox.Show("No roast level was defined for this setting");
-                    roastLevelControl1.RoastLevelIntensity = RoastLevelControl.RoastLevel.None;
-             }
+                {
+                    ControlClass.stopAt = -1;
+                }
             }
             else
             {
-                //Setting Roastlevel mode
-                if (ControlClass.elappsedSeconds == null)
-                {
-                    MessageBox.Show("Please start a roast first to define a roast level");
-                }
-                else
-                {
-                    if (roastLevelControl1.RoastLevelIntensity != RoastLevelControl.RoastLevel.None) { 
-                        RoastLevelValues[roastLevelControl1.RoastLevelIntensity] = Convert.ToInt32(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000);
-                    }
-                }
-
+                ControlClass.stopAt = -1;
             }
         }
 
@@ -253,46 +266,7 @@ namespace Artisan
 
                 }
 
-                List<double> rlPointsT = new List<double>();
-                List<double> rlPoints = new List<double>();
-                foreach(var rl in RoastLevelValues.Values)
-                {
-                    rlPointsT.Add(ControlClass.roastingProfile[rl]);
-                    rlPoints.Add(rl);
-                }
 
-                if (roastLevelPoints == null)
-                {
-                    roastLevelPoints = myPane.AddCurve("RoastLevels", rlPoints.ToArray(), rlPointsT.ToArray(),Color.Brown,SymbolType.XCross);
-                    roastLevelPoints.Symbol.Size = 5;
-                    roastLevelPoints.Line.IsVisible = false;
-                    myPane.AxisChange();
-                }
-                else
-                {
-                    roastLevelPoints.Symbol.Size = 7;
-                    roastLevelPoints.Symbol.Fill = new Fill(Color.Brown);
-                    roastLevelPoints.Symbol.Type = SymbolType.Circle;
-
-                    while (roastLevelPoints.Points.Count > 0) { roastLevelPoints.RemovePoint(0); }
-
-
-                    if (_SetRoastLevelMode)
-                    {
-                        //show all roast levels
-                        for (int i = 0; i < rlPoints.Count(); i++)
-                        {
-                            roastLevelPoints.AddPoint(rlPoints[i], rlPointsT[i]);
-                        }
-                    }
-                    else
-                    {
-                        if (RoastLevelValues.ContainsKey(roastLevelControl1.RoastLevelIntensity)) { 
-                        roastLevelPoints.AddPoint(RoastLevelValues[roastLevelControl1.RoastLevelIntensity], ControlClass.roastingProfile[RoastLevelValues[roastLevelControl1.RoastLevelIntensity]]);
-                            }
-                    }
-
-                }
 
 
 
@@ -331,6 +305,48 @@ namespace Artisan
                         }
                     }
                 }
+                // Rate of Rise Kurve (auf Y2Axis)
+                if (ControlClass.rateOfRise != null)
+                {
+                    // Y2Axis einrichten
+                    myPane.Y2Axis.IsVisible = true;
+                    myPane.Y2Axis.Title.Text = "RoR / °C/min";
+                    myPane.Y2Axis.Scale.Min = 0;
+                    myPane.Y2Axis.Scale.Max = 30;
+                    myPane.Y2Axis.Scale.FontSpec.FontColor = Color.DarkOrange;
+                    myPane.Y2Axis.Title.FontSpec.FontColor = Color.DarkOrange;
+
+                    if (rorCurve == null)
+                    {
+                        rorCurve = myPane.AddCurve("RoR", xList, ControlClass.rateOfRise, Color.DarkOrange, SymbolType.None);
+                        rorCurve.Line.Width = 2;
+                        rorCurve.Line.Style = DashStyle.Dash;
+                        rorCurve.IsY2Axis = true;
+                        myPane.AxisChange();
+                    }
+                    else
+                    {
+                        for (int i = 0; i < ControlClass.rateOfRise.Length; i++)
+                        {
+                            rorCurve.Points[i].Y = ControlClass.rateOfRise[i];
+                        }
+                    }
+                }
+
+                // First Crack Temperatur-Linie (horizontal)
+                if (ControlClass.expectedFirstCrack > 0)
+                {
+                    // Alte FC-Linie entfernen und neu zeichnen
+                    if (fcLine != null)
+                    {
+                        myPane.CurveList.Remove(fcLine);
+                    }
+                    double[] fcX = new double[] { 0, 1199 };
+                    double[] fcY = new double[] { ControlClass.expectedFirstCrack, ControlClass.expectedFirstCrack };
+                    fcLine = myPane.AddCurve("FC @ " + ControlClass.expectedFirstCrack + "°C", fcX, fcY, Color.Magenta, SymbolType.None);
+                    fcLine.Line.Width = 1;
+                    fcLine.Line.Style = DashStyle.DashDot;
+                }
 
 
                 zedGraphControl1.Invalidate();
@@ -341,9 +357,11 @@ namespace Artisan
         LineItem keyPointCurve;
         LineItem activeCurve;
         LineItem realCurve;
-        LineItem roastLevelPoints;
+
         LineItem pidLevels;
         LineItem fanCurve;
+        LineItem rorCurve;
+        LineItem fcLine;
 
         private void zedGraphControl1_Load(object sender, EventArgs e)
         {
@@ -365,7 +383,8 @@ namespace Artisan
             if (Path.GetExtension(files[0]) == ".roast")
             { 
                 SettingSaveFile s =  Newtonsoft.Json.JsonConvert.DeserializeObject<SettingSaveFile>(File.ReadAllText(files[0]));
-                RoastLevelValues = s.RoastLevels;
+                ThemeManager.IsDarkMode = s.isDarkMode;
+                ThemeManager.ApplyTheme(this);
                 textBox2.Text = s.defaultFanSpeed.ToString();
                 if (s.Recipe != comboBox2.Text + ".kpro")
                 {
@@ -398,22 +417,23 @@ namespace Artisan
                 return;
             }
 
-            string[] lines = File.ReadAllLines(filename);
-
-            Dictionary<string, string> datadict = new Dictionary<string, string>();
-            foreach (string line in lines)
+            try
             {
-                int separator = line.IndexOf(':');
-                if (separator < 0)
+                string[] lines = File.ReadAllLines(filename);
+
+                Dictionary<string, string> datadict = new Dictionary<string, string>();
+                foreach (string line in lines)
                 {
-                    continue;
+                    int separator = line.IndexOf(':');
+                    if (separator < 0)
+                    {
+                        continue;
+                    }
+
+                    var key = line.Substring(0, separator);
+                    var value = line.Substring(separator + 1);
+                    datadict[key] = value;
                 }
-
-                var key = line.Substring(0, separator);
-                var value = line.Substring(separator + 1);
-
-                datadict.Add(key, value);
-            }
 
             double kp = Convert.ToDouble(datadict["roast_PID_Kp"],CultureInfo.InvariantCulture);
             //kp *= Convert.ToDouble(datadict["specific_heat_adj_multiplier_Kp"], CultureInfo.InvariantCulture);
@@ -427,40 +447,19 @@ namespace Artisan
             double timeShift = Convert.ToDouble(datadict["roast_target_timeshift"], CultureInfo.InvariantCulture);
             double minRateOfRise = Convert.ToDouble(datadict["roast_min_desired_rate_of_rise"], CultureInfo.InvariantCulture);
 
-
-            if (datadict.ContainsKey("RoastLevel_Light"))
+            // Rezept-Metadaten speichern
+            if (datadict.ContainsKey("expect_fc"))
             {
-                RoastLevelValues[RoastLevelControl.RoastLevel.Light] = Convert.ToInt32(datadict["RoastLevel_Light"]);
+                ControlClass.expectedFirstCrack = Convert.ToDouble(datadict["expect_fc"], CultureInfo.InvariantCulture);
             }
-            if (datadict.ContainsKey("RoastLevel_City"))
-            {
-                RoastLevelValues[RoastLevelControl.RoastLevel.City] = Convert.ToInt32(datadict["RoastLevel_City"]);
-            }
-            if (datadict.ContainsKey("RoastLevel_FullCity"))
-            {
-                RoastLevelValues[RoastLevelControl.RoastLevel.FullCity] = Convert.ToInt32(datadict["RoastLevel_FullCity"]);
-            }
-            if (datadict.ContainsKey("RoastLevel_French"))
-            {
-                RoastLevelValues[RoastLevelControl.RoastLevel.French] = Convert.ToInt32(datadict["RoastLevel_French"]);
-            }
-            if (datadict.ContainsKey("RoastLevel_Italian"))
-            {
-                RoastLevelValues[RoastLevelControl.RoastLevel.Italian] = Convert.ToInt32(datadict["RoastLevel_Italian"]);
-            }
-
-
-
 
             ControlClass.keyPoints.Clear();
 
             var roastProfilestr = datadict["roast_profile"].Split(',');
             List<PointF> roastProfile = new List<PointF>();
-            //roastProfile.Add(new PointF(0, 160));
             for (int i = 2; i < roastProfilestr.Length-2; i = i + 2) {
                 roastProfile.Add(new PointF(Convert.ToSingle(roastProfilestr[i], CultureInfo.InvariantCulture), Convert.ToSingle(roastProfilestr[i + 1], CultureInfo.InvariantCulture)));
-       
-                }
+            }
             ControlClass.keyPoints = roastProfile;
 
             double[] timeSeries = new double[1200];
@@ -474,11 +473,14 @@ namespace Artisan
 
             zedGraphControl1.GraphPane.AxisChange();
 
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading recipe: " + ex.Message, "Recipe Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
-        Dictionary<RoastLevelControl.RoastLevel, int> RoastLevelValues = new Dictionary<RoastLevelControl.RoastLevel, int>();
         private bool _preflightAccepted = false;
 
         private bool ConfirmPreflight()
@@ -577,8 +579,72 @@ namespace Artisan
             label7.Text = "Fan: " + Math.Round(ControlClass.fanSpeed/255*100).ToString() + " %";
 
             if (ControlClass.elappsedSeconds == null) { label3.Text = ""; }
-            else { label3.Text = "Elappsed Time: " + TimeSpan.FromSeconds(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000).ToString(@"mm\:ss"); }
+            else { label3.Text = "Elapsed Time: " + TimeSpan.FromSeconds(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000).ToString(@"mm\:ss"); }
 
+            // Restzeit-Anzeige
+            if (ControlClass.State == "running" && ControlClass.stopAt > 0 && ControlClass.elappsedSeconds != null)
+            {
+                int elapsedSec = Convert.ToInt32(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000);
+                int remaining = Math.Max(0, ControlClass.stopAt - elapsedSec);
+                label3.Text += "  |  Remaining: " + TimeSpan.FromSeconds(remaining).ToString(@"mm\:ss");
+            }
+
+            // First Crack Timer + DTR
+            if (ControlClass.firstCrackSecond > 0 && ControlClass.elappsedSeconds != null && ControlClass.State == "running")
+            {
+                int elapsedSec = Convert.ToInt32(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000);
+                int sinceFC = Math.Max(0, elapsedSec - ControlClass.firstCrackSecond);
+                double dtr = elapsedSec > 0 ? (double)sinceFC / elapsedSec * 100 : 0;
+                label3.Text += "  |  FC+" + TimeSpan.FromSeconds(sinceFC).ToString(@"mm\:ss") + " (DTR: " + dtr.ToString("F1") + "%)";
+            }
+
+
+            // Live Phasen-Anzeige
+            if (ControlClass.elappsedSeconds != null)
+            {
+                int elapsedSec = Convert.ToInt32(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000);
+                double currentTemp = ControlClass.measuredTemp;
+                double currentRoR = ControlClass.rateOfRise != null && elapsedSec < ControlClass.rateOfRise.Length 
+                                    ? ControlClass.rateOfRise[elapsedSec] : double.NaN;
+                double prevTemp = elapsedSec > 0 && elapsedSec - 1 < ControlClass.realCurve.Length 
+                                  ? ControlClass.realCurve[elapsedSec - 1] : double.NaN;
+
+                var phase = iRoastControl.RoastEvaluator.DetectPhase(currentTemp, prevTemp, currentRoR, 
+                            elapsedSec, ControlClass.firstCrackSecond, ControlClass.expectedFirstCrack, ControlClass.State);
+                
+                string phaseStatus = iRoastControl.RoastEvaluator.PhaseToString(phase);
+                label3.Text += "  |  " + phaseStatus;
+                
+                // Color label text
+                label3.ForeColor = iRoastControl.RoastEvaluator.PhaseToColor(phase);
+            }
+            else
+            {
+                label3.ForeColor = Color.Black;
+            }
+
+            // Check if Roast has just finished (transition running -> cooling)
+            if (_wasRunning && ControlClass.State == "cooling" && ControlClass.elappsedSeconds != null)
+            {
+                _wasRunning = false;
+                ShowRoastReport();
+            }
+            else if (ControlClass.State == "running")
+            {
+                _wasRunning = true;
+            }
+
+            // Auto-Drop based on Temperature
+            if (chkAutoDrop.Checked && cmbDropMode.SelectedItem != null && cmbDropMode.SelectedItem.ToString().Contains("Temp") && ControlClass.State == "running")
+            {
+                if (double.TryParse(txtDropTarget.Text, out double targetTemp))
+                {
+                    if (ControlClass.measuredTemp >= targetTemp)
+                    {
+                        ControlClass.abortRun();
+                    }
+                }
+            }
 
             switch (ControlClass.State) {
                 case "running":
@@ -643,10 +709,23 @@ namespace Artisan
 
      
 
+        private SettingsWindow _settingsWindow;
+        private void ShowSettingsWindow()
+        {
+            if (_settingsWindow == null || _settingsWindow.IsDisposed)
+            {
+                _settingsWindow = new SettingsWindow();
+                _settingsWindow.Show();
+            }
+            else
+            {
+                _settingsWindow.BringToFront();
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            SettingsWindow settings = new SettingsWindow();
-            settings.Show();
+            ShowSettingsWindow();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -658,31 +737,18 @@ namespace Artisan
             }
         }
 
-        Boolean _SetRoastLevelMode = false;
-        private void button3_Click(object sender, EventArgs e)
-        {
-            _SetRoastLevelMode = !_SetRoastLevelMode;
 
-            if (_SetRoastLevelMode) {
-                button3.BackColor = Color.Yellow;
-                ControlClass.stopAt = -1;
-            }
-            else
-            {
-                button3.BackColor = Color.Transparent;
-            }
-        }
 
         class SettingSaveFile
         {
-            public Dictionary<RoastLevelControl.RoastLevel, int> RoastLevels;
             public string Recipe;
             public double defaultFanSpeed;
-            public  SettingSaveFile(Dictionary<RoastLevelControl.RoastLevel, int> roastLevelvalues, string recipefile, double fanspeed ) 
+            public bool isDarkMode;
+            public SettingSaveFile(string recipefile, double fanspeed, bool isDarkMode) 
             {
-                this.RoastLevels = roastLevelvalues;
                 this.Recipe = recipefile;
                 this.defaultFanSpeed = fanspeed;
+                this.isDarkMode = isDarkMode;
             }
 
         }
@@ -691,16 +757,16 @@ namespace Artisan
         {
          
 
-            var tempFolder = Path.GetTempPath() + "/iRoastControl";
+            var settingsFolder = GetSettingsFolder();
 
-            if (!Directory.Exists(tempFolder))
+            if (!Directory.Exists(settingsFolder))
             {
-                Directory.CreateDirectory(tempFolder);
+                Directory.CreateDirectory(settingsFolder);
             }
 
-            var settingsPath = tempFolder + "/default.roast";
+            var settingsPath = Path.Combine(settingsFolder, "default.roast");
 
-            SettingSaveFile settings = new SettingSaveFile(RoastLevelValues, comboBox2.Text + ".kpro", ControlClass.initFanSpeed);
+            SettingSaveFile settings = new SettingSaveFile(comboBox2.Text + ".kpro", ControlClass.initFanSpeed, ThemeManager.IsDarkMode);
                string json = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
                 File.WriteAllText(settingsPath, json);
 
@@ -710,24 +776,23 @@ namespace Artisan
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.DefaultExt = ".roast";
+            saveFileDialog.Filter = "Roast Files (*.roast)|*.roast";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                SettingSaveFile settings = new SettingSaveFile(RoastLevelValues, comboBox2.Text + ".kpro", ControlClass.initFanSpeed);
-
-
                 string fileName = saveFileDialog.FileName;
+
+                SettingSaveFile settings = new SettingSaveFile(comboBox2.Text + ".kpro", ControlClass.initFanSpeed, ThemeManager.IsDarkMode);
                 string json = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
                 File.WriteAllText(fileName, json);
-
-                MessageBox.Show("Roast levels saved to " + fileName);
+                
+                MessageBox.Show("Settings saved to " + fileName);
             }
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            SettingsWindow settings = new SettingsWindow();
-            settings.Show();
+            ShowSettingsWindow();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -773,6 +838,55 @@ namespace Artisan
             value -= 5;
             textBox2.Text = value.ToString();
 
+        }
+
+        private bool _wasRunning = false;
+        private iRoastControl.RoastEvaluator.RoastScore _lastScore;
+
+        private void btnBestPractices_Click(object sender, EventArgs e)
+        {
+            var bpWindow = new iRoastControl.BestPracticesWindow();
+            bpWindow.Show();
+        }
+
+        private void btnShowReport_Click(object sender, EventArgs e)
+        {
+            if (_lastScore != null)
+            {
+                var reportWindow = new iRoastControl.RoastReportWindow(_lastScore);
+                reportWindow.ShowDialog();
+            }
+            else if (ControlClass.elappsedSeconds != null)
+            {
+                ShowRoastReport();
+            }
+            else
+            {
+                MessageBox.Show("Röste zuerst einen Kaffee, um einen Bericht zu sehen!");
+            }
+        }
+
+        private void ShowRoastReport()
+        {
+            int duration = Convert.ToInt32(ControlClass.elappsedSeconds.ElapsedMilliseconds / 1000);
+            
+            // Clean up realCurve - remove NaNs after duration
+            double[] cleanRealCurve = new double[duration];
+            for(int i=0; i<duration && i<ControlClass.realCurve.Length; i++) {
+                cleanRealCurve[i] = ControlClass.realCurve[i];
+            }
+
+            _lastScore = iRoastControl.RoastEvaluator.Evaluate(
+                cleanRealCurve,
+                ControlClass.roastingProfile,
+                ControlClass.rateOfRise,
+                duration,
+                ControlClass.firstCrackSecond,
+                ControlClass.expectedFirstCrack
+            );
+
+            var reportWindow = new iRoastControl.RoastReportWindow(_lastScore);
+            reportWindow.ShowDialog();
         }
     }
 }

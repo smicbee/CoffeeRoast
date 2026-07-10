@@ -1,4 +1,4 @@
-﻿using Artisan;
+using Artisan;
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;

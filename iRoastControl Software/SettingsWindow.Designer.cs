@@ -1,4 +1,4 @@
-﻿namespace iRoastControl
+namespace iRoastControl
 {
     partial class SettingsWindow
     {
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.btnAutoTune = new System.Windows.Forms.Button();
+            this.chkDarkMode = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Kp = new System.Windows.Forms.TextBox();
@@ -146,6 +148,28 @@
             this.button2.Text = "Reset Integral";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnAutoTune
+            // 
+            this.btnAutoTune.Location = new System.Drawing.Point(397, 38);
+            this.btnAutoTune.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAutoTune.Name = "btnAutoTune";
+            this.btnAutoTune.Size = new System.Drawing.Size(124, 22);
+            this.btnAutoTune.TabIndex = 22;
+            this.btnAutoTune.Text = "Auto-Calibrate PID";
+            this.btnAutoTune.UseVisualStyleBackColor = true;
+            this.btnAutoTune.Click += new System.EventHandler(this.btnAutoTune_Click);
+            // 
+            // chkDarkMode
+            // 
+            this.chkDarkMode.AutoSize = true;
+            this.chkDarkMode.Location = new System.Drawing.Point(397, 100);
+            this.chkDarkMode.Name = "chkDarkMode";
+            this.chkDarkMode.Size = new System.Drawing.Size(95, 17);
+            this.chkDarkMode.TabIndex = 23;
+            this.chkDarkMode.Text = "🌙 Dark Mode";
+            this.chkDarkMode.UseVisualStyleBackColor = true;
+            this.chkDarkMode.CheckedChanged += new System.EventHandler(this.chkDarkMode_CheckedChanged);
             // 
             // button3
             // 
@@ -365,6 +389,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnAutoTune);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -391,6 +416,7 @@
             this.Controls.Add(this.tb_Kp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.chkDarkMode);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingsWindow";
             this.Text = "SettingsWindow";
@@ -425,6 +451,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAutoTune;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -432,5 +459,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox chkDarkMode;
     }
 }

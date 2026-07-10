@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,7 @@ namespace iRoastControl
         public DebugWindow()
         {
             InitializeComponent();
+            this.Load += (s, e) => ThemeManager.ApplyTheme(this);
         }
     }
 }
