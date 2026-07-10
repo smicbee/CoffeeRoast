@@ -30,14 +30,49 @@ export class WebSerialTransport {
     const info = port.getInfo?.() || {};
     this.portName = info.usbVendorId ? `USB ${hex(info.usbVendorId)}:${hex(info.usbProductId || 0)}` : 'Serieller Controller';
     this.readLoop();
-    await this.send('hello');
-    const answer = await this.readLine(1600);
-    if (answer.trim().toLowerCase() !== 'popcorn roaster') {
+
+    try {
+      // Einige ESP32-/CP210x-Varianten benötigen DTR. Das Setzen kann zugleich
+      // einen Auto-Reset auslösen, deshalb bekommt die Firmware anschließend
+      // bewusst Zeit zum Booten.
+      try { await port.setSignals?.({ dataTerminalReady: true, requestToSend: false }); } catch {}
+      const answer = await this.handshake();
+      this.log('✓ Controller erkannt: popcorn roaster');
+      return answer;
+    } catch (error) {
       await this.disconnect(false);
-      throw new Error(`Das gewählte Gerät ist kein CoffeeRoast-Controller (${answer || 'keine Antwort'}).`);
+      throw error;
     }
-    this.log('✓ Controller erkannt: popcorn roaster');
-    return answer;
+  }
+
+  async handshake(timeout = 10000) {
+    const deadline = performance.now() + timeout;
+    let lastLine = '';
+
+    // Port.open()/DTR startet viele ESP32-Boards neu. Ein sofortiges "hello"
+    // geht dann während des Bootloaders verloren.
+    await delay(900);
+
+    while (performance.now() < deadline) {
+      await this.send('hello');
+      const attemptDeadline = Math.min(deadline, performance.now() + 1500);
+
+      // Bootmeldungen oder leere/stale Zeilen überspringen und nur auf die
+      // tatsächliche Protokollkennung reagieren.
+      while (performance.now() < attemptDeadline) {
+        try {
+          const line = await this.readLine(Math.max(100, attemptDeadline - performance.now()));
+          lastLine = line;
+          if (line.trim().toLowerCase() === 'popcorn roaster') return line;
+        } catch {
+          break;
+        }
+      }
+      await delay(250);
+    }
+
+    const detail = lastLine ? ` Letzte Antwort: ${lastLine}` : '';
+    throw new Error(`Keine Antwort auf \"hello\" innerhalb von ${Math.round(timeout / 1000)} Sekunden.${detail} Prüfe den COM-Port und schließe andere Serial-Monitore.`);
   }
 
   async readLoop() {
@@ -143,3 +178,4 @@ export class SimulationTransport {
 
 function clamp(value, min, max) { return Math.max(min, Math.min(max, Number(value) || 0)); }
 function hex(value) { return Number(value).toString(16).padStart(4, '0').toUpperCase(); }
+function delay(milliseconds) { return new Promise(resolve => setTimeout(resolve, milliseconds)); }

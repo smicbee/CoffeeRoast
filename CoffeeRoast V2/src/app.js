@@ -6,7 +6,7 @@ import { RoastChart, formatTime } from './chart.js';
 const $ = id => document.getElementById(id);
 const engine = new RoastEngine();
 const chart = new RoastChart($('roastChart'), $('chartTooltip'));
-let recipes = [], simulation = false, roastLevel = 0, toastTimer;
+let recipes = [], simulation = false, roastLevel = 0, toastTimer, connecting = false;
 const logLines = [];
 
 async function boot() {
@@ -46,8 +46,22 @@ function bindEvents() {
 
 function makeTransport() { return simulation ? new SimulationTransport(addLog) : new WebSerialTransport(addLog); }
 async function connect() {
-  try { engine.setTransport(makeTransport()); await engine.connect(); showToast(simulation?'Simulation gestartet.':'CoffeeRoast-Controller verbunden.'); }
-  catch(error){fail(error)}
+  if (connecting) return;
+  connecting = true;
+  $('connectButton').disabled = true;
+  $('connectionText').textContent = 'ESP32 startet …';
+  $('primaryActionButton').disabled = true;
+  try {
+    engine.setTransport(makeTransport());
+    await engine.connect();
+    showToast(simulation ? 'Simulation gestartet.' : 'CoffeeRoast-Controller verbunden.');
+  } catch(error) {
+    fail(error);
+  } finally {
+    connecting = false;
+    $('connectButton').disabled = false;
+    engine.emit();
+  }
 }
 async function disconnect(){try{await engine.disconnect();showToast('Controller sicher getrennt.')}catch(error){fail(error)}}
 async function toggleSimulation(){
