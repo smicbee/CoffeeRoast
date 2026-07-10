@@ -1,0 +1,543 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:19:24+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 23 [GND] von JGPIO1",
+                    "pos": {
+                        "x": 128.4,
+                        "y": 92.0
+                    },
+                    "uuid": "cbc7c042-525c-4e84-9712-06e8fa44631b"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,5267 mm",
+                    "pos": {
+                        "x": 118.95,
+                        "y": 70.95
+                    },
+                    "uuid": "8e1ec8fe-8bae-4edb-bdfc-8ff7cccf927b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 2,9517 mm",
+                    "pos": {
+                        "x": 75.05,
+                        "y": 86.0
+                    },
+                    "uuid": "979b1685-930c-4d93-819e-05682df47b86"
+                },
+                {
+                    "description": "Durchsteckpad 1 [+3V3] von JGPIO1",
+                    "pos": {
+                        "x": 74.5,
+                        "y": 92.0
+                    },
+                    "uuid": "793103d9-480b-4ef5-a11b-e1bcac01ef40"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 2 [EN] von JGPIO1",
+                    "pos": {
+                        "x": 76.95,
+                        "y": 92.0
+                    },
+                    "uuid": "ca3caef7-ecbb-483c-bb3f-c0b2dee5c7cb"
+                },
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 0,7017 mm",
+                    "pos": {
+                        "x": 55.95,
+                        "y": 32.0
+                    },
+                    "uuid": "4efd3957-ac24-407a-a1ba-00fe2ca20f95"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 12 [BOOT] von JGPIO1",
+                    "pos": {
+                        "x": 101.45,
+                        "y": 92.0
+                    },
+                    "uuid": "a49cdf72-d8c6-4b8a-970f-9e2a42a55eb5"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf B.Cu, Länge 2,9209 mm",
+                    "pos": {
+                        "x": 105.9346,
+                        "y": 52.4546
+                    },
+                    "uuid": "4799eaaf-c015-455e-8fe8-aa6059bc5e92"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO3] auf B.Cu, Länge 0,7946 mm",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 58.5
+                    },
+                    "uuid": "7db31838-b6e1-4f7a-9334-b3f128d3b214"
+                },
+                {
+                    "description": "Durchsteckpad 3 [GPIO3] von JGPIO1",
+                    "pos": {
+                        "x": 79.4,
+                        "y": 92.0
+                    },
+                    "uuid": "866364e0-b551-4799-8f23-094f82d2e4cc"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO46] auf B.Cu, Länge 16,3215 mm",
+                    "pos": {
+                        "x": 75.54,
+                        "y": 58.5
+                    },
+                    "uuid": "eac7c1c0-295f-4f7a-ac51-691ffdcea46e"
+                },
+                {
+                    "description": "Durchsteckpad 4 [GPIO46] von JGPIO1",
+                    "pos": {
+                        "x": 81.85,
+                        "y": 92.0
+                    },
+                    "uuid": "2eb55f95-e667-4c7a-887f-150c156bd32b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO9] auf B.Cu, Länge 18,1207 mm",
+                    "pos": {
+                        "x": 78.08,
+                        "y": 58.5
+                    },
+                    "uuid": "dd7584cc-7354-466b-812e-3ea4054aa59a"
+                },
+                {
+                    "description": "Durchsteckpad 5 [GPIO9] von JGPIO1",
+                    "pos": {
+                        "x": 84.3,
+                        "y": 92.0
+                    },
+                    "uuid": "710332e7-9f45-4b55-b519-e93ac8814276"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 18,1385 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "03e6077f-a665-44c4-8ce8-30b25863aed2"
+                },
+                {
+                    "description": "Durchsteckpad 6 [GPIO10] von JGPIO1",
+                    "pos": {
+                        "x": 86.75,
+                        "y": 92.0
+                    },
+                    "uuid": "fb5b34de-4235-4756-9920-ec8c55e8c4c4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 7 [GPIO14] von JGPIO1",
+                    "pos": {
+                        "x": 89.2,
+                        "y": 92.0
+                    },
+                    "uuid": "c0d35522-250d-488c-85c5-4dd3f8c81733"
+                },
+                {
+                    "description": "Pad 1 [GPIO14] von PADESP22 auf B.Cu",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "249b302f-2ae5-4942-aa03-ad4619c7dff0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 8 [GPIO21] von JGPIO1",
+                    "pos": {
+                        "x": 91.65,
+                        "y": 92.0
+                    },
+                    "uuid": "c92a47c4-033c-480b-8679-a3d620828f1c"
+                },
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 14,2165 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 44.2835
+                    },
+                    "uuid": "94f5fcb1-ad56-462e-845d-7a6064f45f54"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 9 [GPIO47] von JGPIO1",
+                    "pos": {
+                        "x": 94.1,
+                        "y": 92.0
+                    },
+                    "uuid": "342793f5-9061-4dbc-a187-829e9002ea47"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 13,1868 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "4ec5cef7-c0e9-4362-91ec-6f2db2bedff3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 10 [GPIO48] von JGPIO1",
+                    "pos": {
+                        "x": 96.55,
+                        "y": 92.0
+                    },
+                    "uuid": "74a9d520-4ca6-4ca1-85ab-85517d578ce1"
+                },
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 12,8385 mm",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "58b1d409-6dfb-4695-8b89-cf3b88bf0fdb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 11 [GPIO45] von JGPIO1",
+                    "pos": {
+                        "x": 99.0,
+                        "y": 92.0
+                    },
+                    "uuid": "7b254a6a-ebfc-42b9-ad81-9c741539fa93"
+                },
+                {
+                    "description": "Leiterbahn [GPIO45] auf B.Cu, Länge 14,1918 mm",
+                    "pos": {
+                        "x": 100.94,
+                        "y": 44.3082
+                    },
+                    "uuid": "4d5163b1-9b66-4c7a-a6f1-1ba1515cf26b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 13 [GPIO35] von JGPIO1",
+                    "pos": {
+                        "x": 103.9,
+                        "y": 92.0
+                    },
+                    "uuid": "40209753-be22-4e2a-8a98-b672442d038f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf B.Cu, Länge 1,2414 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 51.98
+                    },
+                    "uuid": "18cc00d2-e518-4c06-b6aa-502a7671eec8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO36] auf B.Cu, Länge 1,4115 mm",
+                    "pos": {
+                        "x": 107.3844,
+                        "y": 52.7847
+                    },
+                    "uuid": "168ab299-b193-44da-ba8d-755a99ad4597"
+                },
+                {
+                    "description": "Durchsteckpad 14 [GPIO36] von JGPIO1",
+                    "pos": {
+                        "x": 106.35,
+                        "y": 92.0
+                    },
+                    "uuid": "6c72b38a-6705-4473-b3d1-6d9b5a2bf764"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 15 [GPIO37] von JGPIO1",
+                    "pos": {
+                        "x": 108.8,
+                        "y": 92.0
+                    },
+                    "uuid": "698d32b8-bd5a-4d9f-a27c-8d14a5cd60f7"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf B.Cu, Länge 5,1945 mm",
+                    "pos": {
+                        "x": 104.3269,
+                        "y": 43.2269
+                    },
+                    "uuid": "97171cc8-3bc5-4144-9304-49e3e59b1367"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf B.Cu, Länge 1,2560 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 44.36
+                    },
+                    "uuid": "07a08cc2-6c62-4e3a-850c-79f9207424a8"
+                },
+                {
+                    "description": "Durchsteckpad 16 [GPIO38] von JGPIO1",
+                    "pos": {
+                        "x": 111.25,
+                        "y": 92.0
+                    },
+                    "uuid": "73109022-7463-4102-8c3f-c744af1ed355"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 17 [GPIO39] von JGPIO1",
+                    "pos": {
+                        "x": 113.7,
+                        "y": 92.0
+                    },
+                    "uuid": "d00a5d59-2d65-486a-8a1b-ad70e701db49"
+                },
+                {
+                    "description": "Leiterbahn [GPIO39] auf B.Cu, Länge 3,2441 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 41.82
+                    },
+                    "uuid": "2c2afe79-122f-4d3d-b832-abc20a551746"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 18 [GPIO40] von JGPIO1",
+                    "pos": {
+                        "x": 116.15,
+                        "y": 92.0
+                    },
+                    "uuid": "a65a8123-4e2e-429e-a146-2ca77be26f93"
+                },
+                {
+                    "description": "Leiterbahn [GPIO40] auf B.Cu, Länge 2,7395 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 39.28
+                    },
+                    "uuid": "d1cb374f-6b83-4015-817f-08f3aebd016e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 19 [GPIO41] von JGPIO1",
+                    "pos": {
+                        "x": 118.6,
+                        "y": 92.0
+                    },
+                    "uuid": "34e6a257-69dc-4656-b24d-fbc467fde061"
+                },
+                {
+                    "description": "Leiterbahn [GPIO41] auf B.Cu, Länge 2,3128 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 36.74
+                    },
+                    "uuid": "8e727251-2090-425f-ae05-869f0cf54fd5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 20 [GPIO42] von JGPIO1",
+                    "pos": {
+                        "x": 121.05,
+                        "y": 92.0
+                    },
+                    "uuid": "f011a33b-6872-4d7b-a673-44444b1de51c"
+                },
+                {
+                    "description": "Pad 1 [GPIO42] von PADESP35 auf B.Cu",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 34.2
+                    },
+                    "uuid": "97fb68ef-c091-4c4d-a668-f9c1c48069a9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf B.Cu, Länge 1,2905 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 31.66
+                    },
+                    "uuid": "385ba7aa-1c9e-46d5-a615-7f9ce1578b0a"
+                },
+                {
+                    "description": "Durchsteckpad 21 [RXD0_GPIO44] von JGPIO1",
+                    "pos": {
+                        "x": 123.5,
+                        "y": 92.0
+                    },
+                    "uuid": "f45c2b85-32a4-401f-b0eb-b78b2d310ebb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 22 [TXD0_GPIO43] von JGPIO1",
+                    "pos": {
+                        "x": 125.95,
+                        "y": 92.0
+                    },
+                    "uuid": "b9988f69-428f-46eb-ac94-7fd23ef89478"
+                },
+                {
+                    "description": "Leiterbahn [TXD0_GPIO43] auf B.Cu, Länge 7,7540 mm",
+                    "pos": {
+                        "x": 108.0,
+                        "y": 29.12
+                    },
+                    "uuid": "46116fa8-e4cd-4047-ba93-4ba6f4f71366"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}

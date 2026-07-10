@@ -1,0 +1,84 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T21:48:19+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 92.2,
+                        "y": 50.7
+                    },
+                    "uuid": "e67710f1-a07e-43b2-b5ae-bae97bf51eb6"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 5,4000 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 56.905
+                    },
+                    "uuid": "fac79905-8c35-4f7c-9169-f57f93502274"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 7,8728 mm",
+                    "pos": {
+                        "x": 96.0858,
+                        "y": 50.6775
+                    },
+                    "uuid": "a90883d7-4124-4a5e-a959-25832f49c52f"
+                },
+                {
+                    "description": "Pad 2 [GND] von C8 auf F.Cu",
+                    "pos": {
+                        "x": 92.2,
+                        "y": 50.7
+                    },
+                    "uuid": "4ac183e0-0dcc-4bdf-a571-08428e141999"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_CS und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 7,8728 mm",
+                    "pos": {
+                        "x": 96.0858,
+                        "y": 50.6775
+                    },
+                    "uuid": "a90883d7-4124-4a5e-a959-25832f49c52f"
+                },
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 92.2,
+                        "y": 50.7
+                    },
+                    "uuid": "e67710f1-a07e-43b2-b5ae-bae97bf51eb6"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        }
+    ]
+}

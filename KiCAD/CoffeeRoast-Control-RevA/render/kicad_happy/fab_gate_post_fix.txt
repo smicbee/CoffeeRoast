@@ -1,0 +1,45 @@
+============================================================
+FABRICATION RELEASE GATE — FAIL — Issues must be resolved
+============================================================
+
+  8 pass  1 warn  3 fail  0 skip
+
+  Trust: LOW — 63% deterministic, 37% heuristic (130 findings)
+  Provenance: 0.0% of findings carry detector provenance
+
+--- ROUTING ---
+  [PASS] All nets routed (53/53)
+
+--- BOM ---
+  [PASS] All components have MPNs (0/0)
+  [PASS] All components have footprints assigned
+
+--- DFM ---
+  [WARN] Design requires advanced process tier (4 violation(s))
+         dfm_tier: advanced
+         violations: {'parameter': 'annular_ring', 'actual_mm': 0.1, 'limit_mm': 0.125}, {'parameter': 'board_size', 'actual_mm': [160.0, 100.0], 'limit_mm': None}, {'parameter': 'track_spacing', 'actual_mm': 0.1265, 'limit_mm': 0.127}, {'parameter': 'annular_ring_via', 'actual_mm': 0.1, 'limit_mm': None}
+
+--- DOCUMENTATION ---
+  [PASS] Revision marking found
+  [PASS] Board name found on silkscreen
+
+--- CONSISTENCY ---
+  [FAIL] Component count mismatch: schematic 0 vs PCB 124 (diff 124, 12400%)
+         schematic_placeable: 0
+         pcb_footprints: 124
+         difference: 124
+  [FAIL] Net count mismatch: schematic 0 vs PCB 53 (diff 53)
+         schematic_nets: 0
+         pcb_nets: 53
+
+--- GERBERS ---
+  [PASS] All expected layers present
+  [FAIL] Layer alignment issue detected — coordinate ranges inconsistent
+         alignment: {'aligned': False, 'issues': ['Width varies by 21.4mm across copper/edge layers', 'Height varies by 26.0mm across copper/edge layers'], 'layer_extents': {'B.Cu': {'width': 138.615, 'height': 74.0}, 'B.Mask': {'width': 138.615, 'height': 74.0}, 'B.Paste': {'width': 0, 'height': 0}, 'B.SilkS': {'width': 138.615, 'height': 74.0}, 'Edge.Cuts': {'width': 160.0, 'height': 100.0}, 'F.Cu': {'width': 138.615, 'height': 77.0}, 'F.Mask': {'width': 138.615, 'height': 74.0}, 'F.Paste': {'width': 135.08, 'height': 66.26}, 'F.SilkS': {'width': 150.364, 'height': 89.438}}}
+
+--- THERMAL ---
+  [PASS] Thermal score 100/100 — no critical/high findings
+
+--- EMC ---
+  [PASS] EMC score 64.0/100 — no critical findings
+

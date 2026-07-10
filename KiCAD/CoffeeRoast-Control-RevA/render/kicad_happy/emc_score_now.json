@@ -1,0 +1,3070 @@
+{
+  "analyzer_type": "emc",
+  "schema_version": "1.3.0",
+  "summary": {
+    "total_findings": 51,
+    "categories_checked": 4,
+    "active": 51,
+    "suppressed": 0,
+    "by_severity": {
+      "error": 5,
+      "warning": 2,
+      "info": 44
+    },
+    "emc_risk_score": 64.0
+  },
+  "target_standard": "fcc-class-b",
+  "findings": [
+    {
+      "category": "ground_plane",
+      "severity": "info",
+      "rule_id": "GP-001",
+      "confidence": "deterministic",
+      "title": "Return path analysis data not available",
+      "description": "PCB analysis did not include return path continuity data. Run the PCB analyzer with --full flag to enable GP-001 reference plane coverage checking.",
+      "components": [],
+      "nets": [],
+      "recommendation": "Re-run PCB analysis with: python3 analyze_pcb.py <file> --full",
+      "detector": "emc_ground_plane",
+      "summary": "Return path analysis data not available",
+      "pins": [],
+      "evidence_source": "topology",
+      "report_context": {
+        "section": "Ground Plane",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "category": "decoupling",
+      "severity": "warning",
+      "rule_id": "DC-001",
+      "confidence": "deterministic",
+      "title": "Decoupling cap moderately far from U2",
+      "description": "Nearest decoupling cap to U2 (MAX6675_SOIC8_3V3) is 7.0mm away. Recommended: <3mm for best high-frequency performance.",
+      "components": [
+        "U2",
+        "C3"
+      ],
+      "nets": [],
+      "recommendation": "Move decoupling cap closer to U2 power pins if layout permits.",
+      "detector": "emc_decoupling",
+      "summary": "Decoupling cap moderately far from U2",
+      "pins": [],
+      "evidence_source": "topology",
+      "report_context": {
+        "section": "Decoupling",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "category": "decoupling",
+      "severity": "warning",
+      "rule_id": "DC-001",
+      "confidence": "deterministic",
+      "title": "Decoupling cap moderately far from U3",
+      "description": "Nearest decoupling cap to U3 (3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117) is 6.4mm away. Recommended: <3mm for best high-frequency performance.",
+      "components": [
+        "U3",
+        "C1",
+        "C2"
+      ],
+      "nets": [],
+      "recommendation": "Move decoupling cap closer to U3 power pins if layout permits.",
+      "detector": "emc_decoupling",
+      "summary": "Decoupling cap moderately far from U3",
+      "pins": [],
+      "evidence_source": "topology",
+      "report_context": {
+        "section": "Decoupling",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "category": "decoupling",
+      "severity": "error",
+      "rule_id": "DC-002",
+      "confidence": "heuristic",
+      "title": "No decoupling cap found near U1",
+      "description": "U1 (ESP32-S3-WROOM-1) has no capacitor within 10mm. Every IC with power pins needs at least one decoupling capacitor.",
+      "components": [
+        "U1"
+      ],
+      "nets": [],
+      "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U1 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U1 with short, wide traces to vias.",
+      "detector": "emc_decoupling",
+      "summary": "No decoupling cap found near U1",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Decoupling",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "capacitor",
+            "value": "100n"
+          }
+        ],
+        "basis": "Standard 100nF decoupling per IC"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "category": "decoupling",
+      "severity": "error",
+      "rule_id": "DC-002",
+      "confidence": "heuristic",
+      "title": "No decoupling cap found near U4",
+      "description": "U4 (24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE) has no capacitor within 10mm. Every IC with power pins needs at least one decoupling capacitor.",
+      "components": [
+        "U4"
+      ],
+      "nets": [],
+      "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U4 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U4 with short, wide traces to vias.",
+      "detector": "emc_decoupling",
+      "summary": "No decoupling cap found near U4",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Decoupling",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "capacitor",
+            "value": "100n"
+          }
+        ],
+        "basis": "Standard 100nF decoupling per IC"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "category": "io_filtering",
+      "severity": "error",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near J5",
+      "description": "Connector J5 (USB_C_Receptacle_XKB_U262-16XN-4BVC11) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "J5"
+      ],
+      "nets": [],
+      "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on J5 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near J5",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near J4",
+      "description": "Connector J4 (K_TYPE_THERMOCOUPLE) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "J4"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near J4. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near J4",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near J2",
+      "description": "Connector J2 (FAN_24V_PWM_3A) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "J2"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near J2. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near J2",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near J3",
+      "description": "Connector J3 (SSR_INPUT_TO_EXTERNAL_SSR) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "J3"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near J3. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near J3",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP22",
+      "description": "Connector PADESP22 (IO14) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP22"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP22. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP22",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP16",
+      "description": "Connector PADESP16 (IO46) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP16"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP16. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP16",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP35",
+      "description": "Connector PADESP35 (IO42) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP35"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP35. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP35",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP24",
+      "description": "Connector PADESP24 (IO47) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP24"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP24. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP24",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP11",
+      "description": "Connector PADESP11 (IO18) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP11"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP11. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP11",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP20",
+      "description": "Connector PADESP20 (IO12) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP20"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP20. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP20",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP37",
+      "description": "Connector PADESP37 (TXD0) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP37"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP37. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP37",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP6",
+      "description": "Connector PADESP6 (IO6) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP6"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP6. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP6",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP9",
+      "description": "Connector PADESP9 (IO16) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP9"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP9. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP9",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP21",
+      "description": "Connector PADESP21 (IO13) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP21"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP21. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP21",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP3",
+      "description": "Connector PADESP3 (EN) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP3"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP3. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP3",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP33",
+      "description": "Connector PADESP33 (IO40) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP33"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP33. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP33",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP7",
+      "description": "Connector PADESP7 (IO7) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP7"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP7. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP7",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP1",
+      "description": "Connector PADESP1 (GND) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP1"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP1. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP1",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP31",
+      "description": "Connector PADESP31 (IO38) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP31"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP31. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP31",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP29",
+      "description": "Connector PADESP29 (IO36) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP29"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP29. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP29",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP27",
+      "description": "Connector PADESP27 (IO0) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP27"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP27. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP27",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP10",
+      "description": "Connector PADESP10 (IO17) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP10"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP10. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP10",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP40",
+      "description": "Connector PADESP40 (GND) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP40"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP40. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP40",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP34",
+      "description": "Connector PADESP34 (IO41) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP34"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP34. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP34",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP25",
+      "description": "Connector PADESP25 (IO48) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP25"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP25. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP25",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP39",
+      "description": "Connector PADESP39 (IO1) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP39"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP39. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP39",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP12",
+      "description": "Connector PADESP12 (IO8) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP12"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP12. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP12",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP23",
+      "description": "Connector PADESP23 (IO21) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP23"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP23. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP23",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP32",
+      "description": "Connector PADESP32 (IO39) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP32"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP32. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP32",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP5",
+      "description": "Connector PADESP5 (IO5) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP5"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP5. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP5",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP2",
+      "description": "Connector PADESP2 (3V3) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP2"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP2. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP2",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP4",
+      "description": "Connector PADESP4 (IO4) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP4"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP4. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP4",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP26",
+      "description": "Connector PADESP26 (IO45) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP26"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP26. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP26",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP18",
+      "description": "Connector PADESP18 (IO10) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP18"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP18. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP18",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP38",
+      "description": "Connector PADESP38 (IO2) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP38"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP38. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP38",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP8",
+      "description": "Connector PADESP8 (IO15) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP8"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP8. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP8",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "error",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP14",
+      "description": "Connector PADESP14 (USB_D+) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP14"
+      ],
+      "nets": [],
+      "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP14 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP14",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP36",
+      "description": "Connector PADESP36 (RXD0) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP36"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP36. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP36",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP28",
+      "description": "Connector PADESP28 (IO35) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP28"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP28. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP28",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP15",
+      "description": "Connector PADESP15 (IO3) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP15"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP15. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP15",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP30",
+      "description": "Connector PADESP30 (IO37) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP30"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP30. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP30",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP19",
+      "description": "Connector PADESP19 (IO11) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP19"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP19. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP19",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP17",
+      "description": "Connector PADESP17 (IO9) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP17"
+      ],
+      "nets": [],
+      "recommendation": "Add a ferrite bead (e.g., BLM18AG601SN1D, 600\u03a9@100MHz) on signal lines near PADESP17. Add ESD/TVS protection for external interfaces.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP17",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "error",
+      "rule_id": "IO-001",
+      "confidence": "heuristic",
+      "title": "No EMC filtering near PADESP13",
+      "description": "Connector PADESP13 (USB_D-) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+      "components": [
+        "PADESP13"
+      ],
+      "nets": [],
+      "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP13 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+      "detector": "emc_io_filtering",
+      "summary": "No EMC filtering near PADESP13",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "fix_params": {
+        "type": "add_component",
+        "components": [
+          {
+            "type": "ferrite_bead"
+          }
+        ],
+        "basis": "EMI filter on external I/O"
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "io_filtering",
+      "severity": "info",
+      "rule_id": "IO-002",
+      "confidence": "heuristic",
+      "title": "Insufficient ground pins on JGPIO1",
+      "description": "JGPIO1 (ESP32_GPIO_BREAKOUT_ROW) has 0 ground pin(s) for 6 signal pins. Recommended: at least 2 ground pins for adequate return current path and cable shielding.",
+      "components": [
+        "JGPIO1"
+      ],
+      "nets": [],
+      "recommendation": "Ensure JGPIO1 has sufficient ground pins. For high-speed interfaces, ground pins should be distributed among signal pins, not grouped at one end.",
+      "detector": "emc_io_filtering",
+      "summary": "Insufficient ground pins on JGPIO1",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Io Filtering",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "category": "emission_estimate",
+      "severity": "info",
+      "rule_id": "EE-001",
+      "confidence": "heuristic",
+      "title": "Board cavity resonance frequencies",
+      "description": "Board (160\u00d7100mm, \u03b5r=4.4) cavity resonances: (1,0) at 447 MHz; (0,1) at 715 MHz; (1,1) at 843 MHz; (2,0) at 893 MHz; (2,1) at 1144 MHz. PDN impedance spikes at these frequencies. Ensure adequate decoupling at and around these frequencies.",
+      "components": [],
+      "nets": [],
+      "recommendation": "Add decoupling capacitors with SRF near these frequencies.",
+      "detector": "emc_emission_estimate",
+      "summary": "Board cavity resonance frequencies",
+      "pins": [],
+      "evidence_source": "heuristic_rule",
+      "report_context": {
+        "section": "Emission Estimate",
+        "impact": "",
+        "standard_ref": ""
+      },
+      "suppressed": false,
+      "suppression_reason": "",
+      "stages": [
+        "schematic"
+      ],
+      "in_active_stage": false
+    }
+  ],
+  "per_net_scores": [],
+  "test_plan": {
+    "frequency_bands": [
+      {
+        "band": "30-88 MHz",
+        "freq_min_hz": 30000000.0,
+        "freq_max_hz": 88000000.0,
+        "risk_level": "none",
+        "source_count": 0,
+        "sources": []
+      },
+      {
+        "band": "88-216 MHz",
+        "freq_min_hz": 88000000.0,
+        "freq_max_hz": 216000000.0,
+        "risk_level": "none",
+        "source_count": 0,
+        "sources": []
+      },
+      {
+        "band": "216-960 MHz",
+        "freq_min_hz": 216000000.0,
+        "freq_max_hz": 960000000.0,
+        "risk_level": "none",
+        "source_count": 0,
+        "sources": []
+      },
+      {
+        "band": "960-40000 MHz",
+        "freq_min_hz": 960000000.0,
+        "freq_max_hz": 40000000000.0,
+        "risk_level": "none",
+        "source_count": 0,
+        "sources": []
+      }
+    ],
+    "interface_risks": [
+      {
+        "connector": "J5",
+        "value": "USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "J4",
+        "value": "K_TYPE_THERMOCOUPLE",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "J2",
+        "value": "FAN_24V_PWM_3A",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "J3",
+        "value": "SSR_INPUT_TO_EXTERNAL_SSR",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP22",
+        "value": "IO14",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP16",
+        "value": "IO46",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP35",
+        "value": "IO42",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP24",
+        "value": "IO47",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP11",
+        "value": "IO18",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP20",
+        "value": "IO12",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP37",
+        "value": "TXD0",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP6",
+        "value": "IO6",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP9",
+        "value": "IO16",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP21",
+        "value": "IO13",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP3",
+        "value": "EN",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP33",
+        "value": "IO40",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP7",
+        "value": "IO7",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP1",
+        "value": "GND",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP31",
+        "value": "IO38",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP29",
+        "value": "IO36",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP27",
+        "value": "IO0",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP10",
+        "value": "IO17",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP40",
+        "value": "GND",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP34",
+        "value": "IO41",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP25",
+        "value": "IO48",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP39",
+        "value": "IO1",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP12",
+        "value": "IO8",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP23",
+        "value": "IO21",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP32",
+        "value": "IO39",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP5",
+        "value": "IO5",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP2",
+        "value": "3V3",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP4",
+        "value": "IO4",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP26",
+        "value": "IO45",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP18",
+        "value": "IO10",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP38",
+        "value": "IO2",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP8",
+        "value": "IO15",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP14",
+        "value": "USB_D+",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP36",
+        "value": "RXD0",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP28",
+        "value": "IO35",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP15",
+        "value": "IO3",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP30",
+        "value": "IO37",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP19",
+        "value": "IO11",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP17",
+        "value": "IO9",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "PADESP13",
+        "value": "USB_D-",
+        "protocol": "unknown",
+        "risk_score": 5,
+        "reasons": [
+          "No EMC filtering detected"
+        ]
+      },
+      {
+        "connector": "J1",
+        "value": "24V_IN_FROM_230V_PSU_3A",
+        "protocol": "unknown",
+        "risk_score": 3,
+        "reasons": [
+          "General I/O"
+        ]
+      },
+      {
+        "connector": "JGPIO1",
+        "value": "ESP32_GPIO_BREAKOUT_ROW",
+        "protocol": "unknown",
+        "risk_score": 3,
+        "reasons": [
+          "General I/O"
+        ]
+      }
+    ],
+    "probe_points": [
+      {
+        "x": 154.0,
+        "y": 31.0,
+        "type": "unfiltered_connector",
+        "ref": "J5",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 140.0,
+        "y": 52.0,
+        "type": "unfiltered_connector",
+        "ref": "J4",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 10.0,
+        "y": 48.0,
+        "type": "unfiltered_connector",
+        "ref": "J2",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 140.0,
+        "y": 70.0,
+        "type": "unfiltered_connector",
+        "ref": "J3",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 90.8,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP22",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 75.5,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP16",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 34.2,
+        "type": "unfiltered_connector",
+        "ref": "PADESP35",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 95.9,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP24",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 46.9,
+        "type": "unfiltered_connector",
+        "ref": "PADESP11",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 85.7,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP20",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 29.1,
+        "type": "unfiltered_connector",
+        "ref": "PADESP37",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 34.2,
+        "type": "unfiltered_connector",
+        "ref": "PADESP6",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 41.8,
+        "type": "unfiltered_connector",
+        "ref": "PADESP9",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 88.2,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP21",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 26.6,
+        "type": "unfiltered_connector",
+        "ref": "PADESP3",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 39.3,
+        "type": "unfiltered_connector",
+        "ref": "PADESP33",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 36.7,
+        "type": "unfiltered_connector",
+        "ref": "PADESP7",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 21.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP1",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 44.4,
+        "type": "unfiltered_connector",
+        "ref": "PADESP31",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.2,
+        "y": 49.4,
+        "type": "unfiltered_connector",
+        "ref": "PADESP29",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 54.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP27",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 44.4,
+        "type": "unfiltered_connector",
+        "ref": "PADESP10",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 21.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP40",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 36.7,
+        "type": "unfiltered_connector",
+        "ref": "PADESP34",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 98.4,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP25",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 24.0,
+        "type": "unfiltered_connector",
+        "ref": "PADESP39",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 49.4,
+        "type": "unfiltered_connector",
+        "ref": "PADESP12",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 93.3,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP23",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 41.8,
+        "type": "unfiltered_connector",
+        "ref": "PADESP32",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 31.7,
+        "type": "unfiltered_connector",
+        "ref": "PADESP5",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 24.0,
+        "type": "unfiltered_connector",
+        "ref": "PADESP2",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 29.1,
+        "type": "unfiltered_connector",
+        "ref": "PADESP4",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 100.9,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP26",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 80.6,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP18",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 26.6,
+        "type": "unfiltered_connector",
+        "ref": "PADESP38",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 39.3,
+        "type": "unfiltered_connector",
+        "ref": "PADESP8",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 54.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP14",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 31.7,
+        "type": "unfiltered_connector",
+        "ref": "PADESP36",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 52.0,
+        "type": "unfiltered_connector",
+        "ref": "PADESP28",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 73.0,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP15",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 108.0,
+        "y": 46.9,
+        "type": "unfiltered_connector",
+        "ref": "PADESP30",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 83.2,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP19",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 78.1,
+        "y": 58.5,
+        "type": "unfiltered_connector",
+        "ref": "PADESP17",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      },
+      {
+        "x": 62.5,
+        "y": 52.0,
+        "type": "unfiltered_connector",
+        "ref": "PADESP13",
+        "reason": "Unfiltered I/O \u2014 cable radiation risk"
+      }
+    ]
+  },
+  "regulatory_coverage": {
+    "market": "us",
+    "applicable_standards": [
+      "FCC Part 15 Class B",
+      "FCC Part 15 Class B"
+    ],
+    "coverage_matrix": [
+      {
+        "standard": "FCC Part 15 Class B",
+        "test_type": "radiated",
+        "coverage": "minimal",
+        "checked_rules": [
+          "GP-001",
+          "DC-001",
+          "DC-002",
+          "IO-001",
+          "EE-001"
+        ],
+        "total_applicable_rules": 23,
+        "note": "Design rule checks identify common radiation sources. Cannot predict absolute emission levels."
+      },
+      {
+        "standard": "FCC Part 15 Class B",
+        "test_type": "conducted",
+        "coverage": "partial",
+        "checked_rules": [
+          "DC-001",
+          "DC-002"
+        ],
+        "total_applicable_rules": 4,
+        "note": "Switching harmonic analysis and decoupling checks. EMI filter verification not yet implemented."
+      }
+    ]
+  },
+  "category_summary": {
+    "ground_plane": {
+      "count": 1,
+      "max_severity": "info",
+      "severities": {
+        "error": 0,
+        "warning": 0,
+        "info": 1
+      },
+      "suppressed_count": 0
+    },
+    "decoupling": {
+      "count": 4,
+      "max_severity": "error",
+      "severities": {
+        "error": 2,
+        "warning": 2,
+        "info": 0
+      },
+      "suppressed_count": 0
+    },
+    "io_filtering": {
+      "count": 45,
+      "max_severity": "error",
+      "severities": {
+        "error": 3,
+        "warning": 0,
+        "info": 42
+      },
+      "suppressed_count": 0
+    },
+    "emission_estimate": {
+      "count": 1,
+      "max_severity": "info",
+      "severities": {
+        "error": 0,
+        "warning": 0,
+        "info": 1
+      },
+      "suppressed_count": 0
+    }
+  },
+  "board_info": {
+    "board_width_mm": 160.0,
+    "board_height_mm": 100.0,
+    "layer_count": 2,
+    "footprint_count": 127,
+    "via_count": 51,
+    "has_stackup": false,
+    "total_components": 0,
+    "total_nets": 0
+  },
+  "elapsed_s": 0.003,
+  "stage_filter": {
+    "active_stage": "pre_fab",
+    "included_count": 45,
+    "excluded_count": 6
+  },
+  "audience_summary": {
+    "designer": {
+      "total_findings": 51,
+      "by_severity": {
+        "error": 5,
+        "warning": 2,
+        "info": 44
+      },
+      "by_category": {
+        "ground_plane": 1,
+        "decoupling": 4,
+        "io_filtering": 45,
+        "emission_estimate": 1
+      },
+      "top_issues": [
+        {
+          "category": "decoupling",
+          "severity": "error",
+          "rule_id": "DC-002",
+          "confidence": "heuristic",
+          "title": "No decoupling cap found near U1",
+          "description": "U1 (ESP32-S3-WROOM-1) has no capacitor within 10mm. Every IC with power pins needs at least one decoupling capacitor.",
+          "components": [
+            "U1"
+          ],
+          "nets": [],
+          "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U1 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U1 with short, wide traces to vias.",
+          "detector": "emc_decoupling",
+          "summary": "No decoupling cap found near U1",
+          "pins": [],
+          "evidence_source": "heuristic_rule",
+          "report_context": {
+            "section": "Decoupling",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "fix_params": {
+            "type": "add_component",
+            "components": [
+              {
+                "type": "capacitor",
+                "value": "100n"
+              }
+            ],
+            "basis": "Standard 100nF decoupling per IC"
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "category": "decoupling",
+          "severity": "error",
+          "rule_id": "DC-002",
+          "confidence": "heuristic",
+          "title": "No decoupling cap found near U4",
+          "description": "U4 (24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE) has no capacitor within 10mm. Every IC with power pins needs at least one decoupling capacitor.",
+          "components": [
+            "U4"
+          ],
+          "nets": [],
+          "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U4 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U4 with short, wide traces to vias.",
+          "detector": "emc_decoupling",
+          "summary": "No decoupling cap found near U4",
+          "pins": [],
+          "evidence_source": "heuristic_rule",
+          "report_context": {
+            "section": "Decoupling",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "fix_params": {
+            "type": "add_component",
+            "components": [
+              {
+                "type": "capacitor",
+                "value": "100n"
+              }
+            ],
+            "basis": "Standard 100nF decoupling per IC"
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "category": "io_filtering",
+          "severity": "error",
+          "rule_id": "IO-001",
+          "confidence": "heuristic",
+          "title": "No EMC filtering near J5",
+          "description": "Connector J5 (USB_C_Receptacle_XKB_U262-16XN-4BVC11) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+          "components": [
+            "J5"
+          ],
+          "nets": [],
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on J5 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "detector": "emc_io_filtering",
+          "summary": "No EMC filtering near J5",
+          "pins": [],
+          "evidence_source": "heuristic_rule",
+          "report_context": {
+            "section": "Io Filtering",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "fix_params": {
+            "type": "add_component",
+            "components": [
+              {
+                "type": "ferrite_bead"
+              }
+            ],
+            "basis": "EMI filter on external I/O"
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "pre_fab"
+          ],
+          "in_active_stage": true
+        },
+        {
+          "category": "io_filtering",
+          "severity": "error",
+          "rule_id": "IO-001",
+          "confidence": "heuristic",
+          "title": "No EMC filtering near PADESP14",
+          "description": "Connector PADESP14 (USB_D+) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+          "components": [
+            "PADESP14"
+          ],
+          "nets": [],
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP14 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "detector": "emc_io_filtering",
+          "summary": "No EMC filtering near PADESP14",
+          "pins": [],
+          "evidence_source": "heuristic_rule",
+          "report_context": {
+            "section": "Io Filtering",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "fix_params": {
+            "type": "add_component",
+            "components": [
+              {
+                "type": "ferrite_bead"
+              }
+            ],
+            "basis": "EMI filter on external I/O"
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "pre_fab"
+          ],
+          "in_active_stage": true
+        },
+        {
+          "category": "io_filtering",
+          "severity": "error",
+          "rule_id": "IO-001",
+          "confidence": "heuristic",
+          "title": "No EMC filtering near PADESP13",
+          "description": "Connector PADESP13 (USB_D-) has no ferrite bead, CM choke, or ESD protection within 25mm. Unfiltered I/O cables are the dominant source of radiated emissions \u2014 common-mode current as low as 5 \u00b5A can exceed FCC Class B.",
+          "components": [
+            "PADESP13"
+          ],
+          "nets": [],
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP13 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "detector": "emc_io_filtering",
+          "summary": "No EMC filtering near PADESP13",
+          "pins": [],
+          "evidence_source": "heuristic_rule",
+          "report_context": {
+            "section": "Io Filtering",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "fix_params": {
+            "type": "add_component",
+            "components": [
+              {
+                "type": "ferrite_bead"
+              }
+            ],
+            "basis": "EMI filter on external I/O"
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "pre_fab"
+          ],
+          "in_active_stage": true
+        },
+        {
+          "category": "decoupling",
+          "severity": "warning",
+          "rule_id": "DC-001",
+          "confidence": "deterministic",
+          "title": "Decoupling cap moderately far from U2",
+          "description": "Nearest decoupling cap to U2 (MAX6675_SOIC8_3V3) is 7.0mm away. Recommended: <3mm for best high-frequency performance.",
+          "components": [
+            "U2",
+            "C3"
+          ],
+          "nets": [],
+          "recommendation": "Move decoupling cap closer to U2 power pins if layout permits.",
+          "detector": "emc_decoupling",
+          "summary": "Decoupling cap moderately far from U2",
+          "pins": [],
+          "evidence_source": "topology",
+          "report_context": {
+            "section": "Decoupling",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "category": "decoupling",
+          "severity": "warning",
+          "rule_id": "DC-001",
+          "confidence": "deterministic",
+          "title": "Decoupling cap moderately far from U3",
+          "description": "Nearest decoupling cap to U3 (3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117) is 6.4mm away. Recommended: <3mm for best high-frequency performance.",
+          "components": [
+            "U3",
+            "C1",
+            "C2"
+          ],
+          "nets": [],
+          "recommendation": "Move decoupling cap closer to U3 power pins if layout permits.",
+          "detector": "emc_decoupling",
+          "summary": "Decoupling cap moderately far from U3",
+          "pins": [],
+          "evidence_source": "topology",
+          "report_context": {
+            "section": "Decoupling",
+            "impact": "",
+            "standard_ref": ""
+          },
+          "suppressed": false,
+          "suppression_reason": "",
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        }
+      ]
+    },
+    "reviewer": {
+      "total_findings": 7,
+      "by_category": {
+        "decoupling": 4,
+        "io_filtering": 3
+      },
+      "top_issues": [
+        {
+          "rule_id": "DC-002",
+          "severity": "error",
+          "summary": "No decoupling cap found near U1",
+          "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U1 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U1 with short, wide traces to vias.",
+          "category": "decoupling"
+        },
+        {
+          "rule_id": "DC-002",
+          "severity": "error",
+          "summary": "No decoupling cap found near U4",
+          "recommendation": "Add 100nF X7R 0402 + 1\u00b5F X5R 0603 close to U4 power pins. For high-speed ICs, add 10nF C0G for high-frequency decoupling. Place caps on the same side as U4 with short, wide traces to vias.",
+          "category": "decoupling"
+        },
+        {
+          "rule_id": "IO-001",
+          "severity": "error",
+          "summary": "No EMC filtering near J5",
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on J5 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "category": "io_filtering"
+        },
+        {
+          "rule_id": "IO-001",
+          "severity": "error",
+          "summary": "No EMC filtering near PADESP14",
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP14 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "category": "io_filtering"
+        },
+        {
+          "rule_id": "IO-001",
+          "severity": "error",
+          "summary": "No EMC filtering near PADESP13",
+          "recommendation": "Add ESD protection (e.g., USBLC6-2SC6 or TPD2E2U06) on PADESP13 data lines. Add ferrite bead (600\u03a9@100MHz) on VBUS. For USB 3.x, add common-mode choke on SuperSpeed pairs.",
+          "category": "io_filtering"
+        },
+        {
+          "rule_id": "DC-001",
+          "severity": "warning",
+          "summary": "Decoupling cap moderately far from U2",
+          "recommendation": "Move decoupling cap closer to U2 power pins if layout permits.",
+          "category": "decoupling"
+        },
+        {
+          "rule_id": "DC-001",
+          "severity": "warning",
+          "summary": "Decoupling cap moderately far from U3",
+          "recommendation": "Move decoupling cap closer to U3 power pins if layout permits.",
+          "category": "decoupling"
+        }
+      ]
+    },
+    "manager": {
+      "risk_level": "high",
+      "blocker_count": 5,
+      "warning_count": 2,
+      "stage_readiness": {
+        "schematic": "pass",
+        "layout": "needs_work",
+        "pre_fab": "needs_work",
+        "bring_up": "pass"
+      },
+      "one_liner": "5 errors, 2 warnings across 2 categories. Layout, pre-fab stages have blockers."
+    }
+  },
+  "trust_summary": {
+    "total_findings": 51,
+    "trust_level": "low",
+    "by_confidence": {
+      "deterministic": 3,
+      "heuristic": 48,
+      "datasheet-backed": 0
+    },
+    "by_evidence_source": {
+      "datasheet": 0,
+      "topology": 3,
+      "heuristic_rule": 48,
+      "symbol_footprint": 0,
+      "bom": 0,
+      "geometry": 0,
+      "api_lookup": 0
+    },
+    "provenance_coverage_pct": 0.0
+  }
+}

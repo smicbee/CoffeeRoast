@@ -1,0 +1,7432 @@
+{
+  "analyzer_type": "pcb",
+  "schema_version": "1.3.0",
+  "file": "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb",
+  "kicad_version": "9.0",
+  "file_version": "20241229",
+  "statistics": {
+    "footprint_count": 118,
+    "front_side": 78,
+    "back_side": 40,
+    "smd_count": 106,
+    "tht_count": 12,
+    "copper_layers_used": 2,
+    "copper_layer_names": [
+      "B.Cu",
+      "F.Cu"
+    ],
+    "track_segments": 539,
+    "via_count": 51,
+    "zone_count": 0,
+    "total_track_length_mm": 2616.63,
+    "board_width_mm": 160.0,
+    "board_height_mm": 100.0,
+    "board_area_mm2": 16000.0,
+    "net_count": 53,
+    "routing_complete": true,
+    "unrouted_net_count": 0
+  },
+  "layers": [
+    {
+      "number": 0,
+      "name": "F.Cu",
+      "type": "signal",
+      "alias": null
+    },
+    {
+      "number": 2,
+      "name": "B.Cu",
+      "type": "signal",
+      "alias": null
+    },
+    {
+      "number": 9,
+      "name": "F.Adhes",
+      "type": "user",
+      "alias": "F.Adhesive"
+    },
+    {
+      "number": 11,
+      "name": "B.Adhes",
+      "type": "user",
+      "alias": "B.Adhesive"
+    },
+    {
+      "number": 13,
+      "name": "F.Paste",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 15,
+      "name": "B.Paste",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 5,
+      "name": "F.SilkS",
+      "type": "user",
+      "alias": "F.Silkscreen"
+    },
+    {
+      "number": 7,
+      "name": "B.SilkS",
+      "type": "user",
+      "alias": "B.Silkscreen"
+    },
+    {
+      "number": 1,
+      "name": "F.Mask",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 3,
+      "name": "B.Mask",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 17,
+      "name": "Dwgs.User",
+      "type": "user",
+      "alias": "User.Drawings"
+    },
+    {
+      "number": 19,
+      "name": "Cmts.User",
+      "type": "user",
+      "alias": "User.Comments"
+    },
+    {
+      "number": 21,
+      "name": "Eco1.User",
+      "type": "user",
+      "alias": "User.Eco1"
+    },
+    {
+      "number": 23,
+      "name": "Eco2.User",
+      "type": "user",
+      "alias": "User.Eco2"
+    },
+    {
+      "number": 25,
+      "name": "Edge.Cuts",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 27,
+      "name": "Margin",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 31,
+      "name": "F.CrtYd",
+      "type": "user",
+      "alias": "F.Courtyard"
+    },
+    {
+      "number": 29,
+      "name": "B.CrtYd",
+      "type": "user",
+      "alias": "B.Courtyard"
+    },
+    {
+      "number": 35,
+      "name": "F.Fab",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 33,
+      "name": "B.Fab",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 39,
+      "name": "User.1",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 41,
+      "name": "User.2",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 43,
+      "name": "User.3",
+      "type": "user",
+      "alias": null
+    },
+    {
+      "number": 45,
+      "name": "User.4",
+      "type": "user",
+      "alias": null
+    }
+  ],
+  "setup": {
+    "board_thickness_mm": 1.6,
+    "pad_to_mask_clearance": 0.0,
+    "legacy_teardrops": "no",
+    "allow_soldermask_bridges": "no"
+  },
+  "nets": {
+    "1": "GND",
+    "2": "+24V_RAW",
+    "3": "+24V_FUSED",
+    "4": "FAN_NEG",
+    "5": "+5V",
+    "6": "+3V3",
+    "7": "FAN_PWM",
+    "8": "FAN_GATE",
+    "9": "HEATER_PWM",
+    "10": "SSR_GATE",
+    "11": "SSR_NEG",
+    "12": "MAX_DO",
+    "13": "MAX_CS",
+    "14": "MAX_SCK",
+    "15": "THERMO_PLUS",
+    "16": "THERMO_MINUS",
+    "17": "USB_VBUS",
+    "18": "USB_DN_MCU",
+    "19": "USB_DP_MCU",
+    "20": "USB_DN",
+    "21": "USB_DP",
+    "22": "EN",
+    "23": "BOOT",
+    "24": "USB_CC1",
+    "25": "USB_CC2",
+    "26": "GPIO4",
+    "27": "GPIO5",
+    "28": "GPIO6",
+    "29": "GPIO7",
+    "30": "GPIO15",
+    "31": "GPIO16",
+    "32": "GPIO17",
+    "33": "GPIO18",
+    "34": "GPIO8",
+    "35": "GPIO3",
+    "36": "GPIO46",
+    "37": "GPIO9",
+    "38": "GPIO10",
+    "39": "GPIO14",
+    "40": "GPIO21",
+    "41": "GPIO47",
+    "42": "GPIO48",
+    "43": "GPIO45",
+    "44": "GPIO35",
+    "45": "GPIO36",
+    "46": "GPIO37",
+    "47": "GPIO38",
+    "48": "GPIO39",
+    "49": "GPIO40",
+    "50": "GPIO41",
+    "51": "GPIO42",
+    "52": "RXD0_GPIO44",
+    "53": "TXD0_GPIO43"
+  },
+  "net_name_to_id": {
+    "GND": 1,
+    "+24V_RAW": 2,
+    "+24V_FUSED": 3,
+    "FAN_NEG": 4,
+    "+5V": 5,
+    "+3V3": 6,
+    "FAN_PWM": 7,
+    "FAN_GATE": 8,
+    "HEATER_PWM": 9,
+    "SSR_GATE": 10,
+    "SSR_NEG": 11,
+    "MAX_DO": 12,
+    "MAX_CS": 13,
+    "MAX_SCK": 14,
+    "THERMO_PLUS": 15,
+    "THERMO_MINUS": 16,
+    "USB_VBUS": 17,
+    "USB_DN_MCU": 18,
+    "USB_DP_MCU": 19,
+    "USB_DN": 20,
+    "USB_DP": 21,
+    "EN": 22,
+    "BOOT": 23,
+    "USB_CC1": 24,
+    "USB_CC2": 25,
+    "GPIO4": 26,
+    "GPIO5": 27,
+    "GPIO6": 28,
+    "GPIO7": 29,
+    "GPIO15": 30,
+    "GPIO16": 31,
+    "GPIO17": 32,
+    "GPIO18": 33,
+    "GPIO8": 34,
+    "GPIO3": 35,
+    "GPIO46": 36,
+    "GPIO9": 37,
+    "GPIO10": 38,
+    "GPIO14": 39,
+    "GPIO21": 40,
+    "GPIO47": 41,
+    "GPIO48": 42,
+    "GPIO45": 43,
+    "GPIO35": 44,
+    "GPIO36": 45,
+    "GPIO37": 46,
+    "GPIO38": 47,
+    "GPIO39": 48,
+    "GPIO40": 49,
+    "GPIO41": 50,
+    "GPIO42": 51,
+    "RXD0_GPIO44": 52,
+    "TXD0_GPIO43": 53
+  },
+  "board_outline": {
+    "edge_count": 8,
+    "edges": [
+      {
+        "type": "line",
+        "start": [
+          0.0,
+          0.0
+        ],
+        "end": [
+          160.0,
+          0.0
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          0.0,
+          100.0
+        ],
+        "end": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          160.0,
+          0.0
+        ],
+        "end": [
+          160.0,
+          13.5
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          160.0,
+          13.5
+        ],
+        "end": [
+          151.0,
+          13.5
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          151.0,
+          13.5
+        ],
+        "end": [
+          151.0,
+          48.5
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          151.0,
+          48.5
+        ],
+        "end": [
+          160.0,
+          48.5
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          160.0,
+          48.5
+        ],
+        "end": [
+          160.0,
+          100.0
+        ]
+      },
+      {
+        "type": "line",
+        "start": [
+          160.0,
+          100.0
+        ],
+        "end": [
+          0.0,
+          100.0
+        ]
+      }
+    ],
+    "bounding_box": {
+      "min_x": 0.0,
+      "min_y": 0.0,
+      "max_x": 160.0,
+      "max_y": 100.0,
+      "width": 160.0,
+      "height": 100.0
+    }
+  },
+  "component_groups": {
+    "C": {
+      "count": 5,
+      "references": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    "D": {
+      "count": 3,
+      "references": [
+        "D1",
+        "D2",
+        "D3"
+      ]
+    },
+    "F": {
+      "count": 1,
+      "references": [
+        "F1"
+      ]
+    },
+    "J": {
+      "count": 5,
+      "references": [
+        "J1",
+        "J2",
+        "J3",
+        "J4",
+        "J5"
+      ]
+    },
+    "JGPIO": {
+      "count": 1,
+      "references": [
+        "JGPIO1"
+      ]
+    },
+    "PADESP": {
+      "count": 40,
+      "references": [
+        "PADESP1",
+        "PADESP10",
+        "PADESP11",
+        "PADESP12",
+        "PADESP13",
+        "PADESP14",
+        "PADESP15",
+        "PADESP16",
+        "PADESP17",
+        "PADESP18",
+        "PADESP19",
+        "PADESP2",
+        "PADESP20",
+        "PADESP21",
+        "PADESP22",
+        "PADESP23",
+        "PADESP24",
+        "PADESP25",
+        "PADESP26",
+        "PADESP27",
+        "PADESP28",
+        "PADESP29",
+        "PADESP3",
+        "PADESP30",
+        "PADESP31",
+        "PADESP32",
+        "PADESP33",
+        "PADESP34",
+        "PADESP35",
+        "PADESP36",
+        "PADESP37",
+        "PADESP38",
+        "PADESP39",
+        "PADESP4",
+        "PADESP40",
+        "PADESP5",
+        "PADESP6",
+        "PADESP7",
+        "PADESP8",
+        "PADESP9"
+      ]
+    },
+    "Q": {
+      "count": 2,
+      "references": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    "R": {
+      "count": 10,
+      "references": [
+        "R1",
+        "R10",
+        "R11",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ]
+    },
+    "SW": {
+      "count": 2,
+      "references": [
+        "SW1",
+        "SW2"
+      ]
+    },
+    "TP": {
+      "count": 3,
+      "references": [
+        "TP24V",
+        "TP3V3",
+        "TP5V"
+      ]
+    },
+    "TPESP": {
+      "count": 40,
+      "references": [
+        "TPESP1",
+        "TPESP10",
+        "TPESP11",
+        "TPESP12",
+        "TPESP13",
+        "TPESP14",
+        "TPESP15",
+        "TPESP16",
+        "TPESP17",
+        "TPESP18",
+        "TPESP19",
+        "TPESP2",
+        "TPESP20",
+        "TPESP21",
+        "TPESP22",
+        "TPESP23",
+        "TPESP24",
+        "TPESP25",
+        "TPESP26",
+        "TPESP27",
+        "TPESP28",
+        "TPESP29",
+        "TPESP3",
+        "TPESP30",
+        "TPESP31",
+        "TPESP32",
+        "TPESP33",
+        "TPESP34",
+        "TPESP35",
+        "TPESP36",
+        "TPESP37",
+        "TPESP38",
+        "TPESP39",
+        "TPESP4",
+        "TPESP40",
+        "TPESP5",
+        "TPESP6",
+        "TPESP7",
+        "TPESP8",
+        "TPESP9"
+      ]
+    },
+    "TPGND": {
+      "count": 1,
+      "references": [
+        "TPGND"
+      ]
+    },
+    "U": {
+      "count": 5,
+      "references": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5"
+      ]
+    }
+  },
+  "footprints": [
+    {
+      "library": "",
+      "reference": "TPESP15",
+      "value": "IO3",
+      "mpn": "",
+      "x": 78.015,
+      "y": 38.28,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO3"
+        }
+      },
+      "connected_nets": [
+        "GPIO3"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP25",
+      "value": "IO48",
+      "mpn": "",
+      "x": 90.715,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO48"
+        }
+      },
+      "connected_nets": [
+        "GPIO48"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TP5V",
+      "value": "+5V_TEST",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+5V"
+        }
+      },
+      "connected_nets": [
+        "+5V"
+      ]
+    },
+    {
+      "library": "USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+      "reference": "J5",
+      "value": "USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+      "mpn": "",
+      "x": 145.0,
+      "y": 31.0,
+      "angle": 90.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 22,
+      "models_3d": [
+        "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_XKB_U262-16XN-4BVC11.step"
+      ],
+      "courtyard": {
+        "min_x": 140.25,
+        "min_y": 25.68,
+        "max_x": 149.18,
+        "max_y": 36.32
+      },
+      "footprint": "USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+      "pad_nets": {
+        "A1": {
+          "net": "GND"
+        },
+        "A4": {
+          "net": "USB_VBUS"
+        },
+        "A5": {
+          "net": "USB_CC1"
+        },
+        "A6": {
+          "net": "USB_DP"
+        },
+        "A7": {
+          "net": "USB_DN"
+        },
+        "A9": {
+          "net": "USB_VBUS"
+        },
+        "A12": {
+          "net": "GND"
+        },
+        "B1": {
+          "net": "GND"
+        },
+        "B4": {
+          "net": "USB_VBUS"
+        },
+        "B5": {
+          "net": "USB_CC2"
+        },
+        "B6": {
+          "net": "USB_DP"
+        },
+        "B7": {
+          "net": "USB_DN"
+        },
+        "B9": {
+          "net": "USB_VBUS"
+        },
+        "B12": {
+          "net": "GND"
+        },
+        "S1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "USB_CC1",
+        "USB_CC2",
+        "USB_DN",
+        "USB_DP",
+        "USB_VBUS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP16",
+      "value": "IO46",
+      "mpn": "",
+      "x": 79.285,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO46"
+        }
+      },
+      "connected_nets": [
+        "GPIO46"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "J4",
+      "value": "K_TYPE_THERMOCOUPLE",
+      "mpn": "",
+      "x": 140.0,
+      "y": 52.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "THERMO_PLUS"
+        },
+        "2": {
+          "net": "THERMO_MINUS"
+        }
+      },
+      "connected_nets": [
+        "THERMO_MINUS",
+        "THERMO_PLUS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP27",
+      "value": "IO0/BOOT",
+      "mpn": "",
+      "x": 94.7,
+      "y": 36.25,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "BOOT"
+        }
+      },
+      "connected_nets": [
+        "BOOT"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R8",
+      "value": "27R_USB_DP",
+      "mpn": "",
+      "x": 128.0,
+      "y": 31.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DP_MCU"
+        },
+        "2": {
+          "net": "USB_DP"
+        }
+      },
+      "connected_nets": [
+        "USB_DP",
+        "USB_DP_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP31",
+      "value": "IO38",
+      "mpn": "",
+      "x": 94.7,
+      "y": 31.17,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO38"
+        }
+      },
+      "connected_nets": [
+        "GPIO38"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP14",
+      "value": "USB_D+/IO20",
+      "mpn": "",
+      "x": 75.3,
+      "y": 36.25,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DP_MCU"
+        }
+      },
+      "connected_nets": [
+        "USB_DP_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP35",
+      "value": "IO42",
+      "mpn": "",
+      "x": 94.7,
+      "y": 26.09,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO42"
+        }
+      },
+      "connected_nets": [
+        "GPIO42"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "SW2",
+      "value": "BOOT",
+      "mpn": "",
+      "x": 43.0,
+      "y": 42.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 4,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "BOOT"
+        },
+        "2": {
+          "net": "BOOT"
+        },
+        "3": {
+          "net": "GND"
+        },
+        "4": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "BOOT",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "C2",
+      "value": "10uF_3V3",
+      "mpn": "",
+      "x": 76.0,
+      "y": 86.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "SW1",
+      "value": "RESET_EN",
+      "mpn": "",
+      "x": 43.0,
+      "y": 32.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 4,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "EN"
+        },
+        "2": {
+          "net": "EN"
+        },
+        "3": {
+          "net": "GND"
+        },
+        "4": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "EN",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP2",
+      "value": "3V3",
+      "mpn": "",
+      "x": 75.3,
+      "y": 21.01,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        }
+      },
+      "connected_nets": [
+        "+3V3"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP33",
+      "value": "IO40",
+      "mpn": "",
+      "x": 94.7,
+      "y": 28.63,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO40"
+        }
+      },
+      "connected_nets": [
+        "GPIO40"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "J2",
+      "value": "FAN_24V_PWM_3A",
+      "mpn": "",
+      "x": 10.0,
+      "y": 48.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_FUSED"
+        },
+        "2": {
+          "net": "FAN_NEG"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED",
+        "FAN_NEG"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP20",
+      "value": "IO12/MAXCS",
+      "mpn": "",
+      "x": 84.365,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_CS"
+        }
+      },
+      "connected_nets": [
+        "MAX_CS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP12",
+      "value": "IO8",
+      "mpn": "",
+      "x": 75.3,
+      "y": 33.71,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO8"
+        }
+      },
+      "connected_nets": [
+        "GPIO8"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "J1",
+      "value": "24V_IN_FROM_230V_PSU_3A",
+      "mpn": "",
+      "x": 10.0,
+      "y": 18.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_RAW"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+24V_RAW",
+        "GND"
+      ]
+    },
+    {
+      "library": "ESP32-S3-WROOM-1",
+      "reference": "U1",
+      "value": "ESP32-S3-WROOM-1",
+      "mpn": "",
+      "x": 85.0,
+      "y": 28.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 62,
+      "models_3d": [
+        "${KICAD9_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-S3-WROOM-1.step"
+      ],
+      "courtyard": {
+        "min_x": 61.0,
+        "min_y": -2.75,
+        "max_x": 109.0,
+        "max_y": 38.45
+      },
+      "footprint": "ESP32-S3-WROOM-1",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        },
+        "2": {
+          "net": "+3V3"
+        },
+        "3": {
+          "net": "EN"
+        },
+        "4": {
+          "net": "GPIO4"
+        },
+        "5": {
+          "net": "GPIO5"
+        },
+        "6": {
+          "net": "GPIO6"
+        },
+        "7": {
+          "net": "GPIO7"
+        },
+        "8": {
+          "net": "GPIO15"
+        },
+        "9": {
+          "net": "GPIO16"
+        },
+        "10": {
+          "net": "GPIO17"
+        },
+        "11": {
+          "net": "GPIO18"
+        },
+        "12": {
+          "net": "GPIO8"
+        },
+        "13": {
+          "net": "USB_DN_MCU"
+        },
+        "14": {
+          "net": "USB_DP_MCU"
+        },
+        "15": {
+          "net": "GPIO3"
+        },
+        "16": {
+          "net": "GPIO46"
+        },
+        "17": {
+          "net": "GPIO9"
+        },
+        "18": {
+          "net": "GPIO10"
+        },
+        "19": {
+          "net": "MAX_DO"
+        },
+        "20": {
+          "net": "MAX_CS"
+        },
+        "21": {
+          "net": "MAX_SCK"
+        },
+        "22": {
+          "net": "GPIO14"
+        },
+        "23": {
+          "net": "GPIO21"
+        },
+        "24": {
+          "net": "GPIO47"
+        },
+        "25": {
+          "net": "GPIO48"
+        },
+        "26": {
+          "net": "GPIO45"
+        },
+        "27": {
+          "net": "BOOT"
+        },
+        "28": {
+          "net": "GPIO35"
+        },
+        "29": {
+          "net": "GPIO36"
+        },
+        "30": {
+          "net": "GPIO37"
+        },
+        "31": {
+          "net": "GPIO38"
+        },
+        "32": {
+          "net": "GPIO39"
+        },
+        "33": {
+          "net": "GPIO40"
+        },
+        "34": {
+          "net": "GPIO41"
+        },
+        "35": {
+          "net": "GPIO42"
+        },
+        "36": {
+          "net": "RXD0_GPIO44"
+        },
+        "37": {
+          "net": "TXD0_GPIO43"
+        },
+        "38": {
+          "net": "FAN_PWM"
+        },
+        "39": {
+          "net": "HEATER_PWM"
+        },
+        "40": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "BOOT",
+        "EN",
+        "FAN_PWM",
+        "GND",
+        "GPIO10",
+        "GPIO14",
+        "GPIO15",
+        "GPIO16",
+        "GPIO17",
+        "GPIO18",
+        "GPIO21",
+        "GPIO3",
+        "GPIO35",
+        "GPIO36",
+        "GPIO37",
+        "GPIO38",
+        "GPIO39",
+        "GPIO4",
+        "GPIO40",
+        "GPIO41",
+        "GPIO42",
+        "GPIO45",
+        "GPIO46",
+        "GPIO47",
+        "GPIO48",
+        "GPIO5",
+        "GPIO6",
+        "GPIO7",
+        "GPIO8",
+        "GPIO9",
+        "HEATER_PWM",
+        "MAX_CS",
+        "MAX_DO",
+        "MAX_SCK",
+        "RXD0_GPIO44",
+        "TXD0_GPIO43",
+        "USB_DN_MCU",
+        "USB_DP_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP36",
+      "value": "RXD0/IO44",
+      "mpn": "",
+      "x": 94.7,
+      "y": 24.82,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "RXD0_GPIO44"
+        }
+      },
+      "connected_nets": [
+        "RXD0_GPIO44"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R1",
+      "value": "100R",
+      "mpn": "",
+      "x": 65.0,
+      "y": 48.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_PWM"
+        },
+        "2": {
+          "net": "FAN_GATE"
+        }
+      },
+      "connected_nets": [
+        "FAN_GATE",
+        "FAN_PWM"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP22",
+      "value": "IO14",
+      "mpn": "",
+      "x": 86.905,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO14"
+        }
+      },
+      "connected_nets": [
+        "GPIO14"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP13",
+      "value": "USB_D-/IO19",
+      "mpn": "",
+      "x": 75.3,
+      "y": 34.98,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DN_MCU"
+        }
+      },
+      "connected_nets": [
+        "USB_DN_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP17",
+      "value": "IO9",
+      "mpn": "",
+      "x": 80.555,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO9"
+        }
+      },
+      "connected_nets": [
+        "GPIO9"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP29",
+      "value": "IO36",
+      "mpn": "",
+      "x": 94.7,
+      "y": 33.71,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO36"
+        }
+      },
+      "connected_nets": [
+        "GPIO36"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP39",
+      "value": "IO1/SSR",
+      "mpn": "",
+      "x": 94.7,
+      "y": 21.01,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "HEATER_PWM"
+        }
+      },
+      "connected_nets": [
+        "HEATER_PWM"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP7",
+      "value": "IO7",
+      "mpn": "",
+      "x": 75.3,
+      "y": 27.36,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO7"
+        }
+      },
+      "connected_nets": [
+        "GPIO7"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "F1",
+      "value": "T3.15A_24V_SIDE",
+      "mpn": "",
+      "x": 32.0,
+      "y": 18.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_RAW"
+        },
+        "2": {
+          "net": "+24V_FUSED"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED",
+        "+24V_RAW"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP9",
+      "value": "IO16",
+      "mpn": "",
+      "x": 75.3,
+      "y": 29.9,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO16"
+        }
+      },
+      "connected_nets": [
+        "GPIO16"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP26",
+      "value": "IO45",
+      "mpn": "",
+      "x": 91.985,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO45"
+        }
+      },
+      "connected_nets": [
+        "GPIO45"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP21",
+      "value": "IO13/MAXCLK",
+      "mpn": "",
+      "x": 85.635,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_SCK"
+        }
+      },
+      "connected_nets": [
+        "MAX_SCK"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "C3",
+      "value": "100nF_MAX6675",
+      "mpn": "",
+      "x": 91.0,
+      "y": 63.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "Q1",
+      "value": "IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW",
+      "mpn": "",
+      "x": 45.0,
+      "y": 48.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 3,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_GATE"
+        },
+        "2": {
+          "net": "FAN_NEG"
+        },
+        "3": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "FAN_GATE",
+        "FAN_NEG",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "U2",
+      "value": "MAX6675_SOIC8_3V3",
+      "mpn": "",
+      "x": 98.0,
+      "y": 55.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 8,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        },
+        "2": {
+          "net": "THERMO_MINUS"
+        },
+        "3": {
+          "net": "THERMO_PLUS"
+        },
+        "4": {
+          "net": "+3V3"
+        },
+        "5": {
+          "net": "MAX_SCK"
+        },
+        "6": {
+          "net": "MAX_CS"
+        },
+        "7": {
+          "net": "MAX_DO"
+        },
+        "8": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "GND",
+        "MAX_CS",
+        "MAX_DO",
+        "MAX_SCK",
+        "THERMO_MINUS",
+        "THERMO_PLUS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP3",
+      "value": "EN",
+      "mpn": "",
+      "x": 75.3,
+      "y": 22.28,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "EN"
+        }
+      },
+      "connected_nets": [
+        "EN"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R11",
+      "value": "5k1_CC2_RD",
+      "mpn": "",
+      "x": 130.0,
+      "y": 40.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_CC2"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "USB_CC2"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "U5",
+      "value": "USBLC6-2SC6_OR_USB2_ESD",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 6,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DN"
+        },
+        "2": {
+          "net": "USB_DP"
+        },
+        "3": {
+          "net": "GND"
+        },
+        "4": {
+          "net": "GND"
+        },
+        "5": {
+          "net": "USB_DP"
+        },
+        "6": {
+          "net": "USB_DN"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "USB_DN",
+        "USB_DP"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP19",
+      "value": "IO11/MAXDO",
+      "mpn": "",
+      "x": 83.095,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_DO"
+        }
+      },
+      "connected_nets": [
+        "MAX_DO"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP11",
+      "value": "IO18",
+      "mpn": "",
+      "x": 75.3,
+      "y": 32.439999,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO18"
+        }
+      },
+      "connected_nets": [
+        "GPIO18"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "U4",
+      "value": "24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE",
+      "mpn": "",
+      "x": 36.0,
+      "y": 78.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 4,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_FUSED"
+        },
+        "2": {
+          "net": "GND"
+        },
+        "3": {
+          "net": "+5V"
+        },
+        "4": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED",
+        "+5V",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP32",
+      "value": "IO39",
+      "mpn": "",
+      "x": 94.7,
+      "y": 29.9,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO39"
+        }
+      },
+      "connected_nets": [
+        "GPIO39"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R4",
+      "value": "100k",
+      "mpn": "",
+      "x": 112.0,
+      "y": 26.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "SSR_GATE"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "SSR_GATE"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "D3",
+      "value": "SMBJ33A_FAN_TVS",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_FUSED"
+        },
+        "2": {
+          "net": "FAN_NEG"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED",
+        "FAN_NEG"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R2",
+      "value": "100k",
+      "mpn": "",
+      "x": 65.0,
+      "y": 52.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_GATE"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "FAN_GATE",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP30",
+      "value": "IO37",
+      "mpn": "",
+      "x": 94.2,
+      "y": 32.439999,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO37"
+        }
+      },
+      "connected_nets": [
+        "GPIO37"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "U3",
+      "value": "3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117",
+      "mpn": "",
+      "x": 68.0,
+      "y": 78.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 4,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        },
+        "2": {
+          "net": "+3V3"
+        },
+        "3": {
+          "net": "+5V"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "+5V",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "D1",
+      "value": "SB560_FLYBACK",
+      "mpn": "",
+      "x": 28.0,
+      "y": 48.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_NEG"
+        },
+        "2": {
+          "net": "+24V_FUSED"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED",
+        "FAN_NEG"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP28",
+      "value": "IO35",
+      "mpn": "",
+      "x": 94.7,
+      "y": 34.98,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO35"
+        }
+      },
+      "connected_nets": [
+        "GPIO35"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP8",
+      "value": "IO15",
+      "mpn": "",
+      "x": 75.3,
+      "y": 28.63,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO15"
+        }
+      },
+      "connected_nets": [
+        "GPIO15"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R6",
+      "value": "10k_BOOT_PULLUP",
+      "mpn": "",
+      "x": 55.0,
+      "y": 36.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        },
+        "2": {
+          "net": "BOOT"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "BOOT"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP38",
+      "value": "IO2/FAN",
+      "mpn": "",
+      "x": 94.7,
+      "y": 22.28,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_PWM"
+        }
+      },
+      "connected_nets": [
+        "FAN_PWM"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R10",
+      "value": "5k1_CC1_RD",
+      "mpn": "",
+      "x": 130.0,
+      "y": 36.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_CC1"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "USB_CC1"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP24",
+      "value": "IO47",
+      "mpn": "",
+      "x": 89.445,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO47"
+        }
+      },
+      "connected_nets": [
+        "GPIO47"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPGND",
+      "value": "GND_TEST",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R3",
+      "value": "100R",
+      "mpn": "",
+      "x": 105.0,
+      "y": 22.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "HEATER_PWM"
+        },
+        "2": {
+          "net": "SSR_GATE"
+        }
+      },
+      "connected_nets": [
+        "HEATER_PWM",
+        "SSR_GATE"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TP24V",
+      "value": "+24V_FUSED_TEST",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_FUSED"
+        }
+      },
+      "connected_nets": [
+        "+24V_FUSED"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP23",
+      "value": "IO21",
+      "mpn": "",
+      "x": 88.175,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO21"
+        }
+      },
+      "connected_nets": [
+        "GPIO21"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP18",
+      "value": "IO10",
+      "mpn": "",
+      "x": 81.825,
+      "y": 38.45,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO10"
+        }
+      },
+      "connected_nets": [
+        "GPIO10"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP34",
+      "value": "IO41",
+      "mpn": "",
+      "x": 94.7,
+      "y": 27.36,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO41"
+        }
+      },
+      "connected_nets": [
+        "GPIO41"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "C1",
+      "value": "10uF_5V",
+      "mpn": "",
+      "x": 61.0,
+      "y": 86.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+5V"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+5V",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP40",
+      "value": "GND",
+      "mpn": "",
+      "x": 94.7,
+      "y": 19.74,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R5",
+      "value": "10k_EN_PULLUP",
+      "mpn": "",
+      "x": 55.0,
+      "y": 32.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        },
+        "2": {
+          "net": "EN"
+        }
+      },
+      "connected_nets": [
+        "+3V3",
+        "EN"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "C5",
+      "value": "1nF_C0G_THERMO_DIFF_FILTER_DNP_IF_NOISY",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "THERMO_PLUS"
+        },
+        "2": {
+          "net": "THERMO_MINUS"
+        }
+      },
+      "connected_nets": [
+        "THERMO_MINUS",
+        "THERMO_PLUS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "Q2",
+      "value": "2N7002_SSR_DRIVER",
+      "mpn": "",
+      "x": 118.0,
+      "y": 70.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 3,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "SSR_GATE"
+        },
+        "2": {
+          "net": "GND"
+        },
+        "3": {
+          "net": "SSR_NEG"
+        }
+      },
+      "connected_nets": [
+        "GND",
+        "SSR_GATE",
+        "SSR_NEG"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TP3V3",
+      "value": "+3V3_TEST",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        }
+      },
+      "connected_nets": [
+        "+3V3"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP37",
+      "value": "TXD0/IO43",
+      "mpn": "",
+      "x": 94.7,
+      "y": 23.55,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "TXD0_GPIO43"
+        }
+      },
+      "connected_nets": [
+        "TXD0_GPIO43"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "R7",
+      "value": "27R_USB_DN",
+      "mpn": "",
+      "x": 128.0,
+      "y": 27.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DN_MCU"
+        },
+        "2": {
+          "net": "USB_DN"
+        }
+      },
+      "connected_nets": [
+        "USB_DN",
+        "USB_DN_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP10",
+      "value": "IO17",
+      "mpn": "",
+      "x": 75.3,
+      "y": 31.17,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO17"
+        }
+      },
+      "connected_nets": [
+        "GPIO17"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP6",
+      "value": "IO6",
+      "mpn": "",
+      "x": 75.3,
+      "y": 26.09,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO6"
+        }
+      },
+      "connected_nets": [
+        "GPIO6"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP4",
+      "value": "IO4",
+      "mpn": "",
+      "x": 75.3,
+      "y": 23.55,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO4"
+        }
+      },
+      "connected_nets": [
+        "GPIO4"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP1",
+      "value": "GND",
+      "mpn": "",
+      "x": 75.3,
+      "y": 19.74,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "C4",
+      "value": "220uF_35V_INPUT_BULK",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_RAW"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+24V_RAW",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "D2",
+      "value": "SMBJ33A_24V_INPUT_TVS",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+24V_RAW"
+        },
+        "2": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "+24V_RAW",
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "J3",
+      "value": "SSR_INPUT_TO_EXTERNAL_SSR",
+      "mpn": "",
+      "x": 140.0,
+      "y": 70.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 2,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+5V"
+        },
+        "2": {
+          "net": "SSR_NEG"
+        }
+      },
+      "connected_nets": [
+        "+5V",
+        "SSR_NEG"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "TPESP5",
+      "value": "IO5",
+      "mpn": "",
+      "x": 75.3,
+      "y": 24.82,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO5"
+        }
+      },
+      "connected_nets": [
+        "GPIO5"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP22",
+      "value": "IO14",
+      "mpn": "",
+      "x": 90.78,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO14"
+        }
+      },
+      "connected_nets": [
+        "GPIO14"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP16",
+      "value": "IO46",
+      "mpn": "",
+      "x": 75.54,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO46"
+        }
+      },
+      "connected_nets": [
+        "GPIO46"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP35",
+      "value": "IO42",
+      "mpn": "",
+      "x": 108.0,
+      "y": 34.2,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO42"
+        }
+      },
+      "connected_nets": [
+        "GPIO42"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP24",
+      "value": "IO47",
+      "mpn": "",
+      "x": 95.86,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO47"
+        }
+      },
+      "connected_nets": [
+        "GPIO47"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP11",
+      "value": "IO18",
+      "mpn": "",
+      "x": 62.5,
+      "y": 46.9,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO18"
+        }
+      },
+      "connected_nets": [
+        "GPIO18"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP20",
+      "value": "IO12",
+      "mpn": "",
+      "x": 85.7,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_CS"
+        }
+      },
+      "connected_nets": [
+        "MAX_CS"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP37",
+      "value": "TXD0",
+      "mpn": "",
+      "x": 108.0,
+      "y": 29.12,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "TXD0_GPIO43"
+        }
+      },
+      "connected_nets": [
+        "TXD0_GPIO43"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP6",
+      "value": "IO6",
+      "mpn": "",
+      "x": 62.5,
+      "y": 34.2,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO6"
+        }
+      },
+      "connected_nets": [
+        "GPIO6"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP9",
+      "value": "IO16",
+      "mpn": "",
+      "x": 62.5,
+      "y": 41.82,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO16"
+        }
+      },
+      "connected_nets": [
+        "GPIO16"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP21",
+      "value": "IO13",
+      "mpn": "",
+      "x": 88.24,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_SCK"
+        }
+      },
+      "connected_nets": [
+        "MAX_SCK"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP3",
+      "value": "EN",
+      "mpn": "",
+      "x": 62.5,
+      "y": 26.58,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "EN"
+        }
+      },
+      "connected_nets": [
+        "EN"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP33",
+      "value": "IO40",
+      "mpn": "",
+      "x": 108.0,
+      "y": 39.28,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO40"
+        }
+      },
+      "connected_nets": [
+        "GPIO40"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP7",
+      "value": "IO7",
+      "mpn": "",
+      "x": 62.5,
+      "y": 36.74,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO7"
+        }
+      },
+      "connected_nets": [
+        "GPIO7"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP1",
+      "value": "GND",
+      "mpn": "",
+      "x": 62.5,
+      "y": 21.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP31",
+      "value": "IO38",
+      "mpn": "",
+      "x": 108.0,
+      "y": 44.36,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO38"
+        }
+      },
+      "connected_nets": [
+        "GPIO38"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP29",
+      "value": "IO36",
+      "mpn": "",
+      "x": 108.25,
+      "y": 49.44,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO36"
+        }
+      },
+      "connected_nets": [
+        "GPIO36"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP27",
+      "value": "IO0",
+      "mpn": "",
+      "x": 108.0,
+      "y": 54.52,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "BOOT"
+        }
+      },
+      "connected_nets": [
+        "BOOT"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP10",
+      "value": "IO17",
+      "mpn": "",
+      "x": 62.5,
+      "y": 44.36,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO17"
+        }
+      },
+      "connected_nets": [
+        "GPIO17"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP40",
+      "value": "GND",
+      "mpn": "",
+      "x": 108.0,
+      "y": 21.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GND"
+        }
+      },
+      "connected_nets": [
+        "GND"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP34",
+      "value": "IO41",
+      "mpn": "",
+      "x": 108.0,
+      "y": 36.74,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO41"
+        }
+      },
+      "connected_nets": [
+        "GPIO41"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP25",
+      "value": "IO48",
+      "mpn": "",
+      "x": 98.4,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO48"
+        }
+      },
+      "connected_nets": [
+        "GPIO48"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP39",
+      "value": "IO1",
+      "mpn": "",
+      "x": 108.0,
+      "y": 24.04,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "HEATER_PWM"
+        }
+      },
+      "connected_nets": [
+        "HEATER_PWM"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP12",
+      "value": "IO8",
+      "mpn": "",
+      "x": 62.5,
+      "y": 49.44,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO8"
+        }
+      },
+      "connected_nets": [
+        "GPIO8"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP23",
+      "value": "IO21",
+      "mpn": "",
+      "x": 93.32,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO21"
+        }
+      },
+      "connected_nets": [
+        "GPIO21"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP32",
+      "value": "IO39",
+      "mpn": "",
+      "x": 108.0,
+      "y": 41.82,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO39"
+        }
+      },
+      "connected_nets": [
+        "GPIO39"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP5",
+      "value": "IO5",
+      "mpn": "",
+      "x": 62.5,
+      "y": 31.66,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO5"
+        }
+      },
+      "connected_nets": [
+        "GPIO5"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP2",
+      "value": "3V3",
+      "mpn": "",
+      "x": 62.5,
+      "y": 24.04,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "+3V3"
+        }
+      },
+      "connected_nets": [
+        "+3V3"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP4",
+      "value": "IO4",
+      "mpn": "",
+      "x": 62.5,
+      "y": 29.12,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO4"
+        }
+      },
+      "connected_nets": [
+        "GPIO4"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP26",
+      "value": "IO45",
+      "mpn": "",
+      "x": 100.94,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO45"
+        }
+      },
+      "connected_nets": [
+        "GPIO45"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP18",
+      "value": "IO10",
+      "mpn": "",
+      "x": 80.62,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO10"
+        }
+      },
+      "connected_nets": [
+        "GPIO10"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP38",
+      "value": "IO2",
+      "mpn": "",
+      "x": 108.0,
+      "y": 26.58,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "FAN_PWM"
+        }
+      },
+      "connected_nets": [
+        "FAN_PWM"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP8",
+      "value": "IO15",
+      "mpn": "",
+      "x": 62.5,
+      "y": 39.28,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO15"
+        }
+      },
+      "connected_nets": [
+        "GPIO15"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP14",
+      "value": "USB_D+",
+      "mpn": "",
+      "x": 62.5,
+      "y": 54.52,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DP_MCU"
+        }
+      },
+      "connected_nets": [
+        "USB_DP_MCU"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP36",
+      "value": "RXD0",
+      "mpn": "",
+      "x": 108.0,
+      "y": 31.66,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "RXD0_GPIO44"
+        }
+      },
+      "connected_nets": [
+        "RXD0_GPIO44"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP28",
+      "value": "IO35",
+      "mpn": "",
+      "x": 108.0,
+      "y": 51.98,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO35"
+        }
+      },
+      "connected_nets": [
+        "GPIO35"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP15",
+      "value": "IO3",
+      "mpn": "",
+      "x": 73.0,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO3"
+        }
+      },
+      "connected_nets": [
+        "GPIO3"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP30",
+      "value": "IO37",
+      "mpn": "",
+      "x": 108.0,
+      "y": 46.9,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO37"
+        }
+      },
+      "connected_nets": [
+        "GPIO37"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP19",
+      "value": "IO11",
+      "mpn": "",
+      "x": 83.16,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "MAX_DO"
+        }
+      },
+      "connected_nets": [
+        "MAX_DO"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP17",
+      "value": "IO9",
+      "mpn": "",
+      "x": 78.08,
+      "y": 58.5,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO9"
+        }
+      },
+      "connected_nets": [
+        "GPIO9"
+      ]
+    },
+    {
+      "library": "",
+      "reference": "PADESP13",
+      "value": "USB_D-",
+      "mpn": "",
+      "x": 62.5,
+      "y": 51.98,
+      "angle": 0.0,
+      "layer": "B.Cu",
+      "type": "smd",
+      "pad_count": 1,
+      "footprint": "",
+      "pad_nets": {
+        "1": {
+          "net": "USB_DN_MCU"
+        }
+      },
+      "connected_nets": [
+        "USB_DN_MCU"
+      ]
+    },
+    {
+      "library": "ESP32_GPIO_BREAKOUT_ROW",
+      "reference": "JGPIO1",
+      "value": "ESP32_GPIO_BREAKOUT_ROW",
+      "mpn": "",
+      "x": 0.0,
+      "y": 0.0,
+      "angle": 0.0,
+      "layer": "F.Cu",
+      "type": "through_hole",
+      "pad_count": 6,
+      "footprint": "ESP32_GPIO_BREAKOUT_ROW",
+      "pad_nets": {
+        "1": {
+          "net": "GPIO3"
+        },
+        "2": {
+          "net": "GPIO46"
+        },
+        "3": {
+          "net": "GPIO9"
+        },
+        "4": {
+          "net": "GPIO10"
+        },
+        "5": {
+          "net": "GPIO48"
+        },
+        "6": {
+          "net": "GPIO45"
+        }
+      },
+      "connected_nets": [
+        "GPIO10",
+        "GPIO3",
+        "GPIO45",
+        "GPIO46",
+        "GPIO48",
+        "GPIO9"
+      ]
+    }
+  ],
+  "tracks": {
+    "segment_count": 539,
+    "arc_count": 0,
+    "width_distribution": {
+      "0.16": 6,
+      "0.2": 521,
+      "0.45": 6,
+      "0.25": 2,
+      "0.35": 1,
+      "0.22": 1,
+      "0.18": 2
+    },
+    "layer_distribution": {
+      "B.Cu": 191,
+      "F.Cu": 348
+    }
+  },
+  "vias": {
+    "count": 51,
+    "size_distribution": {
+      "0.5/0.3": 51
+    },
+    "via_analysis": {
+      "type_breakdown": {
+        "through": {
+          "count": 51,
+          "size_distribution": {
+            "0.5/0.3": 51
+          }
+        }
+      },
+      "annular_ring": {
+        "min_mm": 0.1,
+        "max_mm": 0.1,
+        "distribution": {
+          "0.1": 51
+        },
+        "below_0.125mm": 51
+      },
+      "fanout_patterns": [
+        {
+          "component": "U1",
+          "pad_count": 62,
+          "fanout_vias": 41,
+          "unique_nets": 38,
+          "package": "ESP32-S3-WROOM-1"
+        }
+      ],
+      "current_capacity": {
+        "drill_size_distribution": {
+          "0.3": 51
+        },
+        "min_drill_mm": 0.3,
+        "max_drill_mm": 0.3,
+        "total_vias": 51,
+        "ratings": [
+          {
+            "drill_mm": 0.3,
+            "count": 51,
+            "plating_area_mm2": 0.0236,
+            "approx_current_A": 7.9
+          }
+        ]
+      }
+    }
+  },
+  "zones": [],
+  "keepout_zones": [],
+  "connectivity": {
+    "total_nets_with_pads": 53,
+    "routed_nets": 53,
+    "unrouted_count": 0,
+    "routing_complete": true
+  },
+  "net_lengths": [
+    {
+      "net": "GND",
+      "net_number": 1,
+      "total_length_mm": 447.77,
+      "segment_count": 101,
+      "via_count": 3,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 133.34,
+          "segments": 29
+        },
+        "F.Cu": {
+          "length_mm": 314.43,
+          "segments": 72
+        }
+      }
+    },
+    {
+      "net": "+3V3",
+      "net_number": 6,
+      "total_length_mm": 153.583,
+      "segment_count": 27,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 46.091,
+          "segments": 6
+        },
+        "F.Cu": {
+          "length_mm": 107.492,
+          "segments": 21
+        }
+      }
+    },
+    {
+      "net": "+5V",
+      "net_number": 5,
+      "total_length_mm": 125.835,
+      "segment_count": 17,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 125.835,
+          "segments": 17
+        }
+      }
+    },
+    {
+      "net": "+24V_FUSED",
+      "net_number": 3,
+      "total_length_mm": 101.656,
+      "segment_count": 14,
+      "via_count": 0,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 61.456,
+          "segments": 6
+        },
+        "F.Cu": {
+          "length_mm": 40.201,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "USB_DN_MCU",
+      "net_number": 18,
+      "total_length_mm": 85.42,
+      "segment_count": 11,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 18.487,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 66.933,
+          "segments": 9
+        }
+      }
+    },
+    {
+      "net": "BOOT",
+      "net_number": 23,
+      "total_length_mm": 83.682,
+      "segment_count": 20,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 28.3,
+          "segments": 5
+        },
+        "F.Cu": {
+          "length_mm": 55.382,
+          "segments": 15
+        }
+      }
+    },
+    {
+      "net": "USB_DP_MCU",
+      "net_number": 19,
+      "total_length_mm": 81.954,
+      "segment_count": 14,
+      "via_count": 3,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 30.767,
+          "segments": 5
+        },
+        "F.Cu": {
+          "length_mm": 51.188,
+          "segments": 9
+        }
+      }
+    },
+    {
+      "net": "FAN_PWM",
+      "net_number": 7,
+      "total_length_mm": 73.086,
+      "segment_count": 18,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 46.351,
+          "segments": 10
+        },
+        "F.Cu": {
+          "length_mm": 26.735,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "GPIO3",
+      "net_number": 35,
+      "total_length_mm": 71.544,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 66.738,
+          "segments": 4
+        },
+        "F.Cu": {
+          "length_mm": 4.806,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO46",
+      "net_number": 36,
+      "total_length_mm": 68.204,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 66.444,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 1.76,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO9",
+      "net_number": 37,
+      "total_length_mm": 67.987,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 64.382,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 3.605,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO10",
+      "net_number": 38,
+      "total_length_mm": 67.142,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 65.485,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 1.657,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO45",
+      "net_number": 43,
+      "total_length_mm": 63.545,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 57.758,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 5.787,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO48",
+      "net_number": 42,
+      "total_length_mm": 61.483,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 58.272,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 3.211,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "SSR_GATE",
+      "net_number": 10,
+      "total_length_mm": 54.899,
+      "segment_count": 11,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 46.959,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 7.94,
+          "segments": 9
+        }
+      }
+    },
+    {
+      "net": "THERMO_MINUS",
+      "net_number": 16,
+      "total_length_mm": 54.251,
+      "segment_count": 6,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 54.251,
+          "segments": 6
+        }
+      }
+    },
+    {
+      "net": "EN",
+      "net_number": 22,
+      "total_length_mm": 50.781,
+      "segment_count": 13,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 23.911,
+          "segments": 5
+        },
+        "F.Cu": {
+          "length_mm": 26.87,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "THERMO_PLUS",
+      "net_number": 15,
+      "total_length_mm": 48.56,
+      "segment_count": 6,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 48.56,
+          "segments": 6
+        }
+      }
+    },
+    {
+      "net": "MAX_DO",
+      "net_number": 12,
+      "total_length_mm": 42.419,
+      "segment_count": 11,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 37.203,
+          "segments": 6
+        },
+        "F.Cu": {
+          "length_mm": 5.216,
+          "segments": 5
+        }
+      }
+    },
+    {
+      "net": "FAN_NEG",
+      "net_number": 4,
+      "total_length_mm": 39.051,
+      "segment_count": 8,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 39.051,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "MAX_SCK",
+      "net_number": 14,
+      "total_length_mm": 37.676,
+      "segment_count": 9,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 14.638,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 23.038,
+          "segments": 7
+        }
+      }
+    },
+    {
+      "net": "MAX_CS",
+      "net_number": 13,
+      "total_length_mm": 37.651,
+      "segment_count": 9,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 8.865,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 28.786,
+          "segments": 7
+        }
+      }
+    },
+    {
+      "net": "GPIO36",
+      "net_number": 45,
+      "total_length_mm": 31.308,
+      "segment_count": 10,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 28.67,
+          "segments": 8
+        },
+        "F.Cu": {
+          "length_mm": 2.638,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "SSR_NEG",
+      "net_number": 11,
+      "total_length_mm": 31.127,
+      "segment_count": 6,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 31.127,
+          "segments": 6
+        }
+      }
+    },
+    {
+      "net": "GPIO35",
+      "net_number": 44,
+      "total_length_mm": 31.125,
+      "segment_count": 12,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 20.032,
+          "segments": 10
+        },
+        "F.Cu": {
+          "length_mm": 11.093,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO8",
+      "net_number": 34,
+      "total_length_mm": 29.928,
+      "segment_count": 9,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 17.482,
+          "segments": 6
+        },
+        "F.Cu": {
+          "length_mm": 12.446,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "FAN_GATE",
+      "net_number": 8,
+      "total_length_mm": 28.445,
+      "segment_count": 5,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 28.445,
+          "segments": 5
+        }
+      }
+    },
+    {
+      "net": "+24V_RAW",
+      "net_number": 2,
+      "total_length_mm": 28.321,
+      "segment_count": 8,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 28.321,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "GPIO38",
+      "net_number": 47,
+      "total_length_mm": 27.376,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 12.382,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 14.994,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO37",
+      "net_number": 46,
+      "total_length_mm": 26.558,
+      "segment_count": 4,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 15.981,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 10.577,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO17",
+      "net_number": 32,
+      "total_length_mm": 25.997,
+      "segment_count": 9,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 13.512,
+          "segments": 6
+        },
+        "F.Cu": {
+          "length_mm": 12.486,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO18",
+      "net_number": 33,
+      "total_length_mm": 25.035,
+      "segment_count": 7,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 15.676,
+          "segments": 4
+        },
+        "F.Cu": {
+          "length_mm": 9.359,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "USB_CC2",
+      "net_number": 25,
+      "total_length_mm": 23.991,
+      "segment_count": 5,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 23.991,
+          "segments": 5
+        }
+      }
+    },
+    {
+      "net": "GPIO39",
+      "net_number": 48,
+      "total_length_mm": 23.821,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 13.317,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 10.504,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO47",
+      "net_number": 41,
+      "total_length_mm": 23.657,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 21.908,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 1.749,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO42",
+      "net_number": 51,
+      "total_length_mm": 23.169,
+      "segment_count": 10,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 8.155,
+          "segments": 7
+        },
+        "F.Cu": {
+          "length_mm": 15.014,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO21",
+      "net_number": 40,
+      "total_length_mm": 23.131,
+      "segment_count": 4,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 21.493,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 1.639,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO16",
+      "net_number": 31,
+      "total_length_mm": 22.664,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 14.046,
+          "segments": 4
+        },
+        "F.Cu": {
+          "length_mm": 8.618,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO14",
+      "net_number": 39,
+      "total_length_mm": 22.605,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 20.812,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 1.793,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO40",
+      "net_number": 49,
+      "total_length_mm": 22.226,
+      "segment_count": 7,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 11.926,
+          "segments": 4
+        },
+        "F.Cu": {
+          "length_mm": 10.301,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO41",
+      "net_number": 50,
+      "total_length_mm": 21.89,
+      "segment_count": 6,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 8.724,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 13.166,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO6",
+      "net_number": 28,
+      "total_length_mm": 21.758,
+      "segment_count": 8,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 9.977,
+          "segments": 5
+        },
+        "F.Cu": {
+          "length_mm": 11.781,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "GPIO7",
+      "net_number": 29,
+      "total_length_mm": 21.585,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 10.473,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 11.112,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "GPIO15",
+      "net_number": 30,
+      "total_length_mm": 21.095,
+      "segment_count": 8,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 10.805,
+          "segments": 4
+        },
+        "F.Cu": {
+          "length_mm": 10.291,
+          "segments": 4
+        }
+      }
+    },
+    {
+      "net": "RXD0_GPIO44",
+      "net_number": 52,
+      "total_length_mm": 20.728,
+      "segment_count": 7,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 1.742,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 18.985,
+          "segments": 5
+        }
+      }
+    },
+    {
+      "net": "GPIO5",
+      "net_number": 27,
+      "total_length_mm": 18.009,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 8.665,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 9.344,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "USB_DN",
+      "net_number": 20,
+      "total_length_mm": 17.953,
+      "segment_count": 9,
+      "via_count": 2,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 5.797,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 12.156,
+          "segments": 7
+        }
+      }
+    },
+    {
+      "net": "GPIO4",
+      "net_number": 26,
+      "total_length_mm": 17.521,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 6.842,
+          "segments": 3
+        },
+        "F.Cu": {
+          "length_mm": 10.679,
+          "segments": 2
+        }
+      }
+    },
+    {
+      "net": "TXD0_GPIO43",
+      "net_number": 53,
+      "total_length_mm": 16.557,
+      "segment_count": 5,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 8.284,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 8.274,
+          "segments": 3
+        }
+      }
+    },
+    {
+      "net": "HEATER_PWM",
+      "net_number": 9,
+      "total_length_mm": 16.059,
+      "segment_count": 8,
+      "via_count": 1,
+      "layers": {
+        "B.Cu": {
+          "length_mm": 4.306,
+          "segments": 2
+        },
+        "F.Cu": {
+          "length_mm": 11.753,
+          "segments": 6
+        }
+      }
+    },
+    {
+      "net": "USB_DP",
+      "net_number": 21,
+      "total_length_mm": 14.156,
+      "segment_count": 8,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 14.156,
+          "segments": 8
+        }
+      }
+    },
+    {
+      "net": "USB_CC1",
+      "net_number": 24,
+      "total_length_mm": 13.987,
+      "segment_count": 4,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 13.987,
+          "segments": 4
+        }
+      }
+    },
+    {
+      "net": "USB_VBUS",
+      "net_number": 17,
+      "total_length_mm": 6.664,
+      "segment_count": 7,
+      "via_count": 0,
+      "layers": {
+        "F.Cu": {
+          "length_mm": 6.664,
+          "segments": 7
+        }
+      }
+    }
+  ],
+  "power_net_routing": [
+    {
+      "net": "+24V_FUSED",
+      "track_count": 14,
+      "total_length_mm": 101.66,
+      "min_width_mm": 0.2,
+      "max_width_mm": 0.45,
+      "widths_used": [
+        0.2,
+        0.35,
+        0.45
+      ]
+    },
+    {
+      "net": "+24V_RAW",
+      "track_count": 8,
+      "total_length_mm": 28.32,
+      "min_width_mm": 0.2,
+      "max_width_mm": 0.45,
+      "widths_used": [
+        0.2,
+        0.45
+      ]
+    },
+    {
+      "net": "+3V3",
+      "track_count": 27,
+      "total_length_mm": 153.58,
+      "min_width_mm": 0.2,
+      "max_width_mm": 0.22,
+      "widths_used": [
+        0.2,
+        0.22
+      ]
+    },
+    {
+      "net": "+5V",
+      "track_count": 17,
+      "total_length_mm": 125.84,
+      "min_width_mm": 0.2,
+      "max_width_mm": 0.25,
+      "widths_used": [
+        0.2,
+        0.25
+      ]
+    },
+    {
+      "net": "GND",
+      "track_count": 101,
+      "total_length_mm": 447.77,
+      "min_width_mm": 0.2,
+      "max_width_mm": 0.45,
+      "widths_used": [
+        0.2,
+        0.25,
+        0.45
+      ]
+    }
+  ],
+  "decoupling_placement": [
+    {
+      "ic": "U2",
+      "value": "MAX6675_SOIC8_3V3",
+      "layer": "F.Cu",
+      "nearby_caps": [
+        {
+          "cap": "C3",
+          "value": "100nF_MAX6675",
+          "distance_mm": 6.95,
+          "shared_nets": [
+            "+3V3",
+            "GND"
+          ],
+          "same_side": true
+        }
+      ],
+      "closest_cap_mm": 6.95
+    },
+    {
+      "ic": "U3",
+      "value": "3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117",
+      "layer": "F.Cu",
+      "nearby_caps": [
+        {
+          "cap": "C1",
+          "value": "10uF_5V",
+          "distance_mm": 6.41,
+          "shared_nets": [
+            "+5V",
+            "GND"
+          ],
+          "same_side": true
+        },
+        {
+          "cap": "C2",
+          "value": "10uF_3V3",
+          "distance_mm": 7.04,
+          "shared_nets": [
+            "+3V3",
+            "GND"
+          ],
+          "same_side": true
+        }
+      ],
+      "closest_cap_mm": 6.41
+    }
+  ],
+  "decoupling_proximity": [
+    {
+      "ic_ref": "U2",
+      "cap_ref": "C3",
+      "distance_mm": 6.95,
+      "cap_value": "100nF_MAX6675",
+      "same_side": true,
+      "shared_nets": [
+        "+3V3",
+        "GND"
+      ]
+    },
+    {
+      "ic_ref": "U3",
+      "cap_ref": "C1",
+      "distance_mm": 6.41,
+      "cap_value": "10uF_5V",
+      "same_side": true,
+      "shared_nets": [
+        "+5V",
+        "GND"
+      ]
+    },
+    {
+      "ic_ref": "U3",
+      "cap_ref": "C2",
+      "distance_mm": 7.04,
+      "cap_value": "10uF_3V3",
+      "same_side": true,
+      "shared_nets": [
+        "+3V3",
+        "GND"
+      ]
+    }
+  ],
+  "ground_domains": {
+    "domain_count": 1,
+    "domains": [
+      {
+        "net": "GND",
+        "net_number": 1,
+        "component_count": 25,
+        "components": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "D2",
+          "J1",
+          "J5",
+          "PADESP1",
+          "PADESP40",
+          "Q1",
+          "Q2",
+          "R10",
+          "R11",
+          "R2",
+          "R4",
+          "SW1",
+          "SW2",
+          "TPESP1",
+          "TPESP40",
+          "TPGND",
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "U5"
+        ],
+        "has_zone": false,
+        "zone_layers": []
+      }
+    ],
+    "multi_domain_components": []
+  },
+  "layer_transitions": [
+    {
+      "net": "USB_DP_MCU",
+      "net_number": 19,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 3,
+      "via_positions": [
+        {
+          "x": 81.63,
+          "y": 35.69,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 73.97,
+          "y": 36.62,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 87.8,
+          "y": 40.39,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "FAN_PWM",
+      "net_number": 7,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 2,
+      "via_positions": [
+        {
+          "x": 73.24,
+          "y": 43.97,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 108.06,
+          "y": 25.19,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "SSR_GATE",
+      "net_number": 10,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 2,
+      "via_positions": [
+        {
+          "x": 110.15,
+          "y": 25.91,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 116.97,
+          "y": 70.04,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "MAX_DO",
+      "net_number": 12,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 2,
+      "via_positions": [
+        {
+          "x": 97.21,
+          "y": 55.74,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 83.61,
+          "y": 38.97,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "USB_DN",
+      "net_number": 20,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 2,
+      "via_positions": [
+        {
+          "x": 139.89,
+          "y": 31.62,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 137.07,
+          "y": 27.0,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "BOOT",
+      "net_number": 23,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 2,
+      "via_positions": [
+        {
+          "x": 90.35,
+          "y": 36.2,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "x": 96.32,
+          "y": 37.61,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "HEATER_PWM",
+      "net_number": 9,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 104.12,
+          "y": 23.01,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "MAX_CS",
+      "net_number": 13,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 88.21,
+          "y": 50.68,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "MAX_SCK",
+      "net_number": 14,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 90.24,
+          "y": 44.69,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "USB_DN_MCU",
+      "net_number": 18,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 66.09,
+          "y": 34.98,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "EN",
+      "net_number": 22,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 65.8,
+          "y": 22.6,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO4",
+      "net_number": 26,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 65.57,
+          "y": 23.55,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO5",
+      "net_number": 27,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 66.91,
+          "y": 24.82,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO6",
+      "net_number": 28,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 64.52,
+          "y": 25.96,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO7",
+      "net_number": 29,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 65.14,
+          "y": 27.36,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO15",
+      "net_number": 30,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 67.13,
+          "y": 30.39,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO16",
+      "net_number": 31,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 67.63,
+          "y": 29.9,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO17",
+      "net_number": 32,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 64.47,
+          "y": 32.86,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO18",
+      "net_number": 33,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 67.28,
+          "y": 33.37,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO8",
+      "net_number": 34,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 63.9,
+          "y": 33.95,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO3",
+      "net_number": 35,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 73.99,
+          "y": 38.28,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO46",
+      "net_number": 36,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 78.71,
+          "y": 39.01,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO9",
+      "net_number": 37,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 78.52,
+          "y": 39.94,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO10",
+      "net_number": 38,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 81.83,
+          "y": 39.16,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO14",
+      "net_number": 39,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 87.26,
+          "y": 39.15,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO21",
+      "net_number": 40,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 88.17,
+          "y": 39.14,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO47",
+      "net_number": 41,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 89.69,
+          "y": 39.15,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO48",
+      "net_number": 42,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 92.45,
+          "y": 39.71,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO45",
+      "net_number": 43,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 96.31,
+          "y": 39.68,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO35",
+      "net_number": 44,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 104.84,
+          "y": 34.98,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO36",
+      "net_number": 45,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 96.39,
+          "y": 33.71,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO37",
+      "net_number": 46,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 104.33,
+          "y": 32.44,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO38",
+      "net_number": 47,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 108.13,
+          "y": 32.66,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO39",
+      "net_number": 48,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 104.18,
+          "y": 30.09,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO40",
+      "net_number": 49,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 103.66,
+          "y": 29.58,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO41",
+      "net_number": 50,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 106.36,
+          "y": 28.69,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "GPIO42",
+      "net_number": 51,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 108.14,
+          "y": 27.59,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "RXD0_GPIO44",
+      "net_number": 52,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 108.91,
+          "y": 30.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    {
+      "net": "TXD0_GPIO43",
+      "net_number": 53,
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "layer_count": 2,
+      "via_count": 1,
+      "via_positions": [
+        {
+          "x": 101.99,
+          "y": 23.64,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ]
+        }
+      ]
+    }
+  ],
+  "silkscreen": {
+    "board_text_count": 93,
+    "refs_visible_on_silk": 118,
+    "refs_hidden_on_silk": 0,
+    "board_texts": [
+      {
+        "text": "ESP32 GPIO BREAKOUT",
+        "layer": "F.SilkS",
+        "x": 110.0,
+        "y": 84.8
+      },
+      {
+        "text": "IO3",
+        "layer": "F.SilkS",
+        "x": 104.0,
+        "y": 87.7
+      },
+      {
+        "text": "IO46",
+        "layer": "F.SilkS",
+        "x": 106.54,
+        "y": 87.7
+      },
+      {
+        "text": "IO9",
+        "layer": "F.SilkS",
+        "x": 109.08,
+        "y": 87.7
+      },
+      {
+        "text": "IO10",
+        "layer": "F.SilkS",
+        "x": 111.62,
+        "y": 87.7
+      },
+      {
+        "text": "IO48",
+        "layer": "F.SilkS",
+        "x": 114.16,
+        "y": 87.7
+      },
+      {
+        "text": "IO45",
+        "layer": "F.SilkS",
+        "x": 116.7,
+        "y": 87.7
+      },
+      {
+        "text": "+24V",
+        "layer": "F.SilkS",
+        "x": 7.46,
+        "y": 15.6
+      },
+      {
+        "text": "+24V",
+        "layer": "F.SilkS",
+        "x": 7.46,
+        "y": 45.6
+      },
+      {
+        "text": "GND",
+        "layer": "F.SilkS",
+        "x": 12.54,
+        "y": 15.6
+      },
+      {
+        "text": "FAN-",
+        "layer": "F.SilkS",
+        "x": 12.54,
+        "y": 45.6
+      },
+      {
+        "text": "TP24V",
+        "layer": "F.SilkS",
+        "x": 17.5,
+        "y": 72.0
+      },
+      {
+        "text": "C4 220uF",
+        "layer": "F.SilkS",
+        "x": 20.0,
+        "y": 23.2
+      },
+      {
+        "text": "D2 24V TVS",
+        "layer": "F.SilkS",
+        "x": 21.0,
+        "y": 28.5
+      },
+      {
+        "text": "D3 FAN TVS",
+        "layer": "F.SilkS",
+        "x": 22.0,
+        "y": 41.2
+      },
+      {
+        "text": "D1 FLYBACK",
+        "layer": "F.SilkS",
+        "x": 28.0,
+        "y": 53.5
+      },
+      {
+        "text": "RESET",
+        "layer": "F.SilkS",
+        "x": 43.0,
+        "y": 26.5
+      },
+      {
+        "text": "BOOT",
+        "layer": "F.SilkS",
+        "x": 43.0,
+        "y": 36.5
+      },
+      {
+        "text": "Q1 FAN MOSFET",
+        "layer": "F.SilkS",
+        "x": 45.0,
+        "y": 56.0
+      },
+      {
+        "text": "TP5V",
+        "layer": "F.SilkS",
+        "x": 54.5,
+        "y": 72.0
+      },
+      {
+        "text": "TPGND",
+        "layer": "F.SilkS",
+        "x": 54.5,
+        "y": 84.0
+      },
+      {
+        "text": "R5 10k",
+        "layer": "F.SilkS",
+        "x": 55.0,
+        "y": 28.7
+      },
+      {
+        "text": "R6 10k",
+        "layer": "F.SilkS",
+        "x": 55.0,
+        "y": 39.3
+      },
+      {
+        "text": "C1 10u",
+        "layer": "F.SilkS",
+        "x": 61.0,
+        "y": 82.7
+      },
+      {
+        "text": "R1 100R",
+        "layer": "F.SilkS",
+        "x": 65.0,
+        "y": 45.2
+      },
+      {
+        "text": "R2 100k",
+        "layer": "F.SilkS",
+        "x": 65.0,
+        "y": 54.8
+      },
+      {
+        "text": "U3 3V3 REG",
+        "layer": "F.SilkS",
+        "x": 75.0,
+        "y": 73.0
+      },
+      {
+        "text": "TP3V3",
+        "layer": "F.SilkS",
+        "x": 76.0,
+        "y": 77.8
+      },
+      {
+        "text": "C2 10u",
+        "layer": "F.SilkS",
+        "x": 76.0,
+        "y": 82.7
+      },
+      {
+        "text": "C3 100n",
+        "layer": "F.SilkS",
+        "x": 91.0,
+        "y": 59.7
+      },
+      {
+        "text": "U2 MAX6675",
+        "layer": "F.SilkS",
+        "x": 100.0,
+        "y": 50.0
+      },
+      {
+        "text": "R3 100R",
+        "layer": "F.SilkS",
+        "x": 105.0,
+        "y": 18.7
+      },
+      {
+        "text": "R4 100k",
+        "layer": "F.SilkS",
+        "x": 112.0,
+        "y": 29.3
+      },
+      {
+        "text": "Q2 SSR DRV",
+        "layer": "F.SilkS",
+        "x": 118.0,
+        "y": 75.0
+      },
+      {
+        "text": "R8 27R",
+        "layer": "F.SilkS",
+        "x": 125.0,
+        "y": 33.4
+      },
+      {
+        "text": "C5 TC FILTER",
+        "layer": "F.SilkS",
+        "x": 127.0,
+        "y": 45.0
+      },
+      {
+        "text": "R7 27R",
+        "layer": "F.SilkS",
+        "x": 128.0,
+        "y": 23.7
+      },
+      {
+        "text": "R10 5k1",
+        "layer": "F.SilkS",
+        "x": 136.0,
+        "y": 36.0
+      },
+      {
+        "text": "R11 5k1",
+        "layer": "F.SilkS",
+        "x": 136.0,
+        "y": 40.0
+      },
+      {
+        "text": "TC+",
+        "layer": "F.SilkS",
+        "x": 137.46,
+        "y": 49.6
+      },
+      {
+        "text": "+5V",
+        "layer": "F.SilkS",
+        "x": 137.46,
+        "y": 67.6
+      },
+      {
+        "text": "U5 USB ESD",
+        "layer": "F.SilkS",
+        "x": 139.0,
+        "y": 24.0
+      },
+      {
+        "text": "TC-",
+        "layer": "F.SilkS",
+        "x": 142.54,
+        "y": 49.6
+      },
+      {
+        "text": "SSR-",
+        "layer": "F.SilkS",
+        "x": 142.54,
+        "y": 67.6
+      },
+      {
+        "text": "USB-C DATA",
+        "layer": "F.SilkS",
+        "x": 155.0,
+        "y": 20.0
+      },
+      {
+        "text": "F1 FUSE",
+        "layer": "F.SilkS",
+        "x": 32.0,
+        "y": 13.8
+      },
+      {
+        "text": "U4 24V->5V",
+        "layer": "F.SilkS",
+        "x": 36.0,
+        "y": 66.5
+      },
+      {
+        "text": "U1 ESP32-S3",
+        "layer": "F.SilkS",
+        "x": 85.0,
+        "y": 8.0
+      },
+      {
+        "text": "24V IN",
+        "layer": "F.SilkS",
+        "x": 10.0,
+        "y": 12.9
+      },
+      {
+        "text": "FAN OUT",
+        "layer": "F.SilkS",
+        "x": 10.0,
+        "y": 41.2
+      },
+      {
+        "text": "THERMO",
+        "layer": "F.SilkS",
+        "x": 140.0,
+        "y": 45.0
+      },
+      {
+        "text": "SSR OUT",
+        "layer": "F.SilkS",
+        "x": 140.0,
+        "y": 64.6
+      },
+      {
+        "text": "CoffeeRoast Control RevA - 24V/3A input, no 230V on PCB",
+        "layer": "F.SilkS",
+        "x": 80.0,
+        "y": 96.0
+      },
+      {
+        "text": "GND",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 21.15
+      },
+      {
+        "text": "3V3",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 23.69
+      },
+      {
+        "text": "EN",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 26.23
+      },
+      {
+        "text": "IO4",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 28.77
+      },
+      {
+        "text": "IO5",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 31.31
+      },
+      {
+        "text": "IO6",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 33.85
+      },
+      {
+        "text": "IO7",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 36.39
+      },
+      {
+        "text": "IO15",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 38.93
+      },
+      {
+        "text": "IO16",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 41.47
+      },
+      {
+        "text": "IO17",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 44.01
+      },
+      {
+        "text": "IO18",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 46.55
+      },
+      {
+        "text": "IO8",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 49.09
+      },
+      {
+        "text": "USB_D-",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 51.63
+      },
+      {
+        "text": "USB_D+",
+        "layer": "B.SilkS",
+        "x": 56.7,
+        "y": 54.17
+      },
+      {
+        "text": "IO3",
+        "layer": "B.SilkS",
+        "x": 72.1,
+        "y": 59.65
+      },
+      {
+        "text": "IO46",
+        "layer": "B.SilkS",
+        "x": 74.64,
+        "y": 59.65
+      },
+      {
+        "text": "IO9",
+        "layer": "B.SilkS",
+        "x": 77.18,
+        "y": 59.65
+      },
+      {
+        "text": "IO10",
+        "layer": "B.SilkS",
+        "x": 79.72,
+        "y": 59.65
+      },
+      {
+        "text": "IO11",
+        "layer": "B.SilkS",
+        "x": 82.26,
+        "y": 59.65
+      },
+      {
+        "text": "IO13",
+        "layer": "B.SilkS",
+        "x": 87.34,
+        "y": 59.65
+      },
+      {
+        "text": "IO14",
+        "layer": "B.SilkS",
+        "x": 89.88,
+        "y": 59.65
+      },
+      {
+        "text": "IO21",
+        "layer": "B.SilkS",
+        "x": 92.42,
+        "y": 59.65
+      },
+      {
+        "text": "IO47",
+        "layer": "B.SilkS",
+        "x": 94.96,
+        "y": 59.65
+      },
+      {
+        "text": "IO48",
+        "layer": "B.SilkS",
+        "x": 97.5,
+        "y": 59.65
+      },
+      {
+        "text": "IO45",
+        "layer": "B.SilkS",
+        "x": 100.04,
+        "y": 59.65
+      },
+      {
+        "text": "GND",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 21.15
+      },
+      {
+        "text": "IO1",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 23.69
+      },
+      {
+        "text": "IO2",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 26.23
+      },
+      {
+        "text": "TXD0",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 28.77
+      },
+      {
+        "text": "RXD0",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 31.31
+      },
+      {
+        "text": "IO42",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 33.85
+      },
+      {
+        "text": "IO41",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 36.39
+      },
+      {
+        "text": "IO40",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 38.93
+      },
+      {
+        "text": "IO39",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 41.47
+      },
+      {
+        "text": "IO38",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 44.01
+      },
+      {
+        "text": "IO37",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 46.55
+      },
+      {
+        "text": "IO36",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 49.09
+      },
+      {
+        "text": "IO35",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 51.63
+      },
+      {
+        "text": "IO0",
+        "layer": "B.SilkS",
+        "x": 112.6,
+        "y": 54.17
+      },
+      {
+        "text": "ESP32 SOLDER PADS - BOTTOM",
+        "layer": "B.SilkS",
+        "x": 60.5,
+        "y": 65.0
+      }
+    ],
+    "documentation_warnings": [
+      {
+        "type": "missing_switch_labels",
+        "severity": "warning",
+        "components": [
+          "SW2",
+          "SW1"
+        ],
+        "message": "Switches without function labels on silkscreen: ['SW2', 'SW1']. Add ON/OFF, RESET, BOOT, or function description near each switch."
+      },
+      {
+        "type": "missing_connector_labels",
+        "severity": "suggestion",
+        "components": [
+          "J5"
+        ],
+        "message": "Connectors (3+ pins) without silkscreen labels: ['J5']. Consider adding pin names, signal names, or connector function labels."
+      }
+    ],
+    "fab_notes_completeness": {
+      "checks": {
+        "ipc_class": false,
+        "surface_finish": false,
+        "board_thickness": false,
+        "copper_weight": false,
+        "solder_mask": false,
+        "material": false
+      },
+      "missing": [
+        "ipc class",
+        "surface finish",
+        "board thickness",
+        "copper weight",
+        "solder mask",
+        "material"
+      ],
+      "completeness_pct": 0,
+      "status": "warning"
+    },
+    "silkscreen_completeness": {
+      "checks": {
+        "revision_marking": true,
+        "board_name": true,
+        "ref_designators_visible": true,
+        "connector_labels": false,
+        "polarity_markers": true
+      },
+      "missing": [
+        "connector labels"
+      ],
+      "completeness_pct": 80,
+      "status": "warning"
+    }
+  },
+  "board_metadata": {
+    "paper": "A4",
+    "rev": "A.1-draft",
+    "comments": {
+      "2": "RevA.1: switching 3V3 recommendation, concrete fan MOSFET, TVS/ESD, bulk cap, testpoints",
+      "3": "230V stays off this PCB: certified internal 24V PSU + external SSR module/heatsink"
+    }
+  },
+  "net_classes": [
+    {
+      "name": "Default",
+      "clearance": 0.1,
+      "track_width": 0.2,
+      "via_diameter": 0.6,
+      "via_drill": 0.3,
+      "diff_pair_width": 0.2,
+      "diff_pair_gap": 0.25
+    }
+  ],
+  "project_settings": {
+    "source": "CoffeeRoast-Control-RevA.kicad_pro",
+    "net_classes": [
+      {
+        "name": "Default",
+        "clearance": 0.1,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.25
+      }
+    ],
+    "design_rules": {
+      "min_clearance": 0.0,
+      "min_connection": 0.0,
+      "min_copper_edge_clearance": 0.5,
+      "min_groove_width": 0.0,
+      "min_hole_clearance": 0.25,
+      "min_hole_to_hole": 0.25,
+      "min_microvia_diameter": 0.2,
+      "min_microvia_drill": 0.1,
+      "min_resolved_spokes": 2,
+      "min_silk_clearance": 0.0,
+      "min_text_height": 0.8,
+      "min_text_thickness": 0.08,
+      "min_through_hole_diameter": 0.3,
+      "min_track_width": 0.0,
+      "min_via_annular_width": 0.1,
+      "min_via_diameter": 0.5
+    }
+  },
+  "design_rule_compliance": {
+    "compliant": true,
+    "rules_checked": 3,
+    "rules_source": "CoffeeRoast-Control-RevA.kicad_pro"
+  },
+  "dfm_summary": {
+    "dfm_tier": "advanced",
+    "metrics": {
+      "min_track_width_mm": 0.16,
+      "approx_min_spacing_mm": 0.1265,
+      "min_drill_mm": 0.3,
+      "min_annular_ring_mm": 0.1,
+      "board_width_mm": 160.0,
+      "board_height_mm": 100.0
+    },
+    "violation_count": 3,
+    "ipc_class_compliance": {
+      "detected_class": 2,
+      "detection_source": "default"
+    }
+  },
+  "placement_density": {
+    "board_area_cm2": 160.0,
+    "front_density_per_cm2": 0.5,
+    "back_density_per_cm2": 0.2
+  },
+  "thermal_pad_scan": [
+    {
+      "component": "U3",
+      "pad": "2",
+      "pad_size_mm": [
+        3.5,
+        2.5
+      ],
+      "pad_area_mm2": 8.75,
+      "net": "+3V3",
+      "nearby_thermal_vias": 0,
+      "standalone_vias": 0,
+      "footprint_via_pads": 0,
+      "layer": "F.Cu",
+      "detector": "analyze_thermal_vias",
+      "rule_id": "TP-DET",
+      "category": "thermal",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Thermal pad: U3 pad 2 0 nearby vias",
+      "description": "Thermal pad on U3 pad 2: 0 nearby vias (0 standalone, 0 footprint).",
+      "components": [
+        "U3"
+      ],
+      "nets": [
+        "+3V3"
+      ],
+      "pins": [
+        "2"
+      ],
+      "recommendation": "",
+      "report_context": {
+        "section": "Thermal",
+        "impact": "Thermal dissipation",
+        "standard_ref": ""
+      }
+    }
+  ],
+  "board_thickness_mm": 1.6,
+  "findings": [
+    {
+      "net": "+24V_FUSED",
+      "net_number": 3,
+      "min_track_width_mm": 0.2,
+      "max_track_width_mm": 0.45,
+      "track_widths_used": [
+        0.2,
+        0.35,
+        0.45
+      ],
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "segment_count": 14,
+      "via_count": 0,
+      "detector": "analyze_current_capacity",
+      "rule_id": "CC-DET",
+      "category": "current_capacity",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Power net +24V_FUSED: 0.2mm min trace",
+      "description": "Power/ground net +24V_FUSED: min trace 0.2mm, max 0.45mm, 14 segments.",
+      "components": [],
+      "nets": [
+        "+24V_FUSED"
+      ],
+      "pins": [],
+      "recommendation": "",
+      "report_context": {
+        "section": "Current Capacity",
+        "impact": "Power delivery",
+        "standard_ref": "IPC-2221"
+      },
+      "stages": [
+        "layout",
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "net": "+24V_RAW",
+      "net_number": 2,
+      "min_track_width_mm": 0.2,
+      "max_track_width_mm": 0.45,
+      "track_widths_used": [
+        0.2,
+        0.45
+      ],
+      "copper_layers": [
+        "F.Cu"
+      ],
+      "segment_count": 8,
+      "via_count": 0,
+      "detector": "analyze_current_capacity",
+      "rule_id": "CC-DET",
+      "category": "current_capacity",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Power net +24V_RAW: 0.2mm min trace",
+      "description": "Power/ground net +24V_RAW: min trace 0.2mm, max 0.45mm, 8 segments.",
+      "components": [],
+      "nets": [
+        "+24V_RAW"
+      ],
+      "pins": [],
+      "recommendation": "",
+      "report_context": {
+        "section": "Current Capacity",
+        "impact": "Power delivery",
+        "standard_ref": "IPC-2221"
+      },
+      "stages": [
+        "layout",
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "net": "+3V3",
+      "net_number": 6,
+      "min_track_width_mm": 0.2,
+      "max_track_width_mm": 0.22,
+      "track_widths_used": [
+        0.2,
+        0.22
+      ],
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "segment_count": 27,
+      "via_count": 2,
+      "via_drill_sizes_mm": [
+        0.3
+      ],
+      "detector": "analyze_current_capacity",
+      "rule_id": "CC-DET",
+      "category": "current_capacity",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Power net +3V3: 0.2mm min trace",
+      "description": "Power/ground net +3V3: min trace 0.2mm, max 0.22mm, 27 segments.",
+      "components": [],
+      "nets": [
+        "+3V3"
+      ],
+      "pins": [],
+      "recommendation": "",
+      "report_context": {
+        "section": "Current Capacity",
+        "impact": "Power delivery",
+        "standard_ref": "IPC-2221"
+      },
+      "stages": [
+        "layout",
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "net": "+5V",
+      "net_number": 5,
+      "min_track_width_mm": 0.2,
+      "max_track_width_mm": 0.25,
+      "track_widths_used": [
+        0.2,
+        0.25
+      ],
+      "copper_layers": [
+        "F.Cu"
+      ],
+      "segment_count": 17,
+      "via_count": 0,
+      "detector": "analyze_current_capacity",
+      "rule_id": "CC-DET",
+      "category": "current_capacity",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Power net +5V: 0.2mm min trace",
+      "description": "Power/ground net +5V: min trace 0.2mm, max 0.25mm, 17 segments.",
+      "components": [],
+      "nets": [
+        "+5V"
+      ],
+      "pins": [],
+      "recommendation": "",
+      "report_context": {
+        "section": "Current Capacity",
+        "impact": "Power delivery",
+        "standard_ref": "IPC-2221"
+      },
+      "stages": [
+        "layout",
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "net": "GND",
+      "net_number": 1,
+      "min_track_width_mm": 0.2,
+      "max_track_width_mm": 0.45,
+      "track_widths_used": [
+        0.2,
+        0.25,
+        0.45
+      ],
+      "copper_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "segment_count": 101,
+      "via_count": 3,
+      "via_drill_sizes_mm": [
+        0.3
+      ],
+      "detector": "analyze_current_capacity",
+      "rule_id": "CC-DET",
+      "category": "current_capacity",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Power net GND: 0.2mm min trace",
+      "description": "Power/ground net GND: min trace 0.2mm, max 0.45mm, 101 segments.",
+      "components": [],
+      "nets": [
+        "GND"
+      ],
+      "pins": [],
+      "recommendation": "",
+      "report_context": {
+        "section": "Current Capacity",
+        "impact": "Power delivery",
+        "standard_ref": "IPC-2221"
+      },
+      "stages": [
+        "layout",
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "parameter": "annular_ring",
+      "actual_mm": 0.1,
+      "standard_limit_mm": 0.125,
+      "advanced_limit_mm": 0.1,
+      "tier_required": "advanced",
+      "message": "Annular ring 0.1mm requires advanced process (standard: 0.125mm)",
+      "detector": "analyze_dfm",
+      "rule_id": "DFM-001",
+      "category": "dfm",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Annular ring 0.1mm requires advanced process (standard: 0.125mm)",
+      "description": "Annular ring 0.1mm is below the standard process minimum of 0.125mm, requiring an advanced fab tier.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Annular ring 0.1mm requires advanced process (standard: 0.125mm)",
+      "report_context": {
+        "section": "DFM",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "parameter": "board_size",
+      "actual_mm": [
+        160.0,
+        100.0
+      ],
+      "threshold_mm": [
+        100.0,
+        100.0
+      ],
+      "tier_required": "standard",
+      "message": "Board size 160.0x100.0mm exceeds 100x100mm \u2014 higher fabrication pricing tier at JLCPCB",
+      "detector": "analyze_dfm",
+      "rule_id": "DFM-001",
+      "category": "dfm",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Board size 160.0x100.0mm exceeds 100x100mm pricing threshold",
+      "description": "Board size 160.0x100.0mm exceeds the 100x100mm threshold, resulting in higher fabrication pricing at JLCPCB.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Board size 160.0x100.0mm exceeds 100x100mm \u2014 higher fabrication pricing tier at JLCPCB",
+      "report_context": {
+        "section": "DFM",
+        "impact": "cost",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "parameter": "track_spacing",
+      "actual_mm": 0.1265,
+      "standard_limit_mm": 0.127,
+      "advanced_limit_mm": 0.1,
+      "tier_required": "advanced",
+      "message": "Approximate track spacing 0.1265mm requires advanced process (standard: 0.127mm)",
+      "note": "Spacing is approximate (endpoint-to-endpoint, not full segment geometry)",
+      "detector": "analyze_dfm",
+      "rule_id": "DFM-001",
+      "category": "dfm",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Track spacing 0.1265mm requires advanced process (standard: 0.127mm)",
+      "description": "Approximate track spacing 0.1265mm requires an advanced fab tier (standard minimum: 0.127mm).",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Approximate track spacing 0.1265mm requires advanced process (standard: 0.127mm)",
+      "report_context": {
+        "section": "DFM",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "parameter": "annular_ring_via",
+      "actual_mm": 0.1,
+      "class_minimum_mm": 0.125,
+      "ipc_class": 2,
+      "message": "Via annular ring 0.1mm below IPC Class 2 minimum 0.125mm",
+      "detector": "analyze_dfm",
+      "rule_id": "DFM-002",
+      "category": "dfm",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Via annular ring 0.1mm below IPC Class 2 minimum 0.125mm",
+      "description": "Via annular ring 0.1mm does not meet IPC Class 2 minimum of 0.125mm.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Increase via annular ring to at least 0.125mm to meet IPC Class 2 requirements",
+      "report_context": {
+        "section": "DFM",
+        "impact": "compliance",
+        "standard_ref": "IPC-6012 Class 2"
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "side": "B.Cu",
+      "fiducial_count": 0,
+      "fiducial_refs": [],
+      "smd_component_count": 40,
+      "finest_smd_pad_dim_mm": 1.15,
+      "detector": "analyze_fiducials",
+      "rule_id": "FD-001",
+      "category": "assembly",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "No fiducials on B.Cu (40 SMD components) (finest pad dim 1.15mm \u2014 coarse pitch only)",
+      "description": "B.Cu has 0 fiducial(s) but 40 SMD components. Assembly machines need >= 3 fiducials for accurate placement.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Add fiducial markers for pick-and-place alignment (3 per side with SMD).",
+      "report_context": {
+        "section": "Assembly",
+        "impact": "Pick-and-place alignment",
+        "standard_ref": "IPC-7351"
+      },
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "side": "F.Cu",
+      "fiducial_count": 0,
+      "fiducial_refs": [],
+      "smd_component_count": 66,
+      "finest_smd_pad_dim_mm": 0.3,
+      "detector": "analyze_fiducials",
+      "rule_id": "FD-001",
+      "category": "assembly",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "No fiducials on F.Cu (66 SMD components) (finest pad dim 0.30mm \u2014 BGA/fine-pitch QFN present)",
+      "description": "F.Cu has 0 fiducial(s) but 66 SMD components. Assembly machines need >= 3 fiducials for accurate placement.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Add fiducial markers for pick-and-place alignment (3 per side with SMD).",
+      "report_context": {
+        "section": "Assembly",
+        "impact": "Pick-and-place alignment",
+        "standard_ref": "IPC-7351"
+      },
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "component": "C4",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "C4 is 0.0mm from board edge",
+      "description": "Component C4 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "C4"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move C4 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "C5",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "C5 is 0.0mm from board edge",
+      "description": "Component C5 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "C5"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move C5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "D2",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "D2 is 0.0mm from board edge",
+      "description": "Component D2 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "D2"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move D2 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "D3",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "D3 is 0.0mm from board edge",
+      "description": "Component D3 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "D3"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move D3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "JGPIO1",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "JGPIO1 is 0.0mm from board edge (RF module antenna at board edge \u2014 verify antenna clearance, not a body collision)",
+      "description": "Component JGPIO1 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "JGPIO1"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move JGPIO1 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "TP24V",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "TP24V is 0.0mm from board edge",
+      "description": "Component TP24V on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "TP24V"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move TP24V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "TP3V3",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "TP3V3 is 0.0mm from board edge",
+      "description": "Component TP3V3 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "TP3V3"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move TP3V3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "TP5V",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "TP5V is 0.0mm from board edge",
+      "description": "Component TP5V on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "TP5V"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move TP5V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "TPGND",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "TPGND is 0.0mm from board edge",
+      "description": "Component TPGND on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "TPGND"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move TPGND further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "U1",
+      "layer": "F.Cu",
+      "edge_clearance_mm": -2.75,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "U1 is -2.75mm from board edge (RF module antenna at board edge \u2014 verify antenna clearance, not a body collision)",
+      "description": "Component U1 on F.Cu is only -2.75mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "U1"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move U1 further from board edge (currently -2.75mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "component": "U5",
+      "layer": "F.Cu",
+      "edge_clearance_mm": 0.0,
+      "detector": "analyze_placement",
+      "rule_id": "PM-002",
+      "category": "placement",
+      "severity": "error",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "U5 is 0.0mm from board edge",
+      "description": "Component U5 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+      "components": [
+        "U5"
+      ],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Move U5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+      "report_context": {
+        "section": "Placement",
+        "impact": "manufacturability",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    },
+    {
+      "total_signal_nets": 48,
+      "nets_with_test_points": 37,
+      "coverage_pct": 77.1,
+      "test_point_count": 44,
+      "detector": "analyze_test_point_coverage",
+      "rule_id": "TE-001",
+      "category": "testability",
+      "severity": "info",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Test point coverage: 37/48 nets (77%)",
+      "description": "37 of 48 signal nets have test points (77% coverage).",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Add test points to improve ICT/flying probe coverage.",
+      "report_context": {
+        "section": "Testability",
+        "impact": "ICT accessibility",
+        "standard_ref": ""
+      },
+      "stages": [
+        "pre_fab"
+      ],
+      "in_active_stage": true
+    },
+    {
+      "component": "U3",
+      "value": "3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117",
+      "library": "",
+      "layer": "F.Cu",
+      "pad_number": "2",
+      "pad_size_mm": [
+        3.5,
+        2.5
+      ],
+      "pad_area_mm2": 8.75,
+      "net": "+3V3",
+      "via_count": 0,
+      "effective_via_count": 0.0,
+      "standalone_vias": 0,
+      "footprint_via_pads": 0,
+      "nearby_verified_vias": 0,
+      "nearby_unverified_vias": 0,
+      "nearby_search_radius_mm": 9.0,
+      "total_verified_via_count": 0,
+      "total_effective_verified_vias": 0.0,
+      "adequacy_source": "none",
+      "via_density_per_mm2": 0.0,
+      "vias_tented": 0,
+      "vias_untented": 0,
+      "recommended_min_vias": 5,
+      "recommended_ideal_vias": 9,
+      "adequacy": "none",
+      "raw_adequacy": "none",
+      "detector": "analyze_thermal_pad_vias",
+      "rule_id": "TV-001",
+      "category": "thermal",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Thermal vias: U3 none (0/5 min)",
+      "description": "Thermal pad on U3 pad 2: none (0 vias, 5 recommended).",
+      "components": [
+        "U3"
+      ],
+      "nets": [
+        "+3V3"
+      ],
+      "pins": [],
+      "recommendation": "Add thermal vias under U3 (need 5, have 0).",
+      "report_context": {
+        "section": "Thermal",
+        "impact": "Thermal dissipation",
+        "standard_ref": ""
+      },
+      "stages": [
+        "layout"
+      ],
+      "in_active_stage": false
+    }
+  ],
+  "trust_summary": {
+    "total_findings": 24,
+    "trust_level": "high",
+    "by_confidence": {
+      "deterministic": 24,
+      "heuristic": 0,
+      "datasheet-backed": 0
+    },
+    "by_evidence_source": {
+      "datasheet": 0,
+      "topology": 24,
+      "heuristic_rule": 0,
+      "symbol_footprint": 0,
+      "bom": 0,
+      "geometry": 0,
+      "api_lookup": 0
+    },
+    "provenance_coverage_pct": 0.0
+  },
+  "summary": {
+    "total_findings": 24,
+    "by_severity": {
+      "error": 10,
+      "warning": 4,
+      "info": 10
+    }
+  },
+  "design_intent": {
+    "product_class": "prototype",
+    "ipc_class": 2,
+    "target_market": "hobby",
+    "expected_lifetime_years": 5,
+    "operating_temp_range": [
+      -10,
+      70
+    ],
+    "preferred_passive_size": "0603",
+    "test_coverage_target": 0.85,
+    "approved_manufacturers": [],
+    "confidence": 0.45,
+    "detection_signals": [
+      "44 test points (TP*) detected",
+      "board area 16000mm\u00b2 (>100cm\u00b2)"
+    ],
+    "source": {
+      "ipc_class": "auto",
+      "product_class": "auto",
+      "target_market": "auto",
+      "expected_lifetime_years": "auto",
+      "operating_temp_range": "auto",
+      "preferred_passive_size": "auto",
+      "test_coverage_target": "auto",
+      "approved_manufacturers": "auto"
+    }
+  },
+  "stage_filter": {
+    "active_stage": "pre_fab",
+    "included_count": 8,
+    "excluded_count": 16
+  },
+  "audience_summary": {
+    "designer": {
+      "total_findings": 24,
+      "by_severity": {
+        "error": 10,
+        "warning": 4,
+        "info": 10
+      },
+      "by_category": {
+        "current_capacity": 5,
+        "dfm": 4,
+        "assembly": 2,
+        "placement": 11,
+        "testability": 1,
+        "thermal": 1
+      },
+      "top_issues": [
+        {
+          "side": "F.Cu",
+          "fiducial_count": 0,
+          "fiducial_refs": [],
+          "smd_component_count": 66,
+          "finest_smd_pad_dim_mm": 0.3,
+          "detector": "analyze_fiducials",
+          "rule_id": "FD-001",
+          "category": "assembly",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "No fiducials on F.Cu (66 SMD components) (finest pad dim 0.30mm \u2014 BGA/fine-pitch QFN present)",
+          "description": "F.Cu has 0 fiducial(s) but 66 SMD components. Assembly machines need >= 3 fiducials for accurate placement.",
+          "components": [],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Add fiducial markers for pick-and-place alignment (3 per side with SMD).",
+          "report_context": {
+            "section": "Assembly",
+            "impact": "Pick-and-place alignment",
+            "standard_ref": "IPC-7351"
+          },
+          "stages": [
+            "pre_fab"
+          ],
+          "in_active_stage": true
+        },
+        {
+          "component": "C4",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "C4 is 0.0mm from board edge",
+          "description": "Component C4 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "C4"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move C4 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "C5",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "C5 is 0.0mm from board edge",
+          "description": "Component C5 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "C5"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move C5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "D2",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "D2 is 0.0mm from board edge",
+          "description": "Component D2 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "D2"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move D2 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "D3",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "D3 is 0.0mm from board edge",
+          "description": "Component D3 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "D3"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move D3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "TP24V",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "TP24V is 0.0mm from board edge",
+          "description": "Component TP24V on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "TP24V"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move TP24V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "TP3V3",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "TP3V3 is 0.0mm from board edge",
+          "description": "Component TP3V3 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "TP3V3"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move TP3V3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "TP5V",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "TP5V is 0.0mm from board edge",
+          "description": "Component TP5V on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "TP5V"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move TP5V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "TPGND",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "TPGND is 0.0mm from board edge",
+          "description": "Component TPGND on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "TPGND"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move TPGND further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        },
+        {
+          "component": "U5",
+          "layer": "F.Cu",
+          "edge_clearance_mm": 0.0,
+          "detector": "analyze_placement",
+          "rule_id": "PM-002",
+          "category": "placement",
+          "severity": "error",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "U5 is 0.0mm from board edge",
+          "description": "Component U5 on F.Cu is only 0.0mm from the board edge, risking damage during depaneling or handling.",
+          "components": [
+            "U5"
+          ],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Move U5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "report_context": {
+            "section": "Placement",
+            "impact": "manufacturability",
+            "standard_ref": ""
+          },
+          "stages": [
+            "layout"
+          ],
+          "in_active_stage": false
+        }
+      ]
+    },
+    "reviewer": {
+      "total_findings": 14,
+      "by_category": {
+        "dfm": 3,
+        "assembly": 1,
+        "placement": 9,
+        "thermal": 1
+      },
+      "top_issues": [
+        {
+          "rule_id": "FD-001",
+          "severity": "error",
+          "summary": "No fiducials on F.Cu (66 SMD components) (finest pad dim 0.30mm \u2014 BGA/fine-pitch QFN present)",
+          "recommendation": "Add fiducial markers for pick-and-place alignment (3 per side with SMD).",
+          "category": "assembly"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "C4 is 0.0mm from board edge",
+          "recommendation": "Move C4 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "C5 is 0.0mm from board edge",
+          "recommendation": "Move C5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "D2 is 0.0mm from board edge",
+          "recommendation": "Move D2 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "D3 is 0.0mm from board edge",
+          "recommendation": "Move D3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "TP24V is 0.0mm from board edge",
+          "recommendation": "Move TP24V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "TP3V3 is 0.0mm from board edge",
+          "recommendation": "Move TP3V3 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "TP5V is 0.0mm from board edge",
+          "recommendation": "Move TP5V further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "TPGND is 0.0mm from board edge",
+          "recommendation": "Move TPGND further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "PM-002",
+          "severity": "error",
+          "summary": "U5 is 0.0mm from board edge",
+          "recommendation": "Move U5 further from board edge (currently 0.0mm, recommend >= 1.0mm)",
+          "category": "placement"
+        },
+        {
+          "rule_id": "DFM-001",
+          "severity": "warning",
+          "summary": "Annular ring 0.1mm requires advanced process (standard: 0.125mm)",
+          "recommendation": "Annular ring 0.1mm requires advanced process (standard: 0.125mm)",
+          "category": "dfm"
+        },
+        {
+          "rule_id": "DFM-001",
+          "severity": "warning",
+          "summary": "Track spacing 0.1265mm requires advanced process (standard: 0.127mm)",
+          "recommendation": "Approximate track spacing 0.1265mm requires advanced process (standard: 0.127mm)",
+          "category": "dfm"
+        },
+        {
+          "rule_id": "DFM-002",
+          "severity": "warning",
+          "summary": "Via annular ring 0.1mm below IPC Class 2 minimum 0.125mm",
+          "recommendation": "Increase via annular ring to at least 0.125mm to meet IPC Class 2 requirements",
+          "category": "dfm"
+        },
+        {
+          "rule_id": "TV-001",
+          "severity": "warning",
+          "summary": "Thermal vias: U3 none (0/5 min)",
+          "recommendation": "Add thermal vias under U3 (need 5, have 0).",
+          "category": "thermal"
+        }
+      ]
+    },
+    "manager": {
+      "risk_level": "high",
+      "blocker_count": 10,
+      "warning_count": 4,
+      "stage_readiness": {
+        "schematic": "pass",
+        "layout": "needs_work",
+        "pre_fab": "needs_work",
+        "bring_up": "pass"
+      },
+      "one_liner": "10 errors, 4 warnings across 4 categories. Layout, pre-fab stages have blockers."
+    }
+  }
+}

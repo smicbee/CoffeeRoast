@@ -1,0 +1,17 @@
+{
+  "fileId": "0fb595726dc344d08a0c93a965b2918a",
+  "fileSystemAccessId": "8762676467983626240",
+  "result": {
+    "technologyDiscernRecordId": 34690850,
+    "technologyDiscernRecordNum": "890a204767ee476a8a7d48bfb4125242",
+    "gerberFileId": 68721452,
+    "createTime": 1783395098000,
+    "stencilLayer": 2,
+    "pcsLength": 160.0,
+    "pcsWidth": 100.0,
+    "setLength": 160.0,
+    "setWidth": 100.0,
+    "gerberResult": 0
+  },
+  "source": "Fresh JLC upload using gerber-only ZIP with no assembly CSVs and no DNP CSVs; browser response confirmed head=ok."
+}

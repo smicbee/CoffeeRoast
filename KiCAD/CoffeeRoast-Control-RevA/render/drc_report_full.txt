@@ -1,6 +1,6 @@
 ** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
-** Created on 2026-07-05T06:20:14+0200 **
-** Report includes: Fehler, Warnungen, Ausschlüsse **
+** Created on 2026-07-05T09:37:32+0200 **
+** Report includes: Fehler, Warnungen **
 
 ** Found 200 DRC violations **
 [nonmirrored_text_on_back_layer]: Nicht-gespiegelter Text auf Rückseite

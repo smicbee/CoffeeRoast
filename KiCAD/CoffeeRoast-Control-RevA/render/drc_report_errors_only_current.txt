@@ -1,0 +1,11 @@
+** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
+** Created on 2026-07-05T11:41:10+0200 **
+** Report includes: Fehler **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

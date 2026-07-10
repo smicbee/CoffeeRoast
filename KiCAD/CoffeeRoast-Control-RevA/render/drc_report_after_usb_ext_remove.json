@@ -1,0 +1,382 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:07:21+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,1800 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "0860a8f0-2bb8-4801-a53c-76f21638a43b"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 1,0017 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "9a76f139-073d-4e0f-bd36-c356fd2bad0c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,1800 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "7708e0c5-8bb9-4eda-b274-9eae1cc09ec4"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 1,0017 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "90b28552-0cdf-492a-8b0a-14c17439c365"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad A12 [GND] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 27.65
+                    },
+                    "uuid": "671b8d96-dc65-41ef-928f-96438f05e04a"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,1800 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "0860a8f0-2bb8-4801-a53c-76f21638a43b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad A1 [GND] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 34.35
+                    },
+                    "uuid": "104ff143-35e8-485d-a3db-ea3ab629d86b"
+                },
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 150.895,
+                        "y": 35.32
+                    },
+                    "uuid": "37bdeea8-a466-4a44-922b-74e5205c56c7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad A1 [GND] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 34.35
+                    },
+                    "uuid": "104ff143-35e8-485d-a3db-ea3ab629d86b"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,1800 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "7708e0c5-8bb9-4eda-b274-9eae1cc09ec4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 150.895,
+                        "y": 26.68
+                    },
+                    "uuid": "ad574158-961e-4cb6-9067-e399a6fea44a"
+                },
+                {
+                    "description": "Pad A12 [GND] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 27.65
+                    },
+                    "uuid": "671b8d96-dc65-41ef-928f-96438f05e04a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 150.895,
+                        "y": 35.32
+                    },
+                    "uuid": "37bdeea8-a466-4a44-922b-74e5205c56c7"
+                },
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 155.075,
+                        "y": 35.32
+                    },
+                    "uuid": "3e62a6fc-2145-4ab5-8e70-e75a122128d2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 155.075,
+                        "y": 26.68
+                    },
+                    "uuid": "e502cf18-ff19-44ba-8344-1d6c6b84dd7a"
+                },
+                {
+                    "description": "Durchsteckpad S1 [GND] von J5",
+                    "pos": {
+                        "x": 150.895,
+                        "y": 26.68
+                    },
+                    "uuid": "ad574158-961e-4cb6-9067-e399a6fea44a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 0,8163 mm",
+                    "pos": {
+                        "x": 141.8769,
+                        "y": 33.25
+                    },
+                    "uuid": "220baed3-7e3d-4bed-a255-29ffbaa27b85"
+                },
+                {
+                    "description": "Pad B9 [USB_VBUS] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 33.25
+                    },
+                    "uuid": "6acf23f2-0f5d-4891-9283-1f24ba7d989c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad B9 [USB_VBUS] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 33.25
+                    },
+                    "uuid": "6acf23f2-0f5d-4891-9283-1f24ba7d989c"
+                },
+                {
+                    "description": "Pad B4 [USB_VBUS] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 28.75
+                    },
+                    "uuid": "d00fa2a3-8ba8-43d6-b75f-39333c2e694f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN] auf F.Cu, Länge 1,0000 mm",
+                    "pos": {
+                        "x": 142.1067,
+                        "y": 30.75
+                    },
+                    "uuid": "9e2db4c4-7312-4caf-85b8-7b9babedc804"
+                },
+                {
+                    "description": "Pad A7 [USB_DN] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 30.75
+                    },
+                    "uuid": "a08c0a68-a372-4278-92bd-2d4f5c441e6f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad B7 [USB_DN] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 31.75
+                    },
+                    "uuid": "73097bb8-3d6a-41bf-a505-2d84d800ee5d"
+                },
+                {
+                    "description": "Pad A7 [USB_DN] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 30.75
+                    },
+                    "uuid": "a08c0a68-a372-4278-92bd-2d4f5c441e6f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad B6 [USB_DP] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 30.25
+                    },
+                    "uuid": "bf704a67-1b69-4639-8fdb-60a81659b4f9"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf F.Cu, Länge 0,7767 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "ad178982-5b7d-4de2-9317-70f68650891c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad A6 [USB_DP] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 31.25
+                    },
+                    "uuid": "5273da94-992d-4f43-b5c7-887033cd822a"
+                },
+                {
+                    "description": "Pad B6 [USB_DP] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 30.25
+                    },
+                    "uuid": "bf704a67-1b69-4639-8fdb-60a81659b4f9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad A5 [USB_CC1] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 32.25
+                    },
+                    "uuid": "b582e843-47f6-42cb-b680-3a3c69f0cc95"
+                },
+                {
+                    "description": "Leiterbahn [USB_CC1] auf F.Cu, Länge 8,0914 mm",
+                    "pos": {
+                        "x": 133.238599,
+                        "y": 32.25
+                    },
+                    "uuid": "2b48ff25-d564-4664-ba40-f72aed598830"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad B5 [USB_CC2] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 29.25
+                    },
+                    "uuid": "64dc3604-b3e8-499f-938a-77c989ef4ab2"
+                },
+                {
+                    "description": "Leiterbahn [USB_CC2] auf F.Cu, Länge 12,0505 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "f4edcb94-70f4-484c-8cc7-798de33ed78b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}

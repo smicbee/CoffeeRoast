@@ -1,0 +1,342 @@
+** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
+** Created on 2026-07-05T09:41:31+0200 **
+** Report includes: Fehler, Warnungen **
+
+** Found 110 DRC violations **
+[silk_overlap]: Bestückungsdrucküberlappung
+    Regel: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
+    @(50,0000 mm, 82,6000 mm): Referenzfeld von TPGND
+    @(50,0000 mm, 69,0000 mm): Abschnitt von U4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 30,4000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 31,6000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 30,4000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 31,6000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(74,8500 mm, 85,4000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(74,8500 mm, 86,6000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(77,1500 mm, 85,4000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(77,1500 mm, 86,6000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 29,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 35,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 29,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 35,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 47,4000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 47,4000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(89,8500 mm, 62,4000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(89,8500 mm, 63,6000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(92,1500 mm, 62,4000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(92,1500 mm, 63,6000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(95,1000 mm, 57,7000 mm): Abschnitt von U2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(100,9000 mm, 52,3000 mm): Abschnitt von U2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 39,4000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 40,6000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 39,4000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 40,6000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(22,0000 mm, 87,0000 mm): Abschnitt von U4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(50,0000 mm, 69,0000 mm): Abschnitt von U4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(110,8500 mm, 25,4000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(110,8500 mm, 26,6000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(113,1500 mm, 25,4000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(113,1500 mm, 26,6000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 51,4000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 52,6000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 51,4000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 52,6000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(64,2500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(71,7500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(71,7500 mm, 81,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 35,4000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 36,6000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 35,4000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 36,6000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 35,4000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 36,6000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 35,4000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 36,6000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(103,8500 mm, 21,4000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(103,8500 mm, 22,6000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(106,1500 mm, 21,4000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(106,1500 mm, 22,6000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(59,8500 mm, 85,4000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(59,8500 mm, 86,6000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(62,1500 mm, 85,4000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(62,1500 mm, 86,6000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 31,4000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 32,6000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 31,4000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 32,6000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(116,4000 mm, 68,6000 mm): Abschnitt von Q2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(119,6000 mm, 71,4000 mm): Abschnitt von Q2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 26,4000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 27,6000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 26,4000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 27,6000 mm): Abschnitt von R7 auf F.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 23,6900 mm): Platinen-Text "3V3" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 26,2300 mm): Platinen-Text "EN" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 28,7700 mm): Platinen-Text "IO4" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 31,3100 mm): Platinen-Text "IO5" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 33,8500 mm): Platinen-Text "IO6" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 36,3900 mm): Platinen-Text "IO7" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 38,9300 mm): Platinen-Text "IO15" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 41,4700 mm): Platinen-Text "IO16" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 44,0100 mm): Platinen-Text "IO17" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 46,5500 mm): Platinen-Text "IO18" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 49,0900 mm): Platinen-Text "IO8" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 51,6300 mm): Platinen-Text "USB_D-" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(56,7000 mm, 54,1700 mm): Platinen-Text "USB_D+" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(72,1000 mm, 59,6500 mm): Platinen-Text "IO3" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(74,6400 mm, 59,6500 mm): Platinen-Text "IO46" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(77,1800 mm, 59,6500 mm): Platinen-Text "IO9" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(79,7200 mm, 59,6500 mm): Platinen-Text "IO10" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(82,2600 mm, 59,6500 mm): Platinen-Text "IO11" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(84,8000 mm, 59,6500 mm): Platinen-Text "IO12" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(87,3400 mm, 59,6500 mm): Platinen-Text "IO13" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(89,8800 mm, 59,6500 mm): Platinen-Text "IO14" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(92,4200 mm, 59,6500 mm): Platinen-Text "IO21" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(94,9600 mm, 59,6500 mm): Platinen-Text "IO47" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(97,5000 mm, 59,6500 mm): Platinen-Text "IO48" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(100,0400 mm, 59,6500 mm): Platinen-Text "IO45" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 21,1500 mm): Platinen-Text "GND" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 23,6900 mm): Platinen-Text "IO1" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 26,2300 mm): Platinen-Text "IO2" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 28,7700 mm): Platinen-Text "TXD0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 31,3100 mm): Platinen-Text "RXD0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 33,8500 mm): Platinen-Text "IO42" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 36,3900 mm): Platinen-Text "IO41" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 38,9300 mm): Platinen-Text "IO40" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 41,4700 mm): Platinen-Text "IO39" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 44,0100 mm): Platinen-Text "IO38" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 46,5500 mm): Platinen-Text "IO37" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 51,6300 mm): Platinen-Text "IO35" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 54,1700 mm): Platinen-Text "IO0" auf B.Silkscreen
+[text_height]: Schrifthöhe außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe min. Breite 0,8000 mm; tatsächlich 0,6500 mm)
+    Regel: Einschränkungen aus Platinenkonfiguration zur Bestückungsdruckhöhe; warning
+    @(112,6000 mm, 49,0900 mm): Platinen-Text "IO36" auf B.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

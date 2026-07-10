@@ -32,5 +32,6 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 2. Enable SMT assembly for the top side only.
 3. Upload `assembly/bom_smd_partial.csv` and `assembly/cpl_smd_partial.csv`.
 4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
-5. Order 5 boards, but only 2 assembled if the UI allows it.
-6. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.
+5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
+6. Order 5 boards, but only 2 assembled if the UI allows it.
+7. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.

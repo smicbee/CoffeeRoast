@@ -1,6 +1,6 @@
 # CoffeeRoast-Control RevA.1 partial-SMD PCBA package
 
-This package is the Y4 conservative Max-PCBA quote attempt: PCB fabrication + top-side SMD assembly, with the previous safe SMD set plus J1-J4 5.08mm THT terminal blocks and Q1 IRLB4030PBF/C2663 TO-220 fan MOSFET as JLC assembly candidates. Do not pay until JLC confirms THT handling, orientation, and cost.
+This package is for the recommended first prototype order: **PCB fabrication + top-side SMD assembly only**, with power/THT/mechanical parts hand-soldered afterward.
 
 ## Upload set
 
@@ -18,7 +18,7 @@ This package is the Y4 conservative Max-PCBA quote attempt: PCB fabrication + to
 - `U3` and `U4` are intentionally **not** in the first PCBA placement set because the exact switching-regulator/buck implementation is still the main RevA.2 decision.
 - `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
-- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, Q1 TO-220 body/pin orientation, and polarized/marked passives.
+- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
 
 ## Verification run
 
@@ -28,14 +28,10 @@ This package is the Y4 conservative Max-PCBA quote attempt: PCB fabrication + to
 
 ## Recommended order flow
 
-CPL note: the JLC placement preview expects Y from the opposite board edge for this export. `assembly/cpl_smd_partial.csv` and `assembly/cpl_smd_partial_JLC_Y_corrected.csv` use corrected Y = 100.0 mm - KiCad Y so parts overlay the 160 x 100 mm Gerber correctly.
-
-Q1 / C2663 gate: treat this as a quote/preview experiment. Proceed only if JLC accepts TO-220/THT placement, the G-D-S orientation/body direction is visibly correct, and the surcharge/lead time is acceptable. Otherwise mark Q1 DNP and hand-solder it.
-
-
 1. Upload the ZIP or the Gerber/drill files for PCB fabrication.
 2. Enable SMT assembly for the top side only.
 3. Upload `assembly/bom_smd_partial.csv` and `assembly/cpl_smd_partial.csv`.
 4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
-5. Order 5 boards, but only 2 assembled if the UI allows it.
-6. If JLC accepts the Y4 quote, J1-J4 and Q1 should be assembled by JLC. Hand-solder F1, D1, U3, U4, C4, SW1, SW2 after the boards arrive.
+5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
+6. Order 5 boards, but only 2 assembled if the UI allows it.
+7. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.

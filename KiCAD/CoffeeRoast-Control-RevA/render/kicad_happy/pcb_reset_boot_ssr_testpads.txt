@@ -1,0 +1,26 @@
+=== Design Analysis [stage: pre_fab] ===
+
+--- current_capacity ---
+  [1] INFO CC-DET: Power net +24V_FUSED: 0.2mm min trace
+      Detail: Power/ground net +24V_FUSED: min trace 0.2mm, max 0.45mm, 14 segments.
+      Stages: layout, pre_fab
+  [2] INFO CC-DET: Power net +24V_RAW: 0.2mm min trace
+      Detail: Power/ground net +24V_RAW: min trace 0.2mm, max 0.45mm, 8 segments.
+      Stages: layout, pre_fab
+  [3] INFO CC-DET: Power net +3V3: 0.2mm min trace
+      Detail: Power/ground net +3V3: min trace 0.2mm, max 0.22mm, 27 segments.
+      Stages: layout, pre_fab
+  [4] INFO CC-DET: Power net +5V: 0.2mm min trace
+      Detail: Power/ground net +5V: min trace 0.2mm, max 0.25mm, 18 segments.
+      Stages: layout, pre_fab
+  [5] INFO CC-DET: Power net GND: 0.2mm min trace
+      Detail: Power/ground net GND: min trace 0.2mm, max 0.45mm, 103 segments.
+      Stages: layout, pre_fab
+
+--- testability ---
+  [6] INFO TE-001: Test point coverage: 38/48 nets (79%)
+      Detail: 38 of 48 signal nets have test points (79% coverage).
+      Fix:    Add test points to improve ICT/flying probe coverage.
+      Stages: pre_fab
+
+Total: 6 (0 errors, 0 warnings, 6 info)

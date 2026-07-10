@@ -1,0 +1,152 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T21:44:36+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 1,2017 mm",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 72.0
+                    },
+                    "uuid": "0164a4c9-4223-4cf1-a9e3-32611427a8ce"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 18,6783 mm",
+                    "pos": {
+                        "x": 33.08,
+                        "y": 29.3217
+                    },
+                    "uuid": "2865cb82-681c-4bb1-a56a-8db12256e46a"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 14,0290 mm",
+                    "pos": {
+                        "x": 43.0,
+                        "y": 19.4017
+                    },
+                    "uuid": "287cfc30-e3ca-4e9e-b8b3-d04ac499064f"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 1,4017 mm",
+                    "pos": {
+                        "x": 43.0,
+                        "y": 18.0
+                    },
+                    "uuid": "340f3d84-2fdc-4951-aaa2-960b036d17ae"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 11,4268 mm",
+                    "pos": {
+                        "x": 33.08,
+                        "y": 62.7183
+                    },
+                    "uuid": "3e51b3bf-3207-4c0d-be12-e738d0b8d5ac"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_FUSED] auf B.Cu, Länge 14,7183 mm",
+                    "pos": {
+                        "x": 33.08,
+                        "y": 48.0
+                    },
+                    "uuid": "b3ed3102-a5f2-4e69-8f9b-6f330d179de7"
+                },
+                {
+                    "description": "Zone \"GND_B_CU_KICAD_HAPPY\" [GND] auf B.Cu, Priorität 0",
+                    "pos": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "uuid": "d7b43167-dffd-447d-b1ce-4cc4673e4d6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

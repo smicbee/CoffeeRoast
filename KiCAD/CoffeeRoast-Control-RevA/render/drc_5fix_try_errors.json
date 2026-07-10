@@ -1,0 +1,911 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T21:43:45+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 6,1141 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "233c5bf9-e909-4026-b734-54c1ea7b92f0"
+                },
+                {
+                    "description": "Pad 2 [GND] von C8 auf F.Cu",
+                    "pos": {
+                        "x": 92.4,
+                        "y": 54.5
+                    },
+                    "uuid": "5026ff18-dc2c-4433-a742-5c08befecfae"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 5,7959 mm",
+                    "pos": {
+                        "x": 72.0983,
+                        "y": 86.0
+                    },
+                    "uuid": "e0098ad7-5448-45b8-a483-0438b88aca60"
+                },
+                {
+                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 68.9,
+                        "y": 83.1
+                    },
+                    "uuid": "365981f5-25ff-406d-b270-94fb5106be6f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0978 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9224 mm",
+                    "pos": {
+                        "x": 65.2483,
+                        "y": 48.2099
+                    },
+                    "uuid": "d18c0db2-0f7b-4e0c-8da9-9edaab80bc5e"
+                },
+                {
+                    "description": "Leiterbahn [FAN_GATE] auf F.Cu, Länge 1,6947 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 49.1983
+                    },
+                    "uuid": "ff084ac6-6563-4197-afb6-7b8e5b4de262"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0978 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 14,9923 mm",
+                    "pos": {
+                        "x": 64.5961,
+                        "y": 48.8621
+                    },
+                    "uuid": "26a32981-cd41-4935-b949-cbc11d313194"
+                },
+                {
+                    "description": "Leiterbahn [FAN_GATE] auf F.Cu, Länge 1,6947 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 49.1983
+                    },
+                    "uuid": "ff084ac6-6563-4197-afb6-7b8e5b4de262"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0978 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,8934 mm",
+                    "pos": {
+                        "x": 65.2483,
+                        "y": 47.3165
+                    },
+                    "uuid": "de37d69d-8552-4fdc-a3fe-c315b51326ab"
+                },
+                {
+                    "description": "Leiterbahn [FAN_GATE] auf F.Cu, Länge 1,6947 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 49.1983
+                    },
+                    "uuid": "ff084ac6-6563-4197-afb6-7b8e5b4de262"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0267 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] von U3 auf F.Cu",
+                    "pos": {
+                        "x": 65.7,
+                        "y": 80.8
+                    },
+                    "uuid": "381907e7-503f-45a8-ae09-cc12bc50daba"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 11,0542 mm",
+                    "pos": {
+                        "x": 58.6852,
+                        "y": 72.0
+                    },
+                    "uuid": "a545929c-ea8f-406b-87a4-4f7af0d8ec10"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 4,3407 mm",
+                    "pos": {
+                        "x": 66.5017,
+                        "y": 79.8165
+                    },
+                    "uuid": "b18b9244-a5b8-427a-80f4-b505b3dd5da6"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,9408 mm",
+                    "pos": {
+                        "x": 68.9,
+                        "y": 83.1
+                    },
+                    "uuid": "f9c6a289-7f09-4bbc-9456-799943ad1a03"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_PWM] auf F.Cu, Länge 4,8384 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 47.3865
+                    },
+                    "uuid": "a0b5cc52-2a8b-47f3-ae40-bb9b33cdae16"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,1670 mm",
+                    "pos": {
+                        "x": 66.5335,
+                        "y": 47.1983
+                    },
+                    "uuid": "ed3290de-33ff-438d-ad10-75625add3dbc"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 5,7959 mm",
+                    "pos": {
+                        "x": 72.0983,
+                        "y": 86.0
+                    },
+                    "uuid": "e0098ad7-5448-45b8-a483-0438b88aca60"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,9408 mm",
+                    "pos": {
+                        "x": 68.9,
+                        "y": 83.1
+                    },
+                    "uuid": "f9c6a289-7f09-4bbc-9456-799943ad1a03"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 6,1141 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "233c5bf9-e909-4026-b734-54c1ea7b92f0"
+                },
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 92.4,
+                        "y": 54.5
+                    },
+                    "uuid": "48fd4834-40af-4746-b32c-2e442c54ebbd"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 5,7959 mm",
+                    "pos": {
+                        "x": 72.0983,
+                        "y": 86.0
+                    },
+                    "uuid": "e0098ad7-5448-45b8-a483-0438b88aca60"
+                },
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 68.9,
+                        "y": 83.1
+                    },
+                    "uuid": "e4324f80-2b59-4cf6-99c7-96a8bb5db7ba"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0808 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 10,9570 mm",
+                    "pos": {
+                        "x": 118.4233,
+                        "y": 70.7478
+                    },
+                    "uuid": "69982a36-e74c-430c-bca1-061f0e1bac66"
+                },
+                {
+                    "description": "Via [SSR_GATE] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 116.9688,
+                        "y": 70.0439
+                    },
+                    "uuid": "6a83c586-fb96-44d3-b09a-2542376bf1cc"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0776 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 30,5533 mm",
+                    "pos": {
+                        "x": 109.619,
+                        "y": 25.6052
+                    },
+                    "uuid": "06216867-584b-4e1b-a8a3-910d6b72aa96"
+                },
+                {
+                    "description": "Via [SSR_GATE] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 110.1466,
+                        "y": 25.9112
+                    },
+                    "uuid": "45e65b0c-6067-4359-afaa-67d28f08ef90"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 3,4499 mm",
+                    "pos": {
+                        "x": 44.2483,
+                        "y": 28.7967
+                    },
+                    "uuid": "32fb00ff-3b05-4d70-9d28-71d40e5bf33d"
+                },
+                {
+                    "description": "Durchsteckpad 2 [EN] von SW1",
+                    "pos": {
+                        "x": 45.25,
+                        "y": 29.75
+                    },
+                    "uuid": "780d01e5-45ff-4356-b0c7-afcc5afee3ed"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 5,9932 mm",
+                    "pos": {
+                        "x": 41.7517,
+                        "y": 36.2534
+                    },
+                    "uuid": "33b7023e-99c5-488b-8cde-66951a9b927e"
+                },
+                {
+                    "description": "Durchsteckpad 1 [BOOT] von SW2",
+                    "pos": {
+                        "x": 40.75,
+                        "y": 39.75
+                    },
+                    "uuid": "6f2eff0e-3204-4678-b145-e8fcc89b9d1b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0630 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,9592 mm",
+                    "pos": {
+                        "x": 66.663,
+                        "y": 51.287
+                    },
+                    "uuid": "78bb7602-86de-4c66-a9e1-feca4d9b1155"
+                },
+                {
+                    "description": "Pad 2 [FAN_GATE] von R1 auf F.Cu",
+                    "pos": {
+                        "x": 65.95,
+                        "y": 48.0
+                    },
+                    "uuid": "ccd2290d-1f4b-43e9-a0cb-69303554e06d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Via [FAN_PWM] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.2415,
+                        "y": 43.9652
+                    },
+                    "uuid": "26ad1fcf-e63c-4720-8430-6845eb62b351"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 11,4400 mm",
+                    "pos": {
+                        "x": 72.7398,
+                        "y": 43.6886
+                    },
+                    "uuid": "47c0fac9-3ed3-410f-bb9f-1f081df9265e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 10,3071 mm",
+                    "pos": {
+                        "x": 50.4026,
+                        "y": 86.8017
+                    },
+                    "uuid": "7ac35fb4-8029-4940-b635-1ab135fddbbc"
+                },
+                {
+                    "description": "Pad 1 [+5V] von C1 auf F.Cu",
+                    "pos": {
+                        "x": 60.05,
+                        "y": 86.0
+                    },
+                    "uuid": "8d10ccef-90cb-47b2-8619-054b1dcfe06a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0805 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 2,2340 mm",
+                    "pos": {
+                        "x": 62.3314,
+                        "y": 84.1572
+                    },
+                    "uuid": "3418f5cd-56b1-41ed-a0c0-dde99879daef"
+                },
+                {
+                    "description": "Pad 2 [GND] von C1 auf F.Cu",
+                    "pos": {
+                        "x": 61.95,
+                        "y": 86.0
+                    },
+                    "uuid": "8fe757fb-144b-4084-91bc-96debfda526d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0301 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,5851 mm",
+                    "pos": {
+                        "x": 75.8346,
+                        "y": 87.1034
+                    },
+                    "uuid": "97ab02f5-08b5-4eb4-a640-6eacafcace59"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 6,4879 mm",
+                    "pos": {
+                        "x": 75.6341,
+                        "y": 86.8017
+                    },
+                    "uuid": "ce5164a9-6b2c-4a8a-ba17-0ea13721bfa8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 6,1141 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "233c5bf9-e909-4026-b734-54c1ea7b92f0"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,7675 mm",
+                    "pos": {
+                        "x": 92.4,
+                        "y": 54.5
+                    },
+                    "uuid": "80aed4e6-cf53-4693-8079-05ffca8721cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 31,7332 mm",
+                    "pos": {
+                        "x": 48.2017,
+                        "y": 81.5966
+                    },
+                    "uuid": "4e79885c-3746-4369-826f-6a63f102fb80"
+                },
+                {
+                    "description": "Durchsteckpad 3 [+5V] von U4",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 72.0
+                    },
+                    "uuid": "a28d3246-bb03-4e3b-a8ae-aa6580d54844"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,1672 mm",
+                    "pos": {
+                        "x": 65.3665,
+                        "y": 47.1983
+                    },
+                    "uuid": "9508218c-7aa4-44ed-84b5-b9cc27c2867f"
+                },
+                {
+                    "description": "Leiterbahn [FAN_PWM] auf F.Cu, Länge 4,8384 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 47.3865
+                    },
+                    "uuid": "a0b5cc52-2a8b-47f3-ae40-bb9b33cdae16"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0301 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,5851 mm",
+                    "pos": {
+                        "x": 75.8346,
+                        "y": 87.1034
+                    },
+                    "uuid": "97ab02f5-08b5-4eb4-a640-6eacafcace59"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 4,7387 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 81.9017
+                    },
+                    "uuid": "e3b1e182-a0e2-4ba7-8cd7-96ada50d7e1c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0301 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,5851 mm",
+                    "pos": {
+                        "x": 75.8346,
+                        "y": 87.1034
+                    },
+                    "uuid": "97ab02f5-08b5-4eb4-a640-6eacafcace59"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 0,2281 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 86.6404
+                    },
+                    "uuid": "e68db4c1-50aa-4383-af76-3dfafa08f973"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0900 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 11,9364 mm",
+                    "pos": {
+                        "x": 74.506,
+                        "y": 29.986
+                    },
+                    "uuid": "2197b692-8949-4fde-a976-0b6f65a2864e"
+                },
+                {
+                    "description": "Via [USB_DP_MCU] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.966,
+                        "y": 36.6219
+                    },
+                    "uuid": "e8411138-3898-42be-b63d-77c546e2a399"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0271 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [+3V3] von C2 auf F.Cu",
+                    "pos": {
+                        "x": 75.05,
+                        "y": 86.0
+                    },
+                    "uuid": "0bacf63d-6a40-49a3-a33a-4817aca52ac3"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 0,2281 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 86.6404
+                    },
+                    "uuid": "e68db4c1-50aa-4383-af76-3dfafa08f973"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,1831 mm",
+                    "pos": {
+                        "x": 66.663,
+                        "y": 47.3278
+                    },
+                    "uuid": "9a0a78bf-df08-47eb-8831-02f71ce7d97d"
+                },
+                {
+                    "description": "Pad 2 [FAN_GATE] von R1 auf F.Cu",
+                    "pos": {
+                        "x": 65.95,
+                        "y": 48.0
+                    },
+                    "uuid": "ccd2290d-1f4b-43e9-a0cb-69303554e06d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GND und +5V)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 12,0795 mm",
+                    "pos": {
+                        "x": 63.7551,
+                        "y": 87.1034
+                    },
+                    "uuid": "b1e93ce2-4aed-44c1-bf05-ed0a0e839656"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 3,7399 mm",
+                    "pos": {
+                        "x": 69.1462,
+                        "y": 86.8017
+                    },
+                    "uuid": "ffbcd365-94ae-48f5-8d05-65b7a8e81e5b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GND und +5V)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 12,0795 mm",
+                    "pos": {
+                        "x": 63.7551,
+                        "y": 87.1034
+                    },
+                    "uuid": "b1e93ce2-4aed-44c1-bf05-ed0a0e839656"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 0,2281 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 86.6404
+                    },
+                    "uuid": "e68db4c1-50aa-4383-af76-3dfafa08f973"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 6,1141 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "233c5bf9-e909-4026-b734-54c1ea7b92f0"
+                },
+                {
+                    "description": "Pad 2 [GND] von C8 auf F.Cu",
+                    "pos": {
+                        "x": 92.4,
+                        "y": 54.5
+                    },
+                    "uuid": "5026ff18-dc2c-4433-a742-5c08befecfae"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0674 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 11,9364 mm",
+                    "pos": {
+                        "x": 74.506,
+                        "y": 29.986
+                    },
+                    "uuid": "2197b692-8949-4fde-a976-0b6f65a2864e"
+                },
+                {
+                    "description": "Via [GPIO3] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.9886,
+                        "y": 38.28
+                    },
+                    "uuid": "97688697-12a0-4a94-946d-d8bff4a33653"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0625 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 2,4750 mm",
+                    "pos": {
+                        "x": 54.05,
+                        "y": 32.8125
+                    },
+                    "uuid": "9bef5f25-bb2a-4a99-87db-be5f43c977f0"
+                },
+                {
+                    "description": "Pad 2 [EN] von R5 auf F.Cu",
+                    "pos": {
+                        "x": 55.95,
+                        "y": 32.0
+                    },
+                    "uuid": "ec3490d4-31d9-467f-af76-10810199289b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0533 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 11,9761 mm",
+                    "pos": {
+                        "x": 56.525,
+                        "y": 32.8125
+                    },
+                    "uuid": "c3568b52-afbd-4937-93ae-549c83270515"
+                },
+                {
+                    "description": "Pad 2 [EN] von R5 auf F.Cu",
+                    "pos": {
+                        "x": 55.95,
+                        "y": 32.0
+                    },
+                    "uuid": "ec3490d4-31d9-467f-af76-10810199289b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0505 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [+5V] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 70.3,
+                        "y": 83.1
+                    },
+                    "uuid": "a8034fbb-97f3-41a6-981e-ca73d2d37227"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 5,7959 mm",
+                    "pos": {
+                        "x": 72.0983,
+                        "y": 86.0
+                    },
+                    "uuid": "e0098ad7-5448-45b8-a483-0438b88aca60"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 11,4400 mm",
+                    "pos": {
+                        "x": 72.7398,
+                        "y": 43.6886
+                    },
+                    "uuid": "47c0fac9-3ed3-410f-bb9f-1f081df9265e"
+                },
+                {
+                    "description": "Leiterbahn [GPIO3] auf B.Cu, Länge 18,1076 mm",
+                    "pos": {
+                        "x": 72.4381,
+                        "y": 57.9381
+                    },
+                    "uuid": "e0261fd7-64a9-43d8-bf3a-fc03a987fe57"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 3,2381 mm",
+                    "pos": {
+                        "x": 72.7398,
+                        "y": 55.1286
+                    },
+                    "uuid": "5cb74b57-7c94-4e6d-bf41-8d2d08d79cf3"
+                },
+                {
+                    "description": "Leiterbahn [GPIO3] auf B.Cu, Länge 18,1076 mm",
+                    "pos": {
+                        "x": 72.4381,
+                        "y": 57.9381
+                    },
+                    "uuid": "e0261fd7-64a9-43d8-bf3a-fc03a987fe57"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf B.Cu, Länge 2,4978 mm",
+                    "pos": {
+                        "x": 74.506,
+                        "y": 41.9224
+                    },
+                    "uuid": "dd188290-35bd-49fd-8286-df002374edee"
+                },
+                {
+                    "description": "Leiterbahn [GPIO3] auf B.Cu, Länge 18,1076 mm",
+                    "pos": {
+                        "x": 72.4381,
+                        "y": 57.9381
+                    },
+                    "uuid": "e0261fd7-64a9-43d8-bf3a-fc03a987fe57"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0517 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_PWM] auf F.Cu, Länge 4,8384 mm",
+                    "pos": {
+                        "x": 64.7517,
+                        "y": 47.3865
+                    },
+                    "uuid": "a0b5cc52-2a8b-47f3-ae40-bb9b33cdae16"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,8934 mm",
+                    "pos": {
+                        "x": 65.2483,
+                        "y": 47.3165
+                    },
+                    "uuid": "de37d69d-8552-4fdc-a3fe-c315b51326ab"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

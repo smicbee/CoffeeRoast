@@ -1,0 +1,704 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:24:56+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 6,7200 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "63a1530e-cd5e-4538-8f29-77680fafbc4f"
+                },
+                {
+                    "description": "Pad 1 [GPIO47] von PADESP24 auf B.Cu",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "755b0d36-c146-4f95-acb1-f9446ebff2d7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 6,7200 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "63a1530e-cd5e-4538-8f29-77680fafbc4f"
+                },
+                {
+                    "description": "Pad 1 [GPIO21] von PADESP23 auf B.Cu",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 58.5
+                    },
+                    "uuid": "d0d61961-cae3-42bf-90dd-be83118c9cf9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 4,9800 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 58.5
+                    },
+                    "uuid": "a5f1e064-1b20-477a-8e97-3804fa106686"
+                },
+                {
+                    "description": "Pad 1 [GPIO47] von PADESP24 auf B.Cu",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "755b0d36-c146-4f95-acb1-f9446ebff2d7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 4,9800 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 58.5
+                    },
+                    "uuid": "a5f1e064-1b20-477a-8e97-3804fa106686"
+                },
+                {
+                    "description": "Pad 1 [GPIO48] von PADESP25 auf B.Cu",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "0b50d325-9e24-4744-b8f7-e70ed584a67b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 31,5000 mm",
+                    "pos": {
+                        "x": 98.3,
+                        "y": 58.5
+                    },
+                    "uuid": "71694843-1bd8-451b-b8bc-892222ef5c5a"
+                },
+                {
+                    "description": "Pad 1 [GPIO48] von PADESP25 auf B.Cu",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "0b50d325-9e24-4744-b8f7-e70ed584a67b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                },
+                {
+                    "description": "Pad 1 [GPIO48] von PADESP25 auf B.Cu",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "0b50d325-9e24-4744-b8f7-e70ed584a67b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 30,5000 mm",
+                    "pos": {
+                        "x": 99.1,
+                        "y": 58.5
+                    },
+                    "uuid": "958caba8-7288-45df-83cc-e31ac0e81a92"
+                },
+                {
+                    "description": "Pad 1 [GPIO48] von PADESP25 auf B.Cu",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "0b50d325-9e24-4744-b8f7-e70ed584a67b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO3] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 58.5
+                    },
+                    "uuid": "7a495422-7649-4055-b2b5-b9dbf5b651c8"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 32,5000 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 58.5
+                    },
+                    "uuid": "f7af75bb-a1e9-4cb4-bd12-d26c670253cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO46] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 75.54,
+                        "y": 58.5
+                    },
+                    "uuid": "413f3302-fc98-4106-b187-67fcc9fa7525"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 32,5000 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 58.5
+                    },
+                    "uuid": "f7af75bb-a1e9-4cb4-bd12-d26c670253cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO9] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 78.08,
+                        "y": 58.5
+                    },
+                    "uuid": "cd9bd93d-283c-4e9d-b0e5-2f1e0106c957"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 32,5000 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 58.5
+                    },
+                    "uuid": "f7af75bb-a1e9-4cb4-bd12-d26c670253cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 32,5000 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 58.5
+                    },
+                    "uuid": "f7af75bb-a1e9-4cb4-bd12-d26c670253cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO14 und GPIO47)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 6,7200 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "63a1530e-cd5e-4538-8f29-77680fafbc4f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 32,5000 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 58.5
+                    },
+                    "uuid": "f7af75bb-a1e9-4cb4-bd12-d26c670253cd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 16,6600 mm",
+                    "pos": {
+                        "x": 97.5,
+                        "y": 91.0
+                    },
+                    "uuid": "52166bae-0ee4-4722-880a-d5e4c7d3e9f7"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO21 und GPIO47)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 4,9800 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 58.5
+                    },
+                    "uuid": "a5f1e064-1b20-477a-8e97-3804fa106686"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 31,5000 mm",
+                    "pos": {
+                        "x": 98.3,
+                        "y": 58.5
+                    },
+                    "uuid": "71694843-1bd8-451b-b8bc-892222ef5c5a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 18,4000 mm",
+                    "pos": {
+                        "x": 98.3,
+                        "y": 90.0
+                    },
+                    "uuid": "1245e0cf-6c2b-4fa2-84e4-12b1d7286ff9"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO48 und GPIO47)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 1,5000 mm",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "4799c2f8-2b18-41d9-95dc-75fa5fbed884"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 1,5000 mm",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "4799c2f8-2b18-41d9-95dc-75fa5fbed884"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 30,5000 mm",
+                    "pos": {
+                        "x": 99.1,
+                        "y": 58.5
+                    },
+                    "uuid": "958caba8-7288-45df-83cc-e31ac0e81a92"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 20,1400 mm",
+                    "pos": {
+                        "x": 99.1,
+                        "y": 89.0
+                    },
+                    "uuid": "a722892d-f273-4237-80db-4cd7b0fd5a6d"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO48 und GPIO21)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 1,5000 mm",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "4799c2f8-2b18-41d9-95dc-75fa5fbed884"
+                },
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 31,5000 mm",
+                    "pos": {
+                        "x": 98.3,
+                        "y": 58.5
+                    },
+                    "uuid": "71694843-1bd8-451b-b8bc-892222ef5c5a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 29,5000 mm",
+                    "pos": {
+                        "x": 99.9,
+                        "y": 58.5
+                    },
+                    "uuid": "71331bca-4381-44e1-a81d-936905f436b0"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 21,8800 mm",
+                    "pos": {
+                        "x": 99.9,
+                        "y": 88.0
+                    },
+                    "uuid": "91b7b08d-9df7-4425-9962-4747f405c7fd"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf B.Cu, Länge 28,5000 mm",
+                    "pos": {
+                        "x": 100.94,
+                        "y": 58.5
+                    },
+                    "uuid": "3b7f6ce0-0d25-458a-b66a-ea104f26292b"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf B.Cu, Länge 23,3800 mm",
+                    "pos": {
+                        "x": 100.94,
+                        "y": 87.0
+                    },
+                    "uuid": "08cd5f99-b8c0-4035-bf39-8c1aba9a78d0"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf B.Cu, Länge 45,6426 mm",
+                    "pos": {
+                        "x": 80.62,
+                        "y": 58.5
+                    },
+                    "uuid": "ad6d89fb-9450-4488-840b-773c851e3087"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 6,7200 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "63a1530e-cd5e-4538-8f29-77680fafbc4f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 14,2165 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 44.2835
+                    },
+                    "uuid": "94f5fcb1-ad56-462e-845d-7a6064f45f54"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_DO und GPIO47)",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 1,0932 mm",
+                    "pos": {
+                        "x": 96.4409,
+                        "y": 59.2968
+                    },
+                    "uuid": "5771eebd-c6a5-4618-8aaf-cb0f3b831464"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                },
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 2,7803 mm",
+                    "pos": {
+                        "x": 97.2139,
+                        "y": 58.5238
+                    },
+                    "uuid": "e8d00218-5d02-4e88-826f-267b0de3cd36"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 13,1868 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "4ec5cef7-c0e9-4362-91ec-6f2db2bedff3"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 6,7200 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "63a1530e-cd5e-4538-8f29-77680fafbc4f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf B.Cu, Länge 12,8385 mm",
+                    "pos": {
+                        "x": 98.4,
+                        "y": 58.5
+                    },
+                    "uuid": "58b1d409-6dfb-4695-8b89-cf3b88bf0fdb"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 3,2400 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "ce9b393c-5b04-43fa-98c7-280f04aabfe7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

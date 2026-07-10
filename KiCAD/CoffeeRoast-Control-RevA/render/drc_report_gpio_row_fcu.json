@@ -1,0 +1,3763 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:18:18+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO18] von TPESP11 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 32.439999
+                    },
+                    "uuid": "8b18cdb8-a450-44be-aa3f-961c1a3b2abf"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO17] von TPESP10 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 31.17
+                    },
+                    "uuid": "3ea8c568-d264-4313-9d32-fe1579197097"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO15] von TPESP8 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 28.63
+                    },
+                    "uuid": "2fc08598-dac2-4f85-afb9-7cc4f4a1a542"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO6] von TPESP6 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 26.09
+                    },
+                    "uuid": "313154d1-1ee7-402e-942f-b3b6fdfe507c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO4] von TPESP4 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 23.55
+                    },
+                    "uuid": "5df6761c-814c-40b5-a1a1-5548a35a2fec"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [EN] von TPESP3 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "c67142b4-0b80-47a9-a743-d8f9de174971"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO5] von TPESP5 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 24.82
+                    },
+                    "uuid": "44fd0ec0-fc33-49ca-bcf8-e596021a58be"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [USB_DP_MCU] von TPESP14 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 36.25
+                    },
+                    "uuid": "87727eb5-39be-4afe-bcb9-5e244205c560"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [USB_DN_MCU] von TPESP13 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 34.98
+                    },
+                    "uuid": "a6a16b8c-4f2b-4d8f-b6f8-b395b96afa90"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO8] von TPESP12 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 33.71
+                    },
+                    "uuid": "f89b4437-a2ca-42fb-adb9-ed6e1f57d7e4"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO16] von TPESP9 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 29.9
+                    },
+                    "uuid": "4d5f5079-6f30-4f53-b32a-22534b30297e"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Pad 1 [GPIO7] von TPESP7 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 27.36
+                    },
+                    "uuid": "3f99eafd-0203-4910-a493-cb3f6c65166d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO18] von TPESP11 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 32.439999
+                    },
+                    "uuid": "8b18cdb8-a450-44be-aa3f-961c1a3b2abf"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO17] von TPESP10 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 31.17
+                    },
+                    "uuid": "3ea8c568-d264-4313-9d32-fe1579197097"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO15] von TPESP8 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 28.63
+                    },
+                    "uuid": "2fc08598-dac2-4f85-afb9-7cc4f4a1a542"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO6] von TPESP6 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 26.09
+                    },
+                    "uuid": "313154d1-1ee7-402e-942f-b3b6fdfe507c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO4] von TPESP4 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 23.55
+                    },
+                    "uuid": "5df6761c-814c-40b5-a1a1-5548a35a2fec"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO5] von TPESP5 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 24.82
+                    },
+                    "uuid": "44fd0ec0-fc33-49ca-bcf8-e596021a58be"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [USB_DP_MCU] von TPESP14 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 36.25
+                    },
+                    "uuid": "87727eb5-39be-4afe-bcb9-5e244205c560"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 14 [USB_DP_MCU] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 36.25
+                    },
+                    "uuid": "8bc753ad-36c5-4c16-932c-7f57b56b1ba8"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 13 [USB_DN_MCU] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 34.98
+                    },
+                    "uuid": "b5dd7ae0-da57-4afe-b6e6-cf14470642eb"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [USB_DN_MCU] von TPESP13 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 34.98
+                    },
+                    "uuid": "a6a16b8c-4f2b-4d8f-b6f8-b395b96afa90"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO8] von TPESP12 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 33.71
+                    },
+                    "uuid": "f89b4437-a2ca-42fb-adb9-ed6e1f57d7e4"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 11 [GPIO18] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 32.44
+                    },
+                    "uuid": "bf8d80f0-5b53-43d1-8537-452114b00af5"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 12 [GPIO8] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 33.71
+                    },
+                    "uuid": "e5b9dd84-ec12-4412-8bde-dc079df2c49b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 7 [GPIO7] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 27.36
+                    },
+                    "uuid": "f2b94556-f40d-43a1-8b08-9468b24ca6cd"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 8 [GPIO15] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 28.63
+                    },
+                    "uuid": "3603cad9-db3c-4d6b-88cf-f9f5db0aa6f3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO16] von TPESP9 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 29.9
+                    },
+                    "uuid": "4d5f5079-6f30-4f53-b32a-22534b30297e"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 1 [GPIO7] von TPESP7 auf F.Cu",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 27.36
+                    },
+                    "uuid": "3f99eafd-0203-4910-a493-cb3f6c65166d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 9 [GPIO16] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 29.9
+                    },
+                    "uuid": "c942cea2-5f90-4004-8478-b9cbb3497264"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 10 [GPIO17] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 31.17
+                    },
+                    "uuid": "7b8bd9dc-2eaa-4207-b834-a19041c1ce29"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Pad 2 [GND] von C2 auf F.Cu",
+                    "pos": {
+                        "x": 76.95,
+                        "y": 86.0
+                    },
+                    "uuid": "e816617f-f367-43db-be84-612716a85637"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C3 auf F.Cu",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 63.0
+                    },
+                    "uuid": "cdb3e0ae-ccb8-471f-8769-ab3dbad681e3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf F.Cu, Länge 53,7519 mm",
+                    "pos": {
+                        "x": 89.445,
+                        "y": 38.45
+                    },
+                    "uuid": "a611366b-80a8-442c-b7a9-be3d49423787"
+                },
+                {
+                    "description": "Pad 2 [GND] von C3 auf F.Cu",
+                    "pos": {
+                        "x": 91.95,
+                        "y": 63.0
+                    },
+                    "uuid": "b14439fd-5f6e-4b4c-b52c-011d342422bc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                },
+                {
+                    "description": "Pad 1 [BOOT] von TPESP27 auf F.Cu",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "ef25f726-8e97-4a2f-ba29-7ecaf74b5144"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 59,4428 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 33.71
+                    },
+                    "uuid": "ea1335fe-da75-48a8-8f39-0feb38c689b7"
+                },
+                {
+                    "description": "Pad 1 [GPIO35] von TPESP28 auf F.Cu",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "b953d4e5-7f8d-423c-8c36-0b8e6ccff2f1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Pad 29 [GPIO36] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 93.75,
+                        "y": 33.71
+                    },
+                    "uuid": "447535b5-7e34-42f9-8528-f128b18e54cc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Pad 1 [GPIO36] von TPESP29 auf F.Cu",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 33.71
+                    },
+                    "uuid": "12840fc7-d5c6-4c0e-b853-b3411daa8a25"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Pad 1 [GPIO35] von TPESP28 auf F.Cu",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "b953d4e5-7f8d-423c-8c36-0b8e6ccff2f1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Pad 7 [MAX_DO] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 55.635
+                    },
+                    "uuid": "79ee0d85-ca42-47b7-aedb-7911ef9e1e7a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Pad 8 [GND] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 56.905
+                    },
+                    "uuid": "be73b8dd-4c3c-4bd6-b216-0bb9225f559d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Pad 5 [MAX_SCK] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 53.095
+                    },
+                    "uuid": "7b7bdd94-e836-40be-8046-8723b1efb376"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Pad 6 [MAX_CS] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 54.365
+                    },
+                    "uuid": "06d5600a-829f-4a2a-94cd-c36d8e11e63f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Pad 7 [MAX_DO] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 55.635
+                    },
+                    "uuid": "79ee0d85-ca42-47b7-aedb-7911ef9e1e7a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO39] auf F.Cu, Länge 64,9416 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 29.9
+                    },
+                    "uuid": "07678238-8119-4825-bd91-cf032541c82e"
+                },
+                {
+                    "description": "Pad 1 [GPIO38] von TPESP31 auf F.Cu",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "a3a60d22-d049-4c3c-a7be-4f19514c3684"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                },
+                {
+                    "description": "Pad 3 [SSR_NEG] von Q2 auf F.Cu",
+                    "pos": {
+                        "x": 118.0,
+                        "y": 69.05
+                    },
+                    "uuid": "356c3184-0675-45bc-a54d-aabd0918e878"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf F.Cu, Länge 73,0930 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 24.82
+                    },
+                    "uuid": "4ec4970f-3c2d-4775-8451-7f5ebf697045"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 10,9570 mm",
+                    "pos": {
+                        "x": 118.4233,
+                        "y": 70.7478
+                    },
+                    "uuid": "69982a36-e74c-430c-bca1-061f0e1bac66"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO4] auf F.Cu, Länge 9,7293 mm",
+                    "pos": {
+                        "x": 65.5707,
+                        "y": 23.55
+                    },
+                    "uuid": "3bdd2cd5-dfe2-4202-8f30-da45e428b2e8"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 5,4954 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 81.9017
+                    },
+                    "uuid": "5c7e2f77-e55e-44b7-9a1d-0108eeff925b"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO4)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO4] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 23.55
+                    },
+                    "uuid": "dd8c3e72-e70e-4c89-aa8a-e3221dffc248"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0160 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 0,9621 mm",
+                    "pos": {
+                        "x": 73.966,
+                        "y": 36.6219
+                    },
+                    "uuid": "81b12527-cdb5-4551-b7ce-4db7f1a600e4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0948 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [SSR_NEG] auf F.Cu, Länge 0,5267 mm",
+                    "pos": {
+                        "x": 118.0,
+                        "y": 69.05
+                    },
+                    "uuid": "0a9ed90c-12f4-4e77-8319-e8b387eddba8"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                },
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO3] auf F.Cu, Länge 53,7379 mm",
+                    "pos": {
+                        "x": 78.015,
+                        "y": 38.28
+                    },
+                    "uuid": "214f0c78-e7d6-4a77-8993-ba76ecd2ac4a"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 6,4879 mm",
+                    "pos": {
+                        "x": 75.6341,
+                        "y": 86.8017
+                    },
+                    "uuid": "ce5164a9-6b2c-4a8a-ba17-0ea13721bfa8"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                },
+                {
+                    "description": "Leiterbahn [GPIO46] auf F.Cu, Länge 53,6114 mm",
+                    "pos": {
+                        "x": 79.285,
+                        "y": 38.45
+                    },
+                    "uuid": "d93ed554-ee1a-4a1f-a835-1cda6a71a4bb"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                },
+                {
+                    "description": "Leiterbahn [GPIO9] auf F.Cu, Länge 53,6808 mm",
+                    "pos": {
+                        "x": 80.555,
+                        "y": 38.45
+                    },
+                    "uuid": "e825cb3f-243d-4eff-8217-864818ddf9bd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                },
+                {
+                    "description": "Leiterbahn [GPIO10] auf F.Cu, Länge 53,7760 mm",
+                    "pos": {
+                        "x": 81.825,
+                        "y": 38.45
+                    },
+                    "uuid": "382cb3fc-b706-4e87-8ab1-e281cbad0c81"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 55.635
+                    },
+                    "uuid": "31f7525a-358a-489f-9d23-1773cce5a403"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 48,3612 mm",
+                    "pos": {
+                        "x": 124.1566,
+                        "y": 81.9017
+                    },
+                    "uuid": "2bd98bd4-f297-40fb-ab9b-097e13553e57"
+                },
+                {
+                    "description": "Leiterbahn [GPIO14] auf F.Cu, Länge 53,5992 mm",
+                    "pos": {
+                        "x": 86.905,
+                        "y": 38.45
+                    },
+                    "uuid": "45380c63-d831-426b-922e-f0fd10e98bf0"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_DO und GPIO37)",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf F.Cu, Länge 0,1534 mm",
+                    "pos": {
+                        "x": 99.6648,
+                        "y": 55.7435
+                    },
+                    "uuid": "62f29b98-8be4-4383-a069-3b7f4dc9dd8a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze BOOT und MAX_DO)",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [MAX_DO] auf F.Cu, Länge 2,4509 mm",
+                    "pos": {
+                        "x": 97.2139,
+                        "y": 55.7435
+                    },
+                    "uuid": "d584e040-f7d1-476e-82c3-7aeee84ab99d"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_DO und BOOT)",
+            "items": [
+                {
+                    "description": "Via [MAX_DO] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 97.2139,
+                        "y": 55.7435
+                    },
+                    "uuid": "74d3c5a5-bc1b-4e6d-b055-5dc450dcbdf4"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 6,1141 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "233c5bf9-e909-4026-b734-54c1ea7b92f0"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 11,9344 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "527af55c-ac51-4f1b-beb6-7d09ed5c054a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_PWM] auf F.Cu, Länge 6,6856 mm",
+                    "pos": {
+                        "x": 101.3856,
+                        "y": 22.28
+                    },
+                    "uuid": "a6a35ee5-f10b-4e91-8a75-f1cc61f9f975"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO5] auf F.Cu, Länge 8,3940 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 24.82
+                    },
+                    "uuid": "365354b7-3fca-4383-8412-d71f63e4da1d"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 0,7017 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 63.0
+                    },
+                    "uuid": "56a5f9ad-6a40-4d5b-b554-0df155f370fd"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO5)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO5] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 24.82
+                    },
+                    "uuid": "7180f5a9-8e29-4d08-b76f-b69efced8de7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 15,0205 mm",
+                    "pos": {
+                        "x": 90.05,
+                        "y": 57.4183
+                    },
+                    "uuid": "8cb91c82-681c-4e36-a1e4-ae580688636a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0313 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 8,3779 mm",
+                    "pos": {
+                        "x": 88.213,
+                        "y": 42.298
+                    },
+                    "uuid": "4a8507ee-8d9e-4fa2-a8b0-316395c8dae4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 10,1000 mm",
+                    "pos": {
+                        "x": 68.0,
+                        "y": 74.2483
+                    },
+                    "uuid": "d23500ff-d2f3-4187-97a1-aaa19e965cfb"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO10] auf F.Cu, Länge 53,7760 mm",
+                    "pos": {
+                        "x": 81.825,
+                        "y": 38.45
+                    },
+                    "uuid": "382cb3fc-b706-4e87-8ab1-e281cbad0c81"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 15,9075 mm",
+                    "pos": {
+                        "x": 78.1,
+                        "y": 74.2483
+                    },
+                    "uuid": "d637eeaf-bb4b-4b11-9a33-c6017640aa94"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0313 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 5,4419 mm",
+                    "pos": {
+                        "x": 84.365,
+                        "y": 38.45
+                    },
+                    "uuid": "407276c7-bff8-4e63-b6f5-a8d1091dfd1d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO47] auf F.Cu, Länge 53,7519 mm",
+                    "pos": {
+                        "x": 89.445,
+                        "y": 38.45
+                    },
+                    "uuid": "a611366b-80a8-442c-b7a9-be3d49423787"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 7,8728 mm",
+                    "pos": {
+                        "x": 96.0858,
+                        "y": 50.6775
+                    },
+                    "uuid": "a90883d7-4124-4a5e-a959-25832f49c52f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf F.Cu, Länge 53,8670 mm",
+                    "pos": {
+                        "x": 90.715,
+                        "y": 38.45
+                    },
+                    "uuid": "0a021592-9fe9-43a8-8351-b780b1b7ab3b"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,6767 mm",
+                    "pos": {
+                        "x": 101.6267,
+                        "y": 63.0
+                    },
+                    "uuid": "f1371c6e-db5d-413b-a27f-6f2678cfe296"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,6767 mm",
+                    "pos": {
+                        "x": 101.6267,
+                        "y": 63.0
+                    },
+                    "uuid": "f1371c6e-db5d-413b-a27f-6f2678cfe296"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0131 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 54.365
+                    },
+                    "uuid": "a6d3c1ac-963b-4202-8294-89cd2988ae3c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 7,8728 mm",
+                    "pos": {
+                        "x": 96.0858,
+                        "y": 50.6775
+                    },
+                    "uuid": "a90883d7-4124-4a5e-a959-25832f49c52f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 5,2149 mm",
+                    "pos": {
+                        "x": 99.7733,
+                        "y": 54.365
+                    },
+                    "uuid": "cc0c517e-0f56-4588-98a9-e69d3b09e0aa"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0423 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,6767 mm",
+                    "pos": {
+                        "x": 101.6267,
+                        "y": 63.0
+                    },
+                    "uuid": "f1371c6e-db5d-413b-a27f-6f2678cfe296"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [GPIO48] auf F.Cu, Länge 0,4735 mm",
+                    "pos": {
+                        "x": 92.4522,
+                        "y": 39.7137
+                    },
+                    "uuid": "26d6c28a-6f65-47d2-9f26-0973fe3c831c"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO45 und GPIO48)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [GPIO48] auf F.Cu, Länge 1,7871 mm",
+                    "pos": {
+                        "x": 91.9787,
+                        "y": 39.7137
+                    },
+                    "uuid": "ac341cca-91b0-475f-8b14-9c47225f3bed"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9728 mm",
+                    "pos": {
+                        "x": 102.3146,
+                        "y": 57.5929
+                    },
+                    "uuid": "961a2830-fda7-4ba3-822a-ef3ecf7ab8ee"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und EN)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 22.28
+                    },
+                    "uuid": "c4143d73-5930-435d-8123-f6bd899cde09"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 0,4496 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "d22a5fd5-82a2-4615-929d-e83f5adddc9a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO18)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO18] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 32.439999
+                    },
+                    "uuid": "5611caca-3b5e-45d3-a3c3-9ef3f0edb55e"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0751 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 1,1268 mm",
+                    "pos": {
+                        "x": 90.2437,
+                        "y": 43.5654
+                    },
+                    "uuid": "18c40297-d769-4c12-ab1b-0810d593ce02"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf F.Cu, Länge 53,7519 mm",
+                    "pos": {
+                        "x": 89.445,
+                        "y": 38.45
+                    },
+                    "uuid": "a611366b-80a8-442c-b7a9-be3d49423787"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO45 und GPIO48)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Via [GPIO48] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 92.4522,
+                        "y": 39.7137
+                    },
+                    "uuid": "c2f08ae6-acfe-4f4c-a536-34c407e71708"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 12,0795 mm",
+                    "pos": {
+                        "x": 63.7551,
+                        "y": 87.1034
+                    },
+                    "uuid": "b1e93ce2-4aed-44c1-bf05-ed0a0e839656"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO39] auf F.Cu, Länge 9,2901 mm",
+                    "pos": {
+                        "x": 94.8865,
+                        "y": 30.0865
+                    },
+                    "uuid": "58c19bd6-8c89-42c1-93dd-3977871792a0"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0889 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                },
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 59,4428 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 33.71
+                    },
+                    "uuid": "ea1335fe-da75-48a8-8f39-0feb38c689b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO37 und GPIO35)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO18] auf F.Cu, Länge 1,3117 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 32.439999
+                    },
+                    "uuid": "f504af55-c45a-48bd-b1e2-e9d2ad32ce49"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO6] auf F.Cu, Länge 10,6477 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 26.09
+                    },
+                    "uuid": "07c4c61d-3610-42f8-b0c4-2e9b39945c01"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf F.Cu, Länge 53,6626 mm",
+                    "pos": {
+                        "x": 88.175,
+                        "y": 38.45
+                    },
+                    "uuid": "1ba10285-34eb-49a5-991a-45321c67a3bd"
+                },
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 6,5177 mm",
+                    "pos": {
+                        "x": 85.635,
+                        "y": 38.9567
+                    },
+                    "uuid": "4ef81dc8-3954-4fd5-92c9-c6c4e0194840"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 53.095
+                    },
+                    "uuid": "6bc8917d-25df-4ee0-91d2-2521e004d273"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO8 und +3V3)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO8] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 33.71
+                    },
+                    "uuid": "2fc713d2-abf4-4b8f-bb5f-63d184ef295f"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO48 und MAX_SCK)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO48] auf F.Cu, Länge 53,8670 mm",
+                    "pos": {
+                        "x": 90.715,
+                        "y": 38.45
+                    },
+                    "uuid": "0a021592-9fe9-43a8-8351-b780b1b7ab3b"
+                },
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 1,1268 mm",
+                    "pos": {
+                        "x": 91.3705,
+                        "y": 44.6922
+                    },
+                    "uuid": "ae9769f6-8094-4417-a84f-efb407145e0a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO8)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO8] auf F.Cu, Länge 11,1587 mm",
+                    "pos": {
+                        "x": 75.0616,
+                        "y": 33.9484
+                    },
+                    "uuid": "539f2f1a-1448-4658-bef8-8832ca9a8a5f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO8] auf F.Cu, Länge 0,3371 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 33.71
+                    },
+                    "uuid": "b0a35e49-ee81-4a0b-91c3-000880b4ee30"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO39] auf F.Cu, Länge 64,9416 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 29.9
+                    },
+                    "uuid": "07678238-8119-4825-bd91-cf032541c82e"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 11,8834 mm",
+                    "pos": {
+                        "x": 99.7733,
+                        "y": 53.095
+                    },
+                    "uuid": "fa6cd7c5-0d1b-4587-86dd-2e309215bc07"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO40] auf F.Cu, Länge 66,9019 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 28.63
+                    },
+                    "uuid": "1a582510-9107-4b0c-af11-d5f59a6a361e"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                },
+                {
+                    "description": "Leiterbahn [GPIO41] auf F.Cu, Länge 68,9169 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 27.36
+                    },
+                    "uuid": "75bbdcdb-2970-4124-b676-c68fa887c5a9"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_SCK und GPIO47)",
+            "items": [
+                {
+                    "description": "Via [MAX_SCK] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 90.2437,
+                        "y": 44.6922
+                    },
+                    "uuid": "74887dce-1da3-46b6-81e5-535ccfe5af88"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf F.Cu, Länge 53,7519 mm",
+                    "pos": {
+                        "x": 89.445,
+                        "y": 38.45
+                    },
+                    "uuid": "a611366b-80a8-442c-b7a9-be3d49423787"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 19,1065 mm",
+                    "pos": {
+                        "x": 57.8065,
+                        "y": 37.1548
+                    },
+                    "uuid": "045ef019-8f9b-4617-81f4-cf1513c996c8"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO6)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO6] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 26.09
+                    },
+                    "uuid": "971a4bf5-508f-4d8e-a3dd-41ca9cd02967"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze USB_DN_MCU und +3V3)",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN_MCU] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 34.98
+                    },
+                    "uuid": "23289cbd-9e99-4b8a-a7fd-6c1bb4c0578b"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                },
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf F.Cu, Länge 73,0930 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 24.82
+                    },
+                    "uuid": "4ec4970f-3c2d-4775-8451-7f5ebf697045"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0385 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [THERMO_PLUS] auf F.Cu, Länge 0,7184 mm",
+                    "pos": {
+                        "x": 96.7347,
+                        "y": 54.873
+                    },
+                    "uuid": "894115d3-ed5f-4f12-9bd2-36d5ad9088a9"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 3,0968 mm",
+                    "pos": {
+                        "x": 93.2155,
+                        "y": 39.6805
+                    },
+                    "uuid": "f4ad5a23-4187-47e2-ba01-c68e15515a87"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [THERMO_PLUS] auf F.Cu, Länge 36,4506 mm",
+                    "pos": {
+                        "x": 133.1853,
+                        "y": 54.873
+                    },
+                    "uuid": "d284d81e-6941-44ab-b051-e99cb23728c5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                },
+                {
+                    "description": "Leiterbahn [TXD0_GPIO43] auf F.Cu, Länge 75,2460 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 23.55
+                    },
+                    "uuid": "b4898963-b8c4-45eb-8e93-18a6c24fa823"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO3] auf F.Cu, Länge 4,0264 mm",
+                    "pos": {
+                        "x": 78.015,
+                        "y": 38.28
+                    },
+                    "uuid": "ad9bb1e4-929e-4f04-873c-b75454ecc653"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 1,9276 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "4879d83a-e85b-42d4-ae18-0222c7ea9743"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN_MCU] auf F.Cu, Länge 21,1004 mm",
+                    "pos": {
+                        "x": 115.2081,
+                        "y": 38.1402
+                    },
+                    "uuid": "743c330b-f23a-4778-adcc-4dee65dbbc4d"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [THERMO_MINUS] auf F.Cu, Länge 40,0562 mm",
+                    "pos": {
+                        "x": 96.8369,
+                        "y": 56.2452
+                    },
+                    "uuid": "3baf3291-e6fa-4e25-aaa6-a0d6ada66611"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [USB_DN_MCU] auf F.Cu, Länge 9,2105 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 34.98
+                    },
+                    "uuid": "e86d9e25-a753-4d89-9dfd-e8e8bc093395"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [HEATER_PWM] auf F.Cu, Länge 7,6583 mm",
+                    "pos": {
+                        "x": 102.3583,
+                        "y": 21.01
+                    },
+                    "uuid": "aca48db4-91c6-4023-85a4-bf6261f8e61b"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0809 mm)",
+            "items": [
+                {
+                    "description": "Via [GPIO45] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 96.3123,
+                        "y": 39.6805
+                    },
+                    "uuid": "0c43f729-bb3d-4f7f-8b57-d8176a15a588"
+                },
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 59,4428 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 33.71
+                    },
+                    "uuid": "ea1335fe-da75-48a8-8f39-0feb38c689b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,0950 mm",
+                    "pos": {
+                        "x": 101.6267,
+                        "y": 56.905
+                    },
+                    "uuid": "136209b1-08af-4400-8379-d5d35d372953"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO45] auf F.Cu, Länge 54,0075 mm",
+                    "pos": {
+                        "x": 91.985,
+                        "y": 38.45
+                    },
+                    "uuid": "083c3208-2101-4cf9-95b3-1eccce64f413"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 29,1560 mm",
+                    "pos": {
+                        "x": 87.7976,
+                        "y": 40.3947
+                    },
+                    "uuid": "1dfedd34-888d-46d0-a1b9-e9a7c75bc155"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO7)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO7] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 27.36
+                    },
+                    "uuid": "5153e330-530b-4824-9f7a-2369c3672cba"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO7] auf F.Cu, Länge 10,1624 mm",
+                    "pos": {
+                        "x": 65.1376,
+                        "y": 27.36
+                    },
+                    "uuid": "c444034e-af58-474b-8cf3-c4e6d1a78901"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und USB_DP_MCU)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 36.25
+                    },
+                    "uuid": "5082eb65-19e4-4d9a-86dd-0d57cd1cb0c8"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO46] auf F.Cu, Länge 53,6114 mm",
+                    "pos": {
+                        "x": 79.285,
+                        "y": 38.45
+                    },
+                    "uuid": "d93ed554-ee1a-4a1f-a835-1cda6a71a4bb"
+                },
+                {
+                    "description": "Leiterbahn [GPIO9] auf F.Cu, Länge 2,1096 mm",
+                    "pos": {
+                        "x": 79.0633,
+                        "y": 39.9417
+                    },
+                    "uuid": "ff05d955-4e8a-4f79-b8e0-35c4156a6f26"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,7017 mm",
+                    "pos": {
+                        "x": 76.95,
+                        "y": 86.0
+                    },
+                    "uuid": "23937241-036b-414c-ab52-db6b2dcf73ee"
+                },
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 69,7395 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 22.28
+                    },
+                    "uuid": "538cd4a9-216d-4b13-a4bb-f2f91f50eea2"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0223 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 93.75,
+                        "y": 36.25
+                    },
+                    "uuid": "9340b5d3-c5fc-4d60-abde-517d433f6090"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 57,7574 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a7b4b129-c4a7-4369-bd96-47a13412b7a2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Loch-Freiraum-Verstoß (Einschränkungen aus Platinenkonfiguration zu Löchern Freiraum 0,2500 mm; tatsächlich 0,2296 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO3] auf F.Cu, Länge 53,7379 mm",
+                    "pos": {
+                        "x": 78.015,
+                        "y": 38.28
+                    },
+                    "uuid": "214f0c78-e7d6-4a77-8993-ba76ecd2ac4a"
+                },
+                {
+                    "description": "Via [GPIO9] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 78.5176,
+                        "y": 39.9417
+                    },
+                    "uuid": "33d4fcc2-9312-4825-b37d-647e14f80c7a"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 10,1431 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 34.98
+                    },
+                    "uuid": "a218b70f-b217-40d8-943b-b733eaea8474"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 5,8700 mm",
+                    "pos": {
+                        "x": 108.1846,
+                        "y": 57.5929
+                    },
+                    "uuid": "e1614caa-4752-402c-96e4-7e9110f78058"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO38 und GND)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 56.905
+                    },
+                    "uuid": "3f411b97-40ef-425e-aa7a-a207d0bdc27e"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,0488 mm",
+                    "pos": {
+                        "x": 110.6755,
+                        "y": 63.0
+                    },
+                    "uuid": "5460bf3f-837b-429e-a75a-ffa79ff066c1"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0689 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 59,4428 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 33.71
+                    },
+                    "uuid": "ea1335fe-da75-48a8-8f39-0feb38c689b7"
+                },
+                {
+                    "description": "Leiterbahn [GPIO35] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 93.75,
+                        "y": 34.98
+                    },
+                    "uuid": "eb848656-6baf-47cc-bc4d-7804bfceeb31"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 93.75,
+                        "y": 33.71
+                    },
+                    "uuid": "2c552dfc-0db1-49e8-969e-abfdc2ffcf9f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,6767 mm",
+                    "pos": {
+                        "x": 101.6267,
+                        "y": 63.0
+                    },
+                    "uuid": "f1371c6e-db5d-413b-a27f-6f2678cfe296"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 56,1571 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 36.25
+                    },
+                    "uuid": "991c0e66-c69c-4d76-b991-fdadc087b877"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 5,4000 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 56.905
+                    },
+                    "uuid": "fac79905-8c35-4f7c-9169-f57f93502274"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO38 und BOOT)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 0,2548 mm",
+                    "pos": {
+                        "x": 96.063,
+                        "y": 37.613
+                    },
+                    "uuid": "b494da38-ee09-4012-b4fb-fa84643c5ca1"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP_MCU] auf F.Cu, Länge 0,5259 mm",
+                    "pos": {
+                        "x": 74.9281,
+                        "y": 36.6219
+                    },
+                    "uuid": "cf2bbb20-5a6b-4250-93f3-703ab1ec96e4"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO40] auf F.Cu, Länge 1,3503 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 28.63
+                    },
+                    "uuid": "0fc1fd05-94f0-4570-b936-d2b2a94b76bc"
+                },
+                {
+                    "description": "Leiterbahn [GPIO41] auf F.Cu, Länge 68,9169 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 27.36
+                    },
+                    "uuid": "75bbdcdb-2970-4124-b676-c68fa887c5a9"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0033 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 61,3234 mm",
+                    "pos": {
+                        "x": 94.2,
+                        "y": 32.44
+                    },
+                    "uuid": "66409ecb-ed8b-4b38-9cc6-dee7d64e989f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO36] auf F.Cu, Länge 1,6883 mm",
+                    "pos": {
+                        "x": 96.3883,
+                        "y": 33.71
+                    },
+                    "uuid": "a4439000-22c7-4243-93df-d58172ee2c99"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO15 und +3V3)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO15] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 28.63
+                    },
+                    "uuid": "068df18b-c729-4cac-baae-66fdde033896"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO15] auf F.Cu, Länge 7,1588 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 28.63
+                    },
+                    "uuid": "5cbc83a7-7302-4c3b-8121-bcfe4b2e69d7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO40 und GPIO36)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO40] auf F.Cu, Länge 66,9019 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 28.63
+                    },
+                    "uuid": "1a582510-9107-4b0c-af11-d5f59a6a361e"
+                },
+                {
+                    "description": "Via [GPIO36] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 96.3883,
+                        "y": 33.71
+                    },
+                    "uuid": "88f9e54c-041c-4605-86e3-d9ba0dc940aa"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO40] auf F.Cu, Länge 8,0004 mm",
+                    "pos": {
+                        "x": 95.6548,
+                        "y": 29.5848
+                    },
+                    "uuid": "4e2f69ba-0167-4a38-9736-61b556896780"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GPIO38 und BOOT)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO38] auf F.Cu, Länge 63,0412 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 31.17
+                    },
+                    "uuid": "0ca99e67-3f15-4f77-ad2b-1662d700e68a"
+                },
+                {
+                    "description": "Via [BOOT] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 96.3178,
+                        "y": 37.613
+                    },
+                    "uuid": "6bea9407-7fd5-4ad9-abf4-8d64edf681c7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                },
+                {
+                    "description": "Leiterbahn [GPIO41] auf F.Cu, Länge 1,8864 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 27.36
+                    },
+                    "uuid": "5cebe8a8-cd0d-430a-8009-9308d9ee000f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0920 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                },
+                {
+                    "description": "Leiterbahn [GPIO41] auf F.Cu, Länge 10,3292 mm",
+                    "pos": {
+                        "x": 96.0339,
+                        "y": 28.6939
+                    },
+                    "uuid": "de6a9394-21a6-4757-a8ff-b35e11646031"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO16)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO16] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 29.9
+                    },
+                    "uuid": "7fa4021d-8c8e-437b-8170-3d6ba5d17f62"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO16] auf F.Cu, Länge 7,6679 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 29.9
+                    },
+                    "uuid": "cfa58eca-3393-4b94-8722-72c8950ca045"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO17] auf F.Cu, Länge 2,3947 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 31.17
+                    },
+                    "uuid": "134b4b2b-c283-491f-af3c-a18ba44d2c1f"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze +3V3 und GPIO17)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 70,9945 mm",
+                    "pos": {
+                        "x": 75.3,
+                        "y": 21.01
+                    },
+                    "uuid": "36c0f6e9-e78f-43a1-ae99-98ef123b8b6a"
+                },
+                {
+                    "description": "Leiterbahn [GPIO17] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 31.17
+                    },
+                    "uuid": "9f3c9b90-34a5-4201-a783-77dff0299731"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf F.Cu, Länge 73,0930 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 24.82
+                    },
+                    "uuid": "4ec4970f-3c2d-4775-8451-7f5ebf697045"
+                },
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 11,9406 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "694e4b61-1d22-4a7c-8a9d-f122f4cf15eb"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO42] auf F.Cu, Länge 70,9820 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 26.09
+                    },
+                    "uuid": "5aba721b-0a9d-4b9e-8fdc-89883a2a8502"
+                },
+                {
+                    "description": "Leiterbahn [GPIO37] auf F.Cu, Länge 10,1269 mm",
+                    "pos": {
+                        "x": 104.3269,
+                        "y": 32.439999
+                    },
+                    "uuid": "79194369-cff1-4c84-911a-a629aa74e70e"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf F.Cu, Länge 11,3913 mm",
+                    "pos": {
+                        "x": 95.4902,
+                        "y": 25.6102
+                    },
+                    "uuid": "05d67d77-8369-4c0d-b865-13343248af02"
+                },
+                {
+                    "description": "Leiterbahn [TXD0_GPIO43] auf F.Cu, Länge 75,2460 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 23.55
+                    },
+                    "uuid": "b4898963-b8c4-45eb-8e93-18a6c24fa823"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze TXD0_GPIO43 und RXD0_GPIO44)",
+            "items": [
+                {
+                    "description": "Leiterbahn [TXD0_GPIO43] auf F.Cu, Länge 75,2460 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 23.55
+                    },
+                    "uuid": "b4898963-b8c4-45eb-8e93-18a6c24fa823"
+                },
+                {
+                    "description": "Leiterbahn [RXD0_GPIO44] auf F.Cu, Länge 1,1175 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 24.82
+                    },
+                    "uuid": "c75d2ebb-8fb5-4ffa-a115-0739e479b5ae"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [TXD0_GPIO43] auf F.Cu, Länge 7,2004 mm",
+                    "pos": {
+                        "x": 94.7871,
+                        "y": 23.6371
+                    },
+                    "uuid": "eb03f2c2-687b-4364-90c3-081e08d0cf5e"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 79,7320 mm",
+                    "pos": {
+                        "x": 94.7,
+                        "y": 19.74
+                    },
+                    "uuid": "fcc5072b-48f4-43cd-961d-21510348a0d6"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

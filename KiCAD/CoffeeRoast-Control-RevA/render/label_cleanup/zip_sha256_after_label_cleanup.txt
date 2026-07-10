@@ -1,0 +1,3 @@
+47e40d1d583b2a3fbd66d031f4b3ae41553f5bab804c69d289a61e8f7d1c88e1  production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip
+204c57320fd677df69b11a177a284d071732e96a54a43b235e0a9ecd9a9c9601  production/y4-max-pcba/CoffeeRoast-Control-RevA1_Y4_max_pcba_package.zip
+204c57320fd677df69b11a177a284d071732e96a54a43b235e0a9ecd9a9c9601  production/y4-max-pcba/CoffeeRoast-Control-RevA1_Y4_for_jlc_upload.zip

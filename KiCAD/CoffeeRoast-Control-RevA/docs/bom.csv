@@ -9,10 +9,10 @@ D1,1,SB560/MBR560 flyback diode,THT P10.16,"Across fan: cathode to +24V_FUSED, a
 D2,1,SMBJ33A or suitable 24V-input TVS,SMB/SMA footprint placeholder,RevA.1 surge clamp across +24V_RAW/GND near J1
 D3,1,SMBJ33A or suitable fan TVS,SMB/SMA footprint placeholder,RevA.1 fan clamp across +24V_FUSED/FAN_NEG near J2
 F1,1,T3.15A fuse on 24V side,5x20 placeholder,Optional/protects low-voltage branch
-J1,1,24V input from certified internal PSU,2-pin 5.08mm,Use 230VAC->24VDC/3A certified supply in enclosure
-J2,1,Fan output,2-pin 5.08mm,"24V fan PWM, 3A path"
-J3,1,External SSR input,2-pin 5.08mm,"SSR+ from +5V, SSR- low-side switched"
-J4,1,K-type thermocouple,2-pin 5.08mm,Use isolated thermocouple/mechanical strain relief
+J1,1,24V input from certified internal PSU,large plated hand-solder pads,"No connector assembled; solder PSU leads directly, add enclosure strain relief; use 230VAC->24VDC/3A certified supply in enclosure"
+J2,1,Fan output,large plated hand-solder pads,"No connector assembled; solder fan leads directly, 24V fan PWM/3A path, add strain relief"
+J3,1,External SSR input,large plated hand-solder pads,"No connector assembled; solder SSR control leads directly; SSR+ from +5V, SSR- low-side switched"
+J4,1,K-type thermocouple,large plated hand-solder pads,"No connector assembled; solder thermocouple/extension leads directly; use isolated thermocouple and mechanical strain relief"
 J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11,"Real USB-C receptacle footprint; data-only USB2, VBUS sense only, CC1/CC2 Rd pulldowns"
 U5,1,USBLC6-2SC6 or equivalent USB2 ESD array,Draft pads on existing USB/GND tracks,RevA.1 USB D+/D- ESD footprint; replace with exact library footprint before fabrication
 C4,1,220uF 35V low-ESR electrolytic/polymer,Radial placeholder,RevA.1 input bulk capacitor across +24V_RAW/GND

@@ -66,10 +66,10 @@ All ESP32-S3-WROOM-1 side pins 1-40 are exposed twice: tiny local probe pads nam
 This board now loads in KiCad 9 and has been routed/checked headlessly. KiCad error-level DRC is clean, but before ordering boards:
 
 1. Open the project in KiCad.
-2. Replace remaining generic placeholders with exact sourced parts: terminal blocks, fuse holder, U3 switching regulator footprint, U4 buck module, TVS packages, USB ESD package, MOSFET/regulator variants.
+2. Replace remaining generic placeholders with exact sourced parts: fuse holder, U3 switching regulator footprint, U4 buck module, TVS packages, USB ESD package, MOSFET/regulator variants. J1-J4 are deliberately large hand-solder pads now, not PCBA connector placements.
 3. Re-run ERC/DRC after any mechanical/footprint changes.
 4. Confirm ESP32-S3-WROOM-1 antenna keepout has no copper and is at board edge.
-5. Confirm the fan path, D3 TVS choice, Q1 MOSFET, and screw terminals are rated for the real 24V/2.5A fan current.
+5. Confirm the fan path, D3 TVS choice, Q1 MOSFET, and hand-solder pad/wire strain-relief scheme are rated for the real 24V/2.5A fan current.
 6. Confirm J5 enclosure cutout/edge placement for the exact USB-C part and replace U5 with an exact USB2 ESD footprint.
 7. Review USB CC pulldowns: R10/R11 = 5.1k to GND, VBUS is sense-only.
 8. Decide whether C5 should be populated after thermocouple noise testing; leave DNP if it biases readings.

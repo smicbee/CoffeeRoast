@@ -5,6 +5,17 @@ D1,SB560_FLYBACK,tht,"Selected candidate: SB560 DO-201AD Schottky, JLC C139684. 
 D2,SMBJ33A_24V_INPUT_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
 D3,SMBJ33A_FAN_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
 F1,T3.15A_24V_SIDE,tht,Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.
+FID1,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID2,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID3,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID4,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID5,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID6,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+J1,24V_IN_FROM_230V_PSU_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder PSU leads directly and add enclosure strain relief.
+J2,FAN_24V_PWM_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder fan leads directly and add enclosure strain relief.
+J3,SSR_INPUT_TO_EXTERNAL_SSR,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.
+J4,K_TYPE_THERMOCOUPLE,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder K-type thermocouple/extension leads directly and add strain relief.
+JGPIO1,ESP32_GPIO_BREAKOUT_ROW,tht,Not in first partial-SMD assembly set; review manually.
 PADESP1,GND,smd,Test/debug pad; no assembly part.
 PADESP2,3V3,smd,Test/debug pad; no assembly part.
 PADESP3,EN,smd,Test/debug pad; no assembly part.
@@ -45,8 +56,10 @@ PADESP37,TXD0,smd,Test/debug pad; no assembly part.
 PADESP38,IO2,smd,Test/debug pad; no assembly part.
 PADESP39,IO1,smd,Test/debug pad; no assembly part.
 PADESP40,GND,smd,Test/debug pad; no assembly part.
+Q1,IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW,tht,"Selected candidate: IRLB8721PBF TO-220, JLC C153222; alternative FQP30N06L, JLC C243087. Hand-solder and thermally verify with real fan current."
 SW1,RESET_EN,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if EN pad/debug access is enough."
 SW2,BOOT,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if BOOT pad/debug access is enough."
+TPBOOT1,BOOT_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TPESP1,GND,smd,Test/debug pad; no assembly part.
 TPESP2,3V3,smd,Test/debug pad; no assembly part.
 TPESP3,EN,smd,Test/debug pad; no assembly part.
@@ -88,6 +101,8 @@ TPESP38,IO2/FAN,smd,Test/debug pad; no assembly part.
 TPESP39,IO1/SSR,smd,Test/debug pad; no assembly part.
 TPESP40,GND,smd,Test/debug pad; no assembly part.
 TPGND,GND_TEST,smd,Test/debug pad; no assembly part.
+TPRESET1,RESET_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
+TPSSR1,SSR_OUT_MEAS_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TP5V,+5V_TEST,smd,Test/debug pad; no assembly part.
 TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
 TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.

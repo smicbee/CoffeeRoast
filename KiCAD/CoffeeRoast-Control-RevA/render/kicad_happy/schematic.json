@@ -1,0 +1,189 @@
+{
+  "analyzer_type": "schematic",
+  "schema_version": "1.3.0",
+  "summary": {
+    "total_findings": 0,
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "trust_summary": {
+    "total_findings": 0,
+    "trust_level": "high",
+    "by_confidence": {
+      "deterministic": 0,
+      "heuristic": 0,
+      "datasheet-backed": 0
+    },
+    "by_evidence_source": {
+      "datasheet": 0,
+      "topology": 0,
+      "heuristic_rule": 0,
+      "symbol_footprint": 0,
+      "bom": 0,
+      "geometry": 0,
+      "api_lookup": 0
+    },
+    "provenance_coverage_pct": null
+  },
+  "file": "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_sch",
+  "kicad_version": "unknown",
+  "file_version": "20231120",
+  "title_block": {
+    "title": "CoffeeRoast Control RevA",
+    "date": "2026-07-04",
+    "rev": "A.1-draft",
+    "company": "CoffeeRoast",
+    "comment_1": "RevA.1 low-voltage PCB: 24V/3A input, TVS/bulk protection, 5V buck, 3V3 switching regulator, MAX6675, fan MOSFET, SSR driver",
+    "comment_2": "230V stays off this PCB: use certified internal 230VAC->24VDC PSU and external SSR module/heatsink"
+  },
+  "statistics": {
+    "total_components": 0,
+    "unique_parts": 0,
+    "dnp_parts": 0,
+    "total_nets": 0,
+    "total_wires": 0,
+    "total_no_connects": 0,
+    "component_types": {},
+    "power_rails": [],
+    "missing_mpn": [],
+    "missing_footprint": []
+  },
+  "findings": [],
+  "bom": [],
+  "components": [],
+  "nets": {},
+  "subcircuits": [],
+  "ic_pin_analysis": [],
+  "design_analysis": {
+    "net_classification": {},
+    "power_domains": {
+      "ic_power_rails": {},
+      "domain_groups": {}
+    },
+    "cross_domain_signals": [],
+    "bus_analysis": {
+      "i2c": [],
+      "spi": [],
+      "uart": [],
+      "can": []
+    },
+    "differential_pairs": [],
+    "erc_warnings": [],
+    "passive_warnings": []
+  },
+  "connectivity_issues": {
+    "unconnected_pins": [],
+    "single_pin_nets": [],
+    "single_pin_net_findings": [],
+    "multi_driver_nets": [],
+    "power_net_summary": {}
+  },
+  "labels": [],
+  "no_connects": [],
+  "power_symbols": [],
+  "annotation_issues": {},
+  "label_shape_warnings": [],
+  "pwr_flag_warnings": [],
+  "footprint_filter_warnings": [],
+  "sourcing_audit": {
+    "total_bom_components": 0,
+    "mpn_coverage": "0/0"
+  },
+  "ground_domains": {
+    "ground_nets": {},
+    "multiple_domains": false
+  },
+  "bus_topology": {
+    "bus_wire_count": 0,
+    "bus_entry_count": 0
+  },
+  "wire_geometry": {
+    "total_wires": 0
+  },
+  "simulation_readiness": {
+    "total_components": 0,
+    "likely_simulatable": 0,
+    "needs_model": 0
+  },
+  "property_issues": {},
+  "placement_analysis": {
+    "clusters": []
+  },
+  "hierarchical_labels": {
+    "hierarchical_label_count": 0,
+    "global_label_count": 0
+  },
+  "rail_voltages": {},
+  "power_sequencing_validation": {
+    "power_tree": [],
+    "provenance": {
+      "evidence": "pseq_enable_chain",
+      "confidence": "heuristic",
+      "claimed_components": [],
+      "excluded_by": [],
+      "suppressed_candidates": []
+    }
+  },
+  "text_annotations": [
+    {
+      "type": "text",
+      "text": "See docs/netlist.csv, docs/reva1_optimizations.md, and CoffeeRoast-Control-RevA.kicad_pcb for the generated RevA.1 placement/net draft.",
+      "x": 20.0,
+      "y": 30.0,
+      "angle": 0.0
+    },
+    {
+      "type": "text",
+      "text": "Critical nets: GPIO1=HEATER_PWM, GPIO2=FAN_PWM, GPIO11/12/13=MAX6675 DO/CS/SCK, 24V input fixed at 3A PSU.",
+      "x": 20.0,
+      "y": 45.0,
+      "angle": 0.0
+    }
+  ],
+  "test_coverage": {
+    "test_points": [],
+    "test_point_count": 0,
+    "covered_nets": [],
+    "observations": [
+      "No test points found in design",
+      "No debug connectors (SWD/JTAG/UART) identified"
+    ]
+  },
+  "bom_lock": {
+    "total_bom_components": 0,
+    "components_with_mpn": 0,
+    "missing_mpn": [],
+    "missing_mpn_count": 0,
+    "generic_values": [],
+    "lock_pct": 100,
+    "status": "pass"
+  },
+  "design_intent": {
+    "product_class": "prototype",
+    "ipc_class": 2,
+    "target_market": "hobby",
+    "expected_lifetime_years": 5,
+    "operating_temp_range": [
+      -10,
+      70
+    ],
+    "preferred_passive_size": "0603",
+    "test_coverage_target": 0.85,
+    "approved_manufacturers": [],
+    "confidence": 0.3,
+    "detection_signals": [],
+    "source": {
+      "ipc_class": "auto",
+      "product_class": "auto",
+      "target_market": "auto",
+      "expected_lifetime_years": "auto",
+      "operating_temp_range": "auto",
+      "preferred_passive_size": "auto",
+      "test_coverage_target": "auto",
+      "approved_manufacturers": "auto"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Designator,Candidate,JLC/LCSC,Risk/Action
+C5,1nF_C0G_THERMO_DIFF_FILTER_DNP_IF_NOISY,C76625,Current RevA.1 footprint is draft/wide-pad; only keep if JLC placement/footprint looks sane.
+D1,SB560_FLYBACK,C139684,THT power diode; verify orientation and mechanical clearance.
+D2,SMBJ33A_24V_INPUT_TVS,C135067,Draft TVS footprint; verify polarity/orientation.
+D3,SMBJ33A_FAN_TVS,C135067,Draft TVS footprint; verify polarity/orientation.
+Q1,IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW,C153222,THT/high current MOSFET; verify thermal/mechanical orientation.
+SW1,RESET_EN,C92655,Optional reset button; can omit if debug pads suffice.
+SW2,BOOT,C92655,Optional boot button; can omit if debug pads suffice.
+U4,24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE,C26689857,Current module footprint must be verified/adapted; do not trust blindly.
+U5,USBLC6-2SC6_OR_USB2_ESD,C7519,Current RevA.1 footprint is draft/custom on-track; only assemble if preview is exact.
+C4,220uF_35V_INPUT_BULK,,No verified JLC code; verify lead pitch and polarity.
+F1,T3.15A_24V_SIDE,,"No verified JLC code; mechanical part, verify holder pitch."
+U3,3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117,,Current RevA.1 footprint mismatch risk; wire-in/RevA.2 preferred.

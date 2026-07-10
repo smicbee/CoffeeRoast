@@ -1,0 +1,1072 @@
+{
+  "analyzer_type": "gerber",
+  "schema_version": "1.3.0",
+  "directory": "production/y4-max-pcba/gerbers",
+  "generator": "Pcbnew 9.0.8+dfsg-1",
+  "layer_count": 2,
+  "board_dimensions": {
+    "width_mm": 160.15,
+    "height_mm": 100.15,
+    "area_mm2": 16039.0,
+    "source": "gbrjob"
+  },
+  "statistics": {
+    "gerber_files": 9,
+    "drill_files": 0,
+    "total_holes": 0,
+    "total_flashes": 1092,
+    "total_draws": 5562
+  },
+  "completeness": {
+    "found_layers": [
+      "B.Cu",
+      "B.Mask",
+      "B.Paste",
+      "B.SilkS",
+      "Edge.Cuts",
+      "F.Cu",
+      "F.Mask",
+      "F.Paste",
+      "F.SilkS"
+    ],
+    "expected_layers": [
+      "B.Cu",
+      "B.Mask",
+      "B.Paste",
+      "B.SilkS",
+      "Edge.Cuts",
+      "F.Cu",
+      "F.Mask",
+      "F.Paste",
+      "F.SilkS"
+    ],
+    "missing": [],
+    "extra": [],
+    "has_pth_drill": false,
+    "has_npth_drill": false,
+    "complete": true,
+    "source": "gbrjob"
+  },
+  "alignment": {
+    "aligned": false,
+    "issues": [
+      "Width varies by 21.4mm across copper/edge layers",
+      "Height varies by 26.0mm across copper/edge layers"
+    ],
+    "layer_extents": {
+      "B.Cu": {
+        "width": 138.615,
+        "height": 74.0
+      },
+      "B.Mask": {
+        "width": 138.615,
+        "height": 74.0
+      },
+      "B.Paste": {
+        "width": 0,
+        "height": 0
+      },
+      "B.SilkS": {
+        "width": 138.615,
+        "height": 74.0
+      },
+      "Edge.Cuts": {
+        "width": 160.0,
+        "height": 100.0
+      },
+      "F.Cu": {
+        "width": 138.615,
+        "height": 77.0
+      },
+      "F.Mask": {
+        "width": 138.615,
+        "height": 74.0
+      },
+      "F.Paste": {
+        "width": 135.08,
+        "height": 66.26
+      },
+      "F.SilkS": {
+        "width": 150.364,
+        "height": 89.438
+      }
+    }
+  },
+  "drill_classification": {
+    "vias": {
+      "count": 0,
+      "tools": []
+    },
+    "component_holes": {
+      "count": 0,
+      "tools": []
+    },
+    "mounting_holes": {
+      "count": 0,
+      "tools": []
+    },
+    "classification_method": "diameter_heuristic"
+  },
+  "pad_summary": {
+    "smd_apertures": 193,
+    "via_apertures": 102,
+    "heatsink_apertures": 33,
+    "tht_holes": 0,
+    "smd_source": "x2_aperture_function",
+    "smd_ratio": 1.0
+  },
+  "trace_widths": {
+    "unique_widths_mm": [
+      0.16,
+      0.18,
+      0.2,
+      0.22,
+      0.25,
+      0.35,
+      0.45
+    ],
+    "min_trace_mm": 0.16,
+    "max_trace_mm": 0.45,
+    "width_count": 7,
+    "min_feature_mm": 0.15
+  },
+  "component_analysis": {
+    "total_unique": 118,
+    "front_side": 78,
+    "back_side": 40,
+    "component_refs": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "D1",
+      "D2",
+      "D3",
+      "F1",
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "JGPIO1",
+      "PADESP1",
+      "PADESP10",
+      "PADESP11",
+      "PADESP12",
+      "PADESP13",
+      "PADESP14",
+      "PADESP15",
+      "PADESP16",
+      "PADESP17",
+      "PADESP18",
+      "PADESP19",
+      "PADESP2",
+      "PADESP20",
+      "PADESP21",
+      "PADESP22",
+      "PADESP23",
+      "PADESP24",
+      "PADESP25",
+      "PADESP26",
+      "PADESP27",
+      "PADESP28",
+      "PADESP29",
+      "PADESP3",
+      "PADESP30",
+      "PADESP31",
+      "PADESP32",
+      "PADESP33",
+      "PADESP34",
+      "PADESP35",
+      "PADESP36",
+      "PADESP37",
+      "PADESP38",
+      "PADESP39",
+      "PADESP4",
+      "PADESP40",
+      "PADESP5",
+      "PADESP6",
+      "PADESP7",
+      "PADESP8",
+      "PADESP9",
+      "Q1",
+      "Q2",
+      "R1",
+      "R10",
+      "R11",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7",
+      "R8",
+      "SW1",
+      "SW2",
+      "TP24V",
+      "TP3V3",
+      "TP5V",
+      "TPESP1",
+      "TPESP10",
+      "TPESP11",
+      "TPESP12",
+      "TPESP13",
+      "TPESP14",
+      "TPESP15",
+      "TPESP16",
+      "TPESP17",
+      "TPESP18",
+      "TPESP19",
+      "TPESP2",
+      "TPESP20",
+      "TPESP21",
+      "TPESP22",
+      "TPESP23",
+      "TPESP24",
+      "TPESP25",
+      "TPESP26",
+      "TPESP27",
+      "TPESP28",
+      "TPESP29",
+      "TPESP3",
+      "TPESP30",
+      "TPESP31",
+      "TPESP32",
+      "TPESP33",
+      "TPESP34",
+      "TPESP35",
+      "TPESP36",
+      "TPESP37",
+      "TPESP38",
+      "TPESP39",
+      "TPESP4",
+      "TPESP40",
+      "TPESP5",
+      "TPESP6",
+      "TPESP7",
+      "TPESP8",
+      "TPESP9",
+      "TPGND",
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "has_x2_data": true,
+    "pads_per_component": {
+      "C1": 2,
+      "C2": 2,
+      "C3": 2,
+      "C4": 2,
+      "C5": 2,
+      "D1": 2,
+      "D2": 2,
+      "D3": 2,
+      "F1": 2,
+      "J1": 2,
+      "J2": 2,
+      "J3": 2,
+      "J4": 2,
+      "J5": 22,
+      "JGPIO1": 6,
+      "PADESP1": 1,
+      "PADESP10": 1,
+      "PADESP11": 1,
+      "PADESP12": 1,
+      "PADESP13": 1,
+      "PADESP14": 1,
+      "PADESP15": 1,
+      "PADESP16": 1,
+      "PADESP17": 1,
+      "PADESP18": 1,
+      "PADESP19": 1,
+      "PADESP2": 1,
+      "PADESP20": 1,
+      "PADESP21": 1,
+      "PADESP22": 1,
+      "PADESP23": 1,
+      "PADESP24": 1,
+      "PADESP25": 1,
+      "PADESP26": 1,
+      "PADESP27": 1,
+      "PADESP28": 1,
+      "PADESP29": 1,
+      "PADESP3": 1,
+      "PADESP30": 1,
+      "PADESP31": 1,
+      "PADESP32": 1,
+      "PADESP33": 1,
+      "PADESP34": 1,
+      "PADESP35": 1,
+      "PADESP36": 1,
+      "PADESP37": 1,
+      "PADESP38": 1,
+      "PADESP39": 1,
+      "PADESP4": 1,
+      "PADESP40": 1,
+      "PADESP5": 1,
+      "PADESP6": 1,
+      "PADESP7": 1,
+      "PADESP8": 1,
+      "PADESP9": 1,
+      "Q1": 3,
+      "Q2": 3,
+      "R1": 2,
+      "R10": 2,
+      "R11": 2,
+      "R2": 2,
+      "R3": 2,
+      "R4": 2,
+      "R5": 2,
+      "R6": 2,
+      "R7": 2,
+      "R8": 2,
+      "SW1": 4,
+      "SW2": 4,
+      "TP24V": 1,
+      "TP3V3": 1,
+      "TP5V": 1,
+      "TPESP1": 1,
+      "TPESP10": 1,
+      "TPESP11": 1,
+      "TPESP12": 1,
+      "TPESP13": 1,
+      "TPESP14": 1,
+      "TPESP15": 1,
+      "TPESP16": 1,
+      "TPESP17": 1,
+      "TPESP18": 1,
+      "TPESP19": 1,
+      "TPESP2": 1,
+      "TPESP20": 1,
+      "TPESP21": 1,
+      "TPESP22": 1,
+      "TPESP23": 1,
+      "TPESP24": 1,
+      "TPESP25": 1,
+      "TPESP26": 1,
+      "TPESP27": 1,
+      "TPESP28": 1,
+      "TPESP29": 1,
+      "TPESP3": 1,
+      "TPESP30": 1,
+      "TPESP31": 1,
+      "TPESP32": 1,
+      "TPESP33": 1,
+      "TPESP34": 1,
+      "TPESP35": 1,
+      "TPESP36": 1,
+      "TPESP37": 1,
+      "TPESP38": 1,
+      "TPESP39": 1,
+      "TPESP4": 1,
+      "TPESP40": 1,
+      "TPESP5": 1,
+      "TPESP6": 1,
+      "TPESP7": 1,
+      "TPESP8": 1,
+      "TPESP9": 1,
+      "TPGND": 1,
+      "U1": 53,
+      "U2": 8,
+      "U3": 4,
+      "U4": 4,
+      "U5": 6
+    },
+    "total_pads": 247
+  },
+  "net_analysis": {
+    "total_unique": 54,
+    "named_nets": 54,
+    "unnamed_nets": 0,
+    "power_nets": [
+      "+24V_FUSED",
+      "+24V_RAW",
+      "+3V3",
+      "+5V",
+      "GND"
+    ],
+    "signal_nets": [
+      "BOOT",
+      "EN",
+      "FAN_GATE",
+      "FAN_NEG",
+      "FAN_PWM",
+      "GPIO10",
+      "GPIO14",
+      "GPIO15",
+      "GPIO16",
+      "GPIO17",
+      "GPIO18",
+      "GPIO21",
+      "GPIO3",
+      "GPIO35",
+      "GPIO36",
+      "GPIO37",
+      "GPIO38",
+      "GPIO39",
+      "GPIO4",
+      "GPIO40",
+      "GPIO41",
+      "GPIO42",
+      "GPIO45",
+      "GPIO46",
+      "GPIO47",
+      "GPIO48",
+      "GPIO5",
+      "GPIO6",
+      "GPIO7",
+      "GPIO8",
+      "GPIO9",
+      "HEATER_PWM",
+      "MAX_CS",
+      "MAX_DO",
+      "MAX_SCK",
+      "N/C",
+      "RXD0_GPIO44",
+      "SSR_GATE",
+      "SSR_NEG",
+      "THERMO_MINUS",
+      "THERMO_PLUS",
+      "TXD0_GPIO43",
+      "USB_CC1",
+      "USB_CC2",
+      "USB_DN",
+      "USB_DN_MCU",
+      "USB_DP",
+      "USB_DP_MCU",
+      "USB_VBUS"
+    ],
+    "total_pins": 229
+  },
+  "gerbers": [
+    {
+      "filename": "CoffeeRoast-Control-RevA-B_Cu.gbl",
+      "layer_type": "B.Cu",
+      "units": "mm",
+      "aperture_count": 14,
+      "flash_count": 142,
+      "draw_count": 191,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Copper,L2,Bot",
+        "FilePolarity": "Positive"
+      },
+      "aperture_analysis": {
+        "by_function": {
+          "HeatsinkPad": 3,
+          "ComponentPad": 7,
+          "SMDPad": 1,
+          "ViaPad": 1,
+          "Conductor": 2
+        },
+        "by_function_flashes": {
+          "HeatsinkPad": 16,
+          "ComponentPad": 35,
+          "SMDPad": 40,
+          "ViaPad": 51,
+          "Conductor": 0
+        },
+        "conductor_widths_mm": [
+          0.16,
+          0.2
+        ],
+        "min_feature_mm": 0.16
+      },
+      "x2_component_count": 0,
+      "x2_net_count": 50,
+      "x2_pin_count": 77
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-B_Mask.gbs",
+      "layer_type": "B.Mask",
+      "units": "mm",
+      "aperture_count": 11,
+      "flash_count": 81,
+      "draw_count": 0,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Soldermask,Bot",
+        "FilePolarity": "Negative"
+      },
+      "aperture_analysis": {
+        "min_feature_mm": 0.575
+      },
+      "x2_component_count": 53,
+      "x2_net_count": 0,
+      "x2_pin_count": 0
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-B_Paste.gbp",
+      "layer_type": "B.Paste",
+      "units": "mm",
+      "aperture_count": 0,
+      "flash_count": 0,
+      "draw_count": 0,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Paste,Bot",
+        "FilePolarity": "Positive"
+      }
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-B_Silkscreen.gbo",
+      "layer_type": "B.SilkS",
+      "units": "mm",
+      "aperture_count": 13,
+      "flash_count": 81,
+      "draw_count": 1635,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Legend,Bot",
+        "FilePolarity": "Positive"
+      },
+      "aperture_analysis": {
+        "min_feature_mm": 0.1
+      },
+      "x2_component_count": 53,
+      "x2_net_count": 0,
+      "x2_pin_count": 0
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-Edge_Cuts.gm1",
+      "layer_type": "Edge.Cuts",
+      "units": "mm",
+      "aperture_count": 1,
+      "flash_count": 0,
+      "draw_count": 8,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Profile,NP"
+      },
+      "aperture_analysis": {
+        "by_function": {
+          "Profile": 1
+        },
+        "by_function_flashes": {
+          "Profile": 0
+        },
+        "min_feature_mm": 0.15
+      }
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-F_Cu.gtl",
+      "layer_type": "F.Cu",
+      "units": "mm",
+      "aperture_count": 34,
+      "flash_count": 256,
+      "draw_count": 348,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Copper,L1,Top",
+        "FilePolarity": "Positive"
+      },
+      "aperture_analysis": {
+        "by_function": {
+          "SMDPad": 16,
+          "HeatsinkPad": 4,
+          "ComponentPad": 7,
+          "ViaPad": 1,
+          "Conductor": 6
+        },
+        "by_function_flashes": {
+          "SMDPad": 153,
+          "HeatsinkPad": 17,
+          "ComponentPad": 35,
+          "ViaPad": 51,
+          "Conductor": 0
+        },
+        "conductor_widths_mm": [
+          0.18,
+          0.2,
+          0.22,
+          0.25,
+          0.35,
+          0.45
+        ],
+        "min_feature_mm": 0.15
+      },
+      "x2_component_count": 0,
+      "x2_net_count": 54,
+      "x2_pin_count": 189
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-F_Mask.gts",
+      "layer_type": "F.Mask",
+      "units": "mm",
+      "aperture_count": 28,
+      "flash_count": 207,
+      "draw_count": 0,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Soldermask,Top",
+        "FilePolarity": "Negative"
+      },
+      "aperture_analysis": {
+        "min_feature_mm": 0.15
+      },
+      "x2_component_count": 78,
+      "x2_net_count": 0,
+      "x2_pin_count": 0
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-F_Paste.gtp",
+      "layer_type": "F.Paste",
+      "units": "mm",
+      "aperture_count": 12,
+      "flash_count": 118,
+      "draw_count": 0,
+      "region_count": 0,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Paste,Top",
+        "FilePolarity": "Positive"
+      },
+      "aperture_analysis": {
+        "min_feature_mm": 0.3
+      },
+      "x2_component_count": 22,
+      "x2_net_count": 0,
+      "x2_pin_count": 0
+    },
+    {
+      "filename": "CoffeeRoast-Control-RevA-F_Silkscreen.gto",
+      "layer_type": "F.SilkS",
+      "units": "mm",
+      "aperture_count": 33,
+      "flash_count": 207,
+      "draw_count": 3380,
+      "region_count": 1,
+      "x2_attributes": {
+        "GenerationSoftware": "KiCad,Pcbnew,9.0.8+dfsg-1",
+        "CreationDate": "2026-07-06T20:28:57+02:00",
+        "ProjectId": "CoffeeRoast-Control-RevA,436f6666-6565-4526-9f61-73742d436f6e,A.1-draft",
+        "SameCoordinates": "Original",
+        "FileFunction": "Legend,Top",
+        "FilePolarity": "Positive"
+      },
+      "aperture_analysis": {
+        "min_feature_mm": 0.1
+      },
+      "x2_component_count": 78,
+      "x2_net_count": 0,
+      "x2_pin_count": 0
+    }
+  ],
+  "drills": [],
+  "drill_tools": {},
+  "job_file": {
+    "generator": "Pcbnew 9.0.8+dfsg-1",
+    "vendor": "KiCad",
+    "creation_date": "2026-07-06T20:28:57+02:00",
+    "board_width_mm": 160.15,
+    "board_height_mm": 100.15,
+    "layer_count": 2,
+    "board_thickness_mm": 1.6,
+    "finish": "None",
+    "project_name": "CoffeeRoast-Control-RevA",
+    "design_rules": [
+      {
+        "layers": "Outer",
+        "PadToPad": 0.1,
+        "PadToTrack": 0.1,
+        "TrackToTrack": 0.1,
+        "MinLineWidth": 0.16
+      }
+    ],
+    "expected_files": [
+      {
+        "path": "CoffeeRoast-Control-RevA-F_Cu.gtl",
+        "function": "Copper,L1,Top",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-B_Cu.gbl",
+        "function": "Copper,L2,Bot",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-F_Paste.gtp",
+        "function": "SolderPaste,Top",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-B_Paste.gbp",
+        "function": "SolderPaste,Bot",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-F_Silkscreen.gto",
+        "function": "Legend,Top",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-B_Silkscreen.gbo",
+        "function": "Legend,Bot",
+        "polarity": "Positive"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-F_Mask.gts",
+        "function": "SolderMask,Top",
+        "polarity": "Negative"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-B_Mask.gbs",
+        "function": "SolderMask,Bot",
+        "polarity": "Negative"
+      },
+      {
+        "path": "CoffeeRoast-Control-RevA-Edge_Cuts.gm1",
+        "function": "Profile",
+        "polarity": "Positive"
+      }
+    ],
+    "stackup": [
+      {
+        "type": "Legend",
+        "name": "Top Silk Screen"
+      },
+      {
+        "type": "SolderPaste",
+        "name": "Top Solder Paste"
+      },
+      {
+        "type": "SolderMask",
+        "name": "Top Solder Mask",
+        "thickness_mm": 0.01
+      },
+      {
+        "type": "Copper",
+        "name": "F.Cu",
+        "thickness_mm": 0.035
+      },
+      {
+        "type": "Dielectric",
+        "name": "F.Cu/B.Cu",
+        "thickness_mm": 1.51,
+        "material": "FR4"
+      },
+      {
+        "type": "Copper",
+        "name": "B.Cu",
+        "thickness_mm": 0.035
+      },
+      {
+        "type": "SolderMask",
+        "name": "Bottom Solder Mask",
+        "thickness_mm": 0.01
+      },
+      {
+        "type": "SolderPaste",
+        "name": "Bottom Solder Paste"
+      },
+      {
+        "type": "Legend",
+        "name": "Bottom Silk Screen"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "detector": "analyze_gerbers",
+      "rule_id": "GR-003",
+      "category": "gerber_completeness",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "No drill file in gerber set",
+      "description": "No Excellon drill file found. PCB fabrication requires drill data.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Include drill file(s) in gerber export.",
+      "report_context": {
+        "section": "Gerber Completeness",
+        "impact": "Fab will reject",
+        "standard_ref": ""
+      },
+      "stages": [
+        "pre_fab"
+      ]
+    },
+    {
+      "detector": "analyze_gerbers",
+      "rule_id": "GR-002",
+      "category": "gerber_alignment",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Alignment: Width varies by 21.4mm across copper/edge layers",
+      "description": "Layer alignment issue: Width varies by 21.4mm across copper/edge layers",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+      "report_context": {
+        "section": "Gerber Alignment",
+        "impact": "Layer misregistration",
+        "standard_ref": ""
+      },
+      "stages": [
+        "pre_fab"
+      ]
+    },
+    {
+      "detector": "analyze_gerbers",
+      "rule_id": "GR-002",
+      "category": "gerber_alignment",
+      "severity": "warning",
+      "confidence": "deterministic",
+      "evidence_source": "topology",
+      "summary": "Alignment: Height varies by 26.0mm across copper/edge layers",
+      "description": "Layer alignment issue: Height varies by 26.0mm across copper/edge layers",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+      "report_context": {
+        "section": "Gerber Alignment",
+        "impact": "Layer misregistration",
+        "standard_ref": ""
+      },
+      "stages": [
+        "pre_fab"
+      ]
+    },
+    {
+      "detector": "analyze_gerbers",
+      "rule_id": "GR-004",
+      "category": "gerber_completeness",
+      "severity": "warning",
+      "confidence": "heuristic",
+      "evidence_source": "topology",
+      "summary": "F paste layer: 118 flashes vs 256 copper (46%)",
+      "description": "F-side paste layer has significantly fewer flashes (118) than copper layer (256). This may indicate missing solder paste apertures.",
+      "components": [],
+      "nets": [],
+      "pins": [],
+      "recommendation": "Check solder paste aperture generation \u2014 missing apertures cause assembly defects.",
+      "report_context": {
+        "section": "Gerber Completeness",
+        "impact": "Assembly solder joint quality",
+        "standard_ref": ""
+      },
+      "stages": [
+        "pre_fab"
+      ]
+    }
+  ],
+  "summary": {
+    "total_findings": 4,
+    "by_severity": {
+      "error": 0,
+      "warning": 4,
+      "info": 0
+    }
+  },
+  "trust_summary": {
+    "total_findings": 4,
+    "trust_level": "mixed",
+    "by_confidence": {
+      "deterministic": 3,
+      "heuristic": 1,
+      "datasheet-backed": 0
+    },
+    "by_evidence_source": {
+      "datasheet": 0,
+      "topology": 4,
+      "heuristic_rule": 0,
+      "symbol_footprint": 0,
+      "bom": 0,
+      "geometry": 0,
+      "api_lookup": 0
+    },
+    "provenance_coverage_pct": 0.0
+  },
+  "audience_summary": {
+    "designer": {
+      "total_findings": 4,
+      "by_severity": {
+        "error": 0,
+        "warning": 4,
+        "info": 0
+      },
+      "by_category": {
+        "gerber_completeness": 2,
+        "gerber_alignment": 2
+      },
+      "top_issues": [
+        {
+          "detector": "analyze_gerbers",
+          "rule_id": "GR-003",
+          "category": "gerber_completeness",
+          "severity": "warning",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "No drill file in gerber set",
+          "description": "No Excellon drill file found. PCB fabrication requires drill data.",
+          "components": [],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Include drill file(s) in gerber export.",
+          "report_context": {
+            "section": "Gerber Completeness",
+            "impact": "Fab will reject",
+            "standard_ref": ""
+          },
+          "stages": [
+            "pre_fab"
+          ]
+        },
+        {
+          "detector": "analyze_gerbers",
+          "rule_id": "GR-002",
+          "category": "gerber_alignment",
+          "severity": "warning",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "Alignment: Width varies by 21.4mm across copper/edge layers",
+          "description": "Layer alignment issue: Width varies by 21.4mm across copper/edge layers",
+          "components": [],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+          "report_context": {
+            "section": "Gerber Alignment",
+            "impact": "Layer misregistration",
+            "standard_ref": ""
+          },
+          "stages": [
+            "pre_fab"
+          ]
+        },
+        {
+          "detector": "analyze_gerbers",
+          "rule_id": "GR-002",
+          "category": "gerber_alignment",
+          "severity": "warning",
+          "confidence": "deterministic",
+          "evidence_source": "topology",
+          "summary": "Alignment: Height varies by 26.0mm across copper/edge layers",
+          "description": "Layer alignment issue: Height varies by 26.0mm across copper/edge layers",
+          "components": [],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+          "report_context": {
+            "section": "Gerber Alignment",
+            "impact": "Layer misregistration",
+            "standard_ref": ""
+          },
+          "stages": [
+            "pre_fab"
+          ]
+        },
+        {
+          "detector": "analyze_gerbers",
+          "rule_id": "GR-004",
+          "category": "gerber_completeness",
+          "severity": "warning",
+          "confidence": "heuristic",
+          "evidence_source": "topology",
+          "summary": "F paste layer: 118 flashes vs 256 copper (46%)",
+          "description": "F-side paste layer has significantly fewer flashes (118) than copper layer (256). This may indicate missing solder paste apertures.",
+          "components": [],
+          "nets": [],
+          "pins": [],
+          "recommendation": "Check solder paste aperture generation \u2014 missing apertures cause assembly defects.",
+          "report_context": {
+            "section": "Gerber Completeness",
+            "impact": "Assembly solder joint quality",
+            "standard_ref": ""
+          },
+          "stages": [
+            "pre_fab"
+          ]
+        }
+      ]
+    },
+    "reviewer": {
+      "total_findings": 4,
+      "by_category": {
+        "gerber_completeness": 2,
+        "gerber_alignment": 2
+      },
+      "top_issues": [
+        {
+          "rule_id": "GR-003",
+          "severity": "warning",
+          "summary": "No drill file in gerber set",
+          "recommendation": "Include drill file(s) in gerber export.",
+          "category": "gerber_completeness"
+        },
+        {
+          "rule_id": "GR-002",
+          "severity": "warning",
+          "summary": "Alignment: Width varies by 21.4mm across copper/edge layers",
+          "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+          "category": "gerber_alignment"
+        },
+        {
+          "rule_id": "GR-002",
+          "severity": "warning",
+          "summary": "Alignment: Height varies by 26.0mm across copper/edge layers",
+          "recommendation": "Re-export gerbers to ensure consistent layer alignment.",
+          "category": "gerber_alignment"
+        },
+        {
+          "rule_id": "GR-004",
+          "severity": "warning",
+          "summary": "F paste layer: 118 flashes vs 256 copper (46%)",
+          "recommendation": "Check solder paste aperture generation \u2014 missing apertures cause assembly defects.",
+          "category": "gerber_completeness"
+        }
+      ]
+    },
+    "manager": {
+      "risk_level": "low",
+      "blocker_count": 0,
+      "warning_count": 4,
+      "stage_readiness": {
+        "schematic": "pass",
+        "layout": "pass",
+        "pre_fab": "needs_review",
+        "bring_up": "pass"
+      },
+      "one_liner": "4 warnings across 2 categories."
+    }
+  }
+}

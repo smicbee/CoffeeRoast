@@ -1,0 +1,35 @@
+** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
+** Created on 2026-07-05T19:59:34+0200 **
+** Report includes: Fehler **
+
+** Found 6 DRC violations **
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Regel: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(18,1966 mm, 16,5983 mm): Leiterbahn [+24V_RAW] auf F.Cu, Länge 7,9332 mm
+    @(12,5400 mm, 18,0000 mm): Durchsteckpad 2 [GND] von J1
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Regel: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(30,5766 mm, 49,4017 mm): Leiterbahn [+24V_FUSED] auf F.Cu, Länge 20,3132 mm
+    @(12,5400 mm, 48,0000 mm): Durchsteckpad 2 [FAN_NEG] von J2
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Regel: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(118,9784 mm, 68,5983 mm): Leiterbahn [SSR_NEG] auf F.Cu, Länge 20,7582 mm
+    @(137,4600 mm, 70,0000 mm): Durchsteckpad 1 [+5V] von J3
+[shorting_items]: Elemente, die zwei Netze kurzschließen (Netze +24V_RAW und GND)
+    Lokale Überschreibung; error
+    @(18,1966 mm, 16,5983 mm): Leiterbahn [+24V_RAW] auf F.Cu, Länge 7,9332 mm
+    @(12,5400 mm, 18,0000 mm): Durchsteckpad 2 [GND] von J1
+[shorting_items]: Elemente, die zwei Netze kurzschließen (Netze FAN_NEG und +24V_FUSED)
+    Lokale Überschreibung; error
+    @(12,5400 mm, 48,0000 mm): Durchsteckpad 2 [FAN_NEG] von J2
+    @(30,5766 mm, 49,4017 mm): Leiterbahn [+24V_FUSED] auf F.Cu, Länge 20,3132 mm
+[shorting_items]: Elemente, die zwei Netze kurzschließen (Netze SSR_NEG und +5V)
+    Lokale Überschreibung; error
+    @(118,9784 mm, 68,5983 mm): Leiterbahn [SSR_NEG] auf F.Cu, Länge 20,7582 mm
+    @(137,4600 mm, 70,0000 mm): Durchsteckpad 1 [+5V] von J3
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

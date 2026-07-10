@@ -1,0 +1,267 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T21:48:22+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                },
+                {
+                    "description": "Pad 5 [MAX_SCK] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 53.095
+                    },
+                    "uuid": "7b7bdd94-e836-40be-8046-8723b1efb376"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                },
+                {
+                    "description": "Pad 6 [MAX_CS] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 54.365
+                    },
+                    "uuid": "06d5600a-829f-4a2a-94cd-c36d8e11e63f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                },
+                {
+                    "description": "Pad 7 [MAX_DO] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 55.635
+                    },
+                    "uuid": "79ee0d85-ca42-47b7-aedb-7911ef9e1e7a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 11,8834 mm",
+                    "pos": {
+                        "x": 99.7733,
+                        "y": 53.095
+                    },
+                    "uuid": "fa6cd7c5-0d1b-4587-86dd-2e309215bc07"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C8 auf F.Cu",
+                    "pos": {
+                        "x": 98.0,
+                        "y": 50.5
+                    },
+                    "uuid": "4c465471-16c3-4eae-a38c-369885533b63"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 55.635
+                    },
+                    "uuid": "31f7525a-358a-489f-9d23-1773cce5a403"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 3,7449 mm",
+                    "pos": {
+                        "x": 98.0,
+                        "y": 50.5
+                    },
+                    "uuid": "0b6fb3a7-9271-4f4b-b0e5-dc952591db47"
+                },
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 5,2149 mm",
+                    "pos": {
+                        "x": 99.7733,
+                        "y": 54.365
+                    },
+                    "uuid": "cc0c517e-0f56-4588-98a9-e69d3b09e0aa"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_CS] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 54.365
+                    },
+                    "uuid": "a6d3c1ac-963b-4202-8294-89cd2988ae3c"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 0,9267 mm",
+                    "pos": {
+                        "x": 100.7,
+                        "y": 53.095
+                    },
+                    "uuid": "6bc8917d-25df-4ee0-91d2-2521e004d273"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GND und MAX_SCK)",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                },
+                {
+                    "description": "Leiterbahn [MAX_SCK] auf F.Cu, Länge 11,8834 mm",
+                    "pos": {
+                        "x": 99.7733,
+                        "y": 53.095
+                    },
+                    "uuid": "fa6cd7c5-0d1b-4587-86dd-2e309215bc07"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                },
+                {
+                    "description": "Leiterbahn [THERMO_PLUS] auf F.Cu, Länge 36,4506 mm",
+                    "pos": {
+                        "x": 133.1853,
+                        "y": 54.873
+                    },
+                    "uuid": "d284d81e-6941-44ab-b051-e99cb23728c5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [THERMO_MINUS] auf F.Cu, Länge 40,0562 mm",
+                    "pos": {
+                        "x": 96.8369,
+                        "y": 56.2452
+                    },
+                    "uuid": "3baf3291-e6fa-4e25-aaa6-a0d6ada66611"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 6,5356 mm",
+                    "pos": {
+                        "x": 99.4,
+                        "y": 50.5
+                    },
+                    "uuid": "a7f97982-77fd-4b8d-9202-310b11ca7cf7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

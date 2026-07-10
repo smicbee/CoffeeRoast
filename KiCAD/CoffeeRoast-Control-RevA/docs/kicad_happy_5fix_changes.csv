@@ -1,0 +1,7 @@
+Change,Details
+Silkscreen warning cleanup,"Moved footprint-generated F.SilkS outlines to F.Fab; kept functional board-level F.SilkS labels; full DRC silk_over_copper now 0"
+Via annular-ring improvement,"Raised vias to 0.55 mm diameter / 0.30 mm drill where needed; annular ring now 0.125 mm instead of 0.10 mm"
+Power trace improvement,"Widened +24V_RAW and +24V_FUSED tracks to 0.60 mm; widened SSR_NEG to 0.35 mm where DRC-clean; left tight +5V/+3V3 signal-adjacent traces unchanged to avoid clearance errors"
+Decoupling/EMC addition,"Added C6 100 nF near U1 ESP32 +3V3/GND and C7 100 nF near U4 +5V output/GND pour"
+Thermal improvement,"Added seven +3V3 thermal/output vias at U3 pad 2 area and tied them on B.Cu with +3V3 copper tracks"
+KiCad-Happy origin normalization,"Normalized generated-footprint origins so KiCad-Happy placement-edge false positives for custom absolute-pad footprints disappear"

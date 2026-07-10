@@ -1,0 +1,106 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:23:53+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze MAX_DO und GPIO47)",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 1,0932 mm",
+                    "pos": {
+                        "x": 96.4409,
+                        "y": 59.2968
+                    },
+                    "uuid": "5771eebd-c6a5-4618-8aaf-cb0f3b831464"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 40,8519 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "e77a2997-8cb8-420c-b8de-93851eef1201"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO21] auf B.Cu, Länge 40,8519 mm",
+                    "pos": {
+                        "x": 93.32,
+                        "y": 58.5
+                    },
+                    "uuid": "d7aff887-ab77-4ce8-bc1b-4c67121df666"
+                },
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 12,4841 mm",
+                    "pos": {
+                        "x": 83.9568,
+                        "y": 59.2968
+                    },
+                    "uuid": "dbba8cc2-4643-4eec-b25c-dfc508254c9f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO14] auf B.Cu, Länge 40,8519 mm",
+                    "pos": {
+                        "x": 90.78,
+                        "y": 58.5
+                    },
+                    "uuid": "49f9ddaa-c680-486c-ad02-525495f13fdd"
+                },
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 12,4841 mm",
+                    "pos": {
+                        "x": 83.9568,
+                        "y": 59.2968
+                    },
+                    "uuid": "dbba8cc2-4643-4eec-b25c-dfc508254c9f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [MAX_DO] auf B.Cu, Länge 12,4841 mm",
+                    "pos": {
+                        "x": 83.9568,
+                        "y": 59.2968
+                    },
+                    "uuid": "dbba8cc2-4643-4eec-b25c-dfc508254c9f"
+                },
+                {
+                    "description": "Leiterbahn [GPIO47] auf B.Cu, Länge 40,8519 mm",
+                    "pos": {
+                        "x": 95.86,
+                        "y": 58.5
+                    },
+                    "uuid": "e77a2997-8cb8-420c-b8de-93851eef1201"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

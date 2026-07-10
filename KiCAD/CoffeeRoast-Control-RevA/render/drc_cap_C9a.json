@@ -1,0 +1,83 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T21:48:24+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 5,4954 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 81.9017
+                    },
+                    "uuid": "5c7e2f77-e55e-44b7-9a1d-0108eeff925b"
+                },
+                {
+                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 72.5,
+                        "y": 82.2
+                    },
+                    "uuid": "3fdb013a-bf1e-46a4-ac83-f50cd29813b1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GND und +5V)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 72.5,
+                        "y": 82.2
+                    },
+                    "uuid": "47293df0-e7cf-4a7f-8b10-7f0582c2bdd2"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 5,4954 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 81.9017
+                    },
+                    "uuid": "5c7e2f77-e55e-44b7-9a1d-0108eeff925b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Elemente, die zwei Netze kurzschließen (Netze GND und +5V)",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 72.5,
+                        "y": 82.2
+                    },
+                    "uuid": "3fdb013a-bf1e-46a4-ac83-f50cd29813b1"
+                },
+                {
+                    "description": "Leiterbahn [+5V] auf F.Cu, Länge 5,4954 mm",
+                    "pos": {
+                        "x": 75.7954,
+                        "y": 81.9017
+                    },
+                    "uuid": "5c7e2f77-e55e-44b7-9a1d-0108eeff925b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        }
+    ]
+}

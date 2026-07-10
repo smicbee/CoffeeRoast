@@ -1,0 +1,218 @@
+** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
+** Created on 2026-07-06T20:28:24+0200 **
+** Report includes: Fehler, Warnungen **
+
+** Found 69 DRC violations **
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 30,4000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 31,6000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 30,4000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 31,6000 mm): Abschnitt von R8 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 39,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 45,0000 mm): Abschnitt von SW2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(74,8500 mm, 85,4000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(74,8500 mm, 86,6000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(77,1500 mm, 85,4000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(77,1500 mm, 86,6000 mm): Abschnitt von C2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 29,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(40,0000 mm, 35,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 29,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(46,0000 mm, 35,0000 mm): Abschnitt von SW1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 47,4000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 47,4000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 48,6000 mm): Abschnitt von R1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(89,8500 mm, 62,4000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(89,8500 mm, 63,6000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(92,1500 mm, 62,4000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(92,1500 mm, 63,6000 mm): Abschnitt von C3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(95,1000 mm, 57,7000 mm): Abschnitt von U2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(100,9000 mm, 52,3000 mm): Abschnitt von U2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 39,4000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 40,6000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 39,4000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 40,6000 mm): Abschnitt von R11 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(22,0000 mm, 87,0000 mm): Abschnitt von U4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(50,0000 mm, 69,0000 mm): Abschnitt von U4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(110,8500 mm, 25,4000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(110,8500 mm, 26,6000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(113,1500 mm, 25,4000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(113,1500 mm, 26,6000 mm): Abschnitt von R4 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 51,4000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(63,8500 mm, 52,6000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 51,4000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(66,1500 mm, 52,6000 mm): Abschnitt von R2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(64,2500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(71,7500 mm, 74,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(71,7500 mm, 81,5000 mm): Abschnitt von U3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 35,4000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 36,6000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 35,4000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 36,6000 mm): Abschnitt von R6 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 35,4000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(128,8500 mm, 36,6000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 35,4000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(131,1500 mm, 36,6000 mm): Abschnitt von R10 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(103,8500 mm, 21,4000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(103,8500 mm, 22,6000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(106,1500 mm, 21,4000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(106,1500 mm, 22,6000 mm): Abschnitt von R3 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(59,8500 mm, 85,4000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(59,8500 mm, 86,6000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(62,1500 mm, 85,4000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(62,1500 mm, 86,6000 mm): Abschnitt von C1 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 31,4000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(53,8500 mm, 32,6000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 31,4000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(56,1500 mm, 32,6000 mm): Abschnitt von R5 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(116,4000 mm, 68,6000 mm): Abschnitt von Q2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(119,6000 mm, 71,4000 mm): Abschnitt von Q2 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 26,4000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(126,8500 mm, 27,6000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 26,4000 mm): Abschnitt von R7 auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck überlappt Lötstoppmaske
+    Lokale Überschreibung; warning
+    @(129,1500 mm, 27,6000 mm): Abschnitt von R7 auf F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

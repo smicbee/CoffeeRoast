@@ -1,0 +1,17 @@
+{
+  "fileId": "b79fcd4656504de2b88788e326fa1e3f",
+  "fileSystemAccessId": "8762674715167612928",
+  "result": {
+    "technologyDiscernRecordId": 34690826,
+    "technologyDiscernRecordNum": "a8f36101da604fa0bd940ef2ec501798",
+    "gerberFileId": 68721264,
+    "createTime": 1783394680000,
+    "stencilLayer": 2,
+    "pcsLength": 160.0,
+    "pcsWidth": 100.0,
+    "setLength": 160.0,
+    "setWidth": 100.0,
+    "gerberResult": 0
+  },
+  "source": "Playwright JLC upload attempt 2026-07-07; full analysis response body was truncated in event log but browser response confirmed head=ok and these fields."
+}

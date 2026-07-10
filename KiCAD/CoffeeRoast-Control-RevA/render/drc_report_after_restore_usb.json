@@ -1,0 +1,1485 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:09:18+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 34.05
+                    },
+                    "uuid": "1cf5b15e-f53e-43fd-8351-4fd780107495"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 27.95
+                    },
+                    "uuid": "496aafec-e1f7-47f7-9001-c314f6225ac9"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 153.875,
+                        "y": 26.68
+                    },
+                    "uuid": "57f64d10-93ee-4eb9-8ba5-861f56390ffd"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.895,
+                        "y": 26.68
+                    },
+                    "uuid": "586f85f0-17ff-4395-87c4-56f3ce593a24"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 27.65
+                    },
+                    "uuid": "5b673f07-0089-493e-9f52-49aa4b9324f5"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 27.65
+                    },
+                    "uuid": "5dee71ee-aff3-4686-9d0a-bc0d4c0853ba"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "72972106-3491-4178-bd1a-1b865f0186c1"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 34.05
+                    },
+                    "uuid": "75df60dc-19a8-450d-a71d-f470660e9d49"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "985d2903-6f8e-4e7c-ad0f-492731975cd8"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.895,
+                        "y": 35.32
+                    },
+                    "uuid": "cbdd734b-0aa8-41ce-91a5-a625e24ab730"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.695,
+                        "y": 35.32
+                    },
+                    "uuid": "dbeb2a3b-049c-41c4-a2f6-e5f7e0a917d3"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 34.35
+                    },
+                    "uuid": "dd1fa95a-d52d-4677-a64e-0e54475349db"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 34.35
+                    },
+                    "uuid": "df573aa5-d3ec-4d1f-935b-725f0561c0b1"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 153.875,
+                        "y": 35.32
+                    },
+                    "uuid": "e3860823-d9e2-477f-81d8-289bdb6ba4e9"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 27.95
+                    },
+                    "uuid": "e8004d6c-ea12-40d6-b533-fe846f4d8292"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.695,
+                        "y": 26.68
+                    },
+                    "uuid": "f35cb7c0-316c-4a83-82b8-7a88567ed41c"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 33.55
+                    },
+                    "uuid": "7b8670e3-0f1c-49a6-9ce7-40bef45d98d0"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 28.75
+                    },
+                    "uuid": "8c981df4-103b-4b6b-80f9-ea0329b32a43"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 28.45
+                    },
+                    "uuid": "a89ac030-2d7a-4ec8-ab1b-1ff6180aa827"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.75
+                    },
+                    "uuid": "ce2eb8df-e757-4752-83d3-92fee104e05d"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.25
+                    },
+                    "uuid": "ce913f9e-e697-4144-a225-f6fb924316ce"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 33.25
+                    },
+                    "uuid": "d2e04732-39d6-4826-b0af-67d3d47f330c"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.45
+                    },
+                    "uuid": "d42e73cc-1779-4e9f-b64e-20fdb619a99a"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.55
+                    },
+                    "uuid": "fae994ea-4c1b-4708-8681-388a5b2446fa"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "147deaee-3cb1-425b-9a63-ec6e324079ad"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "3be27e62-a062-4714-9ed3-ba5d66a3e9e9"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.15,
+                        "y": 30.75
+                    },
+                    "uuid": "454cbdeb-110a-4d0e-a41a-4b08a95ae5ab"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.15,
+                        "y": 31.75
+                    },
+                    "uuid": "4d9a1b69-06f0-4b5a-8507-64ba20dbeaee"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.55,
+                        "y": 30.25
+                    },
+                    "uuid": "99fd2699-1d4b-4316-8fc5-26b9381e067a"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "a11908f9-d3a8-434b-8701-d5d2cdf0e943"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "ab3307dd-ae61-4fa2-b6d0-57e7435b69a4"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.55,
+                        "y": 31.25
+                    },
+                    "uuid": "ad16e682-dc46-49f1-9edb-0d500c38c70f"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC1] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 32.25
+                    },
+                    "uuid": "48974dbb-e970-4750-9e6d-44bf1e58e084"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC1] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 148.75,
+                        "y": 32.25
+                    },
+                    "uuid": "b3f12f23-e6a0-4ebb-a154-baca13d96ed4"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC2] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "6e10f0fd-5d08-4f7b-a629-7eed0709b05d"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via-Durchmesser (Einschränkungen aus Platinenkonfiguration min Durchmesser 0,5000 mm; tatsächlich 0,4200 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC2] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 148.75,
+                        "y": 29.25
+                    },
+                    "uuid": "8b2e15bd-c6dd-4ca1-b4ec-27edb6032042"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 34.05
+                    },
+                    "uuid": "1cf5b15e-f53e-43fd-8351-4fd780107495"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 27.95
+                    },
+                    "uuid": "496aafec-e1f7-47f7-9001-c314f6225ac9"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 153.875,
+                        "y": 26.68
+                    },
+                    "uuid": "57f64d10-93ee-4eb9-8ba5-861f56390ffd"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.895,
+                        "y": 26.68
+                    },
+                    "uuid": "586f85f0-17ff-4395-87c4-56f3ce593a24"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 27.65
+                    },
+                    "uuid": "5b673f07-0089-493e-9f52-49aa4b9324f5"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 27.65
+                    },
+                    "uuid": "5dee71ee-aff3-4686-9d0a-bc0d4c0853ba"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "72972106-3491-4178-bd1a-1b865f0186c1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 34.05
+                    },
+                    "uuid": "75df60dc-19a8-450d-a71d-f470660e9d49"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "985d2903-6f8e-4e7c-ad0f-492731975cd8"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.895,
+                        "y": 35.32
+                    },
+                    "uuid": "cbdd734b-0aa8-41ce-91a5-a625e24ab730"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.695,
+                        "y": 35.32
+                    },
+                    "uuid": "dbeb2a3b-049c-41c4-a2f6-e5f7e0a917d3"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 34.35
+                    },
+                    "uuid": "dd1fa95a-d52d-4677-a64e-0e54475349db"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 34.35
+                    },
+                    "uuid": "df573aa5-d3ec-4d1f-935b-725f0561c0b1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 153.875,
+                        "y": 35.32
+                    },
+                    "uuid": "e3860823-d9e2-477f-81d8-289bdb6ba4e9"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.35,
+                        "y": 27.95
+                    },
+                    "uuid": "e8004d6c-ea12-40d6-b533-fe846f4d8292"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.695,
+                        "y": 26.68
+                    },
+                    "uuid": "f35cb7c0-316c-4a83-82b8-7a88567ed41c"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 33.55
+                    },
+                    "uuid": "7b8670e3-0f1c-49a6-9ce7-40bef45d98d0"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 28.75
+                    },
+                    "uuid": "8c981df4-103b-4b6b-80f9-ea0329b32a43"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 28.45
+                    },
+                    "uuid": "a89ac030-2d7a-4ec8-ab1b-1ff6180aa827"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.75
+                    },
+                    "uuid": "ce2eb8df-e757-4752-83d3-92fee104e05d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.25
+                    },
+                    "uuid": "ce913f9e-e697-4144-a225-f6fb924316ce"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.95,
+                        "y": 33.25
+                    },
+                    "uuid": "d2e04732-39d6-4826-b0af-67d3d47f330c"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.45
+                    },
+                    "uuid": "d42e73cc-1779-4e9f-b64e-20fdb619a99a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.55
+                    },
+                    "uuid": "fae994ea-4c1b-4708-8681-388a5b2446fa"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "147deaee-3cb1-425b-9a63-ec6e324079ad"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "3be27e62-a062-4714-9ed3-ba5d66a3e9e9"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.15,
+                        "y": 30.75
+                    },
+                    "uuid": "454cbdeb-110a-4d0e-a41a-4b08a95ae5ab"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.15,
+                        "y": 31.75
+                    },
+                    "uuid": "4d9a1b69-06f0-4b5a-8507-64ba20dbeaee"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.55,
+                        "y": 30.25
+                    },
+                    "uuid": "99fd2699-1d4b-4316-8fc5-26b9381e067a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "a11908f9-d3a8-434b-8701-d5d2cdf0e943"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "ab3307dd-ae61-4fa2-b6d0-57e7435b69a4"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 149.55,
+                        "y": 31.25
+                    },
+                    "uuid": "ad16e682-dc46-49f1-9edb-0d500c38c70f"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC1] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 32.25
+                    },
+                    "uuid": "48974dbb-e970-4750-9e6d-44bf1e58e084"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC1] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 148.75,
+                        "y": 32.25
+                    },
+                    "uuid": "b3f12f23-e6a0-4ebb-a154-baca13d96ed4"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC2] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "6e10f0fd-5d08-4f7b-a629-7eed0709b05d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0,3000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC2] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 148.75,
+                        "y": 29.25
+                    },
+                    "uuid": "8b2e15bd-c6dd-4ca1-b4ec-27edb6032042"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf B.Cu, Länge 8,6200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.45
+                    },
+                    "uuid": "3e0f1de2-04bf-4259-898c-afece7f8099a"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN] auf B.Cu, Länge 7,8200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "5620502c-8ab6-4724-9ab3-96bc5cf381ac"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_CC2] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "6e10f0fd-5d08-4f7b-a629-7eed0709b05d"
+                },
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.75
+                    },
+                    "uuid": "ce2eb8df-e757-4752-83d3-92fee104e05d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 27.95
+                    },
+                    "uuid": "496aafec-e1f7-47f7-9001-c314f6225ac9"
+                },
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.45
+                    },
+                    "uuid": "d42e73cc-1779-4e9f-b64e-20fdb619a99a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "3be27e62-a062-4714-9ed3-ba5d66a3e9e9"
+                },
+                {
+                    "description": "Via [USB_CC1] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 32.25
+                    },
+                    "uuid": "48974dbb-e970-4750-9e6d-44bf1e58e084"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_CC1] auf B.Cu, Länge 7,4200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 32.25
+                    },
+                    "uuid": "57cda1aa-b713-4f12-8787-79f0298ed904"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 34.05
+                    },
+                    "uuid": "75df60dc-19a8-450d-a71d-f470660e9d49"
+                },
+                {
+                    "description": "Via [USB_VBUS] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.55
+                    },
+                    "uuid": "fae994ea-4c1b-4708-8681-388a5b2446fa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_CC2] auf B.Cu, Länge 7,4200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "dab06ba0-2f05-4068-8f50-e434b3a243bc"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf B.Cu, Länge 8,6200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 28.75
+                    },
+                    "uuid": "61abea46-758d-4be5-9d47-2a6ba2a76b11"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "147deaee-3cb1-425b-9a63-ec6e324079ad"
+                },
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "a11908f9-d3a8-434b-8701-d5d2cdf0e943"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "3be27e62-a062-4714-9ed3-ba5d66a3e9e9"
+                },
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "a11908f9-d3a8-434b-8701-d5d2cdf0e943"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Freiraum-Verstoß ( Freiraum 0,1000 mm; tatsächlich 0,0800 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_DN] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "147deaee-3cb1-425b-9a63-ec6e324079ad"
+                },
+                {
+                    "description": "Via [USB_DP] auf F.Cu - B.Cu",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "ab3307dd-ae61-4fa2-b6d0-57e7435b69a4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DP] auf B.Cu, Länge 8,2200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "1ad6e79d-79aa-4877-9447-8826e33ba614"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf B.Cu, Länge 8,2200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "fd1a1ec3-4f16-419a-93fa-8c6f1c8686af"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf B.Cu, Länge 8,6200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.25
+                    },
+                    "uuid": "aef28863-4f3e-489b-b941-d565d936ee7d"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf B.Cu, Länge 8,6200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 33.55
+                    },
+                    "uuid": "da1761dd-3738-4a46-968e-b6aa26994027"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN] auf B.Cu, Länge 7,8200 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "0422e156-fd0a-4a2c-babf-6743f3673b07"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 8,6400 mm",
+                    "pos": {
+                        "x": 145.0733,
+                        "y": 26.68
+                    },
+                    "uuid": "db001dd9-a028-44e9-a738-2bc4b3dc5f58"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

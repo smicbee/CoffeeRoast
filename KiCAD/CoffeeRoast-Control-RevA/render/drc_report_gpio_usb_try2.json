@@ -1,0 +1,222 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-06T20:06:38+0200",
+    "included_severities": [
+        "error"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevA.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "faeeb167-8f20-4ae5-840a-063d4c2e72cc"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 1,0017 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 26.68
+                    },
+                    "uuid": "9a76f139-073d-4e0f-bd36-c356fd2bad0c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "3ac21a71-08a3-4f4d-a13b-477442e00fa7"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf B.Cu, Länge 1,0017 mm",
+                    "pos": {
+                        "x": 146.075,
+                        "y": 35.32
+                    },
+                    "uuid": "90b28552-0cdf-492a-8b0a-14c17439c365"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 3,3314 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 32.6728
+                    },
+                    "uuid": "52f36d98-0acc-448f-8670-5aa8e94b8468"
+                },
+                {
+                    "description": "Leiterbahn [USB_CC1] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 32.25
+                    },
+                    "uuid": "f0c2e939-12f1-4fec-afc4-66ffeafa6c1f"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_CC2] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 29.25
+                    },
+                    "uuid": "2e196666-6010-4207-b8d4-e40988b5e9c8"
+                },
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 0,8364 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 29.3414
+                    },
+                    "uuid": "3aee8cb8-7803-4151-9f34-0f52db11cd8d"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 3,3314 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 32.6728
+                    },
+                    "uuid": "52f36d98-0acc-448f-8670-5aa8e94b8468"
+                },
+                {
+                    "description": "Leiterbahn [USB_DN] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.75
+                    },
+                    "uuid": "7f634042-3c54-4651-a894-6588af5e0a0b"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_DN] auf F.Cu, Länge 1,0000 mm",
+                    "pos": {
+                        "x": 142.1067,
+                        "y": 30.75
+                    },
+                    "uuid": "9e2db4c4-7312-4caf-85b8-7b9babedc804"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "e4a08ae2-e4e9-4524-bc35-ec550613a6fc"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 3,3314 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 32.6728
+                    },
+                    "uuid": "52f36d98-0acc-448f-8670-5aa8e94b8468"
+                },
+                {
+                    "description": "Leiterbahn [USB_DN] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.75
+                    },
+                    "uuid": "e7e28f2f-8dc8-435a-8ffc-e984915343f9"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 3,3314 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 32.6728
+                    },
+                    "uuid": "52f36d98-0acc-448f-8670-5aa8e94b8468"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 31.25
+                    },
+                    "uuid": "e4a08ae2-e4e9-4524-bc35-ec550613a6fc"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Leiterbahnkreuzung",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 3,3314 mm",
+                    "pos": {
+                        "x": 142.4541,
+                        "y": 32.6728
+                    },
+                    "uuid": "52f36d98-0acc-448f-8670-5aa8e94b8468"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf F.Cu, Länge 9,0000 mm",
+                    "pos": {
+                        "x": 141.33,
+                        "y": 30.25
+                    },
+                    "uuid": "f4bc9579-789e-4c60-9763-8acf6627f4c5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        }
+    ]
+}

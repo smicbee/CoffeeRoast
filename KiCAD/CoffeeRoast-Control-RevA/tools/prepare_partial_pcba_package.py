@@ -43,14 +43,16 @@ ASSEMBLE = {
     "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 5V bulk/decoupling."},
     "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling."},
     "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "Basic JLCPCB 100nF 0805 X7R 50V; MAX6675 decoupling."},
+    "C6": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U1 ESP32 decoupling."},
+    "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U4 5V output decoupling."},
 }
 
 # Do not ask the PCBA house to place these in the first partial assembly run.
 HAND_SOLDER = {
-    "J1": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after enclosure choice.",
-    "J2": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after enclosure choice.",
-    "J3": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. Hand-solder after SSR wiring choice.",
-    "J4": "Selected candidate: WJ2EDGRC-5.08-02P-14-00A, JLC C3697, 2-pin 5.08mm pluggable terminal. K-type thermocouple needs strain relief; true TC mini-jack is RevA.2 mechanical work.",
+    "J1": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder PSU leads directly and add enclosure strain relief.",
+    "J2": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder fan leads directly and add enclosure strain relief.",
+    "J3": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.",
+    "J4": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder K-type thermocouple/extension leads directly and add strain relief.",
     "F1": "Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.",
     "D1": "Selected candidate: SB560 DO-201AD Schottky, JLC C139684. Hand-solder after fan type is confirmed.",
     "D2": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
@@ -243,8 +245,9 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 2. Enable SMT assembly for the top side only.
 3. Upload `assembly/bom_smd_partial.csv` and `assembly/cpl_smd_partial.csv`.
 4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
-5. Order 5 boards, but only 2 assembled if the UI allows it.
-6. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.
+5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
+6. Order 5 boards, but only 2 assembled if the UI allows it.
+7. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.
 """
     (OUT / "README_ORDERING.md").write_text(readme)
 
