@@ -7,7 +7,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
 - sicherer Vorheizablauf mit bestätigtem Lüfterlauf, danach Aufheizen auf 180 °C Standardziel
-- integrierte Firmware v1.2.0 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
+- integrierte Firmware v1.3.0 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
 - Browser-Flasher für den auf dem RevA-PCB vorgesehenen ESP32-S3-WROOM-1-N8R8 mit 8 MB Flash und 8 MB OPI-PSRAM
 - getrennte Flashoption für die empfohlene Firmware und den exakten Legacy-Main-Stand `2a05fb0`
 - Lüfter-Softstart auch im Failsafe: Ziel 255, Istwert maximal 2 PWM-Schritte je 50 ms
@@ -42,9 +42,9 @@ Die Website bindet ESP Web Tools ein. In Chrome oder Edge über HTTPS:
 
 1. Eine laufende Röstung beenden und den Röster abkühlen lassen.
 2. Den normalen Controller in der Website trennen.
-3. Im Bereich **Firmware** entweder die empfohlene Version 1.2.0 oder bewusst den aufgeklappten Legacy-Stand auswählen.
+3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.0 oder bewusst den aufgeklappten Legacy-Stand auswählen.
 4. Ausschließlich das angeschlossene **CoffeeRoast RevA mit ESP32-S3-WROOM-1-N8R8** auswählen.
-5. Nach dem Flashen den Controller neu verbinden. Die empfohlene Firmware muss `version=1.2.0`, `protocol=2` und `hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8` melden. Der Legacy-Stand besitzt absichtlich keine Versionsmetadaten und erscheint als „Legacy-Firmware“.
+5. Nach dem Flashen den Controller neu verbinden. Die empfohlene Firmware muss `version=1.3.0`, `protocol=3` und `hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8` melden. Der Legacy-Stand besitzt absichtlich keine Versionsmetadaten und erscheint als „Legacy-Firmware“.
 
 Die Manifeste liegen unter `firmware/manifest-current.json` und `firmware/manifest-legacy.json`. Beide 8-MB-Merged-Images wurden mit folgenden Zielparametern gebaut:
 
@@ -76,4 +76,4 @@ node "CoffeeRoast V2/tests/firmware-simulator.test.mjs"
 
 ## Sicherheit
 
-Die Website ersetzt keine hardwareseitige Temperaturabschaltung, Netztrennung oder Beaufsichtigung. Bei Failsafe und Abkühlen wird Heizung `0` gesendet und das Lüfterziel auf `255` gesetzt. Der reale Lüfterausgang steigt auch im Failsafe ausschließlich über die Firmware-Rampe von höchstens 2 PWM-Schritten je 50 ms. Browser-/USB-Abbruch kann eine Hardware-Sicherheitsebene nicht ersetzen.
+Die Website ersetzt keine hardwareseitige Temperaturabschaltung, Netztrennung oder Beaufsichtigung. Bei Failsafe und Abkühlen wird Heizung `0` gesendet und das Lüfterziel auf `255` gesetzt. Der reale Lüfterausgang steigt auch im Failsafe ausschließlich über die Firmware-Rampe von höchstens 2 PWM-Schritten je 50 ms. Der Firmware-Failsafe bleibt verriegelt und lässt sich nur bei Heizung 0, Lüfter mindestens 50 und mindestens drei gesunden Messungen mit `reset failsafe` quittieren; der frühere dauerhaft unsichere Befehl `disable failsafe` existiert nicht mehr. Aus dem Cooling-Zustand ist weder Vorheizen noch direkter Röststart möglich; erst unter 60 °C wechselt die Steuerung zurück in den Leerlauf. Browser-/USB-Abbruch kann eine Hardware-Sicherheitsebene nicht ersetzen.

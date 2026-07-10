@@ -1,9 +1,9 @@
 const encoder = new TextEncoder();
 export const EXPECTED_FIRMWARE = Object.freeze({
   product: 'CoffeeRoast',
-  protocol: 2,
+  protocol: 3,
   hardware: 'CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8',
-  minimumVersion: '1.2.0'
+  minimumVersion: '1.3.0'
 });
 
 export class WebSerialTransport {
@@ -175,8 +175,8 @@ export class SimulationTransport {
     this.fanTarget = 0;
     this.fan = 0;
     this.errors = 0;
+    this.healthyReadings = 0;
     this.abortSignal = false;
-    this.disableFailsafe = false;
     this.sensorFault = false;
     this.speed = speed;
     this.now = now;
@@ -224,9 +224,9 @@ export class SimulationTransport {
     this.sensorCarry += dt;
     while (this.sensorCarry >= 0.5) {
       this.sensorCarry -= 0.5;
-      if (this.sensorFault) this.errors += 1;
-      else this.errors = 0;
-      this.abortSignal = this.errors > 20 && !this.disableFailsafe;
+      if (this.sensorFault) { this.errors += 1; this.healthyReadings = 0; }
+      else { this.errors = 0; this.healthyReadings = Math.min(255, this.healthyReadings + 1); }
+      if (this.errors > 20) this.abortSignal = true;
     }
 
     if (this.temp > 60) this.fanTarget = Math.max(this.fanTarget, MIN_SAFE_FAN);
@@ -255,7 +255,7 @@ export class SimulationTransport {
   async getStatus() {
     this.update();
     const state = this.abortSignal ? 'failsafe' : 'ok';
-    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},version=1.2.0,protocol=2,hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`;
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.0,protocol=3,hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() { this.update(); return this.temp * 1.1; }
@@ -267,11 +267,34 @@ export class SimulationTransport {
 }
 
 export function parseControllerStatus(line) {
-  const values = {};
-  String(line).trim().split(',').forEach(part => { const i=part.indexOf('='); if(i>0) values[part.slice(0,i).trim()]=part.slice(i+1).trim(); });
-  const rawTemperature=Number.parseFloat(values.temp);
-  if(!values.state||!Number.isFinite(rawTemperature))throw new Error(`Ungültiger Controllerstatus: ${line}`);
-  const snapshot={raw:String(line).trim(),state:values.state,temperature:rawTemperature*1.1,rawTemperature,heater:clamp(Number.parseFloat(values.heater),0,255),fan:clamp(Number.parseFloat(values.fan),0,255),fanTarget:clamp(Number.parseFloat(values.fanTarget),0,255),errors:Math.max(0,Number.parseInt(values.errors,10)||0),version:values.version||'',protocol:Math.max(0,Number.parseInt(values.protocol,10)||0),hardware:values.hardware||''};
+  const raw=String(line).trim(),values={};
+  raw.split(',').forEach(part=>{const i=part.indexOf('=');if(i>0)values[part.slice(0,i).trim()]=part.slice(i+1).trim()});
+  const requiredBase=['state','temp','heater','fan','fanTarget','errors'];
+  const missingBase=requiredBase.filter(key=>values[key]===undefined||values[key]==='');
+  if(missingBase.length)throw new Error(`Controllerstatus unvollständig (${missingBase.join(', ')}): ${line}`);
+  if(!/^(ok|failsafe)$/i.test(values.state))throw new Error(`Unbekannter Controllerzustand: ${values.state}`);
+
+  const rawTemperature=Number(values.temp),heater=Number(values.heater),fan=Number(values.fan),fanTarget=Number(values.fanTarget),errors=Number(values.errors);
+  const numericValues=[rawTemperature,heater,fan,fanTarget,errors];
+  if(numericValues.some(value=>!Number.isFinite(value))||!Number.isInteger(errors)||errors<0||heater<0||heater>255||fan<0||fan>255||fanTarget<0||fanTarget>255){
+    throw new Error(`Ungültige numerische Statuswerte: ${line}`);
+  }
+
+  const hasMetadata=['version','protocol','hardware'].some(key=>values[key]!==undefined);
+  if(hasMetadata){
+    const missingMetadata=['version','protocol','hardware'].filter(key=>values[key]===undefined||values[key]==='');
+    if(missingMetadata.length)throw new Error(`Versionsmetadaten unvollständig (${missingMetadata.join(', ')}): ${line}`);
+    if(!/^\d+\.\d+\.\d+$/.test(values.version))throw new Error(`Ungültige Firmwareversion: ${values.version}`);
+    if(!/^\d+$/.test(values.protocol))throw new Error(`Ungültige Protokollversion: ${values.protocol}`);
+    if(Number(values.protocol)>=3){
+      const missingSafety=['healthyReadings','failsafeLatched'].filter(key=>values[key]===undefined||values[key]==='');
+      if(missingSafety.length)throw new Error(`Protokoll-3-Sicherheitsfelder fehlen (${missingSafety.join(', ')}): ${line}`);
+      if(!/^\d+$/.test(values.healthyReadings)||!/^([01])$/.test(values.failsafeLatched))throw new Error(`Ungültige Protokoll-3-Sicherheitsfelder: ${line}`);
+      if((values.state.toLowerCase()==='failsafe')!==(values.failsafeLatched==='1'))throw new Error(`Inkonsistenter Failsafe-Status: ${line}`);
+    }
+  }
+
+  const snapshot={raw,state:values.state.toLowerCase(),temperature:rawTemperature*1.1,rawTemperature,heater,fan,fanTarget,errors,version:values.version||'',protocol:hasMetadata?Number(values.protocol):0,hardware:values.hardware||'',healthyReadings:Math.max(0,Number.parseInt(values.healthyReadings,10)||0),failsafeLatched:values.failsafeLatched==='1'};
   snapshot.compatibility=assessFirmwareCompatibility(snapshot);
   return snapshot;
 }

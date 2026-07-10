@@ -58,5 +58,10 @@ const fanAfterFailsafe = status.fan;
 simulator.advance(loopMilliseconds / 1000);
 status = await simulator.getSnapshot();
 assert(approximately(status.fan - fanAfterFailsafe, fanAcceleration), 'Failsafe-Lüfter steigt exakt mit der Firmware-Rampe');
+simulator.injectSensorFault(false);
+simulator.advance(2);
+status = await simulator.getSnapshot();
+assert(status.state === 'failsafe' && status.failsafeLatched, 'Failsafe bleibt trotz wieder gültiger Messungen verriegelt');
+assert(status.healthyReadings >= 3, 'Gesunde Messungen werden für eine spätere sichere Quittierung gezählt');
 
 console.log('CoffeeRoast ESP32-Firmware- und Thermosimulation: OK');

@@ -17,6 +17,6 @@ mkdir -p "$OUTPUT/current" "$OUTPUT/legacy" "$LEGACY_ROOT/RoastingControl" "$WEB
 git -C "$ROOT" show '2a05fb0:ESP32S3 Zero/RoastingControl/RoastingControl.ino' > "$LEGACY_ROOT/RoastingControl/RoastingControl.ino"
 "$ARDUINO_CLI" compile --fqbn "$FQBN" --output-dir "$OUTPUT/current" "$CURRENT_SKETCH"
 "$ARDUINO_CLI" compile --fqbn "$FQBN" --output-dir "$OUTPUT/legacy" "$LEGACY_ROOT/RoastingControl"
-cp "$OUTPUT/current/RoastingControl.ino.merged.bin" "$WEB_FIRMWARE/coffeeroast-n8r8-v1.2.0.bin"
+cp "$OUTPUT/current/RoastingControl.ino.merged.bin" "$WEB_FIRMWARE/coffeeroast-n8r8-v1.3.0.bin"
 cp "$OUTPUT/legacy/RoastingControl.ino.merged.bin" "$WEB_FIRMWARE/coffeeroast-n8r8-legacy-2a05fb0.bin"
 (cd "$WEB_FIRMWARE" && sha256sum -c SHA256SUMS)

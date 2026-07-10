@@ -14,28 +14,36 @@ export class RoastEngine extends EventTarget{
   async connect(){
     if(!this.transport)throw new Error('Kein Transport gewählt');
     await this.transport.connect();this.connected=true;
-    try{const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);if(/failsafe/i.test(controller.state))await this.enterFailsafe('Controller meldet Failsafe');this.startPolling();this.emit()}
+    try{const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);if(!this.firmwareCompatibility.compatible){await this.enterFailsafe(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason||'unbekannter Grund'}`)}else if(/failsafe/i.test(controller.state))await this.enterFailsafe('Controller meldet Failsafe');this.startPolling();this.emit()}
     catch(error){this.connected=false;await this.transport.disconnect(false);throw new Error(`Controller erkannt, aber Statusprotokoll ungültig: ${error.message}`)}
   }
   async disconnect(){this.stopPolling();if(this.transport)await this.transport.disconnect(true);this.connected=false;this.state=RoastState.IDLE;this.status='';this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.emit()}
   startPolling(){this.stopPolling();this.timer=window.setInterval(()=>this.tick(),500);this.tick()}
   stopPolling(){if(this.timer)clearInterval(this.timer);this.timer=0}
-  async refreshStatus(){if(!this.connected)return'';const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);if(/failsafe/i.test(controller.state))await this.enterFailsafe('Controller meldet Failsafe');this.emit();return this.status}
+  async refreshStatus(){if(!this.connected)return'';const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);if(!this.firmwareCompatibility.compatible)await this.enterFailsafe(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason||'unbekannter Grund'}`);else if(/failsafe/i.test(controller.state))await this.enterFailsafe('Controller meldet Failsafe');this.emit();return this.status}
 
   async beginPreheat(){
     if(!this.connected||!this.recipe)throw new Error('Controller und Rezept werden benötigt.');
+    if(this.state!==RoastState.IDLE)throw new Error('Vorheizen ist nur aus dem sicheren Leerlauf möglich.');
     if(this.firmwareCompatibility.level!=='unknown'&&!this.firmwareCompatibility.compatible)throw new Error(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason}`);
     this.samples=[];this.elapsed=0;this.startedAt=0;this.pid.reset();this.firstCrackSecond=-1;this.phase='preparation';this.preparationStartedAt=performance.now();
     this.state=RoastState.PREHEATING;this.target=this.preheatTarget;this.fan=this.initialFanPercent/100*255;this.heater=0;
     await this.transport.setFan(this.fan);await this.transport.setHeater(0);this.emit();
   }
-  beginRoast(){if(this.state!==RoastState.READY&&this.state!==RoastState.COOLING)return;this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.firstCrackSecond=-1;this.phase='charging';this.state=RoastState.RUNNING;this.emit()}
+  beginRoast(){if(this.state!==RoastState.READY)return false;this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.firstCrackSecond=-1;this.phase='charging';this.state=RoastState.RUNNING;this.emit();return true}
   async coolDown(reason='Manuell beendet'){if(!this.connected)return;this.state=RoastState.COOLING;this.phase='cooling';this.target=0;this.heater=0;this.status=reason;await this.transport.setHeater(0);await this.transport.setFan(255);this.fan=255;this.emit()}
   async enterFailsafe(reason){this.state=RoastState.FAILSAFE;this.target=0;this.heater=0;this.fan=255;this.status=reason;try{await this.transport?.safeOutputs()}catch{}this.emit()}
 
   async tick(){
     if(this.busy||!this.connected||!this.transport)return;this.busy=true;
     try{
+      const controller=await this.transport.getSnapshot();
+      this.applyControllerSnapshot(controller);
+      if(!this.firmwareCompatibility.compatible){await this.enterFailsafe(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason||'unbekannter Grund'}`);return}
+      this.validateTemperature(controller.temperature);
+      if(/failsafe/i.test(controller.state))await this.enterFailsafe('Firmware meldet Failsafe');
+      if(this.state===RoastState.FAILSAFE)return;
+
       if(this.state===RoastState.RUNNING)this.elapsed=Math.max(0,(performance.now()-this.startedAt)/1000);
       this.calculateOutputs();
       await this.transport.setFan(this.fan);
@@ -43,9 +51,7 @@ export class RoastEngine extends EventTarget{
       const fanConfirmed=Number.isFinite(this.actualFan)&&this.actualFan>=40;
       const requestedHeater=this.heater,safeHeater=heating&&!fanConfirmed?0:requestedHeater;
       await this.transport.setHeater(safeHeater);
-      const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);this.heater=requestedHeater;this.validateTemperature(controller.temperature);
-      if(/failsafe/i.test(controller.state))await this.enterFailsafe('Firmware meldet Failsafe');
-      if(this.state===RoastState.FAILSAFE)return;
+      this.heater=requestedHeater;
       if(this.state!==RoastState.IDLE||Number.isFinite(this.temperature))this.recordSample();
       await this.handleTransitions();
     }catch(error){this.sensorErrors+=5;this.status=error.message;if(this.sensorErrors>20)await this.enterFailsafe(`Kommunikation/Sensor ausgefallen: ${error.message}`)}
