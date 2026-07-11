@@ -1,0 +1,25 @@
+[Unit]
+Description=CoffeeRoast roast curve upload API
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=coffeeroast-uploads
+ExecStart=/usr/bin/python3 /opt/coffeeroast-upload/roast_upload_api.py --host 127.0.0.1 --port 8097 --data-dir /var/lib/coffeeroast-uploads
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target
