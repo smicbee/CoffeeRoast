@@ -11,9 +11,9 @@ export class RoastEngine extends EventTarget{
   setRecipe(recipe){this.recipe=recipe;this.pid.configure(recipe?.pid||{});this.expectedFirstCrack=Number.isFinite(recipe?.expectedFirstCrack)?recipe.expectedFirstCrack:208;this.emit()}
   setAutoDrop(enabled,mode='time',target=600){this.autoDropEnabled=Boolean(enabled);this.autoDropMode=mode==='temperature'?'temperature':'time';this.autoDropTarget=Math.max(0,Number(target)||0);this.emit()}
 
-  async connect(){
+  async connect(portOrRequest=true){
     if(!this.transport)throw new Error('Kein Transport gewählt');
-    await this.transport.connect();this.connected=true;
+    await this.transport.connect(portOrRequest);this.connected=true;
     try{const controller=await this.transport.getSnapshot();this.applyControllerSnapshot(controller);if(!this.firmwareCompatibility.compatible){await this.enterFailsafe(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason||'unbekannter Grund'}`)}else if(/failsafe/i.test(controller.state))await this.enterFailsafe('Controller meldet Failsafe');this.startPolling();this.emit()}
     catch(error){this.connected=false;await this.transport.disconnect(false);throw new Error(`Controller erkannt, aber Statusprotokoll ungültig: ${error.message}`)}
   }

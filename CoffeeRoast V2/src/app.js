@@ -1,14 +1,15 @@
 import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260711-verify1';
 import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-smooth1';
-import{RoastEngine,RoastState}from'./engine.js?v=20260711-fanprep1';
+import{RoastEngine,RoastState}from'./engine.js?v=20260711-autoconnect1';
 import{RoastChart,formatTime}from'./chart.js?v=20260711-zero1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));
-let recipes=[],simulation=false,toastTimer,connecting=false,pendingFirmwareVerification=false;const logLines=[];
+let recipes=[],simulation=false,toastTimer,connecting=false,pendingFirmwareVerification=false;const logLines=[],REMEMBERED_CONTROLLER_KEY='coffeeRoast.rememberedController';
 
 async function boot(){
   $('browserHint').hidden=WebSerialTransport.isSupported();bindEvents();
   try{recipes=await loadBuiltInRecipes();recipes.sort((a,b)=>a.name.localeCompare(b.name,'de'));renderRecipeOptions();selectRecipe(Math.min(Number(localStorage.getItem('coffeeRoast.recipeIndex')||0),recipes.length-1))}catch(error){fail(error)}
   engine.addEventListener('update',event=>render(event.detail));engine.emit();
+  await autoConnectRemembered();
 }
 function bindEvents(){
   $('connectButton').addEventListener('click',()=>engine.connected?disconnect():connect());$('simulationButton').addEventListener('click',toggleSimulation);$('primaryActionButton').addEventListener('click',primaryAction);$('cooldownButton').addEventListener('click',()=>engine.coolDown('Manuelle Abkühlung'));$('refreshStatusButton').addEventListener('click',refreshStatus);
@@ -52,7 +53,13 @@ async function verifyInstalledFirmware(requestPort=false){
   finally{if(verifier)try{await verifier.disconnect(false)}catch{}button.disabled=false}
 }
 function makeTransport(){return simulation?new SimulationTransport(addLog):new WebSerialTransport(addLog)}
-async function connect(){if(connecting)return;connecting=true;$('connectButton').disabled=true;$('connectionText').textContent='ESP32 startet …';$('primaryActionButton').disabled=true;try{engine.setTransport(makeTransport());await engine.connect();showToast(simulation?'Simulation gestartet.':'CoffeeRoast-Controller verbunden.')}catch(error){fail(error)}finally{connecting=false;$('connectButton').disabled=false;engine.emit()}}
+async function connect(portOrRequest=true,quiet=false){if(connecting)return;connecting=true;$('connectButton').disabled=true;$('connectionText').textContent=quiet?'Verbinde automatisch …':'ESP32 startet …';$('primaryActionButton').disabled=true;try{engine.setTransport(makeTransport());await engine.connect(portOrRequest);if(!simulation)rememberController(engine.transport.port);if(!quiet)showToast(simulation?'Simulation gestartet.':'CoffeeRoast-Controller verbunden.')}catch(error){if(quiet){addLog(`Autoverbindung nicht möglich: ${error.message}`);$('connectionText').textContent='Controller verbinden'}else fail(error)}finally{connecting=false;$('connectButton').disabled=false;engine.emit()}}
+function rememberController(port){const info=port?.getInfo?.()||{};localStorage.setItem(REMEMBERED_CONTROLLER_KEY,JSON.stringify({usbVendorId:info.usbVendorId||0,usbProductId:info.usbProductId||0}))}
+async function autoConnectRemembered(){
+  if(!WebSerialTransport.isSupported()||engine.connected)return;
+  let remembered;try{remembered=JSON.parse(localStorage.getItem(REMEMBERED_CONTROLLER_KEY)||'null')}catch{return}if(!remembered)return;
+  try{const ports=await navigator.serial.getPorts(),port=ports.find(candidate=>{const info=candidate.getInfo?.()||{};return(!remembered.usbVendorId||info.usbVendorId===remembered.usbVendorId)&&(!remembered.usbProductId||info.usbProductId===remembered.usbProductId)});if(port)await connect(port,true)}catch(error){addLog(`Autoverbindung nicht verfügbar: ${error.message}`)}
+}
 async function disconnect(){try{await engine.disconnect();showToast('Controller sicher getrennt.')}catch(error){fail(error)}}
 async function toggleSimulation(){if(engine.connected)await disconnect();simulation=!simulation;$('simulationButton').setAttribute('aria-pressed',String(simulation));if(simulation)await connect();else showToast('Hardwaremodus aktiv.')}
 async function primaryAction(){if(!engine.connected){await connect();return}if(engine.state===RoastState.IDLE){await engine.beginPreheat();showToast('Lüftervorbereitung gestartet – Heizung bleibt aus.');return}if(engine.state===RoastState.READY){engine.beginRoast();showToast('Röstung gestartet. Bohnen jetzt einfüllen.');return}if(engine.state===RoastState.RUNNING||engine.state===RoastState.PREHEATING){await engine.coolDown('Manuell beendet');return}if(engine.state===RoastState.COOLING){showToast('Abkühlen läuft. Neue Röstung erst unter 60 °C möglich.',true);return}if(engine.state===RoastState.FAILSAFE)showToast('Failsafe aktiv. Ursache beheben und Controller neu verbinden.',true)}

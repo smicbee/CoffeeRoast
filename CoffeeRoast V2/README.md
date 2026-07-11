@@ -4,7 +4,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 
 ## Funktionen
 
-- direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
+- direkte USB/COM-Verbindung zum ESP32 über die Web Serial API; nach der ersten Freigabe wird die USB-Kennung gespeichert und beim nächsten Seitenbesuch automatisch wieder verbunden
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
 - sichere Lüftervorbereitung: Heizung bleibt durchgehend 0, die gewählte Lüftergeschwindigkeit wird gerampt und bestätigt; erst der anschließende Röststart darf Heizleistung anfordern
 - integrierte Firmware v1.3.1 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
