@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render CoffeeRoast RevA.1 visual-review PNGs from the KiCad board.
+"""Render CoffeeRoast RevA.2 visual-review PNGs from the KiCad board.
 
 The output is intentionally human-facing rather than a manufacturing plot:
 - component placement with JLC PCBA vs DNP/hand-solder colors
@@ -50,8 +50,8 @@ NET_COLORS = {
 }
 
 DESCRIPTIONS = {
-    "C1": "10uF 5V",
-    "C2": "10uF 3V3",
+    "C1": "10uF 3V3 bulk A",
+    "C2": "10uF 3V3 bulk B",
     "C3": "100nF MAX6675",
     "C4": "220uF input bulk",
     "C5": "thermocouple filter DNP",
@@ -80,8 +80,7 @@ DESCRIPTIONS = {
     "SW2": "BOOT button",
     "U1": "ESP32-S3 module",
     "U2": "MAX6675 SOIC-8",
-    "U3": "3V3 regulator footprint",
-    "U4": "24V->5V buck module",
+    "U4": "24V->3V3 buck module",
     "U5": "USB ESD DNP",
 }
 
@@ -305,7 +304,7 @@ def draw_status_legend(c: BoardCanvas, x: int, y: int):
 def render_component_map(board: pcbnew.BOARD, comps: list[Component]) -> Path:
     out = RENDER_DIR / "coffeeroast_component_map_annotated.png"
     c = BoardCanvas(3600, 1650, board.GetBoardEdgesBoundingBox(), right_panel=1130, top_space=155, bottom_space=110)
-    draw_title(c, "CoffeeRoast RevA.1 – Bauteil-Lageplan", "Alle sichtbaren Bauteile: grün = JLC bestücken lassen, orange = Handlöten/DNP/RevA.2 prüfen")
+    draw_title(c, "CoffeeRoast RevA.2 – Bauteil-Lageplan", "Alle sichtbaren Bauteile: grün = JLC bestücken lassen, orange = Handlöten/DNP/Footprint prüfen")
     draw_status_legend(c, 30, 112)
     draw_grid(c)
     draw_edges(c, board)
@@ -347,7 +346,7 @@ def render_pcba_only(board: pcbnew.BOARD, comps: list[Component]) -> Path:
     pcba = [comp for comp in comps if comp.status == "PCBA"]
     dnp = [comp for comp in comps if comp.status != "PCBA"]
     c = BoardCanvas(2700, 1650, board.GetBoardEdgesBoundingBox(), right_panel=650, top_space=150, bottom_space=90)
-    draw_title(c, "CoffeeRoast RevA.1 – JLC-PCBA Callout Map", "Nur diese Teile im ersten Standard-PCBA-Schritt bestücken lassen; alle grauen Umrisse bleiben Handlöten/DNP.")
+    draw_title(c, "CoffeeRoast RevA.2 – JLC-PCBA Callout Map", "Nur diese Teile im ersten Standard-PCBA-Schritt bestücken lassen; alle grauen Umrisse bleiben Handlöten/DNP.")
     draw_status_legend(c, 30, 108)
     draw_grid(c)
     draw_edges(c, board)
@@ -412,8 +411,8 @@ def net_group(net: str, layer: int) -> str:
 def render_trace_overlay(board: pcbnew.BOARD, comps: list[Component]) -> Path:
     out = RENDER_DIR / "coffeeroast_actual_traces_overlay.png"
     c = BoardCanvas(2700, 1650, board.GetBoardEdgesBoundingBox(), top_space=155, bottom_space=95)
-    draw_title(c, "CoffeeRoast RevA.1 – Leiterbahnen / Netze", "Farben gruppieren reale KiCad-Tracks nach Funktion; weiß = Vias/Anschluss-/Referenzpunkte.")
-    legend = [("24V", "+24V/Fan"), ("5V", "+5V"), ("3V3", "+3V3"), ("USB", "USB"), ("MAX", "MAX6675/Thermo"), ("PWM", "PWM/Gates"), ("GND", "GND/Vias")]
+    draw_title(c, "CoffeeRoast RevA.2 – Leiterbahnen / Netze", "Farben gruppieren reale KiCad-Tracks nach Funktion; weiß = Vias/Anschluss-/Referenzpunkte.")
+    legend = [("24V", "+24V/Fan"), ("3V3", "+3V3/SSR"), ("USB", "USB"), ("MAX", "MAX6675/Thermo"), ("PWM", "PWM/Gates"), ("GND", "GND/Vias")]
     x = 30
     for group, label in legend:
         c.draw.line((x, 116, x + 42, 116), fill=NET_COLORS[group], width=7)
@@ -488,7 +487,7 @@ def render_functional_diagram() -> Path:
     w, h = 2400, 1350
     img = Image.new("RGB", (w, h), BG)
     d = ImageDraw.Draw(img)
-    d.text((32, 22), "CoffeeRoast RevA.1 – Funktionsbild / Bestückungsentscheidung", fill=WHITE, font=F_TITLE)
+    d.text((32, 22), "CoffeeRoast RevA.2 – Funktionsbild / Bestückungsentscheidung", fill=WHITE, font=F_TITLE)
     d.text((34, 82), "Low-voltage controller PCB: 24V/3A input, external PSU/SSR, no 230VAC on board.", fill=MUTED, font=F_SUB)
 
     boxes = {

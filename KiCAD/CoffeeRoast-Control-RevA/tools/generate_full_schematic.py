@@ -82,11 +82,10 @@ conn1("J1","24V_IN_FROM_CERTIFIED_PSU",900,1550,2,["+24V_RAW","GND"])
 two_pin_h("Device:Fuse","F1","T3.15A_24V_SIDE",1600,1450,"+24V_RAW","+24V_FUSED")
 two_pin_v("Device:C_Polarized","C4","220uF_35V",1250,2050,"+24V_RAW","GND")
 two_pin_v("Device:D_TVS","D2","SMBJ33A_INPUT_TVS",1650,2050,"GND","+24V_RAW")
-conn1("U4","24V_TO_5V_BUCK_MODULE",2350,1600,4,["+24V_FUSED","GND","+5V","GND"])
-two_pin_v("Device:C","C7","100nF_U4_OUT",2750,2100,"+5V","GND")
-conn1("U3","3V3_SWITCHING_REGULATOR",3250,1600,3,["GND","+3V3","+5V"])
-two_pin_v("Device:C","C1","10uF_5V",3100,2200,"+5V","GND")
-two_pin_v("Device:C","C2","10uF_3V3",3550,2200,"+3V3","GND")
+conn1("U4","24V_TO_3V3_BUCK_MODULE",2350,1600,4,["+24V_FUSED","GND","+3V3","GND"])
+two_pin_v("Device:C","C7","100nF_U4_3V3_OUT",2750,2100,"+3V3","GND")
+two_pin_v("Device:C","C1","10uF_3V3_BULK_A",3100,2200,"+3V3","GND")
+two_pin_v("Device:C","C2","10uF_3V3_BULK_B",3550,2200,"+3V3","GND")
 
 # Fan and SSR output stages
 box(4200,950,7350,2750); note(4350,1120,"FAN + EXTERNAL SSR DRIVERS",70)
@@ -96,7 +95,7 @@ two_pin_v("Device:R","R2","100k_GATE_PULLDOWN",5500,1900,"FAN_GATE","GND")
 conn1("Q1","3V3_LOGIC_NMOS_FAN_GDS",6000,1550,3,["FAN_GATE","FAN_NEG","GND"])
 two_pin_v("Device:D","D1","SB560_FLYBACK",6500,1550,"+24V_FUSED","FAN_NEG")
 two_pin_v("Device:D_TVS","D3","SMBJ33A_FAN_TVS",6900,1550,"FAN_NEG","+24V_FUSED")
-conn1("J3","EXTERNAL_SSR_INPUT",4550,2350,2,["+5V","SSR_NEG"])
+conn1("J3","EXTERNAL_SSR_INPUT_3V3",4550,2350,2,["+3V3","SSR_NEG"])
 two_pin_h("Device:R","R3","100R",5200,2250,"HEATER_PWM","SSR_GATE")
 two_pin_v("Device:R","R4","100k_GATE_PULLDOWN",5500,2450,"SSR_GATE","GND")
 conn1("Q2","2N7002_SSR_DRIVER_GDS",6000,2350,3,["SSR_GATE","GND","SSR_NEG"])
@@ -133,14 +132,14 @@ note(4400,4820,"USB VBUS does not power the controller",45)
 
 # Bring-up test points
 box(500,5350,7350,6900); note(650,5520,"BRING-UP / TEST ACCESS",70)
-for ref,val,x,net in [("TP24V","24V_FUSED",900,"+24V_FUSED"),("TP5V","5V",1500,"+5V"),("TP3V3","3V3",2100,"+3V3"),("TPGND","GND",2700,"GND")]:
+for ref,val,x,net in [("TP24V","24V_FUSED",900,"+24V_FUSED"),("TP3V3","3V3",1900,"+3V3"),("TPGND","GND",2700,"GND")]:
     conn1(ref,val,x,6000,1,[net])
 conn1("TPRESET1","RESET_TWEEZER",3550,5900,2,["EN","GND"])
 conn1("TPBOOT1","BOOT_TWEEZER",4350,5900,2,["BOOT","GND"])
-conn1("TPSSR1","SSR_OUT_MEASURE",5150,5900,2,["+5V","SSR_NEG"])
+conn1("TPSSR1","SSR_OUT_MEASURE",5150,5900,2,["+3V3","SSR_NEG"])
 note(650,6500,"TPESP1–40 and PADESP1–40 on PCB mirror U1 pins 1–40; see docs/esp32_debug_pads.csv",45)
-note(650,6660,"All named nets here match the routed PCB. Exact U3/U4/U5/Q1/D2/D3 sourced parts remain pre-fabrication review items.",45)
+note(650,6660,"All named nets here match the routed PCB. Exact U4/U5/Q1/D2/D3 sourced parts remain pre-fabrication review items.",45)
 
-header=["EESchema Schematic File Version 4","LIBS:power","LIBS:device","LIBS:Connector_Generic","LIBS:switch","EELAYER 29 0","EELAYER END","$Descr A3 16535 11693","Sheet 1 1",'Title "CoffeeRoast Control RevA.1"','Date "2026-07-11"','Rev "A.1"','Comp "CoffeeRoast"','Comment1 "Low-voltage controller only; 230 VAC remains off-board"','Comment2 "Generated from routed PCB nets and docs/netlist.csv"',"$EndDescr"]
+header=["EESchema Schematic File Version 4","LIBS:power","LIBS:device","LIBS:Connector_Generic","LIBS:switch","EELAYER 29 0","EELAYER END","$Descr A3 16535 11693","Sheet 1 1",'Title "CoffeeRoast Control RevA.2"','Date "2026-07-11"','Rev "A.2"','Comp "CoffeeRoast"','Comment1 "Low-voltage controller only; 230 VAC remains off-board"','Comment2 "Generated from routed PCB nets and docs/netlist.csv"',"$EndDescr"]
 OUT.write_text("\n".join(header+items+["$EndSCHEMATC",""]),encoding="utf-8")
 print(OUT)

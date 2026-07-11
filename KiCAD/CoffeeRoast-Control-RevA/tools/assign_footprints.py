@@ -31,12 +31,11 @@ for ref in ('C1','C2','C3','C5'):
 for ref in ('C6','C7'):
  STANDARD[ref]='Capacitor_SMD:C_0603_1608Metric'
 STANDARD['C4']='Capacitor_THT:CP_Radial_D8.0mm_P3.50mm'
-for ref in ('TP24V','TP5V','TP3V3','TPGND'):
+for ref in ('TP24V','TP3V3','TPGND'):
  STANDARD[ref]='TestPoint:TestPoint_Pad_D1.5mm'
 
 CUSTOM={
- 'U3':'U3_3V3_Switching_Module_3Pin',
- 'U4':'U4_24V_to_5V_Buck_Module_4Pin',
+ 'U4':'U4_24V_to_3V3_Buck_Module_4Pin',
  'J1':'J1_24V_SolderPads', 'J2':'J2_Fan_SolderPads',
  'J3':'J3_SSR_SolderPads', 'J4':'J4_Thermocouple_SolderPads',
  'JGPIO1':'ESP32_GPIO_Breakout_Row',
@@ -91,5 +90,5 @@ u1.SetFPID(pcbnew.LIB_ID('',u1_item))
 
 pcbnew.SaveBoard(str(BOARD),board)
 with (ROOT/'docs'/'footprints.csv').open('w',newline='',encoding='utf-8') as handle:
-    writer=csv.writer(handle); writer.writerow(('Ref','Value','Footprint','SourceFootprint')); writer.writerows(rows)
+    writer=csv.writer(handle,lineterminator='\n'); writer.writerow(('Ref','Value','Footprint','SourceFootprint')); writer.writerows(rows)
 print(f'Assigned and exported {len(rows)} project-local footprints; {len(STANDARD)} use verified KiCad package selections')

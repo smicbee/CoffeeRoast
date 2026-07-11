@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "SSR_INPUT_TO_EXTERNAL_SSR"
+	(property "Value" "SSR_INPUT_3V3_TO_EXTERNAL_SSR"
 		(at 0 3 0)
 		(layer "F.Fab")
 		(uuid "9b2e4942-5909-457f-b510-cde751f15443")

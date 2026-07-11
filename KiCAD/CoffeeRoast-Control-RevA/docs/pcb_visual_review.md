@@ -25,7 +25,7 @@ Generated visual handoff artifacts for the CoffeeRoast RevA.1 low-voltage contro
 ### Trace/net overlay
 
 - Orange: `+24V_RAW`, `+24V_FUSED`, and fan high-current path.
-- Yellow: `+5V` / USB VBUS related power.
+- Yellow: USB VBUS sense only; the board has no +5V supply rail.
 - Green: `+3V3` rail.
 - Cyan: USB D+/D-/CC routing.
 - Purple: MAX6675 SPI and thermocouple related nets.
@@ -47,7 +47,7 @@ Keep out of the first automated PCBA placement unless re-reviewed:
 
 - J1-J4 large hand-solder pads, F1 fuse holder, D1 flyback diode, Q1 fan MOSFET, C4 bulk capacitor, SW1/SW2 buttons: hand-solder/mechanical confirmation items. Do not request connector assembly on J1-J4.
 - D2/D3 TVS, U5 USB ESD, C5 thermocouple filter: useful protection/filter positions, but current footprints are treated as DNP/draft until exact land patterns and orientation are rechecked.
-- U3/U4 regulator/buck footprints: prototype/wire-in or RevA.2 footprint decision, not current JLC placement.
+- U4 24V→3.3V buck footprint: prototype/wire-in or exact-footprint decision, not current JLC placement.
 
 ## Safety and ordering notes
 

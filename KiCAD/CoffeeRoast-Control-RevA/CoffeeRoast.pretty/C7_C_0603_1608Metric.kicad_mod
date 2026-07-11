@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "100nF_U4_OUTPUT_DECOUPLING_0603"
+	(property "Value" "100nF_U4_3V3_OUTPUT_DECOUPLING_0603"
 		(at -53 -72.7 0)
 		(layer "F.Fab")
 		(hide yes)

@@ -13,7 +13,7 @@ FID5,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manua
 FID6,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 J1,24V_IN_FROM_230V_PSU_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder PSU leads directly and add enclosure strain relief.
 J2,FAN_24V_PWM_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder fan leads directly and add enclosure strain relief.
-J3,SSR_INPUT_TO_EXTERNAL_SSR,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.
+J3,SSR_INPUT_3V3_TO_EXTERNAL_SSR,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.
 J4,K_TYPE_THERMOCOUPLE,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder K-type thermocouple/extension leads directly and add strain relief.
 JGPIO1,ESP32_GPIO_BREAKOUT_ROW,tht,Not in first partial-SMD assembly set; review manually.
 PADESP1,GND,smd,Test/debug pad; no assembly part.
@@ -102,10 +102,8 @@ TPESP39,IO1/SSR,smd,Test/debug pad; no assembly part.
 TPESP40,GND,smd,Test/debug pad; no assembly part.
 TPGND,GND_TEST,smd,Test/debug pad; no assembly part.
 TPRESET1,RESET_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
-TPSSR1,SSR_OUT_MEAS_PADS,smd,Not in first partial-SMD assembly set; review manually.
-TP5V,+5V_TEST,smd,Test/debug pad; no assembly part.
+TPSSR1,SSR_3V3_OUT_MEAS_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
 TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.
-U3,3V3_SWITCHING_REGULATOR_>=600mA_5V_IN_REPLACES_AMS1117,smd,Selected candidate class: OKI-78SR-3.3/1.5-W36-C or R-78E3.3-0.5 switching regulator. Current RevA.1 footprint does not match; wire-in for prototype or update footprint in RevA.2.
-U4,24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE,tht,"Selected candidate class: 24V->5V buck module >=1A, e.g. Pololu D24V10F5/JLC C26689857 if footprint is adapted. Current module footprint must be verified before order."
+U4,24V_TO_3V3_BUCK_MODULE_>=1A_LOW_NOISE,tht,"Required: regulated 24V->3.3V buck module >=1A, low noise, >=30V input rating. Exact sourced module and pinout must match the current footprint before order."
 U5,USBLC6-2SC6_OR_USB2_ESD,smd,"DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519."

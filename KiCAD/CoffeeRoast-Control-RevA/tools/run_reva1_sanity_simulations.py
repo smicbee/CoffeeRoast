@@ -74,7 +74,7 @@ def write_csv(path: Path, rows: list[dict[str, float | str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     keys = list(rows[0].keys()) if rows else []
     with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=keys)
+        w = csv.DictWriter(f, fieldnames=keys, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 
@@ -99,16 +99,15 @@ def main() -> None:
     for current in [0.15, 0.25, 0.35, 0.50]:
         regulator_rows.append({
             "load_current_a": current,
-            "ams1117_heat_w_5v_to_3v3": (5.0 - 3.3) * current,
-            "switcher_input_power_w_at_90pct": (3.3 * current) / 0.90,
-            "switcher_heat_w_at_90pct": (3.3 * current) / 0.90 - 3.3 * current,
+            "direct_24v_to_3v3_input_power_w_at_90pct": (3.3 * current) / 0.90,
+            "direct_24v_to_3v3_converter_heat_w_at_90pct": (3.3 * current) / 0.90 - 3.3 * current,
         })
     write_csv(OUT / "regulator_heat_comparison.csv", regulator_rows)
 
     ssr_rows = []
     for r_in in [330, 680, 1000, 1500, 2200]:
         v_led = 1.2
-        current = (5.0 - v_led) / r_in
+        current = (3.3 - v_led) / r_in
         ssr_rows.append({
             "ssr_input_equiv_ohm": r_in,
             "estimated_ssr_led_current_ma": current * 1000,
@@ -148,8 +147,8 @@ Scope: lightweight numeric simulation/calculation of analog/power blocks. This d
 
 - Fan MOSFET loss is tiny if Q1 is a real 3.3V logic MOSFET around 20 mΩ: at 3A DC it is about `{3*3*0.02:.2f} W`; at 50 mΩ it is `{3*3*0.05:.2f} W`, already worth thermal review.
 - The R-L fan PWM approximation at 20 kHz shows low MOSFET heat but potentially non-trivial flyback-diode dissipation at partial duty. Real 2-wire BLDC fans may behave differently; bench-test with the actual fan.
-- AMS1117-style 5V→3.3V regulation would dissipate 0.43 W at 250 mA and 0.85 W at 500 mA, which supports the RevA.1 decision to use a 3.3V switching regulator.
-- Q2 SSR low-side driver has negligible transistor heat for typical SSR input currents. The real check is whether the selected SSR reliably turns on from the board's +5V SSR output.
+- The direct 24V→3.3V converter avoids an intermediate 5V rail and a second regulator; at 90% efficiency its heat is represented in `regulator_heat_comparison.csv`.
+- Q2 SSR low-side driver has negligible transistor heat for typical SSR input currents. The real check is whether the selected SSR reliably turns on from the board's +3.3V SSR output.
 - C5=1nF on the thermocouple input is electrically fast for reasonable source impedance; still keep it DNP unless noise testing shows benefit because thermocouple front-ends can be sensitive to leakage/bias.
 - C4=220uF is a local transient buffer, not meaningful power hold-up for a 2.5–3A fan; it only slows 1V sag by tens to hundreds of microseconds under amp-level load.
 

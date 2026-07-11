@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "SSR_OUT_MEAS_PADS"
+	(property "Value" "SSR_3V3_OUT_MEAS_PADS"
 		(at -140 -76.2 0)
 		(layer "F.Fab")
 		(hide yes)

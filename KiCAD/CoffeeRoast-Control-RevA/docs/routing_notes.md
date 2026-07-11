@@ -34,8 +34,8 @@ Full DRC still has non-fabrication warnings only: silkscreen/text warnings from 
 - `D3` TVS across `+24V_FUSED` and `FAN_NEG` for fan/motor transient clamping.
 - `U5` USB2 ESD footprint on the existing connector-side USB D+/D-/GND routing.
 - `C5` optional thermocouple differential filter across `THERMO_PLUS`/`THERMO_MINUS` at J4. Treat as DNP unless testing shows benefit.
-- `TP24V`, `TP5V`, `TP3V3`, and `TPGND` bring-up pads.
-- `U3` value/intent updated to a 3.3V switching regulator; exact footprint still needs final part selection.
+- `TP24V`, `TP3V3`, and `TPGND` bring-up pads; Reset/Boot tweezer pads were moved clear of R5/R6.
+- `U3` and `+5V` were removed; U4 is now the only 24V→3.3V switching stage and needs an exact sourced footprint.
 - `Q1` value/intent updated to an IRLB8721-class or equivalent low-Rds_on 3.3V-logic fan MOSFET.
 
 ## Important caveats

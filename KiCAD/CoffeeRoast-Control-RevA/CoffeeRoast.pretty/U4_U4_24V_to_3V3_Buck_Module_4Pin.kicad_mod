@@ -1,4 +1,4 @@
-(footprint "U4_U4_24V_to_5V_Buck_Module_4Pin"
+(footprint "U4_U4_24V_to_3V3_Buck_Module_4Pin"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "24V_TO_5V_BUCK_MODULE_>=1A_LOW_NOISE"
+	(property "Value" "24V_TO_3V3_BUCK_MODULE_>=1A_LOW_NOISE"
 		(at 0 3 0)
 		(layer "F.Fab")
 		(uuid "097d80a1-e2a4-41ef-8e4c-569c509b7821")

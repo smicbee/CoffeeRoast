@@ -58,8 +58,7 @@ HAND_SOLDER = {
     "D2": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
     "D3": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
     "Q1": "Selected candidate: IRLB8721PBF TO-220, JLC C153222; alternative FQP30N06L, JLC C243087. Hand-solder and thermally verify with real fan current.",
-    "U3": "Selected candidate class: OKI-78SR-3.3/1.5-W36-C or R-78E3.3-0.5 switching regulator. Current RevA.1 footprint does not match; wire-in for prototype or update footprint in RevA.2.",
-    "U4": "Selected candidate class: 24V->5V buck module >=1A, e.g. Pololu D24V10F5/JLC C26689857 if footprint is adapted. Current module footprint must be verified before order.",
+    "U4": "Required: regulated 24V->3.3V buck module >=1A, low noise, >=30V input rating. Exact sourced module and pinout must match the current footprint before order.",
     "C4": "Selected candidate: Panasonic EEU-FR1V221 or Nichicon UPW1V221MPD, 220uF/35V radial electrolytic. Verify lead pitch against current pads before ordering.",
     "C5": "DNP for first PCBA: current RevA.1 footprint is a draft wide-pad filter, not an 0805 placement. Candidate if redesigned: C76625 / TDK C2012C0G1H102JT000N, 1nF C0G 0805.",
     "U5": "DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519.",
@@ -228,7 +227,7 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 - This is a **partial assembly handoff**, not a one-click final manufacturing release.
 - Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
 - Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
-- `U3` and `U4` are intentionally **not** in the first PCBA placement set because the exact switching-regulator/buck implementation is still the main RevA.2 decision.
+- `U4` is intentionally **not** in the first PCBA placement set because the exact 24V→3.3V buck module/footprint remains a mandatory pre-order decision.
 - `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
 - In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
@@ -247,7 +246,7 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
 5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
 6. Order 5 boards, but only 2 assembled if the UI allows it.
-7. Hand-solder J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2 after the boards arrive.
+7. Hand-solder J1-J4, F1, D1, Q1, U4, C4, SW1, SW2 after the boards arrive.
 """
     (OUT / "README_ORDERING.md").write_text(readme)
 

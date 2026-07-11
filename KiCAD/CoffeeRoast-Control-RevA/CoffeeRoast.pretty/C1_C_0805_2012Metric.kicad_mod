@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "10uF_5V"
+	(property "Value" "10uF_3V3_BULK_A"
 		(at 0 3 0)
 		(layer "F.Fab")
 		(uuid "4effc9e8-6677-452b-8624-5c258f3a3eab")

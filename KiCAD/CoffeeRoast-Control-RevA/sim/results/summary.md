@@ -6,8 +6,8 @@ Scope: lightweight numeric simulation/calculation of analog/power blocks. This d
 
 - Fan MOSFET loss is tiny if Q1 is a real 3.3V logic MOSFET around 20 mΩ: at 3A DC it is about `0.18 W`; at 50 mΩ it is `0.45 W`, already worth thermal review.
 - The R-L fan PWM approximation at 20 kHz shows low MOSFET heat but potentially non-trivial flyback-diode dissipation at partial duty. Real 2-wire BLDC fans may behave differently; bench-test with the actual fan.
-- AMS1117-style 5V→3.3V regulation would dissipate 0.43 W at 250 mA and 0.85 W at 500 mA, which supports the RevA.1 decision to use a 3.3V switching regulator.
-- Q2 SSR low-side driver has negligible transistor heat for typical SSR input currents. The real check is whether the selected SSR reliably turns on from the board's +5V SSR output.
+- The direct 24V→3.3V converter avoids an intermediate 5V rail and a second regulator; at 90% efficiency its heat is represented in `regulator_heat_comparison.csv`.
+- Q2 SSR low-side driver has negligible transistor heat for typical SSR input currents. The real check is whether the selected SSR reliably turns on from the board's +3.3V SSR output.
 - C5=1nF on the thermocouple input is electrically fast for reasonable source impedance; still keep it DNP unless noise testing shows benefit because thermocouple front-ends can be sensitive to leakage/bias.
 - C4=220uF is a local transient buffer, not meaningful power hold-up for a 2.5–3A fan; it only slows 1V sag by tens to hundreds of microseconds under amp-level load.
 
