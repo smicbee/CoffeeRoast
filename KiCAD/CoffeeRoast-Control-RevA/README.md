@@ -14,9 +14,11 @@ This is the generated RevA.1 hardware draft for moving the CoffeeRoast electroni
 ## Files
 
 - `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with real on-board USB-C footprint and autorouted/manual-cleanup tracks.
-- `CoffeeRoast-Control-RevA.kicad_sch` — notes-only schematic placeholder; detailed netlist is in `docs/netlist.csv`.
-- `docs/bom.csv` — draft bill of materials.
-- `docs/netlist.csv` — intended electrical connectivity.
+- `CoffeeRoast-Control-RevA.kicad_sch` — vollständiger, editierbarer KiCad-Schaltplan mit Funktionsblöcken für Versorgung, Lüfter/SSR, ESP32, MAX6675, USB und Testzugänge; die benannten Netze entsprechen dem gerouteten PCB.
+- `tools/generate_full_schematic.py` — reproduzierbarer Generator für den Schaltplanentwurf; die native `.kicad_sch`-Datei wurde mit KiCad 9 konvertiert und geprüft.
+- `render/schematic/CoffeeRoast-Control-RevA.pdf` und `.svg` — exportierte Schaltplanansichten; `render/schematic/erc.json` enthält den aktuellen ERC-Bericht.
+- `docs/netlist.csv` — tabellarische Referenz der beabsichtigten elektrischen Verbindungen.
+- `docs/bom.csv` — Stückliste des aktuellen PCB-Entwurfs.
 - `docs/esp32_debug_pads.csv` — ESP32-S3 TPESP1-40 tiny probe pad mapping.
 - `docs/esp32_solder_pads.csv` — larger labeled bottom-side PADESP1-40 solder pad mapping for attaching wires later.
 - `docs/routing_notes.md` — routing/DRC status and fabrication caveats.

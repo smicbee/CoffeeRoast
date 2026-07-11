@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-11T19:16:36+0200",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/d3b36b4e-cb91-4201-a14d-d7a9bcb634ba",
+            "violations": []
+        }
+    ],
+    "source": "CoffeeRoast-Control-RevA.kicad_sch"
+}
