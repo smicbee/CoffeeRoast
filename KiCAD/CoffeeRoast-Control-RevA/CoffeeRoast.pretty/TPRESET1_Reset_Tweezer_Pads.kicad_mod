@@ -1,0 +1,68 @@
+(footprint "TPRESET1_Reset_Tweezer_Pads"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "TPRESET1"
+		(at -49 -32 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "9d7d1dc2-b76f-4ea8-9f2d-0df33bd0c355")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RESET_TWEEZER_PADS"
+		(at -49 -32 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f6c1b9a1-7b76-4adb-8ce8-9d545a2c8c10")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4b647001-4ce3-4393-b0e5-81606058d255")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "90635bee-2f1e-4d43-a315-390dcdfc4895")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd exclude_from_pos_files exclude_from_bom)
+	(pad "1" smd circle
+		(at 0 -1.25)
+		(size 1.8 1.8)
+		(layers "F.Cu" "F.Mask")
+		(uuid "7b9d218c-f7e8-48d8-b5f5-6c0286b29602")
+	)
+	(pad "2" smd circle
+		(at 0 1.25)
+		(size 1.8 1.8)
+		(layers "F.Cu" "F.Mask")
+		(uuid "fb3f2322-4745-4049-b32d-2ecf8e19d240")
+	)
+	(embedded_fonts no)
+)

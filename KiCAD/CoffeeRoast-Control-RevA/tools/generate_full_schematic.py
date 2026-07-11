@@ -5,15 +5,19 @@ KiCad opens this v4 file and converts it to the native .kicad_sch format on save
 The schematic mirrors the routed PCB's named nets; 230 VAC remains explicitly off-board.
 """
 from pathlib import Path
+import csv
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path("/tmp/CoffeeRoast-Control-RevA-generated.sch")
+with (ROOT/'docs'/'footprints.csv').open(encoding='utf-8') as handle:
+    FOOTPRINTS={row['Ref']:row['Footprint'] for row in csv.DictReader(handle)}
 items=[]
 uid=0x65000000
 
 def comp(lib, ref, value, x, y, orient=(1,0,0,-1), footprint=""):
     global uid
     uid += 1
+    footprint=footprint or FOOTPRINTS.get(ref,"")
     a,b,c,d=orient
     items.extend([
         "$Comp", f"L {lib} {ref}", f"U 1 1 {uid:X}", f"P {x} {y}",
@@ -101,7 +105,7 @@ note(6250,2520,"SSR input only — no mains on PCB",45)
 # ESP32 module and reset/boot
 box(7600,950,11200,4400); note(7750,1120,"ESP32-S3-WROOM-1 CONTROLLER",70)
 u1nets=["GND","+3V3","EN","GPIO4","GPIO5","GPIO6","GPIO7","GPIO15","GPIO16","GPIO17","GPIO18","GPIO8","USB_DN_MCU","USB_DP_MCU","GPIO3","GPIO46","GPIO9","GPIO10","MAX_DO","MAX_CS","MAX_SCK","GPIO14","GPIO21","GPIO47","GPIO48","GPIO45","BOOT","GPIO35","GPIO36","GPIO37","GPIO38","GPIO39","GPIO40","GPIO41","GPIO42","RXD0_GPIO44","TXD0_GPIO43","FAN_PWM","HEATER_PWM","GND"]
-conn2x20("U1","ESP32-S3-WROOM-1",9300,2450,u1nets,"RF_Module:ESP32-S3-WROOM-1")
+conn2x20("U1","ESP32-S3-WROOM-1",9300,2450,u1nets)
 two_pin_v("Device:C","C6","100nF_U1_DECOUPLING",10800,1500,"+3V3","GND")
 two_pin_h("Device:R","R5","10k_EN_PULLUP",8000,3500,"+3V3","EN")
 two_pin_h("Switch:SW_Push","SW1","RESET",8500,3750,"EN","GND")
@@ -113,13 +117,13 @@ conn1("JGPIO1","SPARE_GPIO_BREAKOUT",10800,3300,6,["GPIO3","GPIO46","GPIO9","GPI
 box(500,3000,3900,5000); note(650,3170,"K-TYPE THERMOCOUPLE / MAX6675",70)
 conn1("J4","K_TYPE_THERMOCOUPLE",900,3900,2,["THERMO_PLUS","THERMO_MINUS"])
 two_pin_v("Device:C","C5","1nF_C0G_DNP_IF_BIASED",1450,3900,"THERMO_PLUS","THERMO_MINUS")
-conn1("U2","MAX6675_SOIC8_3V3",2550,3900,8,["GND","THERMO_MINUS","THERMO_PLUS","+3V3","MAX_SCK","MAX_CS","MAX_DO","GND"],"Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
+conn1("U2","MAX6675_SOIC8_3V3",2550,3900,8,["GND","THERMO_MINUS","THERMO_PLUS","+3V3","MAX_SCK","MAX_CS","MAX_DO","GND"])
 two_pin_v("Device:C","C3","100nF_MAX6675",3300,3900,"+3V3","GND")
 note(700,4700,"Firmware: DO=GPIO11, CS=GPIO12, SCK=GPIO13",50)
 
 # USB-C data-only interface and ESD
 box(4200,3000,7350,5000); note(4350,3170,"USB-C DATA / FLASH (VBUS SENSE ONLY)",70)
-conn1("J5","USB_C_RECEPTACLE_USB2",4550,3950,8,["GND","USB_VBUS","USB_CC1","USB_DP","USB_DN","USB_CC2","USB_VBUS","GND"],"Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11")
+conn1("J5","USB_C_RECEPTACLE_USB2",4550,3950,8,["GND","USB_VBUS","USB_CC1","USB_DP","USB_DN","USB_CC2","USB_VBUS","GND"])
 two_pin_v("Device:R","R10","5.1k_CC1_RD",5150,3500,"USB_CC1","GND")
 two_pin_v("Device:R","R11","5.1k_CC2_RD",5550,3500,"USB_CC2","GND")
 two_pin_h("Device:R","R7","27R_USB_DN",5350,4300,"USB_DN","USB_DN_MCU")

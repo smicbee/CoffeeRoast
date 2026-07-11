@@ -1,0 +1,60 @@
+(footprint "TP24V_TestPoint_Pad_D1.5mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "TP24V"
+		(at 0 -1.4 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "c920762a-e0f5-49f4-923e-e8c4de2ba540")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "+24V_FUSED_TEST"
+		(at 0 1.4 0)
+		(layer "F.Fab")
+		(uuid "5ba40efe-d2a9-4c1e-979c-3fe2b6fa019d")
+		(effects
+			(font
+				(size 0.65 0.65)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "37e90f65-e470-4e93-b8d6-72f0d0b9b7d9")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5143e050-fa03-4aaf-b7b5-c3d56cc60313")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 1.8 1.8)
+		(layers "F.Cu" "F.Mask")
+		(uuid "a1e65471-b2d3-47c6-9724-c44c87e55ef5")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,112 @@
+(footprint "D1_D_DO-201AD_P15.24mm_Horizontal"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "D1"
+		(at 0 -3 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "c549eb76-ec39-4ee2-87d8-49c505efeedb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SB560_FLYBACK"
+		(at 0 3 0)
+		(layer "F.Fab")
+		(uuid "bf223993-ed31-4833-9d52-1c2c0d0a5cd9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "04af6966-a7b1-4fa5-9585-6bd30441a608")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8c155f08-b32b-4c70-ad79-56a35b8cf93f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -6.5 -2)
+		(end 6.5 -2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "2520b6af-aada-4ea2-990f-2050b8f39941")
+	)
+	(fp_line
+		(start -6.5 2)
+		(end -6.5 -2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "111c6f19-478e-44eb-b330-b3a5b30fd5c3")
+	)
+	(fp_line
+		(start 6.5 -2)
+		(end 6.5 2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "cbd4affb-8349-4683-8111-33671ee7b4a6")
+	)
+	(fp_line
+		(start 6.5 2)
+		(end -6.5 2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c37308ab-6364-40fa-8ae5-dffe7d977622")
+	)
+	(pad "1" thru_hole rect
+		(at -5.08 0)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "9bf613a5-8219-49da-84d5-eeb60f4b8e8d")
+	)
+	(pad "2" thru_hole rect
+		(at 5.08 0)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "5a2c8908-dd82-471f-bb9f-e8bc37b57eda")
+	)
+	(embedded_fonts no)
+)

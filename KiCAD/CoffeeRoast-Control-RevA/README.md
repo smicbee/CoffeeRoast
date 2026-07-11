@@ -18,6 +18,9 @@ This is the generated RevA.1 hardware draft for moving the CoffeeRoast electroni
 - `tools/generate_full_schematic.py` — reproduzierbarer Generator für den Schaltplanentwurf; die native `.kicad_sch`-Datei wurde mit KiCad 9 konvertiert und geprüft.
 - `render/schematic/CoffeeRoast-Control-RevA.pdf` und `.svg` — exportierte Schaltplanansichten; `render/schematic/erc.json` enthält den aktuellen ERC-Bericht.
 - `docs/netlist.csv` — tabellarische Referenz der beabsichtigten elektrischen Verbindungen.
+- `docs/footprints.csv` — vollständige Referenz-zu-Footprint-Zuordnung inklusive der geprüften KiCad-Quellpakete.
+- `CoffeeRoast.pretty/` — projektlokale, reproduzierbare Kopien sämtlicher 129 Board-Footprints; dadurch bleibt das geroutete Layout unabhängig von installierten Bibliotheksversionen.
+- `fp-lib-table` — bindet die projektlokale Footprintbibliothek automatisch in KiCad ein.
 - `docs/bom.csv` — Stückliste des aktuellen PCB-Entwurfs.
 - `docs/esp32_debug_pads.csv` — ESP32-S3 TPESP1-40 tiny probe pad mapping.
 - `docs/esp32_solder_pads.csv` — larger labeled bottom-side PADESP1-40 solder pad mapping for attaching wires later.

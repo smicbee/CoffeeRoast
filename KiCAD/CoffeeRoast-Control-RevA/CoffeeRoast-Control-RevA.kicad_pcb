@@ -136,7 +136,7 @@
 	(net 51 "GPIO42")
 	(net 52 "RXD0_GPIO44")
 	(net 53 "TXD0_GPIO43")
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP15_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "033d8f44-0dbf-4f65-9b38-094c2673bfda")
 		(at 78.015 38.28)
@@ -199,7 +199,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP25_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "04721767-d853-4185-9cbd-85c5a78e5b0a")
 		(at 90.715 38.45)
@@ -262,7 +262,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TP5V_TestPoint_Pad_D1.5mm"
 		(layer "F.Cu")
 		(uuid "059e5dce-e380-469c-b57f-8e859333a3dd")
 		(at 50 72)
@@ -322,7 +322,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "USB_C_Receptacle_XKB_U262-16XN-4BVC11"
+	(footprint "CoffeeRoast:J5_USB_C_Receptacle_XKB_U262-16XN-4BVC11"
 		(layer "F.Cu")
 		(uuid "05a19514-fe17-4963-9ced-e77cd8f58c40")
 		(at 154 31 90)
@@ -526,6 +526,18 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "1cc3643e-11c7-43a4-b773-83990ccc56e3")
 		)
+		(pad "" smd rect
+			(at -1.75 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(uuid "3e3bb13c-a5c2-4094-af06-d9b5d19893b5")
+		)
+		(pad "" smd rect
+			(at 1.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(uuid "a154f7ee-baba-4cb1-b014-a46862091dc9")
+		)
 		(pad "" np_thru_hole circle
 			(at 2.89 -2.605 90)
 			(size 0.65 0.65)
@@ -533,117 +545,105 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "9c522425-0ead-40b5-a859-3ce1250198db")
 		)
-		(pad "A1" smd rect
+		(pad "1" smd rect
 			(at -3.35 -3.67 90)
 			(size 0.3 1.15)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(uuid "104ff143-35e8-485d-a3db-ea3ab629d86b")
 		)
-		(pad "A4" smd rect
-			(at -2.55 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 17 "USB_VBUS")
-			(uuid "bd01d8e9-1409-4f12-80fd-bb0c3ccc24cd")
-		)
-		(pad "A5" smd rect
-			(at -1.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 24 "USB_CC1")
-			(uuid "b582e843-47f6-42cb-b680-3a3c69f0cc95")
-		)
-		(pad "A6" smd rect
-			(at -0.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 21 "USB_DP")
-			(uuid "5273da94-992d-4f43-b5c7-887033cd822a")
-		)
-		(pad "A7" smd rect
-			(at 0.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 20 "USB_DN")
-			(uuid "a08c0a68-a372-4278-92bd-2d4f5c441e6f")
-		)
-		(pad "A8" smd rect
-			(at 1.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(uuid "a154f7ee-baba-4cb1-b014-a46862091dc9")
-		)
-		(pad "A9" smd rect
-			(at 2.55 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 17 "USB_VBUS")
-			(uuid "a2e65932-303a-4570-8aeb-85028176d8b0")
-		)
-		(pad "A12" smd rect
-			(at 3.35 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 1 "GND")
-			(uuid "671b8d96-dc65-41ef-928f-96438f05e04a")
-		)
-		(pad "B1" smd rect
-			(at 3.05 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 1 "GND")
-			(uuid "7bd2253f-438f-4a46-9fe3-2f5025370d45")
-		)
-		(pad "B4" smd rect
-			(at 2.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 17 "USB_VBUS")
-			(uuid "d00fa2a3-8ba8-43d6-b75f-39333c2e694f")
-		)
-		(pad "B5" smd rect
-			(at 1.75 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 25 "USB_CC2")
-			(uuid "64dc3604-b3e8-499f-938a-77c989ef4ab2")
-		)
-		(pad "B6" smd rect
-			(at 0.75 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 21 "USB_DP")
-			(uuid "bf704a67-1b69-4639-8fdb-60a81659b4f9")
-		)
-		(pad "B7" smd rect
-			(at -0.75 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 20 "USB_DN")
-			(uuid "73097bb8-3d6a-41bf-a505-2d84d800ee5d")
-		)
-		(pad "B8" smd rect
-			(at -1.75 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(uuid "3e3bb13c-a5c2-4094-af06-d9b5d19893b5")
-		)
-		(pad "B9" smd rect
-			(at -2.25 -3.67 90)
-			(size 0.3 1.15)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 17 "USB_VBUS")
-			(uuid "6acf23f2-0f5d-4891-9283-1f24ba7d989c")
-		)
-		(pad "B12" smd rect
+		(pad "1" smd rect
 			(at -3.05 -3.67 90)
 			(size 0.3 1.15)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(uuid "919795d3-69ae-44df-a6dd-a563d7445651")
 		)
-		(pad "S1" thru_hole oval
+		(pad "1" smd rect
+			(at 3.05 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 1 "GND")
+			(uuid "7bd2253f-438f-4a46-9fe3-2f5025370d45")
+		)
+		(pad "1" smd rect
+			(at 3.35 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 1 "GND")
+			(uuid "671b8d96-dc65-41ef-928f-96438f05e04a")
+		)
+		(pad "2" smd rect
+			(at -2.55 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 17 "USB_VBUS")
+			(uuid "bd01d8e9-1409-4f12-80fd-bb0c3ccc24cd")
+		)
+		(pad "2" smd rect
+			(at 2.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 17 "USB_VBUS")
+			(uuid "d00fa2a3-8ba8-43d6-b75f-39333c2e694f")
+		)
+		(pad "3" smd rect
+			(at -1.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 24 "USB_CC1")
+			(uuid "b582e843-47f6-42cb-b680-3a3c69f0cc95")
+		)
+		(pad "4" smd rect
+			(at -0.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 21 "USB_DP")
+			(uuid "5273da94-992d-4f43-b5c7-887033cd822a")
+		)
+		(pad "4" smd rect
+			(at 0.75 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 21 "USB_DP")
+			(uuid "bf704a67-1b69-4639-8fdb-60a81659b4f9")
+		)
+		(pad "5" smd rect
+			(at -0.75 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 20 "USB_DN")
+			(uuid "73097bb8-3d6a-41bf-a505-2d84d800ee5d")
+		)
+		(pad "5" smd rect
+			(at 0.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 20 "USB_DN")
+			(uuid "a08c0a68-a372-4278-92bd-2d4f5c441e6f")
+		)
+		(pad "6" smd rect
+			(at 1.75 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 25 "USB_CC2")
+			(uuid "64dc3604-b3e8-499f-938a-77c989ef4ab2")
+		)
+		(pad "7" smd rect
+			(at -2.25 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 17 "USB_VBUS")
+			(uuid "6acf23f2-0f5d-4891-9283-1f24ba7d989c")
+		)
+		(pad "7" smd rect
+			(at 2.55 -3.67 90)
+			(size 0.3 1.15)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 17 "USB_VBUS")
+			(uuid "a2e65932-303a-4570-8aeb-85028176d8b0")
+		)
+		(pad "8" thru_hole oval
 			(at -4.32 -3.105 90)
 			(size 1 2.1)
 			(drill oval 0.6 1.7)
@@ -653,7 +653,7 @@
 			(net 1 "GND")
 			(uuid "37bdeea8-a466-4a44-922b-74e5205c56c7")
 		)
-		(pad "S1" thru_hole oval
+		(pad "8" thru_hole oval
 			(at -4.32 1.075 90)
 			(size 1 1.6)
 			(drill oval 0.6 1.2)
@@ -663,7 +663,7 @@
 			(net 1 "GND")
 			(uuid "3e62a6fc-2145-4ab5-8e70-e75a122128d2")
 		)
-		(pad "S1" thru_hole oval
+		(pad "8" thru_hole oval
 			(at 4.32 -3.105 90)
 			(size 1 2.1)
 			(drill oval 0.6 1.7)
@@ -673,7 +673,7 @@
 			(net 1 "GND")
 			(uuid "ad574158-961e-4cb6-9067-e399a6fea44a")
 		)
-		(pad "S1" thru_hole oval
+		(pad "8" thru_hole oval
 			(at 4.32 1.075 90)
 			(size 1 1.6)
 			(drill oval 0.6 1.2)
@@ -696,7 +696,7 @@
 			)
 		)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP16_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "0b7e2e15-50fe-4179-9d6f-c7fed6a3b5d1")
 		(at 79.285 38.45)
@@ -759,7 +759,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:J4_J4_Thermocouple_SolderPads"
 		(layer "F.Cu")
 		(uuid "0ea73ba3-cfd7-4d42-bd96-9d04402503a9")
 		(at 140 52)
@@ -872,7 +872,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP27_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "130ca7fd-87c6-46b2-a107-f625aa6c7497")
 		(at 94.7 36.25)
@@ -935,7 +935,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C7_C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "1430539a-6953-4e12-b0cd-83e5787e120c")
 		(at 53 72.7)
@@ -1008,7 +1008,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R8_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "16e6f202-ff2b-4c38-bc88-c7020efb3d6e")
 		(at 128 31)
@@ -1117,7 +1117,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP31_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "1a7099b9-a2ef-492a-89b5-555ec77dde60")
 		(at 94.7 31.17)
@@ -1180,7 +1180,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP14_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "245aecac-91e8-4e12-8acb-4dcfc073d62d")
 		(at 75.3 36.25)
@@ -1243,7 +1243,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP35_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "265dfe57-83dd-4674-b923-6f30be713187")
 		(at 94.7 26.09)
@@ -1306,7 +1306,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:SW2_SW_PUSH_6mm_H4.3mm"
 		(layer "F.Cu")
 		(uuid "281b43c4-373e-43d4-a516-d2a136ddef0b")
 		(at 43 42)
@@ -1439,7 +1439,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C2_C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "2a4dc6f1-0374-46f6-89e8-9dc9a706f86b")
 		(at 76 86)
@@ -1548,7 +1548,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:SW1_SW_PUSH_6mm_H4.3mm"
 		(layer "F.Cu")
 		(uuid "2a600a39-405b-4dfe-b5b1-8e12f92b3b10")
 		(at 43 32)
@@ -1681,7 +1681,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP2_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "2aae7a27-9aaf-4cf8-b7d5-4628cc27d1b5")
 		(at 75.3 21.01)
@@ -1744,7 +1744,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID1_Fiducial_1mm_Mask2mm"
 		(layer "F.Cu")
 		(uuid "2b56d8c8-fc97-416d-b119-c4fea38651fa")
 		(at 6 6)
@@ -1806,7 +1806,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP33_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "2ffbce67-f689-4fbf-90eb-7fcdaf798808")
 		(at 94.7 28.63)
@@ -1869,7 +1869,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:J2_J2_Fan_SolderPads"
 		(layer "F.Cu")
 		(uuid "359af9ee-ab39-4ec1-a384-1dc33e141d42")
 		(at 10 48)
@@ -1982,7 +1982,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP20_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "359bf12a-be82-4120-8833-ebc95a015df5")
 		(at 84.365 38.45)
@@ -2045,7 +2045,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP12_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "38ebc736-5da3-4f53-b7fa-aa62f721cccc")
 		(at 75.3 33.71)
@@ -2108,7 +2108,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:J1_J1_24V_SolderPads"
 		(layer "F.Cu")
 		(uuid "3e283d70-eefb-46cf-a7b6-fa196d2a282d")
 		(at 10 18)
@@ -2221,7 +2221,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ESP32-S3-WROOM-1"
+	(footprint "U1_ESP32-S3-WROOM-1"
 		(layer "F.Cu")
 		(uuid "3fb00620-7fca-49b2-b9a5-7773ab78713e")
 		(at 85 28)
@@ -2852,14 +2852,7 @@
 			(net 9 "HEATER_PWM")
 			(uuid "40ad29c6-093f-4c33-8115-0072eee6add1")
 		)
-		(pad "40" smd rect
-			(at 8.75 -8.26)
-			(size 1.5 0.9)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 1 "GND")
-			(uuid "30b4b660-c689-4e43-b7fb-5f6c837677ac")
-		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -2.9 -1.24 90)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2869,7 +2862,7 @@
 			(zone_connect 2)
 			(uuid "aaaa34d5-10a0-45ac-9ad0-d19361f9f1ef")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -2.9 0.16)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2879,7 +2872,7 @@
 			(zone_connect 2)
 			(uuid "e29eb9b6-6e70-4635-ac7d-96b4e5351f56")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -2.2 -1.94)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2889,7 +2882,7 @@
 			(zone_connect 2)
 			(uuid "d4be0a69-46ba-4ffb-b9ec-337f15cb51b7")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -2.2 -0.54)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2899,7 +2892,7 @@
 			(zone_connect 2)
 			(uuid "4b49d046-af3f-477f-b61f-de82b874ebcc")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -2.2 0.86)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2909,7 +2902,7 @@
 			(zone_connect 2)
 			(uuid "48d77ca4-b830-4238-bedd-5e5983319af8")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -1.5 -1.24)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2919,7 +2912,7 @@
 			(zone_connect 2)
 			(uuid "3f1155e2-4521-4600-9e5d-d41abbcdde6d")
 		)
-		(pad "41" smd rect
+		(pad "40" smd rect
 			(at -1.5 -0.54 270)
 			(size 3.9 3.9)
 			(property pad_prop_heatsink)
@@ -2927,7 +2920,7 @@
 			(zone_connect 2)
 			(uuid "ec357738-2ca1-4fab-9d2a-3ebde333f6e0")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -1.5 0.16)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2937,7 +2930,7 @@
 			(zone_connect 2)
 			(uuid "2a9ba075-21dc-40f1-b7e3-a084b7abf821")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -0.8 -1.94)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2947,7 +2940,7 @@
 			(zone_connect 2)
 			(uuid "f36d4140-51a2-4bd8-b21a-3a7034f9bcf0")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -0.8 -0.54)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2957,7 +2950,7 @@
 			(zone_connect 2)
 			(uuid "16719ee2-43e0-42e6-9635-5b1edbccce79")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -0.8 0.86)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2967,7 +2960,7 @@
 			(zone_connect 2)
 			(uuid "e272e9e9-11ca-40d6-bda0-c9fb0d9a560b")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -0.1 -1.24)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2977,7 +2970,7 @@
 			(zone_connect 2)
 			(uuid "76a1762a-3828-4c64-a49d-4ec4953dd665")
 		)
-		(pad "41" thru_hole circle
+		(pad "40" thru_hole circle
 			(at -0.1 0.16)
 			(size 0.6 0.6)
 			(drill 0.3)
@@ -2986,6 +2979,13 @@
 			(remove_unused_layers no)
 			(zone_connect 2)
 			(uuid "18d64f44-c5cb-422c-a105-a17b368a5ef9")
+		)
+		(pad "40" smd rect
+			(at 8.75 -8.26)
+			(size 1.5 0.9)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 1 "GND")
+			(uuid "30b4b660-c689-4e43-b7fb-5f6c837677ac")
 		)
 		(zone
 			(net 0)
@@ -3032,7 +3032,7 @@
 			)
 		)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP36_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "40274bc9-7f59-4841-8b91-5c0bdbfa40dd")
 		(at 94.7 24.82)
@@ -3095,7 +3095,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R1_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "442365b0-6dc9-42e6-9cf4-52bf10677cb1")
 		(at 65 48)
@@ -3204,7 +3204,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP22_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "4dac3f66-cf93-40db-8d09-1ecaaf023934")
 		(at 86.905 38.45)
@@ -3267,7 +3267,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP13_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "4f2fcc1b-0333-40e7-bd04-78d86169a10c")
 		(at 75.3 34.98)
@@ -3330,7 +3330,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPRESET1_Reset_Tweezer_Pads"
 		(layer "F.Cu")
 		(uuid "529bec69-ac55-45d8-9107-209a457d01df")
 		(at 49 32)
@@ -3399,7 +3399,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP17_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "550ebe99-90fa-4c20-86f6-5fbcc24d4441")
 		(at 80.555 38.45)
@@ -3462,7 +3462,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID2_Fiducial_1mm_Mask2mm"
 		(layer "F.Cu")
 		(uuid "55adf4c4-07da-4fc7-bc51-97be437811a7")
 		(at 154 6)
@@ -3524,7 +3524,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP29_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "55aff358-4fcc-4c68-a915-23be1fbae4bb")
 		(at 94.7 33.71)
@@ -3587,7 +3587,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP39_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "5ef2e07a-996f-432f-9897-189eb2ea1658")
 		(at 94.7 21.01)
@@ -3650,7 +3650,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP7_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "6230edf4-f8a1-4857-a250-f07e31007ed6")
 		(at 75.3 27.36)
@@ -3713,7 +3713,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:F1_Fuseholder_Clip-5x20mm_Bel_FC-203-22_Lateral_P17.80x5.00mm_D1.17mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "65919b17-ef2e-41c7-827e-373615404714")
 		(at 32 18)
@@ -3826,7 +3826,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP9_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "6ad1d078-cdae-4d2c-8f87-5f2c9ce1fc63")
 		(at 75.3 29.9)
@@ -3889,7 +3889,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP26_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "70be965f-673d-4b4d-a1ba-3a555a23286c")
 		(at 91.985 38.45)
@@ -3952,7 +3952,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP21_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "730ac2f1-95c1-41f9-a0ee-077a0c4f63d4")
 		(at 85.635 38.45)
@@ -4015,7 +4015,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C3_C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "74c2300f-9461-4bff-a666-97a9a1f687a3")
 		(at 91 63)
@@ -4124,7 +4124,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:Q1_TO-220-3_Vertical"
 		(layer "F.Cu")
 		(uuid "75bfa0f4-c6c4-4ae2-a334-b299ad27a747")
 		(at 45 48)
@@ -4247,7 +4247,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:U2_SOIC-8_3.9x4.9mm_P1.27mm"
 		(layer "F.Cu")
 		(uuid "76979fc8-18f6-4507-94d4-eec730d73a5f")
 		(at 98 55)
@@ -4404,7 +4404,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP3_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "7a832892-79b3-4945-a80e-e037c113692e")
 		(at 75.3 22.28)
@@ -4467,7 +4467,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R11_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "81b82478-fe43-4044-92e1-1af46a2215b8")
 		(at 130 40)
@@ -4576,7 +4576,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:U5_SOT-23-6"
 		(layer "F.Cu")
 		(uuid "8289087d-36b8-447d-ba46-cbeeeca5c058")
 		(at 133.7 28)
@@ -4677,7 +4677,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP19_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "82a7b444-bfbf-41b6-8966-509bdd54f360")
 		(at 83.095 38.45)
@@ -4740,7 +4740,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP11_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "8492c5eb-bb91-40a3-9ccc-6b8e5eb22780")
 		(at 75.3 32.439999)
@@ -4803,7 +4803,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:U4_U4_24V_to_5V_Buck_Module_4Pin"
 		(layer "F.Cu")
 		(uuid "8639cde1-9bb7-4759-aba4-cb08f3711fcb")
 		(at 36 78)
@@ -4936,7 +4936,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP32_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "8711ad1e-611c-4c17-96aa-447431d0b5aa")
 		(at 94.7 29.9)
@@ -4999,7 +4999,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R4_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "8d6488dc-6acc-4ba3-81b1-ee57252f62cb")
 		(at 112 26)
@@ -5108,7 +5108,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID3_Fiducial_1mm_Mask2mm"
 		(layer "F.Cu")
 		(uuid "8ecf13db-a6fe-4e1b-a0b0-2b17b3e084cc")
 		(at 154 94)
@@ -5170,7 +5170,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:D3_D_SMB"
 		(layer "F.Cu")
 		(uuid "91e5bdbf-a1cc-4c2b-8bf7-addef5469784")
 		(at 10 43)
@@ -5239,7 +5239,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R2_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "91fe9bc9-e162-4e31-ac2f-978b09a14ccb")
 		(at 65 52)
@@ -5348,7 +5348,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP30_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "9372f2a5-a1ee-4d31-a527-62de336388b8")
 		(at 94.2 32.439999)
@@ -5411,7 +5411,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:U3_U3_3V3_Switching_Module_3Pin"
 		(layer "F.Cu")
 		(uuid "95ed336d-4588-4a20-8e68-77fa8d9f81db")
 		(at 68 78)
@@ -5536,7 +5536,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:D1_D_DO-201AD_P15.24mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "98f2a9b9-ceab-4b49-bb5f-8c355597e0a3")
 		(at 28 48)
@@ -5649,7 +5649,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP28_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "99a7bd06-0e05-4599-87f4-25a228fcfd57")
 		(at 94.7 34.98)
@@ -5712,7 +5712,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP8_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "9a42ac5e-689a-48f1-9ce4-d122a687dddc")
 		(at 75.3 28.63)
@@ -5775,7 +5775,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R6_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "9afba9ca-5a36-4c9e-a07b-1623d71ce78b")
 		(at 55 36)
@@ -5884,7 +5884,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP38_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "9c5d62e1-a870-4e49-9e3f-e47050301b69")
 		(at 94.7 22.28)
@@ -5947,7 +5947,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R10_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "9c9d4ad7-17e8-41a4-99f7-abb7a6cf74d8")
 		(at 130 36)
@@ -6056,7 +6056,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP24_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "9d1448d8-471a-4dda-90bc-5277aa643611")
 		(at 89.445 38.45)
@@ -6119,7 +6119,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ESP32_GPIO_BREAKOUT_ROW"
+	(footprint "CoffeeRoast:JGPIO1_ESP32_GPIO_Breakout_Row"
 		(layer "F.Cu")
 		(uuid "9dc1f955-41c2-49e8-bc45-3f51b8304a75")
 		(at 110.35 92)
@@ -6228,7 +6228,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPGND_TestPoint_Pad_D1.5mm"
 		(layer "F.Cu")
 		(uuid "9e35f137-e4bb-4cae-a76a-ebbb850f6911")
 		(at 50 84)
@@ -6288,7 +6288,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R3_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "a0fed11f-8ccf-48b4-b347-47db73e02382")
 		(at 105 22)
@@ -6397,7 +6397,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPSSR1_SSR_Measurement_Pads"
 		(layer "F.Cu")
 		(uuid "a1727fcd-7e69-4e03-8b7f-5ef57e6c68a2")
 		(at 140 76.2)
@@ -6466,7 +6466,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TP24V_TestPoint_Pad_D1.5mm"
 		(layer "F.Cu")
 		(uuid "a524ec8a-ef7e-42be-bd6c-b6a1ec25b815")
 		(at 22 72)
@@ -6526,7 +6526,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP23_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "a923ee23-20c1-48db-be2e-1686ab77ea2d")
 		(at 88.175 38.45)
@@ -6589,7 +6589,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP18_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "b0b49931-d3f8-4d5b-b143-ac0df47c3ed9")
 		(at 81.825 38.45)
@@ -6652,7 +6652,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C6_C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "b4ece870-4431-45d9-ad8b-8a5a70a6764c")
 		(at 73.2 20.4)
@@ -6725,7 +6725,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP34_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "b6be7104-399e-474a-9a70-9e9c0f223306")
 		(at 94.7 27.36)
@@ -6788,7 +6788,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C1_C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "b8a18e75-4b85-4429-a6d2-9d9c0b74632c")
 		(at 61 86)
@@ -6897,7 +6897,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP40_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "bb080fd3-af18-43ca-8062-58f05f94779a")
 		(at 94.7 19.74)
@@ -6960,7 +6960,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R5_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "c669f40b-8640-487d-beeb-6e381c104a78")
 		(at 55 32)
@@ -7069,7 +7069,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C5_C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "c6cf36bd-d94f-4bb9-ab10-33ff7b9c1111")
 		(at 140 47)
@@ -7138,7 +7138,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPBOOT1_Boot_Tweezer_Pads"
 		(layer "F.Cu")
 		(uuid "c9d44b49-54aa-4471-89b5-57e9b202d7ce")
 		(at 49 42)
@@ -7207,7 +7207,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:Q2_SOT-23"
 		(layer "F.Cu")
 		(uuid "ce8bf792-e247-4008-87d6-bb6f8fe48a12")
 		(at 118 70)
@@ -7324,7 +7324,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TP3V3_TestPoint_Pad_D1.5mm"
 		(layer "F.Cu")
 		(uuid "d10a7108-9af3-4def-b7e6-763491468398")
 		(at 72 76)
@@ -7384,7 +7384,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP37_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "d842be62-28ba-4dea-ad4c-3d8fcec41530")
 		(at 94.7 23.55)
@@ -7447,7 +7447,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:R7_R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "d92b70ba-1112-4786-a574-feaaff991a23")
 		(at 128 27)
@@ -7556,7 +7556,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP10_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "df174b2e-8bb9-43f3-b775-03567142e4c5")
 		(at 75.3 31.17)
@@ -7619,7 +7619,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP6_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "e94b7014-cfaa-49dc-82b9-f531a70609eb")
 		(at 75.3 26.09)
@@ -7682,7 +7682,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP4_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "ea89e4ad-3bfd-4e75-b87f-ab69b13cb011")
 		(at 75.3 23.55)
@@ -7745,7 +7745,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP1_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "eee6790d-aacf-4d89-911c-9d3d3efa2858")
 		(at 75.3 19.74)
@@ -7808,7 +7808,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:C4_CP_Radial_D8.0mm_P3.50mm"
 		(layer "F.Cu")
 		(uuid "f0a09ddc-3295-4a8a-a0f7-666500098df9")
 		(at 10 23.2)
@@ -7879,7 +7879,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:D2_D_SMB"
 		(layer "F.Cu")
 		(uuid "fc6a9114-164d-49df-a803-e81f2d33ef4a")
 		(at 10 26.2)
@@ -7948,7 +7948,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:J3_J3_SSR_SolderPads"
 		(layer "F.Cu")
 		(uuid "fe0527ce-d74f-4049-ba13-8d5b59158d3d")
 		(at 140 70)
@@ -8061,7 +8061,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:TPESP5_ESP32_ProbePad"
 		(layer "F.Cu")
 		(uuid "fe8afd4a-ec2d-4999-9ef3-8eeb0cbc601a")
 		(at 75.3 24.82)
@@ -8124,7 +8124,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP22_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "031a5d52-4883-42db-a2fc-4e201a597dfe")
 		(at 90.78 58.5)
@@ -8187,7 +8187,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP16_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "0783743d-0425-47f5-bfe2-eaee92c00459")
 		(at 75.54 58.5)
@@ -8250,7 +8250,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP35_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "12b94717-6056-411d-8927-ad7764171a95")
 		(at 108 34.2)
@@ -8313,7 +8313,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP24_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "16cbf5cc-4f4c-4494-b358-5ddafcec70f9")
 		(at 95.86 58.5)
@@ -8376,7 +8376,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP11_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "17043590-d6a0-4a77-a76e-0c649a9bcbad")
 		(at 62.5 46.9)
@@ -8439,7 +8439,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP20_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "178eff81-9be0-4d80-95b5-69730d78adb6")
 		(at 85.7 58.5)
@@ -8502,7 +8502,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP37_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "21dbbc0e-d65f-4602-a21d-4cbae07750bb")
 		(at 108 29.12)
@@ -8565,7 +8565,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP6_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "2b0fb74a-40f2-4353-ada4-f2fc4d231a38")
 		(at 62.5 34.2)
@@ -8628,7 +8628,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP9_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "2ce0de44-ce7b-44d4-b89d-68952f48f4b1")
 		(at 62.5 41.82)
@@ -8691,7 +8691,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP21_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "2e642514-1347-4a8e-928e-ab1185114efc")
 		(at 88.24 58.5)
@@ -8754,7 +8754,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP3_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "32dd46af-f975-4051-b1fe-cef113c850d8")
 		(at 62.5 26.58)
@@ -8817,7 +8817,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP33_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "45e9fd52-d4f3-4773-8871-cb9756aebcd5")
 		(at 108 39.28)
@@ -8880,7 +8880,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP7_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "473d20b6-c167-4f20-9796-bf54d309f9c6")
 		(at 62.5 36.74)
@@ -8943,7 +8943,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP1_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "50a4e345-2afb-4d4b-95ec-c8c93245ed0f")
 		(at 62.5 21.5)
@@ -9006,7 +9006,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP31_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "53a5cbec-8dc1-4ccd-8a7a-eb8e3250025b")
 		(at 108 44.36)
@@ -9069,7 +9069,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP29_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "58eedc47-d3ee-46f5-bbc3-4ef4b97d1e05")
 		(at 108.25 49.44)
@@ -9132,7 +9132,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP27_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "5f0b77fd-df41-4c7f-8315-5dcccc546a2b")
 		(at 108 54.52)
@@ -9195,7 +9195,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP10_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "5fcfb6e8-0404-4f5c-8c09-42f52ab32ce7")
 		(at 62.5 44.36)
@@ -9258,7 +9258,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP40_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "6a65c898-083a-4ba9-bcd7-6255bdca2aac")
 		(at 108 21.5)
@@ -9321,7 +9321,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP34_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "6bbb9e8d-081a-4ac2-9401-9461b88e542c")
 		(at 108 36.74)
@@ -9384,7 +9384,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP25_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "6d85b82d-9534-4fa4-a149-7062b46d4e51")
 		(at 98.4 58.5)
@@ -9447,7 +9447,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP39_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "6e40d798-e4a0-4cb3-b29a-c9df5ef1b1a8")
 		(at 108 24.04)
@@ -9510,7 +9510,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP12_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "717366f5-e0a5-4dad-8828-11240fd2edf6")
 		(at 62.5 49.44)
@@ -9573,7 +9573,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP23_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "77c1d80b-17f5-463a-9b66-0babb579e6c8")
 		(at 93.32 58.5)
@@ -9636,7 +9636,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP32_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "7a821f91-a95d-4fff-8278-3defa1ec99ed")
 		(at 108 41.82)
@@ -9699,7 +9699,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID6_Fiducial_1mm_Mask2mm"
 		(layer "B.Cu")
 		(uuid "7b26b258-2334-44b6-a118-838e80e461cc")
 		(at 154 94)
@@ -9762,7 +9762,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP5_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "83d1f466-6ed3-431c-8fcb-eb9e881d9fd6")
 		(at 62.5 31.66)
@@ -9825,7 +9825,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP2_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "88d5453f-8260-4b76-afe3-7bd68ebc7893")
 		(at 62.5 24.04)
@@ -9888,7 +9888,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP4_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "98d62e91-68c1-44db-a7b9-3262e7e287b2")
 		(at 62.5 29.12)
@@ -9951,7 +9951,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP26_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "9e3f08f7-14c0-4998-8675-dd03795633cb")
 		(at 100.94 58.5)
@@ -10014,7 +10014,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP18_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "a6960dc2-25cd-49f1-92ec-5e1753c238e5")
 		(at 80.62 58.5)
@@ -10077,7 +10077,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP38_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "a76a9215-375b-4684-933c-526881846809")
 		(at 108 26.58)
@@ -10140,7 +10140,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP8_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "c0ccf10f-8e0a-45fe-bcec-1e350789dc77")
 		(at 62.5 39.28)
@@ -10203,7 +10203,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP14_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "c2cf301b-2d85-4179-93cc-2bf96ff21191")
 		(at 62.5 54.52)
@@ -10266,7 +10266,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP36_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "c6e739f6-fb29-466e-b962-d96953a74d7b")
 		(at 108 31.66)
@@ -10329,7 +10329,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID5_Fiducial_1mm_Mask2mm"
 		(layer "B.Cu")
 		(uuid "c732048d-a3de-417d-9976-4e4847c0d495")
 		(at 154 6)
@@ -10392,7 +10392,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP28_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "d7b3bc5f-9a6c-4b71-8227-53ac89daa909")
 		(at 108 51.98)
@@ -10455,7 +10455,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP15_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "dd2189c8-de1d-45b7-862c-231cd79cfff7")
 		(at 73 58.5)
@@ -10518,7 +10518,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP30_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "e6273e59-6830-496b-8152-ee3816001d04")
 		(at 108 46.9)
@@ -10581,7 +10581,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:FID4_Fiducial_1mm_Mask2mm"
 		(layer "B.Cu")
 		(uuid "e9c9baac-c301-40a1-b14e-081779be2f70")
 		(at 6 6)
@@ -10644,7 +10644,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP19_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "eb89d137-1739-4aaa-8709-0b6d329b48c5")
 		(at 83.16 58.5)
@@ -10707,7 +10707,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP17_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "f181ffd1-3fa4-4967-87da-0f4b0b00cc88")
 		(at 78.08 58.5)
@@ -10770,7 +10770,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint ""
+	(footprint "CoffeeRoast:PADESP13_ESP32_SolderPad"
 		(layer "B.Cu")
 		(uuid "fda53dae-23ee-494f-a482-7e9ebe6f364a")
 		(at 62.5 51.98)

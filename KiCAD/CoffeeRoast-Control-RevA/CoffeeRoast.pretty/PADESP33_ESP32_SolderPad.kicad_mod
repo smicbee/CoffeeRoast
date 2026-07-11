@@ -1,0 +1,67 @@
+(footprint "PADESP33_ESP32_SolderPad"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "PADESP33"
+		(at 0 0 180)
+		(layer "B.SilkS")
+		(hide yes)
+		(uuid "984de995-282f-426d-8276-052097684a0e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Value" "IO40"
+		(at 0 0 180)
+		(layer "B.Fab")
+		(hide yes)
+		(uuid "fee410f1-cc7e-4bce-a4bf-32d095fda4df")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(layer "B.Fab")
+		(hide yes)
+		(uuid "fc75e0c3-e4e1-4b45-8095-738ea197cd45")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(layer "B.Fab")
+		(hide yes)
+		(uuid "e95c92d6-6bfa-4fe5-991e-9038fdd532bc")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 0 0)
+		(size 1.35 1.15)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "a480dd0c-9014-410a-b545-ec6c2d05757a")
+	)
+	(embedded_fonts no)
+)

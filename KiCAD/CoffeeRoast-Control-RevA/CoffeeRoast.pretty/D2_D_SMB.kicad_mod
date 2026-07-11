@@ -1,0 +1,68 @@
+(footprint "D2_D_SMB"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "D2"
+		(at 0 -1.4 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5302a900-bf82-49ce-97cd-601ca591b263")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "SMBJ33A_24V_INPUT_TVS"
+		(at 0 1.399999 0)
+		(layer "F.Fab")
+		(uuid "f7a72713-7020-491d-9552-8d89a518148f")
+		(effects
+			(font
+				(size 0.65 0.65)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "079f4494-d1cc-4c73-8a12-44b9359806b8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fc03f6e9-7fa1-492f-90d5-d015e48d0951")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.54 0)
+		(size 2 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "8d4b5614-7291-439a-93dd-a5dab273ea2b")
+	)
+	(pad "2" smd rect
+		(at 2.54 0)
+		(size 2 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "29db8fe5-a5f2-4289-ab10-f39c2d77c1c9")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,63 @@
+(footprint "TPESP29_ESP32_ProbePad"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "TPESP29"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d1ea09c3-61cb-4fc9-95c8-3259d4f18938")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "IO36"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c86fb8f8-4f53-4aad-8a2a-d4dfc0d0b812")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "90502228-3021-4ae4-8364-29e49dfc8085")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b62803d7-7502-4a78-a558-933d83d6f02f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 0 0)
+		(size 0.55 0.52)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "12840fc7-d5c6-4c0e-b853-b3411daa8a25")
+	)
+	(embedded_fonts no)
+)

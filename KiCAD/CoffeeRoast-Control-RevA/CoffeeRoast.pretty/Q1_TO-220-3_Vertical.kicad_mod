@@ -1,0 +1,121 @@
+(footprint "Q1_TO-220-3_Vertical"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "Q1"
+		(at 0 -3 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "20f6b3c0-8a91-42e5-b5f5-bc08cd85566d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW"
+		(at 0 3 0)
+		(layer "F.Fab")
+		(uuid "72bbe4c6-ea8d-42b7-ab1d-46029bfaa4b8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "666c2606-82c2-4108-8b3f-34c7102291a4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5deb4961-5897-42b9-8efe-e4088d77bd32")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -5.25 -2.5)
+		(end 5.25 -2.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "95425b55-8a25-4d44-b745-d9829d738158")
+	)
+	(fp_line
+		(start -5.25 2.5)
+		(end -5.25 -2.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c16b411a-181c-4572-b42b-0b843515b02a")
+	)
+	(fp_line
+		(start 5.25 -2.5)
+		(end 5.25 2.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "e05cf6a3-1f0d-4dc0-b49a-6ce0f37bb19e")
+	)
+	(fp_line
+		(start 5.25 2.5)
+		(end -5.25 2.5)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "0d912842-c4ff-4a73-b940-b266fd852c50")
+	)
+	(pad "1" thru_hole rect
+		(at -2.54 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "aadfa2d1-f915-4b53-af70-825e93c2b0a0")
+	)
+	(pad "2" thru_hole rect
+		(at 0 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "88b6da68-3c6e-4dcc-ad9d-d2b985812831")
+	)
+	(pad "3" thru_hole rect
+		(at 2.54 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "1294b0be-49c9-430e-9de2-6e432a6a7039")
+	)
+	(embedded_fonts no)
+)
