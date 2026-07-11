@@ -32,7 +32,7 @@ export function parseRecipe(text, fileName = 'Eigenes Rezept.kpro') {
   pairs = normalisePoints(pairs);
   if (pairs.length < 2) throw new Error('Das Rezept enthält keine brauchbare roast_profile-Kurve.');
   const maxTime = Math.min(1199, Math.ceil(Math.max(...pairs.map(p => p.time))));
-  const profile = Array.from({ length: Math.max(2, maxTime + 1) }, (_, t) => pchipInterpolate(pairs, t));
+  const profile = Array.from({ length: Math.max(2, maxTime + 1) }, (_, t) => linearInterpolate(pairs, t));
   const levels = deriveRoastLevels(fields, profile);
   return {
     fileName,
@@ -78,24 +78,17 @@ function findClosestTime(profile, target) {
   return index;
 }
 
-// Monotone cubic Hermite interpolation (PCHIP), dependency-free.
-function pchipInterpolate(points, x) {
-  const n = points.length;
+// Stetige, stückweise lineare Interpolation zwischen den Rezeptstützpunkten.
+// Dadurch liegt jedes Zwischenziel exakt auf der Verbindungslinie; es gibt
+// weder Treppenstufen noch kubische Überschwinger zwischen zwei Punkten.
+function linearInterpolate(points, x) {
   if (x <= points[0].time) return points[0].temp;
-  if (x >= points[n - 1].time) return points[n - 1].temp;
-  const h = [], delta = [], slope = new Array(n).fill(0);
-  for (let i = 0; i < n - 1; i++) { h[i] = points[i + 1].time - points[i].time; delta[i] = (points[i + 1].temp - points[i].temp) / h[i]; }
-  slope[0] = endpointSlope(h[0], h[1] || h[0], delta[0], delta[1] ?? delta[0]);
-  slope[n - 1] = endpointSlope(h[n - 2], h[n - 3] || h[n - 2], delta[n - 2], delta[n - 3] ?? delta[n - 2]);
-  for (let i = 1; i < n - 1; i++) {
-    if (delta[i - 1] * delta[i] <= 0) slope[i] = 0;
-    else { const w1 = 2 * h[i] + h[i - 1], w2 = h[i] + 2 * h[i - 1]; slope[i] = (w1 + w2) / (w1 / delta[i - 1] + w2 / delta[i]); }
-  }
-  let i = 0; while (i < n - 2 && x > points[i + 1].time) i++;
-  const t = (x - points[i].time) / h[i];
-  const h00 = (2 * t ** 3 - 3 * t ** 2 + 1), h10 = (t ** 3 - 2 * t ** 2 + t), h01 = (-2 * t ** 3 + 3 * t ** 2), h11 = (t ** 3 - t ** 2);
-  return h00 * points[i].temp + h10 * h[i] * slope[i] + h01 * points[i + 1].temp + h11 * h[i] * slope[i + 1];
+  if (x >= points[points.length - 1].time) return points[points.length - 1].temp;
+  let i = 0;
+  while (i < points.length - 2 && x > points[i + 1].time) i++;
+  const left = points[i], right = points[i + 1];
+  const ratio = (x - left.time) / (right.time - left.time);
+  return left.temp + (right.temp - left.temp) * ratio;
 }
-function endpointSlope(h0, h1, d0, d1) { let m = ((2 * h0 + h1) * d0 - h0 * d1) / (h0 + h1); if (m * d0 <= 0) return 0; if (Math.abs(m) > 3 * Math.abs(d0)) m = 3 * d0; return m; }
 function numberOr(value, fallback) { const n = Number.parseFloat(value); return Number.isFinite(n) ? n : fallback; }
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }

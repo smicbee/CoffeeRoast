@@ -18,6 +18,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - Safety-Preflight vor jedem realen Heizvorgang
 - Import und Auswahl der bestehenden `.kpro`-Rezepte
 - PID-Regelung, Auto-Drop und temperaturabhängige Lüfterkurve
+- stetige lineare Interpolation zwischen allen Rezeptstützpunkten ohne Treppenstufen oder kubische Überschwinger
 - eingebaute Simulation ohne Hardware
 - responsiver Canvas-Live-Plot und CSV-Export
 - keine serverseitige Gerätefreigabe: der Browser spricht lokal mit dem vom Benutzer ausgewählten USB-Gerät
