@@ -22,6 +22,9 @@ function bindEvents(){
   $('legacyFirmwareFlashButton').addEventListener('click',()=>{pendingFirmwareVerification=false;setFirmwareVerification('Legacy-Firmware besitzt keine verifizierbare Versionskennung.','warning')});
   $('verifyFirmwareButton').addEventListener('click',()=>verifyInstalledFirmware(true));
   document.addEventListener('closed',event=>{if(event.target?.tagName==='EWT-INSTALL-DIALOG'&&pendingFirmwareVerification){pendingFirmwareVerification=false;setTimeout(()=>verifyInstalledFirmware(false),2500)}});
+  const systemMenu=$('systemMenu');systemMenu.addEventListener('toggle',()=>{systemMenu.querySelector('summary').setAttribute('aria-expanded',String(systemMenu.open));if(systemMenu.open&&engine.connected)refreshStatus()});
+  document.addEventListener('pointerdown',event=>{if(systemMenu.open&&!systemMenu.contains(event.target))systemMenu.open=false});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&systemMenu.open){systemMenu.open=false;systemMenu.querySelector('summary').focus()}});
 }
 function setFirmwareVerification(message,level='checking'){$('firmwareVerification').textContent=message;$('firmwareVerification').dataset.level=level}
 async function verifyInstalledFirmware(requestPort=false){

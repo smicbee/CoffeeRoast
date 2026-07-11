@@ -58,3 +58,14 @@ Die bisherige WinForms-Anwendung wurde als eigenständige, moderne Webanwendung 
 Die Hardwareverbindung benötigt Chrome oder Edge. Die Website greift ausschließlich im Browser auf das vom Benutzer freigegebene USB-Gerät zu. Firefox und Safari unterstützen Web Serial nicht; Simulation, Rezepte und UI bleiben dort nutzbar.
 
 Die Anwendung ersetzt keine hardwareseitige Temperaturabschaltung, Netztrennung oder Beaufsichtigung des Rösters.
+
+## Ergänzung: System-Untermenü in der Kopfleiste
+
+- Diagnose, Controllerstatus, PID/Protokoll und Firmwareverwaltung wurden aus der permanenten rechten Seitenleiste in das neue **System**-Untermenü der sticky Kopfleiste verschoben.
+- Das Menü aktualisiert beim Öffnen den Controllerstatus, sofern eine Verbindung besteht.
+- Es lässt sich per erneutem Klick, Klick außerhalb oder Escape schließen.
+- Das Popover besitzt eine begrenzte Höhe, einen eigenen Scrollbereich und ein responsives Mobil-Layout.
+- Röststeuerung und Luftstrom bleiben als einzige permanente Karten in der Seitenleiste.
+- Bestehende Diagnose-IDs, PID-Einstellungen, Firmware-Flasher und Post-Flash-Verifikation bleiben funktional erhalten.
+- DOM-Struktur, eindeutige IDs, JavaScript-Syntax und sämtliche Tests wurden geprüft.
+- Das geschlossene und geöffnete Menü wurde in Chromium bei 1440 × 1000 visuell kontrolliert.
