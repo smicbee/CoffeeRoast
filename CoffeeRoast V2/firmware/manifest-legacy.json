@@ -7,7 +7,7 @@
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "coffeeroast-n8r8-legacy-2a05fb0.bin",
+          "path": "coffeeroast-esp32s3-zero-legacy-2a05fb0.bin",
           "offset": 0
         }
       ]

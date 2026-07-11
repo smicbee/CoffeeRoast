@@ -2,8 +2,8 @@ const encoder = new TextEncoder();
 export const EXPECTED_FIRMWARE = Object.freeze({
   product: 'CoffeeRoast',
   protocol: 3,
-  hardware: 'CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8',
-  minimumVersion: '1.3.0'
+  hardware: 'CoffeeRoast-Waveshare-ESP32-S3-Zero',
+  minimumVersion: '1.3.1'
 });
 
 export class WebSerialTransport {
@@ -255,7 +255,7 @@ export class SimulationTransport {
   async getStatus() {
     this.update();
     const state = this.abortSignal ? 'failsafe' : 'ok';
-    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.0,protocol=3,hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8`;
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.1,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() { this.update(); return this.temp * 1.1; }
@@ -274,9 +274,9 @@ export function parseControllerStatus(line) {
   if(missingBase.length)throw new Error(`Controllerstatus unvollständig (${missingBase.join(', ')}): ${line}`);
   if(!/^(ok|failsafe)$/i.test(values.state))throw new Error(`Unbekannter Controllerzustand: ${values.state}`);
 
-  const rawTemperature=Number(values.temp),heater=Number(values.heater),fan=Number(values.fan),fanTarget=Number(values.fanTarget),errors=Number(values.errors);
-  const numericValues=[rawTemperature,heater,fan,fanTarget,errors];
-  if(numericValues.some(value=>!Number.isFinite(value))||!Number.isInteger(errors)||errors<0||heater<0||heater>255||fan<0||fan>255||fanTarget<0||fanTarget>255){
+  const temperatureUnavailable=/^nan$/i.test(values.temp),rawTemperature=temperatureUnavailable?NaN:Number(values.temp),heater=Number(values.heater),fan=Number(values.fan),fanTarget=Number(values.fanTarget),errors=Number(values.errors);
+  const numericValues=[heater,fan,fanTarget,errors];
+  if((!Number.isFinite(rawTemperature)&&!temperatureUnavailable)||numericValues.some(value=>!Number.isFinite(value))||!Number.isInteger(errors)||errors<0||heater<0||heater>255||fan<0||fan>255||fanTarget<0||fanTarget>255){
     throw new Error(`Ungültige numerische Statuswerte: ${line}`);
   }
 

@@ -1,34 +1,28 @@
 {
-  "board": {
-    "pcbReference": "CoffeeRoast-Control-RevA",
-    "module": "ESP32-S3-WROOM-1-N8R8",
-    "fqbn": "esp32:esp32:esp32s3",
-    "flashSize": "8MB",
-    "flashMode": "dio",
-    "flashFrequency": "80MHz",
-    "psram": "8MB OPI",
-    "partitionScheme": "default_8MB",
-    "usbMode": "Hardware CDC and JTAG",
-    "cdcOnBoot": true
+  "target": {
+    "board": "Waveshare ESP32-S3-Zero",
+    "chip": "ESP32-S3 rev0.2",
+    "flash": "4 MB quad flash",
+    "psram": "2 MB",
+    "fqbn": "esp32:esp32:esp32s3:CDCOnBoot=cdc,USBMode=hwcdc,FlashMode=qio,FlashSize=4M,PartitionScheme=default"
   },
   "toolchain": {
     "arduinoCli": "1.5.1",
     "esp32Core": "3.3.10",
-    "max6675Library": "Adafruit MAX6675 library 1.1.2"
+    "max6675Library": "1.1.2"
   },
   "images": [
     {
-      "version": "1.3.0",
-      "file": "coffeeroast-n8r8-v1.3.0.bin",
+      "version": "1.3.1",
+      "file": "coffeeroast-esp32s3-zero-v1.3.1.bin",
       "source": "ESP32S3 Zero/RoastingControl/RoastingControl.ino",
-      "sha256": "7b3597a740d91cffacfe940a631804c88636b506a2cc671754830f499639b4d2"
+      "sha256": "8c3958bfdb3110bb7eff19d5ed3af5c9f321651e86ec9418d8e63f292d1b2f57"
     },
     {
       "version": "legacy-2a05fb0",
-      "file": "coffeeroast-n8r8-legacy-2a05fb0.bin",
+      "file": "coffeeroast-esp32s3-zero-legacy-2a05fb0.bin",
       "sourceCommit": "2a05fb0",
-      "sourceBlobSha256": "5a40f8770d98245eedb90a159254c70e4f29b7b3d0bda8c0dadba63e3c2a51eb",
-      "sha256": "9244517afc33546f4ba6cd67c2135a9b63eb293031e8e501029bc72eb7ebebc7"
+      "sha256": "a7ff1e6cfca1a08a3789f0f0a582f1b33d61b45b3cc4823ed7bb2f12401f723b"
     }
   ]
 }

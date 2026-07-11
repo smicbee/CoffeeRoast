@@ -1,7 +1,7 @@
-import{WebSerialTransport,SimulationTransport}from'./serial.js?v=20260710-flasher3';
-import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260710-flasher3';
-import{RoastEngine,RoastState}from'./engine.js?v=20260710-flasher3';
-import{RoastChart,formatTime}from'./chart.js?v=20260710-flasher3';
+import{WebSerialTransport,SimulationTransport}from'./serial.js?v=20260711-zero1';
+import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-zero1';
+import{RoastEngine,RoastState}from'./engine.js?v=20260711-zero1';
+import{RoastChart,formatTime}from'./chart.js?v=20260711-zero1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));
 let recipes=[],simulation=false,toastTimer,connecting=false;const logLines=[];
 

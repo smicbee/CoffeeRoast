@@ -30,9 +30,9 @@ const float PWM_MIN = 0.0f;
 const float PWM_MAX = 255.0f;
 const float MIN_SAFE_FAN = 50.0f;
 const float FAILSAFE_FAN = PWM_MAX;
-const char* FIRMWARE_VERSION = "1.3.0";
+const char* FIRMWARE_VERSION = "1.3.1";
 const uint8_t PROTOCOL_VERSION = 3;
-const char* HARDWARE_ID = "CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8";
+const char* HARDWARE_ID = "CoffeeRoast-Waveshare-ESP32-S3-Zero";
 
 int delayValue = 50;
 

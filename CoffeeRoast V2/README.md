@@ -7,8 +7,8 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
 - sicherer Vorheizablauf mit bestätigtem Lüfterlauf, danach Aufheizen auf 180 °C Standardziel
-- integrierte Firmware v1.3.0 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
-- Browser-Flasher für den auf dem RevA-PCB vorgesehenen ESP32-S3-WROOM-1-N8R8 mit 8 MB Flash und 8 MB OPI-PSRAM
+- integrierte Firmware v1.3.1 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
+- Browser-Flasher ausschließlich für den Waveshare ESP32-S3-Zero mit 4 MB Quad-Flash und 2 MB PSRAM
 - getrennte Flashoption für die empfohlene Firmware und den exakten Legacy-Main-Stand `2a05fb0`
 - Lüfter-Softstart auch im Failsafe: Ziel 255, Istwert maximal 2 PWM-Schritte je 50 ms
 - serialisierte Kommunikation mit atomarem `get status`-Polling
@@ -42,16 +42,16 @@ Die Website bindet ESP Web Tools ein. In Chrome oder Edge über HTTPS:
 
 1. Eine laufende Röstung beenden und den Röster abkühlen lassen.
 2. Den normalen Controller in der Website trennen.
-3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.0 oder bewusst den aufgeklappten Legacy-Stand auswählen.
-4. Ausschließlich das angeschlossene **CoffeeRoast RevA mit ESP32-S3-WROOM-1-N8R8** auswählen.
-5. Nach dem Flashen den Controller neu verbinden. Die empfohlene Firmware muss `version=1.3.0`, `protocol=3` und `hardware=CoffeeRoast-RevA-ESP32S3-WROOM-1-N8R8` melden. Der Legacy-Stand besitzt absichtlich keine Versionsmetadaten und erscheint als „Legacy-Firmware“.
+3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.1 oder bewusst den aufgeklappten Legacy-Stand auswählen.
+4. Ausschließlich das angeschlossene **CoffeeRoast RevA mit Waveshare ESP32-S3-Zero** auswählen.
+5. Nach dem Flashen den Controller neu verbinden. Die empfohlene Firmware muss `version=1.3.1`, `protocol=3` und `hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero` melden. Der Legacy-Stand besitzt absichtlich keine Versionsmetadaten und erscheint als „Legacy-Firmware“.
 
-Die Manifeste liegen unter `firmware/manifest-current.json` und `firmware/manifest-legacy.json`. Beide 8-MB-Merged-Images wurden mit folgenden Zielparametern gebaut:
+Die Manifeste liegen unter `firmware/manifest-current.json` und `firmware/manifest-legacy.json`. Beide 4-MB-Merged-Images wurden mit folgenden Zielparametern gebaut:
 
 - FQBN `esp32:esp32:esp32s3`
-- ESP32-S3-WROOM-1-N8R8: 8 MB Flash, 8 MB OPI-PSRAM
-- DIO, 80 MHz
-- Partitionierung `default_8MB`
+- Waveshare ESP32-S3-Zero: 4 MB Quad-Flash, 2 MB PSRAM
+- Bootimage DIO, 80 MHz
+- Partitionierung `default`
 - native Hardware-USB-CDC, CDC beim Boot aktiviert
 - ESP32-Arduino-Core 3.3.10
 - Adafruit MAX6675 1.1.2
