@@ -28,9 +28,9 @@ double fanMaxAcceleration = 2.0; //max acceleration per cycle
 
 const float PWM_MIN = 0.0f;
 const float PWM_MAX = 255.0f;
-const float MIN_SAFE_FAN = 50.0f;
+const float MIN_SAFE_FAN = 128.0f;  // 50 % Mindestluftstrom bei aktiver Heizung
 const float FAILSAFE_FAN = PWM_MAX;
-const char* FIRMWARE_VERSION = "1.3.1";
+const char* FIRMWARE_VERSION = "1.3.2";
 const uint8_t PROTOCOL_VERSION = 3;
 const char* HARDWARE_ID = "CoffeeRoast-Waveshare-ESP32-S3-Zero";
 

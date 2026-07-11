@@ -17,7 +17,7 @@ function approximately(actual, expected, tolerance = 0.01) {
 let now = 0;
 const simulator = new SimulationTransport(() => {}, { speed: 1, now: () => now });
 await simulator.connect();
-assert(fanAcceleration === 2 && loopMilliseconds === 50 && minimumFan === 50, 'Simulator-Konstanten entsprechen der Firmware');
+assert(fanAcceleration === 2 && loopMilliseconds === 50 && minimumFan === 128, 'Simulator-Konstanten entsprechen der Firmware');
 
 await simulator.setFan(255);
 await simulator.setHeater(180);
@@ -26,7 +26,7 @@ let status = await simulator.getSnapshot();
 assert(status.fan < minimumFan, 'Lüfter befindet sich während des Softstarts unter der Freigabeschwelle');
 assert(status.heater === 0, 'SSR bleibt während des Lüfter-Softstarts gesperrt');
 
-simulator.advance(0.4);
+simulator.advance(2.3);
 status = await simulator.getSnapshot();
 assert(status.fan >= minimumFan, 'Lüfter erreicht die Sicherheitsgrenze gerampt');
 assert(status.heater === 180, 'SSR wird erst nach bestätigtem Luftstrom freigegeben');

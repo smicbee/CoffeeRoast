@@ -8,7 +8,7 @@ Desktop-Basis: `codex/fix-bugs-and-crashes` bei `2c96788`. Aktuelle integrierte 
 - `hello` → `popcorn roaster`.
 - `get status` → `state=...,temp=...,heater=...,fan=...,fanTarget=...,errors=...,healthyReadings=...,failsafeLatched=...,version=...,protocol=...,hardware=...`.
 - `reset failsafe` → `failsafe reset` nur bei Heizung 0, Lüfter mindestens 50 und mindestens drei gesunden Messungen; sonst `failsafe reset denied`.
-- `get info` → `product=CoffeeRoast,firmware=1.3.1,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`.
+- `get info` → `product=CoffeeRoast,firmware=1.3.2,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`.
 - `get temp`, `get fan` und `get setpoint` liefern eine numerische Zeile.
 - `set fan N` und `set setpoint N` antworten nicht.
 - `Failsafe!` kann spontan zwischen Antworten eintreffen.
@@ -19,7 +19,7 @@ Die Website serialisiert alle Operationen in einer FIFO-Warteschlange und akzept
 
 Die empfohlene Firmware meldet drei unabhängige Kennungen:
 
-- Firmware `1.3.1`;
+- Firmware `1.3.2`;
 - Protokoll `3`;
 - Hardware `CoffeeRoast-Waveshare-ESP32-S3-Zero`.
 

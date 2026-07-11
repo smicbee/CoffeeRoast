@@ -7,7 +7,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API; nach der ersten Freigabe wird die USB-Kennung gespeichert und beim nächsten Seitenbesuch automatisch wieder verbunden
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
 - sichere Lüftervorbereitung: Heizung bleibt durchgehend 0, die gewählte Lüftergeschwindigkeit wird gerampt und bestätigt; erst der anschließende Röststart darf Heizleistung anfordern
-- integrierte Firmware v1.3.1 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
+- integrierte Firmware v1.3.2 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
 - Browser-Flasher ausschließlich für den Waveshare ESP32-S3-Zero mit 4 MB Quad-Flash und 2 MB PSRAM
 - getrennte Flashoption für die empfohlene Firmware und den exakten Legacy-Main-Stand `2a05fb0`
 - Lüfter-Softstart auch im Failsafe: Ziel 255, Istwert maximal 2 PWM-Schritte je 50 ms
@@ -42,9 +42,9 @@ Die Website bindet ESP Web Tools ein. In Chrome oder Edge über HTTPS:
 
 1. Eine laufende Röstung beenden und den Röster abkühlen lassen.
 2. Den normalen Controller in der Website trennen.
-3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.1 oder bewusst den aufgeklappten Legacy-Stand auswählen.
+3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.2 oder bewusst den aufgeklappten Legacy-Stand auswählen.
 4. Ausschließlich das angeschlossene **CoffeeRoast RevA mit Waveshare ESP32-S3-Zero** auswählen.
-5. Nach dem Flashen öffnet die Website den neu gestarteten Controller erneut und zeigt die eigene Bestätigung „Verifiziert“ erst nach einem echten `hello`- und `get status`-Abruf. Firmwareversion `1.3.1`, Protokoll `3` und Hardware `CoffeeRoast-Waveshare-ESP32-S3-Zero` müssen exakt übereinstimmen. Falls der Browser den Port nicht automatisch erneut öffnen kann, **Installierte Version prüfen** anklicken und denselben ESP auswählen. Der Legacy-Stand besitzt absichtlich keine verifizierbare Versionskennung.
+5. Nach dem Flashen öffnet die Website den neu gestarteten Controller erneut und zeigt die eigene Bestätigung „Verifiziert“ erst nach einem echten `hello`- und `get status`-Abruf. Firmwareversion `1.3.2`, Protokoll `3` und Hardware `CoffeeRoast-Waveshare-ESP32-S3-Zero` müssen exakt übereinstimmen. Falls der Browser den Port nicht automatisch erneut öffnen kann, **Installierte Version prüfen** anklicken und denselben ESP auswählen. Der Legacy-Stand besitzt absichtlich keine verifizierbare Versionskennung.
 
 Die Manifeste liegen unter `firmware/manifest-current.json` und `firmware/manifest-legacy.json`. Beide 4-MB-Merged-Images wurden mit folgenden Zielparametern gebaut:
 

@@ -1,10 +1,10 @@
-export const RoastState=Object.freeze({IDLE:'idle',PREHEATING:'preheating',READY:'ready',RUNNING:'running',COOLING:'cooling',FAILSAFE:'failsafe'});
+export const RoastState=Object.freeze({IDLE:'idle',PREHEATING:'preheating',READY:'ready',RUNNING:'running',MANUAL:'manual',COOLING:'cooling',FAILSAFE:'failsafe'});
 
 export class RoastEngine extends EventTarget{
   constructor(){
     super();this.transport=null;this.recipe=null;this.state=RoastState.IDLE;this.connected=false;this.preheatTarget=180;this.initialFanPercent=100;
     this.autoDropEnabled=false;this.autoDropMode='time';this.autoDropTarget=600;this.expectedFirstCrack=208;this.firstCrackSecond=-1;this.phase='idle';this.preparationStartedAt=0;
-    this.elapsed=0;this.temperature=NaN;this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.status='';this.sensorErrors=0;this.samples=[];this.firmwareCompatibility={level:'unknown',label:'Unbekannt',compatible:false,reason:'Noch kein Firmwarestatus gelesen.'};this.firmwareVersion='';this.protocolVersion=0;this.hardwareId='';
+    this.elapsed=0;this.temperature=NaN;this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.status='';this.sensorErrors=0;this.samples=[];this.firmwareCompatibility={level:'unknown',label:'Unbekannt',compatible:false,reason:'Noch kein Firmwarestatus gelesen.'};this.firmwareVersion='';this.protocolVersion=0;this.hardwareId='';this.manualTarget=0;this.manualFanPercent=50;
     this.pid=new PidController();this.startedAt=0;this.timer=0;this.busy=false;
   }
   setTransport(transport){this.transport=transport}
@@ -31,6 +31,7 @@ export class RoastEngine extends EventTarget{
     await this.transport.setHeater(0);await this.transport.setFan(this.fan);this.emit();
   }
   beginRoast(){if(this.state!==RoastState.READY)return false;this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.firstCrackSecond=-1;this.phase='charging';this.state=RoastState.RUNNING;this.emit();return true}
+  async setManualControl(targetTemperature,fanPercent){if(!this.connected)throw new Error('Controller nicht verbunden.');if(![RoastState.IDLE,RoastState.READY,RoastState.MANUAL].includes(this.state))throw new Error('Manueller Modus ist nur aus Leerlauf oder Bereit möglich.');this.manualTarget=clamp(targetTemperature,0,250);this.manualFanPercent=clamp(fanPercent,0,100);if(this.manualTarget>0)this.manualFanPercent=Math.max(50,this.manualFanPercent);if(this.state!==RoastState.MANUAL){this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.state=RoastState.MANUAL;this.phase='manual'}this.target=this.manualTarget;this.fan=Math.max(this.manualTarget>0?128:0,this.manualFanPercent/100*255);this.heater=0;await this.transport.setHeater(0);await this.transport.setFan(this.fan);this.status=`Manuell: ${this.manualTarget} °C · Lüfter ${this.manualFanPercent} %`;this.emit()}
   async coolDown(reason='Manuell beendet'){if(!this.connected)return;this.state=RoastState.COOLING;this.phase='cooling';this.target=0;this.heater=0;this.status=reason;await this.transport.setHeater(0);await this.transport.setFan(255);this.fan=255;this.emit()}
   async enterFailsafe(reason){this.state=RoastState.FAILSAFE;this.target=0;this.heater=0;this.fan=255;this.status=reason;try{await this.transport?.safeOutputs()}catch{}this.emit()}
 
@@ -44,11 +45,11 @@ export class RoastEngine extends EventTarget{
       if(/failsafe/i.test(controller.state))await this.enterFailsafe('Firmware meldet Failsafe');
       if(this.state===RoastState.FAILSAFE)return;
 
-      if(this.state===RoastState.RUNNING)this.elapsed=Math.max(0,(performance.now()-this.startedAt)/1000);
+      if(this.state===RoastState.RUNNING||this.state===RoastState.MANUAL)this.elapsed=Math.max(0,(performance.now()-this.startedAt)/1000);
       this.calculateOutputs();
       await this.transport.setFan(this.fan);
-      const heating=this.state===RoastState.PREHEATING||this.state===RoastState.RUNNING;
-      const fanConfirmed=Number.isFinite(this.actualFan)&&this.actualFan>=40;
+      const heating=this.state===RoastState.RUNNING||this.state===RoastState.MANUAL;
+      const requiredFan=requestedFanMinimum(this.heater),fanConfirmed=Number.isFinite(this.actualFan)&&this.actualFan>=requiredFan;
       const requestedHeater=this.heater,safeHeater=heating&&!fanConfirmed?0:requestedHeater;
       await this.transport.setHeater(safeHeater);
       this.heater=requestedHeater;
@@ -62,6 +63,7 @@ export class RoastEngine extends EventTarget{
     const baseFan=this.initialFanPercent/100*255;
     if(this.state===RoastState.PREHEATING){this.target=0;this.fan=baseFan;this.heater=0}
     else if(this.state===RoastState.RUNNING){const second=clamp(Math.floor(this.elapsed),0,this.recipe.profile.length-1);this.target=this.recipe.profile[second];this.fan=calculateFan(this.temperature,baseFan);this.heater=this.pid.update(this.elapsed,this.temperature,this.recipe.profile)}
+    else if(this.state===RoastState.MANUAL){this.target=this.manualTarget;this.fan=Math.max(this.manualTarget>0?128:0,this.manualFanPercent/100*255);this.heater=this.manualTarget>0?this.pid.update(this.elapsed,this.temperature,[this.manualTarget]):0}
     else if(this.state===RoastState.READY){this.target=0;this.heater=0;this.fan=baseFan}
     else if(this.state===RoastState.COOLING){this.target=0;this.heater=0;this.fan=255}
     else if(this.state===RoastState.FAILSAFE){this.target=0;this.heater=0;this.fan=255}
@@ -87,7 +89,7 @@ export class RoastEngine extends EventTarget{
     const sample={time:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,ror,phase:this.phase,state:this.state,recordedAt:new Date().toISOString()};
     if(!previous||sample.time-previous.time>=.45||sample.state!==previous.state)this.samples.push(sample)
   }
-  snapshot(){return{state:this.state,connected:this.connected,elapsed:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,status:this.status,sensorErrors:this.sensorErrors,samples:this.samples,recipe:this.recipe,autoDropEnabled:this.autoDropEnabled,autoDropMode:this.autoDropMode,autoDropTarget:this.autoDropTarget,expectedFirstCrack:this.expectedFirstCrack,firstCrackSecond:this.firstCrackSecond,ror:this.currentRoR(),phase:this.phase,portName:this.transport?.portName||'',firmwareCompatibility:this.firmwareCompatibility,firmwareVersion:this.firmwareVersion,protocolVersion:this.protocolVersion,hardwareId:this.hardwareId}}
+  snapshot(){return{state:this.state,connected:this.connected,elapsed:this.elapsed,temperature:this.temperature,target:this.target,heater:Number.isFinite(this.actualHeater)?this.actualHeater:this.heater,fan:Number.isFinite(this.actualFan)?this.actualFan:this.fan,heaterTarget:this.heater,fanTarget:this.fan,status:this.status,sensorErrors:this.sensorErrors,samples:this.samples,recipe:this.recipe,autoDropEnabled:this.autoDropEnabled,autoDropMode:this.autoDropMode,autoDropTarget:this.autoDropTarget,expectedFirstCrack:this.expectedFirstCrack,firstCrackSecond:this.firstCrackSecond,ror:this.currentRoR(),phase:this.phase,portName:this.transport?.portName||'',firmwareCompatibility:this.firmwareCompatibility,firmwareVersion:this.firmwareVersion,protocolVersion:this.protocolVersion,hardwareId:this.hardwareId,manualTarget:this.manualTarget,manualFanPercent:this.manualFanPercent}}
   emit(){this.dispatchEvent(new CustomEvent('update',{detail:this.snapshot()}))}
 }
 
@@ -97,8 +99,9 @@ class PidController{
   constructor(){this.configure({});this.reset()}
   configure({kp=3,ki=.02,kd=.2,future=40}){this.kp=finite(kp,3);this.ki=finite(ki,.02);this.kd=finite(kd,.2);this.future=finite(future,40)}
   reset(){this.integral=0;this.previousError=0;this.previousTime=-1;this.lastOutput=0}
-  update(time,temp,profile){if(!Number.isFinite(temp))return 0;const targetTime=clamp(Math.round(time+this.future),0,profile.length-1),target=profile[targetTime],error=target-temp,dt=this.previousTime>=0?time-this.previousTime:0;if(dt>0&&dt<3)return this.lastOutput;if(dt>0)this.integral=clamp(this.integral+error*dt,-5000,5000);const derivative=dt>0?(error-this.previousError)/dt:0;let kp=temp<100?this.kp*.6:this.kp,ki=this.ki,kd=this.kd;kp*=1+.2*temp/220;if(temp>190){kp*=.8;ki*=.5;kd*=1.2}let output=kp*error+ki*this.integral+kd*derivative;if(time<120)output=Math.min(output,170);this.previousError=error;this.previousTime=time;this.lastOutput=clamp(output,0,255);return this.lastOutput}
+  update(time,temp,profile){if(!Number.isFinite(temp))return 0;const targetTime=clamp(Math.round(time+this.future),0,profile.length-1),target=profile[targetTime],error=target-temp,dt=this.previousTime>=0?time-this.previousTime:0;if(dt>0&&dt<3)return this.lastOutput;if(dt>0)this.integral=clamp(this.integral+error*dt,-5000,5000);const derivative=dt>0?(error-this.previousError)/dt:0;let kp=temp<100?this.kp*.6:this.kp,ki=this.ki,kd=this.kd;kp*=1+.2*temp/220;if(temp>190){kp*=.8;ki*=.5;kd*=1.2}let output=kp*error+ki*this.integral+kd*derivative;this.previousError=error;this.previousTime=time;this.lastOutput=clamp(output,0,255);return this.lastOutput}
 }
+function requestedFanMinimum(heater){return Number(heater)>0?128:0}
 function calculateFan(temp,initial){const min=Math.max(128,initial*.7);if(!Number.isFinite(temp)||temp<=100)return initial;if(temp>=230)return min;return clamp(initial-(initial-min)*(temp-100)**2/130**2,0,255)}
 function detectPhase(temp,ror,elapsed,firstCrack,expected){if(elapsed<60&&Number.isFinite(ror)&&ror<0)return'charging';if(firstCrack>=0&&elapsed>firstCrack)return temp>235?'second-crack':'development';if(expected>0&&temp>=expected-5&&temp<=expected+10)return'first-crack';if(temp>=150)return'maillard';if(temp>0)return'drying';return'idle'}
 function finite(value,fallback){value=Number(value);return Number.isFinite(value)?value:fallback}

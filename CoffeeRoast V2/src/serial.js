@@ -3,7 +3,7 @@ export const EXPECTED_FIRMWARE = Object.freeze({
   product: 'CoffeeRoast',
   protocol: 3,
   hardware: 'CoffeeRoast-Waveshare-ESP32-S3-Zero',
-  minimumVersion: '1.3.1'
+  minimumVersion: '1.3.2'
 });
 
 export class WebSerialTransport {
@@ -223,7 +223,7 @@ export class SimulationTransport {
   }
 
   firmwareLoop(dt) {
-    const PWM_MIN = 0, PWM_MAX = 255, MIN_SAFE_FAN = 50;
+    const PWM_MIN = 0, PWM_MAX = 255, MIN_SAFE_FAN = 128;
 
     this.sensorCarry += dt;
     while (this.sensorCarry >= 0.5) {
@@ -259,7 +259,7 @@ export class SimulationTransport {
   async getStatus() {
     this.update();
     const state = this.abortSignal ? 'failsafe' : 'ok';
-    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.1,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`;
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.2,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() { this.update(); return this.temp * 1.1; }
