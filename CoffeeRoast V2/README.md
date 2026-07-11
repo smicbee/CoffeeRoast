@@ -44,7 +44,7 @@ Die Website bindet ESP Web Tools ein. In Chrome oder Edge über HTTPS:
 2. Den normalen Controller in der Website trennen.
 3. Im Bereich **Firmware** entweder die empfohlene Version 1.3.1 oder bewusst den aufgeklappten Legacy-Stand auswählen.
 4. Ausschließlich das angeschlossene **CoffeeRoast RevA mit Waveshare ESP32-S3-Zero** auswählen.
-5. Nach dem Flashen den Controller neu verbinden. Die empfohlene Firmware muss `version=1.3.1`, `protocol=3` und `hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero` melden. Der Legacy-Stand besitzt absichtlich keine Versionsmetadaten und erscheint als „Legacy-Firmware“.
+5. Nach dem Flashen öffnet die Website den neu gestarteten Controller erneut und zeigt die eigene Bestätigung „Verifiziert“ erst nach einem echten `hello`- und `get status`-Abruf. Firmwareversion `1.3.1`, Protokoll `3` und Hardware `CoffeeRoast-Waveshare-ESP32-S3-Zero` müssen exakt übereinstimmen. Falls der Browser den Port nicht automatisch erneut öffnen kann, **Installierte Version prüfen** anklicken und denselben ESP auswählen. Der Legacy-Stand besitzt absichtlich keine verifizierbare Versionskennung.
 
 Die Manifeste liegen unter `firmware/manifest-current.json` und `firmware/manifest-legacy.json`. Beide 4-MB-Merged-Images wurden mit folgenden Zielparametern gebaut:
 

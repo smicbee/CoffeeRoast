@@ -1,9 +1,9 @@
-import{WebSerialTransport,SimulationTransport}from'./serial.js?v=20260711-zero1';
+import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260711-verify1';
 import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-zero1';
 import{RoastEngine,RoastState}from'./engine.js?v=20260711-zero1';
 import{RoastChart,formatTime}from'./chart.js?v=20260711-zero1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));
-let recipes=[],simulation=false,toastTimer,connecting=false;const logLines=[];
+let recipes=[],simulation=false,toastTimer,connecting=false,pendingFirmwareVerification=false;const logLines=[];
 
 async function boot(){
   $('browserHint').hidden=WebSerialTransport.isSupported();bindEvents();
@@ -19,6 +19,36 @@ function bindEvents(){
   ['autoDropEnabled','dropMode','dropTarget'].forEach(id=>$(id).addEventListener('change',applyAutoDrop));$('resetZoomButton').addEventListener('click',()=>chart.reset());$('exportButton').addEventListener('click',exportCsv);['kpInput','kiInput','kdInput'].forEach(id=>$(id).addEventListener('change',applyPid));
   document.querySelectorAll('.preflight-check').forEach(check=>check.addEventListener('change',updatePreflightButton));$('confirmPreflightButton').addEventListener('click',event=>{event.preventDefault();if(!event.currentTarget.disabled)$('preflightDialog').close('confirm')});$('preflightDialog').addEventListener('close',()=>{if($('preflightDialog').returnValue==='confirm')engine.beginPreheat().catch(fail)});
   window.addEventListener('beforeunload',event=>{if([RoastState.PREHEATING,RoastState.RUNNING].includes(engine.state)){event.preventDefault();event.returnValue='Der Röster ist aktiv.'}});navigator.serial?.addEventListener('disconnect',()=>{if(engine.connected){engine.enterFailsafe('USB-Verbindung getrennt');showToast('USB-Verbindung getrennt – Failsafe aktiv.',true)}});
+  $('firmwareFlashButton').addEventListener('click',()=>{pendingFirmwareVerification=true;setFirmwareVerification('Flashvorgang läuft; anschließend wird Version 1.3.1 geprüft.','checking')});
+  $('legacyFirmwareFlashButton').addEventListener('click',()=>{pendingFirmwareVerification=false;setFirmwareVerification('Legacy-Firmware besitzt keine verifizierbare Versionskennung.','warning')});
+  $('verifyFirmwareButton').addEventListener('click',()=>verifyInstalledFirmware(true));
+  document.addEventListener('closed',event=>{if(event.target?.tagName==='EWT-INSTALL-DIALOG'&&pendingFirmwareVerification){pendingFirmwareVerification=false;setTimeout(()=>verifyInstalledFirmware(false),2500)}});
+}
+function setFirmwareVerification(message,level='checking'){$('firmwareVerification').textContent=message;$('firmwareVerification').dataset.level=level}
+async function verifyInstalledFirmware(requestPort=false){
+  if(engine.connected){setFirmwareVerification('Controller zuerst sicher trennen, dann Version prüfen.','error');return}
+  const button=$('verifyFirmwareButton');button.disabled=true;setFirmwareVerification(`Starte Controller und prüfe Firmware ${EXPECTED_FIRMWARE.minimumVersion} …`,'checking');
+  let verifier,lastError;
+  try{
+    let ports;
+    if(requestPort)ports=[await navigator.serial.requestPort()];
+    else ports=(await navigator.serial.getPorts()).filter(port=>{const info=port.getInfo?.()||{};return !info.usbVendorId||info.usbVendorId===0x303a});
+    if(!ports.length)throw new Error('Controller nach dem Flashen nicht gefunden. Bitte „Installierte Version prüfen“ anklicken und den ESP auswählen.');
+    for(const port of ports){
+      verifier=new WebSerialTransport(addLog);
+      try{
+        await verifier.connect(port);
+        const snapshot=await verifier.getSnapshot();
+        const exact=snapshot.version===EXPECTED_FIRMWARE.minimumVersion&&snapshot.protocol===EXPECTED_FIRMWARE.protocol&&snapshot.hardware===EXPECTED_FIRMWARE.hardware;
+        if(!exact)throw new Error(`Falsche Firmware: ${snapshot.version||'ohne Version'}, Protokoll ${snapshot.protocol||'unbekannt'}, Hardware ${snapshot.hardware||'unbekannt'}. Erwartet ${EXPECTED_FIRMWARE.minimumVersion} / ${EXPECTED_FIRMWARE.protocol} / ${EXPECTED_FIRMWARE.hardware}.`);
+        setFirmwareVerification(`✓ Verifiziert: Firmware ${snapshot.version} · Protokoll ${snapshot.protocol} · Waveshare ESP32-S3-Zero`,'success');
+        showToast(`Firmware ${snapshot.version} nach dem Flashen verifiziert.`);
+        return;
+      }catch(error){lastError=error}finally{try{await verifier.disconnect(false)}catch{} verifier=null}
+    }
+    throw lastError||new Error('Kein antwortender CoffeeRoast-Controller gefunden.');
+  }catch(error){setFirmwareVerification(`✗ Verifikation fehlgeschlagen: ${error.message}`,'error');showToast('Flash abgeschlossen, aber Firmwareversion konnte nicht bestätigt werden.',true)}
+  finally{if(verifier)try{await verifier.disconnect(false)}catch{}button.disabled=false}
 }
 function makeTransport(){return simulation?new SimulationTransport(addLog):new WebSerialTransport(addLog)}
 async function connect(){if(connecting)return;connecting=true;$('connectButton').disabled=true;$('connectionText').textContent='ESP32 startet …';$('primaryActionButton').disabled=true;try{engine.setTransport(makeTransport());await engine.connect();showToast(simulation?'Simulation gestartet.':'CoffeeRoast-Controller verbunden.')}catch(error){fail(error)}finally{connecting=false;$('connectButton').disabled=false;engine.emit()}}

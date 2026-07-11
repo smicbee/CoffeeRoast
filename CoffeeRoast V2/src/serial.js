@@ -22,9 +22,13 @@ export class WebSerialTransport {
 
   static isSupported() { return 'serial' in navigator; }
 
-  async connect(requestUserPort = true) {
+  async connect(portOrRequest = true) {
     if (!WebSerialTransport.isSupported()) throw new Error('Web Serial wird von diesem Browser nicht unterstützt. Bitte Chrome oder Edge verwenden.');
-    const port = requestUserPort ? await navigator.serial.requestPort() : (await navigator.serial.getPorts())[0];
+    const port = typeof portOrRequest === 'object' && portOrRequest
+      ? portOrRequest
+      : portOrRequest
+        ? await navigator.serial.requestPort()
+        : (await navigator.serial.getPorts())[0];
     if (!port) throw new Error('Noch kein Controller für diese Website freigegeben.');
     await port.open({ baudRate: 115200, dataBits: 8, stopBits: 1, parity: 'none', flowControl: 'none', bufferSize: 4096 });
     this.port = port;

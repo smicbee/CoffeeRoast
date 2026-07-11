@@ -1,5 +1,7 @@
 import{readFile}from'node:fs/promises';import{WebSerialTransport,parseControllerStatus}from'../src/serial.js';
 const firmware=await readFile(new URL('../../ESP32S3 Zero/RoastingControl/RoastingControl.ino',import.meta.url),'utf8');
+const appSource=await readFile(new URL('../src/app.js',import.meta.url),'utf8');
+if(!/verifyInstalledFirmware/.test(appSource)||!/snapshot\.version===EXPECTED_FIRMWARE\.minimumVersion/.test(appSource)||!/snapshot\.protocol===EXPECTED_FIRMWARE\.protocol/.test(appSource)||!/snapshot\.hardware===EXPECTED_FIRMWARE\.hardware/.test(appSource))throw Error('Post-Flash-Verifikation prüft Version, Protokoll und Hardware nicht vollständig');
 if(!/command\s*==\s*"get status"/.test(firmware)||!/void\s+printStatus\s*\(/.test(firmware))throw Error('Echte Firmware implementiert get status nicht');
 if(!/command\s*==\s*"get info"/.test(firmware)||!/FIRMWARE_VERSION\s*=\s*"1\.3\.1"/.test(firmware)||!/PROTOCOL_VERSION\s*=\s*3/.test(firmware)||!/CoffeeRoast-Waveshare-ESP32-S3-Zero/.test(firmware))throw Error('Firmware-Versions- oder Hardwarekennung fehlt');
 if(/disable failsafe|disableFailsafe/.test(firmware))throw Error('Unsicherer disable-failsafe-Pfad ist noch vorhanden');
