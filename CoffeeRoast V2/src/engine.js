@@ -91,6 +91,8 @@ export class RoastEngine extends EventTarget{
   emit(){this.dispatchEvent(new CustomEvent('update',{detail:this.snapshot()}))}
 }
 
+export function calibratePidFromSamples(samples,current={}){const valid=(samples||[]).filter(s=>s?.state===RoastState.RUNNING&&Number.isFinite(s.temperature)&&Number.isFinite(s.target)&&s.target>0&&Number.isFinite(s.heater));if(valid.length<30)throw new Error('Mindestens 30 Messpunkte einer laufenden Röstung werden benötigt.');const errors=valid.map(s=>s.target-s.temperature),meanError=errors.reduce((a,b)=>a+b,0)/errors.length,rmse=Math.sqrt(errors.reduce((a,b)=>a+b*b,0)/errors.length),ceilingRate=valid.filter(s=>(Number.isFinite(s.heaterTarget)?s.heaterTarget:s.heater)>=165).length/valid.length,overshootRate=errors.filter(e=>e<-3).length/errors.length;let factor=Math.exp(meanError/60)*(1+ceilingRate*.35);if(overshootRate>.2)factor*=.8;factor=clamp(factor,.55,3);const kp=clamp(finite(current.kp,3)*factor,.1,20),kiBase=Math.max(finite(current.ki,.02),meanError>4?.01:0),ki=clamp(kiBase*factor*(meanError>4?1.2:.9),0,1),kd=clamp(finite(current.kd,.2)*clamp(1/Math.sqrt(factor),.7,1.2),0,20);return{kp,ki,kd,metrics:{sampleCount:valid.length,meanError,rmse,ceilingRate,overshootRate,factor}}}
+
 class PidController{
   constructor(){this.configure({});this.reset()}
   configure({kp=3,ki=.02,kd=.2,future=40}){this.kp=finite(kp,3);this.ki=finite(ki,.02);this.kd=finite(kd,.2);this.future=finite(future,40)}
