@@ -1,18 +1,24 @@
 import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260711-verify1';
 import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-smooth1';
 import{RoastEngine,RoastState}from'./engine.js?v=20260711-autoconnect1';
-import{RoastChart,formatTime}from'./chart.js?v=20260711-zero1';
+import{RoastChart,formatTime}from'./chart.js?v=20260711-light1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));
 let recipes=[],simulation=false,toastTimer,connecting=false,pendingFirmwareVerification=false;const logLines=[],REMEMBERED_CONTROLLER_KEY='coffeeRoast.rememberedController';
 
 async function boot(){
-  $('browserHint').hidden=WebSerialTransport.isSupported();bindEvents();
+  $('browserHint').hidden=WebSerialTransport.isSupported();applyTheme(document.documentElement.dataset.theme||'dark');bindEvents();
   try{recipes=await loadBuiltInRecipes();recipes.sort((a,b)=>a.name.localeCompare(b.name,'de'));renderRecipeOptions();selectRecipe(Math.min(Number(localStorage.getItem('coffeeRoast.recipeIndex')||0),recipes.length-1))}catch(error){fail(error)}
   engine.addEventListener('update',event=>render(event.detail));engine.emit();
   await autoConnectRemembered();
 }
+function applyTheme(theme,persist=false){
+  const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';
+  const button=$('themeButton');if(button){button.textContent=light?'☾ Dunkel':'☀ Hell';button.setAttribute('aria-pressed',String(light))}
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',light?'#f3eee7':'#0c0d10');
+  if(persist)localStorage.setItem('coffeeRoast.theme',light?'light':'dark');chart.draw();
+}
 function bindEvents(){
-  $('connectButton').addEventListener('click',()=>engine.connected?disconnect():connect());$('simulationButton').addEventListener('click',toggleSimulation);$('primaryActionButton').addEventListener('click',primaryAction);$('cooldownButton').addEventListener('click',()=>engine.coolDown('Manuelle Abkühlung'));$('refreshStatusButton').addEventListener('click',refreshStatus);
+  $('connectButton').addEventListener('click',()=>engine.connected?disconnect():connect());$('themeButton').addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));$('simulationButton').addEventListener('click',toggleSimulation);$('primaryActionButton').addEventListener('click',primaryAction);$('cooldownButton').addEventListener('click',()=>engine.coolDown('Manuelle Abkühlung'));$('refreshStatusButton').addEventListener('click',refreshStatus);
   $('recipeSelect').addEventListener('change',event=>selectRecipe(Number(event.target.value)));$('loadRecipeButton').addEventListener('click',()=>$('recipeFileInput').click());$('recipeFileInput').addEventListener('change',importRecipe);
   $('fanSlider').addEventListener('input',event=>{engine.initialFanPercent=Number(event.target.value);$('fanSliderValue').textContent=`${event.target.value} %`});
   $('firstCrackInput').addEventListener('change',event=>{engine.expectedFirstCrack=clamp(Number(event.target.value),0,240);event.target.value=engine.expectedFirstCrack;engine.emit()});

@@ -11,12 +11,12 @@ export class RoastChart {
   draw(){const {w,h,dpr}=this.size(),ctx=this.canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const p={l:45,r:42,t:12,b:32},pw=w-p.l-p.r,ph=h-p.t-p.b;if(pw<=0)return;
     const x=v=>p.l+(v-this.view.minX)/(this.view.maxX-this.view.minX)*pw,y=v=>p.t+ph-(v-this.view.minY)/(this.view.maxY-this.view.minY)*ph;
     ctx.font='9px Space Mono,monospace';ctx.lineWidth=1;
-    for(let temp=0;temp<=this.view.maxY;temp+=40){const yy=y(temp);ctx.strokeStyle='#282b31';ctx.beginPath();ctx.moveTo(p.l,yy);ctx.lineTo(w-p.r,yy);ctx.stroke();ctx.fillStyle='#6c7078';ctx.textAlign='right';ctx.fillText(`${temp}°`,p.l-8,yy+3)}
+    for(let temp=0;temp<=this.view.maxY;temp+=40){const yy=y(temp);ctx.strokeStyle=themeColor('--chart-grid','#282b31');ctx.beginPath();ctx.moveTo(p.l,yy);ctx.lineTo(w-p.r,yy);ctx.stroke();ctx.fillStyle=themeColor('--chart-label','#6c7078');ctx.textAlign='right';ctx.fillText(`${temp}°`,p.l-8,yy+3)}
     for(let ror=-10;ror<=30;ror+=10){ctx.fillStyle='#b77938';ctx.textAlign='left';ctx.fillText(`${ror}`,w-p.r+7,y((ror+10)/40*260)+3)}
-    const step=this.view.maxX>1200?240:120;for(let sec=0;sec<=this.view.maxX;sec+=step){const xx=x(sec);ctx.strokeStyle='#202329';ctx.beginPath();ctx.moveTo(xx,p.t);ctx.lineTo(xx,p.t+ph);ctx.stroke();ctx.fillStyle='#6c7078';ctx.textAlign='center';ctx.fillText(formatTime(sec),xx,h-9)}
+    const step=this.view.maxX>1200?240:120;for(let sec=0;sec<=this.view.maxX;sec+=step){const xx=x(sec);ctx.strokeStyle=themeColor('--chart-grid-soft','#202329');ctx.beginPath();ctx.moveTo(xx,p.t);ctx.lineTo(xx,p.t+ph);ctx.stroke();ctx.fillStyle=themeColor('--chart-label','#6c7078');ctx.textAlign='center';ctx.fillText(formatTime(sec),xx,h-9)}
     if(!this.snapshot)return;const s=this.snapshot;
     if(s.recipe)drawSeries(ctx,s.recipe.profile.map((v,i)=>({time:i,value:v})),x,y,'#e8793e',2,0,this.view);
-    drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.temperature})),x,y,'#f6e6d6',2.5,0,this.view);
+    drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.temperature})),x,y,themeColor('--chart-actual','#f6e6d6'),2.5,0,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.heater/255*260})),x,y,'#ff635f',1.2,.72,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:a.fan/255*260})),x,y,'#73a8ff',1.2,.72,this.view);
     drawSeries(ctx,s.samples.map(a=>({time:a.time,value:Number.isFinite(a.ror)?Math.max(-10,Math.min(30,a.ror)+10)/40*260:NaN})),x,y,'#d99645',1.7,.12,this.view);
@@ -27,6 +27,7 @@ export class RoastChart {
   zoom(e){e.preventDefault();const factor=e.deltaY>0?1.15:.87,span=(this.view.maxX-this.view.minX)*factor,center=(this.view.maxX+this.view.minX)/2;this.view.minX=Math.max(0,center-span/2);this.view.maxX=this.view.minX+Math.min(2400,Math.max(180,span));this.draw()}
 }
 function drawSeries(ctx,items,x,y,color,width,alpha,view){ctx.save();ctx.strokeStyle=color;ctx.globalAlpha=alpha?1-alpha:1;ctx.lineWidth=width;ctx.lineJoin='round';ctx.lineCap='round';ctx.beginPath();let started=false;for(const p of items){if(!Number.isFinite(p.value)||p.time<view.minX||p.time>view.maxX)continue;const xx=x(p.time),yy=y(p.value);if(!started){ctx.moveTo(xx,yy);started=true}else ctx.lineTo(xx,yy)}if(started)ctx.stroke();ctx.restore()}
+function themeColor(name,fallback){return getComputedStyle(document.documentElement).getPropertyValue(name).trim()||fallback}
 function nearest(samples,time){if(!samples.length)return null;return samples.reduce((best,s)=>Math.abs(s.time-time)<Math.abs(best.time-time)?s:best,samples[0])}
 export function formatTime(seconds){seconds=Math.max(0,Math.round(seconds||0));return`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}
 function formatNumber(v){return Number.isFinite(v)?Math.round(v):'—'}
