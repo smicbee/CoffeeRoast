@@ -24,11 +24,11 @@ export class RoastEngine extends EventTarget{
 
   async beginPreheat(){
     if(!this.connected||!this.recipe)throw new Error('Controller und Rezept werden benötigt.');
-    if(this.state!==RoastState.IDLE)throw new Error('Vorheizen ist nur aus dem sicheren Leerlauf möglich.');
+    if(this.state!==RoastState.IDLE)throw new Error('Lüftervorbereitung ist nur aus dem sicheren Leerlauf möglich.');
     if(this.firmwareCompatibility.level!=='unknown'&&!this.firmwareCompatibility.compatible)throw new Error(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason}`);
     this.samples=[];this.elapsed=0;this.startedAt=0;this.pid.reset();this.firstCrackSecond=-1;this.phase='preparation';this.preparationStartedAt=performance.now();
-    this.state=RoastState.PREHEATING;this.target=this.preheatTarget;this.fan=this.initialFanPercent/100*255;this.heater=0;
-    await this.transport.setFan(this.fan);await this.transport.setHeater(0);this.emit();
+    this.state=RoastState.PREHEATING;this.target=0;this.fan=this.initialFanPercent/100*255;this.heater=0;
+    await this.transport.setHeater(0);await this.transport.setFan(this.fan);this.emit();
   }
   beginRoast(){if(this.state!==RoastState.READY)return false;this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.firstCrackSecond=-1;this.phase='charging';this.state=RoastState.RUNNING;this.emit();return true}
   async coolDown(reason='Manuell beendet'){if(!this.connected)return;this.state=RoastState.COOLING;this.phase='cooling';this.target=0;this.heater=0;this.status=reason;await this.transport.setHeater(0);await this.transport.setFan(255);this.fan=255;this.emit()}
@@ -60,7 +60,7 @@ export class RoastEngine extends EventTarget{
 
   calculateOutputs(){
     const baseFan=this.initialFanPercent/100*255;
-    if(this.state===RoastState.PREHEATING){this.target=this.preheatTarget;this.fan=baseFan;const error=this.target-(Number.isFinite(this.temperature)?this.temperature:25);this.heater=clamp(80+error*1.35,0,210)}
+    if(this.state===RoastState.PREHEATING){this.target=0;this.fan=baseFan;this.heater=0}
     else if(this.state===RoastState.RUNNING){const second=clamp(Math.floor(this.elapsed),0,this.recipe.profile.length-1);this.target=this.recipe.profile[second];this.fan=calculateFan(this.temperature,baseFan);this.heater=this.pid.update(this.elapsed,this.temperature,this.recipe.profile)}
     else if(this.state===RoastState.READY){this.target=0;this.heater=0;this.fan=baseFan}
     else if(this.state===RoastState.COOLING){this.target=0;this.heater=0;this.fan=255}
@@ -71,8 +71,8 @@ export class RoastEngine extends EventTarget{
   validateTemperature(temp){if(!Number.isFinite(temp)||temp<-50||temp>450)this.sensorErrors+=5;else this.sensorErrors=Math.max(0,this.sensorErrors-1);if(this.sensorErrors>20)this.enterFailsafe('Unplausible Thermoelement-Messwerte')}
 
   async handleTransitions(){
-    if(this.state===RoastState.PREHEATING&&performance.now()-this.preparationStartedAt>10000&&(!(this.temperature>0)||!(Number.isFinite(this.actualFan)&&this.actualFan>=40))){await this.enterFailsafe('Vorbereitung fehlgeschlagen: Temperatur oder Lüfterstart nicht bestätigt');return}
-    if(this.state===RoastState.PREHEATING&&this.temperature>=this.preheatTarget&&Number.isFinite(this.actualFan)&&this.actualFan>=40){this.state=RoastState.READY;this.phase='ready';this.heater=0;this.status='Vorheizen abgeschlossen – Zieltemperatur erreicht, Lüfter bestätigt';await this.transport.setHeater(0)}
+    if(this.state===RoastState.PREHEATING&&performance.now()-this.preparationStartedAt>10000&&!(Number.isFinite(this.actualFan)&&this.actualFan>=40)){await this.enterFailsafe('Vorbereitung fehlgeschlagen: Lüfterstart nicht bestätigt');return}
+    if(this.state===RoastState.PREHEATING&&Number.isFinite(this.actualFan)&&this.actualFan>=40){this.state=RoastState.READY;this.phase='ready';this.target=0;this.heater=0;this.status='Lüftergeschwindigkeit bestätigt – bereit zum Rösten';await this.transport.setHeater(0)}
     if(this.state===RoastState.RUNNING){
       const ror=this.currentRoR();if(this.expectedFirstCrack>0&&this.firstCrackSecond<0&&this.temperature>=this.expectedFirstCrack)this.firstCrackSecond=Math.round(this.elapsed);this.phase=detectPhase(this.temperature,ror,this.elapsed,this.firstCrackSecond,this.expectedFirstCrack);
       const autoDrop=this.autoDropEnabled&&((this.autoDropMode==='time'&&this.elapsed>=this.autoDropTarget)||(this.autoDropMode==='temperature'&&this.temperature>=this.autoDropTarget));

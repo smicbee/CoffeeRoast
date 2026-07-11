@@ -6,7 +6,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 
 - direkte USB/COM-Verbindung zum ESP32 über die Web Serial API
 - Ablaufbasis: `codex/fix-bugs-and-crashes` bei Referenzcommit `2c96788`
-- sicherer Vorheizablauf mit bestätigtem Lüfterlauf, danach Aufheizen auf 180 °C Standardziel
+- sichere Lüftervorbereitung: Heizung bleibt durchgehend 0, die gewählte Lüftergeschwindigkeit wird gerampt und bestätigt; erst der anschließende Röststart darf Heizleistung anfordern
 - integrierte Firmware v1.3.1 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
 - Browser-Flasher ausschließlich für den Waveshare ESP32-S3-Zero mit 4 MB Quad-Flash und 2 MB PSRAM
 - getrennte Flashoption für die empfohlene Firmware und den exakten Legacy-Main-Stand `2a05fb0`
@@ -14,7 +14,7 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - serialisierte Kommunikation mit atomarem `get status`-Polling
 - Auto-Drop nach Zeit/Temperatur, 30-Sekunden-RoR, First Crack, DTR und Live-Phasen
 - kompatibel mit dem bestehenden Textprotokoll (`hello`, `get temp`, `get status`, `get fan`, `set setpoint`, `set fan`)
-- Zustände: Leerlauf, Vorheizen, bereit, Rösten, Abkühlen und Failsafe
+- Zustände: Leerlauf, Lüftervorbereitung, bereit, Rösten, Abkühlen und Failsafe
 - Safety-Preflight vor jedem realen Heizvorgang
 - Import und Auswahl der bestehenden `.kpro`-Rezepte
 - PID-Regelung, Auto-Drop und temperaturabhängige Lüfterkurve

@@ -34,16 +34,17 @@ Nur Protokoll 3 mit der exakten Hardwarekennung gilt als voll kompatibel. Eine F
 3. Bootmeldungen ignorieren und `get status` vollständig parsen.
 4. Erst danach verbunden melden und die reale Temperatur anzeigen.
 
-### Vorheizen
+### Lüftervorbereitung
 
-Der Desktop-Branch hat hier einen kritischen Widerspruch: `prepareRoast()` setzt Heizung 0 und `pre-heating` wechselt bereits bei einer positiven Temperatur zu `ready`; real wird nicht vorgeheizt. Dieser Fehler wird bewusst nicht kopiert.
+Diese Phase dient ausschließlich dazu, die gewählte Lüftergeschwindigkeit sicher anzufahren und zu bestätigen. Sie heizt die Kammer nicht vor.
 
 1. frischen Status und Preflight prüfen;
-2. **zuerst** `set fan <Startwert>`;
-3. `set setpoint 0`, bis der gerampte Ist-Lüfter mindestens PWM 40 erreicht;
-4. ohne Lüfterbestätigung nach 10 Sekunden Failsafe;
-5. erst danach Heizleistung freigeben und die leere Kammer auf das einstellbare Vorheizziel (Standard 180 °C) bringen;
-6. am Ziel sofort Heizung 0 und Zustand `ready`.
+2. sofort `set setpoint 0` senden;
+3. danach `set fan <Startwert>` senden;
+4. Heizung während der gesamten Phase strikt bei 0 halten;
+5. ohne bestätigten gerampten Ist-Lüfter von mindestens PWM 40 nach 10 Sekunden in den Failsafe wechseln;
+6. nach Lüfterbestätigung direkt Zustand `ready`, weiterhin mit Heizung 0;
+7. positive Heizleistung ist erst nach einem ausdrücklichen Röststart im Zustand `running` zulässig.
 
 ### Rösten
 
@@ -64,7 +65,7 @@ Abkühlen sendet zuerst Heizung 0 und danach das Lüfterziel 255. Anders als der
 
 - instabiler Handshake ohne Newline/Bootwartezeit;
 - unkoordinierte serielle Requests und blinde Antwortzuordnung;
-- defektes Vorheizen;
+- unsichere beziehungsweise widersprüchliche Vorheizlogik; ersetzt durch reine Lüftervorbereitung ohne Heizung;
 - gelöschter Zeit-Auto-Drop in `runCurve()`;
 - Profilende durch Clamp unerreichbar;
 - Rezept-PID ignoriert;
