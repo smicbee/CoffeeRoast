@@ -69,3 +69,14 @@ Die Anwendung ersetzt keine hardwareseitige Temperaturabschaltung, Netztrennung 
 - Bestehende Diagnose-IDs, PID-Einstellungen, Firmware-Flasher und Post-Flash-Verifikation bleiben funktional erhalten.
 - DOM-Struktur, eindeutige IDs, JavaScript-Syntax und sämtliche Tests wurden geprüft.
 - Das geschlossene und geöffnete Menü wurde in Chromium bei 1440 × 1000 visuell kontrolliert.
+
+## Ergänzung: Upload von Röstkurven
+
+- Nach mindestens zwei Messpunkten wird im Graphen die Upload-Schaltfläche freigegeben.
+- Ein Einwilligungsdialog zeigt transparent, welche Mess-, Rezept- und Firmwaredaten übertragen werden; Namen oder Kontaktdaten sind nicht erforderlich.
+- Erfolgreiche Uploads liefern eine opake Analyse-ID im Format `CR-YYYYMMDD-XXXXXXXXXXXX`.
+- Der lokale API-Dienst validiert Datentypen, monotone Zeitachse, Temperatur-/PWM-Grenzen, maximal 2400 Messpunkte und 1 MB Requestgröße.
+- Uploads fremder Origins werden abgelehnt und pro Client gelten maximal zwölf Uploads pro Stunde.
+- Datensätze liegen nicht öffentlich abrufbar mit Dateimodus 0600 unter `/var/lib/coffeeroast-uploads/`.
+- Serverseitig werden bereits Dauer, Temperaturbereich, Sollwert-RMSE, maximaler Sollfehler, mittlere Heizleistung und Zustände berechnet.
+- Systemd-Dienst und Caddy-Reverse-Proxy wurden produktiv aktiviert und mit einem anschließend gelöschten End-to-End-Testupload geprüft.
