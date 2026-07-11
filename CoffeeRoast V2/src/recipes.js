@@ -1,7 +1,7 @@
 export const builtInRecipes = [
   '0-1200m Rest v1.0.kpro','0-1200m RTD v1.0.kpro','1200-1500 m Rest v1.0.kpro','1200-1500m RTD v1.0.kpro',
   '1500-2000m Rest v1.0.kpro','1500-2000m RTD v1.0.kpro','2000-2700m Rest v1.0.kpro','2000-2700m RTD v1.0.kpro',
-  'Cupping v1.0.kpro','D-Roast.kpro','Decaf v1.0.kpro','Filter Origin.kpro','Peanut.kpro','Raost v5.kpro',
+  'Cupping v1.0.kpro','D-Roast.kpro','Decaf v1.0.kpro','Filter Origin.kpro','Peanut.kpro','Popcorn v1.0.kpro','Raost v5.kpro',
   'Robusta v1.0.kpro','Super dark v1.0.kpro','WBRC competition.kpro'
 ];
 
