@@ -15,10 +15,9 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - Auto-Drop nach Zeit/Temperatur, 30-Sekunden-RoR, First Crack, DTR und Live-Phasen
 - kompatibel mit dem bestehenden Textprotokoll (`hello`, `get temp`, `get status`, `get fan`, `set setpoint`, `set fan`)
 - Zustände: Leerlauf, Lüftervorbereitung, bereit, Rösten, Abkühlen und Failsafe
-- Safety-Preflight vor jedem realen Heizvorgang
 - Import und Auswahl der bestehenden `.kpro`-Rezepte
 - PID-Regelung, Auto-Drop und temperaturabhängige Lüfterkurve
-- stetige lineare Interpolation zwischen allen Rezeptstützpunkten ohne Treppenstufen oder kubische Überschwinger
+- rund geglättete monotone PCHIP-Kurve zwischen allen Rezeptstützpunkten, mit stetigen Tangenten und ohne Überschwinger in monotonen Abschnitten
 - eingebaute Simulation ohne Hardware
 - responsiver Canvas-Live-Plot und CSV-Export
 - keine serverseitige Gerätefreigabe: der Browser spricht lokal mit dem vom Benutzer ausgewählten USB-Gerät

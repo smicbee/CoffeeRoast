@@ -38,7 +38,7 @@ Nur Protokoll 3 mit der exakten Hardwarekennung gilt als voll kompatibel. Eine F
 
 Diese Phase dient ausschließlich dazu, die gewählte Lüftergeschwindigkeit sicher anzufahren und zu bestätigen. Sie heizt die Kammer nicht vor.
 
-1. frischen Status und Preflight prüfen;
+1. vorhandenen Controllerstatus und Firmwarekompatibilität prüfen; ein separater Bestätigungsdialog entfällt;
 2. sofort `set setpoint 0` senden;
 3. danach `set fan <Startwert>` senden;
 4. Heizung während der gesamten Phase strikt bei 0 halten;

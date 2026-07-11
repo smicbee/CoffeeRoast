@@ -1,27 +1,19 @@
 import { readFile } from 'node:fs/promises';
 import { parseRecipe } from '../src/recipes.js';
 
-function assert(condition, message) {
-  if (!condition) throw new Error(`Fehlgeschlagen: ${message}`);
-}
-
+function assert(condition, message) { if (!condition) throw new Error(`Fehlgeschlagen: ${message}`); }
 const recipeText = await readFile(new URL('../recipes/Cupping v1.0.kpro', import.meta.url), 'utf8');
 const recipe = parseRecipe(recipeText, 'Cupping v1.0.kpro');
-assert(recipe.points.length >= 2, 'Rezept besitzt Stützpunkte');
+assert(recipe.points.length >= 3, 'Rezept besitzt genügend Stützpunkte');
 
-for (let i = 0; i < recipe.points.length - 1; i++) {
-  const left = recipe.points[i], right = recipe.points[i + 1];
-  const start = Math.max(0, Math.ceil(left.time));
-  const end = Math.min(recipe.profile.length - 1, Math.floor(right.time));
-  for (let second = start; second <= end; second++) {
-    const ratio = (second - left.time) / (right.time - left.time);
-    const expected = left.temp + (right.temp - left.temp) * ratio;
-    assert(Math.abs(recipe.profile[second] - expected) < 1e-9, `Sekunde ${second} liegt exakt auf der linearen Verbindung`);
-  }
+for (let i=0;i<recipe.points.length-1;i++) {
+  const left=recipe.points[i],right=recipe.points[i+1],lo=Math.min(left.temp,right.temp)-1e-9,hi=Math.max(left.temp,right.temp)+1e-9;
+  for(let second=Math.ceil(left.time);second<=Math.min(Math.floor(right.time),recipe.profile.length-1);second++)
+    assert(recipe.profile[second]>=lo&&recipe.profile[second]<=hi,`kein Überschwingen bei Sekunde ${second}`);
+  if(Number.isInteger(left.time)&&left.time<recipe.profile.length)assert(Math.abs(recipe.profile[left.time]-left.temp)<1e-9,`Stützpunkt ${left.time} exakt`);
 }
-
-const source = await readFile(new URL('../src/recipes.js', import.meta.url), 'utf8');
-assert(source.includes('linearInterpolate(pairs, t)'), 'Parser verwendet lineare Interpolation');
-assert(!/pchip|Hermite|t\s*\*\*\s*3/i.test(source), 'Keine kubische Interpolation mehr aktiv');
-
-console.log('CoffeeRoast Rezeptkurven: stetige lineare Interpolation OK');
+const source=await readFile(new URL('../src/recipes.js',import.meta.url),'utf8');
+assert(source.includes('pchipInterpolate(pairs, t)'),'Parser verwendet geglättete PCHIP-Kurve');
+assert(/Hermite-Interpolation/.test(source)&&/slope\[i\]/.test(source),'gemeinsame Tangenten an Stützpunkten implementiert');
+assert(!source.includes('linearInterpolate'),'scharfkantige lineare Interpolation entfernt');
+console.log('CoffeeRoast Rezeptkurven: rund geglättete monotone PCHIP-Interpolation OK');
