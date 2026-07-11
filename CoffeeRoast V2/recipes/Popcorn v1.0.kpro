@@ -1,6 +1,6 @@
 profile_short_name:Popcorn v1.0
 profile_designer:CoffeeRoast
-profile_description:\vVersuchsprofil für trockene Popcornmais-Körner. Die Fachliteratur nennt etwa 180 °C als kritische Kerntemperatur, bei der fast alle geeigneten Körner aufplatzen. Die gemessene Röstertemperatur ist nicht identisch mit der Kerntemperatur. Deshalb langsam auf 180 °C annähern, kurz bei 185 °C halten und spätestens nach 270 Sekunden beenden.\v\vMit kleiner Charge und unter ständiger Aufsicht testen. Lüfter zunächst etwa 70–80 %, bei ausgeworfenen Körnern reduzieren. Manuell abkühlen, sobald zwischen den Pops mehr als 2–3 Sekunden liegen.\v
+profile_description:\vVersuchsprofil für trockene Popcornmais-Körner. Die Fachliteratur nennt etwa 180 °C als kritische Kerntemperatur, bei der fast alle geeigneten Körner aufplatzen. Die gemessene Röstertemperatur ist nicht identisch mit der Kerntemperatur. Deshalb langsam auf 180 °C annähern, bei maximal 185 °C bis zur Zehn-Minuten-Marke halten und dann automatisch beenden.\v\vMit kleiner Charge und unter ständiger Aufsicht testen. Lüfter zunächst etwa 70–80 %, bei ausgeworfenen Körnern reduzieren. Manuell abkühlen, sobald zwischen den Pops mehr als 2–3 Sekunden liegen.\v
 profile_schema_version:1.4
 emulation_mode:0.0
 recommended_level:3.0
@@ -34,5 +34,5 @@ cooldown_lo_speed:15000
 cooldown_lo_temperature:60
 roast_levels:170,178,180,185,188
 profile_modified:11/07/2026 12:00:00PM
-roast_profile:0,0,0,25,45,85,90,135,135,165,165,178,185,185,225,185,250,182,270,175,0,0
-fan_profile:0,0,0,75,270,75,0,0
+roast_profile:0,0,0,25,45,85,90,135,135,165,165,178,185,185,600,185,0,0
+fan_profile:0,0,0,75,600,75,0,0

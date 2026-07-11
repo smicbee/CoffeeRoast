@@ -1,5 +1,5 @@
 import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260711-verify1';
-import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-popcorn1';
+import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260711-popcorn2';
 import{RoastEngine,RoastState,calibratePidFromSamples}from'./engine.js?v=20260711-autopid1';
 import{RoastChart,formatTime}from'./chart.js?v=20260711-light1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));

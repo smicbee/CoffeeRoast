@@ -8,7 +8,7 @@ export const builtInRecipes = [
 export async function loadBuiltInRecipes(base = 'recipes/') {
   const loaded = await Promise.all(builtInRecipes.map(async file => {
     try {
-      const response = await fetch(base + encodeURIComponent(file));
+      const response = await fetch(base + encodeURIComponent(file) + '?v=20260711-popcorn2');
       if (!response.ok) throw new Error(`${response.status}`);
       return parseRecipe(await response.text(), file);
     } catch (error) { console.warn(`Rezept ${file} konnte nicht geladen werden`, error); return null; }
