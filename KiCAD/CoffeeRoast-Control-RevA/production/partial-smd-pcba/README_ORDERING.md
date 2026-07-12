@@ -1,4 +1,4 @@
-# CoffeeRoast-Control RevA.1 partial-SMD PCBA package
+# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
 This package is for the recommended first prototype order: **PCB fabrication + top-side SMD assembly only**, with power/THT/mechanical parts hand-soldered afterward.
 
@@ -16,13 +16,14 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 - Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
 - Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
 - `U4` is intentionally **not** in the first PCBA placement set because the exact 24V→3.3V buck module/footprint remains a mandatory pre-order decision.
-- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
+- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
 - In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
 
 ## Verification run
 
-- KiCad error-level DRC: 0 violations
+- Full KiCad DRC: 0 violations
+- Error-level DRC: 0 violations
 - Unconnected pads: 0
 - Footprint errors: 0
 

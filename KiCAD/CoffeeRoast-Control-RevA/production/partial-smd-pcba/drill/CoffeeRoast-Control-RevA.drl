@@ -1,7 +1,7 @@
 M48
-; DRILL file {KiCad 9.0.8+dfsg-1} date 2026-07-11T20:15:59+0200
+; DRILL file {KiCad 9.0.8+dfsg-1} date 2026-07-12T19:13:16+0200
 ; FORMAT={-:-/ absolute / metric / decimal}
-; #@! TF.CreationDate,2026-07-11T20:15:59+02:00
+; #@! TF.CreationDate,2026-07-12T19:13:16+02:00
 ; #@! TF.GenerationSoftware,Kicad,Pcbnew,9.0.8+dfsg-1
 ; #@! TF.FileFunction,MixedPlating,1,2
 FMAT,2
@@ -10,27 +10,27 @@ METRIC
 T1C0.300
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
 T2C0.300
-; #@! TA.AperFunction,Plated,PTH,ComponentDrill
+; #@! TA.AperFunction,Plated,PTH,ViaDrill
 T3C0.600
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
-T4C0.800
+T4C0.600
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
-T5C0.900
+T5C0.800
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
-T6C1.000
+T6C0.900
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
-T7C1.100
+T7C1.000
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill
-T8C1.300
+T8C1.100
+; #@! TA.AperFunction,Plated,PTH,ComponentDrill
+T9C1.300
 ; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
-T9C0.650
+T10C0.650
 %
 G90
 G05
 T1
 X42.46Y-48.0
-X45.0Y-48.0
-X47.54Y-48.0
 X53.0Y-73.4
 X63.903Y-33.948
 X64.26Y-19.74
@@ -45,8 +45,6 @@ X66.906Y-24.82
 X67.129Y-30.393
 X67.275Y-33.367
 X67.632Y-29.9
-X68.0Y-75.7
-X68.8Y-75.7
 X73.2Y-19.75
 X73.242Y-43.965
 X73.966Y-36.622
@@ -99,14 +97,17 @@ X84.2Y-27.46
 X84.2Y-28.86
 X84.9Y-26.76
 X84.9Y-28.16
-T4
+T3
+X45.0Y-48.0
+X47.54Y-48.0
+T5
 X104.0Y-92.0
 X106.54Y-92.0
 X109.08Y-92.0
 X111.62Y-92.0
 X114.16Y-92.0
 X116.7Y-92.0
-T5
+T6
 X7.46Y-23.2
 X12.54Y-23.2
 X40.75Y-29.75
@@ -117,10 +118,10 @@ X45.25Y-29.75
 X45.25Y-34.25
 X45.25Y-39.75
 X45.25Y-44.25
-T6
+T7
 X22.92Y-48.0
 X33.08Y-48.0
-T7
+T8
 X25.0Y-72.0
 X25.0Y-84.0
 X42.46Y-58.0
@@ -128,7 +129,7 @@ X45.0Y-58.0
 X47.0Y-72.0
 X47.0Y-84.0
 X47.54Y-58.0
-T8
+T9
 X7.46Y-18.0
 X7.46Y-48.0
 X12.54Y-18.0
@@ -139,10 +140,10 @@ X137.46Y-52.0
 X137.46Y-70.0
 X142.54Y-52.0
 X142.54Y-70.0
-T9
+T10
 X151.395Y-28.11
 X151.395Y-33.89
-T3
+T4
 X150.345Y-26.68G85X151.445Y-26.68
 G05
 X150.345Y-35.32G85X151.445Y-35.32

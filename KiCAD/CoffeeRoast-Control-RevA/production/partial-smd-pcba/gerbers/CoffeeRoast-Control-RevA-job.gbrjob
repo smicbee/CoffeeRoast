@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "9.0.8+dfsg-1"
     },
-    "CreationDate": "2026-07-11T20:15:59+02:00"
+    "CreationDate": "2026-07-12T19:13:15+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "CoffeeRoast-Control-RevA",
       "GUID": "436f6666-6565-4526-9f61-73742d436f6e",
-      "Revision": "A.2-draft"
+      "Revision": "A.2-layout-quality-draft"
     },
     "Size": {
       "X": 160.15,

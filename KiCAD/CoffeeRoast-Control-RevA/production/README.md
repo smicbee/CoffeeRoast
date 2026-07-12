@@ -1,29 +1,32 @@
-# CoffeeRoast-Control RevA.1 partial-SMD PCBA handoff
+# CoffeeRoast-Control RevA.2 partial-SMD PCBA handoff
 
-Generated first-order package for the chosen approach: PCB fabrication plus **top-side SMD assembly only**, with THT/power/mechanical parts hand-soldered after delivery.
+Current first-prototype package: PCB fabrication plus **top-side SMD assembly only**, with THT/power/mechanical parts hand-soldered after delivery.
 
-## Files
+## Current files
 
-- `partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip` — upload bundle containing Gerbers, drill, BOM, CPL, DNP list, and ordering notes.
-- `partial-smd-pcba/gerbers/` — board fabrication Gerbers.
-- `partial-smd-pcba/drill/` — Excellon drill file, map, and report.
-- `partial-smd-pcba/assembly/bom_smd_partial.csv` — SMD assembly BOM for the first prototype run.
-- `partial-smd-pcba/assembly/cpl_smd_partial.csv` — top-side centroid/place file for the SMD assembly BOM.
-- `partial-smd-pcba/assembly/dnp_hand_solder.csv` — debug pads, THT, power, and placeholder parts that should not be assembled by the PCB house.
-- `partial-smd-pcba/assembly/part_mapping_review.csv` — preferred exact MPN/spec checklist to use while mapping parts in the assembler UI.
-- `selected_parts.csv` / `selected_parts.md` — selected purchase/assembly candidates, including hand-solder and RevA.2-only parts.
+- `partial-smd-pcba/CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip` — current RevA.2 upload bundle containing Gerbers, drill, BOM, CPL, DNP list and ordering notes.
+- `partial-smd-pcba/gerbers/` — current board fabrication Gerbers.
+- `partial-smd-pcba/drill/` — Excellon drill file, map and report.
+- `partial-smd-pcba/assembly/bom_smd_partial.csv` — conservative SMD assembly BOM.
+- `partial-smd-pcba/assembly/cpl_smd_partial.csv` — top-side centroid/place file.
+- `partial-smd-pcba/assembly/dnp_hand_solder.csv` — debug pads, THT, power and placeholder parts excluded from automated assembly.
+- `partial-smd-pcba/assembly/part_mapping_review.csv` — preferred exact MPN/spec checklist for assembler mapping.
+
+`obsolete-reva1/` contains superseded RevA.1 and Y4 packages. **Do not upload or order anything from that directory.** Any earlier manufacturer upload/cart item is stale after the RevA.2 copper changes.
 
 ## Current partial-assembly scope
 
-Assemble by PCB house: ESP32 module, MAX6675, USB-C connector, Q2, and the known-good 0805 passives. Supplier/JLC part numbers are pre-filled for this conservative assembly set.
+Assemble by PCB house: U1 ESP32 module, U2 MAX6675, J5 USB-C connector, Q2 and the known-good SMD passives listed in the generated BOM.
 
-Hand-solder / DNP for the first prototype: J1-J4 screw terminals, F1, D1, Q1 fan MOSFET, U3 exact 3V3 regulator, U4 24V->5V buck, C4 input bulk capacitor, SW1/SW2, U5 USB ESD, D2/D3 TVS, C5 thermocouple filter, and all debug/test pads. U5/D2/D3/C5 have selected candidate parts, but the current RevA.1 footprints are draft/custom and should not be automated-assembled until RevA.2.
+Hand-solder / DNP for the first prototype: J1-J4, F1, D1, Q1, U4, C4, SW1/SW2, U5, D2/D3, C5 and all debug/test pads. U4 still requires an exact 24V→3.3V module/footprint decision. U5/D2/D3/C5 remain DNP until exact land patterns are verified.
 
-## Remaining manual step before actual checkout
+## Remaining manual step before checkout
 
-The generated BOM now has JLC supplier/C-codes for the conservative first assembly set. In the JLCPCB/PCBWay UI, still re-confirm availability and visually inspect orientations before paying. If a part cannot be confidently mapped, mark it DNP and hand-solder it later.
+Re-confirm component availability and inspect orientation/placement in the assembler UI. If a part cannot be confidently mapped, mark it DNP and hand-solder it later. Do not pay until the current RevA.2 Gerber preview, BOM selection and placement preview all match the board.
 
 ## Verification
 
-Package ZIP integrity was tested with `unzip -t`.
-KiCad error-level DRC remains clean: 0 violations, 0 unconnected pads, 0 footprint errors.
+- Full KiCad DRC: 0 violations.
+- Unconnected items: 0.
+- ZIP integrity: verify with `unzip -t` after each regeneration.
+- No checkout or payment has been performed.

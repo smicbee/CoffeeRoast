@@ -1,8 +1,8 @@
-# CoffeeRoast-Control RevA.1 routing notes
+# CoffeeRoast-Control RevA.2 routing notes
 
-## Status after RevA.1 robustness updates
+## Status after the RevA.2 layout-quality pass
 
-Routing was originally performed with KiCad 9 + Freerouting from a Specctra DSN export, then the dense USB-C D+/D- fanout was manually cleaned with `pcbnew` tracks/vias. RevA.1 adds low-voltage robustness footprints/short routes for input protection, fan clamp, USB ESD, thermocouple filtering, and rail test points.
+Routing was originally performed with KiCad 9 + Freerouting from a Specctra DSN export, then manually cleaned. The current pass keeps direct routes that are electrically justified, but replaces arbitrary-angle ECO branches with 45° geometry, widens the 24V/fan current path, enlarges the FAN_NEG transition via, and tightens the B.Cu GND-zone fill against copper slivers.
 
 Selected J5 footprint:
 
@@ -14,18 +14,20 @@ Generated artifacts:
 
 - `render/coffeeroast_debug_breakout.dsn` — DSN exported from KiCad after adding the routed ESP32 solder-pad breakout.
 - `render/coffeeroast_debug_breakout.ses` — Freerouting session result for the pre-RevA.1 routed board; keep as route history, not current source of truth.
-- `render/drc_report_errors_only.txt` — current KiCad DRC, errors only.
-- `render/drc_report_full.txt` — full DRC including silkscreen warnings.
-- `render/kicad_top.png` / `render/kicad_bottom.png` — KiCad-rendered board views.
+- `render/layout-quality-post/drc_errors.json` — current error-only KiCad DRC.
+- `render/layout-quality-post/drc_full.json` — current full DRC including warnings and exclusions.
+- `render/layout-quality-post/top.png` / `bottom.png` — current KiCad copper/mask/silkscreen review views.
 
 DRC summary:
 
 ```text
+Full DRC (error + warning + exclusion): 0 violations
 Error-level DRC: 0 violations
 Unconnected pads: 0
 Footprint errors: 0
-Full DRC still has non-fabrication warnings only: silkscreen/text warnings from generated labels.
 ```
+
+The project rule file enforces a 1.0 mm minimum track width on `+24V_RAW`, `+24V_FUSED`, and `FAN_NEG`. The current board uses 1.2 mm on both 24V rails, 1.0 mm on `FAN_NEG`, and a 1.2/0.6 mm FAN_NEG via. The explicit Q1 source-return stub is 1.0 mm with a 1.2/0.6 mm via into the GND structure.
 
 ## RevA.1 added robustness footprints
 
@@ -42,7 +44,8 @@ Full DRC still has non-fabrication warnings only: silkscreen/text warnings from 
 
 - The USB-C placeholder has been replaced by a real KiCad library footprint for XKB U262-16XN-4BVC11. Still confirm the exact purchasable variant, connector height, mounting style, and enclosure cutout before fabrication.
 - USB-C is configured as data-only/device mode: D+/D- to ESP32-S3 native USB through 27R series resistors, CC1/CC2 via 5.1k Rd pulldowns, and VBUS as sense-only. The board is still powered from the internal 24V PSU, not USB.
-- Default low-voltage netclass clearance is set to 0.10 mm for the dense USB-C routing. Confirm this with the chosen PCB manufacturer. The board intentionally has no 230VAC copper.
+- Default low-voltage netclass clearance remains 0.10 mm for the dense USB-C routing. Confirm this with the chosen PCB manufacturer. The board intentionally has no 230VAC copper.
+- `CoffeeRoast-Control-RevA.kicad_dru` adds stricter width/via constraints only for the critical 24V/fan current nets; ordinary GPIO/USB/sensor tracks retain their existing rules.
 - Freerouting is useful for a first route, but the final board should still be manually reviewed in KiCad, especially USB D+/D-, fan current path, GND return, antenna keepout, and connector placement.
 
 ## ESP32 debug/test pads
@@ -57,5 +60,5 @@ Added `PADESP1` through `PADESP40` as larger bottom-side solder pads with B.Silk
 
 - Pads are on `B.Cu/B.Mask` with no paste and labels on `B.SilkS`.
 - Mapping is in `docs/esp32_solder_pads.csv`.
-- Routing was regenerated with KiCad DSN + Freerouting and via sizes normalized to 0.50/0.30 mm to maintain clearance.
-- Error-level DRC is clean after adding the pads. Full DRC still contains silkscreen warnings only.
+- Routing was regenerated with KiCad DSN + Freerouting and via sizes normalized to 0.50/0.30 mm for ordinary signal access; the critical FAN_NEG transition is now 1.20/0.60 mm.
+- Current full DRC is clean with 0 violations and 0 unconnected items.

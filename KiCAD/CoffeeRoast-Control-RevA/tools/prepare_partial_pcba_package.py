@@ -21,7 +21,7 @@ OUT = ROOT / "production" / "partial-smd-pcba"
 GERBER_DIR = OUT / "gerbers"
 DRILL_DIR = OUT / "drill"
 ASM_DIR = OUT / "assembly"
-ZIP_PATH = OUT / "CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip"
+ZIP_PATH = OUT / "CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip"
 
 # Assemble by PCBA house in the first partial-SMD prototype run.
 # Supplier PNs are deliberately blank until final JLC/LCSC/PCBWay part mapping.
@@ -40,11 +40,11 @@ ASSEMBLE = {
     "R8": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "JLC promotional/basic-equivalent 27R 0805; USB D+ series resistor."},
     "R10": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC1 Rd."},
     "R11": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC2 Rd."},
-    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 5V bulk/decoupling."},
-    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling."},
+    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling A."},
+    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling B."},
     "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "Basic JLCPCB 100nF 0805 X7R 50V; MAX6675 decoupling."},
     "C6": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U1 ESP32 decoupling."},
-    "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U4 5V output decoupling."},
+    "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U4 3V3 output decoupling."},
 }
 
 # Do not ask the PCBA house to place these in the first partial assembly run.
@@ -210,7 +210,7 @@ def write_assembly_files() -> None:
 
 
 def write_readme() -> None:
-    readme = """# CoffeeRoast-Control RevA.1 partial-SMD PCBA package
+    readme = """# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
 This package is for the recommended first prototype order: **PCB fabrication + top-side SMD assembly only**, with power/THT/mechanical parts hand-soldered afterward.
 
@@ -228,13 +228,14 @@ This package is for the recommended first prototype order: **PCB fabrication + t
 - Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
 - Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
 - `U4` is intentionally **not** in the first PCBA placement set because the exact 24V→3.3V buck module/footprint remains a mandatory pre-order decision.
-- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: they are useful RevA.1 robustness footprints, but their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
+- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
 - In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
 
 ## Verification run
 
-- KiCad error-level DRC: 0 violations
+- Full KiCad DRC: 0 violations
+- Error-level DRC: 0 violations
 - Unconnected pads: 0
 - Footprint errors: 0
 

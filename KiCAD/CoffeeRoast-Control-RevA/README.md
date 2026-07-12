@@ -1,6 +1,6 @@
-# CoffeeRoast-Control RevA.1 PCB Draft
+# CoffeeRoast-Control RevA.2 PCB Draft
 
-This is the generated RevA.1 hardware draft for moving the CoffeeRoast electronics onto a PCB. The current board has been updated with the agreed robustness optimizations and has zero KiCad error-level DRC violations, but it still needs manual engineering review before fabrication.
+This is the current RevA.2 hardware draft for moving the CoffeeRoast electronics onto a PCB. It includes the simplified direct 24V→3.3V power tree and the layout-quality pass: explicit critical-current rules, widened 24V/fan paths, deliberate 45° routing on revised branches, and a clean full KiCad DRC. Exact power/protection footprints and manual engineering review are still required before fabrication.
 
 ## Design decision captured from chat
 
@@ -13,7 +13,8 @@ This is the generated RevA.1 hardware draft for moving the CoffeeRoast electroni
 
 ## Files
 
-- `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with real on-board USB-C footprint and autorouted/manual-cleanup tracks.
+- `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with real on-board USB-C footprint and reviewed mixed manual/autorouted tracks.
+- `CoffeeRoast-Control-RevA.kicad_dru` — project-specific KiCad rules enforcing at least 1.0 mm on the 24V/fan current nets and a 0.6 mm drill/0.30 mm annular ring on future critical-current vias.
 - `CoffeeRoast-Control-RevA.kicad_sch` — vollständiger, editierbarer KiCad-Schaltplan mit Funktionsblöcken für Versorgung, Lüfter/SSR, ESP32, MAX6675, USB und Testzugänge; die benannten Netze entsprechen dem gerouteten PCB.
 - `tools/generate_full_schematic.py` — reproduzierbarer Generator für den Schaltplanentwurf; die native `.kicad_sch`-Datei wurde mit KiCad 9 konvertiert und geprüft.
 - `render/schematic/CoffeeRoast-Control-RevA.pdf` und `.svg` — exportierte Schaltplanansichten; `render/schematic/erc.json` enthält den aktuellen ERC-Bericht.
@@ -25,6 +26,8 @@ This is the generated RevA.1 hardware draft for moving the CoffeeRoast electroni
 - `docs/esp32_debug_pads.csv` — ESP32-S3 TPESP1-40 tiny probe pad mapping.
 - `docs/esp32_solder_pads.csv` — larger labeled bottom-side PADESP1-40 solder pad mapping for attaching wires later.
 - `docs/routing_notes.md` — routing/DRC status and fabrication caveats.
+- `docs/layout_quality_review.md` — measured before/after review of route geometry, current-path widths, GND-zone quality, DRC and visual QA.
+- `tools/improve_layout_quality.py` — idempotent pcbnew ECO script for the RevA.2 layout-quality pass.
 - `docs/reva1_optimizations.md` — RevA.1 robustness changes and what was deliberately left for RevB.
 - `tools/apply_reva1_optimizations.py` — idempotent pcbnew script that applies the RevA.1 PCB additions.
 - `production/partial-smd-pcba/` — generated Gerber/drill + partial SMD assembly BOM/CPL package for first prototype ordering.
@@ -67,7 +70,7 @@ All ESP32-S3-WROOM-1 side pins 1-40 are exposed twice: tiny local probe pads nam
 
 ## Important limitations before fabrication
 
-This board now loads in KiCad 9 and has been routed/checked headlessly. KiCad error-level DRC is clean, but before ordering boards:
+This board loads in KiCad 9.0.8 and the current full DRC (errors, warnings and exclusions) is clean with 0 violations and 0 unconnected items. Before ordering boards:
 
 1. Open the project in KiCad.
 2. Replace remaining generic placeholders with exact sourced parts: fuse holder, U4 24V→3.3V buck module, TVS packages, USB ESD package and MOSFET variants. J1-J4 are deliberately large hand-solder pads now, not PCBA connector placements.
