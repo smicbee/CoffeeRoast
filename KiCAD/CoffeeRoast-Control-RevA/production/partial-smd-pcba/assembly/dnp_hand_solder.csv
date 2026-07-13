@@ -1,20 +1,18 @@
 Designator,Value,Kind,Reason/Action
-C4,220uF_35V_INPUT_BULK,tht,"Selected candidate: Panasonic EEU-FR1V221 or Nichicon UPW1V221MPD, 220uF/35V radial electrolytic. Verify lead pitch against current pads before ordering."
-C5,1nF_C0G_THERMO_DIFF_FILTER_DNP_IF_NOISY,smd,"DNP for first PCBA: current RevA.1 footprint is a draft wide-pad filter, not an 0805 placement. Candidate if redesigned: C76625 / TDK C2012C0G1H102JT000N, 1nF C0G 0805."
-D1,SB560_FLYBACK,tht,"Selected candidate: SB560 DO-201AD Schottky, JLC C139684. Hand-solder after fan type is confirmed."
-D2,SMBJ33A_24V_INPUT_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
-D3,SMBJ33A_FAN_TVS,smd,"DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067."
-F1,T3.15A_24V_SIDE,tht,Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.
+C4,EEU-FR1V221B_220uF_35V,tht,Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.
+C5,CC0805JRNPO9BN102_1nF_C0G,smd,Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.
+D1,SS56-E3/57T,smd,"Vishay SS56-E3/57T SMB flyback diode; exact pad/polarity validated, hand-solder because assembler mapping is not pre-filled."
 FID1,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 FID2,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 FID3,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 FID4,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 FID5,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
 FID6,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
-J1,24V_IN_FROM_230V_PSU_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder PSU leads directly and add enclosure strain relief.
-J2,FAN_24V_PWM_3A,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder fan leads directly and add enclosure strain relief.
-J3,SSR_INPUT_3V3_TO_EXTERNAL_SSR,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.
-J4,K_TYPE_THERMOCOUPLE,tht,Replaced with large plated hand-solder pads; do not assemble a connector. Solder K-type thermocouple/extension leads directly and add strain relief.
+J1,24V_IN_FROM_230V_PSU_3A,tht,Large plated hand-solder pads; solder PSU leads and add strain relief.
+J2,FAN_24V_PWM_3A,tht,Large plated hand-solder pads; solder fan leads and add strain relief.
+J3,SSR_INPUT_3V3_TO_EXTERNAL_SSR,tht,Large plated hand-solder pads; solder external SSR control leads.
+J4,K_TYPE_THERMOCOUPLE,tht,Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.
+J6,ESC_24V_GND_PWM_GND_GPIO10,tht,"Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief."
 JGPIO1,ESP32_GPIO_BREAKOUT_ROW,tht,Not in first partial-SMD assembly set; review manually.
 PADESP1,GND,smd,Test/debug pad; no assembly part.
 PADESP2,3V3,smd,Test/debug pad; no assembly part.
@@ -56,9 +54,7 @@ PADESP37,TXD0,smd,Test/debug pad; no assembly part.
 PADESP38,IO2,smd,Test/debug pad; no assembly part.
 PADESP39,IO1,smd,Test/debug pad; no assembly part.
 PADESP40,GND,smd,Test/debug pad; no assembly part.
-Q1,IRLB8721_OR_3V3_LOGIC_NMOS_RDS_ON_LOW,tht,"Selected candidate: IRLB8721PBF TO-220, JLC C153222; alternative FQP30N06L, JLC C243087. Hand-solder and thermally verify with real fan current."
-SW1,RESET_EN,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if EN pad/debug access is enough."
-SW2,BOOT,tht,"Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if BOOT pad/debug access is enough."
+Q1,STP55NF06L,tht,STP55NF06L TO-220 fan MOSFET; hand-solder and thermally validate at 2.5A fan current.
 TPBOOT1,BOOT_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TPESP1,GND,smd,Test/debug pad; no assembly part.
 TPESP2,3V3,smd,Test/debug pad; no assembly part.
@@ -105,5 +101,3 @@ TPRESET1,RESET_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review ma
 TPSSR1,SSR_3V3_OUT_MEAS_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
 TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.
-U4,24V_TO_3V3_BUCK_MODULE_>=1A_LOW_NOISE,tht,"Required: regulated 24V->3.3V buck module >=1A, low noise, >=30V input rating. Exact sourced module and pinout must match the current footprint before order."
-U5,USBLC6-2SC6_OR_USB2_ESD,smd,"DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519."

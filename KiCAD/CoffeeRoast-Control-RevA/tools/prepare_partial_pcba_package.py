@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Prepare a partial-SMD PCBA handoff package for CoffeeRoast-Control RevA.1.
+#!/usr/bin/python3
+"""Prepare the verified partial-SMD PCBA handoff for CoffeeRoast-Control RevA.2.
 
 The package is intentionally conservative: it exports fabrication Gerbers/drills and
 JLCPCB-style BOM/CPL files for the parts we want assembled automatically, while
@@ -8,6 +8,7 @@ separating power/THT/placeholder parts into a hand-solder/DNP list.
 from __future__ import annotations
 
 import csv
+import json
 import shutil
 import subprocess
 import zipfile
@@ -21,49 +22,67 @@ OUT = ROOT / "production" / "partial-smd-pcba"
 GERBER_DIR = OUT / "gerbers"
 DRILL_DIR = OUT / "drill"
 ASM_DIR = OUT / "assembly"
+QA_DIR = OUT / "qa"
 ZIP_PATH = OUT / "CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip"
 
-# Assemble by PCBA house in the first partial-SMD prototype run.
-# Supplier PNs are deliberately blank until final JLC/LCSC/PCBWay part mapping.
+# Assemble by PCBA house in the RevA.2 top-side SMD prototype run.
+# Empty supplier fields require mapping to the exact MPN/equivalent in the UI.
 ASSEMBLE = {
-    "U1": {"mpn": "ESP32-S3-WROOM-1-N8R8", "supplier": "C2913201", "package": "ESP32-S3-WROOM-1 module", "notes": "Extended JLCPCB part; confirm module variant/flash/PSRAM and antenna keepout before order."},
-    "U2": {"mpn": "MAX6675ISA+T", "supplier": "C16030", "package": "SOIC-8", "notes": "Extended JLCPCB part; 3.3V thermocouple converter."},
-    "Q2": {"mpn": "2N7002", "supplier": "C8545", "package": "SOT-23", "notes": "Basic JLCPCB part; SSR low-side driver."},
-    "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C receptacle XKB U262-16XN", "notes": "Extended JLCPCB part; verify orientation in the PCBA preview."},
-    "R1": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "Basic JLCPCB 100R 0805 1%; fan gate resistor."},
-    "R2": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "Basic JLCPCB 100k 0805 1%; fan gate pulldown."},
-    "R3": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "Basic JLCPCB 100R 0805 1%; SSR gate resistor."},
-    "R4": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "Basic JLCPCB 100k 0805 1%; SSR gate pulldown."},
-    "R5": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "Basic JLCPCB 10k 0805 1%; EN pullup."},
-    "R6": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "Basic JLCPCB 10k 0805 1%; BOOT pullup."},
-    "R7": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "JLC promotional/basic-equivalent 27R 0805; USB D- series resistor."},
-    "R8": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "JLC promotional/basic-equivalent 27R 0805; USB D+ series resistor."},
-    "R10": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC1 Rd."},
-    "R11": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "Basic JLCPCB 5.1k 0805 1%; USB-C CC2 Rd."},
-    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling A."},
-    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "Basic JLCPCB 10uF 0805 ceramic; 3V3 bulk/decoupling B."},
-    "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "Basic JLCPCB 100nF 0805 X7R 50V; MAX6675 decoupling."},
-    "C6": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U1 ESP32 decoupling."},
-    "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "Basic JLCPCB 100nF 0603 X7R 50V; local U4 3V3 output decoupling."},
+    "U1": {"mpn": "ESP32-S3-WROOM-1-N8R8", "supplier": "C2913201", "package": "ESP32-S3-WROOM-1", "notes": "Confirm N8R8 variant and antenna keepout."},
+    "U2": {"mpn": "MAX6675ISA+T", "supplier": "C16030", "package": "SOIC-8", "notes": "3.3V thermocouple converter."},
+    "U4": {"mpn": "LMR16010PDDAR", "supplier": "C183084", "package": "HSOIC-8 PowerPAD", "notes": "60V/1A buck; verify Pin 1 and exposed-pad orientation."},
+    "U5": {"mpn": "USBLC6-2SC6", "supplier": "C7519", "package": "SOT-23-6", "notes": "USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."},
+    "U6": {"mpn": "UCC27511DBVR", "supplier": "C191027", "package": "SOT-23-6", "notes": "Split-output fan MOSFET gate driver."},
+    "Q2": {"mpn": "2N7002", "supplier": "C8545", "package": "SOT-23", "notes": "SSR low-side driver."},
+    "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C XKB U262-16XN", "notes": "Verify shell and pin orientation in placement preview."},
+    "L1": {"mpn": "FNR6045S220MT", "supplier": "C168080", "package": "FNR6045S", "notes": "22uH, >=2A saturation/current candidate."},
+    "D2": {"mpn": "SMBJ33A-13-F", "supplier": "C1583130", "package": "SMB", "notes": "24V input TVS; cathode/pad 1 to +24V_RAW."},
+    "D3": {"mpn": "SMBJ33A-13-F", "supplier": "C1583130", "package": "SMB", "notes": "Fan TVS; cathode/pad 1 to +24V_RAW."},
+    "D4": {"mpn": "SS110", "supplier": "C2766060", "package": "SMA", "notes": "100V buck catch diode."},
+    "D5": {"mpn": "BZT52C10", "supplier": "C49023497", "package": "SOD-123", "notes": "10V VDRV clamp."},
+    "SW1": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "RESET switch."},
+    "SW2": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "BOOT switch."},
+    "R1": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "100R fan gate turn-on."},
+    "R2": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "100k fan gate pulldown."},
+    "R3": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "100R SSR gate resistor."},
+    "R4": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "100k SSR gate pulldown."},
+    "R5": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "10k EN pullup."},
+    "R6": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "10k BOOT pullup."},
+    "R7": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "27R USB D- series."},
+    "R8": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "27R USB D+ series."},
+    "R10": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "5.1k USB CC1 Rd."},
+    "R11": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "5.1k USB CC2 Rd."},
+    "R12": {"mpn": "RC0603FR-07100KL", "supplier": "C14675", "package": "0603", "notes": "100k FB top; re-confirm stock or exact equivalent."},
+    "R13": {"mpn": "RC0603FR-0729K4L", "supplier": "C137752", "package": "0603", "notes": "29.4k FB bottom."},
+    "R14": {"mpn": "RC0603FR-0749K9L", "supplier": "C114624", "package": "0603", "notes": "49.9k RT, about 500kHz."},
+    "R15": {"mpn": "RC0805FR-0710RL", "supplier": "", "package": "0805", "notes": "10R fan gate turn-off; map exact 1% equivalent."},
+    "R16": {"mpn": "RC1206FR-072K7L", "supplier": "", "package": "1206", "notes": "2.7k VDRV feed, >=0.25W; map exact equivalent."},
+    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "10uF 3V3 bulk A."},
+    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "10uF 3V3 bulk B."},
+    "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "100nF MAX6675 decoupling."},
+    "C6": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF ESP32 decoupling."},
+    "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF 3V3 output decoupling."},
+    "C8": {"mpn": "CS3225X7R225K101NRK", "supplier": "C2900749", "package": "1210", "notes": "2.2uF 100V buck input."},
+    "C9": {"mpn": "CS3225X7R225K101NRK", "supplier": "C2900749", "package": "1210", "notes": "2.2uF 100V buck input."},
+    "C10": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF bootstrap."},
+    "C11": {"mpn": "CL32A226KAJNNNE", "supplier": "C52306", "package": "1210", "notes": "22uF 25V buck output."},
+    "C12": {"mpn": "0805B104K101NT", "supplier": "C89258", "package": "0805", "notes": "100nF 100V buck input HF bypass."},
+    "C13": {"mpn": "CL21B105KAFNNNE", "supplier": "C116352", "package": "0805", "notes": "1uF VDRV reservoir."},
+    "C14": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF VDRV bypass."},
+    "C15": {"mpn": "CL32A226KAJNNNE", "supplier": "C52306", "package": "1210", "notes": "22uF 25V buck output."},
 }
 
-# Do not ask the PCBA house to place these in the first partial assembly run.
+# Parts intentionally hand-soldered or left DNP in the first prototype.
 HAND_SOLDER = {
-    "J1": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder PSU leads directly and add enclosure strain relief.",
-    "J2": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder fan leads directly and add enclosure strain relief.",
-    "J3": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder external SSR control leads directly.",
-    "J4": "Replaced with large plated hand-solder pads; do not assemble a connector. Solder K-type thermocouple/extension leads directly and add strain relief.",
-    "F1": "Selected candidate class: PCB 5x20mm fuse holder with ~22mm pin spacing plus T3.15A fuse. Verify footprint before order; consider external inline fuse holder if fit is uncertain.",
-    "D1": "Selected candidate: SB560 DO-201AD Schottky, JLC C139684. Hand-solder after fan type is confirmed.",
-    "D2": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
-    "D3": "DNP for first PCBA: draft TVS footprint needs land-pattern verification. Candidate: SMBJ33A-13-F, JLC C135067.",
-    "Q1": "Selected candidate: IRLB8721PBF TO-220, JLC C153222; alternative FQP30N06L, JLC C243087. Hand-solder and thermally verify with real fan current.",
-    "U4": "Required: regulated 24V->3.3V buck module >=1A, low noise, >=30V input rating. Exact sourced module and pinout must match the current footprint before order.",
-    "C4": "Selected candidate: Panasonic EEU-FR1V221 or Nichicon UPW1V221MPD, 220uF/35V radial electrolytic. Verify lead pitch against current pads before ordering.",
-    "C5": "DNP for first PCBA: current RevA.1 footprint is a draft wide-pad filter, not an 0805 placement. Candidate if redesigned: C76625 / TDK C2012C0G1H102JT000N, 1nF C0G 0805.",
-    "U5": "DNP for first PCBA: current RevA.1 USB ESD footprint is a draft/custom on-track footprint, not safe for SOT-23-6 placement. Candidate if redesigned: USBLC6-2SC6, JLC C7519.",
-    "SW1": "Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if EN pad/debug access is enough.",
-    "SW2": "Selected candidate class: 6x6mm THT tactile switch, e.g. K3-1391A-51/JLC C92655. Optional; can be omitted if BOOT pad/debug access is enough.",
+    "J1": "Large plated hand-solder pads; solder PSU leads and add strain relief.",
+    "J2": "Large plated hand-solder pads; solder fan leads and add strain relief.",
+    "J3": "Large plated hand-solder pads; solder external SSR control leads.",
+    "J4": "Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.",
+    "J6": "Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief.",
+    "D1": "Vishay SS56-E3/57T SMB flyback diode; exact pad/polarity validated, hand-solder because assembler mapping is not pre-filled.",
+    "Q1": "STP55NF06L TO-220 fan MOSFET; hand-solder and thermally validate at 2.5A fan current.",
+    "C4": "Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.",
+    "C5": "Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.",
 }
 
 
@@ -78,6 +97,7 @@ def clean() -> None:
     GERBER_DIR.mkdir(parents=True)
     DRILL_DIR.mkdir(parents=True)
     ASM_DIR.mkdir(parents=True)
+    QA_DIR.mkdir(parents=True)
 
 
 def footprint_kind(fp: pcbnew.FOOTPRINT) -> str:
@@ -145,6 +165,9 @@ def write_assembly_files() -> None:
     board = pcbnew.LoadBoard(str(BOARD))
     extents = edge_extents_mm(board)
     fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
+    missing = sorted(set(ASSEMBLE) - set(fps))
+    if missing:
+        raise RuntimeError(f"ASSEMBLE references missing from board: {missing}")
 
     bom_rows = []
     cpl_rows = []
@@ -208,46 +231,104 @@ def write_assembly_files() -> None:
         w.writerow(["Designator", "Board Value", "Package", "Preferred MPN / Spec", "Assembler UI Action", "Review Notes"])
         w.writerows(mapping_rows)
 
+    if len(bom_rows) != len(ASSEMBLE) or len(cpl_rows) != len(ASSEMBLE):
+        raise RuntimeError(
+            f"BOM/CPL count mismatch: expected {len(ASSEMBLE)}, "
+            f"got BOM={len(bom_rows)}, CPL={len(cpl_rows)}"
+        )
+
+    manual_meta = {
+        "J6": ("ESC_4PIN_HAND_WIRE", ""),
+        "D1": ("SS56-E3/57T", ""),
+        "Q1": ("STP55NF06L", "C2663"),
+        "C4": ("EEU-FR1V221B", "C3697"),
+        "C5": ("CC0805JRNPO9BN102", "C139684"),
+    }
+    full_rows = []
+    sort_key = lambda r: ("".join(filter(str.isalpha, r)), int("".join(filter(str.isdigit, r)) or 0), r)
+    for ref in sorted(fps, key=sort_key):
+        fp = fps[ref]
+        if fp.IsBoardOnly() or ref.startswith("FID"):
+            continue
+        fpid = fp.GetFPID()
+        nickname = fpid.GetLibNickname()
+        item_name = fpid.GetLibItemName()
+        footprint = f"{nickname}:{item_name}" if nickname else item_name
+        if ref in ASSEMBLE:
+            part = ASSEMBLE[ref]
+            full_rows.append([ref, "1", fp.GetValue(), footprint, part["mpn"], part["supplier"], "PCBA", part["notes"]])
+        else:
+            mpn, supplier = manual_meta.get(ref, (fp.GetValue(), ""))
+            action = "DNP" if ref.startswith("TP") or ref == "C5" else "HAND/DNP"
+            full_rows.append([ref, "1", fp.GetValue(), footprint, mpn, supplier, action,
+                              HAND_SOLDER.get(ref, "PCB test/debug/mechanical position; no automated placement.")])
+    full_rows.extend([
+        ["TPESP1-TPESP40", "40", "ESP32 probe pads", "PCB copper only", "", "", "DNP", "Board-only probe pads."],
+        ["PADESP1-PADESP40", "40", "ESP32 solder pads", "PCB copper only", "", "", "DNP", "Board-only wire-attach pads."],
+        ["FID1-FID6", "6", "Fiducial", "PCB copper only", "", "", "DNP", "Board-only fabrication marks."],
+    ])
+    with (ROOT / "docs" / "bom.csv").open("w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["Ref", "Qty", "Value/Part", "Footprint", "Manufacturer Part", "Supplier Part", "Assembly", "Notes"])
+        w.writerows(full_rows)
+
+
+def validate_qa() -> None:
+    erc = json.loads((QA_DIR / "erc.json").read_text())
+    erc_count = sum(len(sheet.get("violations", [])) for sheet in erc.get("sheets", []))
+    drc = json.loads((QA_DIR / "drc_full_parity.json").read_text())
+    counts = {
+        "ERC": erc_count,
+        "DRC": len(drc.get("violations", [])),
+        "unconnected": len(drc.get("unconnected_items", [])),
+        "schematic parity": len(drc.get("schematic_parity", [])),
+    }
+    dirty = {name: count for name, count in counts.items() if count}
+    if dirty:
+        raise RuntimeError(f"QA gate failed: {dirty}")
+
 
 def write_readme() -> None:
-    readme = """# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
+    readme = f"""# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
-This package is for the recommended first prototype order: **PCB fabrication + top-side SMD assembly only**, with power/THT/mechanical parts hand-soldered afterward.
+This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side SMD assembly**, with the listed THT/manual parts soldered afterward.
 
 ## Upload set
 
 - `gerbers/` + `drill/` — PCB fabrication data.
-- `assembly/bom_smd_partial.csv` — SMD parts intended for assembly.
+- `assembly/bom_smd_partial.csv` — exact SMD positions intended for assembly.
 - `assembly/cpl_smd_partial.csv` — centroid/place file for those SMD parts.
 - `assembly/dnp_hand_solder.csv` — parts intentionally not assembled by the PCB house.
-- `assembly/part_mapping_review.csv` — preferred MPN/spec checklist for the assembler UI.
+- `assembly/part_mapping_review.csv` — MPN/package/orientation checklist.
 
 ## Important ordering notes
 
-- This is a **partial assembly handoff**, not a one-click final manufacturing release.
-- Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
-- Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
-- `U4` is intentionally **not** in the first PCBA placement set because the exact 24V→3.3V buck module/footprint remains a mandatory pre-order decision.
-- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
-- The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
-- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
+- The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
+- Re-confirm live supplier stock and map blank supplier codes for R15/R16 in the assembler UI.
+- D1, Q1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing.
+- J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
+- U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
+- The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding and thermal cut-off are enclosure-level work.
+- In the assembler preview, visually confirm Pin 1/polarity/rotation for U1, U2, U4, U5, U6, J5, Q2, D2-D5 and the two switches.
+- A previous JLC upload/cart is stale after this RevA.2 hardware migration; use a fresh upload.
 
 ## Verification run
 
 - Full KiCad DRC: 0 violations
-- Error-level DRC: 0 violations
-- Unconnected pads: 0
-- Footprint errors: 0
+- Schematic parity: 0 problems
+- Schematic ERC: 0 violations
+- Unconnected PCB items: 0
+- Footprint/library findings: 0
 
 ## Recommended order flow
 
-1. Upload the ZIP or the Gerber/drill files for PCB fabrication.
-2. Enable SMT assembly for the top side only.
+1. Upload the Gerber/drill data or this ZIP for PCB fabrication.
+2. Enable top-side SMT assembly.
 3. Upload `assembly/bom_smd_partial.csv` and `assembly/cpl_smd_partial.csv`.
-4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
-5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
-6. Order 5 boards, but only 2 assembled if the UI allows it.
-7. Hand-solder J1-J4, F1, D1, Q1, U4, C4, SW1, SW2 after the boards arrive.
+4. Map exact MPNs/supplier codes and stop if any package or polarity differs.
+5. Assemble only the {len(ASSEMBLE)} BOM designators in this generated package.
+6. Inspect the manufacturer's Gerber, drill and placement previews before payment.
+7. Hand-solder the manual/DNP list after the boards arrive and perform current-limited bring-up.
 """
     (OUT / "README_ORDERING.md").write_text(readme)
 
@@ -264,6 +345,18 @@ def make_zip() -> None:
 
 def main() -> None:
     clean()
+    run([
+        "kicad-cli", "sch", "erc", "--format", "json",
+        "-o", str(QA_DIR / "erc.json"),
+        str(ROOT / "CoffeeRoast-Control-RevA.kicad_sch"),
+    ])
+    run([
+        "kicad-cli", "pcb", "drc", "--format", "json",
+        "--all-track-errors", "--schematic-parity",
+        "-o", str(QA_DIR / "drc_full_parity.json"),
+        str(BOARD),
+    ])
+    validate_qa()
     run([
         "kicad-cli", "pcb", "export", "gerbers",
         "--output", str(GERBER_DIR),

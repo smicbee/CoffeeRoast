@@ -1,38 +1,40 @@
 # CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
-This package is for the recommended first prototype order: **PCB fabrication + top-side SMD assembly only**, with power/THT/mechanical parts hand-soldered afterward.
+This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side SMD assembly**, with the listed THT/manual parts soldered afterward.
 
 ## Upload set
 
 - `gerbers/` + `drill/` — PCB fabrication data.
-- `assembly/bom_smd_partial.csv` — SMD parts intended for assembly.
+- `assembly/bom_smd_partial.csv` — exact SMD positions intended for assembly.
 - `assembly/cpl_smd_partial.csv` — centroid/place file for those SMD parts.
 - `assembly/dnp_hand_solder.csv` — parts intentionally not assembled by the PCB house.
-- `assembly/part_mapping_review.csv` — preferred MPN/spec checklist for the assembler UI.
+- `assembly/part_mapping_review.csv` — MPN/package/orientation checklist.
 
 ## Important ordering notes
 
-- This is a **partial assembly handoff**, not a one-click final manufacturing release.
-- Supplier/LCSC/JLC part numbers are pre-filled for the conservative first PCBA set. Re-confirm availability in the assembler UI before ordering.
-- Do not ask the PCB house to place the DNP/hand-solder list for the first prototype.
-- `U4` is intentionally **not** in the first PCBA placement set because the exact 24V→3.3V buck module/footprint remains a mandatory pre-order decision.
-- `U5`, `D2`, `D3`, and `C5` are also DNP for the first PCBA package: their current draft/custom land patterns should be replaced with exact sourced footprints before automated assembly.
-- The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding, and thermal cut-off are enclosure-level work.
-- In the assembler UI, visually confirm rotation/orientation for U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2, and polarized/marked passives.
+- The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
+- Re-confirm live supplier stock and map blank supplier codes for R15/R16 in the assembler UI.
+- D1, Q1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing.
+- J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
+- U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
+- The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding and thermal cut-off are enclosure-level work.
+- In the assembler preview, visually confirm Pin 1/polarity/rotation for U1, U2, U4, U5, U6, J5, Q2, D2-D5 and the two switches.
+- A previous JLC upload/cart is stale after this RevA.2 hardware migration; use a fresh upload.
 
 ## Verification run
 
 - Full KiCad DRC: 0 violations
-- Error-level DRC: 0 violations
-- Unconnected pads: 0
-- Footprint errors: 0
+- Schematic parity: 0 problems
+- Schematic ERC: 0 violations
+- Unconnected PCB items: 0
+- Footprint/library findings: 0
 
 ## Recommended order flow
 
-1. Upload the ZIP or the Gerber/drill files for PCB fabrication.
-2. Enable SMT assembly for the top side only.
+1. Upload the Gerber/drill data or this ZIP for PCB fabrication.
+2. Enable top-side SMT assembly.
 3. Upload `assembly/bom_smd_partial.csv` and `assembly/cpl_smd_partial.csv`.
-4. In the assembler UI, map supplier part numbers and mark anything uncertain as DNP.
-5. Assemble only the BOM positions in `bom_smd_partial.csv` (currently 19 designators for this generated package).
-6. Order 5 boards, but only 2 assembled if the UI allows it.
-7. Hand-solder J1-J4, F1, D1, Q1, U4, C4, SW1, SW2 after the boards arrive.
+4. Map exact MPNs/supplier codes and stop if any package or polarity differs.
+5. Assemble only the 42 BOM designators in this generated package.
+6. Inspect the manufacturer's Gerber, drill and placement previews before payment.
+7. Hand-solder the manual/DNP list after the boards arrive and perform current-limited bring-up.

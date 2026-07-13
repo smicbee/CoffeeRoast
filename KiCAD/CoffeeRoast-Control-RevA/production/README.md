@@ -1,32 +1,44 @@
 # CoffeeRoast-Control RevA.2 partial-SMD PCBA handoff
 
-Current first-prototype package: PCB fabrication plus **top-side SMD assembly only**, with THT/power/mechanical parts hand-soldered after delivery.
+Current first-prototype package: PCB fabrication plus **top-side SMD assembly**, with the documented THT/power/connectors hand-soldered after delivery.
 
 ## Current files
 
-- `partial-smd-pcba/CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip` — current RevA.2 upload bundle containing Gerbers, drill, BOM, CPL, DNP list and ordering notes.
+- `partial-smd-pcba/CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip` — current upload bundle containing Gerbers, drill, BOM, CPL, DNP/manual list, QA reports and ordering notes.
 - `partial-smd-pcba/gerbers/` — current board fabrication Gerbers.
 - `partial-smd-pcba/drill/` — Excellon drill file, map and report.
-- `partial-smd-pcba/assembly/bom_smd_partial.csv` — conservative SMD assembly BOM.
-- `partial-smd-pcba/assembly/cpl_smd_partial.csv` — top-side centroid/place file.
-- `partial-smd-pcba/assembly/dnp_hand_solder.csv` — debug pads, THT, power and placeholder parts excluded from automated assembly.
-- `partial-smd-pcba/assembly/part_mapping_review.csv` — preferred exact MPN/spec checklist for assembler mapping.
+- `partial-smd-pcba/assembly/bom_smd_partial.csv` — 42-designator SMD assembly BOM.
+- `partial-smd-pcba/assembly/cpl_smd_partial.csv` — matching top-side centroid/place file.
+- `partial-smd-pcba/assembly/dnp_hand_solder.csv` — debug pads and manual/DNP positions.
+- `partial-smd-pcba/qa/` — machine-readable ERC and full DRC/parity reports.
 
-`obsolete-reva1/` contains superseded RevA.1 and Y4 packages. **Do not upload or order anything from that directory.** Any earlier manufacturer upload/cart item is stale after the RevA.2 copper changes.
+`obsolete-reva1/` contains superseded RevA.1/Y4 packages. **Do not upload or order anything from that directory.** Any earlier manufacturer upload/cart is stale.
 
-## Current partial-assembly scope
+## Current design changes
 
-Assemble by PCB house: U1 ESP32 module, U2 MAX6675, J5 USB-C connector, Q2 and the known-good SMD passives listed in the generated BOM.
+- F1 and the separate `+24V_FUSED` rail are removed.
+- The board now uses one direct `+24V_RAW` rail; provide overcurrent protection via a current-limited or externally fused 24V supply.
+- J6 is a four-pad ESC hand-solder connector with fixed order: `+24V / GND / PWM(GPIO10) / GND`.
+- GPIO10 is output-capable and avoids the ESP32-S3's input-only/strapping-sensitive alternatives on the spare GPIO row.
 
-Hand-solder / DNP for the first prototype: J1-J4, F1, D1, Q1, U4, C4, SW1/SW2, U5, D2/D3, C5 and all debug/test pads. U4 still requires an exact 24V→3.3V module/footprint decision. U5/D2/D3/C5 remain DNP until exact land patterns are verified.
+## Assembly scope
 
-## Remaining manual step before checkout
+- Assemble by PCB house: exactly the parts in `bom_smd_partial.csv` and `cpl_smd_partial.csv`.
+- Hand-solder: J1-J4, J6, D1, Q1 and C4.
+- C5 remains DNP pending thermocouple noise/bias testing; debug/test pads receive no component.
 
-Re-confirm component availability and inspect orientation/placement in the assembler UI. If a part cannot be confidently mapped, mark it DNP and hand-solder it later. Do not pay until the current RevA.2 Gerber preview, BOM selection and placement preview all match the board.
+## Checkout and bring-up gates
+
+1. Re-confirm live component availability and inspect polarity/orientation/placement in the assembler UI.
+2. Verify the ESC accepts a 24V input and 3.3V PWM before wiring J6; do not connect a BEC output to J6 pin 1.
+3. Use a current-limited bench supply or an external 24V fuse for first power-up.
+4. Do not pay until Gerber, drill, BOM selection and placement preview match the current board.
 
 ## Verification
 
+- Schematic ERC: 0 violations.
 - Full KiCad DRC: 0 violations.
 - Unconnected items: 0.
-- ZIP integrity: verify with `unzip -t` after each regeneration.
-- No checkout or payment has been performed.
+- Schematic parity: 0 problems.
+- ZIP integrity: passed.
+- No checkout, upload, payment or order has been performed.

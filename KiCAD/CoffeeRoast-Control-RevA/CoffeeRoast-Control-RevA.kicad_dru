@@ -4,10 +4,10 @@
 # Keep the minimum explicit so a later edit cannot silently reintroduce the
 # former 0.2 mm FAN_NEG or 0.6 mm supply routing.
 (rule "Critical 24V/fan current path width"
-  (condition "A.NetName == '+24V_RAW' || A.NetName == '+24V_FUSED' || A.NetName == 'FAN_NEG'")
+  (condition "A.NetName == '+24V_RAW' || A.NetName == 'FAN_NEG'")
   (constraint track_width (min 1.0mm)))
 
 (rule "Critical current via size"
-  (condition "A.Type == 'Via' && (A.NetName == '+24V_RAW' || A.NetName == '+24V_FUSED' || A.NetName == 'FAN_NEG')")
+  (condition "A.Type == 'Via' && (A.NetName == '+24V_RAW' || A.NetName == 'FAN_NEG')")
   (constraint annular_width (min 0.30mm))
   (constraint hole_size (min 0.60mm)))

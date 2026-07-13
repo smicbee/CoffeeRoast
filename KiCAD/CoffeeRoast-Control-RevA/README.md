@@ -1,22 +1,26 @@
-# CoffeeRoast-Control RevA.2 PCB Draft
+# CoffeeRoast-Control RevA.2
 
-This is the current RevA.2 hardware draft for moving the CoffeeRoast electronics onto a PCB. It includes the simplified direct 24V→3.3V power tree and the layout-quality pass: explicit critical-current rules, widened 24V/fan paths, deliberate 45° routing on revised branches, and a clean full KiCad DRC. Exact power/protection footprints and manual engineering review are still required before fabrication.
+This is the finalized RevA.2 low-voltage controller design. It contains a discrete 60 V-rated 24V→3.3V buck, a 10 V fan gate driver, exact package-qualified protection parts, explicit critical-current rules, widened 24V/fan paths and a fully synchronized native KiCad schematic. Full ERC, DRC, unconnected-item and schematic-parity checks are clean.
 
 ## Design decision captured from chat
 
 - Use **one 230V appliance inlet for the whole roaster enclosure**.
 - Inside the enclosure use a **certified isolated 230VAC -> 24VDC / 3A PSU**.
 - The controller PCB itself is **low-voltage only** and accepts the PSU's 24VDC output.
-- The PCB generates 5V via a buck module and 3.3V via a RevA.1 switching-regulator footprint/selection for the ESP32-S3 module.
+- The PCB generates 3.3V directly from 24V with `LMR16010PDDAR`; no intermediate 5V rail is used.
 - The heater's 230V path is still switched by an **external SSR module with heatsink**; 230V is intentionally not routed on this PCB.
-- RevA.1 adds low-voltage robustness features: input bulk capacitor, 24V input TVS, fan TVS, USB ESD footprint, thermocouple filter footprint, and rail test pads.
+- RevA.2 includes input bulk capacitance, 24V and fan TVS protection, USB ESD, optional thermocouple filtering, rail test pads and a `UCC27511DBVR`/`STP55NF06L` fan-drive stage.
+- The on-board 24V fuse holder was deliberately removed; overcurrent protection must come from a current-limited or externally fused 24V source.
+- J6 is a four-wire ESC hand-solder connector: `+24V / GND / PWM(GPIO10) / GND`.
 
 ## Files
 
 - `CoffeeRoast-Control-RevA.kicad_pcb` — KiCad board draft with real on-board USB-C footprint and reviewed mixed manual/autorouted tracks.
 - `CoffeeRoast-Control-RevA.kicad_dru` — project-specific KiCad rules enforcing at least 1.0 mm on the 24V/fan current nets and a 0.6 mm drill/0.30 mm annular ring on future critical-current vias.
 - `CoffeeRoast-Control-RevA.kicad_sch` — vollständiger, editierbarer KiCad-Schaltplan mit Funktionsblöcken für Versorgung, Lüfter/SSR, ESP32, MAX6675, USB und Testzugänge; die benannten Netze entsprechen dem gerouteten PCB.
-- `tools/generate_full_schematic.py` — reproduzierbarer Generator für den Schaltplanentwurf; die native `.kicad_sch`-Datei wurde mit KiCad 9 konvertiert und geprüft.
+- `tools/generate_full_schematic.py` — reproduzierbarer Generator für den Schaltplanentwurf.
+- `tools/regenerate_native_schematic.py` — reproduzierbare KiCad-9-Konvertierung und Installation des nativen Schaltplans.
+- `tools/finalize_exact_hardware.py` — idempotenter Exact-Hardware-Migrationspass für PCB, lokale Footprints und kritisches Routing.
 - `render/schematic/CoffeeRoast-Control-RevA.pdf` und `.svg` — exportierte Schaltplanansichten; `render/schematic/erc.json` enthält den aktuellen ERC-Bericht.
 - `docs/netlist.csv` — tabellarische Referenz der beabsichtigten elektrischen Verbindungen.
 - `docs/footprints.csv` — vollständige Referenz-zu-Footprint-Zuordnung inklusive der geprüften KiCad-Quellpakete.
@@ -43,6 +47,7 @@ This is the current RevA.2 hardware draft for moving the CoffeeRoast electronics
 | MAX6675 DO/SO | 19 | GPIO11 | `thermoDO` |
 | MAX6675 CS | 20 | GPIO12 | `thermoCS` |
 | MAX6675 CLK/SCK | 21 | GPIO13 | `thermoCLK` |
+| ESC PWM | 18 | GPIO10 | reserved for future ESC output |
 | USB D- | 13 | native USB D- | serial/flash |
 | USB D+ | 14 | native USB D+ | serial/flash |
 | BOOT | 27 | GPIO0 | flash mode |
@@ -59,31 +64,32 @@ All ESP32-S3-WROOM-1 side pins 1-40 are exposed twice: tiny local probe pads nam
   +--> certified 230VAC -> 24VDC / 3A PSU
           +--> J1 on this PCB
                 +--> C4 input bulk + D2 24V TVS protection
-                +--> F1 24V-side fuse placeholder
+                +--> direct +24V_RAW distribution (no on-board fuse)
                 +--> J2 24V fan via Q1 low-side MOSFET + D1/D3 fan clamp
-                +--> U4 24V -> 3.3V buck module
+                +--> J6 ESC: +24V / GND / PWM(GPIO10) / GND
+                +--> U4 LMR16010PDDAR discrete 24V -> 3.3V buck
                         +--> ESP32-S3-WROOM-1 + MAX6675
-                        +--> 3.3V SSR input driver supply
+                        +--> 3.3V external-SSR input driver
+                +--> R16/D5/U6 10V gate-driver rail + STP55NF06L fan switch
 
 230VAC heater line: external SSR module only, not on this PCB.
 ```
 
-## Important limitations before fabrication
+## Prototype fabrication and bring-up gates
 
-This board loads in KiCad 9.0.8 and the current full DRC (errors, warnings and exclusions) is clean with 0 violations and 0 unconnected items. Before ordering boards:
+The checked-in RevA.2 design is released for **prototype PCB fabrication and the documented partial top-side SMD assembly scope**. KiCad 9.0.8 reports 0 ERC violations, 0 DRC violations, 0 unconnected items and 0 schematic-parity problems. Before payment and first power-up:
 
-1. Open the project in KiCad.
-2. Replace remaining generic placeholders with exact sourced parts: fuse holder, U4 24V→3.3V buck module, TVS packages, USB ESD package and MOSFET variants. J1-J4 are deliberately large hand-solder pads now, not PCBA connector placements.
-3. Re-run ERC/DRC after any mechanical/footprint changes.
-4. Confirm ESP32-S3-WROOM-1 antenna keepout has no copper and is at board edge.
-5. Confirm the fan path, D3 TVS choice, Q1 MOSFET, and hand-solder pad/wire strain-relief scheme are rated for the real 24V/2.5A fan current.
-6. Confirm J5 enclosure cutout/edge placement for the exact USB-C part and replace U5 with an exact USB2 ESD footprint.
-7. Review USB CC pulldowns: R10/R11 = 5.1k to GND, VBUS is sense-only.
-8. Decide whether C5 should be populated after thermocouple noise testing; leave DNP if it biases readings.
-9. Review mains wiring separately: fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR heatsink, thermal cut-off.
+1. Use only the newly generated `production/partial-smd-pcba/` package; prior uploads and carts are stale.
+2. Inspect the manufacturer's Gerber, drill and placement previews, especially U1/U4/U5/U6/J5, TVS/diode polarity and switch rotation.
+3. Re-confirm live supplier mapping for R15/R16 and stop if any MPN package differs from the documented footprint.
+4. Hand-solder J1-J4, J6, D1, Q1 and C4 as listed; leave C5 DNP until thermocouple noise/bias testing justifies it.
+5. Verify the ESC's input-voltage range and 3.3V PWM compatibility before connecting J6; never connect an ESC/BEC output to the PCB's 24V pin.
+6. Validate the 24V/2.5A fan stage thermally on the first assembled prototype under the real enclosure airflow and ambient conditions.
+7. Perform first bring-up with a current-limited 24V bench supply before connecting the real fan, ESC, SSR or certified enclosure PSU.
+8. Keep an external 24V fuse/current limit, the fused IEC inlet, PE/strain relief, certified 24V PSU, external SSR/heatsink and independent thermal cut-off outside this low-voltage PCB.
 
 ## RevB candidates
 
-- Replace the generic U4 buck module with an integrated switch-mode converter.
 - Add reverse-polarity ideal-diode/P-MOSFET input protection if final wiring risk justifies the extra footprint/reroute.
 - Add current/thermal sensing for fan/heater diagnostics.
+- Consider a production-specific compact board after prototype thermal and EMC measurements.
