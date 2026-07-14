@@ -57,8 +57,8 @@ Full MPN, supplier mapping, footprint and assembly disposition are in `docs/bom.
 
 `production/partial-smd-pcba/CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip`
 
-- Size: **150832 bytes**.
-- SHA-256: `421e6a06eb4beb837bb9acde648b03bd48cdc2edbb88759419d202e8269952ed`.
+- Size: **150881 bytes**.
+- SHA-256: `68debc6edbfff353f872d5104943ac7d755ffb2721f405b2fcd5bb7511df3529`.
 - ZIP integrity: `unzip -t` passed with no compressed-data errors.
 - Top-side PCBA BOM: **42 designators**.
 - CPL: **42 matching designators**.

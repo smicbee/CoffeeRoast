@@ -8204,7 +8204,7 @@
 		(at 128 92)
 		(property "Reference" "J6"
 			(at 7.62 -3.8 0)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "a593abd8-70fd-4ecd-b832-612157bc99c5")
 			(effects
 				(font
@@ -15834,6 +15834,17 @@
 			(font
 				(size 1.2 1.2)
 				(thickness 0.144)
+			)
+		)
+	)
+	(gr_text "ESC"
+		(at 135.62 84.8 0)
+		(layer "F.SilkS")
+		(uuid "56dd37d4-09c3-44b6-a756-8b51abc033e5")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.15)
 			)
 		)
 	)

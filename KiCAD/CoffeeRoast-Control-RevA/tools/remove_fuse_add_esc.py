@@ -102,7 +102,7 @@ def make_j6(board, nets):
     add_line(fp, (17.24, -2.5), (17.24, 2.5))
     add_line(fp, (17.24, 2.5), (-2.0, 2.5))
     add_line(fp, (-2.0, 2.5), (-2.0, -2.5))
-    fp.Reference().SetLayer(pcbnew.F_SilkS)
+    fp.Reference().SetLayer(pcbnew.F_Fab)
     fp.Reference().SetPosition(pt(7.62, -3.8))
     fp.Value().SetLayer(pcbnew.F_Fab)
     fp.SetPosition(pt(128.0, 92.0))
@@ -127,14 +127,28 @@ if not board:
 f1 = board.FindFootprintByReference("F1")
 j6 = board.FindFootprintByReference("J6")
 if not f1 and j6:
-    removed = False
+    changed = False
     for drawing in list(board.GetDrawings()):
         if isinstance(drawing, pcbnew.PCB_TEXT) and drawing.GetText().strip().upper() == "F1 FUSE":
             board.Delete(drawing)
-            removed = True
-    if removed:
+            changed = True
+    if j6.Reference().GetLayer() != pcbnew.F_Fab:
+        j6.Reference().SetLayer(pcbnew.F_Fab)
+        changed = True
+    esc_present = any(
+        isinstance(drawing, pcbnew.PCB_TEXT)
+        and drawing.GetText().strip().upper() == "ESC"
+        and abs(pcbnew.ToMM(drawing.GetPosition().x) - 135.62) < 0.1
+        and abs(pcbnew.ToMM(drawing.GetPosition().y) - 84.8) < 0.1
+        for drawing in board.GetDrawings()
+    )
+    if not esc_present:
+        add_text(board, "ESC", 135.62, 84.8, 1.2)
+        changed = True
+    if changed:
         pcbnew.SaveBoard(str(BOARD), board)
-        print(f"Removed stale F1 silkscreen label from {BOARD}")
+        save_local_footprint(j6)
+        print(f"Updated J6 ESC silkscreen label on {BOARD}")
     else:
         print(f"Fuse removal / ESC connector pass already present on {BOARD}; no changes made")
     raise SystemExit(0)
@@ -182,6 +196,7 @@ j6 = make_j6(board, {"+24V_RAW": raw, "GPIO10": gpio10, "GND": gnd})
 # High-current feed stays on B.Cu near the lower edge; PWM stays on F.Cu.
 add_track(board, raw, [(25.0, 72.0), (25.0, 96.0), (124.0, 96.0), (128.0, 92.0)], 1.2, pcbnew.B_Cu)
 add_track(board, gpio10, [(111.62, 92.0), (111.62, 88.0), (138.16, 88.0), (138.16, 92.0)], 0.25, pcbnew.F_Cu)
+add_text(board, "ESC", 135.62, 84.8, 1.2)
 add_text(board, "+24   GND   PWM   GND", 135.62, 87.0, 0.9)
 
 for zone in board.Zones():
