@@ -54,7 +54,6 @@ PADESP37,TXD0,smd,Test/debug pad; no assembly part.
 PADESP38,IO2,smd,Test/debug pad; no assembly part.
 PADESP39,IO1,smd,Test/debug pad; no assembly part.
 PADESP40,GND,smd,Test/debug pad; no assembly part.
-Q1,STP55NF06L,tht,STP55NF06L TO-220 fan MOSFET; hand-solder and thermally validate at 2.5A fan current.
 TPBOOT1,BOOT_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
 TPESP1,GND,smd,Test/debug pad; no assembly part.
 TPESP2,3V3,smd,Test/debug pad; no assembly part.

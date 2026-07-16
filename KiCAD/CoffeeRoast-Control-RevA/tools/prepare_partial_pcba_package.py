@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Prepare the verified partial-SMD PCBA handoff for CoffeeRoast-Control RevA.2.
+"""Prepare the verified partial-PCBA handoff for CoffeeRoast-Control RevA.2.
 
 The package is intentionally conservative: it exports fabrication Gerbers/drills and
-JLCPCB-style BOM/CPL files for the parts we want assembled automatically, while
-separating power/THT/placeholder parts into a hand-solder/DNP list.
+JLCPCB-style BOM/CPL files for the parts we want assembled, while separating
+the remaining power/THT/placeholder parts into a hand-solder/DNP list.
 """
 from __future__ import annotations
 
@@ -34,6 +34,7 @@ ASSEMBLE = {
     "U4": {"mpn": "LMR16010PDDAR", "supplier": "C183084", "package": "HSOIC-8 PowerPAD", "notes": "60V/1A buck; verify Pin 1 and exposed-pad orientation."},
     "U5": {"mpn": "USBLC6-2SC6", "supplier": "C7519", "package": "SOT-23-6", "notes": "USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."},
     "U6": {"mpn": "UCC27511DBVR", "supplier": "C191027", "package": "SOT-23-6", "notes": "Split-output fan MOSFET gate driver."},
+    "Q1": {"mpn": "STP55NF06L", "supplier": "C77582", "package": "TO-220-3 Vertical", "notes": "THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current."},
     "Q2": {"mpn": "2N7002", "supplier": "C916396", "package": "SOT-23", "notes": "SSR low-side driver."},
     "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C XKB U262-16XN", "notes": "Verify shell and pin orientation in placement preview."},
     "L1": {"mpn": "FNR6045S220MT", "supplier": "C168080", "package": "FNR6045S", "notes": "22uH, >=2A saturation/current candidate."},
@@ -81,7 +82,7 @@ HAND_SOLDER = {
     "J4": "Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.",
     "J6": "Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief.",
     "D1": "Vishay SS56-E3/57T SMB flyback diode; exact pad/polarity validated, hand-solder because assembler mapping is not pre-filled.",
-    "Q1": "STP55NF06L TO-220 fan MOSFET; hand-solder and thermally validate at 2.5A fan current.",
+
     "C4": "Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.",
     "C5": "Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.",
 }
@@ -255,6 +256,21 @@ def write_assembly_files() -> None:
         w.writerow(["Designator", "Qty", "Comment", "Footprint", "Manufacturer Part / Spec", "Supplier Part Number", "Assemble", "Notes"])
         w.writerows(bom_rows)
 
+    # JLC's upload format permits all designators using the same exact MPN,
+    # supplier code and footprint to share one BOM row. Keep the verbose BOM
+    # above for review, but generate this grouped file for the actual upload.
+    grouped_bom: dict[tuple[str, str, str], list[str]] = {}
+    for row in bom_rows:
+        ref, _qty, _comment, package, mpn, supplier, _assemble, _notes = row
+        grouped_bom.setdefault((mpn, supplier, package), []).append(ref)
+    with (ASM_DIR / "bom_smd_partial_jlc.csv").open("w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
+        for (mpn, supplier, package), refs in sorted(
+            grouped_bom.items(), key=lambda item: min(item[1])
+        ):
+            w.writerow([mpn, ",".join(refs), package, supplier])
+
     with (ASM_DIR / "cpl_smd_partial.csv").open("w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["Designator", "Mid X", "Mid Y", "Layer", "Rotation"])
@@ -279,7 +295,7 @@ def write_assembly_files() -> None:
     manual_meta = {
         "J6": ("ESC_4PIN_HAND_WIRE", ""),
         "D1": ("SS56-E3/57T", ""),
-        "Q1": ("STP55NF06L", "C2663"),
+
         "C4": ("EEU-FR1V221B", "C3697"),
         "C5": ("CC0805JRNPO9BN102", "C139684"),
     }
@@ -330,13 +346,14 @@ def validate_qa() -> None:
 def write_readme() -> None:
     readme = f"""# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
-This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side SMD assembly**, with the listed THT/manual parts soldered afterward.
+This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side PCBA**, including the selected THT Q1; the remaining manual parts are soldered afterward.
 
 ## Upload set
 
 - `gerbers/` + `drill/` — PCB fabrication data.
-- `assembly/bom_smd_partial.csv` — exact SMD positions intended for assembly.
-- `assembly/cpl_smd_partial.csv` — centroid/place file for those SMD parts.
+- `assembly/bom_smd_partial.csv` — exact selected components intended for assembly.
+- `assembly/bom_smd_partial_jlc.csv` — grouped BOM for direct JLC upload.
+- `assembly/cpl_smd_partial.csv` — centroid/place file for those selected components.
 - `assembly/dnp_hand_solder.csv` — parts intentionally not assembled by the PCB house.
 - `assembly/part_mapping_review.csv` — MPN/package/orientation checklist.
 
@@ -345,11 +362,11 @@ This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side 
 - The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
 - Re-confirm live supplier stock before each order; the preferred supplier codes reflect the latest validated JLC mappings.
 - CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
-- D1, Q1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing.
+- D1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 is included for JLC THT hand-solder assembly.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding and thermal cut-off are enclosure-level work.
-- In the assembler preview, visually confirm Pin 1/polarity/rotation for U1, U2, U4, U5, U6, J5, Q2, D2-D5 and the two switches.
+- In the assembler preview, visually confirm Pin 1/polarity/rotation for U1, U2, U4, U5, U6, J5, Q1, Q2, D2-D5 and the two switches.
 - A previous JLC upload/cart is stale after this RevA.2 hardware migration; use a fresh upload.
 
 ## Verification run
