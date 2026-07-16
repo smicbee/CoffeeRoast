@@ -1,21 +1,31 @@
-# Current JLCPCB upload handoff
+# JLCPCB replacement handoff — CoffeeRoast-Control RevA2
 
-Fresh upload of the post-J6/ESC-silkscreen fabrication data.
+This package replaces the stopped order/project `SMT026071660949_Y11`.
+Do not reuse the previous Gerber, BOM or CPL files.
 
-- Upload file: `CoffeeRoast-Control-RevA2_JLC_Gerber_Drill.zip`
-- SHA-256: `3d4c328653b0baa74fffdb4b732688132d299c979262cfaa434a0ad8e20d066b`
-- JLC uploadNum: `dc22a832d95c42199ed2dc65c6623e68`
-- Resume URL: <https://cart.jlcpcb.com/quote?uploadNum=dc22a832d95c42199ed2dc65c6623e68>
-- Analysis: `head=ok`
-- DFM result: `RES_OK`
-- Gerber result: `0`
-- Detected board: 2 layers, 160 × 100 mm, KiCad
-- JLC render UUID: `039095b94b7442639eb56086e7eb8b3c`
+## Upload files
 
-Verified JLC renders:
+- PCB Gerber/Drill: `CoffeeRoast-Control-RevA2_JLC_Gerber_Drill.zip`
+- Assembly BOM: `assembly/bom_smd_partial_jlc.csv`
+- Placement CPL: `assembly/cpl_smd_partial.csv`
 
-- `render/jlc/latest/jlc_top_039095b94b7442639eb56086e7eb8b3c.png`
-- `render/jlc/latest/jlc_bottom_039095b94b7442639eb56086e7eb8b3c.png`
-- `render/jlc/latest/quote_after_upload.png`
+## Required verification gates
 
-The quote page visibly hydrated the dimensions and top/bottom previews. J6 appears as `ESC` with `+24 / GND / PWM / GND`. No cart save, PCBA BOM/CPL upload, checkout, payment, or order was performed. Opening the resume URL redirects to JLC sign-in; authenticated continuation is still required.
+- Quantity: 5 PCB / 5 PCBA, top-side standard PCBA.
+- U2: `MAX6675ISA+T / C16030`, SOIC-8, CPL `125.0000 / 40.0000 / Top / 180.00`.
+- U2 physical Pin 1 is the rectangular pad at board coordinate `127.475 / 61.905 mm`, net `GND`; the silkscreen dot is at the same package corner.
+- U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
+- J5: `C319148`, KiCad origin `156.325 / 31.000 mm`; JLC CPL `156.3250 / 69.0000 / Top / 90.00`; Product Edge remains at board edge X=160 mm.
+- Q1: `STP55NF06L / C77582`, TO-220 THT assembly.
+- C6 and C7: `90.00°`.
+- J1–J4 remain DNP/hand-solder and must not appear in JLC placement.
+
+## Local QA
+
+- KiCad DRC: 0 violations.
+- Unconnected items: 0.
+- Schematic parity: 0 findings.
+- KiCad ERC: 0 violations.
+- Grouped JLC BOM: 30 rows / 43 unique designators.
+
+Uploading or saving a replacement cart revision is not production approval. Verify JLC BOM selection and component placement first.

@@ -1,5 +1,5 @@
 Drill report for CoffeeRoast-Control-RevA.kicad_pcb
-Created on 2026-07-16T08:53:46+0200
+Created on 2026-07-16T18:32:07+0200
 
 Copper Layer Stackup:
     =============================================================
@@ -10,7 +10,7 @@ Copper Layer Stackup:
 Drill file 'CoffeeRoast-Control-RevA.drl' contains
     plated through holes:
     =============================================================
-    T1  0,300mm  0,0118"  (89 holes)
+    T1  0,300mm  0,0118"  (95 holes)
     T2  0,300mm  0,0118"  (12 holes)
     T3  0,600mm  0,0236"  (3 holes)
     T4  0,600mm  0,0236"  (4 holes)  (with 4 slots)
@@ -18,7 +18,7 @@ Drill file 'CoffeeRoast-Control-RevA.drl' contains
     T6  1,100mm  0,0433"  (3 holes)
     T7  1,300mm  0,0512"  (12 holes)
 
-    Total plated holes count 131
+    Total plated holes count 137
 
 
 Not plated through holes are merged with plated holes
