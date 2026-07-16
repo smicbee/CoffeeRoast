@@ -13,7 +13,8 @@ This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side 
 ## Important ordering notes
 
 - The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
-- Re-confirm live supplier stock and map blank supplier codes for R15/R16 in the assembler UI.
+- Re-confirm live supplier stock before each order; the preferred supplier codes reflect the latest validated JLC mappings.
+- CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
 - D1, Q1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.

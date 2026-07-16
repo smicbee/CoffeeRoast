@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import shutil
 import subprocess
 import zipfile
@@ -33,32 +34,32 @@ ASSEMBLE = {
     "U4": {"mpn": "LMR16010PDDAR", "supplier": "C183084", "package": "HSOIC-8 PowerPAD", "notes": "60V/1A buck; verify Pin 1 and exposed-pad orientation."},
     "U5": {"mpn": "USBLC6-2SC6", "supplier": "C7519", "package": "SOT-23-6", "notes": "USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."},
     "U6": {"mpn": "UCC27511DBVR", "supplier": "C191027", "package": "SOT-23-6", "notes": "Split-output fan MOSFET gate driver."},
-    "Q2": {"mpn": "2N7002", "supplier": "C8545", "package": "SOT-23", "notes": "SSR low-side driver."},
+    "Q2": {"mpn": "2N7002", "supplier": "C916396", "package": "SOT-23", "notes": "SSR low-side driver."},
     "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C XKB U262-16XN", "notes": "Verify shell and pin orientation in placement preview."},
     "L1": {"mpn": "FNR6045S220MT", "supplier": "C168080", "package": "FNR6045S", "notes": "22uH, >=2A saturation/current candidate."},
-    "D2": {"mpn": "SMBJ33A-13-F", "supplier": "C1583130", "package": "SMB", "notes": "24V input TVS; cathode/pad 1 to +24V_RAW."},
-    "D3": {"mpn": "SMBJ33A-13-F", "supplier": "C1583130", "package": "SMB", "notes": "Fan TVS; cathode/pad 1 to +24V_RAW."},
+    "D2": {"mpn": "SMBJ33A-13-F", "supplier": "C135067", "package": "SMB", "notes": "24V input TVS; cathode/pad 1 to +24V_RAW."},
+    "D3": {"mpn": "SMBJ33A-13-F", "supplier": "C135067", "package": "SMB", "notes": "Fan TVS; cathode/pad 1 to +24V_RAW."},
     "D4": {"mpn": "SS110", "supplier": "C2766060", "package": "SMA", "notes": "100V buck catch diode."},
     "D5": {"mpn": "BZT52C10", "supplier": "C49023497", "package": "SOD-123", "notes": "10V VDRV clamp."},
     "SW1": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "RESET switch."},
     "SW2": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "BOOT switch."},
-    "R1": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "100R fan gate turn-on."},
-    "R2": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "100k fan gate pulldown."},
-    "R3": {"mpn": "0805W8F1000T5E", "supplier": "C17408", "package": "0805", "notes": "100R SSR gate resistor."},
-    "R4": {"mpn": "0805W8F1003T5E", "supplier": "C149504", "package": "0805", "notes": "100k SSR gate pulldown."},
-    "R5": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "10k EN pullup."},
-    "R6": {"mpn": "0805W8F1002T5E", "supplier": "C17414", "package": "0805", "notes": "10k BOOT pullup."},
+    "R1": {"mpn": "FRC0805F1000TS", "supplier": "C2907218", "package": "0805", "notes": "100R fan gate turn-on."},
+    "R2": {"mpn": "FRC0805F1003TS", "supplier": "C2907217", "package": "0805", "notes": "100k fan gate pulldown."},
+    "R3": {"mpn": "FRC0805F1000TS", "supplier": "C2907218", "package": "0805", "notes": "100R SSR gate resistor."},
+    "R4": {"mpn": "FRC0805F1003TS", "supplier": "C2907217", "package": "0805", "notes": "100k SSR gate pulldown."},
+    "R5": {"mpn": "FRC0805F1002TS", "supplier": "C2907219", "package": "0805", "notes": "10k EN pullup."},
+    "R6": {"mpn": "FRC0805F1002TS", "supplier": "C2907219", "package": "0805", "notes": "10k BOOT pullup."},
     "R7": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "27R USB D- series."},
     "R8": {"mpn": "0805W8F270JT5E", "supplier": "C17594", "package": "0805", "notes": "27R USB D+ series."},
     "R10": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "5.1k USB CC1 Rd."},
     "R11": {"mpn": "0805W8F5101T5E", "supplier": "C27834", "package": "0805", "notes": "5.1k USB CC2 Rd."},
-    "R12": {"mpn": "RC0603FR-07100KL", "supplier": "C14675", "package": "0603", "notes": "100k FB top; re-confirm stock or exact equivalent."},
+    "R12": {"mpn": "FRC0603F1003TS", "supplier": "C2906980", "package": "0603", "notes": "100k FB top."},
     "R13": {"mpn": "RC0603FR-0729K4L", "supplier": "C137752", "package": "0603", "notes": "29.4k FB bottom."},
     "R14": {"mpn": "RC0603FR-0749K9L", "supplier": "C114624", "package": "0603", "notes": "49.9k RT, about 500kHz."},
-    "R15": {"mpn": "RC0805FR-0710RL", "supplier": "", "package": "0805", "notes": "10R fan gate turn-off; map exact 1% equivalent."},
-    "R16": {"mpn": "RC1206FR-072K7L", "supplier": "", "package": "1206", "notes": "2.7k VDRV feed, >=0.25W; map exact equivalent."},
-    "C1": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "10uF 3V3 bulk A."},
-    "C2": {"mpn": "CL21A106KAYNNNE", "supplier": "C15850", "package": "0805", "notes": "10uF 3V3 bulk B."},
+    "R15": {"mpn": "RC0805FR-0710RL", "supplier": "C96347", "package": "0805", "notes": "10R fan gate turn-off."},
+    "R16": {"mpn": "1206W4F2701T5E", "supplier": "C17950", "package": "1206", "notes": "2.7k VDRV feed, 1%, 0.25W."},
+    "C1": {"mpn": "GRM21BR61E106KA73L", "supplier": "C84416", "package": "0805", "notes": "10uF 25V X5R 3V3 bulk A."},
+    "C2": {"mpn": "GRM21BR61E106KA73L", "supplier": "C84416", "package": "0805", "notes": "10uF 25V X5R 3V3 bulk B."},
     "C3": {"mpn": "CC0805KRX7R9BB104", "supplier": "C49678", "package": "0805", "notes": "100nF MAX6675 decoupling."},
     "C6": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF ESP32 decoupling."},
     "C7": {"mpn": "CC0603KRX7R9BB104", "supplier": "C14663", "package": "0603", "notes": "100nF 3V3 output decoupling."},
@@ -134,6 +135,43 @@ def center_mm(fp: pcbnew.FOOTPRINT) -> tuple[float, float]:
     return sum(xs) / len(xs), sum(ys) / len(ys)
 
 
+def placement_rotation_degrees(fp: pcbnew.FOOTPRINT) -> float:
+    """Return JLC rotation, correcting custom two-pad passive geometry.
+
+    KiCad reports the rotation of the footprint instance. A custom footprint can
+    still be drawn with its pads on the Y axis at instance rotation 0°. JLC's
+    standard R/C/L models are aligned to the X axis at 0°, so exporting only
+    GetOrientationDegrees() can introduce a 90° placement error.
+
+    For non-polar two-pad chip passives, derive the actual board-space pad axis
+    and select the equivalent angle nearest KiCad's reported orientation. Other
+    packages retain KiCad's angle because pin order or polarity can make 180°
+    significant.
+    """
+    orientation = fp.GetOrientationDegrees()
+    if not fp.GetReference().startswith(("R", "C", "L")):
+        return orientation
+    pads = [pad for pad in fp.Pads() if pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD]
+    if len(pads) != 2:
+        return orientation
+    p1, p2 = (pad.GetPosition() for pad in pads)
+    dx, dy = p2.x - p1.x, p2.y - p1.y
+    if dx == 0 and dy == 0:
+        return orientation
+    pad_axis = math.degrees(math.atan2(dy, dx)) % 180.0
+    candidates = [pad_axis + 180.0 * k for k in range(-2, 3)]
+    corrected = min(
+        candidates,
+        key=lambda angle: (abs(angle - orientation), angle < 0),
+    )
+    if abs(corrected - orientation) > 0.01:
+        print(
+            f"CPL rotation correction {fp.GetReference()}: "
+            f"KiCad {orientation:.2f}° -> pad axis {corrected:.2f}°"
+        )
+    return corrected
+
+
 def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
     """Return exact Edge.Cuts extents as left, top, right, bottom in KiCad mm.
 
@@ -207,7 +245,8 @@ def write_assembly_files() -> None:
                 f"Use supplier part {ASSEMBLE[ref]['supplier']} in JLCPCB if still available; otherwise same value/package/rating.",
                 ASSEMBLE[ref]["notes"],
             ])
-            cpl_rows.append([ref, f"{x:.4f}", f"{y:.4f}", layer, f"{fp.GetOrientationDegrees():.2f}"])
+            rotation = placement_rotation_degrees(fp)
+            cpl_rows.append([ref, f"{x:.4f}", f"{y:.4f}", layer, f"{rotation:.2f}"])
         else:
             dnp_rows.append([ref, fp.GetValue(), footprint_kind(fp), HAND_SOLDER.get(ref, "Not in first partial-SMD assembly set; review manually.")])
 
@@ -304,7 +343,8 @@ This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side 
 ## Important ordering notes
 
 - The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
-- Re-confirm live supplier stock and map blank supplier codes for R15/R16 in the assembler UI.
+- Re-confirm live supplier stock before each order; the preferred supplier codes reflect the latest validated JLC mappings.
+- CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
 - D1, Q1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
