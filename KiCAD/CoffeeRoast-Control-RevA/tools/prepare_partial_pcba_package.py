@@ -25,6 +25,8 @@ DRILL_DIR = OUT / "drill"
 ASM_DIR = OUT / "assembly"
 QA_DIR = OUT / "qa"
 ZIP_PATH = OUT / "CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip"
+JLC_ZIP_PATH = OUT / "CoffeeRoast-Control-RevA2_JLC_Gerber_Drill.zip"
+JLC_HANDOFF_PATH = OUT / "JLC_UPLOAD_HANDOFF.md"
 
 # Assemble by PCBA house in the RevA.2 top-side SMD prototype run.
 # Empty supplier fields require mapping to the exact MPN/equivalent in the UI.
@@ -343,6 +345,43 @@ def validate_qa() -> None:
         raise RuntimeError(f"QA gate failed: {dirty}")
 
 
+def validate_manufacturing_geometry() -> None:
+    """Guard supplier-critical land pattern and shared fabrication origin."""
+    board = pcbnew.LoadBoard(str(BOARD))
+    aux = board.GetDesignSettings().GetAuxOrigin()
+    aux_mm = (pcbnew.ToMM(aux.x), pcbnew.ToMM(aux.y))
+    if any(abs(actual - expected) > 0.001 for actual, expected in zip(aux_mm, (0.0, 100.0))):
+        raise RuntimeError(f"Unexpected drill/place auxiliary origin: {aux_mm}")
+
+    l1 = board.FindFootprintByReference("L1")
+    if not l1:
+        raise RuntimeError("L1 missing while validating C168080 land pattern")
+    pads = {pad.GetNumber(): pad for pad in l1.Pads()}
+    expected = {
+        "1": (-2.5, 0.0, 2.2, 5.72, "BUCK_SW"),
+        "2": (2.5, 0.0, 2.2, 5.72, "+3V3"),
+    }
+    origin = l1.GetPosition()
+    for number, (local_x, local_y, width, height, net) in expected.items():
+        pad = pads.get(number)
+        if not pad:
+            raise RuntimeError(f"L1 pad {number} missing")
+        pos = pad.GetPosition()
+        size = pad.GetSize()
+        actual = (
+            pcbnew.ToMM(pos.x - origin.x),
+            pcbnew.ToMM(pos.y - origin.y),
+            pcbnew.ToMM(size.x),
+            pcbnew.ToMM(size.y),
+        )
+        wanted = (local_x, local_y, width, height)
+        if any(abs(a - b) > 0.001 for a, b in zip(actual, wanted)) or pad.GetNetname() != net:
+            raise RuntimeError(
+                f"L1/C168080 pad {number} mismatch: geometry={actual}, "
+                f"net={pad.GetNetname()}, expected={wanted}/{net}"
+            )
+
+
 def write_readme() -> None:
     readme = f"""# CoffeeRoast-Control RevA.2 partial-SMD PCBA package
 
@@ -362,6 +401,8 @@ This package is the order-ready RevA.2 handoff for **PCB fabrication + top-side 
 - The PCB, schematic and named nets passed full DRC, ERC and schematic-parity checks before this package was generated.
 - Re-confirm live supplier stock before each order; the preferred supplier codes reflect the latest validated JLC mappings.
 - CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
+- L1 uses the supplier-matched FNR6045S220MT / C168080 land pattern: 2.20 × 5.72 mm pads on 5.00 mm centers.
+- Gerber, drill and CPL data share the bottom-left drill/place origin; do not accept a JLC Auto-Align prompt as a substitute for this source-file alignment.
 - D1, C4, J1-J4 and J6 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 is included for JLC THT hand-solder assembly.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
@@ -400,6 +441,67 @@ def make_zip() -> None:
             z.write(p, p.relative_to(OUT))
 
 
+def make_jlc_gerber_drill_zip() -> None:
+    """Create the fabrication-only flat ZIP consumed by JLC's PCB upload field."""
+    if JLC_ZIP_PATH.exists():
+        JLC_ZIP_PATH.unlink()
+    files = sorted(p for p in GERBER_DIR.iterdir() if p.is_file())
+    files += sorted(DRILL_DIR.glob("*.drl"))
+    with zipfile.ZipFile(JLC_ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as z:
+        for p in files:
+            z.write(p, p.name)
+
+
+def write_jlc_handoff() -> None:
+    board = pcbnew.LoadBoard(str(BOARD))
+    u2 = board.FindFootprintByReference("U2")
+    if not u2:
+        raise RuntimeError("U2 missing while writing JLC handoff")
+    pad1 = next(p for p in u2.Pads() if p.GetNumber() == "1")
+    p1 = pad1.GetPosition()
+    with (ASM_DIR / "cpl_smd_partial.csv").open(newline="") as f:
+        u2_cpl = next(row for row in csv.DictReader(f) if row["Designator"] == "U2")
+    handoff = f"""# JLCPCB replacement handoff — CoffeeRoast-Control RevA2
+
+This package is the corrected replacement for current order `SMT026071960340_Y12`
+(PCB `13013207A`) after JLC identified insufficient L1 solder overlap. It also supersedes
+the stopped order/project `SMT026071660949_Y11` and replacement workspace
+`relevanceFileAccessId=752fd014ee974e0cb8aea562422c8f6a`.
+Do **not** resume Quote & Order from any previous Gerber or placement state.
+
+## Upload files
+
+- PCB Gerber/Drill: `{JLC_ZIP_PATH.name}`
+- Assembly BOM: `assembly/bom_smd_partial_jlc.csv`
+- Placement CPL: `assembly/cpl_smd_partial.csv`
+
+## Required verification gates
+
+- Quantity: 10 PCB / 10 PCBA, top-side standard PCBA.
+- U2: `MAX6675ISA+T / C16030`, SOIC-8, CPL `{u2_cpl['Mid X']} / {u2_cpl['Mid Y']} / {u2_cpl['Layer']} / {u2_cpl['Rotation']}`.
+- U2 physical Pin 1 is the rectangular pad at board coordinate `{pcbnew.ToMM(p1.x):.3f} / {pcbnew.ToMM(p1.y):.3f} mm`, net `GND`; confirm the assembler marker on this pad.
+- U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
+- J5: `C319148`, Product Edge remains at board edge X=160 mm.
+- Q1: `STP55NF06L / C77582`, TO-220 THT assembly.
+- L1: `FNR6045S220MT / C168080`; exact land pattern is 2.20 × 5.72 mm pads on 5.00 mm centers. Confirm full terminal/pad overlap in JLC's review image.
+- Gerber, drill and CPL use the same bottom-left origin; a fresh placement import must not require JLC Auto-Align.
+- C6 and C7: `90.00°`.
+- J1-J4 remain DNP/hand-solder and must not appear in JLC placement.
+
+## Local QA
+
+- KiCad DRC: 0 violations.
+- Unconnected items: 0.
+- Schematic parity: 0 findings.
+- KiCad ERC: 0 violations.
+- Dedicated U2 topology/numeric sanity: PASS (`sim/results/u2_max6675_verification.json`).
+
+Uploading or saving a replacement cart revision is not production approval. Verify JLC BOM
+selection, the fresh Gerber identity, and component placement before payment.
+"""
+    JLC_HANDOFF_PATH.write_text(handoff)
+
+
 def main() -> None:
     clean()
     run([
@@ -414,11 +516,13 @@ def main() -> None:
         str(BOARD),
     ])
     validate_qa()
+    validate_manufacturing_geometry()
     run([
         "kicad-cli", "pcb", "export", "gerbers",
         "--output", str(GERBER_DIR),
         "--layers", "F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts",
         "--subtract-soldermask",
+        "--use-drill-file-origin",
         str(BOARD),
     ])
     run([
@@ -426,6 +530,7 @@ def main() -> None:
         "--output", str(DRILL_DIR),
         "--format", "excellon",
         "--excellon-units", "mm",
+        "--drill-origin", "plot",
         "--generate-map",
         "--generate-report",
         "--report-path", str(DRILL_DIR / "drill_report.txt"),
@@ -433,6 +538,8 @@ def main() -> None:
     ])
     write_assembly_files()
     write_readme()
+    make_jlc_gerber_drill_zip()
+    write_jlc_handoff()
     make_zip()
     print(f"Wrote {ZIP_PATH}")
 
