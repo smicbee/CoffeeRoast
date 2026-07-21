@@ -44,8 +44,8 @@ ASSEMBLE = {
     "D3": {"mpn": "SMBJ33A-13-F", "supplier": "C135067", "package": "SMB", "notes": "Fan TVS; cathode/pad 1 to +24V_RAW."},
     "D4": {"mpn": "SS110", "supplier": "C2766060", "package": "SMA", "notes": "100V buck catch diode."},
     "D5": {"mpn": "BZT52C10", "supplier": "C49023497", "package": "SOD-123", "notes": "10V VDRV clamp."},
-    "SW1": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "RESET switch."},
-    "SW2": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "TL3301 6x6mm SMD", "notes": "BOOT switch."},
+    "SW1": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "SMD-4P 6x6mm Tactile Switch", "notes": "RESET switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows."},
+    "SW2": {"mpn": "TL3301AF160QG", "supplier": "C273519", "package": "SMD-4P 6x6mm Tactile Switch", "notes": "BOOT switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows."},
     "R1": {"mpn": "FRC0805F1000TS", "supplier": "C2907218", "package": "0805", "notes": "100R fan gate turn-on."},
     "R2": {"mpn": "FRC0805F1003TS", "supplier": "C2907217", "package": "0805", "notes": "100k fan gate pulldown."},
     "R3": {"mpn": "FRC0805F1000TS", "supplier": "C2907218", "package": "0805", "notes": "100R SSR gate resistor."},
@@ -123,6 +123,21 @@ def footprint_kind(fp: pcbnew.FOOTPRINT) -> str:
 
 
 def center_mm(fp: pcbnew.FOOTPRINT) -> tuple[float, float]:
+    # The local TO-220 footprint anchor is on pin 1, while JLC's STP55NF06L
+    # model/footprint origin is on the middle pin. Export the centre of the
+    # three unique lead positions so the model legs land in all three holes.
+    if fp.GetReference() == "Q1":
+        lead_positions = {
+            pad.GetNumber(): pad.GetPosition()
+            for pad in fp.Pads()
+            if pad.GetNumber() in {"1", "2", "3"}
+        }
+        if set(lead_positions) != {"1", "2", "3"}:
+            raise RuntimeError("Q1 TO-220 lead set changed; revalidate JLC placement centre")
+        return (
+            sum(pos.x for pos in lead_positions.values()) / 3e6,
+            sum(pos.y for pos in lead_positions.values()) / 3e6,
+        )
     # Normal footprints have a meaningful anchor position. Some generated custom
     # ECO footprints were built with absolute pad positions and an anchor at 0,0;
     # for those, use the average pad center so CPL placement is not 0,0.
@@ -152,6 +167,11 @@ def placement_rotation_degrees(fp: pcbnew.FOOTPRINT) -> float:
     significant.
     """
     orientation = fp.GetOrientationDegrees()
+    # The board's TL3301-style switch pads run left/right, but the selected
+    # JLC C273519 model defines its four contacts top/bottom at 0°. Rotate the
+    # supplier model by 90°; the square switch is 180° symmetric.
+    if fp.GetReference() in {"SW1", "SW2"}:
+        return orientation + 90.0
     if not fp.GetReference().startswith(("R", "C", "L")):
         return orientation
     pads = [pad for pad in fp.Pads() if pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD]
@@ -178,9 +198,8 @@ def placement_rotation_degrees(fp: pcbnew.FOOTPRINT) -> float:
 def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
     """Return exact Edge.Cuts extents as left, top, right, bottom in KiCad mm.
 
-    KiCad's board coordinates increase Y downward. Gerbers in this package use
-    the drill/place origin at the bottom-left corner, so JLC's top-side CPL must
-    retain KiCad's signed offset from that origin: y - bottom (negative Y).
+    KiCad's board coordinates increase Y downward. JLC normalizes the uploaded
+    Gerber to a bottom-left board frame, so top-side CPL Y is bottom - y.
     """
     xs: list[float] = []
     ys: list[float] = []
@@ -199,7 +218,7 @@ def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
 
 def to_jlc_top_xy(x: float, y: float, extents: tuple[float, float, float, float]) -> tuple[float, float]:
     left, _top, _right, bottom = extents
-    return x - left, y - bottom
+    return x - left, bottom - y
 
 
 def write_assembly_files() -> None:
@@ -331,19 +350,20 @@ def write_assembly_files() -> None:
 
 
 def validate_cpl_frame() -> None:
-    """Reject the positive-Y frame that JLC renders one board-height off-board."""
+    """Reject signed negative Y, which JLC renders below the normalized board."""
     with (ASM_DIR / "cpl_smd_partial.csv").open(newline="") as f:
         rows = {row["Designator"]: row for row in csv.DictReader(f)}
     for ref, row in rows.items():
         x = float(row["Mid X"])
         y = float(row["Mid Y"])
-        if not (-0.001 <= x <= 160.001 and -100.001 <= y <= 0.001):
+        if not (-0.001 <= x <= 160.001 and -0.001 <= y <= 100.001):
             raise RuntimeError(f"CPL drill-origin frame mismatch at {ref}: x={x}, y={y}")
     anchors = {
-        "U1": (85.0, -72.0),
-        "U2": (128.0, -40.0),
-        "J5": (156.325, -69.0),
-        "L1": (45.5, -23.9),
+        "U1": (85.0, 72.0),
+        "U2": (128.0, 40.0),
+        "J5": (156.325, 69.0),
+        "L1": (45.5, 23.9),
+        "Q1": (45.0, 42.0),
     }
     for ref, (expected_x, expected_y) in anchors.items():
         actual_x = float(rows[ref]["Mid X"])
@@ -352,6 +372,10 @@ def validate_cpl_frame() -> None:
             raise RuntimeError(
                 f"CPL anchor mismatch at {ref}: {(actual_x, actual_y)} != {(expected_x, expected_y)}"
             )
+    for ref in ("SW1", "SW2"):
+        actual_rotation = float(rows[ref]["Rotation"])
+        if abs(actual_rotation - 90.0) > 0.001:
+            raise RuntimeError(f"CPL switch rotation mismatch at {ref}: {actual_rotation} != 90.0")
 
 
 def validate_qa() -> None:
@@ -506,7 +530,8 @@ Do **not** resume Quote & Order from any previous Gerber or placement state.
 - U2 physical Pin 1 is the rectangular pad at board coordinate `{pcbnew.ToMM(p1.x):.3f} / {pcbnew.ToMM(p1.y):.3f} mm`, net `GND`; confirm the assembler marker on this pad.
 - U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
 - J5: `C319148`, Product Edge remains at board edge X=160 mm.
-- Q1: `STP55NF06L / C77582`, TO-220 THT assembly.
+- Q1: `STP55NF06L / C77582`, TO-220 THT assembly; CPL centre is the middle lead at `45.000 / 42.000 mm`, so all three legs align with the holes.
+- SW1/SW2: `TL3301AF160QG / C273519`, each at `90.00°` so the four contacts align with the two board pad rows.
 - L1: `FNR6045S220MT / C168080`; exact land pattern is 2.20 × 5.72 mm pads on 5.00 mm centers. Confirm full terminal/pad overlap in JLC's review image.
 - Gerber, drill and CPL use the same bottom-left origin; a fresh placement import must not require JLC Auto-Align.
 - C6 and C7: `90.00°`.

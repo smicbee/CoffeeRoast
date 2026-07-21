@@ -44,8 +44,8 @@ R13,1,29.4k_1%_FB_BOTTOM,CoffeeRoast:R13_R_0603_1608Metric,RC0603FR-0729K4L,C137
 R14,1,49.9k_1%_RT_500kHz,CoffeeRoast:R14_R_0603_1608Metric,RC0603FR-0749K9L,C114624,PCBA,"49.9k RT, about 500kHz."
 R15,1,10R_GATE_TURN_OFF,CoffeeRoast:R15_R_0805_2012Metric,RC0805FR-0710RL,C96347,PCBA,10R fan gate turn-off.
 R16,1,2.7k_1%_250mW,CoffeeRoast:R16_R_1206_3216Metric,1206W4F2701T5E,C17950,PCBA,"2.7k VDRV feed, 1%, 0.25W."
-SW1,1,TL3301AF160QG_RESET,CoffeeRoast:SW1_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,RESET switch.
-SW2,1,TL3301AF160QG_BOOT,CoffeeRoast:SW2_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,BOOT switch.
+SW1,1,TL3301AF160QG_RESET,CoffeeRoast:SW1_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,RESET switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
+SW2,1,TL3301AF160QG_BOOT,CoffeeRoast:SW2_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,BOOT switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
 TPBOOT1,1,BOOT_TWEEZER_PADS,CoffeeRoast:TPBOOT1_Boot_Tweezer_Pads,BOOT_TWEEZER_PADS,,DNP,PCB test/debug/mechanical position; no automated placement.
 TPGND,1,GND_TEST,CoffeeRoast:TPGND_TestPoint_Pad_D1.5mm,GND_TEST,,DNP,PCB test/debug/mechanical position; no automated placement.
 TPRESET1,1,RESET_TWEEZER_PADS,CoffeeRoast:TPRESET1_Reset_Tweezer_Pads,RESET_TWEEZER_PADS,,DNP,PCB test/debug/mechanical position; no automated placement.
