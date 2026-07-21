@@ -178,9 +178,9 @@ def placement_rotation_degrees(fp: pcbnew.FOOTPRINT) -> float:
 def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
     """Return exact Edge.Cuts extents as left, top, right, bottom in KiCad mm.
 
-    KiCad's board file coordinates increase Y downward. JLC's placement preview
-    for this Gerber upload interprets CPL coordinates from the bottom-left board
-    edge, so top-side CPL export must mirror Y using bottom - y.
+    KiCad's board coordinates increase Y downward. Gerbers in this package use
+    the drill/place origin at the bottom-left corner, so JLC's top-side CPL must
+    retain KiCad's signed offset from that origin: y - bottom (negative Y).
     """
     xs: list[float] = []
     ys: list[float] = []
@@ -199,7 +199,7 @@ def edge_extents_mm(board: pcbnew.BOARD) -> tuple[float, float, float, float]:
 
 def to_jlc_top_xy(x: float, y: float, extents: tuple[float, float, float, float]) -> tuple[float, float]:
     left, _top, _right, bottom = extents
-    return x - left, bottom - y
+    return x - left, y - bottom
 
 
 def write_assembly_files() -> None:
@@ -328,6 +328,30 @@ def write_assembly_files() -> None:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["Ref", "Qty", "Value/Part", "Footprint", "Manufacturer Part", "Supplier Part", "Assembly", "Notes"])
         w.writerows(full_rows)
+
+
+def validate_cpl_frame() -> None:
+    """Reject the positive-Y frame that JLC renders one board-height off-board."""
+    with (ASM_DIR / "cpl_smd_partial.csv").open(newline="") as f:
+        rows = {row["Designator"]: row for row in csv.DictReader(f)}
+    for ref, row in rows.items():
+        x = float(row["Mid X"])
+        y = float(row["Mid Y"])
+        if not (-0.001 <= x <= 160.001 and -100.001 <= y <= 0.001):
+            raise RuntimeError(f"CPL drill-origin frame mismatch at {ref}: x={x}, y={y}")
+    anchors = {
+        "U1": (85.0, -72.0),
+        "U2": (128.0, -40.0),
+        "J5": (156.325, -69.0),
+        "L1": (45.5, -23.9),
+    }
+    for ref, (expected_x, expected_y) in anchors.items():
+        actual_x = float(rows[ref]["Mid X"])
+        actual_y = float(rows[ref]["Mid Y"])
+        if abs(actual_x - expected_x) > 0.001 or abs(actual_y - expected_y) > 0.001:
+            raise RuntimeError(
+                f"CPL anchor mismatch at {ref}: {(actual_x, actual_y)} != {(expected_x, expected_y)}"
+            )
 
 
 def validate_qa() -> None:
@@ -537,6 +561,7 @@ def main() -> None:
         str(BOARD),
     ])
     write_assembly_files()
+    validate_cpl_frame()
     write_readme()
     make_jlc_gerber_drill_zip()
     write_jlc_handoff()
