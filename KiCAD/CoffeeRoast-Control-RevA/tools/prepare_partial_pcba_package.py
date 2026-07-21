@@ -477,7 +477,7 @@ Do **not** resume Quote & Order from any previous Gerber or placement state.
 
 ## Required verification gates
 
-- Quantity: 10 PCB / 10 PCBA, top-side standard PCBA.
+- Quantity: 5 PCB / 5 PCBA, top-side standard PCBA.
 - U2: `MAX6675ISA+T / C16030`, SOIC-8, CPL `{u2_cpl['Mid X']} / {u2_cpl['Mid Y']} / {u2_cpl['Layer']} / {u2_cpl['Rotation']}`.
 - U2 physical Pin 1 is the rectangular pad at board coordinate `{pcbnew.ToMM(p1.x):.3f} / {pcbnew.ToMM(p1.y):.3f} mm`, net `GND`; confirm the assembler marker on this pad.
 - U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
