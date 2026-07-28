@@ -2,7 +2,7 @@ const encoder = new TextEncoder();
 export const EXPECTED_FIRMWARE = Object.freeze({
   product: 'CoffeeRoast',
   protocol: 3,
-  hardware: 'CoffeeRoast-Waveshare-ESP32-S3-Zero',
+  hardware: 'CoffeeRoast-RevA2-ESP32-S3-WROOM-1-N8R8',
   minimumVersion: '1.3.2'
 });
 
@@ -259,7 +259,7 @@ export class SimulationTransport {
   async getStatus() {
     this.update();
     const state = this.abortSignal ? 'failsafe' : 'ok';
-    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.2,protocol=3,hardware=CoffeeRoast-Waveshare-ESP32-S3-Zero`;
+    return `state=${state},temp=${this.temp.toFixed(2)},heater=${this.appliedHeater.toFixed(2)},fan=${this.fan.toFixed(2)},fanTarget=${this.fanTarget.toFixed(2)},errors=${this.errors},healthyReadings=${this.healthyReadings},failsafeLatched=${this.abortSignal?1:0},version=1.3.2,protocol=3,hardware=CoffeeRoast-RevA2-ESP32-S3-WROOM-1-N8R8`;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() { this.update(); return this.temp * 1.1; }
