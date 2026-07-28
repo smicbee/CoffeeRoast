@@ -1,6 +1,6 @@
-import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260728-reva2';
+import{WebSerialTransport,SimulationTransport,EXPECTED_FIRMWARE}from'./serial.js?v=20260728-cooling1';
 import{loadBuiltInRecipes,parseRecipe}from'./recipes.js?v=20260728-pid1';
-import{RoastEngine,RoastState,calibratePidFromSamples}from'./engine.js?v=20260728-pid1';
+import{RoastEngine,RoastState,calibratePidFromSamples}from'./engine.js?v=20260728-cooling1';
 import{RoastChart,formatTime}from'./chart.js?v=20260711-light1';
 const $=id=>document.getElementById(id),engine=new RoastEngine(),chart=new RoastChart($('roastChart'),$('chartTooltip'));
 let recipes=[],simulation=false,toastTimer,connecting=false,pendingFirmwareVerification=false;const logLines=[],REMEMBERED_CONTROLLER_KEY='coffeeRoast.rememberedController',PID_STORAGE_KEY='coffeeRoast.pidSettings.v1',LEGACY_PID_STORAGE_KEY='coffeeRoast.pidCalibration',DEFAULT_PID=Object.freeze({kp:1.5,ki:.7,kd:3.55});

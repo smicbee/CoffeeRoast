@@ -5,7 +5,7 @@ export class RoastEngine extends EventTarget{
     super();this.transport=null;this.recipe=null;this.state=RoastState.IDLE;this.connected=false;this.preheatTarget=180;this.initialFanPercent=100;
     this.autoDropEnabled=false;this.autoDropMode='time';this.autoDropTarget=600;this.expectedFirstCrack=208;this.firstCrackSecond=-1;this.phase='idle';this.preparationStartedAt=0;
     this.elapsed=0;this.temperature=NaN;this.target=0;this.heater=0;this.fan=0;this.actualHeater=NaN;this.actualFan=NaN;this.status='';this.sensorErrors=0;this.samples=[];this.firmwareCompatibility={level:'unknown',label:'Unbekannt',compatible:false,reason:'Noch kein Firmwarestatus gelesen.'};this.firmwareVersion='';this.protocolVersion=0;this.hardwareId='';this.manualTarget=0;this.manualFanPercent=50;
-    this.pid=new PidController();this.startedAt=0;this.timer=0;this.busy=false;
+    this.pid=new PidController();this.startedAt=0;this.timer=0;this.busy=false;this.controlEpoch=0;
   }
   setTransport(transport){this.transport=transport}
   setRecipe(recipe){this.recipe=recipe;this.pid.configure(recipe?.pid||{});this.expectedFirstCrack=Number.isFinite(recipe?.expectedFirstCrack)?recipe.expectedFirstCrack:208;this.emit()}
@@ -32,13 +32,14 @@ export class RoastEngine extends EventTarget{
   }
   beginRoast(){if(this.state!==RoastState.READY)return false;this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.firstCrackSecond=-1;this.phase='charging';this.state=RoastState.RUNNING;this.emit();return true}
   async setManualControl(targetTemperature,fanPercent){if(!this.connected)throw new Error('Controller nicht verbunden.');if(![RoastState.IDLE,RoastState.READY,RoastState.MANUAL].includes(this.state))throw new Error('Manueller Modus ist nur aus Leerlauf oder Bereit möglich.');this.manualTarget=clamp(targetTemperature,0,250);this.manualFanPercent=clamp(fanPercent,0,100);if(this.manualTarget>0)this.manualFanPercent=Math.max(50,this.manualFanPercent);if(this.state!==RoastState.MANUAL){this.samples=[];this.elapsed=0;this.startedAt=performance.now();this.pid.reset();this.state=RoastState.MANUAL;this.phase='manual'}this.target=this.manualTarget;this.fan=Math.max(this.manualTarget>0?128:0,this.manualFanPercent/100*255);this.heater=0;await this.transport.setHeater(0);await this.transport.setFan(this.fan);this.status=`Manuell: ${this.manualTarget} °C · Lüfter ${this.manualFanPercent} %`;this.emit()}
-  async coolDown(reason='Manuell beendet'){if(!this.connected)return;this.state=RoastState.COOLING;this.phase='cooling';this.target=0;this.heater=0;this.status=reason;await this.transport.setHeater(0);await this.transport.setFan(255);this.fan=255;this.emit()}
-  async enterFailsafe(reason){this.state=RoastState.FAILSAFE;this.target=0;this.heater=0;this.fan=255;this.status=reason;try{await this.transport?.safeOutputs()}catch{}this.emit()}
+  async coolDown(reason='Manuell beendet'){if(!this.connected)return;this.controlEpoch++;this.state=RoastState.COOLING;this.phase='cooling';this.target=0;this.heater=0;this.fan=255;this.status=reason;await this.transport.safeOutputs();this.emit()}
+  async enterFailsafe(reason){this.controlEpoch++;this.state=RoastState.FAILSAFE;this.target=0;this.heater=0;this.fan=255;this.status=reason;try{await this.transport?.safeOutputs()}catch{}this.emit()}
 
   async tick(){
-    if(this.busy||!this.connected||!this.transport)return;this.busy=true;
+    if(this.busy||!this.connected||!this.transport)return;this.busy=true;const epoch=this.controlEpoch;
     try{
       const controller=await this.transport.getSnapshot();
+      if(epoch!==this.controlEpoch)return;
       this.applyControllerSnapshot(controller);
       if(!this.firmwareCompatibility.compatible){await this.enterFailsafe(`Firmware nicht kompatibel: ${this.firmwareCompatibility.reason||'unbekannter Grund'}`);return}
       this.validateTemperature(controller.temperature);
@@ -47,11 +48,11 @@ export class RoastEngine extends EventTarget{
 
       if(this.state===RoastState.RUNNING||this.state===RoastState.MANUAL)this.elapsed=Math.max(0,(performance.now()-this.startedAt)/1000);
       this.calculateOutputs();
-      await this.transport.setFan(this.fan);
       const heating=this.state===RoastState.RUNNING||this.state===RoastState.MANUAL;
       const requiredFan=requestedFanMinimum(this.heater),fanConfirmed=Number.isFinite(this.actualFan)&&this.actualFan>=requiredFan;
       const requestedHeater=this.heater,safeHeater=heating&&!fanConfirmed?0:requestedHeater;
-      await this.transport.setHeater(safeHeater);
+      if(this.transport.applyOutputs)await this.transport.applyOutputs(this.fan,safeHeater,()=>epoch===this.controlEpoch);
+      else{await this.transport.setFan(this.fan);if(epoch!==this.controlEpoch)return;await this.transport.setHeater(safeHeater)}
       this.heater=requestedHeater;
       if(this.state!==RoastState.IDLE||Number.isFinite(this.temperature))this.recordSample();
       await this.handleTransitions();

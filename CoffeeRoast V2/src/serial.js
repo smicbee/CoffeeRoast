@@ -138,9 +138,21 @@ export class WebSerialTransport {
   }
 
   async getStatus() {
-    const response = (await this.request('get status', line => /^state=/i.test(line.trim()), 1800)).trim();
-    this.failsafeSeen = /state=failsafe/i.test(response);
-    return response;
+    let lastError;
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const response = (await this.request('get status', line => /^state=/i.test(line.trim()), 1800)).trim();
+        this.failsafeSeen = /state=failsafe/i.test(response);
+        return response;
+      } catch (error) {
+        lastError = error;
+        if (attempt < 2 && this.connected) {
+          this.log('· Statusantwort ausgeblieben; einmaliger Wiederholungsversuch');
+          await delay(100);
+        }
+      }
+    }
+    throw lastError;
   }
   async getSnapshot() { return parseControllerStatus(await this.getStatus()); }
   async getTemperature() {
@@ -153,7 +165,27 @@ export class WebSerialTransport {
   }
   async setHeater(value) { await this.send(`set setpoint ${Math.round(clamp(value, 0, 255))}`); }
   async setFan(value) { await this.send(`set fan ${Math.round(clamp(value, 0, 255))}`); }
-  async safeOutputs() { if (this.connected) try { await this.setHeater(0); await this.setFan(255); } catch {} }
+  async applyOutputs(fan, heater, guard = () => true) {
+    return this.runExclusive(async () => {
+      if (!guard()) return false;
+      await this.writeRaw(`set fan ${Math.round(clamp(fan, 0, 255))}`);
+      if (!guard()) {
+        await this.writeRaw('set setpoint 0');
+        return false;
+      }
+      await this.writeRaw(`set setpoint ${Math.round(clamp(heater, 0, 255))}`);
+      return true;
+    });
+  }
+  async safeOutputs() {
+    if (!this.connected) return;
+    try {
+      await this.runExclusive(async () => {
+        await this.writeRaw('set setpoint 0');
+        await this.writeRaw('set fan 255');
+      });
+    } catch {}
+  }
 
   async disconnect(makeSafe = true) {
     if (!this.port) return;
@@ -266,6 +298,7 @@ export class SimulationTransport {
   async getFan() { this.update(); return this.fan; }
   async setHeater(value) { this.update(); this.relayTarget = clamp(value, 0, 255); }
   async setFan(value) { this.update(); this.fanTarget = clamp(value, 0, 255); }
+  async applyOutputs(fan, heater, guard = () => true) { if (!guard()) return false; await this.setFan(fan); if (!guard()) { await this.setHeater(0); return false; } await this.setHeater(heater); return true; }
   async safeOutputs() { this.update(); this.relayTarget = 0; this.appliedHeater = 0; this.fanTarget = 255; }
   injectSensorFault(active = true) { this.sensorFault = active; }
 }
