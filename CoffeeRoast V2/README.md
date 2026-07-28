@@ -10,6 +10,8 @@ Moderne, browserbasierte Neuimplementierung der bisherigen `iRoastControl`-Anwen
 - integrierte Firmware v1.3.2 mit robustem Temperatursensor-Resync, hardwareseitigem SSR-Lüfterinterlock sowie Firmware-/Protokoll-/Hardwarekennung
 - Browser-Flasher ausschließlich für die CoffeeRoast-RevA.2-Platine mit ESP32-S3-WROOM-1-N8R8, 8 MB Quad-Flash und 8 MB OPI-PSRAM
 - exakte Firmware-/Protokoll-/Hardwareprüfung nach dem Flashen
+- PID-Einstellungen werden pro Browserprofil in `localStorage` gespeichert und bei Rezeptwechseln sowie nach einem Reload wiederhergestellt
+- neue Standardwerte ohne gespeicherte Browserkonfiguration: Kp `1.5`, Ki `0.7`, Kd `3.55`
 - Lüfter-Softstart auch im Failsafe: Ziel 255, Istwert maximal 2 PWM-Schritte je 50 ms
 - serialisierte Kommunikation mit atomarem `get status`-Polling
 - Auto-Drop nach Zeit/Temperatur, 30-Sekunden-RoR, First Crack, DTR und Live-Phasen
