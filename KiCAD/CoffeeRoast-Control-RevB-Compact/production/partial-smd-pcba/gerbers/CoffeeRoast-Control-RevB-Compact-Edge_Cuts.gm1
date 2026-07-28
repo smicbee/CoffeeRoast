@@ -1,0 +1,26 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.8+dfsg-1*%
+%TF.CreationDate,2026-07-28T22:46:50+02:00*%
+%TF.ProjectId,CoffeeRoast-Control-RevB-Compact,436f6666-6565-4526-9f61-73742d436f6e,B-Compact*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 9.0.8+dfsg-1) date 2026-07-28 22:46:50*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.150000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X0Y75000000D02*
+X105000000Y75000000D01*
+X0Y0D02*
+X0Y75000000D01*
+X105000000Y75000000D02*
+X105000000Y0D01*
+X105000000Y0D02*
+X0Y0D01*
+M02*

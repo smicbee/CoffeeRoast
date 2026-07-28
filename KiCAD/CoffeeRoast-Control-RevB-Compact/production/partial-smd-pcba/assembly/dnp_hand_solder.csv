@@ -1,0 +1,22 @@
+Designator,Value,Kind,Reason/Action
+C4,EEU-FR1V221B_220uF_35V,tht,Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.
+C5,CC0805JRNPO9BN102_1nF_C0G,smd,Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.
+D1,SS56-E3/57T,smd,"Vishay SS56-E3/57T SMB flyback diode; exact pad/polarity validated, hand-solder because assembler mapping is not pre-filled."
+FID1,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID2,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID3,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID4,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID5,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+FID6,FIDUCIAL_GLOBAL_1MM,smd,Not in first partial-SMD assembly set; review manually.
+J1,24V_IN_FROM_230V_PSU_3A,tht,Large plated hand-solder pads; solder PSU leads and add strain relief.
+J2,FAN_24V_PWM_3A,tht,Large plated hand-solder pads; solder fan leads and add strain relief.
+J3,SSR_INPUT_3V3_TO_EXTERNAL_SSR,tht,Large plated hand-solder pads; solder external SSR control leads.
+J4,K_TYPE_THERMOCOUPLE,tht,Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.
+J6,ESC_24V_GND_PWM_GND_GPIO10,tht,"Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief."
+JGPIO1,ESP32_GPIO_BREAKOUT_ROW,tht,Not in first partial-SMD assembly set; review manually.
+TPBOOT1,BOOT_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
+TPGND,GND_TEST,smd,Test/debug pad; no assembly part.
+TPRESET1,RESET_TWEEZER_PADS,smd,Not in first partial-SMD assembly set; review manually.
+TPSSR1,SSR_3V3_OUT_MEAS_PADS,smd,Not in first partial-SMD assembly set; review manually.
+TP24V,+24V_FUSED_TEST,smd,Test/debug pad; no assembly part.
+TP3V3,+3V3_TEST,smd,Test/debug pad; no assembly part.
