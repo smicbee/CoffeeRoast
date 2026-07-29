@@ -1,0 +1,7 @@
+Position,Pad,Net,Label,X_mm,Y_mm,Usage
+1,1,GPIO3,GPIO3,104.000,92.000,User-facing ESP32 GPIO breakout pad
+2,2,GPIO46,GPIO46,106.540,92.000,User-facing ESP32 GPIO breakout pad
+3,3,GPIO9,GPIO9,109.080,92.000,User-facing ESP32 GPIO breakout pad
+4,4,GPIO10,GPIO10,111.620,92.000,User-facing ESP32 GPIO breakout pad
+5,5,GPIO48,GPIO48,114.160,92.000,User-facing ESP32 GPIO breakout pad
+6,6,GPIO45,GPIO45,116.700,92.000,User-facing ESP32 GPIO breakout pad
