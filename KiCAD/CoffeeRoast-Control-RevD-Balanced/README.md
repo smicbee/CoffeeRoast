@@ -43,3 +43,7 @@ kicad-cli sch erc --format json \
 ```
 
 The build script is version-marked and idempotent: a second normal run is a hash-identical no-op. Pass `--force` only when deliberately regenerating the placement after editing its coordinates. It clears placement-dependent copper, applies the RevD coordinates, restores the two-layer outline and labels, and refills the retained baseline GND zone.
+
+## Electrical simulation
+
+A reproducible block-level electrical simulation is in `sim/`. It covers the 24 V-to-3.3 V buck power stage, feedback corners, fan MOSFET loss, 10 V gate-supply budget, 24 V PSU loading, input bulk capacitance, USB CC current and an external SSR-input sweep. See `sim/README.md` for results and explicit model limits.
