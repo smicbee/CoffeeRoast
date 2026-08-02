@@ -7,7 +7,7 @@ import pcbnew
 ROOT = Path(__file__).resolve().parents[1]
 P = ROOT / "CoffeeRoast-Control-RevD-Balanced.kicad_pcb"
 W, H = 96.0, 60.0
-MARKER = "CoffeeRoast RevD BALANCED V3"
+MARKER = "CoffeeRoast RevD BALANCED V4 UI"
 b = pcbnew.LoadBoard(str(P))
 if "--force" not in sys.argv and any(
     isinstance(d, pcbnew.PCB_TEXT) and d.GetText() == MARKER for d in b.GetDrawings()
@@ -26,6 +26,41 @@ for z in zones[1:]:
     b.Delete(z)
 for d in list(b.GetDrawings()):
     b.Delete(d)
+
+# Future local UI: compact 1.27 mm through-hole headers. These reserve only
+# hardware connectivity; firmware ownership remains deliberately deferred.
+ui_connectors = {
+    "J7": ("MIC_I2S_FUTURE", ("+3V3", "GND", "GPIO4", "GPIO5", "GPIO6", "GPIO7")),
+    "J8": ("LCD_I2C_FUTURE", ("+3V3", "GND", "GPIO8", "GPIO9", "GPIO14", "GPIO21")),
+    "J9": ("BUTTONS_4_FUTURE", ("GND", "GPIO15", "GPIO16", "GPIO17", "GPIO18", "+3V3")),
+}
+fp_by_ref = {f.GetReference(): f for f in b.GetFootprints()}
+for ref, (value, nets) in ui_connectors.items():
+    if ref not in fp_by_ref:
+        f = pcbnew.FootprintLoad(
+            "/usr/share/kicad/footprints/Connector_PinHeader_1.27mm.pretty",
+            "PinHeader_1x06_P1.27mm_Vertical",
+        )
+        if f is None:
+            raise SystemExit("KiCad 1.27 mm pin-header footprint library is unavailable")
+        f.SetReference(ref)
+        f.SetValue(value)
+        b.Add(f)
+        fp_by_ref[ref] = f
+    f = fp_by_ref[ref]
+    f.SetFPID(pcbnew.LIB_ID(
+        "Connector_PinHeader_1.27mm", "PinHeader_1x06_P1.27mm_Vertical"
+    ))
+    f.SetValue(value)
+    f.Value().SetVisible(False)
+    pads = sorted(f.Pads(), key=lambda p: int(p.GetNumber()))
+    if len(pads) != 6:
+        raise SystemExit(f"{ref}: expected six pads, got {len(pads)}")
+    for pad, net_name in zip(pads, nets):
+        net = b.FindNet(net_name)
+        if net is None:
+            raise SystemExit(f"{ref}: missing board net {net_name}")
+        pad.SetNet(net)
 
 # Functional blocks use the full board while the ESP32 antenna ends flush at the top edge.
 pl = {
@@ -63,6 +98,8 @@ pl = {
     "R7": (65.0, 45.0, 0), "R8": (69.0, 45.0, 0),
     # Accessible rail probes.
     "TP24V": (29.0, 48.0, 0), "TP3V3": (52.0, 31.0, 0), "TPGND": (52.0, 40.0, 0),
+    # Future UI headers at otherwise unused board-edge regions.
+    "J7": (3.0, 14.0, 0), "J8": (44.0, 9.0, 0), "J9": (93.0, 12.0, 0),
 }
 fp = {f.GetReference(): f for f in b.GetFootprints()}
 missing = sorted(set(pl) - set(fp))
@@ -132,7 +169,10 @@ text("FAN DRIVER", 39, 45.5)
 text("FAN MOSFET", 54, 42.0)
 text("ESP32-S3", 70, 27.0)
 text("BUCK 24V > 3V3", 85, 51.0)
-text(MARKER, 14, 21.0, size=1.0); text("24V SELV ONLY - NO 230V", 14, 23.0)
+text("MIC / I2S", 7.0, 24.5)
+text("LCD / I2C", 44.0, 17.5)
+text("BUTTONS 1-4", 88.0, 9.0); text("G 1 2 3 4 3V", 88.0, 21.5)
+# Revision/safety identity is kept on the bottom silkscreen where it remains legible.
 for s, x in (("THERMO TC+ TC-", 7), ("SSR 3V3 SSR-", 18), ("ESC 24 GND PWM GND", 34),
              ("FAN 24 FAN-", 62), ("POWER 24 GND", 82)):
     text(s, x, 52, pcbnew.B_SilkS)
@@ -145,16 +185,19 @@ text("FAN GATE DRIVER", 38, 44.0, pcbnew.B_SilkS)
 text("ESP32-S3 WIFI / BT", 70, 24.0, pcbnew.B_SilkS)
 text("BUCK 24V > 3V3", 85, 35.0, pcbnew.B_SilkS)
 text("ANTENNA - KEEP CLEAR", 72, 4.0, pcbnew.B_SilkS)
-text(MARKER, 14, 21, pcbnew.B_SilkS, 1.0)
-text("24V SELV ONLY - NO 230V", 14, 23, pcbnew.B_SilkS)
+text("MIC/I2S 3V G B W D S", 10.0, 25.0, pcbnew.B_SilkS)
+text("LCD/I2C 3V G SDA SCL INT RST", 47.0, 22.5, pcbnew.B_SilkS)
+text("BUTTONS G 1 2 3 4 3V", 87.0, 23.5, pcbnew.B_SilkS)
+text(MARKER, 28, 27.0, pcbnew.B_SilkS, 0.8)
+text("24V SELV ONLY - NO 230V", 28, 29.0, pcbnew.B_SilkS)
 
 poly = zone.Outline(); poly.RemoveAllContours(); poly.NewOutline()
 for x, y in ((0.5, 0.5), (W - 0.5, 0.5), (W - 0.5, H - 0.5), (0.5, H - 0.5)):
     poly.Append(pcbnew.VECTOR2I_MM(x, y))
 zone.SetLayer(pcbnew.B_Cu)
 zone.SetLocalClearance(pcbnew.FromMM(0.25)); zone.SetMinThickness(pcbnew.FromMM(0.25))
-tb = b.GetTitleBlock(); tb.SetRevision("D-Balanced")
-tb.SetComment(1, "RevD Balanced: 96x60 mm, distributed functional blocks, 2-layer, 45-degree routing")
+tb = b.GetTitleBlock(); tb.SetRevision("D-UI")
+tb.SetComment(1, "RevD Balanced UI: MIC, I2C LCD and four-button headers reserved; firmware deferred")
 b.GetDesignSettings().SetAuxOrigin(pcbnew.VECTOR2I_MM(0, H))
 b.BuildConnectivity(); pcbnew.ZONE_FILLER(b).Fill(b.Zones()); pcbnew.SaveBoard(str(P), b)
 print(f"Placed RevD Balanced {W} x {H} mm")

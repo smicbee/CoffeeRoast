@@ -25,6 +25,9 @@ J3,1,SSR_INPUT_3V3_TO_EXTERNAL_SSR,CoffeeRoast:J3_J3_SSR_SolderPads,SSR_INPUT_3V
 J4,1,K_TYPE_THERMOCOUPLE,CoffeeRoast:J4_J4_Thermocouple_SolderPads,K_TYPE_THERMOCOUPLE,,HAND/DNP,Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.
 J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,CoffeeRoast:J5_USB_C_Receptacle_XKB_U262-16XN-4BVC11,U262-16 1 N-4BVC11,C319148,PCBA,Verify shell and pin orientation in placement preview.
 J6,1,ESC_24V_GND_PWM_GND_GPIO10,CoffeeRoast:J6_ESC_4Pin_P5.08mm,ESC_4PIN_HAND_WIRE,,HAND/DNP,"Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief."
+J7,1,MIC_I2S_FUTURE,Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical,,,HAND/DNP,"Future 3.3V digital microphone header: 3V3, GND, BCLK, WS, DATA, SEL; firmware not assigned yet."
+J8,1,LCD_I2C_FUTURE,Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical,,,HAND/DNP,"Future 3.3V I2C LCD header: 3V3, GND, SDA, SCL, INT, RST; firmware not assigned yet."
+J9,1,BUTTONS_4_FUTURE,Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical,,,HAND/DNP,"Future four-button panel: GND, BTN1..BTN4, optional 3V3; passive buttons switch inputs to GND; firmware pull-ups deferred."
 JGPIO1,1,ESP32_GPIO_BREAKOUT_ROW,CoffeeRoast:JGPIO1_ESP32_GPIO_Breakout_Row,ESP32_GPIO_BREAKOUT_ROW,,HAND/DNP,PCB test/debug/mechanical position; no automated placement.
 L1,1,FNR6045S220MT_22uH_2A,CoffeeRoast:L1_L_Changjiang_FNR6045S,FNR6045S220MT,C168080,PCBA,"22uH, >=2A saturation/current candidate."
 Q1,1,STP55NF06L,CoffeeRoast:Q1_TO-220-3_Vertical,STP55NF06L,C77582,PCBA,THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current.

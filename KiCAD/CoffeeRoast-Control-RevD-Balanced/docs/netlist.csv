@@ -14,6 +14,9 @@ USB_DN/USB_DP,Native USB serial/flash,J5 USB-C A/B D pins through R7/R8 to U1 pi
 USB_CC1/USB_CC2,USB-C device attach advertisement,J5 A5/B5 through R10/R11 5.1k pulldowns to GND
 USB_VBUS,USB-C VBUS sense only,J5 VBUS pins; not used as board supply
 EN/BOOT,Reset/flash control,Pullups + tactile switches
-GPIO_BREAKOUT,Current six-pad user breakout,"JGPIO1 exposes GPIO3, GPIO46, GPIO9, GPIO10, GPIO48, GPIO45"
-UNEXPOSED_GPIO,Usable GPIOs not yet brought to physical pads,"GPIO4, GPIO5, GPIO6, GPIO7, GPIO8, GPIO14, GPIO15, GPIO16, GPIO17, GPIO18, GPIO21, GPIO38, GPIO39, GPIO40, GPIO41, GPIO42, GPIO43/TXD0, GPIO44/RXD0, GPIO47"
+GPIO_BREAKOUT,Current six-pad user breakout,"JGPIO1 exposes GPIO3, GPIO46, GPIO9, GPIO10, GPIO48, GPIO45; GPIO9 is now also reserved as future LCD SCL"
+MIC_UI_FUTURE,Future 3.3V digital microphone header,"J7: +3V3, GND, GPIO4/BCLK, GPIO5/WS, GPIO6/DATA, GPIO7/SEL"
+LCD_UI_FUTURE,Future 3.3V I2C display header,"J8: +3V3, GND, GPIO8/SDA, GPIO9/SCL, GPIO14/INT, GPIO21/RST"
+BUTTON_UI_FUTURE,Future four-button panel header,"J9: GND, GPIO15/BTN1, GPIO16/BTN2, GPIO17/BTN3, GPIO18/BTN4, +3V3 optional panel supply"
+UNEXPOSED_GPIO,Usable GPIOs not yet brought to physical pads,"GPIO38, GPIO39, GPIO40, GPIO41, GPIO42, GPIO43/TXD0, GPIO44/RXD0, GPIO47"
 RESERVED_N8R8_GPIO,Not available on the selected ESP32-S3-WROOM-1-N8R8,"GPIO35, GPIO36, GPIO37 are occupied by Octal PSRAM"
