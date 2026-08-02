@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-08-02T09:48:56+0200",
+    "date": "2026-08-02T10:08:55+0200",
     "included_severities": [
         "error",
         "warning",
@@ -38,6 +38,52 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
+                    "description": "Durchsteckpad 2 [GND] von J7",
+                    "pos": {
+                        "x": 5.27,
+                        "y": 14.0
+                    },
+                    "uuid": "7c83ee70-75c1-49fb-91e3-cc7d8d87a814"
+                },
+                {
+                    "description": "Durchsteckpad 8 [GND] von J5",
+                    "pos": {
+                        "x": 10.68,
+                        "y": 7.075
+                    },
+                    "uuid": "3e62a6fc-2145-4ab5-8e70-e75a122128d2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 8 [GND] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 7.525,
+                        "y": 36.905
+                    },
+                    "uuid": "be73b8dd-4c3c-4bd6-b216-0bb9225f559d"
+                },
+                {
+                    "description": "Pad 1 [GND] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 12.475,
+                        "y": 36.905
+                    },
+                    "uuid": "a73c20dc-5bd4-46a9-93e9-93ef1523cc24"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
                     "description": "Durchsteckpad 8 [GND] von J5",
                     "pos": {
                         "x": 10.68,
@@ -64,25 +110,10 @@
                     "description": "Durchsteckpad 8 [GND] von J5",
                     "pos": {
                         "x": 10.68,
-                        "y": 7.075
-                    },
-                    "uuid": "3e62a6fc-2145-4ab5-8e70-e75a122128d2"
-                },
-                {
-                    "description": "Durchsteckpad 8 [GND] von J5",
-                    "pos": {
-                        "x": 10.68,
                         "y": 2.895
                     },
                     "uuid": "37bdeea8-a466-4a44-922b-74e5205c56c7"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
+                },
                 {
                     "description": "Durchsteckpad 8 [GND] von J5",
                     "pos": {
@@ -90,60 +121,6 @@
                         "y": 7.075
                     },
                     "uuid": "3e62a6fc-2145-4ab5-8e70-e75a122128d2"
-                },
-                {
-                    "description": "Durchsteckpad 2 [GND] von J7",
-                    "pos": {
-                        "x": 3.0,
-                        "y": 15.27
-                    },
-                    "uuid": "7c83ee70-75c1-49fb-91e3-cc7d8d87a814"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 1 [GND] von U2 auf F.Cu",
-                    "pos": {
-                        "x": 12.475,
-                        "y": 36.905
-                    },
-                    "uuid": "a73c20dc-5bd4-46a9-93e9-93ef1523cc24"
-                },
-                {
-                    "description": "Pad 8 [GND] von U2 auf F.Cu",
-                    "pos": {
-                        "x": 7.525,
-                        "y": 36.905
-                    },
-                    "uuid": "be73b8dd-4c3c-4bd6-b216-0bb9225f559d"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 1 [GND] von U2 auf F.Cu",
-                    "pos": {
-                        "x": 12.475,
-                        "y": 36.905
-                    },
-                    "uuid": "a73c20dc-5bd4-46a9-93e9-93ef1523cc24"
-                },
-                {
-                    "description": "Pad 2 [GND] von Q2 auf F.Cu",
-                    "pos": {
-                        "x": 22.95,
-                        "y": 39.95
-                    },
-                    "uuid": "47daebb3-9072-460a-a665-9499279515ca"
                 }
             ],
             "severity": "error",
@@ -253,12 +230,12 @@
                     "uuid": "47daebb3-9072-460a-a665-9499279515ca"
                 },
                 {
-                    "description": "Pad 2 [GND] von R4 auf F.Cu",
+                    "description": "Pad 1 [GND] von U2 auf F.Cu",
                     "pos": {
-                        "x": 28.95,
-                        "y": 43.0
+                        "x": 12.475,
+                        "y": 36.905
                     },
-                    "uuid": "6d95a3ec-3827-4fef-8cc0-5ec92c6aeee3"
+                    "uuid": "a73c20dc-5bd4-46a9-93e9-93ef1523cc24"
                 }
             ],
             "severity": "error",
@@ -337,20 +314,20 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 2 [GND] von D5 auf F.Cu",
+                    "description": "Pad 2 [GND] von R4 auf F.Cu",
                     "pos": {
-                        "x": 30.65,
-                        "y": 26.0
+                        "x": 28.95,
+                        "y": 43.0
                     },
-                    "uuid": "d27541be-c724-4dc8-b3eb-ba3b73703f89"
+                    "uuid": "6d95a3ec-3827-4fef-8cc0-5ec92c6aeee3"
                 },
                 {
-                    "description": "Pad 2 [GND] von TPRESET1 auf F.Cu",
+                    "description": "Pad 2 [GND] von Q2 auf F.Cu",
                     "pos": {
-                        "x": 34.0,
-                        "y": 28.25
+                        "x": 22.95,
+                        "y": 39.95
                     },
-                    "uuid": "fb3f2322-4745-4049-b32d-2ecf8e19d240"
+                    "uuid": "47daebb3-9072-460a-a665-9499279515ca"
                 }
             ],
             "severity": "error",
@@ -359,152 +336,6 @@
         {
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
-                {
-                    "description": "Pad 2 [GND] von D5 auf F.Cu",
-                    "pos": {
-                        "x": 30.65,
-                        "y": 26.0
-                    },
-                    "uuid": "d27541be-c724-4dc8-b3eb-ba3b73703f89"
-                },
-                {
-                    "description": "Pad 2 [GND] von R11 auf F.Cu",
-                    "pos": {
-                        "x": 30.949999,
-                        "y": 15.0
-                    },
-                    "uuid": "a382f3d4-cc58-4714-988b-3d8af4579d1e"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von R11 auf F.Cu",
-                    "pos": {
-                        "x": 30.949999,
-                        "y": 15.0
-                    },
-                    "uuid": "a382f3d4-cc58-4714-988b-3d8af4579d1e"
-                },
-                {
-                    "description": "Durchsteckpad 2 [GND] von J8",
-                    "pos": {
-                        "x": 44.0,
-                        "y": 10.27
-                    },
-                    "uuid": "f076d1df-e123-4c19-b650-c2e304e8fb12"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von TPRESET1 auf F.Cu",
-                    "pos": {
-                        "x": 34.0,
-                        "y": 28.25
-                    },
-                    "uuid": "fb3f2322-4745-4049-b32d-2ecf8e19d240"
-                },
-                {
-                    "description": "Pad 2 [GND] von C13 auf F.Cu",
-                    "pos": {
-                        "x": 34.95,
-                        "y": 31.0
-                    },
-                    "uuid": "0e8a3c09-26bc-4a24-b5b1-7f4ce6aa2b19"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von C13 auf F.Cu",
-                    "pos": {
-                        "x": 34.95,
-                        "y": 31.0
-                    },
-                    "uuid": "0e8a3c09-26bc-4a24-b5b1-7f4ce6aa2b19"
-                },
-                {
-                    "description": "Pad 2 [GND] von SW1 auf F.Cu",
-                    "pos": {
-                        "x": 37.45,
-                        "y": 29.25
-                    },
-                    "uuid": "4817aa17-067e-477a-a7be-c8a07a923c2b"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 5 [GND] von U6 auf F.Cu",
-                    "pos": {
-                        "x": 37.1375,
-                        "y": 41.5
-                    },
-                    "uuid": "383749a2-6fe3-41a7-a7e6-f451f7793a93"
-                },
-                {
-                    "description": "Pad 4 [GND] von U6 auf F.Cu",
-                    "pos": {
-                        "x": 37.1375,
-                        "y": 42.45
-                    },
-                    "uuid": "f1b08b63-c4c6-4100-814a-c4638b259d42"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 5 [GND] von U6 auf F.Cu",
-                    "pos": {
-                        "x": 37.1375,
-                        "y": 41.5
-                    },
-                    "uuid": "383749a2-6fe3-41a7-a7e6-f451f7793a93"
-                },
-                {
-                    "description": "Pad 2 [GND] von TPBOOT1 auf F.Cu",
-                    "pos": {
-                        "x": 39.0,
-                        "y": 37.25
-                    },
-                    "uuid": "71f77086-be9d-432b-ae20-8bf045e8ca96"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 4 [GND] von U6 auf F.Cu",
-                    "pos": {
-                        "x": 37.1375,
-                        "y": 42.45
-                    },
-                    "uuid": "f1b08b63-c4c6-4100-814a-c4638b259d42"
-                },
                 {
                     "description": "Pad 2 [GND] von R4 auf F.Cu",
                     "pos": {
@@ -512,6 +343,129 @@
                         "y": 43.0
                     },
                     "uuid": "6d95a3ec-3827-4fef-8cc0-5ec92c6aeee3"
+                },
+                {
+                    "description": "Pad 4 [GND] von U6 auf F.Cu",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 42.45
+                    },
+                    "uuid": "f1b08b63-c4c6-4100-814a-c4638b259d42"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von D5 auf F.Cu",
+                    "pos": {
+                        "x": 30.65,
+                        "y": 26.0
+                    },
+                    "uuid": "d27541be-c724-4dc8-b3eb-ba3b73703f89"
+                },
+                {
+                    "description": "Pad 2 [GND] von TPRESET1 auf F.Cu",
+                    "pos": {
+                        "x": 34.0,
+                        "y": 28.25
+                    },
+                    "uuid": "fb3f2322-4745-4049-b32d-2ecf8e19d240"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von R11 auf F.Cu",
+                    "pos": {
+                        "x": 30.949999,
+                        "y": 15.0
+                    },
+                    "uuid": "a382f3d4-cc58-4714-988b-3d8af4579d1e"
+                },
+                {
+                    "description": "Pad 2 [GND] von D5 auf F.Cu",
+                    "pos": {
+                        "x": 30.65,
+                        "y": 26.0
+                    },
+                    "uuid": "d27541be-c724-4dc8-b3eb-ba3b73703f89"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C13 auf F.Cu",
+                    "pos": {
+                        "x": 34.95,
+                        "y": 31.0
+                    },
+                    "uuid": "0e8a3c09-26bc-4a24-b5b1-7f4ce6aa2b19"
+                },
+                {
+                    "description": "Pad 2 [GND] von TPRESET1 auf F.Cu",
+                    "pos": {
+                        "x": 34.0,
+                        "y": 28.25
+                    },
+                    "uuid": "fb3f2322-4745-4049-b32d-2ecf8e19d240"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 5 [GND] von U6 auf F.Cu",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 41.5
+                    },
+                    "uuid": "383749a2-6fe3-41a7-a7e6-f451f7793a93"
+                },
+                {
+                    "description": "Pad 4 [GND] von U6 auf F.Cu",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 42.45
+                    },
+                    "uuid": "f1b08b63-c4c6-4100-814a-c4638b259d42"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von SW1 auf F.Cu",
+                    "pos": {
+                        "x": 37.45,
+                        "y": 29.25
+                    },
+                    "uuid": "4817aa17-067e-477a-a7be-c8a07a923c2b"
+                },
+                {
+                    "description": "Pad 2 [GND] von C13 auf F.Cu",
+                    "pos": {
+                        "x": 34.95,
+                        "y": 31.0
+                    },
+                    "uuid": "0e8a3c09-26bc-4a24-b5b1-7f4ce6aa2b19"
                 }
             ],
             "severity": "error",
@@ -558,6 +512,98 @@
                         "y": 37.25
                     },
                     "uuid": "71f77086-be9d-432b-ae20-8bf045e8ca96"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C14 auf F.Cu",
+                    "pos": {
+                        "x": 38.775,
+                        "y": 31.0
+                    },
+                    "uuid": "304a202c-1152-43c9-bb22-c6a1743dbe91"
+                },
+                {
+                    "description": "Pad 2 [GND] von SW1 auf F.Cu",
+                    "pos": {
+                        "x": 46.55,
+                        "y": 29.25
+                    },
+                    "uuid": "4f836e4d-f8f4-4e3a-95cc-091702a328a3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von TPBOOT1 auf F.Cu",
+                    "pos": {
+                        "x": 39.0,
+                        "y": 37.25
+                    },
+                    "uuid": "71f77086-be9d-432b-ae20-8bf045e8ca96"
+                },
+                {
+                    "description": "Pad 5 [GND] von U6 auf F.Cu",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 41.5
+                    },
+                    "uuid": "383749a2-6fe3-41a7-a7e6-f451f7793a93"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 2 [GND] von J6",
+                    "pos": {
+                        "x": 39.08,
+                        "y": 56.2
+                    },
+                    "uuid": "ded86b69-9033-4ecc-acf7-3143102aff2b"
+                },
+                {
+                    "description": "Durchsteckpad 4 [GND] von J6",
+                    "pos": {
+                        "x": 49.24,
+                        "y": 56.2
+                    },
+                    "uuid": "86f7e983-def8-41c7-8fca-4f09154ee2a9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] von FID6 auf B.Cu",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 3.0
+                    },
+                    "uuid": "0ca26b4c-7d05-4b06-be29-caed7e3cf8f2"
+                },
+                {
+                    "description": "Pad 2 [GND] von R11 auf F.Cu",
+                    "pos": {
+                        "x": 30.949999,
+                        "y": 15.0
+                    },
+                    "uuid": "a382f3d4-cc58-4714-988b-3d8af4579d1e"
                 }
             ],
             "severity": "error",
@@ -592,8 +638,8 @@
                 {
                     "description": "Durchsteckpad 2 [GND] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 10.27
+                        "x": 45.27,
+                        "y": 9.0
                     },
                     "uuid": "f076d1df-e123-4c19-b650-c2e304e8fb12"
                 },
@@ -613,29 +659,6 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 2 [GND] von SW1 auf F.Cu",
-                    "pos": {
-                        "x": 46.55,
-                        "y": 29.25
-                    },
-                    "uuid": "4f836e4d-f8f4-4e3a-95cc-091702a328a3"
-                },
-                {
-                    "description": "Pad 2 [GND] von C14 auf F.Cu",
-                    "pos": {
-                        "x": 38.775,
-                        "y": 31.0
-                    },
-                    "uuid": "304a202c-1152-43c9-bb22-c6a1743dbe91"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
                     "description": "Durchsteckpad 4 [GND] von J6",
                     "pos": {
                         "x": 49.24,
@@ -644,35 +667,12 @@
                     "uuid": "86f7e983-def8-41c7-8fca-4f09154ee2a9"
                 },
                 {
-                    "description": "Durchsteckpad 2 [GND] von J6",
+                    "description": "Pad 2 [GND] von R2 auf F.Cu",
                     "pos": {
-                        "x": 39.08,
-                        "y": 56.2
+                        "x": 59.9125,
+                        "y": 51.0
                     },
-                    "uuid": "ded86b69-9033-4ecc-acf7-3143102aff2b"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von SW2 auf F.Cu",
-                    "pos": {
-                        "x": 50.55,
-                        "y": 38.25
-                    },
-                    "uuid": "5eb40a96-eb9d-4959-a768-9d384f74d3eb"
-                },
-                {
-                    "description": "Pad 1 [GND] von TPGND auf F.Cu",
-                    "pos": {
-                        "x": 52.0,
-                        "y": 40.0
-                    },
-                    "uuid": "2e80c5b8-a532-49f4-a502-5d079f523801"
+                    "uuid": "404772ac-76d2-4814-8258-3b775d643deb"
                 }
             ],
             "severity": "error",
@@ -705,20 +705,20 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Durchsteckpad 3 [GND] von Q1",
+                    "description": "Pad 1 [GND] von TPGND auf F.Cu",
                     "pos": {
-                        "x": 59.08,
-                        "y": 47.0
+                        "x": 52.0,
+                        "y": 40.0
                     },
-                    "uuid": "112a400b-7980-4356-b5be-0f40f6aed65a"
+                    "uuid": "2e80c5b8-a532-49f4-a502-5d079f523801"
                 },
                 {
-                    "description": "Durchsteckpad 2 [GND] von C4",
+                    "description": "Pad 2 [GND] von SW2 auf F.Cu",
                     "pos": {
-                        "x": 69.0,
-                        "y": 46.5
+                        "x": 50.55,
+                        "y": 38.25
                     },
-                    "uuid": "64f35f15-05d1-4477-a036-706cae84bcea"
+                    "uuid": "5eb40a96-eb9d-4959-a768-9d384f74d3eb"
                 }
             ],
             "severity": "error",
@@ -765,52 +765,6 @@
                         "y": 47.0
                     },
                     "uuid": "112a400b-7980-4356-b5be-0f40f6aed65a"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von R2 auf F.Cu",
-                    "pos": {
-                        "x": 59.9125,
-                        "y": 51.0
-                    },
-                    "uuid": "404772ac-76d2-4814-8258-3b775d643deb"
-                },
-                {
-                    "description": "Durchsteckpad 4 [GND] von J6",
-                    "pos": {
-                        "x": 49.24,
-                        "y": 56.2
-                    },
-                    "uuid": "86f7e983-def8-41c7-8fca-4f09154ee2a9"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von C6 auf F.Cu",
-                    "pos": {
-                        "x": 61.0,
-                        "y": 26.35
-                    },
-                    "uuid": "d5cb99bd-0367-482f-931c-726788dd6c46"
-                },
-                {
-                    "description": "Pad 2 [GND] von C8 auf F.Cu",
-                    "pos": {
-                        "x": 70.0,
-                        "y": 32.525
-                    },
-                    "uuid": "ed3ac0d2-fc58-4fb8-958f-ced4f71ab111"
                 }
             ],
             "severity": "error",
@@ -851,12 +805,12 @@
                     "uuid": "64f35f15-05d1-4477-a036-706cae84bcea"
                 },
                 {
-                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "description": "Durchsteckpad 3 [GND] von Q1",
                     "pos": {
-                        "x": 71.525,
-                        "y": 41.0
+                        "x": 59.08,
+                        "y": 47.0
                     },
-                    "uuid": "97d3ce69-67e2-4289-995d-3566cfbb10e3"
+                    "uuid": "112a400b-7980-4356-b5be-0f40f6aed65a"
                 }
             ],
             "severity": "error",
@@ -912,6 +866,52 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
+                    "description": "Pad 2 [GND] von C8 auf F.Cu",
+                    "pos": {
+                        "x": 70.0,
+                        "y": 32.525
+                    },
+                    "uuid": "ed3ac0d2-fc58-4fb8-958f-ced4f71ab111"
+                },
+                {
+                    "description": "Pad 2 [GND] von C6 auf F.Cu",
+                    "pos": {
+                        "x": 61.0,
+                        "y": 26.35
+                    },
+                    "uuid": "d5cb99bd-0367-482f-931c-726788dd6c46"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 71.525,
+                        "y": 41.0
+                    },
+                    "uuid": "97d3ce69-67e2-4289-995d-3566cfbb10e3"
+                },
+                {
+                    "description": "Durchsteckpad 2 [GND] von C4",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 46.5
+                    },
+                    "uuid": "64f35f15-05d1-4477-a036-706cae84bcea"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
                     "description": "Pad 2 [GND] von C9 auf F.Cu",
                     "pos": {
                         "x": 71.525,
@@ -926,6 +926,52 @@
                         "y": 37.0
                     },
                     "uuid": "2cdfd698-374d-4551-acb1-d264ec7ef8d7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C9 auf F.Cu",
+                    "pos": {
+                        "x": 71.525,
+                        "y": 41.0
+                    },
+                    "uuid": "97d3ce69-67e2-4289-995d-3566cfbb10e3"
+                },
+                {
+                    "description": "Pad 9 [GND] von U4 auf F.Cu",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 41.0
+                    },
+                    "uuid": "db02f980-e32f-4f35-8a50-9d866dadcf5e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 40 [GND] von U1",
+                    "pos": {
+                        "x": 71.9,
+                        "y": 14.66
+                    },
+                    "uuid": "a1b97d0b-8430-4a37-9251-01068b26cd7b"
+                },
+                {
+                    "description": "Pad 40 [GND] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 7.64
+                    },
+                    "uuid": "c8398552-86c3-4b45-8878-293cb18a8803"
                 }
             ],
             "severity": "error",
@@ -981,52 +1027,6 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 9 [GND] von U4 auf F.Cu",
-                    "pos": {
-                        "x": 80.0,
-                        "y": 41.0
-                    },
-                    "uuid": "db02f980-e32f-4f35-8a50-9d866dadcf5e"
-                },
-                {
-                    "description": "Pad 2 [GND] von C9 auf F.Cu",
-                    "pos": {
-                        "x": 71.525,
-                        "y": 41.0
-                    },
-                    "uuid": "97d3ce69-67e2-4289-995d-3566cfbb10e3"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 40 [GND] von U1 auf F.Cu",
-                    "pos": {
-                        "x": 80.75,
-                        "y": 7.64
-                    },
-                    "uuid": "c8398552-86c3-4b45-8878-293cb18a8803"
-                },
-                {
-                    "description": "Durchsteckpad 40 [GND] von U1",
-                    "pos": {
-                        "x": 71.9,
-                        "y": 14.66
-                    },
-                    "uuid": "a1b97d0b-8430-4a37-9251-01068b26cd7b"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
                     "description": "Pad 7 [GND] von U4 auf F.Cu",
                     "pos": {
                         "x": 82.475,
@@ -1073,6 +1073,29 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
+                    "description": "Durchsteckpad 2 [GND] von J1",
+                    "pos": {
+                        "x": 84.54,
+                        "y": 56.2
+                    },
+                    "uuid": "e5733f24-3f24-4d19-bf7b-0eb1d962bf92"
+                },
+                {
+                    "description": "Pad 1 [GND] von FID5 auf B.Cu",
+                    "pos": {
+                        "x": 92.0,
+                        "y": 58.0
+                    },
+                    "uuid": "021d2d29-439b-4cd5-9a60-da482c107d0c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
                     "description": "Pad 2 [GND] von C7 auf F.Cu",
                     "pos": {
                         "x": 86.0,
@@ -1087,6 +1110,29 @@
                         "y": 28.5
                     },
                     "uuid": "8fe757fb-144b-4084-91bc-96debfda526d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C7 auf F.Cu",
+                    "pos": {
+                        "x": 86.0,
+                        "y": 31.7
+                    },
+                    "uuid": "b562a6e3-9bb9-4fb3-8fc8-353122f14483"
+                },
+                {
+                    "description": "Pad 2 [GND] von C2 auf F.Cu",
+                    "pos": {
+                        "x": 89.95,
+                        "y": 28.5
+                    },
+                    "uuid": "e816617f-f367-43db-be84-612716a85637"
                 }
             ],
             "severity": "error",
@@ -1188,78 +1234,9 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 2 [GND] von C2 auf F.Cu",
-                    "pos": {
-                        "x": 89.95,
-                        "y": 28.5
-                    },
-                    "uuid": "e816617f-f367-43db-be84-612716a85637"
-                },
-                {
-                    "description": "Pad 2 [GND] von C11 auf F.Cu",
-                    "pos": {
-                        "x": 92.475,
-                        "y": 32.0
-                    },
-                    "uuid": "f9777e27-7237-4b4d-8cb7-6f9fc05f54d9"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 2 [GND] von C2 auf F.Cu",
-                    "pos": {
-                        "x": 89.95,
-                        "y": 28.5
-                    },
-                    "uuid": "e816617f-f367-43db-be84-612716a85637"
-                },
-                {
-                    "description": "Pad 2 [GND] von C7 auf F.Cu",
-                    "pos": {
-                        "x": 86.0,
-                        "y": 31.7
-                    },
-                    "uuid": "b562a6e3-9bb9-4fb3-8fc8-353122f14483"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
-                    "description": "Pad 1 [GND] von FID5 auf B.Cu",
-                    "pos": {
-                        "x": 92.0,
-                        "y": 58.0
-                    },
-                    "uuid": "021d2d29-439b-4cd5-9a60-da482c107d0c"
-                },
-                {
-                    "description": "Durchsteckpad 2 [GND] von J1",
-                    "pos": {
-                        "x": 84.54,
-                        "y": 56.2
-                    },
-                    "uuid": "e5733f24-3f24-4d19-bf7b-0eb1d962bf92"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Fehlende Verbindung zwischen Elementen",
-            "items": [
-                {
                     "description": "Durchsteckpad 1 [GND] von J9",
                     "pos": {
-                        "x": 93.0,
+                        "x": 92.0,
                         "y": 12.0
                     },
                     "uuid": "b4112757-5e66-4b8e-8118-c7860ffa7ffd"
@@ -1271,6 +1248,29 @@
                         "y": 7.64
                     },
                     "uuid": "c8398552-86c3-4b45-8878-293cb18a8803"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von C11 auf F.Cu",
+                    "pos": {
+                        "x": 92.475,
+                        "y": 32.0
+                    },
+                    "uuid": "f9777e27-7237-4b4d-8cb7-6f9fc05f54d9"
+                },
+                {
+                    "description": "Pad 2 [GND] von C2 auf F.Cu",
+                    "pos": {
+                        "x": 89.95,
+                        "y": 28.5
+                    },
+                    "uuid": "e816617f-f367-43db-be84-612716a85637"
                 }
             ],
             "severity": "error",
@@ -1648,12 +1648,12 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Durchsteckpad 1 [+3V3] von J7",
+                    "description": "Pad 4 [+3V3] von U2 auf F.Cu",
                     "pos": {
-                        "x": 3.0,
-                        "y": 14.0
+                        "x": 12.475,
+                        "y": 33.095
                     },
-                    "uuid": "6d824d3e-b23b-427a-9d01-b4361bd8a01f"
+                    "uuid": "2f6c75d3-ed60-4c4b-81e5-0a3743ea00c1"
                 },
                 {
                     "description": "Pad 1 [+3V3] von C3 auf F.Cu",
@@ -1671,20 +1671,20 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 4 [+3V3] von U2 auf F.Cu",
-                    "pos": {
-                        "x": 12.475,
-                        "y": 33.095
-                    },
-                    "uuid": "2f6c75d3-ed60-4c4b-81e5-0a3743ea00c1"
-                },
-                {
                     "description": "Pad 1 [+3V3] von C3 auf F.Cu",
                     "pos": {
                         "x": 15.05,
                         "y": 30.5
                     },
                     "uuid": "cdb3e0ae-ccb8-471f-8769-ab3dbad681e3"
+                },
+                {
+                    "description": "Durchsteckpad 1 [+3V3] von J7",
+                    "pos": {
+                        "x": 4.0,
+                        "y": 14.0
+                    },
+                    "uuid": "6d824d3e-b23b-427a-9d01-b4361bd8a01f"
                 }
             ],
             "severity": "error",
@@ -1809,20 +1809,20 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 1 [+3V3] von C6 auf F.Cu",
-                    "pos": {
-                        "x": 61.0,
-                        "y": 27.65
-                    },
-                    "uuid": "9493bc0e-88ea-4980-8d19-27ad3ff99739"
-                },
-                {
                     "description": "Pad 1 [+3V3] von R5 auf F.Cu",
                     "pos": {
                         "x": 55.05,
                         "y": 30.0
                     },
                     "uuid": "08ff8567-37b2-4153-93ab-f65c62340fc2"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C6 auf F.Cu",
+                    "pos": {
+                        "x": 61.0,
+                        "y": 27.65
+                    },
+                    "uuid": "9493bc0e-88ea-4980-8d19-27ad3ff99739"
                 }
             ],
             "severity": "error",
@@ -1980,8 +1980,8 @@
                 {
                     "description": "Durchsteckpad 6 [+3V3] von J9",
                     "pos": {
-                        "x": 93.0,
-                        "y": 18.35
+                        "x": 85.65,
+                        "y": 12.0
                     },
                     "uuid": "a4e9101f-d1b9-462a-8dcd-ded281ffac1b"
                 }
@@ -2016,12 +2016,12 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 1 [+3V3] von C11 auf F.Cu",
+                    "description": "Pad 1 [+3V3] von C15 auf F.Cu",
                     "pos": {
                         "x": 89.525,
-                        "y": 32.0
+                        "y": 47.0
                     },
-                    "uuid": "39f0898e-d049-47b7-9eca-b8e0da477e61"
+                    "uuid": "1b653671-7e31-4d0d-bc3c-a9875deb98cd"
                 },
                 {
                     "description": "Pad 2 [+3V3] von L1 auf F.Cu",
@@ -2039,20 +2039,20 @@
             "description": "Fehlende Verbindung zwischen Elementen",
             "items": [
                 {
-                    "description": "Pad 1 [+3V3] von C15 auf F.Cu",
-                    "pos": {
-                        "x": 89.525,
-                        "y": 47.0
-                    },
-                    "uuid": "1b653671-7e31-4d0d-bc3c-a9875deb98cd"
-                },
-                {
                     "description": "Pad 2 [+3V3] von L1 auf F.Cu",
                     "pos": {
                         "x": 91.5,
                         "y": 41.0
                     },
                     "uuid": "7a601860-074f-409d-a665-2f275b617f8f"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C11 auf F.Cu",
+                    "pos": {
+                        "x": 89.525,
+                        "y": 32.0
+                    },
+                    "uuid": "39f0898e-d049-47b7-9eca-b8e0da477e61"
                 }
             ],
             "severity": "error",
@@ -2938,8 +2938,8 @@
                 {
                     "description": "Durchsteckpad 3 [GPIO4] von J7",
                     "pos": {
-                        "x": 3.0,
-                        "y": 16.54
+                        "x": 6.54,
+                        "y": 14.0
                     },
                     "uuid": "8d3b0620-5bae-47a6-8dcf-9ef0202f071c"
                 },
@@ -2961,8 +2961,8 @@
                 {
                     "description": "Durchsteckpad 4 [GPIO5] von J7",
                     "pos": {
-                        "x": 3.0,
-                        "y": 17.81
+                        "x": 7.81,
+                        "y": 14.0
                     },
                     "uuid": "b703dc66-6f49-4179-98b1-987324d6bcbd"
                 },
@@ -2984,8 +2984,8 @@
                 {
                     "description": "Durchsteckpad 5 [GPIO6] von J7",
                     "pos": {
-                        "x": 3.0,
-                        "y": 19.08
+                        "x": 9.08,
+                        "y": 14.0
                     },
                     "uuid": "6ec5f938-0202-48c1-b20d-3f4f51ff7857"
                 },
@@ -3007,8 +3007,8 @@
                 {
                     "description": "Durchsteckpad 6 [GPIO7] von J7",
                     "pos": {
-                        "x": 3.0,
-                        "y": 20.35
+                        "x": 10.35,
+                        "y": 14.0
                     },
                     "uuid": "60b2dc6f-5b8d-41ce-bcfb-f2f7884b7bb7"
                 },
@@ -3038,8 +3038,8 @@
                 {
                     "description": "Durchsteckpad 2 [GPIO15] von J9",
                     "pos": {
-                        "x": 93.0,
-                        "y": 13.27
+                        "x": 90.73,
+                        "y": 12.0
                     },
                     "uuid": "ae27dacd-463f-49bf-8c2c-f138e62f2636"
                 }
@@ -3061,8 +3061,8 @@
                 {
                     "description": "Durchsteckpad 3 [GPIO16] von J9",
                     "pos": {
-                        "x": 93.0,
-                        "y": 14.54
+                        "x": 89.46,
+                        "y": 12.0
                     },
                     "uuid": "dd97fb59-2cc0-43da-b2a6-b85f5d10c125"
                 }
@@ -3084,8 +3084,8 @@
                 {
                     "description": "Durchsteckpad 4 [GPIO17] von J9",
                     "pos": {
-                        "x": 93.0,
-                        "y": 15.81
+                        "x": 88.19,
+                        "y": 12.0
                     },
                     "uuid": "7fa8decc-3f46-4bcb-808b-7de16f497c56"
                 }
@@ -3107,8 +3107,8 @@
                 {
                     "description": "Durchsteckpad 5 [GPIO18] von J9",
                     "pos": {
-                        "x": 93.0,
-                        "y": 17.08
+                        "x": 86.92,
+                        "y": 12.0
                     },
                     "uuid": "390d97fc-72ae-4d18-a159-2d2b54236cda"
                 }
@@ -3122,8 +3122,8 @@
                 {
                     "description": "Durchsteckpad 3 [GPIO8] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 11.54
+                        "x": 46.54,
+                        "y": 9.0
                     },
                     "uuid": "2522c7a0-0fbe-4aa3-853f-66ead8e465a4"
                 },
@@ -3191,8 +3191,8 @@
                 {
                     "description": "Durchsteckpad 4 [GPIO9] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 12.81
+                        "x": 47.81,
+                        "y": 9.0
                     },
                     "uuid": "ae65f597-afc1-445f-b68c-fe932db0c11c"
                 },
@@ -3222,8 +3222,8 @@
                 {
                     "description": "Durchsteckpad 4 [GPIO9] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 12.81
+                        "x": 47.81,
+                        "y": 9.0
                     },
                     "uuid": "ae65f597-afc1-445f-b68c-fe932db0c11c"
                 }
@@ -3283,8 +3283,8 @@
                 {
                     "description": "Durchsteckpad 5 [GPIO14] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 14.08
+                        "x": 49.08,
+                        "y": 9.0
                     },
                     "uuid": "6365d668-87c1-411c-bbf4-b4ef777b17ed"
                 },
@@ -3306,8 +3306,8 @@
                 {
                     "description": "Durchsteckpad 6 [GPIO21] von J8",
                     "pos": {
-                        "x": 44.0,
-                        "y": 15.35
+                        "x": 50.35,
+                        "y": 9.0
                     },
                     "uuid": "4f88cedc-8929-4b77-bca9-c3af99964602"
                 },

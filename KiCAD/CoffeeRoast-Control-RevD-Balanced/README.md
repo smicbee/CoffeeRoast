@@ -20,6 +20,7 @@ The proven RevC project remains untouched.
   - `J8` I2C LCD: 3V3, GND, SDA, SCL, INT, RST;
   - `J9` four-button panel: GND, BTN1, BTN2, BTN3, BTN4, optional 3V3.
 - All three future UI connectors are explicitly 3.3 V interfaces. They are hardware reservations only; pin initialization, I2S/I2C drivers, pull-ups and button handling are not implemented in software yet.
+- J7–J9 now use horizontal pad rows. Every pin function is printed immediately beside its pad with 90-degree text on both board sides, and each complete MIC/LCD/BUTTONS group is enclosed by its own silkscreen frame.
 - Board remains SELV/low voltage only; 230 VAC stays outside the PCB.
 
 ## Current verification state

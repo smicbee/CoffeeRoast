@@ -7,7 +7,7 @@ import pcbnew
 ROOT = Path(__file__).resolve().parents[1]
 P = ROOT / "CoffeeRoast-Control-RevD-Balanced.kicad_pcb"
 W, H = 96.0, 60.0
-MARKER = "CoffeeRoast RevD BALANCED V4 UI"
+MARKER = "CoffeeRoast RevD BALANCED V5 UI LABELS"
 b = pcbnew.LoadBoard(str(P))
 if "--force" not in sys.argv and any(
     isinstance(d, pcbnew.PCB_TEXT) and d.GetText() == MARKER for d in b.GetDrawings()
@@ -99,7 +99,7 @@ pl = {
     # Accessible rail probes.
     "TP24V": (29.0, 48.0, 0), "TP3V3": (52.0, 31.0, 0), "TPGND": (52.0, 40.0, 0),
     # Future UI headers at otherwise unused board-edge regions.
-    "J7": (3.0, 14.0, 0), "J8": (44.0, 9.0, 0), "J9": (93.0, 12.0, 0),
+    "J7": (4.0, 14.0, 90), "J8": (44.0, 9.0, 90), "J9": (92.0, 12.0, 270),
 }
 fp = {f.GetReference(): f for f in b.GetFootprints()}
 missing = sorted(set(pl) - set(fp))
@@ -143,14 +143,33 @@ def edge(a, c):
 for a, c in (((0, 0), (W, 0)), ((W, 0), (W, H)), ((W, H), (0, H)), ((0, H), (0, 0))):
     edge(a, c)
 
-def text(s, x, y, layer=pcbnew.F_SilkS, size=0.8):
+def text(s, x, y, layer=pcbnew.F_SilkS, size=0.8, angle=0):
     t = pcbnew.PCB_TEXT(b)
     t.SetText(s); t.SetLayer(layer); t.SetPosition(pcbnew.VECTOR2I_MM(x, y))
     t.SetTextSize(pcbnew.VECTOR2I_MM(max(size, 0.8), max(size, 0.8)))
     t.SetTextThickness(pcbnew.FromMM(0.12))
+    t.SetTextAngleDegrees(angle)
     if layer == pcbnew.B_SilkS:
         t.SetMirrored(True)
     b.Add(t)
+
+def silk_frame(x1, y1, x2, y2, layer):
+    frame = pcbnew.PCB_SHAPE(b)
+    frame.SetShape(pcbnew.SHAPE_T_RECT)
+    frame.SetLayer(layer)
+    frame.SetWidth(pcbnew.FromMM(0.15))
+    frame.SetStart(pcbnew.VECTOR2I_MM(x1, y1))
+    frame.SetEnd(pcbnew.VECTOR2I_MM(x2, y2))
+    b.Add(frame)
+
+def label_ui_header(ref, title, pin_labels, frame, title_y):
+    pads = sorted(fp[ref].Pads(), key=lambda p: int(p.GetNumber()))
+    for layer in (pcbnew.F_SilkS, pcbnew.B_SilkS):
+        silk_frame(frame[0], frame[1], frame[2], frame[3], layer)
+        text(title, (frame[0] + frame[2]) / 2, title_y, layer)
+        for pad, label in zip(pads, pin_labels):
+            pos = pad.GetPosition()
+            text(label, pos.x / 1e6, pos.y / 1e6 + 3.8, layer, angle=90)
 
 for s, x, y in (("THERMO", 5.5, 51.8), ("SSR", 18.0, 52.5), ("ESC", 29.5, 52.5),
                 ("FAN", 62, 52.5), ("24V IN", 82, 52.5), ("GPIO", 34, 23.0)):
@@ -161,7 +180,7 @@ for s, x, y in (("TC+ TC-", 5.5, 59), ("3V3 SSR-", 18.0, 59), ("24 G P G", 34, 5
 text("USB-C DATA", 15, 10.5, size=0.85)
 text("RESET", 49, 22.5); text("BOOT", 49, 41.0)
 text("3V3", 49.5, 29.0); text("GND", 54.5, 40.0)
-text("USB + ESD", 15, 18.5)
+text("USB + ESD", 17.5, 18.5)
 text("MAX6675 THERMO", 10, 28.5)
 text("SSR DRIVER", 21, 32.5)
 text("10V GATE SUPPLY", 30, 34.0)
@@ -169,25 +188,31 @@ text("FAN DRIVER", 39, 45.5)
 text("FAN MOSFET", 54, 42.0)
 text("ESP32-S3", 70, 27.0)
 text("BUCK 24V > 3V3", 85, 51.0)
-text("MIC / I2S", 7.0, 24.5)
-text("LCD / I2C", 44.0, 17.5)
-text("BUTTONS 1-4", 88.0, 9.0); text("G 1 2 3 4 3V", 88.0, 21.5)
+label_ui_header(
+    "J7", "MIC / I2S", ("3V3", "GND", "BCLK", "WS", "DATA", "SEL"),
+    (2.2, 11.8, 12.2, 25.5), 24.3,
+)
+label_ui_header(
+    "J8", "LCD / I2C", ("3V3", "GND", "SDA", "SCL", "INT", "RST"),
+    (42.2, 6.8, 52.2, 20.0), 18.8,
+)
+label_ui_header(
+    "J9", "BUTTONS 1-4", ("GND", "BTN1", "BTN2", "BTN3", "BTN4", "3V3"),
+    (83.8, 9.8, 93.8, 23.0), 21.8,
+)
 # Revision/safety identity is kept on the bottom silkscreen where it remains legible.
 for s, x in (("THERMO TC+ TC-", 7), ("SSR 3V3 SSR-", 18), ("ESC 24 GND PWM GND", 34),
              ("FAN 24 FAN-", 62), ("POWER 24 GND", 82)):
     text(s, x, 52, pcbnew.B_SilkS)
 text("GPIO 3 46 9 10 48 45", 34, 24, pcbnew.B_SilkS)
 text("USB-C DATA / FLASH", 15, 11, pcbnew.B_SilkS)
-text("USB + ESD", 15, 18.5, pcbnew.B_SilkS)
+text("USB + ESD", 17.5, 18.5, pcbnew.B_SilkS)
 text("MAX6675 THERMO", 10, 30.0, pcbnew.B_SilkS)
 text("SSR DRIVER", 22, 37.0, pcbnew.B_SilkS)
 text("FAN GATE DRIVER", 38, 44.0, pcbnew.B_SilkS)
 text("ESP32-S3 WIFI / BT", 70, 24.0, pcbnew.B_SilkS)
 text("BUCK 24V > 3V3", 85, 35.0, pcbnew.B_SilkS)
 text("ANTENNA - KEEP CLEAR", 72, 4.0, pcbnew.B_SilkS)
-text("MIC/I2S 3V G B W D S", 10.0, 25.0, pcbnew.B_SilkS)
-text("LCD/I2C 3V G SDA SCL INT RST", 47.0, 22.5, pcbnew.B_SilkS)
-text("BUTTONS G 1 2 3 4 3V", 87.0, 23.5, pcbnew.B_SilkS)
 text(MARKER, 28, 27.0, pcbnew.B_SilkS, 0.8)
 text("24V SELV ONLY - NO 230V", 28, 29.0, pcbnew.B_SilkS)
 
