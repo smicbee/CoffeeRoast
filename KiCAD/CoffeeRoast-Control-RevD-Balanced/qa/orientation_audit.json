@@ -1,0 +1,591 @@
+{
+  "board": "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevD-Balanced/CoffeeRoast-Control-RevD-Balanced.kicad_pcb",
+  "scope": "orientation-sensitive pad/net semantics plus USB Product Edge and ESP32 antenna keepout",
+  "board_footprints_total": 67,
+  "checked_references": 32,
+  "nonpolar_or_mechanical_references": 35,
+  "j5": {
+    "mpn": "XKB U262-161N-4BVC11 / LCSC C319148",
+    "anchor_y_mm": 3.675,
+    "rotation_deg": 180.0,
+    "product_edge_y_mm": 0.0,
+    "fine_smt_tail_row_y_mm": 7.345,
+    "status": "PASS"
+  },
+  "esp32_antenna_keepout_xywh_mm": [
+    48.0,
+    0.0,
+    48.0,
+    6.2
+  ],
+  "findings": [
+    {
+      "reference": "J1",
+      "value": "24V_IN_FROM_230V_PSU_3A",
+      "footprint": "CoffeeRoast:J1_J1_24V_SolderPads",
+      "position_mm": [
+        82.0,
+        56.2
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J2",
+      "value": "FAN_24V_PWM_3A",
+      "footprint": "CoffeeRoast:J2_J2_Fan_SolderPads",
+      "position_mm": [
+        62.0,
+        56.2
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "FAN_NEG"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J3",
+      "value": "SSR_INPUT_3V3_TO_EXTERNAL_SSR",
+      "footprint": "CoffeeRoast:J3_J3_SSR_SolderPads",
+      "position_mm": [
+        18.0,
+        56.2
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+3V3",
+        "2": "SSR_NEG"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J4",
+      "value": "K_TYPE_THERMOCOUPLE",
+      "footprint": "CoffeeRoast:J4_J4_Thermocouple_SolderPads",
+      "position_mm": [
+        5.5,
+        56.2
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "THERMO_PLUS",
+        "2": "THERMO_MINUS"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J5",
+      "value": "USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+      "footprint": "CoffeeRoast:J5_USB_C_Receptacle_XKB_U262-16XN-4BVC11",
+      "position_mm": [
+        15.0,
+        3.675
+      ],
+      "rotation_deg": 180.0,
+      "pin_nets": {
+        "1": "GND",
+        "2": "USB_VBUS",
+        "3": "USB_CC1",
+        "4": "USB_DP",
+        "5": "USB_DN",
+        "6": "USB_CC2",
+        "7": "USB_VBUS",
+        "8": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J6",
+      "value": "ESC_24V_GND_PWM_GND_GPIO10",
+      "footprint": "CoffeeRoast:J6_ESC_4Pin_P5.08mm",
+      "position_mm": [
+        34.0,
+        56.2
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "GND",
+        "3": "GPIO10",
+        "4": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J7",
+      "value": "MIC_I2S_FUTURE",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical",
+      "position_mm": [
+        4.0,
+        14.0
+      ],
+      "rotation_deg": 90.0,
+      "pin_nets": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "GPIO4",
+        "4": "GPIO5",
+        "5": "GPIO6",
+        "6": "GPIO7"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J8",
+      "value": "LCD_I2C_FUTURE",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical",
+      "position_mm": [
+        44.0,
+        9.0
+      ],
+      "rotation_deg": 90.0,
+      "pin_nets": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "GPIO8",
+        "4": "GPIO9",
+        "5": "GPIO14",
+        "6": "GPIO21"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "J9",
+      "value": "BUTTONS_4_FUTURE",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical",
+      "position_mm": [
+        92.0,
+        12.0
+      ],
+      "rotation_deg": 270.0,
+      "pin_nets": {
+        "1": "GND",
+        "2": "GPIO15",
+        "3": "GPIO16",
+        "4": "GPIO17",
+        "5": "GPIO18",
+        "6": "+3V3"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "JGPIO1",
+      "value": "ESP32_GPIO_BREAKOUT_ROW",
+      "footprint": "CoffeeRoast:JGPIO1_ESP32_GPIO_Breakout_Row",
+      "position_mm": [
+        34.0,
+        20.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "GPIO3",
+        "2": "GPIO46",
+        "3": "GPIO9",
+        "4": "GPIO10",
+        "5": "GPIO48",
+        "6": "GPIO45"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "U1",
+      "value": "ESP32-S3-WROOM-1",
+      "footprint": "CoffeeRoast:U1_ESP32-S3-WROOM-1",
+      "position_mm": [
+        72.0,
+        15.9
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "GND",
+        "2": "+3V3",
+        "3": "EN",
+        "4": "GPIO4",
+        "5": "GPIO5",
+        "6": "GPIO6",
+        "7": "GPIO7",
+        "8": "GPIO15",
+        "9": "GPIO16",
+        "10": "GPIO17",
+        "11": "GPIO18",
+        "12": "GPIO8",
+        "13": "USB_DN_MCU",
+        "14": "USB_DP_MCU",
+        "15": "GPIO3",
+        "16": "GPIO46",
+        "17": "GPIO9",
+        "18": "GPIO10",
+        "19": "MAX_DO",
+        "20": "MAX_CS",
+        "21": "MAX_SCK",
+        "22": "GPIO14",
+        "23": "GPIO21",
+        "24": "GPIO47",
+        "25": "GPIO48",
+        "26": "GPIO45",
+        "27": "BOOT",
+        "28": "GPIO35",
+        "29": "GPIO36",
+        "30": "GPIO37",
+        "31": "GPIO38",
+        "32": "GPIO39",
+        "33": "GPIO40",
+        "34": "GPIO41",
+        "35": "GPIO42",
+        "36": "RXD0_GPIO44",
+        "37": "TXD0_GPIO43",
+        "38": "FAN_PWM",
+        "39": "HEATER_PWM",
+        "40": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "U2",
+      "value": "MAX6675_SOIC8_3V3",
+      "footprint": "CoffeeRoast:U2_SOIC-8_3.9x4.9mm_P1.27mm",
+      "position_mm": [
+        10.0,
+        35.0
+      ],
+      "rotation_deg": 180.0,
+      "pin_nets": {
+        "1": "GND",
+        "2": "THERMO_MINUS",
+        "3": "THERMO_PLUS",
+        "4": "+3V3",
+        "5": "MAX_SCK",
+        "6": "MAX_CS",
+        "7": "MAX_DO",
+        "8": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "U4",
+      "value": "LMR16010PDDAR",
+      "footprint": "CoffeeRoast:U4_SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm",
+      "position_mm": [
+        80.0,
+        41.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "BUCK_BOOT",
+        "2": "+24V_RAW",
+        "3": "+24V_RAW",
+        "4": "BUCK_RT",
+        "5": "BUCK_FB",
+        "6": "U4_PGOOD_NC",
+        "7": "GND",
+        "8": "BUCK_SW",
+        "9": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "U5",
+      "value": "USBLC6-2SC6",
+      "footprint": "CoffeeRoast:U5_SOT-23-6",
+      "position_mm": [
+        26.0,
+        10.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "USB_DN",
+        "2": "GND",
+        "3": "USB_DP",
+        "4": "USB_DP",
+        "5": "USB_VBUS",
+        "6": "USB_DN"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "U6",
+      "value": "UCC27511DBVR",
+      "footprint": "CoffeeRoast:U6_SOT-23-6",
+      "position_mm": [
+        36.0,
+        41.5
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "VDRV10",
+        "2": "FAN_GATE_ON",
+        "3": "FAN_GATE_OFF",
+        "4": "GND",
+        "5": "GND",
+        "6": "FAN_PWM"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "Q1",
+      "value": "STP55NF06L",
+      "footprint": "CoffeeRoast:Q1_TO-220-3_Vertical",
+      "position_mm": [
+        54.0,
+        47.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "FAN_GATE",
+        "2": "FAN_NEG",
+        "3": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "Q2",
+      "value": "2N7002_SSR_DRIVER",
+      "footprint": "CoffeeRoast:Q2_SOT-23",
+      "position_mm": [
+        22.0,
+        39.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "SSR_GATE",
+        "2": "GND",
+        "3": "SSR_NEG"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "D1",
+      "value": "SS56-E3/57T",
+      "footprint": "CoffeeRoast:D1_D_SMB",
+      "position_mm": [
+        45.0,
+        50.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "FAN_NEG"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "D2",
+      "value": "SMBJ33A",
+      "footprint": "CoffeeRoast:D2_D_SMB",
+      "position_mm": [
+        64.0,
+        37.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "D3",
+      "value": "SMBJ33A",
+      "footprint": "CoffeeRoast:D3_D_SMB",
+      "position_mm": [
+        37.0,
+        50.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "FAN_NEG"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "D4",
+      "value": "SS110_100V",
+      "footprint": "CoffeeRoast:D4_D_SMA",
+      "position_mm": [
+        84.0,
+        35.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "BUCK_SW",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "D5",
+      "value": "BZT52C10_10V",
+      "footprint": "CoffeeRoast:D5_D_SOD-123",
+      "position_mm": [
+        29.0,
+        26.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "VDRV10",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "C4",
+      "value": "EEU-FR1V221B_220uF_35V",
+      "footprint": "CoffeeRoast:C4_CP_Radial_D8.0mm_P5.00mm",
+      "position_mm": [
+        64.0,
+        46.5
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "L1",
+      "value": "FNR6045S220MT_22uH_2A",
+      "footprint": "CoffeeRoast:L1_L_Changjiang_FNR6045S",
+      "position_mm": [
+        89.0,
+        41.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "BUCK_SW",
+        "2": "+3V3"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "SW1",
+      "value": "TL3301AF160QG_RESET",
+      "footprint": "CoffeeRoast:SW1_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG",
+      "position_mm": [
+        42.0,
+        27.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "EN",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "SW2",
+      "value": "TL3301AF160QG_BOOT",
+      "footprint": "CoffeeRoast:SW2_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG",
+      "position_mm": [
+        46.0,
+        36.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "BOOT",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TP24V",
+      "value": "+24V_FUSED_TEST",
+      "footprint": "CoffeeRoast:TP24V_TestPoint_Pad_D1.5mm",
+      "position_mm": [
+        29.0,
+        48.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+24V_RAW"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TP3V3",
+      "value": "+3V3_TEST",
+      "footprint": "CoffeeRoast:TP3V3_TestPoint_Pad_D1.5mm",
+      "position_mm": [
+        52.0,
+        31.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+3V3"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TPGND",
+      "value": "GND_TEST",
+      "footprint": "CoffeeRoast:TPGND_TestPoint_Pad_D1.5mm",
+      "position_mm": [
+        52.0,
+        40.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TPBOOT1",
+      "value": "BOOT_TWEEZER_PADS",
+      "footprint": "CoffeeRoast:TPBOOT1_Boot_Tweezer_Pads",
+      "position_mm": [
+        39.0,
+        36.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "BOOT",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TPRESET1",
+      "value": "RESET_TWEEZER_PADS",
+      "footprint": "CoffeeRoast:TPRESET1_Reset_Tweezer_Pads",
+      "position_mm": [
+        34.0,
+        27.0
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "EN",
+        "2": "GND"
+      },
+      "status": "PASS"
+    },
+    {
+      "reference": "TPSSR1",
+      "value": "SSR_3V3_OUT_MEAS_PADS",
+      "footprint": "CoffeeRoast:TPSSR1_SSR_Measurement_Pads",
+      "position_mm": [
+        20.0,
+        49.5
+      ],
+      "rotation_deg": 0.0,
+      "pin_nets": {
+        "1": "+3V3",
+        "2": "SSR_NEG"
+      },
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "limits": [
+    "Placement-stage audit only; 159 unrouted items are expected.",
+    "Assembler model rotation and live supplier substitutions still require final preview review.",
+    "Non-polar R/C orientation is mechanically indifferent and not enumerated here."
+  ]
+}

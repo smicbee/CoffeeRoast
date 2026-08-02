@@ -2,8 +2,8 @@ Ref,Qty,Value/Part,Footprint,Manufacturer Part,Supplier Part,Assembly,Notes
 C1,1,10uF_3V3_BULK_A,CoffeeRoast:C1_C_0805_2012Metric,GRM21BR61E106KA73L,C84416,PCBA,10uF 25V X5R 3V3 bulk A.
 C2,1,10uF_3V3_BULK_B,CoffeeRoast:C2_C_0805_2012Metric,GRM21BR61E106KA73L,C84416,PCBA,10uF 25V X5R 3V3 bulk B.
 C3,1,100nF_MAX6675,CoffeeRoast:C3_C_0805_2012Metric,CC0805KRX7R9BB104,C49678,PCBA,100nF MAX6675 decoupling.
-C4,1,EEU-FR1V221B_220uF_35V,CoffeeRoast:C4_CP_Radial_D8.0mm_P5.00mm,EEU-FR1V221B,C3697,HAND/DNP,Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.
-C5,1,CC0805JRNPO9BN102_1nF_C0G,CoffeeRoast:C5_C_0805_2012Metric,CC0805JRNPO9BN102,C139684,DNP,Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.
+C4,1,EEU-FR1V221B_220uF_35V,CoffeeRoast:C4_CP_Radial_D8.0mm_P5.00mm,EEU-FR1V221B,C1583130,HAND/DNP,Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; live LCSC mapping C1583130; hand-solder and observe polarity.
+C5,1,CC0805JRNPO9BN102_1nF_C0G,CoffeeRoast:C5_C_0805_2012Metric,CC0805JRNPO9BN102,C62774,DNP,Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; live LCSC mapping C62774; DNP until noise/bias testing confirms it.
 C6,1,100nF_U1_DECOUPLING_0603,CoffeeRoast:C6_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF ESP32 decoupling.
 C7,1,100nF_U4_3V3_OUTPUT_DECOUPLING_0603,CoffeeRoast:C7_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF 3V3 output decoupling.
 C8,1,2.2uF_100V_X7R,CoffeeRoast:C8_C_1210_3225Metric,CS3225X7R225K101NRK,C2900749,PCBA,2.2uF 100V buck input.

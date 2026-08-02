@@ -7,7 +7,7 @@ import pcbnew
 ROOT = Path(__file__).resolve().parents[1]
 P = ROOT / "CoffeeRoast-Control-RevD-Balanced.kicad_pcb"
 W, H = 96.0, 60.0
-MARKER = "CoffeeRoast RevD BALANCED V5 UI LABELS"
+MARKER = "CoffeeRoast RevD BALANCED V6 USB EDGE"
 b = pcbnew.LoadBoard(str(P))
 if "--force" not in sys.argv and any(
     isinstance(d, pcbnew.PCB_TEXT) and d.GetText() == MARKER for d in b.GetDrawings()
@@ -68,7 +68,10 @@ pl = {
     "J4": (5.5, 56.2, 0), "J3": (18.0, 56.2, 0), "J6": (34.0, 56.2, 0),
     "J2": (62.0, 56.2, 0), "J1": (82.0, 56.2, 0),
     # USB and service access occupy the upper-left usable area.
-    "J5": (15.0, 6.0, 0), "U5": (26.0, 10.0, 0),
+    # J5 datasheet Product Edge: the mating face is local +Y, opposite the
+    # fine SMT tails at local -3.67 mm. Rotate 180 degrees and place the
+    # mating face (local +3.675 mm) exactly on the top board edge y=0.
+    "J5": (15.0, 3.675, 180), "U5": (26.0, 10.0, 0),
     "R10": (22.0, 15.0, 0), "R11": (30.0, 15.0, 0),
     "JGPIO1": (34.0, 20.0, 0),
     # Thermocouple block moved upward and opened out around U2.
@@ -188,6 +191,10 @@ text("FAN DRIVER", 39, 45.5)
 text("FAN MOSFET", 54, 42.0)
 text("ESP32-S3", 70, 27.0)
 text("BUCK 24V > 3V3", 85, 51.0)
+# C4 is hand-soldered and its copied footprint has no production silkscreen.
+# Mark the positive pad explicitly on both sides.
+text("+", 60.5, 46.5, size=0.9)
+text("+", 60.5, 46.5, pcbnew.B_SilkS, size=0.9)
 label_ui_header(
     "J7", "MIC / I2S", ("3V3", "GND", "BCLK", "WS", "DATA", "SEL"),
     (2.2, 11.8, 12.2, 25.5), 24.3,

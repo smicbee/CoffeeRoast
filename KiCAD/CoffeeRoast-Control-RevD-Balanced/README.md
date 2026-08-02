@@ -9,7 +9,7 @@ The proven RevC project remains untouched.
 - Thermocouple/MAX6675 block moved upward and opened out.
 - SSR and fan-driver support parts use more of the centre-left area instead of crowding the bottom edge.
 - RESET/BOOT controls and probes have clearer service access.
-- USB-C remains on the top edge; field wiring remains grouped along the bottom edge.
+- USB-C remains on the top edge. J5 is rotated 180° so the XKB `Product Edge`/mating face is exactly at board `y = 0`; the fine SMT tail row is inboard at `y = 7.345 mm`. Field wiring remains grouped along the bottom edge.
 - ESP32-S3-WROOM-1 moved to the top edge; the physical antenna front is exactly flush with `y = 0`.
 - The on-board antenna keepout is now **48 × 6.2 mm**: Espressif's 18 × 6.2 mm antenna area plus conservative 15 mm side clearances; forward clearance lies outside the PCB.
 - Buck converter moved upward into the recovered right-hand area.
@@ -33,7 +33,9 @@ This revision is intentionally stopped at the **visual-placement acceptance gate
 - expected unrouted connections: **159**
 - schematic ERC: **0 violations**
 - schematic/PCB parity: **0 issues**
+- orientation/polarity audit: **PASS, 32 functional references asserted**
 - top and bottom placement renders: `render/placement/top-ui.png`, `render/placement/bottom-ui.png`
+- detailed audit: `docs/orientation_and_mechanical_audit.md`
 
 It is **not fabrication-ready**. Routing, GND pours, full DRC/parity, angle audit, Gerbers, BOM/CPL and manufacturer preview are deliberately deferred until the placement is visually accepted.
 
@@ -45,6 +47,7 @@ From this directory with KiCad/pcbnew 9.0.8:
 python3 -m pip install -r tools/requirements.txt
 python3 tools/add_ui_connectors_to_schematic.py
 /usr/bin/python3 tools/build_balanced_revd.py
+/usr/bin/python3 tools/audit_orientation_sensitive_parts.py
 kicad-cli pcb drc --severity-all --format json \
   --all-track-errors --schematic-parity \
   -o qa/placement-ui-parity-drc.json CoffeeRoast-Control-RevD-Balanced.kicad_pcb
