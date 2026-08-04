@@ -1,4 +1,16 @@
-# CoffeeRoast RevD enclosure prototype
+# CoffeeRoast RevD enclosure prototypes
+
+## Current preferred implementation: OpenSCAD snap lid
+
+The current design is `openscad/CoffeeRoast_RevD_enclosure.scad`: a rounded,
+tool-free enclosure with two side snap tabs, no lid screws and no cylindrical corner
+towers. Build it with `openscad/build.sh`; printable STL/3MF files and verification
+artifacts are under `openscad/generated/`. See `openscad/README.md`.
+
+## Previous CadQuery screw-lid prototype
+
+The earlier CadQuery implementation below is retained for traceability, but its
+screw-tower geometry is superseded by the OpenSCAD snap-fit variant.
 
 Parametric CadQuery enclosure for `CoffeeRoast-Control-RevD-Balanced`.
 

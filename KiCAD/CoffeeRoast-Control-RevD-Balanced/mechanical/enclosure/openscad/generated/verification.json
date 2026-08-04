@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "scope": "OpenSCAD digital prototype geometry",
+  "openscad_version": "OpenSCAD version 2021.01",
+  "design": {
+    "pcb_mm": [
+      96.0,
+      60.0,
+      1.6
+    ],
+    "tray_body_mm": [
+      100.4,
+      64.4,
+      30.0
+    ],
+    "corner_radius_mm": 3.0,
+    "snap": "two opposed side cantilevers; no screws or corner towers",
+    "pcb_retention": "four floor supports plus four lid hold-down pads"
+  },
+  "release_blockers": [
+    "Print the snap coupon/first lid in final material and tune snap depth/clearance.",
+    "Measure manufactured Q1 and C4 installed heights.",
+    "Fit-test J5 with the exact USB-C plug and cable bend.",
+    "Measure J1-J4/J6 cable diameters and add final strain relief.",
+    "Measure worst-case enclosure temperatures before material release."
+  ],
+  "checks": [
+    {
+      "name": "stl_meshes_closed_manifold",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "triangles": 508,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 0.0,
+            "xmax": 100.4,
+            "x": 100.4,
+            "ymin": 0.0,
+            "ymax": 64.4,
+            "y": 64.4,
+            "zmin": 0.0,
+            "zmax": 30.0,
+            "z": 30.0
+          }
+        },
+        "lid_print": {
+          "triangles": 1388,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": -1.5,
+            "xmax": 101.9,
+            "x": 103.4,
+            "ymin": -1.5,
+            "ymax": 65.9,
+            "y": 67.4,
+            "zmin": 0.0,
+            "zmax": 25.4,
+            "z": 25.4
+          }
+        },
+        "lid_design": {
+          "triangles": 1388,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": -1.5,
+            "xmax": 101.9,
+            "x": 103.4,
+            "ymin": -1.5,
+            "ymax": 65.9,
+            "y": 67.4,
+            "zmin": -23.8,
+            "zmax": 1.6,
+            "z": 25.4
+          }
+        },
+        "board_proxy": {
+          "triangles": 364,
+          "connected_components": 2,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 2.2,
+            "xmax": 98.2,
+            "x": 96.0,
+            "ymin": 2.2,
+            "ymax": 62.225,
+            "y": 60.025,
+            "zmin": 4.4,
+            "zmax": 25.0,
+            "z": 20.6
+          }
+        }
+      }
+    },
+    {
+      "name": "print_parts_single_connected_component",
+      "passed": true,
+      "evidence": {
+        "tray": 1,
+        "lid_print": 1
+      }
+    },
+    {
+      "name": "expected_envelopes",
+      "passed": true,
+      "evidence": {
+        "tray_mm": {
+          "xmin": 0.0,
+          "xmax": 100.4,
+          "x": 100.4,
+          "ymin": 0.0,
+          "ymax": 64.4,
+          "y": 64.4,
+          "zmin": 0.0,
+          "zmax": 30.0,
+          "z": 30.0
+        },
+        "lid_print_mm": {
+          "xmin": -1.5,
+          "xmax": 101.9,
+          "x": 103.4,
+          "ymin": -1.5,
+          "ymax": 65.9,
+          "y": 67.4,
+          "zmin": 0.0,
+          "zmax": 25.4,
+          "z": 25.4
+        }
+      }
+    },
+    {
+      "name": "print_3mf_archives_valid",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "valid": true,
+          "bytes": 6894
+        },
+        "lid_print": {
+          "valid": true,
+          "bytes": 16949
+        }
+      }
+    },
+    {
+      "name": "previews_generated",
+      "passed": true,
+      "evidence": {
+        "preview_closed.png": 39195,
+        "preview_exploded.png": 36141
+      }
+    }
+  ]
+}
