@@ -1,0 +1,54 @@
+{
+  "board": "CoffeeRoast-Control-RevD-Balanced.kicad_pcb",
+  "revision": "D-FINAL",
+  "tracks_and_vias": 678,
+  "vias": 31,
+  "off_angle_segments": [],
+  "usb_total_length_mm": {
+    "D-": 56.095,
+    "D+": 61.79,
+    "absolute_skew_mm": 5.694
+  },
+  "critical_nets": {
+    "+24V_RAW": {
+      "length_mm": 127.587,
+      "segments": 35,
+      "vias": 0,
+      "widths_mm": {
+        "1.0": 35
+      }
+    },
+    "FAN_NEG": {
+      "length_mm": 41.745,
+      "segments": 12,
+      "vias": 0,
+      "widths_mm": {
+        "1.0": 12
+      }
+    },
+    "BUCK_SW": {
+      "length_mm": 19.853,
+      "segments": 7,
+      "vias": 0,
+      "widths_mm": {
+        "0.2": 7
+      }
+    },
+    "THERMO_PLUS": {
+      "length_mm": 28.842,
+      "segments": 7,
+      "vias": 1,
+      "widths_mm": {
+        "0.25": 7
+      }
+    },
+    "THERMO_MINUS": {
+      "length_mm": 27.62,
+      "segments": 7,
+      "vias": 0,
+      "widths_mm": {
+        "0.25": 7
+      }
+    }
+  }
+}

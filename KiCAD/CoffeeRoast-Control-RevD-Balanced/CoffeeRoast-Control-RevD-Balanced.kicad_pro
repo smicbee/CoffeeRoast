@@ -473,6 +473,78 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.25,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CriticalPower",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": -1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "via_diameter": 1.2,
+        "via_drill": 0.6,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": -1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Sensitive",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": -1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": -1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -480,7 +552,60 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "CriticalPower",
+        "pattern": "+24V_RAW"
+      },
+      {
+        "netclass": "CriticalPower",
+        "pattern": "FAN_NEG"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3V3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VDRV10"
+      },
+      {
+        "netclass": "Sensitive",
+        "pattern": "THERMO_PLUS"
+      },
+      {
+        "netclass": "Sensitive",
+        "pattern": "THERMO_MINUS"
+      },
+      {
+        "netclass": "Sensitive",
+        "pattern": "MAX_DO"
+      },
+      {
+        "netclass": "Sensitive",
+        "pattern": "MAX_CS"
+      },
+      {
+        "netclass": "Sensitive",
+        "pattern": "MAX_SCK"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DN"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DP"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DN_MCU"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DP_MCU"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {

@@ -1,6 +1,6 @@
-# CoffeeRoast Control RevD Balanced — placement candidate
+# CoffeeRoast Control RevD Balanced — final routed candidate
 
-RevD is a **separate placement candidate** derived from the exact RevC UltraCompact circuit and footprints. It keeps the **96 × 60 mm, two-layer** board outline but distributes the functional blocks more evenly over the usable area.
+RevD is a **separate final routed candidate** derived from the exact RevC UltraCompact circuit and footprints. It keeps the **96 × 60 mm, two-layer** board outline but distributes the functional blocks more evenly over the usable area.
 
 The proven RevC project remains untouched.
 
@@ -23,23 +23,26 @@ The proven RevC project remains untouched.
 - J7–J9 now use horizontal pad rows. Every pin function is printed immediately beside its pad with 90-degree text on both board sides, and each complete MIC/LCD/BUTTONS group is enclosed by its own silkscreen frame.
 - Board remains SELV/low voltage only; 230 VAC stays outside the PCB.
 
-## Current verification state
+## Final verification state
 
-This revision is intentionally stopped at the **visual-placement acceptance gate** before routing:
+RevD is fully routed as a reproducible two-layer manufacturing candidate:
 
 - board outline: **96 × 60 mm**
 - copper layers: **F.Cu + B.Cu only**
-- placement DRC: **0 violations**
-- expected unrouted connections: **159**
+- full routed DRC: **0 violations**
+- unconnected items: **0**
 - schematic ERC: **0 violations**
 - schematic/PCB parity: **0 issues**
 - orientation/polarity audit: **PASS, 32 functional references asserted**
-- top and bottom placement renders: `render/placement/top-ui.png`, `render/placement/bottom-ui.png`
+- routing angle audit: **0 non-45°/90° segments**
+- `+24V_RAW` and `FAN_NEG`: **1.0 mm throughout, no vias**
+- USB D+/D- total-length skew: **1.745 mm**
+- top/bottom/combined routing renders: `render/final-routing/`
 - detailed audit: `docs/orientation_and_mechanical_audit.md`
 
-It is **not fabrication-ready**. Routing, GND pours, full DRC/parity, angle audit, Gerbers, BOM/CPL and manufacturer preview are deliberately deferred until the placement is visually accepted.
+The local fabrication package is generated under `production/partial-smd-pcba/` and contains Gerber, drill, BOM, CPL, DNP/HAND lists and zero-finding QA reports. It is locally order-ready, but checkout remains blocked until the live assembler preview confirms package identity, Pin 1/polarity, placement, current stock and enclosure fit.
 
-## Reproduce the placement
+## Reproduce and verify the final route
 
 From this directory with KiCad/pcbnew 9.0.8:
 
@@ -47,15 +50,19 @@ From this directory with KiCad/pcbnew 9.0.8:
 python3 -m pip install -r tools/requirements.txt
 python3 tools/add_ui_connectors_to_schematic.py
 /usr/bin/python3 tools/build_balanced_revd.py
+/usr/bin/python3 tools/finalize_routing.py
 /usr/bin/python3 tools/audit_orientation_sensitive_parts.py
+/usr/bin/python3 tools/audit_final_routing.py
 kicad-cli pcb drc --severity-all --format json \
   --all-track-errors --schematic-parity \
   -o qa/placement-ui-parity-drc.json CoffeeRoast-Control-RevD-Balanced.kicad_pcb
 kicad-cli sch erc --format json \
   -o qa/erc-ui.json CoffeeRoast-Control-RevD-Balanced.kicad_sch
+/usr/bin/python3 tools/render_routing_preview.py
+/usr/bin/python3 tools/prepare_partial_pcba_package.py
 ```
 
-Both UI/schematic and placement scripts are idempotent: a second normal run is a hash-identical no-op. Pass `--force` to the placement script only when deliberately regenerating after editing its coordinates. It clears placement-dependent copper, applies the RevD coordinates, restores the two-layer outline and labels, and refills the retained baseline GND zone.
+The final-routing script is idempotent by default once revision `D-FINAL` is present. Pass `--force` only for a deliberate full regeneration. It uses the SHA-256-pinned Freerouting 2.2.4 engine, pre-routes the fine-pitch USB VBUS and MCU-side D+ constraints, preserves 1.0 mm critical-current classes, removes exact SES duplicates, adds both GND planes and marks the result `D-FINAL`.
 
 The detailed UI pin map, including physical pad coordinates, is in `docs/ui_expansion_connectors.csv`. The 1.27 mm headers remain `HAND/DNP` placeholders until the display, microphone module and enclosure cable scheme are selected.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env /usr/bin/python3
-"""Render the RevD two-layer routing preview with functional net colours."""
+"""Render the RevD final two-layer routing with functional net colours."""
 from pathlib import Path
 
 import pcbnew
@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 BOARD = ROOT / "CoffeeRoast-Control-RevD-Balanced.kicad_pcb"
-OUT = ROOT / "render" / "routing-preview"
+OUT = ROOT / "render" / "final-routing"
 OUT.mkdir(parents=True, exist_ok=True)
 SCALE = 20
 MARGIN = 80
@@ -79,9 +79,9 @@ def render(name: str, layers: set[int]) -> None:
         if ref.startswith(("J", "U", "Q", "SW", "L")):
             draw.text((x + 4, y + 4), ref, font=FONT_SMALL, fill=(255, 255, 255))
 
-    draw.text((MARGIN, 18), f"CoffeeRoast RevD — Routing preview {name}", font=FONT, fill=(255, 255, 255))
+    draw.text((MARGIN, 18), f"CoffeeRoast RevD — Final routing QA {name}", font=FONT, fill=(255, 255, 255))
     draw.text((MARGIN, 43), "orange=24V  yellow=FAN  magenta=BUCK_SW  green=USB  violet=THERMO/SPI  red=F.Cu  cyan=B.Cu", font=FONT_SMALL, fill=(210, 215, 225))
-    draw.text((MARGIN, H * SCALE + MARGIN + 24), "PREVIEW: autorouted draft; open connections and critical-current widths still require review", font=FONT_SMALL, fill=(255, 190, 90))
+    draw.text((MARGIN, H * SCALE + MARGIN + 24), "FINAL QA: ERC/DRC/parity/unconnected = 0; 24V and FAN_NEG = 1.0 mm; production preview still required", font=FONT_SMALL, fill=(160, 235, 175))
     image.save(OUT / f"routing_{name.lower()}.png")
 
 

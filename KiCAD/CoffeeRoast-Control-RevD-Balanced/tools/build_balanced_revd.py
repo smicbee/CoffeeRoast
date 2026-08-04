@@ -18,11 +18,7 @@ if "--force" not in sys.argv and any(
 # Start from the exact RevC circuit/footprints but not its placement-dependent copper.
 for t in list(b.GetTracks()):
     b.Delete(t)
-zones = list(b.Zones())
-if not zones:
-    raise SystemExit("No baseline GND zone found")
-zone = zones[0]
-for z in zones[1:]:
+for z in list(b.Zones()):
     b.Delete(z)
 for d in list(b.GetDrawings()):
     b.Delete(d)
@@ -98,7 +94,9 @@ pl = {
     "SW1": (42.0, 27.0, 0), "SW2": (46.0, 36.0, 0),
     "R5": (56.0, 30.0, 0), "R6": (56.0, 35.0, 0),
     "TPRESET1": (34.0, 27.0, 0), "TPBOOT1": (39.0, 36.0, 0),
-    "R7": (65.0, 45.0, 0), "R8": (69.0, 45.0, 0),
+    # USB series resistors belong beside the ESP32 pins, not in the 24 V/buck
+    # area.  Rotation 180 puts pad 1 (MCU side) toward U1.
+    "R7": (60.0, 22.6, 180), "R8": (60.0, 25.1, 180),
     # Accessible rail probes.
     "TP24V": (29.0, 48.0, 0), "TP3V3": (52.0, 31.0, 0), "TPGND": (52.0, 40.0, 0),
     # Future UI headers at otherwise unused board-edge regions.
@@ -223,11 +221,20 @@ text("ANTENNA - KEEP CLEAR", 72, 4.0, pcbnew.B_SilkS)
 text(MARKER, 28, 27.0, pcbnew.B_SilkS, 0.8)
 text("24V SELV ONLY - NO 230V", 28, 29.0, pcbnew.B_SilkS)
 
-poly = zone.Outline(); poly.RemoveAllContours(); poly.NewOutline()
+# Create a real B.Cu GND plane.  The inherited RevC object was a board-wide
+# no-copper rule area; repurposing it produced a full B.Cu routing keepout in
+# Specctra DSN and silently forced the preview router onto F.Cu only.
+zone = pcbnew.ZONE(b)
+zone.SetNet(b.FindNet("GND"))
+zone.SetLayer(pcbnew.B_Cu)
+zone.SetLocalClearance(pcbnew.FromMM(0.25))
+zone.SetMinThickness(pcbnew.FromMM(0.25))
+zone.SetIslandRemovalMode(pcbnew.ISLAND_REMOVAL_MODE_ALWAYS)
+zone.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
+poly = zone.Outline(); poly.NewOutline()
 for x, y in ((0.5, 0.5), (W - 0.5, 0.5), (W - 0.5, H - 0.5), (0.5, H - 0.5)):
     poly.Append(pcbnew.VECTOR2I_MM(x, y))
-zone.SetLayer(pcbnew.B_Cu)
-zone.SetLocalClearance(pcbnew.FromMM(0.25)); zone.SetMinThickness(pcbnew.FromMM(0.25))
+b.Add(zone)
 tb = b.GetTitleBlock(); tb.SetRevision("D-UI")
 tb.SetComment(1, "RevD Balanced UI: MIC, I2C LCD and four-button headers reserved; firmware deferred")
 b.GetDesignSettings().SetAuxOrigin(pcbnew.VECTOR2I_MM(0, H))
