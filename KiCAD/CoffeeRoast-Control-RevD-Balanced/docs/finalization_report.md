@@ -14,6 +14,7 @@ RevD Balanced is finalized locally as a reproducible 96 × 60 mm, two-layer manu
 - ESP32: ESP32-S3-WROOM-1-N8R8
 - Future UI connectors `J7`–`J9`: `HAND/DNP`; software remains deferred
 - Controller PCB remains low-voltage only; 230 VAC stays outside the PCB
+- Accepted gate-drive supply: `+24V_RAW` feeds `VDRV10` through R16 (2.7 kΩ), with D5 (BZT52C10) clamping the local U6 supply to approximately 10 V. This architecture remains intentionally unchanged.
 
 ## Corrections made during finalization
 
@@ -35,12 +36,12 @@ RevD Balanced is finalized locally as a reproducible 96 × 60 mm, two-layer manu
 - Schematic/PCB parity: `0 issues`
 - Orientation/mechanical audit: `PASS`, 32 functional references asserted; all 67 footprints classified
 - Routing angle audit: `0` segments outside 0°/45°/90°/135°
-- Final routing: 700 tracks/vias, 38 vias
-- `+24V_RAW`: 34 segments, all 1.0 mm, no vias
+- Final routing: 678 tracks/vias, 31 vias
+- `+24V_RAW`: 35 segments, all 1.0 mm, no vias
 - `FAN_NEG`: 12 segments, all 1.0 mm, no vias
-- USB D− total length: 56.735 mm
-- USB D+ total length: 58.479 mm
-- USB absolute length skew: 1.745 mm
+- USB D− total length: 56.095 mm
+- USB D+ total length: 61.790 mm
+- USB absolute length skew: 5.694 mm; negligible timing skew for this short USB Full-Speed path
 - Repeated normal `finalize_routing.py` execution: hash-identical no-op once `D-FINAL` exists
 - RevD BOM/CPL generation: PASS
 - `J7`, `J8`, `J9`: absent from assembly BOM/CPL and present in DNP/HAND list

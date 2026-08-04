@@ -6,7 +6,7 @@ This branch contains the completed, reproducible two-layer routing for the accep
 
 - Router: pinned Freerouting 2.2.4
 - Maximum passes: 100; Freerouting stops early on convergence
-- Final tracks/vias: 700 total, including 38 vias
+- Final tracks/vias: 678 total, including 31 vias
 - PCB layers: F.Cu and B.Cu
 - Combined render: `render/final-routing/routing_combined.png`
 - Top/bottom renders are in the same directory.
@@ -18,9 +18,9 @@ This branch contains the completed, reproducible two-layer routing for the accep
 - Schematic/PCB parity issues: 0
 - Unconnected items: 0
 - Non-45°/90° segments: 0
-- `+24V_RAW`: 34 segments, all 1.0 mm, no vias
+- `+24V_RAW`: 35 segments, all 1.0 mm, no vias
 - `FAN_NEG`: 12 segments, all 1.0 mm, no vias
-- USB D+/D- total-length skew: 1.745 mm
+- USB D+/D- total-length skew: 5.694 mm
 - Orientation audit: PASS, all 67 footprints classified and 32 functional references asserted
 
 ## Use

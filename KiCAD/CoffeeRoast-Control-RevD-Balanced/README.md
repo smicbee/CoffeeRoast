@@ -36,7 +36,7 @@ RevD is fully routed as a reproducible two-layer manufacturing candidate:
 - orientation/polarity audit: **PASS, 32 functional references asserted**
 - routing angle audit: **0 non-45°/90° segments**
 - `+24V_RAW` and `FAN_NEG`: **1.0 mm throughout, no vias**
-- USB D+/D- total-length skew: **1.745 mm**
+- USB D+/D- total-length skew: **5.694 mm** (short USB Full-Speed path; electrically negligible timing skew)
 - top/bottom/combined routing renders: `render/final-routing/`
 - detailed audit: `docs/orientation_and_mechanical_audit.md`
 
