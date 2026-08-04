@@ -30,7 +30,7 @@ J8,1,LCD_I2C_FUTURE,Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical,L
 J9,1,BUTTONS_4_FUTURE,Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical,BUTTONS_4_FUTURE,,HAND/DNP,Future four-button panel header; HAND/DNP until panel and enclosure mechanics are selected.
 JGPIO1,1,ESP32_GPIO_BREAKOUT_ROW,CoffeeRoast:JGPIO1_ESP32_GPIO_Breakout_Row,ESP32_GPIO_BREAKOUT_ROW,,HAND/DNP,PCB test/debug/mechanical position; no automated placement.
 L1,1,FNR6045S220MT_22uH_2A,CoffeeRoast:L1_L_Changjiang_FNR6045S,FNR6045S220MT,C168080,PCBA,"22uH, >=2A saturation/current candidate."
-Q1,1,STP55NF06L,CoffeeRoast:Q1_TO-220-3_Vertical,STP55NF06L,C77582,PCBA,THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current.
+Q1,1,STP55NF06L,CoffeeRoast:Q1_TO-220-3_Vertical,STP55NF06L,C77582,PCBA,MANDATORY manufacturer-installed THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. Do not omit from PCBA; thermally validate at 2.5A fan current.
 Q2,1,2N7002_SSR_DRIVER,CoffeeRoast:Q2_SOT-23,2N7002,C916396,PCBA,SSR low-side driver.
 R1,1,100R_GATE_TURN_ON,CoffeeRoast:R1_R_0805_2012Metric,FRC0805F1000TS,C2907218,PCBA,100R fan gate turn-on.
 R2,1,100k_GATE_PULLDOWN,CoffeeRoast:R2_R_0805_2012Metric,FRC0805F1003TS,C2907217,PCBA,100k fan gate pulldown.

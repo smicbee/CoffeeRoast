@@ -36,7 +36,7 @@ ASSEMBLE = {
     "U4": {"mpn": "LMR16010PDDAR", "supplier": "C183084", "package": "HSOIC-8 PowerPAD", "notes": "60V/1A buck; verify Pin 1 and exposed-pad orientation."},
     "U5": {"mpn": "USBLC6-2SC6", "supplier": "C7519", "package": "SOT-23-6", "notes": "USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."},
     "U6": {"mpn": "UCC27511DBVR", "supplier": "C191027", "package": "SOT-23-6", "notes": "Split-output fan MOSFET gate driver."},
-    "Q1": {"mpn": "STP55NF06L", "supplier": "C77582", "package": "TO-220-3 Vertical", "notes": "THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current."},
+    "Q1": {"mpn": "STP55NF06L", "supplier": "C77582", "package": "TO-220-3 Vertical", "notes": "MANDATORY manufacturer-installed THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. Do not omit from PCBA; thermally validate at 2.5A fan current."},
     "Q2": {"mpn": "2N7002", "supplier": "C916396", "package": "SOT-23", "notes": "SSR low-side driver."},
     "J5": {"mpn": "U262-16 1 N-4BVC11", "supplier": "C319148", "package": "USB-C XKB U262-16XN", "notes": "Verify shell and pin orientation in placement preview."},
     "L1": {"mpn": "FNR6045S220MT", "supplier": "C168080", "package": "FNR6045S", "notes": "22uH, >=2A saturation/current candidate."},
@@ -359,6 +359,8 @@ def validate_cpl_frame() -> None:
         y = float(row["Mid Y"])
         if not (-0.001 <= x <= 96.001 and -0.001 <= y <= 60.001):
             raise RuntimeError(f"CPL drill-origin frame mismatch at {ref}: x={x}, y={y}")
+    if "Q1" not in rows:
+        raise RuntimeError("Q1 missing from CPL: manufacturer-installed THT assembly is mandatory")
     anchors = {
         "U1": (72.0, 44.1),
         "U2": (10.0, 25.0),
@@ -434,7 +436,7 @@ def validate_manufacturing_geometry() -> None:
 def write_readme() -> None:
     readme = f"""# CoffeeRoast-Control RevD Balanced partial-SMD PCBA package
 
-This package is the order-ready RevD Balanced handoff for **PCB fabrication + top-side PCBA**, including the selected THT Q1; the remaining manual parts are soldered afterward.
+This package is the order-ready RevD Balanced handoff for **PCB fabrication + top-side PCBA**. Q1 is a mandatory manufacturer-installed THT component; the remaining manual parts are soldered afterward.
 
 ## Upload set
 
@@ -452,7 +454,7 @@ This package is the order-ready RevD Balanced handoff for **PCB fabrication + to
 - CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
 - L1 uses the supplier-matched FNR6045S220MT / C168080 land pattern: 2.20 × 5.72 mm pads on 5.00 mm centers.
 - Gerber, drill and CPL data share the bottom-left drill/place origin; do not accept a JLC Auto-Align prompt as a substitute for this source-file alignment.
-- D1, C4, J1-J4 and J6-J9 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 is included for JLC THT hand-solder assembly.
+- D1, C4, J1-J4 and J6-J9 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 must be installed by the PCBA manufacturer as THT assembly and must not be omitted.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding and thermal cut-off are enclosure-level work.
@@ -536,7 +538,7 @@ RevA.2 circuit. Do not reuse Gerber, CPL or placement state from any RevA order.
 - U2 physical Pin 1 is the rectangular pad at board coordinate `{pcbnew.ToMM(p1.x):.3f} / {pcbnew.ToMM(p1.y):.3f} mm`, net `GND`; confirm the assembler marker on this pad.
 - U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
 - J5: `C319148`, CPL `{cpl['J5']['Mid X']} / {cpl['J5']['Mid Y']} / {cpl['J5']['Rotation']}`; confirm shell tabs and product edge.
-- Q1: `STP55NF06L / C77582`, TO-220 THT assembly, CPL centre `{cpl['Q1']['Mid X']} / {cpl['Q1']['Mid Y']}` on the middle lead.
+- Q1: mandatory manufacturer-installed `STP55NF06L / C77582`, TO-220 THT assembly, CPL centre `{cpl['Q1']['Mid X']} / {cpl['Q1']['Mid Y']}` on the middle lead. Stop if the assembler omits it.
 - SW1/SW2: `TL3301AF160QG / C273519`, CPL rotations `{cpl['SW1']['Rotation']}` and `{cpl['SW2']['Rotation']}`.
 - L1: `FNR6045S220MT / C168080`; exact land pattern is 2.20 x 5.72 mm pads on 5.00 mm centers.
 - J1-J4 and J6-J9 remain DNP/hand-solder and must not appear in automated placement.

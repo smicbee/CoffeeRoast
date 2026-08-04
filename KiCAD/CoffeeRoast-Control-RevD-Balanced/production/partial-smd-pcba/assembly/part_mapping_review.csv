@@ -18,7 +18,7 @@ D4,SS110_100V,SMA,SS110,Use supplier part C2766060 in JLCPCB if still available;
 D5,BZT52C10_10V,SOD-123,BZT52C10,Use supplier part C49023497 in JLCPCB if still available; otherwise same value/package/rating.,10V VDRV clamp.
 J5,USB_C_Receptacle_XKB_U262-16XN-4BVC11,USB-C XKB U262-16XN,U262-16 1 N-4BVC11,Use supplier part C319148 in JLCPCB if still available; otherwise same value/package/rating.,Verify shell and pin orientation in placement preview.
 L1,FNR6045S220MT_22uH_2A,FNR6045S,FNR6045S220MT,Use supplier part C168080 in JLCPCB if still available; otherwise same value/package/rating.,"22uH, >=2A saturation/current candidate."
-Q1,STP55NF06L,TO-220-3 Vertical,STP55NF06L,Use supplier part C77582 in JLCPCB if still available; otherwise same value/package/rating.,THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current.
+Q1,STP55NF06L,TO-220-3 Vertical,STP55NF06L,Use supplier part C77582 in JLCPCB if still available; otherwise same value/package/rating.,MANDATORY manufacturer-installed THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. Do not omit from PCBA; thermally validate at 2.5A fan current.
 Q2,2N7002_SSR_DRIVER,SOT-23,2N7002,Use supplier part C916396 in JLCPCB if still available; otherwise same value/package/rating.,SSR low-side driver.
 R1,100R_GATE_TURN_ON,0805,FRC0805F1000TS,Use supplier part C2907218 in JLCPCB if still available; otherwise same value/package/rating.,100R fan gate turn-on.
 R2,100k_GATE_PULLDOWN,0805,FRC0805F1003TS,Use supplier part C2907217 in JLCPCB if still available; otherwise same value/package/rating.,100k fan gate pulldown.

@@ -15,6 +15,7 @@ RevD Balanced is finalized locally as a reproducible 96 × 60 mm, two-layer manu
 - Future UI connectors `J7`–`J9`: `HAND/DNP`; software remains deferred
 - Controller PCB remains low-voltage only; 230 VAC stays outside the PCB
 - Accepted gate-drive supply: `+24V_RAW` feeds `VDRV10` through R16 (2.7 kΩ), with D5 (BZT52C10) clamping the local U6 supply to approximately 10 V. This architecture remains intentionally unchanged.
+- Q1 (`STP55NF06L`, supplier code `C77582`) is mandatory manufacturer-installed TO-220 THT assembly; it is included in BOM and CPL and must not be omitted by the assembler.
 
 ## Corrections made during finalization
 
@@ -45,14 +46,15 @@ RevD Balanced is finalized locally as a reproducible 96 × 60 mm, two-layer manu
 - Repeated normal `finalize_routing.py` execution: hash-identical no-op once `D-FINAL` exists
 - RevD BOM/CPL generation: PASS
 - `J7`, `J8`, `J9`: absent from assembly BOM/CPL and present in DNP/HAND list
+- Q1: present in assembly BOM as `STP55NF06L / C77582 / Assemble=YES`, present in CPL, absent from DNP/HAND list
 - Gerber/drill ZIP contains fabrication files only and no unsafe archive paths
 
 ## Final artifacts and SHA-256
 
 ```text
 36a915c7685176810cd3c1c5419741995e61dbf59157b9d63e821bb6ad18f0c1  CoffeeRoast-Control-RevD-Balanced.kicad_pcb
-8849b886c2a915ef51b01b9c861c40271aab4d201a60a00611c3d72c58d94d5a  production/partial-smd-pcba/CoffeeRoast-Control-RevD-Balanced_JLC_Gerber_Drill.zip
-de8106418032c81a647e4574ac79c87545ec95a0f40152b1c77c2af68c4d3d03  production/partial-smd-pcba/CoffeeRoast-Control-RevD-Balanced_partial_smd_pcba_package.zip
+c958a19be0a9445439c9c943889a167e15b7e3b5bdf6854138ea460f697669d8  production/partial-smd-pcba/CoffeeRoast-Control-RevD-Balanced_JLC_Gerber_Drill.zip
+ada10218505e73b8e50c1df41d3801eb80a70083245134a1cb40bef84d50bc64  production/partial-smd-pcba/CoffeeRoast-Control-RevD-Balanced_partial_smd_pcba_package.zip
 ```
 
 ## Remaining external release gates

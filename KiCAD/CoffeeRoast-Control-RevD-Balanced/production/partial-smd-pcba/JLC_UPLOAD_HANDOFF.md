@@ -23,7 +23,7 @@ RevA.2 circuit. Do not reuse Gerber, CPL or placement state from any RevA order.
 - U2 physical Pin 1 is the rectangular pad at board coordinate `12.475 / 36.905 mm`, net `GND`; confirm the assembler marker on this pad.
 - U2 pin mapping: 1 GND, 2 THERMO_MINUS, 3 THERMO_PLUS, 4 +3V3, 5 MAX_SCK, 6 MAX_CS, 7 MAX_DO, 8 GND.
 - J5: `C319148`, CPL `15.0000 / 56.3250 / 180.00`; confirm shell tabs and product edge.
-- Q1: `STP55NF06L / C77582`, TO-220 THT assembly, CPL centre `56.5400 / 13.0000` on the middle lead.
+- Q1: mandatory manufacturer-installed `STP55NF06L / C77582`, TO-220 THT assembly, CPL centre `56.5400 / 13.0000` on the middle lead. Stop if the assembler omits it.
 - SW1/SW2: `TL3301AF160QG / C273519`, CPL rotations `90.00` and `90.00`.
 - L1: `FNR6045S220MT / C168080`; exact land pattern is 2.20 x 5.72 mm pads on 5.00 mm centers.
 - J1-J4 and J6-J9 remain DNP/hand-solder and must not appear in automated placement.

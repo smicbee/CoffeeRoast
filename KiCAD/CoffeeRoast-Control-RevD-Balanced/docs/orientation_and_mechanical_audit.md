@@ -93,7 +93,7 @@ The PCB contains 67 footprints:
   USB opening.
 - Courtyard, silkscreen, mask, hole and edge checks report zero placement DRC
   violations.
-- C4 and Q1 are the tall hand/THT parts. Their 2D courtyards are clear, but
+- C4 is the tall hand-soldered part; Q1 is the tall mandatory manufacturer-installed THT part. Their 2D courtyards are clear, but
   final enclosure Z-height and tool access must still be checked against the
   selected enclosure.
 - The local KiCad installation used for render generation does not display all

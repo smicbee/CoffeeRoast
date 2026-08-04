@@ -1,6 +1,6 @@
 # CoffeeRoast-Control RevD Balanced partial-SMD PCBA package
 
-This package is the order-ready RevD Balanced handoff for **PCB fabrication + top-side PCBA**, including the selected THT Q1; the remaining manual parts are soldered afterward.
+This package is the order-ready RevD Balanced handoff for **PCB fabrication + top-side PCBA**. Q1 is a mandatory manufacturer-installed THT component; the remaining manual parts are soldered afterward.
 
 ## Upload set
 
@@ -18,7 +18,7 @@ This package is the order-ready RevD Balanced handoff for **PCB fabrication + to
 - CPL rotations for non-polar two-pad R/C/L parts are derived from the actual pad axis, preventing 90° errors from pre-rotated custom footprints such as C6/C7.
 - L1 uses the supplier-matched FNR6045S220MT / C168080 land pattern: 2.20 × 5.72 mm pads on 5.00 mm centers.
 - Gerber, drill and CPL data share the bottom-left drill/place origin; do not accept a JLC Auto-Align prompt as a substitute for this source-file alignment.
-- D1, C4, J1-J4 and J6-J9 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 is included for JLC THT hand-solder assembly.
+- D1, C4, J1-J4 and J6-J9 are intentionally manual; C5 is intentionally DNP pending thermocouple noise/bias testing. Q1 must be installed by the PCBA manufacturer as THT assembly and must not be omitted.
 - J6 pin order is +24V / GND / PWM(GPIO10) / GND; the PCB has no on-board fuse, so use a current-limited or externally fused 24V source.
 - U4/U5/U6, D2/D3, the buck support parts and SW1/SW2 now use exact package-qualified footprints and are included in the top-side assembly set.
 - The controller PCB remains low-voltage only. 230VAC wiring, PSU, SSR, heatsink, PE/chassis bonding and thermal cut-off are enclosure-level work.
