@@ -1,0 +1,4 @@
+generated/*.step binary
+generated/*.stl binary
+generated/*.3mf binary
+generated/*.png binary

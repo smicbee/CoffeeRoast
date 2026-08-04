@@ -1,0 +1,195 @@
+{
+  "status": "PROTOTYPE_NOT_RELEASED",
+  "notes": [
+    "No PCB mounting holes and no separate guide rails are used.",
+    "PCB is retained by a fitted pocket, four underside supports and four lid hold-down pads.",
+    "Use lid_print.stl for FDM: outer lid face on the bed, hold-down pads upward.",
+    "USB, cable, Q1, C4, switch and insert dimensions marked provisional require physical coupons/measurement.",
+    "The enclosure is SELV-only; mains, PSU mains side and SSR load side remain outside/separated."
+  ],
+  "cadquery_version": "2.8.0",
+  "python_version": "3.11.15",
+  "parameters": {
+    "pcb_x": 96.0,
+    "pcb_y": 60.0,
+    "pcb_t": 1.6,
+    "wall": 1.6,
+    "floor": 1.6,
+    "lid_t": 1.6,
+    "pcb_xy_clearance": 0.6,
+    "support_h": 2.8,
+    "clear_above_pcb": 24.0,
+    "corner_radius": 3.0,
+    "support_size": 5.0,
+    "hold_down_width": 6.0,
+    "hold_down_depth": 3.0,
+    "hold_down_gap": 0.2,
+    "tower_radius": 4.0,
+    "tower_offset": 2.0,
+    "insert_bore": 4.2,
+    "insert_depth": 8.0,
+    "lid_screw_clearance": 3.4,
+    "usb_cutout_w": 10.5,
+    "usb_cutout_h": 5.2,
+    "usb_cutout_z_from_board_bottom": 0.2,
+    "field_cutout_h": 7.0,
+    "field_cutout_z_from_board_bottom": 0.4,
+    "vent_w": 2.5,
+    "vent_l": 14.0,
+    "vent_count": 6,
+    "vent_pitch": 5.0
+  },
+  "derived": {
+    "inner_x": 97.2,
+    "inner_y": 61.2,
+    "outer_x": 100.4,
+    "outer_y": 64.4,
+    "board_x0": 2.2,
+    "board_y0": 2.2,
+    "board_z": 4.4,
+    "board_top": 6.0,
+    "tray_h": 30.0,
+    "hold_downs_kicad": [
+      {
+        "name": "usb_edge",
+        "kx": 30.0,
+        "ky": 1.5,
+        "sx": 6.0,
+        "sy": 3.0
+      },
+      {
+        "name": "field_edge",
+        "kx": 26.5,
+        "ky": 58.5,
+        "sx": 6.0,
+        "sy": 3.0
+      },
+      {
+        "name": "left_edge",
+        "kx": 1.5,
+        "ky": 25.0,
+        "sx": 3.0,
+        "sy": 6.0
+      },
+      {
+        "name": "right_edge",
+        "kx": 94.5,
+        "ky": 40.0,
+        "sx": 3.0,
+        "sy": 6.0
+      }
+    ]
+  },
+  "shapes": [
+    {
+      "name": "tray",
+      "bbox_mm": {
+        "x": 112.4056,
+        "y": 76.4056,
+        "z": 30.0056,
+        "xmin": -6.0028,
+        "ymin": -6.0028,
+        "zmin": -0.0028,
+        "xmax": 106.4028,
+        "ymax": 70.4028,
+        "zmax": 30.0028
+      },
+      "volume_mm3": 29989.31,
+      "solid_count": 1
+    },
+    {
+      "name": "lid",
+      "bbox_mm": {
+        "x": 112.4056,
+        "y": 76.4056,
+        "z": 25.4028,
+        "xmin": -6.0028,
+        "ymin": -6.0028,
+        "zmin": -23.8,
+        "xmax": 106.4028,
+        "ymax": 70.4028,
+        "zmax": 1.6028
+      },
+      "volume_mm3": 11938.128,
+      "solid_count": 1
+    },
+    {
+      "name": "lid_print",
+      "bbox_mm": {
+        "x": 112.4056,
+        "y": 76.4056,
+        "z": 25.4028,
+        "xmin": -6.0028,
+        "ymin": -6.0028,
+        "zmin": -0.0028,
+        "xmax": 106.4028,
+        "ymax": 70.4028,
+        "zmax": 25.4
+      },
+      "volume_mm3": 11938.128,
+      "solid_count": 1
+    },
+    {
+      "name": "board_proxy",
+      "bbox_mm": {
+        "x": 96.0,
+        "y": 60.025,
+        "z": 20.6,
+        "xmin": 2.2,
+        "ymin": 2.2,
+        "zmin": 4.4,
+        "xmax": 98.2,
+        "ymax": 62.225,
+        "zmax": 25.0
+      },
+      "volume_mm3": 12958.94,
+      "solid_count": 2
+    }
+  ],
+  "files": {
+    "tray.step": {
+      "bytes": 215359,
+      "sha256": "5b737262dc4bc47710b279aaf578c621d27d840f922d474986ea69acb7c4b36a"
+    },
+    "tray.stl": {
+      "bytes": 139484,
+      "sha256": "3180806a23a47c7eea7b99c8f43d7850a7aba187e7999ea374403f34c95a43bd"
+    },
+    "tray.3mf": {
+      "bytes": 41136,
+      "sha256": "4d57402245dc2d967505931fb64f4d2a9cf3cfa5b9f8cbdf07afb2c562df383b"
+    },
+    "lid.step": {
+      "bytes": 212141,
+      "sha256": "192cfc6760e62bb959e025d8ffa01c69bd3c53a353a014ff464589e7fabe0312"
+    },
+    "lid.stl": {
+      "bytes": 173484,
+      "sha256": "ee70b4debf912610b26bec7b591764ba149396d9e41f9a9c2009aa9b26352084"
+    },
+    "lid_print.step": {
+      "bytes": 209134,
+      "sha256": "c77171e75db0036fe2725882a2c2596c41eb8360a6c0f13045bc934bb92ce669"
+    },
+    "lid_print.stl": {
+      "bytes": 173484,
+      "sha256": "0f35b2be12178452d9cef5030243b428dd12446755fe09f65eabeac70d24639a"
+    },
+    "lid_print.3mf": {
+      "bytes": 60537,
+      "sha256": "584092dac78b087f30af73fd9babdd3deeeeb35f40b90ea7600cf14486a0c05e"
+    },
+    "board_proxy.step": {
+      "bytes": 112726,
+      "sha256": "c5dfe785875ef66403a782cb8cca6113d102b240feb892456c9895e06f28b09a"
+    },
+    "board_proxy.stl": {
+      "bytes": 22284,
+      "sha256": "09e19c791bb86d68921757df37af9f6c31e8e2aa07ccea117e36da7818b22f93"
+    },
+    "assembly_closed.step": {
+      "bytes": 539485,
+      "sha256": "753efd247e44c80486cf227a656382ad7a7311509e928c2121d61c4484265d3a"
+    }
+  }
+}
