@@ -176,7 +176,7 @@ def main() -> int:
 
     files = {}
     for path in sorted(OUT.iterdir()):
-        if path.is_file():
+        if path.is_file() and path.name != "manifest.json":
             files[path.name] = {"bytes": path.stat().st_size, "sha256": sha256(path)}
     manifest = {
         "status": "PROTOTYPE_NOT_RELEASED",
