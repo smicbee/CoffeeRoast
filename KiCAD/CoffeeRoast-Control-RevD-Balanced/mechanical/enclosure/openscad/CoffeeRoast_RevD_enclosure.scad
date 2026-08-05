@@ -12,9 +12,17 @@
 $fn = 64;
 part = is_undef(part) ? "assembly" : part;
 
-// Exact KiCad board contract.
+// Exact functional KiCad board contract plus JLCPCB Y15 production rails.
+// The ordered production file is 96 x 70 mm: a 96 x 60 mm functional PCB
+// between two 5 mm V-scored process rails. The rails should normally be
+// snapped off before installation because they obstruct the edge connectors.
+board_variant = is_undef(board_variant) ? "functional" : board_variant;
 pcb_x = 96.0;
-pcb_y = 60.0;
+core_pcb_y = 60.0;
+process_rail_y = 5.0;
+rails_attached = board_variant == "production_rails_attached";
+pcb_y = core_pcb_y + (rails_attached ? 2*process_rail_y : 0);
+core_y_offset = rails_attached ? process_rail_y : 0;
 pcb_t = 1.6;
 
 // FDM starting values for a calibrated 0.4 mm nozzle.
@@ -79,7 +87,9 @@ lid_y0 = -(snap_clearance + skirt_t);
 lid_corner_r = corner_r + snap_clearance + skirt_t;
 
 function bx(kx) = board_x0 + kx;
-function by(ky) = board_y0 + (pcb_y - ky); // KiCad Y-down -> model Y-up.
+// KiCad coordinates remain referenced to the 96 x 60 mm functional core.
+// With production rails attached, the core is shifted 5 mm into the pocket.
+function by(ky) = board_y0 + core_y_offset + (core_pcb_y - ky); // Y-down -> Y-up.
 
 eps = 0.05;
 

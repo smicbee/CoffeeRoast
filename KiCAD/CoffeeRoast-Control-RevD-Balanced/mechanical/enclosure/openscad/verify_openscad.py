@@ -103,7 +103,15 @@ def main() -> int:
         checks.append({"name": name, "passed": bool(passed), "evidence": evidence})
 
     meshes = {}
-    for name in ("tray", "lid_print", "lid_design", "board_proxy"):
+    for name in (
+        "tray",
+        "lid_print",
+        "lid_design",
+        "board_proxy",
+        "tray_rails_attached",
+        "lid_rails_attached_print",
+        "board_proxy_rails_attached",
+    ):
         path = OUT / f"{name}.stl"
         meshes[name] = read_ascii_stl(path)
 
@@ -121,6 +129,15 @@ def main() -> int:
             "lid_print": meshes["lid_print"]["connected_components"],
         },
     )
+    check(
+        "rails_attached_print_parts_single_connected_component",
+        meshes["tray_rails_attached"]["connected_components"] == 1
+        and meshes["lid_rails_attached_print"]["connected_components"] == 1,
+        {
+            "tray": meshes["tray_rails_attached"]["connected_components"],
+            "lid_print": meshes["lid_rails_attached_print"]["connected_components"],
+        },
+    )
 
     tray_box = meshes["tray"]["bbox_mm"]
     lid_box = meshes["lid_print"]["bbox_mm"]
@@ -135,20 +152,64 @@ def main() -> int:
         {"tray_mm": tray_box, "lid_print_mm": lid_box},
     )
 
+    rails_tray_box = meshes["tray_rails_attached"]["bbox_mm"]
+    rails_lid_box = meshes["lid_rails_attached_print"]["bbox_mm"]
+    rails_board_box = meshes["board_proxy_rails_attached"]["bbox_mm"]
+    check(
+        "expected_rails_attached_envelopes",
+        approx(rails_tray_box["x"], 100.4)
+        and approx(rails_tray_box["y"], 74.4)
+        and approx(rails_tray_box["z"], 30.0)
+        and approx(rails_lid_box["x"], 103.4)
+        and approx(rails_lid_box["y"], 77.4)
+        and approx(rails_lid_box["z"], 25.4)
+        and approx(rails_board_box["x"], 96.0)
+        and approx(rails_board_box["y"], 70.0)
+        and approx(rails_board_box["z"], 20.6),
+        {
+            "tray_mm": rails_tray_box,
+            "lid_print_mm": rails_lid_box,
+            "board_proxy_mm": rails_board_box,
+        },
+    )
+
     archives = {
         name: {
             "valid": valid_3mf(OUT / f"{name}.3mf"),
             "bytes": (OUT / f"{name}.3mf").stat().st_size,
         }
-        for name in ("tray", "lid_print")
+        for name in ("tray", "lid_print", "tray_rails_attached", "lid_rails_attached_print")
     }
     check("print_3mf_archives_valid", all(v["valid"] for v in archives.values()), archives)
 
     previews = {
         name: (OUT / name).stat().st_size
-        for name in ("preview_closed.png", "preview_exploded.png")
+        for name in (
+            "preview_closed.png",
+            "preview_exploded.png",
+            "preview_closed_rails_attached.png",
+        )
     }
     check("previews_generated", all(size > 10000 for size in previews.values()), previews)
+
+    production_geometry = json.loads((ROOT / "jlcpcb_y15_geometry.json").read_text())
+    cam = production_geometry["jlcpcb_cam"]
+    production_archive = (ROOT / production_geometry["archive_path"]).resolve()
+    check(
+        "jlcpcb_y15_production_geometry_and_archive",
+        approx(cam["outer_width_mm"], 96.0, 0.001)
+        and approx(cam["outer_height_mm"], 70.0, 0.001)
+        and approx(cam["lower_vscore_y_mm"], 5.0, 0.001)
+        and approx(cam["upper_vscore_y_mm"], 65.0, 0.001)
+        and approx(cam["functional_core_height_mm"], 60.0, 0.001)
+        and production_archive.is_file()
+        and sha256(production_archive) == production_geometry["sha256"],
+        {
+            "cam_mm": cam,
+            "archive": str(production_archive),
+            "archive_sha256": sha256(production_archive) if production_archive.is_file() else None,
+        },
+    )
 
     report = {
         "status": "PASS" if all(item["passed"] for item in checks) else "FAIL",
@@ -157,13 +218,17 @@ def main() -> int:
             ["openscad", "--version"], text=True, stderr=subprocess.STDOUT
         ).strip(),
         "design": {
-            "pcb_mm": [96.0, 60.0, 1.6],
+            "functional_pcb_mm": [96.0, 60.0, 1.6],
+            "jlcpcb_y15_as_delivered_mm": [96.0, 70.0, 1.6],
+            "jlcpcb_process_rails": "two 5 mm V-scored rails; remove for operation",
             "tray_body_mm": [100.4, 64.4, 30.0],
+            "rails_attached_tray_body_mm": [100.4, 74.4, 30.0],
             "corner_radius_mm": 3.0,
             "snap": "two opposed side cantilevers; no screws or corner towers",
             "pcb_retention": "four floor supports plus four lid hold-down pads",
         },
         "release_blockers": [
+            "Remove both JLCPCB process rails at the V-scores before using the functional enclosure.",
             "Print the snap coupon/first lid in final material and tune snap depth/clearance.",
             "Measure manufactured Q1 and C4 installed heights.",
             "Fit-test J5 with the exact USB-C plug and cable bend.",
