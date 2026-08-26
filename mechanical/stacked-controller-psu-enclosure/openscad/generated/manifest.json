@@ -1,0 +1,62 @@
+{
+  "status": "PROTOTYPE_NOT_RELEASED",
+  "source": "CoffeeRoast_RevA2_LOP200_stacked.scad",
+  "files": {
+    "controller_deck.3mf": {
+      "bytes": 24904,
+      "sha256": "e05d08372fca8855dd09fe45e008b30334df4a4d3d62994a6a94cc113e3b1b08"
+    },
+    "controller_deck.stl": {
+      "bytes": 332350,
+      "sha256": "50c7bd39d5aee10630722a9605a4cae2b4921e1760000205b6016abb31ed7e59"
+    },
+    "lid_design.stl": {
+      "bytes": 247096,
+      "sha256": "7b2cec7d26d9490c4da9c8c7ca5bfa3af334c601e5ded077810dc452f9f8eb61"
+    },
+    "lid_print.3mf": {
+      "bytes": 19045,
+      "sha256": "4b1b1c18a1e2fed4c80138d91ea6e4d821fd7435b223f1e7a9ed8df6894cf5fa"
+    },
+    "lid_print.stl": {
+      "bytes": 261775,
+      "sha256": "a824d12a81ea1fa2c70b56dbbd75cc3ce477f161ccbafd66fecb26dcc8a94e6e"
+    },
+    "lower_base.3mf": {
+      "bytes": 61022,
+      "sha256": "0ce0cb71adc7a8c3ab99b959b0905037be267fc20630b7b17c65bbd9c398068d"
+    },
+    "lower_base.stl": {
+      "bytes": 865680,
+      "sha256": "c367bf212c5f10ebb9d716152c4c3ced34ba1628e00be26dbf1d0f008fb5d216"
+    },
+    "pcb_proxy.stl": {
+      "bytes": 49193,
+      "sha256": "b7f84413ceee3c5e17e7927ece424f78444d9e5283b0f95407cea0258cff6c0d"
+    },
+    "preview_ac.png": {
+      "bytes": 12189,
+      "sha256": "9027f01025cf89668f9a4d0e0ec567978d07494f7219884dee18d0a4a65ac1ed"
+    },
+    "preview_closed.png": {
+      "bytes": 36120,
+      "sha256": "59e56ad96b57aa1769b8d954c4ceed4140073bde291b50695ffe4a7c6fb5f787"
+    },
+    "preview_exploded.png": {
+      "bytes": 36013,
+      "sha256": "51b76a18edcc2ae6c7536b3d765ce67c91c4585eda7a9dc72494154ae6c598ed"
+    },
+    "preview_usb.png": {
+      "bytes": 11584,
+      "sha256": "1eb0c6afd22a381eb7d6e0a19cdab05ff1a0bfd57ec3670a1ba76d84091c095c"
+    },
+    "psu_proxy.stl": {
+      "bytes": 175388,
+      "sha256": "590b3dba1c21526224013f7c61ed319ba8531d3bff965d8552e2c02e707af520"
+    },
+    "verification.json": {
+      "bytes": 5618,
+      "sha256": "6a94a08f0e3b7205ca5a5a83ef70e23ca4f6e8a1ff349596eb31d38d6d77833e"
+    }
+  }
+}
