@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "scope": "digital geometry prototype; not an electrical-safety certification",
+  "openscad_version": "OpenSCAD version 2021.01",
+  "design": {
+    "controller_pcb_mm": [
+      160.0,
+      100.0,
+      1.6
+    ],
+    "psu_mm": [
+      101.6,
+      50.8,
+      25.4
+    ],
+    "psu_mounting_pattern_mm": [
+      95.25,
+      44.45
+    ],
+    "closed_nominal_mm": [
+      169.0,
+      109.0,
+      76.6
+    ],
+    "separation": "2.4 mm solid printed deck; 8.2 mm secondary feedthrough requires closed rated bushing",
+    "usb": "right-wall J5 cutout, 11.0 x 5.8 mm"
+  },
+  "release_blockers": [
+    "Use documented flame-retardant UL94-V-0 filament/process; ordinary PLA/PETG is not released.",
+    "Install the exact Mean Well LOP-200-24 on conductive M3 pillars and bond every PE-marked point.",
+    "Fit a certified AC cable gland and a closed rated bushing in the 24 V separator feedthrough.",
+    "Qualified-person inspection: fuse/switch, wire ratings, strain relief, touch probe, creepage/clearance and PE continuity.",
+    "Measure installed controller component heights, USB plug insertion and cable bend clearance.",
+    "Run worst-case thermal testing; stacking blocks direct top convection and full 200 W is not assumed."
+  ],
+  "checks": [
+    {
+      "name": "stl_meshes_closed_manifold",
+      "passed": true,
+      "evidence": {
+        "lower_base": {
+          "triangles": 5320,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 166.0,
+            "y": 106.0,
+            "z": 40.8,
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "zmin": 0.0
+          }
+        },
+        "controller_deck": {
+          "triangles": 2084,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 166.0,
+            "y": 106.0,
+            "z": 34.0,
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "zmin": 0.0
+          }
+        },
+        "lid_print": {
+          "triangles": 1588,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 169.0,
+            "y": 109.0,
+            "z": 28.55,
+            "xmin": -1.5,
+            "ymin": -1.5,
+            "zmin": 0.0
+          }
+        },
+        "lid_design": {
+          "triangles": 1588,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 169.0,
+            "y": 109.0,
+            "z": 28.55,
+            "xmin": -1.5,
+            "ymin": -1.5,
+            "zmin": -26.75
+          }
+        },
+        "psu_proxy": {
+          "triangles": 1052,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 101.6,
+            "y": 50.8,
+            "z": 31.4,
+            "xmin": 32.2,
+            "ymin": 27.6,
+            "zmin": 2.4
+          }
+        },
+        "pcb_proxy": {
+          "triangles": 316,
+          "connected_components": 2,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 160.025,
+            "y": 100.0,
+            "z": 22.6,
+            "xmin": 3.0,
+            "ymin": 3.0,
+            "zmin": 5.4
+          }
+        }
+      }
+    },
+    {
+      "name": "print_parts_single_connected_component",
+      "passed": true,
+      "evidence": {
+        "lower_base": 1,
+        "controller_deck": 1,
+        "lid_print": 1
+      }
+    },
+    {
+      "name": "expected_part_envelopes",
+      "passed": true,
+      "evidence": {
+        "lower_base_mm": {
+          "x": 166.0,
+          "y": 106.0,
+          "z": 40.8,
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "zmin": 0.0
+        },
+        "controller_deck_mm": {
+          "x": 166.0,
+          "y": 106.0,
+          "z": 34.0,
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "zmin": 0.0
+        },
+        "lid_print_mm": {
+          "x": 169.0,
+          "y": 109.0,
+          "z": 28.55,
+          "xmin": -1.5,
+          "ymin": -1.5,
+          "zmin": 0.0
+        },
+        "psu_proxy_mm": {
+          "x": 101.6,
+          "y": 50.8,
+          "z": 31.4,
+          "xmin": 32.2,
+          "ymin": 27.6,
+          "zmin": 2.4
+        },
+        "pcb_proxy_mm": {
+          "x": 160.025,
+          "y": 100.0,
+          "z": 22.6,
+          "xmin": 3.0,
+          "ymin": 3.0,
+          "zmin": 5.4
+        }
+      }
+    },
+    {
+      "name": "print_3mf_archives_valid",
+      "passed": true,
+      "evidence": {
+        "lower_base": {
+          "valid": true,
+          "bytes": 61022
+        },
+        "controller_deck": {
+          "valid": true,
+          "bytes": 24904
+        },
+        "lid_print": {
+          "valid": true,
+          "bytes": 19045
+        }
+      }
+    },
+    {
+      "name": "previews_generated",
+      "passed": true,
+      "evidence": {
+        "preview_closed.png": 36120,
+        "preview_exploded.png": 36013,
+        "preview_usb.png": 11584,
+        "preview_ac.png": 12189
+      }
+    },
+    {
+      "name": "source_contracts_present",
+      "passed": true,
+      "evidence": {
+        "board": "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb",
+        "board_sha256": "3b42a94fc6761eb5982628b6085f4b05c33d93e564fa0b37a0b328ca6e07c316",
+        "datasheet": "/home/smicbee/CoffeeRoast/mechanical/psu-enclosure/lop-200/reference/LOP-200-SPEC.pdf",
+        "datasheet_sha256": "7904561abeabf3d70eb4e2914bb1d2d8f691e56d64ff5c7c57db118b84ea23d3"
+      }
+    }
+  ]
+}
