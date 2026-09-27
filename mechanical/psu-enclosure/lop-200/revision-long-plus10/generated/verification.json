@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "scope": "digital geometry prototype; not an electrical-safety certification",
+  "openscad_version": "OpenSCAD version 2021.01",
+  "design": {
+    "psu_mm": [
+      101.6,
+      50.8,
+      25.4
+    ],
+    "mounting_pattern_mm": [
+      95.25,
+      44.45
+    ],
+    "mount_holes": "4 x 3.3 mm; M3 fixed conductive pillars, <=6 mm diameter",
+    "shell_mm": [
+      132.4,
+      71.6,
+      42.2
+    ],
+    "cable_glands": "2 x 16.2 mm holes; select certified glands for actual cable OD"
+  },
+  "release_blockers": [
+    "Use a flame-retardant material with documented UL94 V-0 rating; ordinary PLA/PETG is not released.",
+    "Install certified cable glands sized to the actual AC and 24 V cable diameters.",
+    "Bond protective earth to every Mean Well PE-marked mounting point with conductive M3 hardware.",
+    "Qualified-person inspection: fuse/switch, strain relief, touch probe, creepage/clearance, wiring and PE continuity.",
+    "Thermal test in final orientation and load; full 200 W needs forced air per manufacturer data.",
+    "Fit-test the physical LOP-200-24 and actual JST-VH harnesses before unattended use."
+  ],
+  "checks": [
+    {
+      "name": "stl_meshes_closed_manifold",
+      "passed": true,
+      "evidence": {
+        "base": {
+          "triangles": 5172,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 132.4,
+            "y": 71.6,
+            "z": 39.8,
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "zmin": 0.0
+          }
+        },
+        "lid": {
+          "triangles": 8548,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 132.4,
+            "y": 71.6,
+            "z": 2.4,
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "zmin": 0.0
+          }
+        },
+        "psu_proxy": {
+          "triangles": 1052,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "x": 101.6,
+            "y": 50.8,
+            "z": 31.4,
+            "xmin": 15.4,
+            "ymin": 10.4,
+            "zmin": 2.4
+          }
+        }
+      }
+    },
+    {
+      "name": "print_parts_single_connected_component",
+      "passed": true,
+      "evidence": {
+        "base": 1,
+        "lid": 1
+      }
+    },
+    {
+      "name": "expected_envelopes",
+      "passed": true,
+      "evidence": {
+        "base_mm": {
+          "x": 132.4,
+          "y": 71.6,
+          "z": 39.8,
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "zmin": 0.0
+        },
+        "lid_mm": {
+          "x": 132.4,
+          "y": 71.6,
+          "z": 2.4,
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "zmin": 0.0
+        },
+        "psu_proxy_mm": {
+          "x": 101.6,
+          "y": 50.8,
+          "z": 31.4,
+          "xmin": 15.4,
+          "ymin": 10.4,
+          "zmin": 2.4
+        }
+      }
+    },
+    {
+      "name": "print_3mf_archives_valid",
+      "passed": true,
+      "evidence": {
+        "base": {
+          "valid": true,
+          "bytes": 60200
+        },
+        "lid": {
+          "valid": true,
+          "bytes": 101542
+        }
+      }
+    },
+    {
+      "name": "previews_generated",
+      "passed": true,
+      "evidence": {
+        "preview_closed.png": 45332,
+        "preview_open.png": 42036,
+        "preview_glands.png": 12662
+      }
+    },
+    {
+      "name": "manufacturer_datasheet_pinned",
+      "passed": true,
+      "evidence": {
+        "path": "/home/smicbee/CoffeeRoast/mechanical/psu-enclosure/lop-200/reference/LOP-200-SPEC.pdf",
+        "sha256": "7904561abeabf3d70eb4e2914bb1d2d8f691e56d64ff5c7c57db118b84ea23d3"
+      }
+    }
+  ]
+}
