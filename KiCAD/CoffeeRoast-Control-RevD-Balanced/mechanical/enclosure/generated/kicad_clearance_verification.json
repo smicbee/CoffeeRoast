@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "board": "KiCAD/CoffeeRoast-Control-RevD-Balanced/CoffeeRoast-Control-RevD-Balanced.kicad_pcb",
+  "method": "conservative overlap against pcbnew footprint bounding boxes",
+  "contacts": [
+    {
+      "name": "usb_edge",
+      "rect_kicad_mm": [
+        27.0,
+        0.0,
+        33.0,
+        3.0
+      ],
+      "overlapping_footprints": []
+    },
+    {
+      "name": "field_edge",
+      "rect_kicad_mm": [
+        23.5,
+        57.0,
+        29.5,
+        60.0
+      ],
+      "overlapping_footprints": []
+    },
+    {
+      "name": "left_edge",
+      "rect_kicad_mm": [
+        0.0,
+        22.0,
+        3.0,
+        28.0
+      ],
+      "overlapping_footprints": []
+    },
+    {
+      "name": "right_edge",
+      "rect_kicad_mm": [
+        93.0,
+        37.0,
+        96.0,
+        43.0
+      ],
+      "overlapping_footprints": []
+    }
+  ]
+}

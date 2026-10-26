@@ -1,0 +1,17 @@
+{
+  "source": "JLCPCB returned production file downloaded from the final ordered PCB item",
+  "production_filename": "CoffeeRoast-Control-RevD-Balanced_JLC_Gerber_Drill_Y15.zip",
+  "sha256": "3a730e7122a78fc144f515d7c9fa1039cc024ac5b06f81e2fbfed565f8809212",
+  "jlcpcb_cam": {
+    "outer_width_mm": 95.999986,
+    "outer_height_mm": 69.999987,
+    "lower_vscore_y_mm": 4.999990,
+    "upper_vscore_y_mm": 64.999972,
+    "functional_core_width_mm": 95.999986,
+    "functional_core_height_mm": 59.999982,
+    "bottom_process_rail_mm": 4.999990,
+    "top_process_rail_mm": 5.000015
+  },
+  "interpretation": "The ordered PCB is delivered as a 96 x 70 mm piece. The electrical 96 x 60 mm board lies between two removable 5 mm V-scored PCBA process rails. Remove the rails before installing the board in the functional enclosure.",
+  "archive_path": "../../../production/partial-smd-pcba/jlcpcb-returned/CoffeeRoast-Control-RevD-Balanced_JLC_Gerber_Drill_Y15.zip"
+}

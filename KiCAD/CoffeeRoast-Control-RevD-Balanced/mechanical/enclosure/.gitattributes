@@ -1,0 +1,7 @@
+generated/*.step binary
+generated/*.stl binary
+generated/*.3mf binary
+generated/*.png binary
+openscad/generated/*.stl binary
+openscad/generated/*.3mf binary
+openscad/generated/*.png binary

@@ -1,0 +1,291 @@
+{
+  "status": "PASS",
+  "scope": "OpenSCAD digital prototype geometry",
+  "openscad_version": "OpenSCAD version 2021.01",
+  "design": {
+    "functional_pcb_mm": [
+      96.0,
+      60.0,
+      1.6
+    ],
+    "jlcpcb_y15_as_delivered_mm": [
+      96.0,
+      70.0,
+      1.6
+    ],
+    "jlcpcb_process_rails": "two 5 mm V-scored rails; remove for operation",
+    "tray_body_mm": [
+      100.4,
+      64.4,
+      30.0
+    ],
+    "rails_attached_tray_body_mm": [
+      100.4,
+      74.4,
+      30.0
+    ],
+    "corner_radius_mm": 3.0,
+    "snap": "two opposed side cantilevers; no screws or corner towers",
+    "pcb_retention": "four floor supports plus four lid hold-down pads"
+  },
+  "release_blockers": [
+    "Remove both JLCPCB process rails at the V-scores before using the functional enclosure.",
+    "Print the snap coupon/first lid in final material and tune snap depth/clearance.",
+    "Measure manufactured Q1 and C4 installed heights.",
+    "Fit-test J5 with the exact USB-C plug and cable bend.",
+    "Measure J1-J4/J6 cable diameters and add final strain relief.",
+    "Measure worst-case enclosure temperatures before material release."
+  ],
+  "checks": [
+    {
+      "name": "stl_meshes_closed_manifold",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "triangles": 508,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 0.0,
+            "xmax": 100.4,
+            "x": 100.4,
+            "ymin": 0.0,
+            "ymax": 64.4,
+            "y": 64.4,
+            "zmin": 0.0,
+            "zmax": 30.0,
+            "z": 30.0
+          }
+        },
+        "lid_print": {
+          "triangles": 1388,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": -1.5,
+            "xmax": 101.9,
+            "x": 103.4,
+            "ymin": -1.5,
+            "ymax": 65.9,
+            "y": 67.4,
+            "zmin": 0.0,
+            "zmax": 25.4,
+            "z": 25.4
+          }
+        },
+        "lid_design": {
+          "triangles": 1388,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": -1.5,
+            "xmax": 101.9,
+            "x": 103.4,
+            "ymin": -1.5,
+            "ymax": 65.9,
+            "y": 67.4,
+            "zmin": -23.8,
+            "zmax": 1.6,
+            "z": 25.4
+          }
+        },
+        "board_proxy": {
+          "triangles": 364,
+          "connected_components": 2,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 2.2,
+            "xmax": 98.2,
+            "x": 96.0,
+            "ymin": 2.2,
+            "ymax": 62.225,
+            "y": 60.025,
+            "zmin": 4.4,
+            "zmax": 25.0,
+            "z": 20.6
+          }
+        },
+        "tray_rails_attached": {
+          "triangles": 508,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 0.0,
+            "xmax": 100.4,
+            "x": 100.4,
+            "ymin": 0.0,
+            "ymax": 74.4,
+            "y": 74.4,
+            "zmin": 0.0,
+            "zmax": 30.0,
+            "z": 30.0
+          }
+        },
+        "lid_rails_attached_print": {
+          "triangles": 1388,
+          "connected_components": 1,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": -1.5,
+            "xmax": 101.9,
+            "x": 103.4,
+            "ymin": -1.5,
+            "ymax": 75.9,
+            "y": 77.4,
+            "zmin": 0.0,
+            "zmax": 25.4,
+            "z": 25.4
+          }
+        },
+        "board_proxy_rails_attached": {
+          "triangles": 360,
+          "connected_components": 2,
+          "open_or_nonmanifold_edges": 0,
+          "bbox_mm": {
+            "xmin": 2.2,
+            "xmax": 98.2,
+            "x": 96.0,
+            "ymin": 2.2,
+            "ymax": 72.2,
+            "y": 70.0,
+            "zmin": 4.4,
+            "zmax": 25.0,
+            "z": 20.6
+          }
+        }
+      }
+    },
+    {
+      "name": "print_parts_single_connected_component",
+      "passed": true,
+      "evidence": {
+        "tray": 1,
+        "lid_print": 1
+      }
+    },
+    {
+      "name": "rails_attached_print_parts_single_connected_component",
+      "passed": true,
+      "evidence": {
+        "tray": 1,
+        "lid_print": 1
+      }
+    },
+    {
+      "name": "expected_envelopes",
+      "passed": true,
+      "evidence": {
+        "tray_mm": {
+          "xmin": 0.0,
+          "xmax": 100.4,
+          "x": 100.4,
+          "ymin": 0.0,
+          "ymax": 64.4,
+          "y": 64.4,
+          "zmin": 0.0,
+          "zmax": 30.0,
+          "z": 30.0
+        },
+        "lid_print_mm": {
+          "xmin": -1.5,
+          "xmax": 101.9,
+          "x": 103.4,
+          "ymin": -1.5,
+          "ymax": 65.9,
+          "y": 67.4,
+          "zmin": 0.0,
+          "zmax": 25.4,
+          "z": 25.4
+        }
+      }
+    },
+    {
+      "name": "expected_rails_attached_envelopes",
+      "passed": true,
+      "evidence": {
+        "tray_mm": {
+          "xmin": 0.0,
+          "xmax": 100.4,
+          "x": 100.4,
+          "ymin": 0.0,
+          "ymax": 74.4,
+          "y": 74.4,
+          "zmin": 0.0,
+          "zmax": 30.0,
+          "z": 30.0
+        },
+        "lid_print_mm": {
+          "xmin": -1.5,
+          "xmax": 101.9,
+          "x": 103.4,
+          "ymin": -1.5,
+          "ymax": 75.9,
+          "y": 77.4,
+          "zmin": 0.0,
+          "zmax": 25.4,
+          "z": 25.4
+        },
+        "board_proxy_mm": {
+          "xmin": 2.2,
+          "xmax": 98.2,
+          "x": 96.0,
+          "ymin": 2.2,
+          "ymax": 72.2,
+          "y": 70.0,
+          "zmin": 4.4,
+          "zmax": 25.0,
+          "z": 20.6
+        }
+      }
+    },
+    {
+      "name": "print_3mf_archives_valid",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "valid": true,
+          "bytes": 6888
+        },
+        "lid_print": {
+          "valid": true,
+          "bytes": 16947
+        },
+        "tray_rails_attached": {
+          "valid": true,
+          "bytes": 6883
+        },
+        "lid_rails_attached_print": {
+          "valid": true,
+          "bytes": 16952
+        }
+      }
+    },
+    {
+      "name": "previews_generated",
+      "passed": true,
+      "evidence": {
+        "preview_closed.png": 39195,
+        "preview_exploded.png": 36141,
+        "preview_closed_rails_attached.png": 38845
+      }
+    },
+    {
+      "name": "jlcpcb_y15_production_geometry_and_archive",
+      "passed": true,
+      "evidence": {
+        "cam_mm": {
+          "outer_width_mm": 95.999986,
+          "outer_height_mm": 69.999987,
+          "lower_vscore_y_mm": 4.99999,
+          "upper_vscore_y_mm": 64.999972,
+          "functional_core_width_mm": 95.999986,
+          "functional_core_height_mm": 59.999982,
+          "bottom_process_rail_mm": 4.99999,
+          "top_process_rail_mm": 5.000015
+        },
+        "archive": "/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevD-Balanced/production/partial-smd-pcba/jlcpcb-returned/CoffeeRoast-Control-RevD-Balanced_JLC_Gerber_Drill_Y15.zip",
+        "archive_sha256": "3a730e7122a78fc144f515d7c9fa1039cc024ac5b06f81e2fbfed565f8809212"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "status": "PROTOTYPE_NOT_RELEASED",
+  "source": "CoffeeRoast_RevD_enclosure.scad",
+  "openscad_version": "OpenSCAD version 2021.01",
+  "files": {
+    "board_proxy.stl": {
+      "bytes": 56133,
+      "sha256": "c405c432c3d977d0e8e407e455377ed4788672aca1ea2b92a0b7bd361457d3d1"
+    },
+    "board_proxy_rails_attached.stl": {
+      "bytes": 55588,
+      "sha256": "8d5fa295b3730fddb2e1fcc7142936b24b5171c8b30a08eaee5e575e1b78f2aa"
+    },
+    "lid_design.stl": {
+      "bytes": 219972,
+      "sha256": "1c40073d641414a49491c40b4195b8808b724ed03e2465bfd9026c1bf9a59341"
+    },
+    "lid_print.3mf": {
+      "bytes": 16947,
+      "sha256": "177bbb6b4ca4463df65c9ef451b4cdedca8876357849f93fb40f3e3dbfc63543"
+    },
+    "lid_print.stl": {
+      "bytes": 234047,
+      "sha256": "5447486c7760a668da4dd96d2e04556562e82971c237459b9f9fcfb1debac787"
+    },
+    "lid_rails_attached_print.3mf": {
+      "bytes": 16952,
+      "sha256": "19cd6731febd47b0b29de43162bfe1d8e5235578922f3befbe5354c040245eb4"
+    },
+    "lid_rails_attached_print.stl": {
+      "bytes": 234087,
+      "sha256": "ee5d766f90eb2e761f67528c7679ae607746ed88b86bc81dec16ce7a21fa70ca"
+    },
+    "preview_closed.png": {
+      "bytes": 39195,
+      "sha256": "bcc6f95c3b28d613b7f7394850e41308a3c5660601e8e03ae96282a2f0b7539d"
+    },
+    "preview_closed_rails_attached.png": {
+      "bytes": 38845,
+      "sha256": "a0c7c7d07e3b9fc8f2104a5ba69bac13e1ab7aae9f8634317eaa4cd4f82872c2"
+    },
+    "preview_exploded.png": {
+      "bytes": 36141,
+      "sha256": "2e4d4bd29115e6f466e883ff2bb1c2433aa6b1757b6fb46d192ba4f112edd7be"
+    },
+    "tray.3mf": {
+      "bytes": 6888,
+      "sha256": "c520b384b198419227487400385af64a7b2ee4ef20b4aa862cc5d0dd997defb7"
+    },
+    "tray.stl": {
+      "bytes": 75997,
+      "sha256": "eda0365bcf5dd6516415e5a5cea108f563885502ed360e387221c9553ffc8793"
+    },
+    "tray_rails_attached.3mf": {
+      "bytes": 6883,
+      "sha256": "373bca101ab58ad0939742cc46c91cdc33c57279a5dfff3b90347f4c581627d9"
+    },
+    "tray_rails_attached.stl": {
+      "bytes": 76018,
+      "sha256": "fceb8ea0c14df432b0ede8eb5bed5606362e6545781a7bf6f353409cd9cd137b"
+    },
+    "verification.json": {
+      "bytes": 7342,
+      "sha256": "0c559ddb7b6e88b6c10d99e007633893e55d95d08f338cfc22d22462139b5b10"
+    }
+  }
+}

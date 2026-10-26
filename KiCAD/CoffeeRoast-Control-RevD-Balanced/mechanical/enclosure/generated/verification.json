@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "scope": "digital prototype geometry only",
+  "release_blockers": [
+    "Measure manufactured Q1 and C4 heights and mounting standoff.",
+    "Fit-test J5 USB-C opening with the exact connector and a real cable plug.",
+    "Measure J1-J4/J6 wire OD, bend radius and choose strain relief hardware.",
+    "Tune M3 insert bore with a material/printer-specific coupon.",
+    "Measure enclosure temperatures under worst-case roaster operation before material release."
+  ],
+  "checks": [
+    {
+      "name": "tray_valid_single_solid",
+      "passed": true,
+      "evidence": {
+        "valid": true,
+        "solids": 1
+      }
+    },
+    {
+      "name": "lid_valid_single_solid",
+      "passed": true,
+      "evidence": {
+        "valid": true,
+        "solids": 1
+      }
+    },
+    {
+      "name": "no_digital_collisions",
+      "passed": true,
+      "evidence": {
+        "tray_board_mm3": 0.0,
+        "lid_board_mm3": 0.0,
+        "tray_lid_mm3": 0.0
+      }
+    },
+    {
+      "name": "proxy_height_clearance_positive",
+      "passed": true,
+      "evidence": {
+        "proxy_top_z_mm": 25.0,
+        "lid_underside_z_mm": 30.0,
+        "clearance_mm": 5.0
+      }
+    },
+    {
+      "name": "hold_down_gap_matches_parameter",
+      "passed": true,
+      "evidence": {
+        "board_top_z_mm": 6.0,
+        "hold_down_bottom_z_mm": 6.2,
+        "gap_mm": 0.2
+      }
+    },
+    {
+      "name": "pcb_lateral_clearance",
+      "passed": true,
+      "evidence": {
+        "per_side_mm": 0.6,
+        "pocket_minus_pcb_x_mm": 1.2,
+        "pocket_minus_pcb_y_mm": 1.2
+      }
+    },
+    {
+      "name": "vents_outside_antenna_keepout",
+      "passed": true,
+      "evidence": {
+        "vent_y_mm": [
+          12.2,
+          26.2
+        ],
+        "antenna_keepout_y_mm": [
+          56.0,
+          62.2
+        ]
+      }
+    },
+    {
+      "name": "stl_meshes_closed_manifold",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "file": "generated/tray.stl",
+          "triangles": 2788,
+          "open_or_nonmanifold_edges": 0
+        },
+        "lid": {
+          "file": "generated/lid.stl",
+          "triangles": 3468,
+          "open_or_nonmanifold_edges": 0
+        },
+        "lid_print": {
+          "file": "generated/lid_print.stl",
+          "triangles": 3468,
+          "open_or_nonmanifold_edges": 0
+        },
+        "board_proxy": {
+          "file": "generated/board_proxy.stl",
+          "triangles": 444,
+          "open_or_nonmanifold_edges": 0
+        }
+      }
+    },
+    {
+      "name": "print_3mf_archives_valid",
+      "passed": true,
+      "evidence": {
+        "tray": {
+          "file": "generated/tray.3mf",
+          "bytes": 41136,
+          "valid_3mf_archive": true
+        },
+        "lid_print": {
+          "file": "generated/lid_print.3mf",
+          "bytes": 60537,
+          "valid_3mf_archive": true
+        }
+      }
+    }
+  ]
+}
