@@ -1,30 +1,62 @@
-Ref,Qty,Value/Part,Package,Notes
-U1,1,ESP32-S3-WROOM-1-N8R8 or compatible,ESP32-S3-WROOM-1 module,Direct-on-PCB module; antenna at board edge/keepout
-U2,1,MAX6675,SOIC-8,Run at 3.3V to avoid 5V ESP32 GPIO exposure
-U3,1,3V3 switching regulator >=600mA 5V input,Exact footprint/part TBD,"RevA.1 replaces AMS1117 intent to reduce heat; choose exact AP63203/TPS62177/module-style part before fabrication"
-U4,1,24V->5V buck module >=1A low-noise,Generic 4-pin buck module,Input from 24V/3A PSU; output +5V
-Q1,1,IRLB8721 or 3.3V-logic N-MOSFET with low Rds_on,TO-220-3 or exact sourced footprint,"Fan low-side switch; require low Rds_on at Vgs=2.5/3.3V and margin for 3A fan path"
-Q2,1,2N7002,SOT-23,Low-side SSR input driver
-D1,1,SB560/MBR560 flyback diode,THT P10.16,"Across fan: cathode to +24V_FUSED, anode to FAN_NEG"
-D2,1,SMBJ33A or suitable 24V-input TVS,SMB/SMA footprint placeholder,RevA.1 surge clamp across +24V_RAW/GND near J1
-D3,1,SMBJ33A or suitable fan TVS,SMB/SMA footprint placeholder,RevA.1 fan clamp across +24V_FUSED/FAN_NEG near J2
-F1,1,T3.15A fuse on 24V side,5x20 placeholder,Optional/protects low-voltage branch
-J1,1,24V input from certified internal PSU,large plated hand-solder pads,"No connector assembled; solder PSU leads directly, add enclosure strain relief; use 230VAC->24VDC/3A certified supply in enclosure"
-J2,1,Fan output,large plated hand-solder pads,"No connector assembled; solder fan leads directly, 24V fan PWM/3A path, add strain relief"
-J3,1,External SSR input,large plated hand-solder pads,"No connector assembled; solder SSR control leads directly; SSR+ from +5V, SSR- low-side switched"
-J4,1,K-type thermocouple,large plated hand-solder pads,"No connector assembled; solder thermocouple/extension leads directly; use isolated thermocouple and mechanical strain relief"
-J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11,"Real USB-C receptacle footprint; data-only USB2, VBUS sense only, CC1/CC2 Rd pulldowns"
-U5,1,USBLC6-2SC6 or equivalent USB2 ESD array,Draft pads on existing USB/GND tracks,RevA.1 USB D+/D- ESD footprint; replace with exact library footprint before fabrication
-C4,1,220uF 35V low-ESR electrolytic/polymer,Radial placeholder,RevA.1 input bulk capacitor across +24V_RAW/GND
-C5,1,1nF C0G/NP0 thermocouple differential filter,0603/0805 placeholder,DNP if thermocouple reading becomes biased/noisy; placed across THERMO_PLUS/THERMO_MINUS at J4 side
-"R1,R3",2,100R,0805,Gate/series resistors
-"R2,R4",2,100k,0805,Gate pulldowns
-"R5,R6",2,10k,0805,EN/BOOT pullups
-"R7,R8",2,27R,0805,USB series resistors
-"R10,R11",2,5.1k,0805,USB-C CC1/CC2 Rd pulldowns to advertise UFP/device
-"SW1,SW2",2,Tactile switch,6x6mm,Reset/Boot
-"C1,C2",2,10uF,0805,5V/3V3 bulk decoupling
-C3,1,100nF,0805,MAX6675 local decoupling
-"TP24V,TP5V,TP3V3,TPGND",4,Bring-up voltage test pads,PCB copper pads only,RevA.1 test points for 24V fused/5V/3V3/GND rails
-TPESP1-TPESP40,40,ESP32-S3 debug/test pads,PCB copper pads only,"Do not populate; probe/solder-wire pads around U1, see docs/esp32_debug_pads.csv"
-PADESP1-PADESP40,40,ESP32-S3 larger bottom-side solder pads,PCB copper pads only,"Do not populate; labeled B.Cu/B.Silk wire-attach pads routed from ESP32 pins, see docs/esp32_solder_pads.csv"
+Ref,Qty,Value/Part,Footprint,Manufacturer Part,Supplier Part,Assembly,Notes
+C1,1,10uF_3V3_BULK_A,CoffeeRoast:C1_C_0805_2012Metric,GRM21BR61E106KA73L,C84416,PCBA,10uF 25V X5R 3V3 bulk A.
+C2,1,10uF_3V3_BULK_B,CoffeeRoast:C2_C_0805_2012Metric,GRM21BR61E106KA73L,C84416,PCBA,10uF 25V X5R 3V3 bulk B.
+C3,1,100nF_MAX6675,CoffeeRoast:C3_C_0805_2012Metric,CC0805KRX7R9BB104,C49678,PCBA,100nF MAX6675 decoupling.
+C4,1,EEU-FR1V221B_220uF_35V,CoffeeRoast:C4_CP_Radial_D8.0mm_P5.00mm,EEU-FR1V221B,C3697,HAND/DNP,Panasonic EEU-FR1V221B 220uF/35V radial electrolytic; hand-solder and observe polarity.
+C5,1,CC0805JRNPO9BN102_1nF_C0G,CoffeeRoast:C5_C_0805_2012Metric,CC0805JRNPO9BN102,C139684,DNP,Optional CC0805JRNPO9BN102 1nF C0G thermocouple filter; DNP until noise/bias testing confirms it.
+C6,1,100nF_U1_DECOUPLING_0603,CoffeeRoast:C6_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF ESP32 decoupling.
+C7,1,100nF_U4_3V3_OUTPUT_DECOUPLING_0603,CoffeeRoast:C7_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF 3V3 output decoupling.
+C8,1,2.2uF_100V_X7R,CoffeeRoast:C8_C_1210_3225Metric,CS3225X7R225K101NRK,C2900749,PCBA,2.2uF 100V buck input.
+C9,1,2.2uF_100V_X7R,CoffeeRoast:C9_C_1210_3225Metric,CS3225X7R225K101NRK,C2900749,PCBA,2.2uF 100V buck input.
+C10,1,100nF_50V_X7R_BOOT,CoffeeRoast:C10_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF bootstrap.
+C11,1,22uF_25V_X5R,CoffeeRoast:C11_C_1210_3225Metric,CL32A226KAJNNNE,C52306,PCBA,22uF 25V buck output.
+C12,1,100nF_100V_X7R,CoffeeRoast:C12_C_0805_2012Metric,0805B104K101NT,C89258,PCBA,100nF 100V buck input HF bypass.
+C13,1,1uF_25V_X7R_VDRV,CoffeeRoast:C13_C_0805_2012Metric,CL21B105KAFNNNE,C116352,PCBA,1uF VDRV reservoir.
+C14,1,100nF_50V_X7R_VDRV,CoffeeRoast:C14_C_0603_1608Metric,CC0603KRX7R9BB104,C14663,PCBA,100nF VDRV bypass.
+C15,1,22uF_25V_X5R,CoffeeRoast:C15_C_1210_3225Metric,CL32A226KAJNNNE,C52306,PCBA,22uF 25V buck output.
+D1,1,SS56-E3/57T,CoffeeRoast:D1_D_SMB,SS56-E3/57T,,HAND/DNP,"Vishay SS56-E3/57T SMB flyback diode; exact pad/polarity validated, hand-solder because assembler mapping is not pre-filled."
+D2,1,SMBJ33A,CoffeeRoast:D2_D_SMB,SMBJ33A-13-F,C135067,PCBA,24V input TVS; cathode/pad 1 to +24V_RAW.
+D3,1,SMBJ33A,CoffeeRoast:D3_D_SMB,SMBJ33A-13-F,C135067,PCBA,Fan TVS; cathode/pad 1 to +24V_RAW.
+D4,1,SS110_100V,CoffeeRoast:D4_D_SMA,SS110,C2766060,PCBA,100V buck catch diode.
+D5,1,BZT52C10_10V,CoffeeRoast:D5_D_SOD-123,BZT52C10,C49023497,PCBA,10V VDRV clamp.
+J1,1,24V_IN_FROM_230V_PSU_3A,CoffeeRoast:J1_J1_24V_SolderPads,24V_IN_FROM_230V_PSU_3A,,HAND/DNP,Large plated hand-solder pads; solder PSU leads and add strain relief.
+J2,1,FAN_24V_PWM_3A,CoffeeRoast:J2_J2_Fan_SolderPads,FAN_24V_PWM_3A,,HAND/DNP,Large plated hand-solder pads; solder fan leads and add strain relief.
+J3,1,SSR_INPUT_3V3_TO_EXTERNAL_SSR,CoffeeRoast:J3_J3_SSR_SolderPads,SSR_INPUT_3V3_TO_EXTERNAL_SSR,,HAND/DNP,Large plated hand-solder pads; solder external SSR control leads.
+J4,1,K_TYPE_THERMOCOUPLE,CoffeeRoast:J4_J4_Thermocouple_SolderPads,K_TYPE_THERMOCOUPLE,,HAND/DNP,Large plated hand-solder pads; solder thermocouple extension leads and add strain relief.
+J5,1,USB_C_Receptacle_XKB_U262-16XN-4BVC11,CoffeeRoast:J5_USB_C_Receptacle_XKB_U262-16XN-4BVC11,U262-16 1 N-4BVC11,C319148,PCBA,Verify shell and pin orientation in placement preview.
+J6,1,ESC_24V_GND_PWM_GND_GPIO10,CoffeeRoast:J6_ESC_4Pin_P5.08mm,ESC_4PIN_HAND_WIRE,,HAND/DNP,"Four large hand-solder pads for ESC: +24V, GND, PWM (GPIO10), GND; add strain relief."
+JGPIO1,1,ESP32_GPIO_BREAKOUT_ROW,CoffeeRoast:JGPIO1_ESP32_GPIO_Breakout_Row,ESP32_GPIO_BREAKOUT_ROW,,HAND/DNP,PCB test/debug/mechanical position; no automated placement.
+L1,1,FNR6045S220MT_22uH_2A,CoffeeRoast:L1_L_Changjiang_FNR6045S,FNR6045S220MT,C168080,PCBA,"22uH, >=2A saturation/current candidate."
+Q1,1,STP55NF06L,CoffeeRoast:Q1_TO-220-3_Vertical,STP55NF06L,C77582,PCBA,THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. JLC hand-solder assembly; thermally validate at 2.5A fan current.
+Q2,1,2N7002_SSR_DRIVER,CoffeeRoast:Q2_SOT-23,2N7002,C916396,PCBA,SSR low-side driver.
+R1,1,100R_GATE_TURN_ON,CoffeeRoast:R1_R_0805_2012Metric,FRC0805F1000TS,C2907218,PCBA,100R fan gate turn-on.
+R2,1,100k_GATE_PULLDOWN,CoffeeRoast:R2_R_0805_2012Metric,FRC0805F1003TS,C2907217,PCBA,100k fan gate pulldown.
+R3,1,100R,CoffeeRoast:R3_R_0805_2012Metric,FRC0805F1000TS,C2907218,PCBA,100R SSR gate resistor.
+R4,1,100k,CoffeeRoast:R4_R_0805_2012Metric,FRC0805F1003TS,C2907217,PCBA,100k SSR gate pulldown.
+R5,1,10k_EN_PULLUP,CoffeeRoast:R5_R_0805_2012Metric,FRC0805F1002TS,C2907219,PCBA,10k EN pullup.
+R6,1,10k_BOOT_PULLUP,CoffeeRoast:R6_R_0805_2012Metric,FRC0805F1002TS,C2907219,PCBA,10k BOOT pullup.
+R7,1,27R_USB_DN,CoffeeRoast:R7_R_0805_2012Metric,0805W8F270JT5E,C17594,PCBA,27R USB D- series.
+R8,1,27R_USB_DP,CoffeeRoast:R8_R_0805_2012Metric,0805W8F270JT5E,C17594,PCBA,27R USB D+ series.
+R10,1,5k1_CC1_RD,CoffeeRoast:R10_R_0805_2012Metric,0805W8F5101T5E,C27834,PCBA,5.1k USB CC1 Rd.
+R11,1,5k1_CC2_RD,CoffeeRoast:R11_R_0805_2012Metric,0805W8F5101T5E,C27834,PCBA,5.1k USB CC2 Rd.
+R12,1,100k_1%_FB_TOP,CoffeeRoast:R12_R_0603_1608Metric,FRC0603F1003TS,C2906980,PCBA,100k FB top.
+R13,1,29.4k_1%_FB_BOTTOM,CoffeeRoast:R13_R_0603_1608Metric,RC0603FR-0729K4L,C137752,PCBA,29.4k FB bottom.
+R14,1,49.9k_1%_RT_500kHz,CoffeeRoast:R14_R_0603_1608Metric,RC0603FR-0749K9L,C114624,PCBA,"49.9k RT, about 500kHz."
+R15,1,10R_GATE_TURN_OFF,CoffeeRoast:R15_R_0805_2012Metric,RC0805FR-0710RL,C96347,PCBA,10R fan gate turn-off.
+R16,1,2.7k_1%_250mW,CoffeeRoast:R16_R_1206_3216Metric,1206W4F2701T5E,C17950,PCBA,"2.7k VDRV feed, 1%, 0.25W."
+SW1,1,TL3301AF160QG_RESET,CoffeeRoast:SW1_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,RESET switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
+SW2,1,TL3301AF160QG_BOOT,CoffeeRoast:SW2_SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG,TL3301AF160QG,C273519,PCBA,BOOT switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
+TPBOOT1,1,BOOT_TWEEZER_PADS,CoffeeRoast:TPBOOT1_Boot_Tweezer_Pads,BOOT_TWEEZER_PADS,,DNP,PCB test/debug/mechanical position; no automated placement.
+TPGND,1,GND_TEST,CoffeeRoast:TPGND_TestPoint_Pad_D1.5mm,GND_TEST,,DNP,PCB test/debug/mechanical position; no automated placement.
+TPRESET1,1,RESET_TWEEZER_PADS,CoffeeRoast:TPRESET1_Reset_Tweezer_Pads,RESET_TWEEZER_PADS,,DNP,PCB test/debug/mechanical position; no automated placement.
+TPSSR1,1,SSR_3V3_OUT_MEAS_PADS,CoffeeRoast:TPSSR1_SSR_Measurement_Pads,SSR_3V3_OUT_MEAS_PADS,,DNP,PCB test/debug/mechanical position; no automated placement.
+TP24V,1,+24V_FUSED_TEST,CoffeeRoast:TP24V_TestPoint_Pad_D1.5mm,+24V_FUSED_TEST,,DNP,PCB test/debug/mechanical position; no automated placement.
+TP3V3,1,+3V3_TEST,CoffeeRoast:TP3V3_TestPoint_Pad_D1.5mm,+3V3_TEST,,DNP,PCB test/debug/mechanical position; no automated placement.
+U1,1,ESP32-S3-WROOM-1,CoffeeRoast:U1_ESP32-S3-WROOM-1,ESP32-S3-WROOM-1-N8R8,C2913201,PCBA,Confirm N8R8 variant and antenna keepout.
+U2,1,MAX6675_SOIC8_3V3,CoffeeRoast:U2_SOIC-8_3.9x4.9mm_P1.27mm,MAX6675ISA+T,C16030,PCBA,3.3V thermocouple converter.
+U4,1,LMR16010PDDAR,CoffeeRoast:U4_SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm,LMR16010PDDAR,C183084,PCBA,60V/1A buck; verify Pin 1 and exposed-pad orientation.
+U5,1,USBLC6-2SC6,CoffeeRoast:U5_SOT-23-6,USBLC6-2SC6,C7519,PCBA,"USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."
+U6,1,UCC27511DBVR,CoffeeRoast:U6_SOT-23-6,UCC27511DBVR,C191027,PCBA,Split-output fan MOSFET gate driver.
+TPESP1-TPESP40,40,ESP32 probe pads,PCB copper only,,,DNP,Board-only probe pads.
+PADESP1-PADESP40,40,ESP32 solder pads,PCB copper only,,,DNP,Board-only wire-attach pads.
+FID1-FID6,6,Fiducial,PCB copper only,,,DNP,Board-only fabrication marks.

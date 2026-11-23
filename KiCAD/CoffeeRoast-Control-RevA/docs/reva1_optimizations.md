@@ -1,17 +1,19 @@
-# CoffeeRoast-Control RevA.1 optimizations
+# CoffeeRoast-Control RevA.2 power and placement update
 
-RevA.1 keeps the controller PCB low-voltage only and adds practical robustness features before a board-order review.
+RevA.2 keeps the controller PCB low-voltage only, removes the redundant 5V rail and improves mechanical access.
 
 ## Applied to the PCB
 
-- **U3 part intent changed** from AMS1117-style linear regulator to a **3.3V switching regulator, >=600 mA, 5V input**. The currently routed footprint is still a draft placeholder; choose the exact regulator/module footprint before fabrication.
-- **Q1 part intent tightened** to an IRLB8721-class or equivalent **3.3V-logic N-MOSFET with low Rds_on at Vgs=2.5/3.3V**.
+- **U3 and the +5V rail were removed.** U4 is now the sole **24V→3.3V switching converter, >=1 A**; its exact sourced module/footprint must still be verified before fabrication.
+- **J3/TPSSR1 now use +3V3** for the external SSR input. The chosen SSR must be bench-verified to switch reliably at 3.3V.
+- **Q1 was moved down by 10 mm**, increasing the mechanical gap to Reset/Boot; TPRESET1/TPBOOT1 and the rail test pads were moved out from under adjacent footprints.
+- **Q1 part intent remains** an IRLB8721-class or equivalent **3.3V-logic N-MOSFET with low Rds_on at Vgs=2.5/3.3V**.
 - **C4** added as 220 µF / 35V input bulk capacitance across `+24V_RAW` and `GND` near J1.
 - **D2** added as a 24V-input TVS clamp across `+24V_RAW` and `GND` near J1.
 - **D3** added as a fan clamp/TVS across `+24V_FUSED` and `FAN_NEG` near J2.
 - **U5** added as a USB2 D+/D- ESD footprint on existing connector-side USB/GND routing.
 - **C5** added as an optional/draft thermocouple differential filter across `THERMO_PLUS`/`THERMO_MINUS` at J4. Mark DNP unless testing shows noise that justifies it.
-- **TP24V, TP5V, TP3V3, TPGND** added as bring-up test pads.
+- **TP24V, TP3V3, TPGND** are the bring-up rail test pads; TPRESET1/TPBOOT1 provide accessible control test points.
 
 ## Deliberately not added yet
 

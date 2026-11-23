@@ -1,0 +1,127 @@
+(footprint "J6_ESC_4Pin_P5.08mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "J6"
+		(at 7.62 -3.8 0)
+		(layer "F.Fab")
+		(uuid "a593abd8-70fd-4ecd-b832-612157bc99c5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "ESC_24V_GND_PWM_GND_GPIO10"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b3d69c66-abf6-4343-996f-5fdbafaa7c3e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "04e70d96-764d-43c1-a422-b0f6f7fe8558")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c07af2e4-7c64-4dca-b305-f1b6580621e7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -2 -2.5)
+		(end 17.24 -2.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "a2b1267a-d00f-46c3-82e2-9a996e7f8f00")
+	)
+	(fp_line
+		(start -2 2.5)
+		(end -2 -2.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "242faf0e-1c93-44dc-9255-1e2ff3208ef3")
+	)
+	(fp_line
+		(start 17.24 -2.5)
+		(end 17.24 2.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "91850bc2-1897-4fa5-8380-b1c099832f7b")
+	)
+	(fp_line
+		(start 17.24 2.5)
+		(end -2 2.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "a66cdd90-73fe-4aee-ae21-988fea94976a")
+	)
+	(pad "1" thru_hole roundrect
+		(at 0 0)
+		(size 3.2 3.2)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.2)
+		(thermal_bridge_angle 45)
+		(uuid "80bda403-3624-42da-824c-52a736515764")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 3.2 3.2)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ded86b69-9033-4ecc-acf7-3143102aff2b")
+	)
+	(pad "3" thru_hole circle
+		(at 10.16 0)
+		(size 3.2 3.2)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ee18c1bc-80f6-48f4-9126-d0add9b17957")
+	)
+	(pad "4" thru_hole circle
+		(at 15.24 0)
+		(size 3.2 3.2)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "86f7e983-def8-41c7-8fca-4f09154ee2a9")
+	)
+	(embedded_fonts no)
+)

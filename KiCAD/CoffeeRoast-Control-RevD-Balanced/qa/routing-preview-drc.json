@@ -1,0 +1,1756 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-02T14:56:57+0200",
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "9.0.8",
+    "schematic_parity": [],
+    "source": "CoffeeRoast-Control-RevD-Balanced.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 2 [GND] von J7",
+                    "pos": {
+                        "x": 5.27,
+                        "y": 14.0
+                    },
+                    "uuid": "7c83ee70-75c1-49fb-91e3-cc7d8d87a814"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9559 mm",
+                    "pos": {
+                        "x": 11.6359,
+                        "y": 8.0317
+                    },
+                    "uuid": "07f6a785-2f58-4e70-bf61-29079d563987"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,0017 mm",
+                    "pos": {
+                        "x": 10.68,
+                        "y": 2.6
+                    },
+                    "uuid": "5f3bcba0-dc1a-4932-b8c3-5b851bd511f0"
+                },
+                {
+                    "description": "Pad 1 [GND] von FID4 auf B.Cu",
+                    "pos": {
+                        "x": 3.0,
+                        "y": 3.0
+                    },
+                    "uuid": "81b23f21-1c8f-4b6e-83dc-d61efeec7246"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,2517 mm",
+                    "pos": {
+                        "x": 19.32,
+                        "y": 6.78
+                    },
+                    "uuid": "248d1911-059b-4b67-aa66-a88b5c5bd1a2"
+                },
+                {
+                    "description": "Pad 2 [GND] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 24.8625,
+                        "y": 10.0
+                    },
+                    "uuid": "39b230cd-3fe2-40fa-a201-cf405216ebb5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 5,8657 mm",
+                    "pos": {
+                        "x": 23.7643,
+                        "y": 43.8098
+                    },
+                    "uuid": "9e4d5a5c-d42d-4480-abb2-171636b2d753"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,9500 mm",
+                    "pos": {
+                        "x": 7.525,
+                        "y": 36.905
+                    },
+                    "uuid": "580df466-088c-4282-beeb-c0ef5f3b2fad"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 24.8625,
+                        "y": 10.0
+                    },
+                    "uuid": "39b230cd-3fe2-40fa-a201-cf405216ebb5"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,1338 mm",
+                    "pos": {
+                        "x": 24.4534,
+                        "y": 15.8017
+                    },
+                    "uuid": "5dd3a975-f51a-4fda-9c9c-cfb10b358214"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,7617 mm",
+                    "pos": {
+                        "x": 30.2483,
+                        "y": 15.2631
+                    },
+                    "uuid": "453c6516-12c9-4f36-9465-cfcc19ff8975"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,1820 mm",
+                    "pos": {
+                        "x": 30.65,
+                        "y": 26.0
+                    },
+                    "uuid": "37e48a50-181e-470c-aeff-3c5c45739db2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9500 mm",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 41.5
+                    },
+                    "uuid": "0563bfc2-a3b1-4d70-9597-447c355561eb"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,7008 mm",
+                    "pos": {
+                        "x": 28.95,
+                        "y": 43.0
+                    },
+                    "uuid": "b62bfc12-d80e-48b6-8b5c-d36d548f73ae"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] von FID6 auf B.Cu",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 3.0
+                    },
+                    "uuid": "0ca26b4c-7d05-4b06-be29-caed7e3cf8f2"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,4634 mm",
+                    "pos": {
+                        "x": 45.27,
+                        "y": 9.0
+                    },
+                    "uuid": "132b19f4-6cff-49ab-89ea-4ebb097810d9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,1773 mm",
+                    "pos": {
+                        "x": 59.9125,
+                        "y": 49.0342
+                    },
+                    "uuid": "89222d0c-1693-492e-bd3f-dd5e230934d6"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 4,4778 mm",
+                    "pos": {
+                        "x": 73.4778,
+                        "y": 46.5
+                    },
+                    "uuid": "0b73596c-0f18-4dc1-b3a9-e8695b39cec2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9517 mm",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 7.64
+                    },
+                    "uuid": "50d87a11-2b59-4b72-bc6d-1f9be07229ee"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,4000 mm",
+                    "pos": {
+                        "x": 71.2,
+                        "y": 13.96
+                    },
+                    "uuid": "3abb2a37-e06d-4169-873f-25bb512f8e39"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 3,2300 mm",
+                    "pos": {
+                        "x": 77.52,
+                        "y": 7.64
+                    },
+                    "uuid": "7c3eb1fd-268d-4001-943d-889d6cde5128"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 13,7483 mm",
+                    "pos": {
+                        "x": 89.95,
+                        "y": 14.7517
+                    },
+                    "uuid": "1dbfdada-6758-4c86-8b56-2724f1d765a2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 1,7017 mm",
+                    "pos": {
+                        "x": 84.54,
+                        "y": 56.2
+                    },
+                    "uuid": "712d0424-1ae7-46a5-81e3-7d24fe388466"
+                },
+                {
+                    "description": "Pad 1 [GND] von FID5 auf B.Cu",
+                    "pos": {
+                        "x": 92.0,
+                        "y": 58.0
+                    },
+                    "uuid": "021d2d29-439b-4cd5-9a60-da482c107d0c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 0,9750 mm",
+                    "pos": {
+                        "x": 89.95,
+                        "y": 29.475
+                    },
+                    "uuid": "60211e5e-4c7e-4b56-8eb1-49e0409a7e18"
+                },
+                {
+                    "description": "Leiterbahn [GND] auf F.Cu, Länge 2,1835 mm",
+                    "pos": {
+                        "x": 86.0,
+                        "y": 33.8835
+                    },
+                    "uuid": "2ba5bdde-a01d-43f7-9ec6-8049fe4372dc"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,5883 mm",
+                    "pos": {
+                        "x": 64.7617,
+                        "y": 46.5
+                    },
+                    "uuid": "71b86a64-1fb8-4f2d-8c1a-d5b737d1d7dc"
+                },
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,3286 mm",
+                    "pos": {
+                        "x": 74.475,
+                        "y": 39.95
+                    },
+                    "uuid": "d245b684-7af5-4fac-adf7-5bb345c75533"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 4 [+3V3] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 12.475,
+                        "y": 33.095
+                    },
+                    "uuid": "2f6c75d3-ed60-4c4b-81e5-0a3743ea00c1"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C3 auf F.Cu",
+                    "pos": {
+                        "x": 15.05,
+                        "y": 30.5
+                    },
+                    "uuid": "cdb3e0ae-ccb8-471f-8769-ab3dbad681e3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 2,8284 mm",
+                    "pos": {
+                        "x": 17.46,
+                        "y": 49.5
+                    },
+                    "uuid": "dc13e17d-6585-47ce-8a1b-2c3dd977d16f"
+                },
+                {
+                    "description": "Pad 4 [+3V3] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 12.475,
+                        "y": 33.095
+                    },
+                    "uuid": "2f6c75d3-ed60-4c4b-81e5-0a3743ea00c1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 16,2190 mm",
+                    "pos": {
+                        "x": 44.6438,
+                        "y": 10.3455
+                    },
+                    "uuid": "165df88d-592c-424e-91c1-6e7908e42751"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 0,8500 mm",
+                    "pos": {
+                        "x": 61.0,
+                        "y": 27.65
+                    },
+                    "uuid": "80b8d484-34ea-4abb-91a9-0fef5d76a19c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 2,4018 mm",
+                    "pos": {
+                        "x": 85.65,
+                        "y": 26.8017
+                    },
+                    "uuid": "11db3bc8-82dd-4107-b8bf-0072b7dec294"
+                },
+                {
+                    "description": "Leiterbahn [+3V3] auf F.Cu, Länge 0,7017 mm",
+                    "pos": {
+                        "x": 82.05,
+                        "y": 28.5
+                    },
+                    "uuid": "6a7a213c-81cf-42c1-9c89-95010a90f6fd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 6 [FAN_PWM] von U6 auf F.Cu",
+                    "pos": {
+                        "x": 37.1375,
+                        "y": 40.55
+                    },
+                    "uuid": "2e270ee0-9ba6-440d-93dd-6d85af8b1c2e"
+                },
+                {
+                    "description": "Pad 38 [FAN_PWM] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 10.18
+                    },
+                    "uuid": "fcbbb1fe-0313-49a6-9ae7-ca52935cffbf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 1 [HEATER_PWM] von R3 auf F.Cu",
+                    "pos": {
+                        "x": 26.05,
+                        "y": 36.0
+                    },
+                    "uuid": "ef9417bf-c9c6-456c-81a5-cad8d216ee31"
+                },
+                {
+                    "description": "Pad 39 [HEATER_PWM] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 8.91
+                    },
+                    "uuid": "c638e479-c4e0-498f-8a17-4af13bfd879c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 7 [MAX_DO] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 7.525,
+                        "y": 35.635
+                    },
+                    "uuid": "79ee0d85-ca42-47b7-aedb-7911ef9e1e7a"
+                },
+                {
+                    "description": "Pad 19 [MAX_DO] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 70.095,
+                        "y": 25.4
+                    },
+                    "uuid": "00432396-f940-4234-80a0-4a679f7e5b5c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 6 [MAX_CS] von U2 auf F.Cu",
+                    "pos": {
+                        "x": 7.525,
+                        "y": 34.365
+                    },
+                    "uuid": "06d5600a-829f-4a2a-94cd-c36d8e11e63f"
+                },
+                {
+                    "description": "Pad 20 [MAX_CS] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 71.365,
+                        "y": 25.4
+                    },
+                    "uuid": "56fedbf5-50b8-4f17-80ac-503a4a34dc0f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [USB_VBUS] auf F.Cu, Länge 0,3000 mm",
+                    "pos": {
+                        "x": 17.25,
+                        "y": 7.345
+                    },
+                    "uuid": "100c9269-a1c9-4688-a6d3-db2823ba15b9"
+                },
+                {
+                    "description": "Pad 5 [USB_VBUS] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 27.1375,
+                        "y": 10.0
+                    },
+                    "uuid": "b228759f-beb9-4318-8a30-e049dbd69145"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 13 [USB_DN_MCU] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 22.88
+                    },
+                    "uuid": "12697c54-f95d-4d03-9aa4-84a349d3e26b"
+                },
+                {
+                    "description": "Pad 1 [USB_DN_MCU] von R7 auf F.Cu",
+                    "pos": {
+                        "x": 64.05,
+                        "y": 45.0
+                    },
+                    "uuid": "2379888f-4586-4e94-af1a-fd4f43002c7e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 6 [USB_DN] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 27.1375,
+                        "y": 9.05
+                    },
+                    "uuid": "6b854e3b-8d5e-4e3f-a8cd-e06024722490"
+                },
+                {
+                    "description": "Leiterbahn [USB_DN] auf F.Cu, Länge 8,1842 mm",
+                    "pos": {
+                        "x": 16.6783,
+                        "y": 9.05
+                    },
+                    "uuid": "d2d458ff-1093-4e7c-9be7-87e21f0448c8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [USB_DN] von R7 auf F.Cu",
+                    "pos": {
+                        "x": 65.949999,
+                        "y": 45.0
+                    },
+                    "uuid": "4484abaa-e09f-427c-86a5-d4e1943d11b5"
+                },
+                {
+                    "description": "Pad 6 [USB_DN] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 27.1375,
+                        "y": 9.05
+                    },
+                    "uuid": "6b854e3b-8d5e-4e3f-a8cd-e06024722490"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 2 [USB_DP] von R8 auf F.Cu",
+                    "pos": {
+                        "x": 69.949999,
+                        "y": 45.0
+                    },
+                    "uuid": "4139a9cd-1fef-4eec-b4c5-339952990d3c"
+                },
+                {
+                    "description": "Leiterbahn [USB_DP] auf F.Cu, Länge 2,2750 mm",
+                    "pos": {
+                        "x": 27.1375,
+                        "y": 10.95
+                    },
+                    "uuid": "8d504978-6b37-4850-8c82-8aab94992382"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [EN] auf F.Cu, Länge 5,1381 mm",
+                    "pos": {
+                        "x": 46.55,
+                        "y": 24.75
+                    },
+                    "uuid": "508c9c5d-74f4-4bb6-8101-f15cf65afcec"
+                },
+                {
+                    "description": "Pad 3 [EN] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 10.18
+                    },
+                    "uuid": "13f1c036-cecc-42a7-aa06-5aeafd46b58d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [BOOT] auf F.Cu, Länge 0,7017 mm",
+                    "pos": {
+                        "x": 56.95,
+                        "y": 35.0
+                    },
+                    "uuid": "a24bbc95-a3d8-4319-929b-050d3c642720"
+                },
+                {
+                    "description": "Pad 27 [BOOT] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 24.15
+                    },
+                    "uuid": "e78e9548-0ca7-420c-99d7-c39a5aeffb67"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 6 [USB_CC2] von J5 auf F.Cu",
+                    "pos": {
+                        "x": 13.25,
+                        "y": 7.345
+                    },
+                    "uuid": "64dc3604-b3e8-499f-938a-77c989ef4ab2"
+                },
+                {
+                    "description": "Pad 1 [USB_CC2] von R11 auf F.Cu",
+                    "pos": {
+                        "x": 29.05,
+                        "y": 15.0
+                    },
+                    "uuid": "15e27218-460e-4c01-9cac-e3753999cf7c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 8 [GPIO15] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 16.53
+                    },
+                    "uuid": "b2107468-9556-4ce5-bc2b-511ba920bfc7"
+                },
+                {
+                    "description": "Durchsteckpad 2 [GPIO15] von J9",
+                    "pos": {
+                        "x": 90.73,
+                        "y": 12.0
+                    },
+                    "uuid": "ae27dacd-463f-49bf-8c2c-f138e62f2636"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 9 [GPIO16] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 17.8
+                    },
+                    "uuid": "2d8440b7-9461-4b95-8403-e910ba99766b"
+                },
+                {
+                    "description": "Durchsteckpad 3 [GPIO16] von J9",
+                    "pos": {
+                        "x": 89.46,
+                        "y": 12.0
+                    },
+                    "uuid": "dd97fb59-2cc0-43da-b2a6-b85f5d10c125"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 10 [GPIO17] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 19.07
+                    },
+                    "uuid": "9dba1c71-97b5-4f4c-93e0-c8f3dd50941e"
+                },
+                {
+                    "description": "Durchsteckpad 4 [GPIO17] von J9",
+                    "pos": {
+                        "x": 88.19,
+                        "y": 12.0
+                    },
+                    "uuid": "7fa8decc-3f46-4bcb-808b-7de16f497c56"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 11 [GPIO18] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 63.25,
+                        "y": 20.34
+                    },
+                    "uuid": "04e2a5e6-acc0-4605-a5b3-355ae9d5c958"
+                },
+                {
+                    "description": "Durchsteckpad 5 [GPIO18] von J9",
+                    "pos": {
+                        "x": 86.92,
+                        "y": 12.0
+                    },
+                    "uuid": "390d97fc-72ae-4d18-a159-2d2b54236cda"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 1 [GPIO3] von JGPIO1",
+                    "pos": {
+                        "x": 27.65,
+                        "y": 20.0
+                    },
+                    "uuid": "13ff8112-bf9b-4037-8845-29f89aef1842"
+                },
+                {
+                    "description": "Pad 15 [GPIO3] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 65.015,
+                        "y": 25.4
+                    },
+                    "uuid": "c7aa2c83-9071-49ba-a71e-2683b50ecf18"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Leiterbahn [GPIO9] auf F.Cu, Länge 1,4404 mm",
+                    "pos": {
+                        "x": 31.7115,
+                        "y": 18.9815
+                    },
+                    "uuid": "c7ddbbce-aa2b-4e90-baf8-943958e5fb58"
+                },
+                {
+                    "description": "Durchsteckpad 4 [GPIO9] von J8",
+                    "pos": {
+                        "x": 47.81,
+                        "y": 9.0
+                    },
+                    "uuid": "ae65f597-afc1-445f-b68c-fe932db0c11c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 4 [GPIO10] von JGPIO1",
+                    "pos": {
+                        "x": 35.27,
+                        "y": 20.0
+                    },
+                    "uuid": "2f341004-c533-4021-b644-fdb26f1869ab"
+                },
+                {
+                    "description": "Durchsteckpad 3 [GPIO10] von J6",
+                    "pos": {
+                        "x": 44.16,
+                        "y": 56.2
+                    },
+                    "uuid": "ee18c1bc-80f6-48f4-9126-d0add9b17957"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 18 [GPIO10] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 68.825,
+                        "y": 25.4
+                    },
+                    "uuid": "a5745e85-4363-43f5-b301-135acea04959"
+                },
+                {
+                    "description": "Durchsteckpad 4 [GPIO10] von JGPIO1",
+                    "pos": {
+                        "x": 35.27,
+                        "y": 20.0
+                    },
+                    "uuid": "2f341004-c533-4021-b644-fdb26f1869ab"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 5 [GPIO14] von J8",
+                    "pos": {
+                        "x": 49.08,
+                        "y": 9.0
+                    },
+                    "uuid": "6365d668-87c1-411c-bbf4-b4ef777b17ed"
+                },
+                {
+                    "description": "Pad 22 [GPIO14] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 73.905,
+                        "y": 25.4
+                    },
+                    "uuid": "cf6e373c-373c-47b9-8b87-0a4163ac1271"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 6 [GPIO21] von J8",
+                    "pos": {
+                        "x": 50.35,
+                        "y": 9.0
+                    },
+                    "uuid": "4f88cedc-8929-4b77-bca9-c3af99964602"
+                },
+                {
+                    "description": "Pad 23 [GPIO21] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 75.175,
+                        "y": 25.4
+                    },
+                    "uuid": "26f8ab01-e52c-4984-9690-cb5e7465e947"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 5 [GPIO48] von JGPIO1",
+                    "pos": {
+                        "x": 37.81,
+                        "y": 20.0
+                    },
+                    "uuid": "9273eec9-9c56-4028-9375-c7c47536c328"
+                },
+                {
+                    "description": "Pad 25 [GPIO48] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 77.715,
+                        "y": 25.4
+                    },
+                    "uuid": "024214b7-27a3-482a-b55c-93f79673a3a4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Durchsteckpad 6 [GPIO45] von JGPIO1",
+                    "pos": {
+                        "x": 40.35,
+                        "y": 20.0
+                    },
+                    "uuid": "5934d300-c4b0-4b2d-a147-eb0bdbe20263"
+                },
+                {
+                    "description": "Pad 26 [GPIO45] von U1 auf F.Cu",
+                    "pos": {
+                        "x": 78.985,
+                        "y": 25.4
+                    },
+                    "uuid": "d30d812b-1cfb-420c-9fa7-9fada8fb2d04"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Fehlende Verbindung zwischen Elementen",
+            "items": [
+                {
+                    "description": "Pad 1 [BUCK_BOOT] von C10 auf F.Cu",
+                    "pos": {
+                        "x": 77.225,
+                        "y": 48.0
+                    },
+                    "uuid": "b9ab59a1-41f7-4eec-8716-3c8e690e1473"
+                },
+                {
+                    "description": "Pad 1 [BUCK_BOOT] von U4 auf F.Cu",
+                    "pos": {
+                        "x": 77.525,
+                        "y": 39.095
+                    },
+                    "uuid": "4da5e0b6-6985-4c7c-9016-f28d4ba34a33"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,3053 mm",
+                    "pos": {
+                        "x": 66.284,
+                        "y": 57.7434
+                    },
+                    "uuid": "000f71f9-b072-4412-84a3-dc5e1795f66f"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 7,7280 mm",
+                    "pos": {
+                        "x": 30.002,
+                        "y": 35.4645
+                    },
+                    "uuid": "04213ef5-0ec7-43e7-8fb1-a14a553cd55c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,4377 mm",
+                    "pos": {
+                        "x": 34.85,
+                        "y": 51.4377
+                    },
+                    "uuid": "0d931ac8-6897-4269-84be-39e99a261167"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 0,7617 mm",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 46.5
+                    },
+                    "uuid": "0d95f7e6-8ac9-495a-84fe-925e292f3f31"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,5434 mm",
+                    "pos": {
+                        "x": 66.284,
+                        "y": 56.2
+                    },
+                    "uuid": "10f87269-040f-4964-b6a7-dedbef5fa852"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,4170 mm",
+                    "pos": {
+                        "x": 29.0,
+                        "y": 48.0
+                    },
+                    "uuid": "25706ed1-615a-4671-bfe7-f186809415e8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 3,9123 mm",
+                    "pos": {
+                        "x": 34.85,
+                        "y": 55.35
+                    },
+                    "uuid": "337bc7eb-950f-46d2-859b-09a37b6d10cb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,7017 mm",
+                    "pos": {
+                        "x": 59.46,
+                        "y": 56.2
+                    },
+                    "uuid": "34f8b7ff-72e6-4afd-81c9-2f19f6aeb0fe"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,7017 mm",
+                    "pos": {
+                        "x": 79.46,
+                        "y": 56.2
+                    },
+                    "uuid": "3db95fb5-682f-4f91-93ca-0d1a1bc65905"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,7017 mm",
+                    "pos": {
+                        "x": 79.46,
+                        "y": 56.2
+                    },
+                    "uuid": "435f50fa-7a19-4acd-9090-8fec20a55bcb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 4,1178 mm",
+                    "pos": {
+                        "x": 64.7617,
+                        "y": 39.9117
+                    },
+                    "uuid": "50c86a58-5e01-4301-9cb5-7faf2caae650"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 2,4066 mm",
+                    "pos": {
+                        "x": 61.1617,
+                        "y": 56.2
+                    },
+                    "uuid": "654ad1ef-6beb-4352-b3a3-fe79f6c2fc4a"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 3,4880 mm",
+                    "pos": {
+                        "x": 36.4664,
+                        "y": 58.6664
+                    },
+                    "uuid": "6a6bfaaf-3125-419f-978e-bdf809c5c583"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,5883 mm",
+                    "pos": {
+                        "x": 64.7617,
+                        "y": 46.5
+                    },
+                    "uuid": "71b86a64-1fb8-4f2d-8c1a-d5b737d1d7dc"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 2,0332 mm",
+                    "pos": {
+                        "x": 41.4123,
+                        "y": 51.4377
+                    },
+                    "uuid": "76688c61-33fb-4f13-856b-955421b6f28c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 0,6350 mm",
+                    "pos": {
+                        "x": 74.475,
+                        "y": 41.0
+                    },
+                    "uuid": "8465d7f7-6f94-412b-89db-73dfd92997a1"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,7883 mm",
+                    "pos": {
+                        "x": 66.2617,
+                        "y": 48.0
+                    },
+                    "uuid": "86f04a08-bbb1-4ba2-aa9e-6be245c111a7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 9,0651 mm",
+                    "pos": {
+                        "x": 73.05,
+                        "y": 48.0883
+                    },
+                    "uuid": "9535fa45-6c16-4e17-9f31-3b19e729f9bb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 0,1503 mm",
+                    "pos": {
+                        "x": 66.1777,
+                        "y": 54.4983
+                    },
+                    "uuid": "a22daa80-7d02-4302-9a51-52d29d6caf20"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 11,5335 mm",
+                    "pos": {
+                        "x": 30.002,
+                        "y": 46.998
+                    },
+                    "uuid": "a6fa9402-d1ab-4d9c-a831-cddb88675382"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 0,0883 mm",
+                    "pos": {
+                        "x": 73.05,
+                        "y": 48.0
+                    },
+                    "uuid": "a792a27c-d237-4f6e-b5e9-3efe3ac7f413"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 11,4743 mm",
+                    "pos": {
+                        "x": 77.7583,
+                        "y": 56.2
+                    },
+                    "uuid": "b6d7cd33-bc7b-4d22-999c-d04cfe66d77c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 3,0500 mm",
+                    "pos": {
+                        "x": 74.475,
+                        "y": 40.365
+                    },
+                    "uuid": "ba190384-c11a-4ea8-ae1b-0fc32bf80a94"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 0,4150 mm",
+                    "pos": {
+                        "x": 74.475,
+                        "y": 40.365
+                    },
+                    "uuid": "c1f63753-2782-40f8-a222-0b4317739131"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 3,8500 mm",
+                    "pos": {
+                        "x": 29.0,
+                        "y": 48.0
+                    },
+                    "uuid": "cbd2f30b-a1ea-4b98-b523-84310046f2d3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 28,8946 mm",
+                    "pos": {
+                        "x": 65.361,
+                        "y": 58.6664
+                    },
+                    "uuid": "d0373b84-4171-49a2-bada-bfcd71038dfb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,3286 mm",
+                    "pos": {
+                        "x": 74.475,
+                        "y": 39.95
+                    },
+                    "uuid": "d245b684-7af5-4fac-adf7-5bb345c75533"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 3,3143 mm",
+                    "pos": {
+                        "x": 62.8634,
+                        "y": 54.4983
+                    },
+                    "uuid": "d40e87e3-dd58-4bb3-acce-0ab886c69fd3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,2021 mm",
+                    "pos": {
+                        "x": 34.0,
+                        "y": 56.2
+                    },
+                    "uuid": "d6037942-62fa-433f-9939-60e60ac9e3be"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 6,5623 mm",
+                    "pos": {
+                        "x": 34.85,
+                        "y": 51.4377
+                    },
+                    "uuid": "d8d4a1d6-c846-4544-83ff-69df8e34b664"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 2,1213 mm",
+                    "pos": {
+                        "x": 64.7617,
+                        "y": 46.5
+                    },
+                    "uuid": "e5b91a71-a62c-46f9-aee5-80d0295ee9ca"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,5954 mm",
+                    "pos": {
+                        "x": 66.284,
+                        "y": 54.6046
+                    },
+                    "uuid": "e913ab53-9a8b-441f-8c9a-dc86f8ef97b4"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 1,2700 mm",
+                    "pos": {
+                        "x": 77.525,
+                        "y": 41.635
+                    },
+                    "uuid": "f263529b-b893-4ca5-a906-603c326db134"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [+24V_RAW] auf F.Cu, Länge 2,8284 mm",
+                    "pos": {
+                        "x": 32.85,
+                        "y": 48.0
+                    },
+                    "uuid": "f7c470ca-6573-4840-99ef-7c24a4c67b56"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 1,7017 mm",
+                    "pos": {
+                        "x": 64.54,
+                        "y": 56.2
+                    },
+                    "uuid": "236f19fc-6abb-4af7-90b8-1af7c8f54bf3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 0,3936 mm",
+                    "pos": {
+                        "x": 58.8278,
+                        "y": 51.6352
+                    },
+                    "uuid": "31acc2c4-28d6-480a-886c-9b2cb2064ec9"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 1,9993 mm",
+                    "pos": {
+                        "x": 45.7363,
+                        "y": 48.5863
+                    },
+                    "uuid": "33a09222-095e-422b-9011-afd97ef054a9"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 3,0602 mm",
+                    "pos": {
+                        "x": 62.8383,
+                        "y": 56.2
+                    },
+                    "uuid": "38cc2104-c8c4-4690-802b-cc18e1892193"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 1,4220 mm",
+                    "pos": {
+                        "x": 37.2242,
+                        "y": 56.9181
+                    },
+                    "uuid": "4f29fbb2-255d-42ed-b7ba-7bbe40d8fcb1"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 1,9993 mm",
+                    "pos": {
+                        "x": 39.15,
+                        "y": 50.0
+                    },
+                    "uuid": "5e8e54c5-b60d-4347-8d4e-8135553fcb76"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 2,3474 mm",
+                    "pos": {
+                        "x": 58.8278,
+                        "y": 49.2878
+                    },
+                    "uuid": "6ed9eb96-3366-4828-b4f4-582d4e2bab4d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 4,4297 mm",
+                    "pos": {
+                        "x": 40.4705,
+                        "y": 52.2498
+                    },
+                    "uuid": "72a79422-3c10-41db-9e61-33e0558e9dc3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 2,0447 mm",
+                    "pos": {
+                        "x": 38.67,
+                        "y": 58.3639
+                    },
+                    "uuid": "86a3c399-2a61-472e-a8de-966a905296c7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 22,0044 mm",
+                    "pos": {
+                        "x": 60.6744,
+                        "y": 58.3639
+                    },
+                    "uuid": "898228fa-a7f5-4055-90c6-7beb3a1ce6f5"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 3,2354 mm",
+                    "pos": {
+                        "x": 56.54,
+                        "y": 47.0
+                    },
+                    "uuid": "c71a4e0f-ab47-49ac-8088-134370d1a89d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 2,7061 mm",
+                    "pos": {
+                        "x": 49.0635,
+                        "y": 51.9135
+                    },
+                    "uuid": "c974a7e9-18ba-408c-b9ce-8c5746ff2e70"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 5,1726 mm",
+                    "pos": {
+                        "x": 40.5637,
+                        "y": 48.5863
+                    },
+                    "uuid": "cba1f9b6-42d7-4aa6-97d2-69ec947b321b"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 3,1817 mm",
+                    "pos": {
+                        "x": 44.9002,
+                        "y": 52.2498
+                    },
+                    "uuid": "ccfbd2ff-203a-4714-89d0-4c6152d5614d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 4,5910 mm",
+                    "pos": {
+                        "x": 37.2242,
+                        "y": 55.4961
+                    },
+                    "uuid": "dee7732b-5096-4d47-ae2a-f9dc09a663d1"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Leiterbahnbreite (Einschränkungen aus Platinenkonfiguration min Breite 1,0000 mm; tatsächlich 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Leiterbahn [FAN_NEG] auf F.Cu, Länge 9,4860 mm",
+                    "pos": {
+                        "x": 58.5495,
+                        "y": 51.9135
+                    },
+                    "uuid": "e00ba817-4b5e-4d06-9610-2c38bed09082"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        }
+    ]
+}

@@ -1,185 +1,79 @@
-# CoffeeRoast RevA.1 fabrication QA current
+# CoffeeRoast RevA.2 fabrication QA current
 
-Run timestamp: 2026-07-05T11:41:45+02:00
-Workspace: `/home/smicbee/CoffeeRoast`
-PCB project: `/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA`
+Run date: 2026-07-14
+Toolchain: KiCad CLI / pcbnew 9.0.8
+Board: `CoffeeRoast-Control-RevA.kicad_pcb`
 
 ## Verdict
 
-- The production package appears to have been regenerated after the current board/silkscreen patch: the board mtime is `2026-07-05 09:41:55 +0200`, the generated silkscreen Gerbers are `2026-07-05 09:42:11 +0200`, and the ZIP is `2026-07-05 09:42:12 +0200`.
-- KiCad error-only DRC is clean: `0 DRC violations`, `0 unconnected pads`, `0 Footprint errors`.
-- The generated ZIP passes `unzip -t` and contains the expected fabrication, drill, and assembly handoff files.
-- No error-level fabrication blocker was found in this QA pass. Do not use the old JLC cart item if it predates these regenerated Gerbers; re-upload the ZIP and review the manufacturer preview again.
+**Freigegeben für Prototyp-PCB-Fertigung und den dokumentierten partiellen Top-SMD-Bestückungsumfang.**
 
-## Git diff / KiCad file status
+Die früheren Draft-/Placeholder-Footprints für Buck, Gate-Treiber, USB-ESD, TVS, Taster, Leistungshalbleiter und Support-Bauteile wurden durch konkrete, datenblatt- und padnummernbezogen geprüfte Teile ersetzt. Die On-board-Sicherung F1 wurde auf Nutzerwunsch entfernt; `+24V_FUSED` ist in `+24V_RAW` aufgegangen. J6 ergänzt einen ESC-Handlötanschluss mit `+24V / GND / PWM(GPIO10) / GND`. Schaltplan und PCB sind synchron. Die Freigabe umfasst nicht Zahlung, Serienfreigabe oder den Netzspannungs-/Gehäuseaufbau.
 
-Command:
+## Elektrische und CAD-Verifikation
 
-```bash
-git status --short -- KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt
-git diff --stat -- KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt
-git diff --name-status -- KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt
-```
+- Schematic ERC: **0 violations**.
+- Full PCB DRC including warnings and all-track errors: **0 violations**.
+- Unconnected PCB items: **0**.
+- Schematic parity: **0 problems**.
+- Local footprint/library mismatches: **0 findings**.
+- `+24V_RAW`: 1.20 mm routed current paths, including the new ESC feed.
+- `FAN_NEG`: 1.00 mm routed current path.
+- Critical fan via: 1.20 mm diameter / 0.60 mm drill.
+- B.Cu GND zone refilled with 0.25 mm minimum thickness.
+- Exact-hardware script: stable; second application is a hash-identical no-op.
 
-Status summary:
+Machine-readable reports are included in:
 
-```text
- M KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/drill/CoffeeRoast-Control-RevA-drl_map.pdf
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/drill/CoffeeRoast-Control-RevA.drl
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/drill/drill_report.txt
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-B_Cu.gbl
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-B_Mask.gbs
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-B_Paste.gbp
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-B_Silkscreen.gbo
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-Edge_Cuts.gm1
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-F_Cu.gtl
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-F_Mask.gts
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-F_Paste.gtp
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-F_Silkscreen.gto
- M KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-job.gbrjob
-?? KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/assembly/footprint_check_reva1.json
-?? KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/assembly/footprint_max_pcba_review.md
-?? KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt
-```
+- `production/partial-smd-pcba/qa/erc.json`
+- `production/partial-smd-pcba/qa/drc_full_parity.json`
 
-Diff stat for the relevant tracked files:
+## Exact hardware scope
 
-```text
- .../CoffeeRoast-Control-RevA.kicad_pcb             |  253 +-
- ...oast-Control-RevA1_partial_smd_pcba_package.zip |  Bin 81622 -> 73404 bytes
- .../drill/CoffeeRoast-Control-RevA-drl_map.pdf     |  Bin 29071 -> 29071 bytes
- .../drill/CoffeeRoast-Control-RevA.drl             |    4 +-
- .../partial-smd-pcba/drill/drill_report.txt        |    2 +-
- .../gerbers/CoffeeRoast-Control-RevA-B_Cu.gbl      |    4 +-
- .../gerbers/CoffeeRoast-Control-RevA-B_Mask.gbs    |    4 +-
- .../gerbers/CoffeeRoast-Control-RevA-B_Paste.gbp   |    4 +-
- .../CoffeeRoast-Control-RevA-B_Silkscreen.gbo      | 6670 ++++++++++----------
- .../gerbers/CoffeeRoast-Control-RevA-Edge_Cuts.gm1 |    4 +-
- .../gerbers/CoffeeRoast-Control-RevA-F_Cu.gtl      |    4 +-
- .../gerbers/CoffeeRoast-Control-RevA-F_Mask.gts    |    4 +-
- .../gerbers/CoffeeRoast-Control-RevA-F_Paste.gtp   |    4 +-
- .../CoffeeRoast-Control-RevA-F_Silkscreen.gto      | 2528 +-------
- .../gerbers/CoffeeRoast-Control-RevA-job.gbrjob    |    2 +-
- 15 files changed, 3626 insertions(+), 5861 deletions(-)
-```
+Key selections include:
 
-KiCad/package file mtimes and sizes:
+- U4: TI `LMR16010PDDAR`, 60 V / 1 A HSOIC-8 PowerPAD.
+- U6: TI `UCC27511DBVR`, split-output SOT-23-6 gate driver.
+- Q1: ST `STP55NF06L`, TO-220, hand-soldered.
+- U5: ST `USBLC6-2SC6`, SOT-23-6 USB ESD.
+- D1: Vishay `SS56-E3/57T`, SMB flyback diode, hand-soldered.
+- D2/D3: `SMBJ33A-13-F`, SMB TVS.
+- J6: four 5.08 mm hand-solder pads, pin order `+24V / GND / PWM(GPIO10) / GND`.
+- SW1/SW2: E-Switch `TL3301AF160QG`.
+- C4: Panasonic `EEU-FR1V221B`, 220 uF / 35 V radial.
 
-```text
-/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb|293918 bytes|2026-07-05 09:41:55.901525512 +0200
-/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-F_Silkscreen.gto|54679 bytes|2026-07-05 09:42:11.880886551 +0200
-/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/gerbers/CoffeeRoast-Control-RevA-B_Silkscreen.gbo|85527 bytes|2026-07-05 09:42:11.887886555 +0200
-/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip|73404 bytes|2026-07-05 09:42:12.612886992 +0200
-```
+Full MPN, supplier mapping, footprint and assembly disposition are in `docs/bom.csv` and the package assembly CSV files.
 
-## KiCad error-only DRC
+## Visual QA
 
-Command:
+- Final top and bottom 3D renders were generated and reviewed.
+- No components or pads lie outside the board outline.
+- No obvious component-body/courtyard overlap was visible.
+- ESP32 antenna keepout is visible at the board edge and free of copper in the checked layout.
+- Final schematic render was reviewed after spreading the functional blocks and hiding long MPN value fields; net labels and references are readable without material overlap.
+- Final renders are under `render/final/`.
 
-```bash
-kicad-cli pcb drc --severity-error --format report --output /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb
-```
+## Current fabrication/PCBA package
 
-Tool version: KiCad CLI `9.0.8`
+`production/partial-smd-pcba/CoffeeRoast-Control-RevA2_partial_smd_pcba_package.zip`
 
-Result:
+- Size: **150881 bytes**.
+- SHA-256: `68debc6edbfff353f872d5104943ac7d755ffb2721f405b2fcd5bb7511df3529`.
+- ZIP integrity: `unzip -t` passed with no compressed-data errors.
+- Top-side PCBA BOM: **42 designators**.
+- CPL: **42 matching designators**.
+- Gerber, drill, BOM, CPL, DNP/manual list, part-mapping review and machine-readable QA reports are included.
+- Prior RevA.1/Y4 artifacts remain under `production/obsolete-reva1/` and are **do not order**.
 
-```text
-0 Verstöße gefunden
-Unverbundene Elemente (0) gefunden
-DRC-Bericht wurde gespeichert in /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/render/drc_report_errors_only_current.txt
-```
+## Mandatory order and bring-up checks
 
-Report excerpt:
-
-```text
-** Drc report for CoffeeRoast-Control-RevA.kicad_pcb **
-** Created on 2026-07-05T11:41:10+0200 **
-** Report includes: Fehler **
-
-** Found 0 DRC violations **
-
-** Found 0 unconnected pads **
-
-** Found 0 Footprint errors **
-
-** End of Report **
-```
-
-Additional warning-only check, run to identify upload-preview caveats:
-
-```bash
-kicad-cli pcb drc --format report --output /tmp/coffeeroast_drc_full_current.txt /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/CoffeeRoast-Control-RevA.kicad_pcb
-```
-
-Result: full DRC reports `69` warning-only violations, all category `silk_over_copper`. These are not error-level fabrication blockers, but they remain preview-review items because they are silkscreen segments over soldermask/copper near component outlines/pads.
-
-## ZIP integrity / contents
-
-ZIP path:
-
-`/home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip`
-
-Size and hash:
-
-```text
-73404 bytes
-sha256 0a84ccc357dfba282485046a2ab31d095fdcc09adf6131d05556b5a8a583e282
-```
-
-Command:
-
-```bash
-unzip -t /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip
-```
-
-Result:
-
-```text
-Archive:  /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip
-    testing: README_ORDERING.md       OK
-    testing: drill/CoffeeRoast-Control-RevA-drl_map.pdf   OK
-    testing: drill/drill_report.txt   OK
-    testing: drill/CoffeeRoast-Control-RevA.drl   OK
-    testing: assembly/part_mapping_review.csv   OK
-    testing: assembly/cpl_smd_partial.csv   OK
-    testing: assembly/bom_smd_partial.csv   OK
-    testing: assembly/dnp_hand_solder.csv   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-F_Paste.gtp   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-B_Mask.gbs   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-B_Cu.gbl   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-F_Silkscreen.gto   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-B_Paste.gbp   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-B_Silkscreen.gbo   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-F_Cu.gtl   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-Edge_Cuts.gm1   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-F_Mask.gts   OK
-    testing: gerbers/CoffeeRoast-Control-RevA-job.gbrjob   OK
-No errors detected in compressed data of /home/smicbee/CoffeeRoast/KiCAD/CoffeeRoast-Control-RevA/production/partial-smd-pcba/CoffeeRoast-Control-RevA1_partial_smd_pcba_package.zip.
-```
-
-ZIP structure summary:
-
-```text
-entries=18
-README_ORDERING.md: 1
-assembly/: 4
-  - bom_smd_partial.csv: 17 data rows
-  - cpl_smd_partial.csv: 17 data rows
-  - dnp_hand_solder.csv: 100 data rows
-  - part_mapping_review.csv: 17 data rows
-drill/: 3
-gerbers/: 10
-```
-
-## Open blockers / gates for JLC upload
-
-No blocker was found by error-only DRC or ZIP integrity checks. Remaining gates before upload/checkout:
-
-1. Treat any previous JLC cart/quote item as stale if it was created before the `09:42:12 +0200` ZIP. Upload the current ZIP above as a fresh fabrication package.
-2. In the JLC preview, visually check the remaining full-DRC warning class: `69` warning-only `silk_over_copper` items. They are not error-level blockers, but the silkscreen should still look acceptable in the manufacturer preview.
-3. For PCBA, confirm top-side partial assembly only and map/verify the 17 BOM/CPL assembled designators. Orientation/placement must be visually checked for at least U1 ESP32-S3-WROOM, U2 MAX6675, J5 USB-C, Q2 2N7002, and the 0805 R/C parts.
-4. Keep DNP/hand-solder parts out of automated assembly for this prototype, especially J1-J4, F1, D1, Q1, U3, U4, C4, SW1, SW2, U5, D2, D3, and C5 unless a later footprint-specific review changes that decision.
-5. No checkout/payment was performed in this QA task.
+1. Use a fresh manufacturer upload; previous carts/uploads are stale.
+2. Inspect Gerber, drill and placement previews before payment.
+3. Re-confirm live supplier mapping for R15/R16 and stop if a package or MPN differs.
+4. Confirm Pin 1/polarity/rotation for U1, U2, U4, U5, U6, J5, Q2, D2-D5 and SW1/SW2 in the assembler UI.
+5. Hand-solder J1-J4, J6, D1, Q1 and C4; leave C5 DNP until thermocouple testing.
+6. Before using J6, verify the ESC accepts 24 V supply and 3.3 V logic-level PWM; do not feed a BEC output into the PCB.
+7. First power-up uses a current-limited 24 V bench supply or an external 24 V fuse.
+8. Thermally validate the real 24 V / 2.5 A fan stage and the ESC supply path in the enclosure before any series use.
+9. 230 VAC wiring, certified PSU, external SSR/heatsink, PE/chassis bonding and independent thermal cutoff remain outside this PCB.
+10. No checkout, upload, payment or order was performed.

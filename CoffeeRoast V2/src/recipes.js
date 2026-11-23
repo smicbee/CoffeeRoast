@@ -44,9 +44,9 @@ export function parseRecipe(text, fileName = 'Eigenes Rezept.kpro') {
     duration: profile.length - 1,
     endTemp: profile[profile.length - 1],
     pid: {
-      kp: numberOr(fields.roast_PID_Kp, 3),
-      ki: numberOr(fields.roast_PID_Ki, 0.02),
-      kd: numberOr(fields.roast_PID_Kd, 0.2),
+      kp: numberOr(fields.roast_PID_Kp, 1.5),
+      ki: numberOr(fields.roast_PID_Ki, 0.7),
+      kd: numberOr(fields.roast_PID_Kd, 3.55),
       future: numberOr(fields.roast_target_in_future, 40)
     },
     expectedFirstCrack: numberOr(fields.expect_fc, 208),

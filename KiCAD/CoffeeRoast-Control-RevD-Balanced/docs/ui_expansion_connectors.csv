@@ -1,0 +1,19 @@
+Reference,Function,Pad,Net,Label,X_mm,Y_mm,Hardware role
+J7,Future I2S/PDM microphone,1,+3V3,3V3,4.000,14.000,3.3 V supply only
+J7,Future I2S/PDM microphone,2,GND,GND,5.270,14.000,Ground
+J7,Future I2S/PDM microphone,3,GPIO4,BCLK,6.540,14.000,Future microphone bit clock
+J7,Future I2S/PDM microphone,4,GPIO5,WS,7.810,14.000,Future microphone word select / PDM clock option
+J7,Future I2S/PDM microphone,5,GPIO6,DATA,9.080,14.000,Future microphone data input
+J7,Future I2S/PDM microphone,6,GPIO7,SEL,10.350,14.000,Future microphone channel/select or spare control
+J8,Future I2C LCD,1,+3V3,3V3,44.000,9.000,3.3 V supply only
+J8,Future I2C LCD,2,GND,GND,45.270,9.000,Ground
+J8,Future I2C LCD,3,GPIO8,SDA,46.540,9.000,Future I2C data
+J8,Future I2C LCD,4,GPIO9,SCL,47.810,9.000,Future I2C clock; also remains on JGPIO1
+J8,Future I2C LCD,5,GPIO14,INT,49.080,9.000,Future display interrupt/touch input
+J8,Future I2C LCD,6,GPIO21,RST,50.350,9.000,Future display reset/control
+J9,Future four-button panel,1,GND,GND,92.000,12.000,Common switch return
+J9,Future four-button panel,2,GPIO15,BTN1,90.730,12.000,Button 1 input; switch to GND
+J9,Future four-button panel,3,GPIO16,BTN2,89.460,12.000,Button 2 input; switch to GND
+J9,Future four-button panel,4,GPIO17,BTN3,88.190,12.000,Button 3 input; switch to GND
+J9,Future four-button panel,5,GPIO18,BTN4,86.920,12.000,Button 4 input; switch to GND
+J9,Future four-button panel,6,+3V3,3V3,85.650,12.000,Optional panel supply; not required for passive buttons

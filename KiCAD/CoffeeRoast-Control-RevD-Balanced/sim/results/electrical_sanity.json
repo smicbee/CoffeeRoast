@@ -1,0 +1,221 @@
+{
+  "scope": {
+    "type": "block-level electrical sanity simulation",
+    "not_modeled": [
+      "LMR16010 internal compensation/control-loop transient response",
+      "ESP32 firmware/RF/USB protocol",
+      "MAX6675 conversion internals",
+      "real 2-wire BLDC fan commutation",
+      "external SSR and 230 V heater path",
+      "PCB parasitics and thermal enclosure model"
+    ]
+  },
+  "feedback_divider": {
+    "typical_vout_v": 3.301020408163265,
+    "full_temp_plus_1pct_resistor_corner_min_v": 3.1854950495049508,
+    "full_temp_plus_1pct_resistor_corner_max_v": 3.4196072974644407
+  },
+  "buck_power_stage": {
+    "f_sw_hz": 500000.0,
+    "inductor_h": 2.2e-05,
+    "nominal_output_capacitance_f": 4.41e-05,
+    "assumed_equivalent_esr_ohm": 0.01,
+    "cases": [
+      {
+        "vin_v": 18.0,
+        "load_a": 0.2,
+        "duty": 0.20435967302452318,
+        "vout_mean_v": 3.2933145381266824,
+        "vout_min_v": 3.291101904491672,
+        "vout_max_v": 3.294544774072108,
+        "vout_pp_mv": 3.4428695804358256,
+        "inductor_mean_a": 0.1984901257547549,
+        "inductor_min_a": 0.06301572665627385,
+        "inductor_max_a": 0.333990810406208,
+        "inductor_pp_a": 0.2709750837499341
+      },
+      {
+        "vin_v": 18.0,
+        "load_a": 0.7,
+        "duty": 0.20435967302452318,
+        "vout_mean_v": 3.2933999886657177,
+        "vout_min_v": 3.2914336746936677,
+        "vout_max_v": 3.2943955709823896,
+        "vout_pp_mv": 2.961896288721899,
+        "inductor_mean_a": 0.6985999260765058,
+        "inductor_min_a": 0.5631493606279523,
+        "inductor_max_a": 0.8340505204412876,
+        "inductor_pp_a": 0.2709011598133353
+      },
+      {
+        "vin_v": 18.0,
+        "load_a": 0.9,
+        "duty": 0.20435967302452318,
+        "vout_mean_v": 3.293400000117677,
+        "vout_min_v": 3.2914338385555286,
+        "vout_max_v": 3.2943957233135244,
+        "vout_pp_mv": 2.9618847579957475,
+        "inductor_mean_a": 0.8981999988177098,
+        "inductor_min_a": 0.7627494399264161,
+        "inductor_max_a": 1.033650591557993,
+        "inductor_pp_a": 0.2709011516315769
+      },
+      {
+        "vin_v": 24.0,
+        "load_a": 0.2,
+        "duty": 0.1540041067761807,
+        "vout_mean_v": 3.3000987135497404,
+        "vout_min_v": 3.2976768967110366,
+        "vout_max_v": 3.3013011727319865,
+        "vout_pp_mv": 3.624276020949946,
+        "inductor_mean_a": 0.19906949964801224,
+        "inductor_min_a": 0.054800165024363946,
+        "inductor_max_a": 0.34339795921400035,
+        "inductor_pp_a": 0.2885977941896364
+      },
+      {
+        "vin_v": 24.0,
+        "load_a": 0.7,
+        "duty": 0.1540041067761807,
+        "vout_mean_v": 3.299899991645825,
+        "vout_min_v": 3.2976979503779864,
+        "vout_max_v": 3.300908831847865,
+        "vout_pp_mv": 3.2108814698785793,
+        "inductor_mean_a": 0.6999787093025974,
+        "inductor_min_a": 0.5557715667801616,
+        "inductor_max_a": 0.8441858846228802,
+        "inductor_pp_a": 0.28841431784271865
+      },
+      {
+        "vin_v": 24.0,
+        "load_a": 0.9,
+        "duty": 0.1540041067761807,
+        "vout_mean_v": 3.299900000183172,
+        "vout_min_v": 3.297698235493067,
+        "vout_max_v": 3.3009089831716136,
+        "vout_pp_mv": 3.210747678546788,
+        "inductor_mean_a": 0.8999727260493054,
+        "inductor_min_a": 0.755765589949097,
+        "inductor_max_a": 1.0441799015526305,
+        "inductor_pp_a": 0.2884143116035335
+      },
+      {
+        "vin_v": 30.0,
+        "load_a": 0.2,
+        "duty": 0.12355848434925866,
+        "vout_mean_v": 3.3138014719332203,
+        "vout_min_v": 3.3112707868273943,
+        "vout_max_v": 3.314958531698097,
+        "vout_pp_mv": 3.6877448707026694,
+        "inductor_mean_a": 0.20013593892941012,
+        "inductor_min_a": 0.05011719365469945,
+        "inductor_max_a": 0.35019704566835985,
+        "inductor_pp_a": 0.3000798520136604
+      },
+      {
+        "vin_v": 30.0,
+        "load_a": 0.7,
+        "duty": 0.12355848434925866,
+        "vout_mean_v": 3.3133999986338427,
+        "vout_min_v": 3.311043972086187,
+        "vout_max_v": 3.314417870836102,
+        "vout_pp_mv": 3.3738987499152273,
+        "inductor_mean_a": 0.7028423428195726,
+        "inductor_min_a": 0.5529850190052037,
+        "inductor_max_a": 0.8526997005116893,
+        "inductor_pp_a": 0.2997146815064856
+      },
+      {
+        "vin_v": 30.0,
+        "load_a": 0.9,
+        "duty": 0.12355848434925866,
+        "vout_mean_v": 3.3134000003044544,
+        "vout_min_v": 3.3110443365495152,
+        "vout_max_v": 3.31441801226431,
+        "vout_pp_mv": 3.373675714794633,
+        "inductor_mean_a": 0.9036545442523517,
+        "inductor_min_a": 0.7537972264474571,
+        "inductor_max_a": 1.0535119044777437,
+        "inductor_pp_a": 0.2997146780302866
+      }
+    ]
+  },
+  "fan_mosfet": {
+    "device": "STP55NF06L",
+    "drive_v": 10.0,
+    "loss_at_2p5a_typ_w": 0.11249999999999999,
+    "loss_at_2p5a_conservative_w": 0.13749999999999998
+  },
+  "gate_supply": {
+    "zener_v": 10.0,
+    "r16_ohm": 2700.0,
+    "assumed_gate_charge_nc": 59.99999999999999,
+    "assumed_pwm_hz": 20000.0,
+    "assumed_driver_iq_ma": 1.0,
+    "cases": [
+      {
+        "vin_v": 18.0,
+        "r16_current_ma": 2.962962962962963,
+        "r16_power_mw": 23.703703703703702,
+        "assumed_driver_plus_gate_ma": 2.1999999999999997,
+        "current_margin_ma": 0.762962962962963
+      },
+      {
+        "vin_v": 24.0,
+        "r16_current_ma": 5.185185185185185,
+        "r16_power_mw": 72.59259259259258,
+        "assumed_driver_plus_gate_ma": 2.1999999999999997,
+        "current_margin_ma": 2.9851851851851854
+      },
+      {
+        "vin_v": 30.0,
+        "r16_current_ma": 7.407407407407407,
+        "r16_power_mw": 148.14814814814818,
+        "assumed_driver_plus_gate_ma": 2.1999999999999997,
+        "current_margin_ma": 5.207407407407408
+      }
+    ]
+  },
+  "power_budget_24v": {
+    "fan_a": 2.5,
+    "assumed_3v3_load_a": 0.75,
+    "assumed_buck_efficiency": 0.85,
+    "board_input_a": 0.12132352941176469,
+    "total_input_a": 2.6213235294117645,
+    "margin_to_3a_psu_a": 0.3786764705882355
+  },
+  "input_bulk_cap": {
+    "capacitance_uF": 220.0,
+    "hold_up_us_per_1v_droop_at_3a": 73.33333333333333
+  },
+  "usb_cc": {
+    "each_5p1k_current_at_5v_ma": 0.9803921568627451
+  },
+  "ssr_input_sweep": [
+    {
+      "equivalent_ssr_input_ohm": 220.0,
+      "input_current_ma": 15.0,
+      "q2_loss_at_0p1v_mw": 1.5
+    },
+    {
+      "equivalent_ssr_input_ohm": 330.0,
+      "input_current_ma": 10.0,
+      "q2_loss_at_0p1v_mw": 1.0
+    },
+    {
+      "equivalent_ssr_input_ohm": 470.0,
+      "input_current_ma": 7.02127659574468,
+      "q2_loss_at_0p1v_mw": 0.7021276595744681
+    },
+    {
+      "equivalent_ssr_input_ohm": 680.0,
+      "input_current_ma": 4.852941176470588,
+      "q2_loss_at_0p1v_mw": 0.4852941176470588
+    },
+    {
+      "equivalent_ssr_input_ohm": 1000.0,
+      "input_current_ma": 3.3,
+      "q2_loss_at_0p1v_mw": 0.33
+    }
+  ]
+}

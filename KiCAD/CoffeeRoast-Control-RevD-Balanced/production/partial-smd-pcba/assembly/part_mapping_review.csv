@@ -1,0 +1,44 @@
+Designator,Board Value,Package,Preferred MPN / Spec,Assembler UI Action,Review Notes
+C1,10uF_3V3_BULK_A,0805,GRM21BR61E106KA73L,Use supplier part C84416 in JLCPCB if still available; otherwise same value/package/rating.,10uF 25V X5R 3V3 bulk A.
+C2,10uF_3V3_BULK_B,0805,GRM21BR61E106KA73L,Use supplier part C84416 in JLCPCB if still available; otherwise same value/package/rating.,10uF 25V X5R 3V3 bulk B.
+C3,100nF_MAX6675,0805,CC0805KRX7R9BB104,Use supplier part C49678 in JLCPCB if still available; otherwise same value/package/rating.,100nF MAX6675 decoupling.
+C6,100nF_U1_DECOUPLING_0603,0603,CC0603KRX7R9BB104,Use supplier part C14663 in JLCPCB if still available; otherwise same value/package/rating.,100nF ESP32 decoupling.
+C7,100nF_U4_3V3_OUTPUT_DECOUPLING_0603,0603,CC0603KRX7R9BB104,Use supplier part C14663 in JLCPCB if still available; otherwise same value/package/rating.,100nF 3V3 output decoupling.
+C8,2.2uF_100V_X7R,1210,CS3225X7R225K101NRK,Use supplier part C2900749 in JLCPCB if still available; otherwise same value/package/rating.,2.2uF 100V buck input.
+C9,2.2uF_100V_X7R,1210,CS3225X7R225K101NRK,Use supplier part C2900749 in JLCPCB if still available; otherwise same value/package/rating.,2.2uF 100V buck input.
+C10,100nF_50V_X7R_BOOT,0603,CC0603KRX7R9BB104,Use supplier part C14663 in JLCPCB if still available; otherwise same value/package/rating.,100nF bootstrap.
+C11,22uF_25V_X5R,1210,CL32A226KAJNNNE,Use supplier part C52306 in JLCPCB if still available; otherwise same value/package/rating.,22uF 25V buck output.
+C12,100nF_100V_X7R,0805,0805B104K101NT,Use supplier part C89258 in JLCPCB if still available; otherwise same value/package/rating.,100nF 100V buck input HF bypass.
+C13,1uF_25V_X7R_VDRV,0805,CL21B105KAFNNNE,Use supplier part C116352 in JLCPCB if still available; otherwise same value/package/rating.,1uF VDRV reservoir.
+C14,100nF_50V_X7R_VDRV,0603,CC0603KRX7R9BB104,Use supplier part C14663 in JLCPCB if still available; otherwise same value/package/rating.,100nF VDRV bypass.
+C15,22uF_25V_X5R,1210,CL32A226KAJNNNE,Use supplier part C52306 in JLCPCB if still available; otherwise same value/package/rating.,22uF 25V buck output.
+D2,SMBJ33A,SMB,SMBJ33A-13-F,Use supplier part C135067 in JLCPCB if still available; otherwise same value/package/rating.,24V input TVS; cathode/pad 1 to +24V_RAW.
+D3,SMBJ33A,SMB,SMBJ33A-13-F,Use supplier part C135067 in JLCPCB if still available; otherwise same value/package/rating.,Fan TVS; cathode/pad 1 to +24V_RAW.
+D4,SS110_100V,SMA,SS110,Use supplier part C2766060 in JLCPCB if still available; otherwise same value/package/rating.,100V buck catch diode.
+D5,BZT52C10_10V,SOD-123,BZT52C10,Use supplier part C49023497 in JLCPCB if still available; otherwise same value/package/rating.,10V VDRV clamp.
+J5,USB_C_Receptacle_XKB_U262-16XN-4BVC11,USB-C XKB U262-16XN,U262-16 1 N-4BVC11,Use supplier part C319148 in JLCPCB if still available; otherwise same value/package/rating.,Verify shell and pin orientation in placement preview.
+L1,FNR6045S220MT_22uH_2A,FNR6045S,FNR6045S220MT,Use supplier part C168080 in JLCPCB if still available; otherwise same value/package/rating.,"22uH, >=2A saturation/current candidate."
+Q1,STP55NF06L,TO-220-3 Vertical,STP55NF06L,Use supplier part C77582 in JLCPCB if still available; otherwise same value/package/rating.,MANDATORY manufacturer-installed THT fan MOSFET; pins 1/2/3 are Gate/Drain/Source. Do not omit from PCBA; thermally validate at 2.5A fan current.
+Q2,2N7002_SSR_DRIVER,SOT-23,2N7002,Use supplier part C916396 in JLCPCB if still available; otherwise same value/package/rating.,SSR low-side driver.
+R1,100R_GATE_TURN_ON,0805,FRC0805F1000TS,Use supplier part C2907218 in JLCPCB if still available; otherwise same value/package/rating.,100R fan gate turn-on.
+R2,100k_GATE_PULLDOWN,0805,FRC0805F1003TS,Use supplier part C2907217 in JLCPCB if still available; otherwise same value/package/rating.,100k fan gate pulldown.
+R3,100R,0805,FRC0805F1000TS,Use supplier part C2907218 in JLCPCB if still available; otherwise same value/package/rating.,100R SSR gate resistor.
+R4,100k,0805,FRC0805F1003TS,Use supplier part C2907217 in JLCPCB if still available; otherwise same value/package/rating.,100k SSR gate pulldown.
+R5,10k_EN_PULLUP,0805,FRC0805F1002TS,Use supplier part C2907219 in JLCPCB if still available; otherwise same value/package/rating.,10k EN pullup.
+R6,10k_BOOT_PULLUP,0805,FRC0805F1002TS,Use supplier part C2907219 in JLCPCB if still available; otherwise same value/package/rating.,10k BOOT pullup.
+R7,27R_USB_DN,0805,0805W8F270JT5E,Use supplier part C17594 in JLCPCB if still available; otherwise same value/package/rating.,27R USB D- series.
+R8,27R_USB_DP,0805,0805W8F270JT5E,Use supplier part C17594 in JLCPCB if still available; otherwise same value/package/rating.,27R USB D+ series.
+R10,5k1_CC1_RD,0805,0805W8F5101T5E,Use supplier part C27834 in JLCPCB if still available; otherwise same value/package/rating.,5.1k USB CC1 Rd.
+R11,5k1_CC2_RD,0805,0805W8F5101T5E,Use supplier part C27834 in JLCPCB if still available; otherwise same value/package/rating.,5.1k USB CC2 Rd.
+R12,100k_1%_FB_TOP,0603,FRC0603F1003TS,Use supplier part C2906980 in JLCPCB if still available; otherwise same value/package/rating.,100k FB top.
+R13,29.4k_1%_FB_BOTTOM,0603,RC0603FR-0729K4L,Use supplier part C137752 in JLCPCB if still available; otherwise same value/package/rating.,29.4k FB bottom.
+R14,49.9k_1%_RT_500kHz,0603,RC0603FR-0749K9L,Use supplier part C114624 in JLCPCB if still available; otherwise same value/package/rating.,"49.9k RT, about 500kHz."
+R15,10R_GATE_TURN_OFF,0805,RC0805FR-0710RL,Use supplier part C96347 in JLCPCB if still available; otherwise same value/package/rating.,10R fan gate turn-off.
+R16,2.7k_1%_250mW,1206,1206W4F2701T5E,Use supplier part C17950 in JLCPCB if still available; otherwise same value/package/rating.,"2.7k VDRV feed, 1%, 0.25W."
+SW1,TL3301AF160QG_RESET,SMD-4P 6x6mm Tactile Switch,TL3301AF160QG,Use supplier part C273519 in JLCPCB if still available; otherwise same value/package/rating.,RESET switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
+SW2,TL3301AF160QG_BOOT,SMD-4P 6x6mm Tactile Switch,TL3301AF160QG,Use supplier part C273519 in JLCPCB if still available; otherwise same value/package/rating.,BOOT switch; JLC model requires 90-degree CPL rotation so pins 1/2 and 3/4 land on the two board pad rows.
+U1,ESP32-S3-WROOM-1,ESP32-S3-WROOM-1,ESP32-S3-WROOM-1-N8R8,Use supplier part C2913201 in JLCPCB if still available; otherwise same value/package/rating.,Confirm N8R8 variant and antenna keepout.
+U2,MAX6675_SOIC8_3V3,SOIC-8,MAX6675ISA+T,Use supplier part C16030 in JLCPCB if still available; otherwise same value/package/rating.,3.3V thermocouple converter.
+U4,LMR16010PDDAR,HSOIC-8 PowerPAD,LMR16010PDDAR,Use supplier part C183084 in JLCPCB if still available; otherwise same value/package/rating.,60V/1A buck; verify Pin 1 and exposed-pad orientation.
+U5,USBLC6-2SC6,SOT-23-6,USBLC6-2SC6,Use supplier part C7519 in JLCPCB if still available; otherwise same value/package/rating.,"USB ESD array; verify pad 1/6 I/O1, 2 GND, 3/4 I/O2, 5 VBUS."
+U6,UCC27511DBVR,SOT-23-6,UCC27511DBVR,Use supplier part C191027 in JLCPCB if still available; otherwise same value/package/rating.,Split-output fan MOSFET gate driver.

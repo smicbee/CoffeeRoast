@@ -1,0 +1,42 @@
+{
+  "status": "PROTOTYPE_NOT_RELEASED",
+  "source": "CoffeeRoast_LOP200_single_enclosure.scad",
+  "files": {
+    "base.3mf": {
+      "bytes": 60192,
+      "sha256": "57b9341646e8c9d0b041a15f563bca2728cbf6f23516376d3d7303d3e986dca9"
+    },
+    "base.stl": {
+      "bytes": 851609,
+      "sha256": "973f6781b38833998cbe98274f8e214ee72657550787a9ef9c44595198fd791f"
+    },
+    "lid.3mf": {
+      "bytes": 101572,
+      "sha256": "c425045adf9366bd9a5a11ad258bf1af8c79b5f3ccfec4c553ccdc28b0416116"
+    },
+    "lid.stl": {
+      "bytes": 1413762,
+      "sha256": "5229820acbf6e2847262ca30bd2c81a3503b43309f50b7eacff845940b4496cd"
+    },
+    "preview_closed.png": {
+      "bytes": 46800,
+      "sha256": "bae91693da0b998b9f0c56830cc37244fbc897f2877dc741e187b23c61a50d36"
+    },
+    "preview_glands.png": {
+      "bytes": 12805,
+      "sha256": "07c727bc626c49a7796483b39e2812ad807a74eada0766c6d4a226112a933cc6"
+    },
+    "preview_open.png": {
+      "bytes": 42561,
+      "sha256": "5aa99b88501377a2233daad399bba5be031635ea941db7712a6ca8698717f136"
+    },
+    "psu_proxy.stl": {
+      "bytes": 175357,
+      "sha256": "af094f55ac758f717aa2c2c54ea84c2382b681c9390c5cfe8774293724c59c6a"
+    },
+    "verification.json": {
+      "bytes": 3753,
+      "sha256": "eda6b6183a99e6695de0b025f5b7281ff3441e24bda89317e8a1bcb5588e6fbd"
+    }
+  }
+}

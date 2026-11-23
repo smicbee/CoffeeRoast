@@ -32,7 +32,7 @@ const float MIN_SAFE_FAN = 128.0f;  // 50 % Mindestluftstrom bei aktiver Heizung
 const float FAILSAFE_FAN = PWM_MAX;
 const char* FIRMWARE_VERSION = "1.3.2";
 const uint8_t PROTOCOL_VERSION = 3;
-const char* HARDWARE_ID = "CoffeeRoast-Waveshare-ESP32-S3-Zero";
+const char* HARDWARE_ID = "CoffeeRoast-RevA2-ESP32-S3-WROOM-1-N8R8";
 
 int delayValue = 50;
 

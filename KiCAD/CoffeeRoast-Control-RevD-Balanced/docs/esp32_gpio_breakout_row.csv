@@ -1,0 +1,7 @@
+Position,Pad,Net,Label,X_mm,Y_mm,Usage
+1,1,GPIO3,GPIO3,27.650,20.000,User-facing ESP32 GPIO breakout pad
+2,2,GPIO46,GPIO46,30.190,20.000,User-facing ESP32 GPIO breakout pad; strapping-sensitive input-only pin
+3,3,GPIO9,GPIO9 / LCD_SCL,32.730,20.000,Shared with future J8 LCD SCL reservation
+4,4,GPIO10,GPIO10 / ESC_PWM,35.270,20.000,Shared with J6 ESC PWM
+5,5,GPIO48,GPIO48,37.810,20.000,User-facing ESP32 GPIO breakout pad
+6,6,GPIO45,GPIO45,40.350,20.000,User-facing ESP32 GPIO breakout pad; strapping-sensitive input-only pin

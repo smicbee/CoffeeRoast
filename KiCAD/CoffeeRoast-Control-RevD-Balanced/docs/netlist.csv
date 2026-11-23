@@ -1,0 +1,22 @@
+Net,Purpose,Connected refs/pins
++24V_RAW,Direct 24V distribution without on-board fuse,"J1.1, C4.1, D2.1, J2.1, J6.1, U4 VIN, D1.K, D3.K, R16.1, TP24V"
+GND,Low-voltage return,"J1.2, J6.2/J6.4, U4 GND/EP, U1 GND, Q1 source, Q2 source, USB GND, C4.2, D2.2, TP rails"
+GPIO10,Free output-capable ESP32 GPIO reserved for ESC PWM,"U1 pin18, JGPIO1.4, J6.3"
+FAN_NEG,Switched fan negative,"J2.2, Q1 drain, D1 anode, D3.2"
++3V3,Direct buck output / ESP/MAX/SSR rail,"U4 output, U1.3V3, U2.VCC, J3.1, C1/C2/C7, TP3V3, TPSSR1.1"
+FAN_PWM,Firmware GPIO2,U1 pin38 -> U6 -> Q1 gate
+HEATER_PWM,Firmware GPIO1,U1 pin39 -> R3 -> Q2 gate
+MAX_DO,Firmware GPIO11,U2 SO -> U1 pin19
+MAX_CS,Firmware GPIO12,U2 CS -> U1 pin20
+MAX_SCK,Firmware GPIO13,U2 SCK -> U1 pin21
+THERMO_PLUS/THERMO_MINUS,K-type thermocouple input,"J4 -> U2 pins 2/3, optional C5 differential filter at connector side"
+USB_DN/USB_DP,Native USB serial/flash,J5 USB-C A/B D pins through R7/R8 to U1 pins 13/14; U5 ESD footprint on connector-side USB tracks
+USB_CC1/USB_CC2,USB-C device attach advertisement,J5 A5/B5 through R10/R11 5.1k pulldowns to GND
+USB_VBUS,USB-C VBUS sense only,J5 VBUS pins; not used as board supply
+EN/BOOT,Reset/flash control,Pullups + tactile switches
+GPIO_BREAKOUT,Current six-pad user breakout,"JGPIO1 exposes GPIO3, GPIO46, GPIO9, GPIO10, GPIO48, GPIO45; GPIO9 is now also reserved as future LCD SCL"
+MIC_UI_FUTURE,Future 3.3V digital microphone header,"J7: +3V3, GND, GPIO4/BCLK, GPIO5/WS, GPIO6/DATA, GPIO7/SEL"
+LCD_UI_FUTURE,Future 3.3V I2C display header,"J8: +3V3, GND, GPIO8/SDA, GPIO9/SCL, GPIO14/INT, GPIO21/RST"
+BUTTON_UI_FUTURE,Future four-button panel header,"J9: GND, GPIO15/BTN1, GPIO16/BTN2, GPIO17/BTN3, GPIO18/BTN4, +3V3 optional panel supply"
+UNEXPOSED_GPIO,Usable GPIOs not yet brought to physical pads,"GPIO38, GPIO39, GPIO40, GPIO41, GPIO42, GPIO43/TXD0, GPIO44/RXD0, GPIO47"
+RESERVED_N8R8_GPIO,Not available on the selected ESP32-S3-WROOM-1-N8R8,"GPIO35, GPIO36, GPIO37 are occupied by Octal PSRAM"

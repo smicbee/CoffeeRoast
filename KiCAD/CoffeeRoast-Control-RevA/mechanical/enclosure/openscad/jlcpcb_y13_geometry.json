@@ -1,0 +1,17 @@
+{
+  "source": "JLCPCB returned production file downloaded from shipped RevA.2 order PCB item Y13",
+  "production_filename": "CoffeeRoast-Control-RevA2_JLC_Gerber_Drill_Y13.zip",
+  "sha256": "9b86c510bb3231e1224c1e77da7c13861266fd1bd6c93f8ac1f50ba6b991a4da",
+  "jlcpcb_cam": {
+    "outer_width_mm": 159.999985,
+    "outer_height_mm": 109.999983,
+    "lower_vscore_y_mm": 4.999990,
+    "upper_vscore_y_mm": 104.999968,
+    "functional_core_width_mm": 159.999985,
+    "functional_core_height_mm": 99.999978,
+    "bottom_process_rail_mm": 4.999990,
+    "top_process_rail_mm": 5.000015
+  },
+  "interpretation": "The delivered RevA.2 PCB is 160 x 110 mm with two removable 5 mm V-scored PCBA process rails. The enclosure is designed for the 160 x 100 mm functional PCB after rail removal.",
+  "archive_path": "../../../production/partial-smd-pcba/jlcpcb-returned/CoffeeRoast-Control-RevA2_JLC_Gerber_Drill_Y13.zip"
+}
