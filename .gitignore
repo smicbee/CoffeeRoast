@@ -19,7 +19,6 @@ Thumbs.db
 **/__pycache__/
 *.kicad_prl
 *.kicad_pcb.before_*
-KiCAD/CoffeeRoast-Control-RevA/render/jlc/
 
 # Ignore NuGet packages
 *.nupkg

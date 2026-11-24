@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "CoffeeRoast")(type "KiCad")(uri "${KIPRJMOD}/CoffeeRoast.pretty")(options "")(descr "CoffeeRoast project-local footprints"))
-)

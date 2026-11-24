@@ -1,7 +1,0 @@
-Reference,Function,Pad,Net,X_mm,Y_mm,Usage
-TPRESET1,Reset tweezer pads,1,EN,35.000,30.750,Short EN to GND with tweezers to reset
-TPRESET1,Reset tweezer pads,2,GND,35.000,33.250,Short EN to GND with tweezers to reset
-TPBOOT1,Boot/flash-mode tweezer pads,1,BOOT,35.000,40.750,Short BOOT to GND with tweezers while resetting for bootloader mode
-TPBOOT1,Boot/flash-mode tweezer pads,2,GND,35.000,43.250,Short BOOT to GND with tweezers while resetting for bootloader mode
-TPSSR1,SSR OUT measurement pads,1,+3V3,137.460,76.200,Probe 3.3V side of SSR output
-TPSSR1,SSR OUT measurement pads,2,SSR_NEG,142.540,76.200,Probe SSR- switched/return side of SSR output
